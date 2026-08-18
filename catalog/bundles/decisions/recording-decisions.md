@@ -2,7 +2,7 @@
 type: workflow
 title: Recording decisions
 description: Find or establish where this project keeps decisions, then write one. Use when a position is settled, when an irreversible change is proposed, or when asked where decisions live.
-frontload: mandatory
+preload: mandatory
 ---
 
 # Recording decisions
