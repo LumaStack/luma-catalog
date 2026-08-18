@@ -22,8 +22,7 @@ differ in what they contain, not in how they travel.
 catalog/
   catalog.md       the vocabulary, the starters, and the requirements
   _types/          Type Definitions — what `type: catalog` declares, and why
-  project/         bundles that install into a repository
-  organization/    bundles that install into an organization's headquarters
+  bundles/         one directory per bundle, flat
 README.md          everything else here maintains the catalog
 LICENSE
 ```
@@ -40,16 +39,26 @@ and so a sparse checkout has one subtree to name. Documentation, contribution
 guidance and continuous integration will accumulate at the root over time and
 none of it is catalog content.
 
-The inner split is not decoration either. A bundle describing how to argue a
-standard into existence has nothing to install into a single repository; one
-enforcing commit conventions has nothing to do at the organization level.
-Keeping them in separate directories means adopting the wrong kind is impossible
-rather than merely detectable, and it is why no bundle carries a field saying
-which it is.
+Inside, bundles are **flat**, and each declares in its `bundle.md` which levels
+it can be adopted at:
 
-Nothing here declares how far it reaches, either. A bundle in this repository is
-universal because this is the universal catalog. Promotion is a directory move
-with nothing to edit and no way for a bundle to misstate its own reach.
+```yaml
+applies_to: [project, organization]
+```
+
+An earlier layout sorted bundles into `project/` and `organization/`
+directories. That was wrong: some bundles genuinely belong at either level
+depending on the adopter — a decision record or an incident process is wanted
+centrally by one organization and per-repository by another — and a directory
+can only ever say one. It also put a choice that belongs to the adopter in the
+hands of the publisher, permanently.
+
+**A bundle's path is its identity for adoption.** Anything in the path becomes
+unchangeable without breaking every pin, manifest entry and adopt command that
+refers to it — so the path carries only what is single-valued and permanent.
+Which catalog a bundle sits in qualifies, and that is why a bundle declares
+nothing about its own origin: it is universal because this is the universal
+catalog, and promotion is a directory move with nothing to edit.
 
 `catalog/` is **not** a bundle, despite the shape. A bundle carries a mandatory
 version, is copied wholesale, and contains documents; a catalog has no version,
