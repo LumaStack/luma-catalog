@@ -13,7 +13,7 @@ fields:
   superseded_by:
     obligation: optional
     field_type: wikilink
-    desc: "the decision that replaced this one; set together with lifecycle_status: archived"
+    desc: "the decision that replaced this one — quoted (§8); set together with lifecycle_status: archived"
 ---
 
 # Decision
@@ -71,9 +71,21 @@ than editing silently, because the fact that it was wrong is often more
 instructive than the fix.
 
 **Supersede when the *decision* changed.** Write a new record, set the old one's
-`lifecycle_status: archived` and point `superseded_by` at the replacement. The
-old reasoning stays readable, which is what lets someone see why the position
-moved rather than only that it did.
+`lifecycle_status: archived` and point `superseded_by` at the replacement:
+
+```yaml
+lifecycle_status: archived
+superseded_by: "[[ADR-0012-catalogs-do-not-inherit]]"
+```
+
+**Quote it.** `[[…]]` is YAML flow-sequence syntax, so an unquoted wikilink
+parses as a nested array rather than a string and no parser complains — the
+record stays valid and the redirect simply never resolves. §8 of the
+specification carries the warning; this is the field in this bundle most likely
+to meet it.
+
+The old reasoning stays readable, which is what lets someone see why the
+position moved rather than only that it did.
 
 ADR convention says an accepted decision is immutable and everything is a
 supersession. That is right for reversals and heavy for errata — a typo in the

@@ -31,6 +31,17 @@ publisher's call to make.
   small enough that a directory would be overhead.
 - `_types/workflow` — a procedure a person or agent follows.
 
+## Loading
+
+Only [[recording-decisions]] is `preload: mandatory` — a consumer that cannot
+load it should fail rather than proceed without it, because everything else here
+is a contract it refers to.
+
+The Type Definitions carry no `preload` at all, which means `optional`: they are
+read when something needs to know what a field means, not held in context
+against the possibility. That is the field working as intended rather than an
+omission.
+
 ## Version
 
 `0.1.0` rather than `1.0.0`. The conventions here are extracted from practice
