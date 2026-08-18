@@ -21,11 +21,17 @@ differ in what they contain, not in how they travel.
 ```
 catalog/
   catalog.md       the vocabulary, the starters, and the requirements
+  _types/          Type Definitions — what `type: catalog` declares, and why
   project/         bundles that install into a repository
   organization/    bundles that install into an organization's headquarters
 README.md          everything else here maintains the catalog
 LICENSE
 ```
+
+`catalog.md` holds only what is true of *this* catalog. Everything general —
+what each field means, how two catalogs resolve, what `mandatory` does — lives
+in [`catalog/_types/catalog.md`](catalog/_types/catalog.md), so it is written
+once rather than copied into every catalog that ever exists.
 
 **Everything under `catalog/` is the catalog; everything outside it maintains
 the catalog.** That boundary is structural rather than conventional so a program
@@ -72,10 +78,9 @@ an organization's catalog is its own repository that names this one as its
 require a fork, that is a defect worth reporting rather than a workflow.
 
 `upstream` points at where else to look; it does not inherit content. A project
-configured with one catalog reads the chain, and what each list does when two
-catalogs speak at once differs by list: vocabularies union, requirements resolve
-most-restrictive-wins, and only starters carry an explicit `extends`, because
-starters are the one list where subtracting something is a legitimate act.
+configured with one catalog reads the whole chain — see
+[`catalog/_types/catalog.md`](catalog/_types/catalog.md) for how each list
+resolves when two catalogs speak at once.
 
 ## Contributing
 
