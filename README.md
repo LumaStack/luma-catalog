@@ -67,7 +67,7 @@ is picked from rather than copied, and contains bundles.
 ## How this is consumed
 
 Never resolved, always copied. There is no client, no API, and no version
-solver — `luma-foreman` vendors a bundle into a project's `.hq/standards/`, and
+solver — `luma-foreman` vendors a bundle into a project's `.luma/policy/`, and
 the vendored copy is the lockfile. That is the whole distribution model, and it
 is deliberate: a project must keep working from a bare clone with no network.
 

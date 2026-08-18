@@ -11,11 +11,11 @@ preload: mandatory
 
 Look in this order and take the first that exists:
 
-1. `.records/decisions/` — a directory of individual records
+1. `.luma/records/decisions/` — a directory of individual records
 2. `docs/DECISIONS.md`
 3. `DECISIONS.md`
 
-`.records/decisions/` wins when several exist, because it is the mature shape
+`.luma/records/decisions/` wins when several exist, because it is the mature shape
 and the others are what a project keeps before it needs one.
 
 **If more than one exists, say so before doing anything else.** That is not a
@@ -31,7 +31,7 @@ Do not pick for them. Present both options and what each costs:
 > and one thing to point an agent at. Best while there are only a handful of
 > decisions.
 >
-> **A directory** — `.records/decisions/`, one record per decision. Each gets
+> **A directory** — `.luma/records/decisions/`, one record per decision. Each gets
 > its own history and can be linked to individually. Better once decisions
 > accumulate, and the shape you will end up in eventually.
 
@@ -44,7 +44,7 @@ day one generally should not.
 padded, next unused number:
 
 ```
-.records/decisions/ADR-0007-catalog-not-registry.md
+.luma/records/decisions/ADR-0007-catalog-not-registry.md
 ```
 
 Two things to know about the numbering. It is sequential, so two branches can
