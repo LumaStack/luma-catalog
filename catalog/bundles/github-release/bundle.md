@@ -3,7 +3,7 @@ type: bundle
 version: 0.1.0
 published: 2026-08-18
 consumers: [project]
-entry_point: publishing-a-release
+entry_point: workflows/publishing-a-release
 description: Cutting and publishing GitHub releases — semantic versioning, release titles and contents, and the gh workflow.
 ---
 

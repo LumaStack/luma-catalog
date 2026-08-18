@@ -1,5 +1,5 @@
 ---
-type: standard
+type: policy
 title: Release titles and contents
 description: What a release is called and what it must contain. Release notes are the only thing most people will ever read about a version.
 ---
@@ -11,7 +11,7 @@ what people read**, and for most projects they are the only account of a version
 that anyone ever sees. A changelog entry is a line in a file someone has to go
 looking for; a release arrives in a feed.
 
-Fill in [the template](templates/release-notes.md) rather than starting from a
+Fill in [the template](../templates/release-notes.md) rather than starting from a
 blank page — it carries the required sections in order.
 
 ## Titles

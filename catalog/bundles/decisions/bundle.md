@@ -3,7 +3,7 @@ type: bundle
 version: 0.1.0
 published: 2026-08-18
 consumers: [project, organization]
-entry_point: recording-decisions
+entry_point: workflows/recording-decisions
 description: Decisions recorded with their reasoning, deferred alternatives, and re-open triggers.
 ---
 

@@ -84,7 +84,7 @@ Before publishing, confirm:
   `git push origin vX.Y.Z` is a separate command, and forgetting it produces a
   release against a tag nobody else can see.
 - **The notes are written**, following [[release-notes]] and filling in
-  [the template](templates/release-notes.md).
+  [the template](../templates/release-notes.md).
 
 ## 5. Publish
 

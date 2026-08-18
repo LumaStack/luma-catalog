@@ -1,11 +1,11 @@
 ---
 type: type_definition
-defines: standard
+defines: policy
 ---
 
-# Standard
+# Policy
 
-A rule a project holds itself to, and the reasoning that makes it worth holding.
+A course of action this project has adopted, and the reasoning that makes it worth holding.
 
 **It declares no fields of its own.** A standard needs a name, a one-line
 summary of what it governs, and a body — `title`, `description` and the content,

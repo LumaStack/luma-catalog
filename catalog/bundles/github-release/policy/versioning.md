@@ -1,5 +1,5 @@
 ---
-type: standard
+type: policy
 title: Versioning releases
 description: Releases are versioned with semantic versioning. What each part means, when to bump which, and the pre-1.0 rules that trip people up.
 ---
