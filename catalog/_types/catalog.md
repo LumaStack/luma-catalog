@@ -54,7 +54,7 @@ it in a committed file, and it can be argued with.
 ## `starters`
 
 Named lists, conventionally `project` and `organization`, matching the two
-levels a bundle may declare in its `applies_to`.
+kinds of consumer a bundle may declare.
 
 ```yaml
 starters:

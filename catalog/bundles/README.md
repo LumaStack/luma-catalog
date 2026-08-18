@@ -1,18 +1,18 @@
 # Bundles
 
 One directory per bundle, flat. Each carries a `bundle.md` at its root with a
-`version` and an `applies_to`.
+`version` and a `consumers` list.
 
 ```yaml
 ---
 type: bundle
 version: 1.0.0
-applies_to: [project, organization]
+consumers: [project, organization]
 description: Decisions with their reasoning, deferred alternatives, and re-open triggers.
 ---
 ```
 
-`applies_to` says who may adopt it — `project` means foreman installs it into a
+`consumers` says who may adopt it — `project` means foreman installs it into a
 repository, `organization` means hq installs it into a headquarters, and both
 means the adopter chooses. Most bundles name one. The ones that name both are
 the point: a decision record or an incident process is genuinely wanted at

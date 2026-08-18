@@ -39,11 +39,11 @@ and so a sparse checkout has one subtree to name. Documentation, contribution
 guidance and continuous integration will accumulate at the root over time and
 none of it is catalog content.
 
-Inside, bundles are **flat**, and each declares in its `bundle.md` which levels
-it can be adopted at:
+Inside, bundles are **flat**, and each declares in its `bundle.md` which kinds
+of consumer may adopt it:
 
 ```yaml
-applies_to: [project, organization]
+consumers: [project, organization]
 ```
 
 An earlier layout sorted bundles into `project/` and `organization/`
