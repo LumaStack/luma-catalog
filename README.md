@@ -67,9 +67,15 @@ is deliberate: a project must keep working from a bare clone with no network.
 | your organization's catalog | content | your bundles, and what you mandate |
 
 Engines are installed and pinned. Content is owned. **Nothing here is forked** —
-an organization's catalog is its own repository that extends this one by name,
-not a copy of it that drifts. If adopting something appears to require a fork,
-that is a defect worth reporting rather than a workflow.
+an organization's catalog is its own repository that names this one as its
+`upstream`, not a copy of it that drifts. If adopting something appears to
+require a fork, that is a defect worth reporting rather than a workflow.
+
+`upstream` points at where else to look; it does not inherit content. A project
+configured with one catalog reads the chain, and what each list does when two
+catalogs speak at once differs by list: vocabularies union, requirements resolve
+most-restrictive-wins, and only starters carry an explicit `extends`, because
+starters are the one list where subtracting something is a legitimate act.
 
 ## Contributing
 

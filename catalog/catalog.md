@@ -28,8 +28,10 @@ second, and everything still reports green. A requirement that does not fire is
 the worst failure available here, so a tag outside this list is an error rather
 than a miss.
 
-An organization extends this vocabulary in its own catalog. It does not have to
-adopt these.
+An organization declares its own tags in its own catalog, and the two
+vocabularies **union** — nothing is inherited and nothing needs declaring. A tag
+nobody uses is inert, so subtracting one would buy nothing. An organization is
+free to use none of these.
 
 The list above is provisional. Nothing uses it yet, and the right vocabulary is
 the one that falls out of real bundles rather than the one guessed at first.
@@ -78,6 +80,34 @@ lower a mandate.
 **Obligation governs whether a project must adopt a bundle. It never governs how
 hard conformance is checked once it has.** A recommended bundle a project chose
 to adopt is checked exactly as strictly as a mandated one.
+
+## `upstream` — where else to look
+
+Absent here, because this is the root of the chain. A downstream catalog names
+the one it sits below:
+
+```yaml
+upstream: https://github.com/LumaStack/luma-catalog
+```
+
+It is a **source pointer, not inheritance.** A project configured with one
+catalog reads the whole chain, which is why an organization's projects need
+naming only their organization's catalog. Single-valued and acyclic — a linear
+chain is cheap to walk, and a graph is the resolution problem bundles were
+designed to avoid.
+
+What happens when two catalogs speak at once differs by list, and there is no
+catalog-level inheritance to declare:
+
+| list | when two catalogs speak |
+| --- | --- |
+| `tags` | union — extra tags are inert |
+| `requires` | most-restrictive-wins — extra requirements are the safe direction |
+| `starters` | explicit `extends` / `adds` / `excludes` |
+
+Only starters need declaring, because they are the only list where subtracting
+something is a legitimate act. A starter fires once at bootstrap with no ongoing
+check to catch a bad inclusion, so it needs an owner rather than a merge rule.
 
 ## Not settled
 
