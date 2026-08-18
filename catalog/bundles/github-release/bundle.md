@@ -1,0 +1,56 @@
+---
+type: bundle
+version: 0.1.0
+published: 2026-08-18
+consumers: [project]
+entry_point: publishing-a-release
+description: Cutting and publishing GitHub releases — semantic versioning, release titles and contents, and the gh workflow.
+---
+
+# GitHub release
+
+Releasing is where a project's care becomes visible to people who will never
+read its source. A version number is a promise about what upgrading costs, and
+release notes are usually the only account of a change anyone ever reads.
+
+Both are easy to get wrong in ways that are invisible at the time and expensive
+later — a breaking change shipped as a minor, a tag pushed with no release
+against it, notes that list commits instead of consequences.
+
+## What is here
+
+- [[publishing-a-release]] — the workflow. Verifies `gh` is installed,
+  authenticated and working *in this repository* before anything is tagged.
+- [[versioning]] — semantic versioning, the pre-`1.0.0` rules that trip people
+  up, and where the specification lives.
+- [[release-notes]] — what a release is called and what it must contain.
+- [the release notes template](templates/release-notes.md) — the required
+  sections in order, with the reasoning in comments.
+
+## Project only
+
+`consumers: [project]` — releasing is a repository activity. An organization's
+headquarters is a repository too, but it is not something you cut versions of.
+
+## Loading
+
+Only [[publishing-a-release]] is `preload: mandatory`. The two standards are
+`optional`: they are read when the workflow points at them or when someone
+questions a version number, not held in context against the possibility.
+
+## The one hard requirement
+
+The workflow **stops** if `gh` is missing rather than falling back to the web
+interface or a raw API call. The first produces a release nobody can reproduce;
+the second needs a token that then has to live somewhere.
+
+When it stops it **asks** whether to install `gh` or leave that to you, and
+waits. Installing software is outside what "publish a release" implies, harder
+to undo than anything else in the workflow, and on a managed machine it may not
+be yours to do.
+
+## Version
+
+`0.1.0`. The conventions here are drawn from releases actually cut rather than
+imagined, but the workflow's `gh` handling has not yet been run against a
+machine that does not have it — which is the case it exists for.
