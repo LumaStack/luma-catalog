@@ -20,7 +20,7 @@ description: One line — what this holds and who it is for.
   claims the shape has stopped moving.
 - **`consumers`** — `project`, `organization`, or both. Both when the same
   content is wanted at either level by different adopters.
-- **`entry_point`** — the full Document ID, e.g. `workflows/creating-a-bundle`.
+- **`entry_point`** — the full Document ID, e.g. `workflows/create-bundle`.
 - **`description`** — what a consumer reads when deciding whether to adopt.
 
 ## Body

@@ -1,11 +1,11 @@
 ---
 type: workflow
-title: Recording decisions
+title: Record a decision
 description: Find or establish where this project keeps decisions, then write one. Use when a position is settled, when an irreversible change is proposed, or when asked where decisions live.
 preload: mandatory
 ---
 
-# Recording decisions
+# Record a decision
 
 ## 1. Find the store
 

@@ -3,7 +3,7 @@ type: bundle
 version: 0.1.0
 published: 2026-08-18
 consumers: [project]
-entry_point: workflows/publishing-a-release
+entry_point: workflows/publish-release
 description: Cutting and publishing GitHub releases — semantic versioning, release titles and contents, and the gh workflow.
 ---
 
@@ -19,7 +19,7 @@ against it, notes that list commits instead of consequences.
 
 ## What is here
 
-- [[publishing-a-release]] — the workflow. Verifies `gh` is installed,
+- [[publish-release]] — the workflow. Verifies `gh` is installed,
   authenticated and working *in this repository* before anything is tagged.
 - [[versioning]] — semantic versioning, the pre-`1.0.0` rules that trip people
   up, and where the specification lives.
@@ -34,7 +34,7 @@ headquarters is a repository too, but it is not something you cut versions of.
 
 ## Loading
 
-Only [[publishing-a-release]] is `preload: mandatory`. The two standards are
+Only [[publish-release]] is `preload: mandatory`. The two standards are
 `optional`: they are read when the workflow points at them or when someone
 questions a version number, not held in context against the possibility.
 

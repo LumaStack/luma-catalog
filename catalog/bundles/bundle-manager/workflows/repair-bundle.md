@@ -1,10 +1,10 @@
 ---
 type: workflow
-title: Repairing a bundle
-description: Fix what an audit found, in an order that avoids making it worse. Use after auditing-a-bundle reports findings.
+title: Repair a bundle
+description: Fix what an audit found, in an order that avoids making it worse. Use after audit-bundle reports findings.
 ---
 
-# Repairing a bundle
+# Repair a bundle
 
 ## Fix in this order
 
@@ -42,5 +42,5 @@ breaking and needs a major — or a patch below `1.0.0`, said out loud.
 
 ## Re-audit
 
-Run [[auditing-a-bundle]] again. Repairs move files, and moving files is what
+Run [[audit-bundle]] again. Repairs move files, and moving files is what
 breaks links.

@@ -3,7 +3,7 @@ type: bundle
 version: 0.1.0
 published: 2026-08-18
 consumers: [project, organization]
-entry_point: workflows/recording-decisions
+entry_point: workflows/record-decision
 description: Decisions recorded with their reasoning, deferred alternatives, and re-open triggers.
 ---
 
@@ -24,7 +24,7 @@ publisher's call to make.
 
 ## What is here
 
-- [[recording-decisions]] — the workflow. Where records live, what to do when
+- [[record-decision]] — the workflow. Where records live, what to do when
   nothing exists yet, and how a project graduates from one file to many.
 - `_types/decision` — a single decision record.
 - `_types/decision_log` — one document holding many decisions, for projects
@@ -33,7 +33,7 @@ publisher's call to make.
 
 ## Loading
 
-Only [[recording-decisions]] is `preload: mandatory` — a consumer that cannot
+Only [[record-decision]] is `preload: mandatory` — a consumer that cannot
 load it should fail rather than proceed without it, because everything else here
 is a contract it refers to.
 

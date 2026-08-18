@@ -97,6 +97,6 @@ directories changes its ID and breaks inbound links. Choose the directory when
 the document is created; reclassifying later is a rename with consequences.
 
 `entry_point` in `bundle.md` carries the **full ID** —
-`workflows/publishing-a-release` — because it must be unambiguous. Wikilinks in
+`workflows/publish-release` — because it must be unambiguous. Wikilinks in
 prose use the slug alone. Where two documents in different directories share a
 slug, that ambiguity is currently unresolved by the format; avoid it.

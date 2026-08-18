@@ -1,12 +1,12 @@
 ---
 type: workflow
-title: Auditing a bundle
+title: Audit a bundle
 description: Check a bundle for the defects that are silent — broken links, unquoted wikilinks, orphaned assets, a missing manifest. Use before publishing or adopting.
 ---
 
-# Auditing a bundle
+# Audit a bundle
 
-Read-only. Findings get fixed by [[repairing-a-bundle]].
+Read-only. Findings get fixed by [[repair-bundle]].
 
 **Most of these fail silently.** A bundle with a broken link is still valid
 under the format, still adoptable, and still wrong — which is why this is a

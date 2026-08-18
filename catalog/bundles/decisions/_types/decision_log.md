@@ -32,7 +32,7 @@ between equals.
 ## Graduating
 
 When the file becomes unwieldy, split it: one `decision` document per entry,
-under `.luma/records/decisions/`. The workflow in [[recording-decisions]] describes
+under `.luma/records/decisions/`. The workflow in [[record-decision]] describes
 the mechanics.
 
 "Unwieldy" is deliberately a judgment. A rule that fails a project for keeping

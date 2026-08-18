@@ -1,11 +1,11 @@
 ---
 type: workflow
-title: Publishing a GitHub release
+title: Publish a GitHub release
 description: Verify the gh CLI is installed and authenticated, then cut and publish a release. Use when asked to cut, tag, or publish a release.
 preload: mandatory
 ---
 
-# Publishing a GitHub release
+# Publish a GitHub release
 
 ## 1. Is `gh` available?
 

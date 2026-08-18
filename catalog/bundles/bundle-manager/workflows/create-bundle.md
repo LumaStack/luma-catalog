@@ -1,11 +1,11 @@
 ---
 type: workflow
-title: Creating a bundle
+title: Create a bundle
 description: Scaffold a new bundle, decide where it belongs, and get it to a publishable state. Use when asked to create, start, or extract a bundle.
 preload: mandatory
 ---
 
-# Creating a bundle
+# Create a bundle
 
 ## 1. Is it one bundle?
 
@@ -64,5 +64,5 @@ that already has it. Bundles are self-contained: carry your own copy.
 
 ## 7. Audit before publishing
 
-Run [[auditing-a-bundle]]. A bundle published with a broken link or an unquoted
+Run [[audit-bundle]]. A bundle published with a broken link or an unquoted
 frontmatter wikilink is one every adopter copies.

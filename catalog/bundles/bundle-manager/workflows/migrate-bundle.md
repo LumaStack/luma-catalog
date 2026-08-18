@@ -1,10 +1,10 @@
 ---
 type: workflow
-title: Migrating a bundle
+title: Migrate a bundle
 description: Move a bundle between catalogs, or restructure one in place, without stranding the projects that adopted it. Use when promoting, relocating, or reorganizing.
 ---
 
-# Migrating a bundle
+# Migrate a bundle
 
 Two different moves wear the same word.
 
@@ -39,7 +39,7 @@ is the path within the bundle.
 2. Fix every inbound `[[wikilink]]` and every relative asset link — `../` means
    something different from a new depth.
 3. Update `entry_point` if the entry document moved; it carries the full ID.
-4. Run [[auditing-a-bundle]].
+4. Run [[audit-bundle]].
 5. **Version it as breaking**, or as a patch below `1.0.0` with that said out
    loud. Anyone who linked *into* the bundle by ID now has a broken link.
 

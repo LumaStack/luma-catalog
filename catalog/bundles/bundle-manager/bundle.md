@@ -28,12 +28,12 @@ belongs in, and a procedure for each thing you do to a bundle over its life.
 
 **Workflows**
 
-- [[creating-a-bundle]] — scaffold a new one and get it publishable.
-- [[updating-a-bundle]] — change contents and version the change honestly.
-- [[auditing-a-bundle]] — the checklist for defects that fail silently.
-- [[repairing-a-bundle]] — fix findings in an order that avoids making it worse.
-- [[migrating-a-bundle]] — promote between catalogs, or restructure in place.
-- [[deleting-a-bundle]] — retire one without stranding its adopters.
+- [[create-bundle]] — scaffold a new one and get it publishable.
+- [[update-bundle]] — change contents and version the change honestly.
+- [[audit-bundle]] — the checklist for defects that fail silently.
+- [[repair-bundle]] — fix findings in an order that avoids making it worse.
+- [[migrate-bundle]] — promote between catalogs, or restructure in place.
+- [[delete-bundle]] — retire one without stranding its adopters.
 
 **Templates**
 

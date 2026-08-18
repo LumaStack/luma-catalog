@@ -1,10 +1,10 @@
 ---
 type: workflow
-title: Updating a bundle
+title: Update a bundle
 description: Change a bundle's contents and version it correctly. Use when editing, extending, or fixing an existing bundle.
 ---
 
-# Updating a bundle
+# Update a bundle
 
 ## 1. Make the change
 
@@ -43,5 +43,5 @@ defect needs the version bumped *and* the adopters told.
 
 ## 4. Audit
 
-Run [[auditing-a-bundle]] before publishing. Most breakage arrives through
+Run [[audit-bundle]] before publishing. Most breakage arrives through
 edits, not through creation.
