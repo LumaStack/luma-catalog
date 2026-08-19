@@ -10,14 +10,14 @@ Four questions, in order. Each one eliminates a home.
 
 ## 1. Would deleting it lose a decision somebody made?
 
-**No** — it is derived. `~/.cache/luma-<tool>/`, and nothing else needs deciding.
+**No** — it is derived. `~/.cache/<org>/<tool>/`, and nothing else needs deciding.
 
 **Yes** — continue.
 
 ## 2. Does it belong to the project, or to whoever is running it?
 
 **To the person.** Timeouts, log levels, an operator's preferred mode, anything
-that must not affect a colleague. `~/.config/luma-<tool>/` — either
+that must not affect a colleague. `~/.config/<org>/<tool>/` — either
 `config.toml` for every project or `projects/<id>.toml` for this one.
 
 **To the project.** Which policies apply, what *done* means, which checks run.

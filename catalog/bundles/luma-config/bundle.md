@@ -13,7 +13,7 @@ Two homes and one rule of thumb:
 
 ```
 .luma/config/          committed. What this project declares
-~/.config/luma-*/      yours. Not committed, near enough always
+~/.config/luma/        yours. Not committed, near enough always
 ```
 
 **The reverse is the failure that matters.** Committed-but-personal is somebody's
@@ -51,14 +51,15 @@ Inside `.luma/config/`, files are named for the tool that reads them —
 `foreman.toml` rather than `config.toml` — so several tools coexist without
 negotiating a schema.
 
-Outside, XDG decides: `~/.config/luma-foreman/`, application-named, **never**
-`~/.config/luma/foreman/`. Nothing nests under a vendor, and shared
-configuration across tools would be its own application sitting beside them.
+Outside, the shape is `<org>/<repo>` — `~/.config/luma/luma-foreman/`, with the
+second segment the repository name exactly. **One deny rule then covers every
+tool the organization ships**, needs no wildcard, and keeps working whatever a
+repository is called.
 
-The two sides differ in shape because they answer to different authorities. A
-project has one set of rules, so `.luma/` is one directory. The machine-local
-side is one directory per application because XDG says so and every other tool
-on that machine agrees.
+The two sides differ because they answer to different questions. A project has
+one set of rules, so `.luma/` is one directory. The machine-local side has one
+directory per repository, under one for the organization, so that a rule about
+all of them can be written once.
 
 ## Consumers
 

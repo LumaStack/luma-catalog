@@ -16,15 +16,15 @@ sources:
 # Where configuration lives
 
 ```
-.luma/config/foreman.toml                        committed — what this project declares
-~/.config/luma-foreman/config.toml               yours, every project
-~/.config/luma-foreman/projects/<id>.toml        yours, this project
-~/.cache/luma-foreman/projects/<id>/             derived — safe to delete at any moment
+.luma/config/foreman.toml                         committed — what this project declares
+~/.config/luma/luma-foreman/config.toml           yours, every project
+~/.config/luma/luma-foreman/projects/<id>.toml    yours, this project
+~/.cache/luma/luma-foreman/projects/<id>/         derived — safe to delete at any moment
 ```
 
 ## The rule of thumb
 
-**`.luma/config/` is committed. `~/.config/luma-*/` is not.**
+**`.luma/config/` is committed. `~/.config/<org>/` is not.**
 
 That is the shape of it, and it holds almost always. The exception worth
 allowing for: an operator who wants their own settings to travel between their
@@ -49,18 +49,42 @@ is worth reading once rather than guessing:
 | `~/.cache/<application>/` | **cache** — regenerable, safe to delete |
 | `~/.local/bin/` | executables |
 
-### The application is named, never the vendor
+### Nest under the organization, then the repository name
 
-`~/.config/luma-foreman/`, never `~/.config/luma/foreman/`.
+`~/.config/luma/luma-foreman/`. The second segment is **the repository name
+exactly**, prefix included, so a directory maps to a repository with nothing to
+translate.
 
-XDG specifies `$XDG_CONFIG_HOME/<application>/`, and near enough every tool
-follows it flat — `gh`, `git`, `kitty`, `chezmoi`, `nvim`. A vendor level also
-contradicts what a standalone tool is: a path reading `luma/foreman` implies a
-suite the operator may never install.
+**The specification does not choose this for you.** It says
+`$XDG_CONFIG_HOME/subdir/filename` — generic placeholder language — and leaves
+naming and depth to the application. Both flat and nested conform.
 
-Shared configuration across tools, if it is ever wanted, is **its own
-application** — `~/.config/luma-shared/` — sitting beside the others rather than
-above them. **Nothing nests under a vendor.**
+Flat is the common shape, but the tools usually cited for it are single-tool
+vendors with nothing to nest under, which makes them poor evidence either way.
+JetBrains ships several tools and nests across config, data and cache alike.
+
+**What decides it is that a rule covering every tool has to be writable once:**
+
+```json
+"deny": ["Edit(~/.config/luma/**)", "Edit(~/.local/share/luma/**)"]
+```
+
+One entry per directory, no glob support required, and nothing to widen when a
+second tool arrives. **The organization directory is what matches, so repository
+names are free** — a tool called `atlas` lands at `~/.config/luma/atlas/` and is
+covered by the same rule.
+
+The flat alternative needs one entry per application, or a `luma-*` wildcard
+that holds only while every tool happens to be named `luma-something`. That is a
+convention nobody commits to, and one product-named tool leaves no single rule
+to write.
+
+This matters beyond tidiness because such a rule **fails open**: a pattern
+matching nothing produces no error and no warning.
+
+Shared configuration across tools is **its own repository** —
+`~/.config/luma/luma-shared/` — rather than something at the organization level,
+so `<org>/<repo>` holds without exception.
 
 ### Choosing between config, data and state
 

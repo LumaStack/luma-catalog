@@ -10,9 +10,9 @@ Lowest to highest. The last one to speak wins.
 
 ```
 1. built-in defaults                              in code
-2. ~/.config/luma-<tool>/config.toml              yours, every project
+2. ~/.config/<org>/<tool>/config.toml             yours, every project
 3. .luma/config/<tool>.toml   [defaults]          project suggests — overridable
-4. ~/.config/luma-<tool>/projects/<id>.toml       yours, this project
+4. ~/.config/<org>/<tool>/projects/<id>.toml      yours, this project
 5. .luma/config/<tool>.toml   [require]           project mandates — not overridable
 6. environment variables and flags                this invocation only
 ```
