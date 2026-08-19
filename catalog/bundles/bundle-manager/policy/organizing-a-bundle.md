@@ -13,7 +13,7 @@ preload: mandatory
   _types/          Type Definitions — only if the bundle declares its own
   workflows/       procedures — type: workflow
   policy/          adopted courses of action — type: policy
-  scripts/         ... (fill this in)
+  scripts/         executables a workflow invokes — never run on adoption
   templates/       assets to copy — no frontmatter
 ```
 
@@ -65,6 +65,15 @@ still be indexed, counted, and validated as though it were one of them.
 When in doubt, carry the example **fenced** inside an asset and copy the block
 rather than the file. It costs a paste and removes the ambiguity.
 
+**`scripts/`** — executables a workflow invokes. A checker, a generator, a
+migration step: anything a procedure tells somebody to *run* rather than to
+read. Nothing here ever runs on adoption; see below.
+
+Only for what **several workflows share**. A script one workflow owns goes
+beside it, in `workflows/<name>/`, so moving or retiring that workflow takes its
+script with it. A script nothing invokes is dead weight a reader has to
+evaluate.
+
 **`_types/`** — Type Definitions, for types **this bundle declares**. Reserved
 by the format, so the name is not ours to change.
 
@@ -105,6 +114,12 @@ when a person or an agent deliberately invokes it, having seen what it is.
 The difference is who chose. Code you ran on purpose is a script. Code that ran
 because you fetched something is a supply chain, and the promotion path —
 project to organization to universal — would be one.
+
+**Say what a script needs, in the workflow that invokes it.** A language
+runtime, a package, a network call — each is a way to fail in somebody else's
+environment, and the bundle cannot check any of them for you. A workflow that
+says *this needs Python 3.11* costs a line; one that does not costs whoever runs
+it an afternoon.
 
 ## When two bundles care about the same thing
 
@@ -172,9 +187,15 @@ Every path a bundle references resolves inside it. A link that escapes breaks
 the property the entire distribution model rests on: you can copy the directory,
 ship it, and have it still work.
 
-This is why a bundle that needs the `workflow` or `policy` type **carries its
-own copy** rather than referencing another bundle's. Bundles have no
-dependencies, and vendoring is the mechanism.
+This is why a bundle that needs a type **another bundle declares** carries its
+own copy rather than referencing it. Bundles have no dependencies, and vendoring
+is the mechanism.
+
+**That does not apply to built-ins.** `document`, `concept`, `workflow`,
+`policy`, `bundle` and `type_definition` come from the format, so a bundle using
+them is already self-contained — copying one in creates a private definition
+that can drift while every consumer still assumes the format's meaning. See
+*Never vendor a built-in* above.
 
 ## Directory names in Document IDs
 
