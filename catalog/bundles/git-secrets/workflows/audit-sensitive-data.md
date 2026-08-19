@@ -30,7 +30,7 @@ git ls-files | grep -E '(^|/)\.env$|\.(pem|p12|jks)$'
 
 **A credential finding is not a cleanup task.** It is published, public pushes
 are scanned within seconds, and the only first move is to **rotate it**. Do that
-before reading the rest of the report — see [[committed-secrets]] for the order.
+before reading the rest of the report — see [[never-commit-credentials]] for the order.
 
 Everything else in the report can wait an hour. This cannot.
 
@@ -57,7 +57,7 @@ dedicated history scanner for that question.
 
 **Shape is not meaning.** It finds credentials that providers designed to be
 recognisable, and identities that are wrong by their form —
-`alice@laptop.local`, `first.last.com`, `/Users/alice/notes.txt`. It cannot know
+`someone@laptop.local`, `first.last.com`, `/Users/<name>/notes.txt`. It cannot know
 that a well-formed address at a real domain is personal rather than
 professional, or that a variable named `key` holds one.
 
