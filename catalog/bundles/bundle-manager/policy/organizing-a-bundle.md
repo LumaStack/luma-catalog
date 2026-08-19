@@ -10,15 +10,16 @@ preload: mandatory
 ```
 <bundle>/
   bundle.md        the manifest — version, consumers, entry_point
-  _types/          Type Definitions (reserved by the format)
+  _types/          Type Definitions — only if the bundle declares its own
   workflows/       procedures — type: workflow
   policy/          adopted courses of action — type: policy
   scripts/         ... (fill this in)
   templates/       assets to copy — no frontmatter
 ```
 
-Only `bundle.md` and `_types/` are required, and only `_types/` is reserved by
-the format. **The rest is convention, not specification** — the format leaves
+Only `bundle.md` is required. `_types/` is the one name reserved by the format,
+and most bundles do not need it at all — a bundle whose Documents are all
+`policy` and `workflow` declares no types, because those are built in. **The rest is convention, not specification** — the format leaves
 placement deliberately unspecified, and a bundle that puts a workflow at its
 root is perfectly conformant.
 
@@ -64,8 +65,18 @@ still be indexed, counted, and validated as though it were one of them.
 When in doubt, carry the example **fenced** inside an asset and copy the block
 rather than the file. It costs a paste and removes the ambiguity.
 
-**`_types/`** — Type Definitions. Reserved by the format, so the name is not
-ours to change.
+**`_types/`** — Type Definitions, for types **this bundle declares**. Reserved
+by the format, so the name is not ours to change.
+
+**Never vendor a built-in.** `document`, `concept`, `workflow`, `policy`,
+`bundle` and `type_definition` are supplied by the format, and copying one into a
+bundle creates a private definition that can drift from the real one while every
+consumer still assumes the format's meaning. A bundle that declares no types of
+its own has no `_types/` directory.
+
+That is not hypothetical: this catalog carried eighteen vendored copies of
+`workflow` and `policy` before they became built in, every one identical and
+every one a place drift could start.
 
 ## Three rules that decide where something goes
 

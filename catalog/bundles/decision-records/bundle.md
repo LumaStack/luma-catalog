@@ -49,7 +49,6 @@ reading like a workflow.
 - `_types/decision` — a single decision record.
 - `_types/decision_log` — one document holding many decisions, for projects
   small enough that a directory would be overhead.
-- `_types/workflow` — a procedure a person or agent follows.
 
 ## Loading
 
