@@ -8,9 +8,17 @@ tags:
   - design
   - docs
 starters:
-  project: []
-  organization: []
-requires: []
+  project:
+    - luma/luma-directory-structure
+    - luma/git-secrets
+    - luma/project-documentation
+    - luma/decision-records
+  organization:
+    - luma/luma-directory-structure
+    - luma/decision-records
+requires:
+  - bundle: luma/git-secrets
+    obligation: recommended
 ---
 
 # The universal catalog
@@ -20,15 +28,34 @@ means and how it resolves is in [`_types/catalog.md`](_types/catalog.md).
 
 No `upstream`: this is the root of the chain.
 
-## Status
+## What is claimed, and what is not
 
-`starters` and `requires` are empty because no bundles exist yet. A starting
-list guessed at before any bundle exists would be wrong in ways nothing could
-reveal.
+**Nothing is mandatory.** A mandate fails a project's checks, and this catalog
+has no adopters — mandating anything now would be asserting authority over
+projects that have never agreed to it. The first mandate should follow evidence
+that something genuinely must not be skipped, not a belief that it should not
+be.
 
-The tag vocabulary is provisional for the same reason. Nothing keys on it, and
-the right vocabulary is the one that falls out of real bundles rather than the
-one guessed at first.
+**One recommendation.** `git-secrets` is the only bundle here whose absence
+causes harm rather than inconvenience: a published credential cannot be
+unpublished, and a leaked identity is permanent in every clone. Everything else
+is quality of life, and reporting five gaps at a project that just adopted its
+first bundle is how a report gets ignored.
+
+**Starters carry the rest.** What a new project begins with is a different
+question from what every project owes, and conflating them produces either a
+nagging report or an empty one. Four bundles for a new project, two for a new
+headquarters — enough to have somewhere to put decisions and a rule about
+secrets, without deciding how anybody releases or merges.
+
+Nothing here is `optional`. Every bundle in this catalog is available by being
+in it, so an `optional` entry would restate the directory listing. `optional`
+earns its place only where a catalog is pointing at a curated subset of
+something larger.
+
+The tag vocabulary is still provisional and nothing keys on it yet. The right
+vocabulary is the one that falls out of real projects declaring what they are,
+not the one guessed at first.
 
 ## Proposing a bundle
 
