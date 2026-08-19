@@ -1,0 +1,60 @@
+---
+type: bundle
+version: 0.1.0
+published: 2026-08-18
+consumers: [project, organization]
+entry_point: policy/the-luma-directory
+description: The .luma directory every luma tool writes into — the four tiers, what belongs in each, and the committed-only invariant that makes it trustworthy.
+---
+
+# The luma directory structure
+
+Every luma tool writes into the same directory. Foreman puts audits in
+`records/` and vendors bundles into `bundles/`; a backlog tool owns `backlog/`;
+anything with settings drops a file in `config/`. **This is the contract they
+all honour**, which is why it is written down once rather than implied by four
+tools' behaviour.
+
+The same idea as a filesystem hierarchy standard, scoped to a repository: any
+tool writing into `.luma/` is bound by this the way anything writing to `/var`
+is bound by FHS.
+
+## What is here
+
+- [[the-luma-directory]] — the four tiers, what belongs in each, and the one
+  invariant. Read first.
+- [[create-store]] — initialize `.luma/` in a repository that has none.
+- [[migrate-store]] — move an existing project's scattered material into it.
+
+## Adopting this does not make it apply
+
+Unusual for a bundle, and worth saying plainly. **The layout binds you whether
+you adopt or not** — it is what the tools do. You adopt this so an agent working
+in the repository can read the contract locally, without reaching for anything
+remote.
+
+Which means declining it does not opt you out of anything. It only means nobody
+here can look the answer up.
+
+## The two rules that carry the weight
+
+**Lifecycle is the only axis.** Directories are cut by *what happens to a thing
+over time* — intended, in force, happened — never by topic. A glossary and a
+guardrail share a directory because they share a lifecycle, not because they are
+alike. Adding a second axis means two questions deciding one location.
+
+**Everything in the store is committed, no exceptions.** If uncommitted files
+can live here, two agents on two machines read different rules for the same
+project — a correctness failure in the one system whose job is saying what the
+rules are. Machine-local state lives in `~/.config/luma/`.
+
+## Consumers
+
+Both levels. An organization's headquarters is a repository and keeps the same
+four tiers; the fractal is deliberate.
+
+## Version
+
+`0.1.0`. The layout was reasoned through carefully and **has never been used** —
+nothing has adopted anything yet, and the first real project to migrate into it
+will find things this could not.
