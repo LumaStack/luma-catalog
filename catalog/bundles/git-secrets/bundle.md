@@ -3,7 +3,7 @@ type: bundle
 version: 0.1.0
 published: 2026-08-18
 consumers: [project, organization]
-entry_point: policy/private-identity
+entry_point: policy/never-commit-private-identity
 description: Keeping credentials and private identity out of a repository — names, personal addresses, home paths, machine names, tokens and key files. Prevention first, then audit.
 ---
 
@@ -27,9 +27,9 @@ hold.
 
 **Policy**
 
-- [[private-identity]] — what must never appear, what to use instead, and why
+- [[never-commit-private-identity]] — what must never appear, what to use instead, and why
   deletion does not undo it. Read first.
-- [[committed-secrets]] — what counts as a credential, and why rotation comes
+- [[never-commit-credentials]] — what counts as a credential, and why rotation comes
   before cleanup.
 
 **Workflows**

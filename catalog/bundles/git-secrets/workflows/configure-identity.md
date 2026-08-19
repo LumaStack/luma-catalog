@@ -63,7 +63,7 @@ default-configured one the moment somebody else checks it out.
 
 Every project ends up with fixtures, sample addresses and placeholder paths.
 Decide them at the start and record them in the project's policy — see
-[[private-identity]] — because a project that never decided gets whatever was in
+[[never-commit-private-identity]] — because a project that never decided gets whatever was in
 somebody's clipboard.
 
 ## 6. Check what is already there

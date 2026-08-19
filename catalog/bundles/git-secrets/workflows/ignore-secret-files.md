@@ -49,7 +49,7 @@ git ls-files | grep -E '(^|/)(\.env|id_(rsa|dsa|ecdsa|ed25519)|\.npmrc|\.pypirc|
 ```
 
 Anything listed is already committed and already published. **Rotate what it
-held before removing it** — see [[committed-secrets]] for the order.
+held before removing it** — see [[never-commit-credentials]] for the order.
 
 Removing from the index is the second step, not the first:
 

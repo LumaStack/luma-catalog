@@ -34,12 +34,18 @@ this rule is broken by someone who knows the rule.
 | --- | --- |
 | a personal email | a forge-provided noreply address |
 | a real name | the identity you are happy to publish forever |
-| `/Users/yourname/...` | `/Users/alice/...`, or a variable |
+| `/Users/<name>/...` | `$HOME`, `~`, or a placeholder in angle brackets |
 | a real hostname | `example.com`, `host.example` |
 
 Decide the example names **once, at the start of a project**, and write them
 down. A project that has never decided gets whatever was in the author's
 clipboard.
+
+**Prefer a placeholder that cannot be mistaken for a real value.** `<name>` and
+`$HOME` are unambiguous; `alice` and `bob` are conventional but indistinguishable
+from someone's actual username — including to a scanner, which will flag a
+document that recommends them. This document tripped its own check exactly that
+way before this line existed.
 
 ## Nothing is exempt, least of all tests
 
@@ -68,4 +74,4 @@ is published and being scanned for within seconds. An identity leak has no
 equivalent — there is nothing to rotate, and the honest response is often to
 accept it and stop the next one.
 
-Do not let one reflex govern both. See [[committed-secrets]].
+Do not let one reflex govern both. See [[never-commit-credentials]].
