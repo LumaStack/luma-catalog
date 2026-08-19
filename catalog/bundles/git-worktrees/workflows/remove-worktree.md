@@ -13,9 +13,17 @@ check out elsewhere.
 ## 1. Confirm the work is integrated
 
 ```sh
-git -C "$TREE" status --porcelain          # must be empty
+git -C "$TREE" status --porcelain                 # must be empty
+git -C "$TREE" log --oneline origin/main..HEAD    # must be empty
 git branch --merged main | grep "agent/${SLUG}"
 ```
+
+**The second command is the one that matters.** `status` tells you everything is
+committed; it says nothing about whether those commits left this machine. A
+worktree whose work is committed but unpushed looks completely clean and is one
+`remove` away from being the only copy.
+
+Confirm the work is in `origin/main` — not merely in a local commit.
 
 **`--merged` is trustworthy only if the branch was integrated with a merge
 commit.** Squash and rebase produce new commits whose SHAs are ancestors of
@@ -53,8 +61,9 @@ worktree still holds them, and `--force` is the moment they disappear.
 Before forcing anything, confirm the work is where you think it is:
 
 ```sh
-git -C "$TREE" status --porcelain     # what is actually uncommitted
-git -C "$TREE" show --stat HEAD       # what the last commit really contained
+git -C "$TREE" status --porcelain              # what is actually uncommitted
+git -C "$TREE" show --stat HEAD                # what the last commit contained
+git -C "$TREE" log --oneline origin/main..HEAD # what has not been pushed
 ```
 
 If the second does not match what you intended to commit, that is the failure

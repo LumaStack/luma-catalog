@@ -111,7 +111,16 @@ That second condition is the safety rule and it is doing real work: a tracked
 file can never be duplicated into a worktree, so the pattern list cannot cause
 two copies of something git is managing.
 
-**Create worktrees from a checkout that is on `main`.** The provisioning list is
+**Create worktrees from a checkout that is on `main`:**
+
+```sh
+git checkout main && git pull --ff-only
+```
+
+`--ff-only` refuses rather than quietly creating a merge you did not ask for, so
+a source checkout that has drifted announces itself instead of being repaired
+behind your back.
+ The provisioning list is
 read from the *source* checkout you invoke the command in, so creating from a
 stale branch that predates `.worktreeinclude` carries **nothing** — silently. The
 new worktree comes up with no environment at all and the first failure looks
@@ -178,6 +187,32 @@ That is the right home for a value that must differ per worktree. Where the
 application reads an env file instead, **append — never rewrite.** Truncating a
 file that was just provisioned destroys it, and the failure looks like the copy
 never happened.
+
+## One task, one branch, one pull request — merged serially
+
+**One worktree per task, one branch per worktree, one pull request per branch.**
+Never two agents in one directory; git prevents the branch case and nothing
+prevents the directory case but this rule.
+
+**Merge them one at a time.** When several agents finish together, parallel
+merges produce conflicts that none of them caused and none can resolve alone —
+each was correct against the `main` it started from, and only the second one
+through discovers otherwise. Serialising makes every merge a fast-forward or a
+clean three-way, and it costs a few minutes of queueing.
+
+**Pull before you push.**
+
+```sh
+git pull --rebase origin main    # your own unpushed commits, onto current main
+```
+
+Without this every push is a race, and the loser resolves a rejection under time
+pressure with a worktree full of state.
+
+*Rebasing your own unpushed commits is not the same thing as rebase-merging a
+pull request.* The first replays work nobody has seen; the second rewrites
+commits others may already reference, and breaks merged-detection. Do the first,
+never the second.
 
 ## Scope every `git add`, even working alone
 

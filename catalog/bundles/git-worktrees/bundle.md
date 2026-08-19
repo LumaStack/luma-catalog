@@ -27,8 +27,10 @@ That gap is what this bundle closes.
   shared, and what has to be provisioned. Read first.
 - [[create-worktree]] — create one, provision it, verify it before starting.
 - [[remove-worktree]] — tear it down completely, at merge.
-- [[repair-worktrees]] — the states worktrees get stuck in, and which fix
-  applies to which.
+- [[recover-worktree]] — reclaim one left by a crashed session or a failed
+  setup: a lock nobody holds, a half-created checkout.
+- [[repair-worktrees]] — the metadata states worktrees get stuck in, and which
+  fix applies to which.
 
 ## The rules that eliminate the edge cases
 
@@ -57,6 +59,10 @@ patterns say.
 **Never invent a missing credential.** Stop and say so. A worktree that comes up
 with a placeholder produces failures that look like bugs in the code, hours
 later and somewhere else.
+
+**One task, one branch, one pull request — merged serially.** Parallel merges
+produce conflicts nobody caused: each agent was correct against the `main` it
+started from, and only the second one through finds out otherwise.
 
 **Scope every `git add`.** Never `-A` or `-u` in a shared checkout — it sweeps
 whatever another agent wrote that second into your commit. Costs nothing alone,
