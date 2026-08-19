@@ -53,22 +53,38 @@ git worktree add -b "$BRANCH" "$TREE" origin/main
 
 ## 4. Provision what the checkout needs to run
 
-**Only the files the project names.** Default is `.env` and its variants:
+Read the project's `.worktreeinclude` — `.gitignore` syntax, at the repository
+root — and copy every file that matches **and is already gitignored**:
 
 ```sh
-for f in .env .env.local; do
-  [ -f "$REPO/$f" ] && cp "$REPO/$f" "$TREE/$f"
+[ -f "$REPO/.worktreeinclude" ] || echo "no .worktreeinclude — nothing will be provisioned"
+
+(cd "$REPO" && git ls-files --others --ignored --exclude-standard) |
+while IFS= read -r f; do
+  [ -n "$f" ] || continue
+  (cd "$REPO" && git check-ignore -q --no-index      --exclude-from=.worktreeinclude "$f") || continue
+  mkdir -p "$TREE/$(dirname "$f")"
+  cp -p "$REPO/$f" "$TREE/$f"
 done
 ```
 
-**If a required file is missing from the main checkout, stop and say so.** Do
-not fall back to `.env.example`, and do not invent values — a worktree that
-comes up with placeholder credentials fails in ways that look like bugs in the
-code, sometimes hours later.
+Three details, each closing a real failure:
 
-**Never copy dependencies or build output.** `node_modules`, `.venv`, `dist`,
-`target`, `.next` and caches are regenerated. Copied ones are often invalid in a
-new path, and some embed the absolute directory they were built in.
+- **`--exclude-standard` first** restricts candidates to files git already
+  ignores, so a tracked file can never be duplicated no matter what the
+  patterns say.
+- **`cp -p`** preserves mode. Without it a `0600` key arrives world-readable —
+  a security regression created by the provisioning step itself.
+- **`mkdir -p`** so nested entries like `config/local.yml` work rather than
+  failing on a missing directory.
+
+**If a file the project needs is missing from the main checkout, stop and say
+which.** Do not fall back to `.env.example` and do not invent values. A worktree
+that comes up with placeholder credentials fails hours later, somewhere else,
+looking like a bug in the code.
+
+**Never copy dependencies or build output**, whatever the patterns say. They are
+regenerated in the next step.
 
 ## 5. Install dependencies
 
@@ -82,17 +98,34 @@ price of a checkout that is actually correct.
 ## 6. Claim a port and namespace anything shared
 
 ```sh
-OFFSET=$(( 0x$(printf '%s' "$SLUG" | shasum | cut -c1-4) % 1000 ))
-PORT=$(( 3000 + OFFSET ))
+OFFSET=$(( 0x$(printf '%s' "$SLUG" | shasum | cut -c1-4) % 6900 ))
+PORT=$(( 3100 + OFFSET ))
 ```
 
-**Derived from the slug, never from position in `git worktree list`.** Position
-shifts the moment another worktree is removed, which would silently reassign the
-port of a process already running.
+**Hex with an explicit `0x`, not extracted decimal digits.** The common recipe —
+strip non-digits from a hash and do arithmetic — breaks when the result starts
+with `0`, because the shell reads it as octal and any `8` or `9` is then a fatal
+error. It works until a branch name happens to produce one.
 
-Apply the same prefix to every shared namespace the project touches — container
-names, compose project name, database name, cache directory. Anything two
-agents could both claim needs the slug in it.
+Store it where the worktree can find it:
+
+```sh
+git config --global extensions.worktreeConfig true    # once, per repository
+git -C "$TREE" config --worktree luma.port "$PORT"
+```
+
+If the application reads an env file instead, **append**:
+
+```sh
+printf '\nDEV_PORT=%s\n' "$PORT" >> "$TREE/.env.local"
+```
+
+**Never `>`.** Truncating a file provisioned in step 4 destroys it, and the
+failure presents as though the copy never happened — a mistake present in more
+than one published setup script.
+
+Apply the slug as a prefix to every other shared namespace the project touches:
+container names, compose project, database name, cache directory.
 
 ## 7. Initialise submodules, if there are any
 
