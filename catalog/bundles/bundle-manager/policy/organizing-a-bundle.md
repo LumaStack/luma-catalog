@@ -120,13 +120,37 @@ somebody has to choose.
 as they carry their own copies of shared types. Copies that drift are a finding,
 not a merge.
 
+### Shared *content* extracts; shared *values* do not
+
+When several bundles state the same rule, that rule is misfiled — it belongs to
+neither of them. Extract it into a bundle of its own, and the test for where to
+cut is:
+
+**A bundle may reference another for depth. Never for capability.**
+
+Remove the referenced bundle and ask whether an adopter can still act. If yes,
+the reference is a sentence in a document and nothing more. If no, you have
+built a dependency by accident, and the fix is to move content back rather than
+to build a resolver.
+
+In practice that means **the operative rule stays and the reasoning moves.**
+Three lines everybody already knows cost nothing to repeat and cannot
+meaningfully drift; a hundred lines of argument repeated is exactly where drift
+lives, and where it has already happened here.
+
+**A reference is not a dependency.** Nothing parses it, nothing fetches
+anything, and adoption cannot fail because of it. Where you want adopters to get
+both, that is what a catalog's `requires` and starters are for — **composition
+belongs to the catalog, not to bundles.**
+
 ### The limit, stated honestly
 
-This works while bundles overlap in what they *mention*. It stops working the
-day two bundles must genuinely agree on a value — a shared path, a shared
-format, a shared identifier — and there is no place to put the agreement.
+All of that works because the shared thing is *content*, which can live in one
+place and be pointed at. It stops working the day two bundles must agree on a
+**value** — a path, an identifier, a format version they must both honour — and
+there is nowhere to put the agreement, because no bundle can read another.
 
-At that point the choice is a foundation bundle both vendor from, or dependency
+At that point the choice is a foundation bundle both vendor from, or real
 resolution. **Neither is built, and the trigger is worth recognising rather than
 solving early:** it is the first time two bundles cannot both be correct, not
 merely the first time they mention each other.

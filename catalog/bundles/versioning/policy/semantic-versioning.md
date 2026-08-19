@@ -1,22 +1,34 @@
 ---
 type: policy
-title: Versioning releases
-description: Releases are versioned with semantic versioning. What each part means, when to bump which, and the pre-1.0 rules that trip people up.
+title: Semantic versioning
+description: What each part of a version means, when to bump which, and the parts that get decided wrongly — the pre-1.0 rules, the v prefix, and deprecating before removing.
+preload: mandatory
 ---
 
-# Versioning releases
+# Semantic versioning
 
-Releases use **[semantic versioning](https://semver.org)**. The specification is
-short and worth reading once; this document covers the parts that get decided
-wrongly in practice rather than restating it.
+**[semver.org](https://semver.org)** is the specification — short, and worth
+reading once. This covers the parts that get decided wrongly in practice rather
+than restating it.
+
+**This applies to anything versioned**, not only to releases: a package, a
+bundle, a schema, an API, a format. Releasing is one consumer of versioning
+rather than its owner, which is why this is a bundle of its own.
 
 `MAJOR.MINOR.PATCH`
 
 | Bump | When | The test |
 | --- | --- | --- |
-| **major** | a change that breaks existing users | someone doing nothing has to act |
-| **minor** | new capability, existing usage unaffected | someone doing nothing keeps working |
+| **major** | a change that breaks existing users | somebody doing nothing has to act |
+| **minor** | new capability, existing usage unaffected | somebody doing nothing keeps working |
 | **patch** | fixes and clarifications, no new capability | nothing they could call is different |
+
+**What counts as breaking depends on what you version.** For a package it is a
+removed function or a changed signature. For a bundle it is a document removed
+or renamed, a field's obligation strengthened, or a document becoming required
+context when it was not. For a schema it is a field that was optional becoming
+mandatory. The question is the same in every case — *does somebody doing nothing
+have to act* — and only the surface changes.
 
 ## The version is a promise, not a mood
 
@@ -86,3 +98,7 @@ habit.
 - [semver.org](https://semver.org) — the specification. Twelve short clauses.
 - [Keep a Changelog](https://keepachangelog.com) — the companion convention for
   writing down what each version contained.
+
+Publishing a version is a separate concern with its own rules — what a release
+is called, what its notes must contain, when to cut one. The release bundle
+covers that and points back here for the number itself.
