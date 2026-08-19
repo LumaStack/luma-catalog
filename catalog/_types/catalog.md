@@ -105,6 +105,32 @@ applies and the strongest obligation among them is in force, so "mandatory for
 infrastructure, recommended for everyone else" is two entries rather than a
 conditional.
 
+### `requires` does not say "if you take A, take B"
+
+Worth stating, because it is the first thing people reach for it to do. Every
+entry is an obligation **on a project**, optionally narrowed by what that project
+declared itself to be. Nothing here links one bundle to another, and nothing
+should.
+
+Three ways to express *these go together*, in the order to try them:
+
+**The bundle is broadly useful — recommend it on its own merits.** If B is worth
+having whether or not you took A, say so directly. Most apparent couplings are
+this: a versioning policy is wanted by anything that versions something, not
+only by whatever happened to surface the need.
+
+**The pairing follows from what a project is — use tags.** A project declares
+what it is; the catalog says what that kind of project needs. That is what tags
+are for, and it keeps the fact where it is true.
+
+**They only make sense together — then they are one bundle.** If adopting A
+without B leaves somebody with rules and no procedure for following them, the
+split was wrong. **A coupling you cannot express is usually a bundle boundary in
+the wrong place**, not a missing mechanism.
+
+Bundles have no dependencies deliberately; composition belongs here, and here it
+is expressed as obligations on projects rather than as edges between bundles.
+
 **Obligation governs whether a project must adopt a bundle. It never governs how
 hard conformance is checked once it has.** A recommended bundle a project chose
 to adopt is checked exactly as strictly as a mandated one — drift is drift. What
