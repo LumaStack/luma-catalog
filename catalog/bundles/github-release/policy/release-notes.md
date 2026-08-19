@@ -39,29 +39,64 @@ says what moved lets most people stop reading, which is the point.
 A release with no honest short title is usually a release doing too many
 unrelated things.
 
-## Required sections
+## Order: urgency, not chronology
 
-**Changes, grouped** — Added, Changed, Deprecated, Removed. Only the groups that
-apply.
+A reader arrives with two questions, in this order: **will this break me**, and
+**what must I do**. Everything else is context they may never need.
 
-Each entry says **what changed and why**, not only what changed. The outcome is
-discoverable from a diff; the reasoning is not, and it is what someone needs
-when deciding whether your change is a problem for them.
+So the notes lead with the answers, not with a narrative of the work:
 
-**Upgrading from vX.Y.Z** — what a user must actually *do*.
+1. ⚠️ **Breaking banner** — only when something breaks
+2. **Upgrading from vX.Y.Z**
+3. The change groups
+4. Version category, known issues — when they apply
 
-This is the most valuable section and the most often omitted. **Say plainly when
-the answer is nothing**, which is usually the single most useful sentence in the
-notes — it converts "I should read all of this carefully" into "I can upgrade
-now."
+Listing what was built first and burying the upgrade instructions at the bottom
+optimises for the author's memory of the release rather than the reader's need,
+and most readers stop before reaching it.
+
+## The breaking banner
+
+When something stops working, say so **above everything else**:
+
+```markdown
+> ⚠️ **Breaking.** The `--strict` flag is gone. See **Upgrading** below.
+```
+
+One line, at the very top, with the symbol — this is the case Keep a Changelog
+singles out, because a user must clearly see a breaking change *before*
+upgrading rather than discovering it afterwards.
+
+**Only when it applies.** A banner that appears on every release is decoration,
+and the next genuinely breaking one will be scrolled past like all the others.
+
+## Upgrading from vX.Y.Z
+
+The most valuable section and the most often omitted, which is why it sits
+second rather than last.
+
+**Say plainly when the answer is nothing** — usually the single most useful
+sentence in the notes, because it converts *I should read all of this carefully*
+into *I can upgrade now*.
 
 It is not a copy of per-change migration notes. Those are written as each change
 lands and are scattered; this is the whole upgrade in one place, written once
 the release is known.
 
+## The change groups
+
+`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`. Only the ones
+that apply, in that order. Same six as the changelog uses — see [[changelog]],
+and keep them identical so an entry can move between the two without being
+rewritten.
+
+Each entry says **what changed and why**, not only what changed. The outcome is
+discoverable from a diff; the reasoning is not, and it is what someone needs to
+decide whether your change is a problem for them.
+
 ## Conditional sections
 
-**Version category** — include it whenever the number is not what the rules
+**Version category** — include whenever the number is not what the rules
 would obviously produce: a breaking change shipping as a patch under a pre-1.0
 allowance, a large release that is only a minor, a skipped deprecation cycle.
 
@@ -83,4 +118,5 @@ that hides a known defect buys a day and spends a reputation.
 ## A pointer to the full history
 
 End with a link to `CHANGELOG.md`. Release notes are per-version and a reader
-often arrives needing the shape of several.
+often arrives needing the shape of several — see [[changelog]] for what that
+file is and how it differs from these notes.

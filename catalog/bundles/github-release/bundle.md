@@ -4,7 +4,7 @@ version: 0.1.0
 published: 2026-08-18
 consumers: [project]
 entry_point: workflows/publish-release
-description: Cutting and publishing GitHub releases — semantic versioning, release titles and contents, and the gh workflow.
+description: Cutting and publishing GitHub releases — semantic versioning, the changelog, release titles and contents, and the gh workflow.
 ---
 
 # GitHub release
@@ -24,6 +24,8 @@ against it, notes that list commits instead of consequences.
 - [[versioning]] — semantic versioning, the pre-`1.0.0` rules that trip people
   up, and where the specification lives.
 - [[release-notes]] — what a release is called and what it must contain.
+- [[changelog]] — `CHANGELOG.md`, following Keep a Changelog, and how it differs
+  from release notes.
 - [the release notes template](templates/release-notes.md) — the required
   sections in order, with the reasoning in comments.
 
