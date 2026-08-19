@@ -7,7 +7,7 @@ entry_point: workflows/record-decision
 description: Decisions recorded with their reasoning, deferred alternatives, and re-open triggers.
 ---
 
-# Decisions
+# Decision records
 
 A decision without its reasoning is not finished. The answer is perishable — it
 gets superseded, or the constraint that forced it disappears — but the argument
@@ -21,6 +21,22 @@ It applies at both levels deliberately. An organization records decisions about
 how it works; a project records decisions about how it is built. The documents
 are the same shape, and which level a given adopter wants is not the
 publisher's call to make.
+
+## One of the `*-records` family
+
+Named for the artifact it produces in the store's `records/` tier, alongside
+whatever else comes to live there — `audit-records`, `log-records`,
+`incident-records`.
+
+The suffix names the **kind** of thing: every one of them produces records, and
+each prefix says which. It also keeps the noun convention every other bundle
+follows, and leaves the imperative form free for the workflow inside — the
+bundle is `decision-records`, the workflow is [[record-decision]], and neither
+shadows the other.
+
+*The cost, stated once:* they do not sort together in a listing. A `record-*`
+prefix would have grouped them, at the price of every bundle in the family
+reading like a workflow.
 
 ## What is here
 
