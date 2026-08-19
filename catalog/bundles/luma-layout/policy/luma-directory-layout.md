@@ -1,6 +1,6 @@
 ---
 type: policy
-title: The .luma directory
+title: The .luma directory layout
 description: The four directories every luma tool honours, what belongs in each, and the one invariant that makes the whole thing trustworthy.
 preload: mandatory
 ---
@@ -28,9 +28,9 @@ locally, without reaching for anything remote.
 **One root.** A repository root is contested space — source, tests, manifests,
 continuous integration config, licence, readme — and four more entries is real
 clutter. One root also means an agent arriving cold does a single lookup and
-cannot half-find the store.
+cannot half-find it.
 
-**Hidden**, because the store is not the product. It is how the project is run,
+**Hidden**, because `.luma/` is not the product. It is how the project is run,
 sitting beside the thing the project *is*, and a visible `luma/` next to `src/`
 reads as a source module. The dot says *infrastructure, not shipped output*.
 
@@ -54,7 +54,7 @@ but because they have the same lifecycle: both are live, both are currently in
 force. That is the only axis. Sorting by topic as well would mean two questions
 deciding one location, and every new item needing both answered.
 
-## Everything in the store is committed. No exceptions.
+## Everything in `.luma/` is committed. No exceptions.
 
 If uncommitted files can live here, a reader cannot distinguish an authoritative
 rule from somebody's local tweak, and **two agents on two machines read

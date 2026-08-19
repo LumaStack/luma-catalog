@@ -3,11 +3,11 @@ type: bundle
 version: 0.1.0
 published: 2026-08-18
 consumers: [project, organization]
-entry_point: policy/the-luma-directory
+entry_point: policy/luma-directory-layout
 description: The .luma directory every luma tool writes into — the four tiers, what belongs in each, and the committed-only invariant that makes it trustworthy.
 ---
 
-# The luma directory structure
+# Luma layout
 
 Every luma tool writes into the same directory. Foreman puts audits in
 `records/` and vendors bundles into `bundles/`; a backlog tool owns `backlog/`;
@@ -21,10 +21,10 @@ is bound by FHS.
 
 ## What is here
 
-- [[the-luma-directory]] — the four tiers, what belongs in each, and the one
+- [[luma-directory-layout]] — the four tiers, what belongs in each, and the one
   invariant. Read first.
-- [[create-store]] — initialize `.luma/` in a repository that has none.
-- [[migrate-store]] — move an existing project's scattered material into it.
+- [[initialize-luma]] — initialize `.luma/` in a repository that has none.
+- [[migrate-into-luma]] — move an existing project's scattered material into it.
 
 ## Adopting this does not make it apply
 
@@ -43,7 +43,7 @@ over time* — intended, in force, happened — never by topic. A glossary and a
 guardrail share a directory because they share a lifecycle, not because they are
 alike. Adding a second axis means two questions deciding one location.
 
-**Everything in the store is committed, no exceptions.** If uncommitted files
+**Everything in `.luma/` is committed, no exceptions.** If uncommitted files
 can live here, two agents on two machines read different rules for the same
 project — a correctness failure in the one system whose job is saying what the
 rules are. Machine-local state lives in `~/.config/luma/`.
@@ -52,6 +52,24 @@ rules are. Machine-local state lives in `~/.config/luma/`.
 
 Both levels. An organization's headquarters is a repository and keeps the same
 four tiers; the fractal is deliberate.
+
+## On the name, and where it may go
+
+**`luma-layout` because it is what somebody guesses correctly with no context.**
+A bundle name's job is to get the right reader to open it, not to summarise what
+is inside — and the entry point covers the rules the moment they do.
+
+**There is no special noun for it, deliberately.** An earlier draft called it
+*the store*, and that word is claimed several times over — a Redux store, an app
+store, browser storage, a retail store. Prose here says `.luma/` where the path
+is meant and *the luma directory* where a noun is needed, and needs nothing
+further.
+
+**If this bundle ever grows past layout** — acquiring the luma model, the
+vocabulary, what adoption and promotion mean — that is the point at which
+something larger absorbs it, and `luma-base` or `luma-core` is the name for the
+result. Neither is right today: `core` would promise the model this bundle does
+not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
 

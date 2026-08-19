@@ -10,7 +10,7 @@ description: The prose a repository publishes — where it lives, what a README 
 # Project documentation
 
 The documentation a repository publishes about itself: the front door, the guide
-for a newcomer, the explanation of why it is shaped this way. Not the store, not
+for a newcomer, the explanation of why it is shaped this way. Not `.luma/`, not
 the records, not the changelog — those belong to other bundles and this one says
 so out loud.
 
@@ -45,7 +45,7 @@ past those four earns its place individually.
 | --- | --- |
 | `CHANGELOG.md` | the release bundle |
 | decision, audit and log records | the record bundles, under `.luma/records/` |
-| everything in `.luma/` | the directory-structure bundle |
+| everything in `.luma/` | the luma-layout bundle |
 | `AGENTS.md`, `CLAUDE.md` | nothing — generated projections |
 
 **Named, not depended on.** Nothing here breaks if those bundles are absent; you

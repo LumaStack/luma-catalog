@@ -24,7 +24,7 @@ publisher's call to make.
 
 ## One of the `*-records` family
 
-Named for the artifact it produces in the store's `records/` tier, alongside
+Named for the artifact it produces in the `.luma/records/` tier, alongside
 whatever else comes to live there — `audit-records`, `log-records`,
 `incident-records`.
 

@@ -16,7 +16,7 @@ LICENSE            legal, and tooling reads it
 CONTRIBUTING.md    forges surface it when someone opens a pull request
 SECURITY.md        forges surface it as the reporting channel
 docs/              everything else
-.luma/             the store — not documentation, see below
+.luma/             luma's own directory — not documentation, see below
 ```
 
 ## Why `docs/` rather than the root
@@ -61,8 +61,8 @@ tell that an omission is a boundary rather than a gap.
 | `CHANGELOG.md` | the release bundle | its format follows from how versions are cut, not from how prose is written |
 | decision records | the decision-records bundle | a record of what happened, with its own contract and lifecycle |
 | audit and log records | their own record bundles | append-only, dated, machine-written |
-| everything in `.luma/` | the directory-structure bundle | the store is how the project is run, not what it publishes |
-| `AGENTS.md`, `CLAUDE.md` | nothing — they are generated | projections of the store, disposable, never edited by hand |
+| everything in `.luma/` | the luma-layout bundle | that directory is how the project is run, not what it publishes |
+| `AGENTS.md`, `CLAUDE.md` | nothing — they are generated | projections of `.luma/`, disposable, never edited by hand |
 
 **These bundles are named, not depended on.** Nothing here breaks if the release
 bundle is not adopted; you simply have no policy about your changelog. A bundle
