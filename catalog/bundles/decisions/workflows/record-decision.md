@@ -11,12 +11,13 @@ preload: mandatory
 
 Look in this order and take the first that exists:
 
-1. `.luma/records/decisions/` — a directory of individual records
-2. `docs/DECISIONS.md`
-3. `DECISIONS.md`
+1. `.luma/records/decisions/` — a namespaced directory of individual records
+2. `.records/decisions/` — a generic directory of individual records
+3. `docs/DECISIONS.md`
+4. `DECISIONS.md`
 
 `.luma/records/decisions/` wins when several exist, because it is the mature shape
-and the others are what a project keeps before it needs one.
+and `DECISIONS.md` is what a project keeps before it needs a mature approach.
 
 **If more than one exists, say so before doing anything else.** That is not a
 preference to resolve quietly — decisions are in two places and no reader can
