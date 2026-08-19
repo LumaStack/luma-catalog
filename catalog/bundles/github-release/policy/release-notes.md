@@ -41,8 +41,10 @@ unrelated things.
 
 ## Required sections
 
-**Changes, grouped** — Added, Changed, Deprecated, Removed. Only the groups that
-apply.
+**Changes, grouped** — `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`,
+`Security`. Only the groups that apply, in that order. Same six as the changelog
+uses — see [[changelog]], and keep them identical so an entry can move between
+the two without being rewritten.
 
 Each entry says **what changed and why**, not only what changed. The outcome is
 discoverable from a diff; the reasoning is not, and it is what someone needs
@@ -83,4 +85,5 @@ that hides a known defect buys a day and spends a reputation.
 ## A pointer to the full history
 
 End with a link to `CHANGELOG.md`. Release notes are per-version and a reader
-often arrives needing the shape of several.
+often arrives needing the shape of several — see [[changelog]] for what that
+file is and how it differs from these notes.

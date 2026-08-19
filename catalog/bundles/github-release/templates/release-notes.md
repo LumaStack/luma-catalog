@@ -26,6 +26,16 @@ Delete every comment before publishing.
 
 <!-- Gone. What to use instead. -->
 
+## Fixed
+
+<!-- Bug fixes. What was broken, and for whom. -->
+
+## Security
+
+<!-- Vulnerabilities. Never file these under Fixed — this group exists so
+     somebody scanning for "must I upgrade urgently" finds the answer in one
+     place. Include severity and whether exploitation was observed. -->
+
 ## Upgrading from vX.Y.Z
 
 <!-- What a user must actually DO. If the answer is nothing, say exactly that
