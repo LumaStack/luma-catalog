@@ -13,6 +13,7 @@ preload: mandatory
   _types/          Type Definitions (reserved by the format)
   workflows/       procedures — type: workflow
   policy/          adopted courses of action — type: policy
+  scripts/         ... (fill this in)
   templates/       assets to copy — no frontmatter
 ```
 
@@ -79,6 +80,20 @@ distinction reads well. A label costs a name every future bundle has to avoid.
 **Links: `[[…]]` for documents, `[…](…)` for everything else.** In frontmatter a
 wikilink **must be quoted** — `[[…]]` is YAML flow-sequence syntax, so an
 unquoted one parses as a nested array and the link silently never resolves.
+
+## Bundles may carry executables; adopting one runs nothing
+
+A workflow that ships `scripts/check.sh` is ordinary, and often necessary — it
+is what travels into a harness when the workflow is projected into a skill.
+Put such a script beside the workflow that owns it.
+
+**What a bundle must never do is run something as a side effect of being
+adopted.** `foreman adopt` copies files; nothing executes. A script here runs
+when a person or an agent deliberately invokes it, having seen what it is.
+
+The difference is who chose. Code you ran on purpose is a script. Code that ran
+because you fetched something is a supply chain, and the promotion path —
+project to organization to universal — would be one.
 
 ## Bundles are self-contained
 
