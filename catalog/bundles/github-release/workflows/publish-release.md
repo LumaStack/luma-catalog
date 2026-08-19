@@ -76,8 +76,9 @@ this workflow does not, such as which files carry a version.
 
 Before publishing, confirm:
 
-- **The version** is what the change actually warrants. See [[versioning]], and
-  in particular the pre-`1.0.0` rules, which are where this goes wrong.
+- **The version** is what the change actually warrants — see
+  [[release-versions]]. The pre-`1.0.0` rules are where this goes wrong most
+  often, and they are in the versioning bundle.
 - **The tag is annotated**, not lightweight: `git tag -a vX.Y.Z -m "…"`. A
   lightweight tag carries no message, author or date.
 - **The tag is pushed.** `git push origin main` does **not** push tags.
