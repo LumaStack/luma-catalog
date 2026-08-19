@@ -1,13 +1,17 @@
 ---
 type: workflow
 title: Configure merge settings
-description: Disable squash and rebase merging at the repository level and enable branch auto-delete. Use when setting up a repository, or when a merge dropdown still offers squash.
+description: Disable squash and rebase merging at the forge and enable branch auto-delete. Written for GitHub; the equivalent setting exists elsewhere. Use when setting up a repository, or when a merge dropdown still offers squash.
 ---
 
 # Configure merge settings
 
 Makes [[merge-commits]] true rather than merely stated. A policy nobody applied
 is a policy that gets broken by the first person in a hurry.
+
+**The commands here are GitHub's.** The rule they enforce is not — every forge
+that offers squash or rebase merging has the same ancestry failure, because it
+is a property of git rather than of any host. See *Other forges* at the end.
 
 ## 1. See what the repository allows now
 
@@ -65,3 +69,27 @@ These toggles sit beside unrelated options that people adjust — branch
 protection, required reviews, discussions. **Re-run step 1 after anyone touches
 repository settings**, because the symptom of a regression is branches slowly
 accumulating, which nobody notices for weeks.
+
+## Other forges
+
+The setting exists everywhere; only its name changes. **These are pointers, not
+verified commands** — check your forge's current documentation rather than
+trusting a name written down elsewhere.
+
+- **GitLab** — a project-level merge method, plus a separate squash option.
+  Set the method to the one that produces a merge commit, and squash to
+  *do not allow*.
+- **Gitea / Forgejo** — per-repository toggles for which merge styles are
+  offered. Leave the merge-commit style enabled and disable the rest.
+- **Bitbucket** — a repository merge strategy setting with the same shape.
+
+**What to verify is the same everywhere**, whatever it is called:
+
+1. The merge-commit style is available.
+2. Squash and rebase styles are **not**, so the lossy path cannot be chosen.
+3. Head branches delete on merge — which works only because the first two hold.
+
+If a forge cannot disable squash, the policy is unenforceable there and becomes
+discipline. Say so out loud rather than pretending the setting exists, because a
+rule everyone believes is enforced and is not is worse than one known to rely on
+care.
