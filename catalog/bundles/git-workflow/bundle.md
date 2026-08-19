@@ -16,6 +16,12 @@ here yet.
 **It prescribes no branching model.** Nothing here says trunk-based, gitflow, or
 anything between — only what happens at the moment a branch is integrated.
 
+**It is not tied to a forge either.** The rule is a property of git: squash and
+rebase produce commits that are ancestors of nothing, so merged-detection fails
+on GitLab, Forgejo, Gitea and Bitbucket exactly as it does on GitHub. Only the
+*enforcement* is host-specific, and the workflow says which host its commands
+are for.
+
 ## What is here
 
 - [[merge-commits]] — pull requests are integrated with merge commits, and why
