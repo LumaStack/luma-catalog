@@ -32,10 +32,15 @@ That gap is what this bundle closes.
 
 ## The rules that eliminate the edge cases
 
-**Worktrees live outside the repository**, never inside it even gitignored. One
-`.gitignore` mistake away from committing them, and every tool that walks the
-tree — scanners, formatters, test discovery — otherwise walks *n* copies of the
-codebase.
+**Default to a worktree without being asked.** Any task that edits or commits
+starts in one. By the time a collision is visible it has already happened — an
+edit swept into the wrong commit, a rename breaking another session's working
+directory, an unexplained divergence nobody can trace.
+
+**Create them through the path that runs the whole lifecycle**, never a bare
+`git worktree add`. That path provisions, locks while live, sweeps up, and
+resumes; a bare `add` gives you a directory and none of it, and the missing
+provisioning is silent.
 
 **The slug is the identity** of the directory, the branch, the port offset and
 every namespaced resource. One name, so nothing can drift out of sync.
@@ -52,6 +57,10 @@ patterns say.
 **Never invent a missing credential.** Stop and say so. A worktree that comes up
 with a placeholder produces failures that look like bugs in the code, hours
 later and somewhere else.
+
+**Scope every `git add`.** Never `-A` or `-u` in a shared checkout — it sweeps
+whatever another agent wrote that second into your commit. Costs nothing alone,
+so it is unconditional rather than something to switch on.
 
 ## Where "it just works" is not achievable
 

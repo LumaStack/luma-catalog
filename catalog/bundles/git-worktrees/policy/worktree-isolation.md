@@ -12,25 +12,52 @@ discipline. A worktree gives each its own directory and branch over one shared
 object database — but only the *tracked* files come with it. **Everything that
 makes a checkout runnable is untracked, and none of it arrives on its own.**
 
-These rules exist so no situation requires judgement. Where a rule looks
-excessive, it is closing an edge case that has bitten somebody.
+These rules exist so no situation requires judgement. Where one looks excessive,
+it is closing an edge case that has bitten somebody.
 
-## Worktrees live outside the repository
+## Default to a worktree, without being asked
 
-```
-<repo>/                     the main checkout
-<repo>.worktrees/<slug>/    every linked worktree
-```
+**Any task that edits or commits starts in its own worktree.** Not when someone
+announces parallel work — always, because by the time a collision is visible it
+has already happened: an edit swept into the wrong commit, a rename in one
+session breaking another's working directory, a mystery *ahead 4* with no
+explanation.
 
-**Never inside the repository, even gitignored.** A gitignored directory inside
-the tree is one `.gitignore` mistake away from being committed, and every tool
-that walks the tree — scanners, linters, formatters, test discovery — now walks
-*n* copies of the codebase. A secrets scanner reporting the same `.env` five
-times is the mild version; a formatter rewriting another agent's working files
-is not.
+**Opt out only for** read-only or answer-only work, where there is nothing to
+collide, or a genuinely throwaway edit when you are *certain* no other agent is
+in the repository.
 
-Outside, the main checkout stays exactly as clean as it was, and contamination
-is impossible rather than prevented.
+The overhead is small and the failures are not. A clobbered edit costs more to
+diagnose than every worktree you will create that week — and it costs it later,
+in a session that has forgotten the cause.
+
+## Create them through the path that runs the whole lifecycle
+
+**Not a bare `git worktree add`.**
+
+Whatever creates worktrees for you — a harness command, a project script — is
+not a convenience wrapper around `git worktree add`. It runs the steps that make
+the checkout usable: provisioning from `.worktreeinclude`, locking while a
+session is live, sweeping up on exit, resuming an interrupted one.
+
+A bare `add` gives you a directory and none of that. **The missing provisioning
+is silent**: the worktree comes up looking correct and fails on the first
+command that needs an environment file, by which point the cause is several
+steps behind you.
+
+If nothing provides this, write the script once. The point is one path that
+always runs every step, not which tool runs it.
+
+**Worktrees live in a gitignored directory inside the repository**, wherever
+that path-of-record puts them.
+
+Keeping them outside looks safer and forfeits the lifecycle, which is a bad
+trade. The risk it appears to remove — tools walking the tree and finding *n*
+copies of the codebase — **belongs to those tools**. Anything scanning a
+repository should ask git rather than walking the filesystem, or it will find
+`node_modules` and build output too. Fixing one scanner is cheaper than
+constraining every project's layout, and it fixes the other cases at the same
+time.
 
 ## One branch, one worktree, one agent
 
@@ -83,6 +110,13 @@ certs/*.pem
 That second condition is the safety rule and it is doing real work: a tracked
 file can never be duplicated into a worktree, so the pattern list cannot cause
 two copies of something git is managing.
+
+**Create worktrees from a checkout that is on `main`.** The provisioning list is
+read from the *source* checkout you invoke the command in, so creating from a
+stale branch that predates `.worktreeinclude` carries **nothing** — silently. The
+new worktree comes up with no environment at all and the first failure looks
+like a broken tool. Keep the shared checkout on `main` and branch task worktrees
+off it.
 
 Everything else is absent by design. **Dependencies are reinstalled, not
 copied** — `node_modules`, `.venv`, `dist`, `target` and build caches are
@@ -144,6 +178,37 @@ That is the right home for a value that must differ per worktree. Where the
 application reads an env file instead, **append — never rewrite.** Truncating a
 file that was just provisioned destroys it, and the failure looks like the copy
 never happened.
+
+## Scope every `git add`, even working alone
+
+**Never `git add -A` or `git add -u` in a shared checkout.** Name the paths:
+
+```sh
+git add src/thing.py docs/thing.md
+```
+
+`-A` sweeps whatever another agent happens to have written that second into your
+commit. The result is a commit containing someone else's half-finished work,
+attributed to your task, and discovered much later by whoever is confused by it.
+
+This costs nothing when working alone and it is the single cheapest guard
+against the failure, so it is unconditional rather than something to remember
+when parallel work starts.
+
+## Know what runs from a worktree and what does not
+
+A worktree is for **editing, committing and pushing**. Operations that act on
+the outside world — deploying, publishing, anything touching shared
+infrastructure — should run from the canonical checkout unless you have
+deliberately made them worktree-safe.
+
+The failure this prevents is subtle: an operation that reads its configuration
+from the current directory picks up a task worktree's provisioned copy, which
+was derived for isolation rather than for production. It will usually work,
+which is what makes it dangerous.
+
+Decide this per operation and write it down, because the answer is not
+guessable from the command.
 
 ## Cleanup is part of the task, not a periodic chore
 

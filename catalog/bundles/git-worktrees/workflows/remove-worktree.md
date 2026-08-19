@@ -41,8 +41,24 @@ that no longer exists is a worse failure than a stale container.
 git worktree remove "$TREE"
 ```
 
-Refuses if there are uncommitted changes, which is the check working. Use
-`--force` only when you have read what would be discarded.
+Refuses if there are uncommitted changes. **That refusal is the check working —
+do not reach for `--force` to get past it.**
+
+Those files are uncommitted work, and `--force` discards them silently. The case
+that makes this dangerous is not carelessness but a git behaviour almost nobody
+knows: **a `git add` naming a path that was already `git mv`'d aborts and stages
+nothing at all.** So a commit that looked complete quietly missed files, the
+worktree still holds them, and `--force` is the moment they disappear.
+
+Before forcing anything, confirm the work is where you think it is:
+
+```sh
+git -C "$TREE" status --porcelain     # what is actually uncommitted
+git -C "$TREE" show --stat HEAD       # what the last commit really contained
+```
+
+If the second does not match what you intended to commit, that is the failure
+above, and the files in front of you are the only copy.
 
 For a very large tree, `git worktree remove` can be slow because it unlinks
 files one at a time. The faster path costs a second command that **must not be
