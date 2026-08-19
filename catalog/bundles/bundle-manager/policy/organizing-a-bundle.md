@@ -95,6 +95,42 @@ The difference is who chose. Code you ran on purpose is a script. Code that ran
 because you fetched something is a supply chain, and the promotion path —
 project to organization to universal — would be one.
 
+## When two bundles care about the same thing
+
+Bundles have no dependencies, so there is no mechanism to say *this one needs
+that one*. Two bundles will nevertheless end up caring about the same file, the
+same directory, or the same convention. **Acknowledge, do not depend.**
+
+**Name the boundary in prose.** A bundle may say *the changelog is owned by the
+release bundle* without requiring it to be adopted. Nothing breaks if it is
+absent — the adopter simply has no policy about their changelog, and a reader
+can tell the omission is a boundary rather than a gap.
+
+**Never link across bundles.** A wikilink or a path into another bundle breaks
+self-containment and will be reported. Refer to the other bundle by name, as
+text.
+
+**Agreeing on a location is not a conflict.** Two bundles both saying prose goes
+in `docs/` is a convention holding, not a collision. A collision is two bundles
+requiring *different* things of the same path — and that is a real conflict that
+no resolution rule should paper over, because a project cannot satisfy both and
+somebody has to choose.
+
+**Where several bundles need the same rule, each carries its own copy**, exactly
+as they carry their own copies of shared types. Copies that drift are a finding,
+not a merge.
+
+### The limit, stated honestly
+
+This works while bundles overlap in what they *mention*. It stops working the
+day two bundles must genuinely agree on a value — a shared path, a shared
+format, a shared identifier — and there is no place to put the agreement.
+
+At that point the choice is a foundation bundle both vendor from, or dependency
+resolution. **Neither is built, and the trigger is worth recognising rather than
+solving early:** it is the first time two bundles cannot both be correct, not
+merely the first time they mention each other.
+
 ## Bundles are self-contained
 
 Every path a bundle references resolves inside it. A link that escapes breaks
