@@ -42,12 +42,12 @@ every namespaced resource. One name, so nothing can drift out of sync.
 
 **Ports derive from a hash of the slug, not from position** in `git worktree
 list`. Position changes when any other worktree is removed, silently reassigning
-the port of a process already running. This is a correction to advice found in
-several current guides.
+the port of a process already running.
 
-**Provision by allowlist.** Copy only what a project names. Copying everything
-gitignored sweeps in dependencies that are often invalid in a new path and
-sometimes embed the directory they were built in.
+**Provision from `.worktreeinclude`**, in `.gitignore` syntax at the repository
+root — and copy only files that match **and are already gitignored**. That
+second condition means a tracked file can never be duplicated, whatever the
+patterns say.
 
 **Never invent a missing credential.** Stop and say so. A worktree that comes up
 with a placeholder produces failures that look like bugs in the code, hours
@@ -63,12 +63,28 @@ rather than papered over — a workflow claiming to handle them would be lying.
 
 `project` only. Worktrees are a property of one repository's checkout.
 
+## Three corrections to published practice
+
+Each is a failure that exists in tooling or guides in current use:
+
+**Position-derived ports.** Several guides compute a port from a worktree's
+index in `git worktree list`. That index shifts when any *other* worktree is
+removed, silently reassigning the port of a running process.
+
+**Decimal digits from a hash.** A widely copied setup script extracts digits
+with `tr -d -c '0-9'` and does arithmetic on them. A result beginning with `0`
+is read as octal, so any `8` or `9` is a fatal error — intermittent, and
+determined by the branch name. Use hex with an explicit `0x`.
+
+**Truncating a provisioned file.** The same script copies `.env.local` and then
+writes the derived port with `cat >`, destroying the file it just copied. The
+failure looks exactly like the copy never happened. **Append.**
+
 ## Version
 
-`0.1.0`. Assembled from current practice and from failures documented in the
-sources below, then corrected in two places where that advice is fragile —
-position-derived ports, and worktrees kept inside the repository. **Nothing here
-has been run by a fleet of agents on a real project yet.**
+`0.1.0`. Assembled from current practice, corrected where that practice is
+fragile, and **run by no fleet of agents on a real project yet.** The submodule
+section in particular is a placeholder rather than a solution.
 
 ## Sources
 

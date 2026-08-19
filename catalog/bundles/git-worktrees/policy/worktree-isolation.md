@@ -66,18 +66,32 @@ That second row is the whole problem. `.env`, installed dependencies, build
 output, local databases and generated config are all untracked, so a new
 worktree has **none of them** and will not run until something puts them there.
 
-## Provision by allowlist, never by copying everything
+## Provision from `.worktreeinclude`
 
-**Copy only files a project explicitly names.** Default: `.env` and its
-variants, excluding `.env.example`, which is tracked already.
+A project declares what a worktree needs in a **`.worktreeinclude`** at its
+root, in `.gitignore` syntax:
 
-Never copy by pattern-matching what is gitignored. That sweeps in
-`node_modules`, `.venv`, `dist`, build caches and coverage output — gigabytes,
-often invalid in a new location, and sometimes containing absolute paths from
-the directory they were built in.
+```gitignore
+.env
+.env.*
+!.env.example
+config/local.yml
+certs/*.pem
+```
 
-**Dependencies are reinstalled, not copied.** It is slower once and correct
-always.
+**Only files that match a pattern *and* are already gitignored are copied.**
+That second condition is the safety rule and it is doing real work: a tracked
+file can never be duplicated into a worktree, so the pattern list cannot cause
+two copies of something git is managing.
+
+Everything else is absent by design. **Dependencies are reinstalled, not
+copied** — `node_modules`, `.venv`, `dist`, `target` and build caches are
+frequently invalid in a new path, and some embed the absolute directory they
+were built in. Slower once, correct always.
+
+Copy with **mode preserved** and parent directories created. A `0600` key that
+arrives as `0644` is a security regression introduced by the provisioning step
+itself, which is the worst place to have one.
 
 ## Secrets are copied deliberately, and never widened
 
@@ -97,20 +111,39 @@ up with a placeholder produces failures that look like bugs in the code.
 
 ## Anything holding a port or a name needs a per-worktree value
 
-Two agents running the same dev server on the same port is the most common
-collision, and it appears as an unrelated error.
+Two agents running a dev server on the same port is the most common collision,
+and it surfaces as an unrelated error.
 
-**Derive the value from the slug, not from position in the worktree list.**
-Position changes the moment any other worktree is removed, which silently
-reassigns a running agent's port:
+**Derive it from the slug, not from position in the worktree list.** Position
+shifts the moment any other worktree is removed, silently reassigning the port
+of a process already running.
 
 ```sh
-OFFSET=$(( 0x$(printf '%s' "$SLUG" | shasum | cut -c1-4) % 1000 ))
-PORT=$(( 3000 + OFFSET ))
+OFFSET=$(( 0x$(printf '%s' "$SLUG" | shasum | cut -c1-4) % 6900 ))
+PORT=$(( 3100 + OFFSET ))
 ```
 
-The same applies to anything else namespaced: container names, compose project
-names, database names, cache directories. **Prefix with the slug.**
+**Hex, with an explicit `0x`.** Extracting decimal digits from a hash and doing
+arithmetic on them is a common recipe and it is broken: digits beginning with
+`0` are read as octal, so any hash yielding `08…` or `09…` fails outright. It
+works until a branch name happens to produce one.
+
+The same prefixing applies to every shared namespace — container names, compose
+project, database name, cache directory. Anything two agents could both claim
+takes the slug.
+
+**Where the derived value lives.** Git has per-worktree configuration, gated
+behind an extension enabled once per repository:
+
+```sh
+git config --global extensions.worktreeConfig true   # once, per repo
+git config --worktree luma.port "$PORT"
+```
+
+That is the right home for a value that must differ per worktree. Where the
+application reads an env file instead, **append — never rewrite.** Truncating a
+file that was just provisioned destroys it, and the failure looks like the copy
+never happened.
 
 ## Cleanup is part of the task, not a periodic chore
 
