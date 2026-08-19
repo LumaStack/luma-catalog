@@ -34,11 +34,39 @@ root type, and between them they cover what an ADR calls *status*:
 | proposed | `lifecycle_status: draft` or `provisional` |
 | accepted | `lifecycle_status: stable` |
 | superseded | `lifecycle_status: archived` plus `superseded_by` |
-| deprecated | `lifecycle_status: archived` |
+| retired | `lifecycle_status: archived`, no `superseded_by` |
+| **rejected** | **no distinct expression — see below** |
 
 Supersession is a **relationship, not a status** — §6 of the specification says
 so directly — which is why `superseded_by` is a wikilink rather than a state.
 That makes the successor reachable from the document a reader actually lands on.
+
+`lifecycle_status` also governs **what you may edit**, not only how settled the
+decision is. That ladder is in [[decision-guidelines]].
+
+## Open: rejected has nowhere to live
+
+**A decision that was considered and never adopted cannot be distinguished from
+one that was adopted and later withdrawn.** Both are `archived`, and the only
+difference is prose.
+
+That gap matters more than it looks. **A rejected decision is the one that most
+prevents re-litigation** — it is the record that answers *we thought about that
+and here is why we did not*, which is exactly the question that returns every
+few months. Filing it identically to something that was once in force loses the
+distinction a reader needs first.
+
+Three ways out, none chosen:
+
+- A `rejected` value on `lifecycle_status`, which is a change to the format's
+  core rather than to this type.
+- A field on `decision` alone — cheap, and it means a general question gets a
+  local answer that nothing else can reuse.
+- `archived` with the rejection stated in the body. No new mechanism, and lossy:
+  nothing can find rejected decisions without reading them.
+
+Recorded rather than solved, because the right answer depends on whether other
+document types need the same distinction — and none exist yet to ask.
 
 ## `decided` is not `created`
 
@@ -61,14 +89,13 @@ sections below are the working shape rather than a mandated template:
 
 ## Correcting versus superseding
 
-The distinction that matters most in practice, because getting it wrong
-destroys either the record or the reasoning:
+The distinction that matters most in practice, because getting it wrong destroys
+either the record or the reasoning. [[decision-guidelines]] covers what each
+`lifecycle_status` permits; this is the field mechanics.
 
 **Correct in place when the *record* was wrong** — a mistaken rationale, a claim
 that does not hold, an example that was never true. The decision still stands;
-what was written about it did not. Leave the correction visible and dated rather
-than editing silently, because the fact that it was wrong is often more
-instructive than the fix.
+what was written about it did not. Leave the correction visible and dated.
 
 **Supersede when the *decision* changed.** Write a new record, set the old one's
 `lifecycle_status: archived` and point `superseded_by` at the replacement:

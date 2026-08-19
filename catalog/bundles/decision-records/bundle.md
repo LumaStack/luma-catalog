@@ -42,6 +42,10 @@ reading like a workflow.
 
 - [[record-decision]] — the workflow. Where records live, what to do when
   nothing exists yet, and how a project graduates from one file to many.
+- [[decision-guidelines]] — when to record one, what makes it survive, and what
+  you may edit once it is settled.
+- [the record template](templates/decision-template.md) — the frontmatter and
+  the sections, with the required four marked.
 - `_types/decision` — a single decision record.
 - `_types/decision_log` — one document holding many decisions, for projects
   small enough that a directory would be overhead.

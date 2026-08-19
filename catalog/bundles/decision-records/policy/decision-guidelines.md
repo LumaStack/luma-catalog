@@ -1,107 +1,115 @@
 ---
 type: policy
-title: Decision guidelines
-description: AGENT NEEDS TO FILL THIS IN.
+title: Writing a decision record
+description: When to record a decision, what makes one worth reading years later, and what you may edit once it is settled.
 preload: mandatory
 ---
 
-# Decision guidelines
+# Writing a decision record
 
-## Architecture Decision Records (ADR)
+The contract — which fields a record carries — is in `_types/decision`. This is
+the craft: when to write one, what makes it survive, and what you may change
+after the fact.
 
-Durable records of significant decisions — *why* the system is the way it is. One file per
-decision, named `ADR-NNNN-kebab-title.md`, numbered. A record's **status** sets how settled the
-decision is *and* what you may edit (see [Status lifecycle](#status-lifecycle)): **Draft** and
-**Provisional** records are edited freely as they settle; a **Ratified** decision is frozen — you
-may only improve *how it's explained* (with approval), and change the decision *itself* only by
-superseding or retiring it. Starting a new one? Copy [`decision-template.md`](decision-template.md).
+## Record it early, and record it small
 
-## Working style
+**Write the record while the decision is still being argued**, as a `draft`, or
+as `provisional` the moment you start acting on it. Capturing intent is the
+point; waiting until it is built means writing from memory about reasoning you
+have already lost.
 
-For open-ended decisions, lead with an honest comparison plus a recommendation in prose and invite discussion before presenting structured multiple-choice prompts; let the user steer the choice.
+**One decision per record.** A discussion that produced three independent
+choices produces three records. Bundled decisions cannot be superseded
+independently, so the first one to change drags two unrelated positions with it.
 
-## Conventions
+**Write for a newcomer.** Enough context that someone who was not in the
+discussion can follow the reasoning. The reader you are writing for has not met
+any of this before and cannot ask you.
 
-- **Record a decision early** — even as a **Draft** while it's still being argued, or **Provisional**
-  the moment you start acting on it. Capturing intent early is the point; don't wait for it to be
-  built.
-- **One decision per record.** If a discussion yields three independent choices, write three
-  records.
-- **Focus on *why*, not implementation.** How-to belongs in project plans / runbooks — link to
-  them, don't duplicate.  Why will survive the longest.
-- **Link, don't duplicate.** Point to related tasks, design docs, runbooks, and other `ADR`s.
-- **What you may edit depends on the record's status** (see [Status lifecycle](#status-lifecycle)).
-  **Draft** and **Provisional** records are *meant* to move — edit them in place freely as the
-  decision settles; no approval and no superseding record needed for a refinement. A **Ratified**
-  record is frozen: the decision never changes, so **never delete or overwrite it to save space**,
-  and edit it *only* to improve how it's explained — a stale reference, a typo, a dead link,
-  terminology the codebase has since renamed. **Every edit to a Ratified record must be approved by
-  the user first, however trivial — down to a one-character typo.** When in doubt whether a change is
-  a mere clarification (vs. a decision change needing a superseding record), raise that too.
-- **A changed decision is never a small edit.** If the *decision or its rationale* actually changes,
-  don't rewrite the old text — flip its Status and add a dated note: a *different* decision replacing
-  it gets a *new* record that **supersedes** it (Status `Superseded by ADR-NNNN`); one that simply
-  reached its planned end (e.g. a stopgap whose *Revisit When* trigger fired) gets Status
-  `Retired` + a short dated closing note.
-- **Write for a newcomer.** Include enough context that someone without the original discussion
-  can follow the reasoning.
+## Reasoning must be observable
 
-### Separate facts from opinions
+A record that asserts is worth nothing to the person who disagrees with it.
 
-Reasoning must be observable, not asserted.
+- Avoid: *"Alloy is obviously the best choice."*
+- Prefer: *"Alloy replaces three agents with one and speaks Prometheus, Loki
+  and OTLP."*
 
-- Avoid: *"Alloy is obviously the best."*
-- Prefer:
-  - **Decision** — Use Alloy.
-  - **Why** — it replaces three agents with one and supports Prometheus, Loki, and OTLP.
+The second can be checked, argued with, and invalidated when it stops being
+true. The first can only be believed or dismissed.
 
-### Record tradeoffs explicitly
+**Focus on why, not how.** Implementation belongs in a runbook or a project
+plan — link to it. The *why* outlives every one of them, and it is the only
+part nobody can reconstruct later.
 
-State what was **gained and sacrificed** — Pros *and* Cons. Future readers get the context
-immediately. (Don't just write "We chose ZFS"; list the checksums/snapshots/replication wins
-*and* the RAM/complexity/resilver costs.)
+## State what was given up
 
-### Capture triggers for re-evaluation
+Record the **tradeoff**, not just the choice. What was gained and what was
+sacrificed, explicitly, both sides.
 
-Use the **Revisit When** section to list the conditions that should reopen the decision — so it
-doesn't become permanent by inertia. Examples: "Docker supports feature X", "we exceed 100
-hosts", "cost exceeds $200/month", "Grafana Alloy becomes unsupported".
+*"We chose ZFS"* tells a future reader nothing. Checksums, snapshots and
+replication **against** memory footprint, complexity and resilver time tells
+them whether the decision still holds under their constraints.
 
-## Status lifecycle
+A record with no cons is a record that either hid something or never examined
+it, and both read the same way years later.
 
-Every record carries a status. It's a **mutability ladder** — the status says how settled the
-decision is *and* what you're allowed to edit.
+## Say what would reopen it
 
-**Live** — is, or could become, the current answer:
+A decision with no re-open condition becomes permanent by inertia — not because
+anyone reaffirmed it, but because nobody knew what would justify revisiting.
 
-| Status | Means | What you may edit |
-|--------|-------|-------------------|
-| **Draft** | The decision isn't made yet — proposed, under discussion | Anything; nothing is binding |
-| **Provisional** | Decided and in force, but *on trial* — we expect to tune it | Edit in place freely as it settles; no approval, no superseding record needed |
-| **Ratified** | *Settled and unwavering* | The **decision never changes**. Edit only to aid understanding/adoption (clarify wording, add an example, fix a stale link) — and get approval first. Change the decision *itself* only by **Superseding** or **Retiring** it |
+Name the conditions concretely: *"if the platform gains feature X"*, *"above
+100 hosts"*, *"if cost exceeds $200 a month"*, *"if this tool becomes
+unmaintained"*. Vague triggers never fire.
 
-**Terminal** — no longer the current answer; kept as frozen history:
+## What you may edit depends on how settled it is
 
-| Status | Means |
-|--------|-------|
-| **Superseded by ADR-NNNN** | A *different* decision replaced it — point at the replacement |
-| **Retired** | Withdrawn / no longer in force, with no single replacement (e.g. a stopgap whose *Revisit When* trigger fired) — add a short dated closing note |
-| **Rejected** | Considered but never adopted — died as a Draft/Provisional |
+`lifecycle_status` is a **mutability ladder**, not just a label. It says how
+settled the decision is *and* what you are permitted to change.
 
-Typical path: `Draft → Provisional → Ratified`, then later `Superseded by ADR-NNNN` or `Retired`;
-or `Rejected` if it's never adopted.
+| `lifecycle_status` | means | what you may edit |
+| --- | --- | --- |
+| `draft` | proposed, under discussion, not yet decided | anything — nothing is binding |
+| `provisional` | decided and in force, but on trial | freely, in place, as it settles. No approval, no superseding record |
+| `stable` | settled | **the decision never changes.** Only how it is explained — and with approval first |
+| `archived` | no longer the current answer, kept as history | nothing |
 
-Example: `Status: Provisional` · `Status: Ratified` · `Status: Superseded by ADR-0014` ·
-`Status: Retired`.
+**A `stable` record is frozen.** Fix a stale reference, a dead link, a typo, or
+terminology the codebase has since renamed — and get agreement before doing even
+that. Never delete or overwrite one to save space; the whole value is that it is
+still there.
 
-## Format
+**A changed decision is never an edit.** If the decision or its reasoning
+actually changes, do not rewrite the old text:
 
-See [`decision-template.md`](templates/decision-template.md). Two tiers:
+- **A different decision replaces it** — write a new record, set the old one to
+  `archived`, and point `superseded_by` at the replacement.
+- **It reached its planned end** — a stopgap whose re-open condition fired —
+  set `archived` and add a short dated closing note.
 
-- **Required (every record):** Summary · Problem · Decision · Why.
-- **Optional (add only when they carry real content):** Alternatives · Tradeoffs (Pros/Cons)
-  · Assumptions · Revisit When · Follow-up · References.
+When you cannot tell whether a change is clarification or a new decision, raise
+that question rather than guessing. Guessing wrong in one direction loses
+history; in the other it clutters the record with records.
 
-An empty section hasn't earned its place — delete it. There's no standalone *Risks* section:
-accepted downsides go in **Tradeoffs → Cons**, and "what would make us reconsider" goes in
-**Revisit When**.
+## Sections
+
+See [the template](../templates/decision-template.md).
+
+**Required, every record:** Summary · Problem · Decision · Why.
+
+**Optional, only when they carry real content:** Alternatives · Tradeoffs ·
+Assumptions · Revisit When · Follow-up · References.
+
+**An empty section has not earned its place — delete it.** A record padded with
+headings and no content is harder to read than a short one, and it teaches the
+next author that the headings matter more than the reasoning.
+
+There is no *Risks* section: accepted downsides are Tradeoffs, and what would
+change the answer is Revisit When.
+
+## Working style, when a decision is still open
+
+For an open-ended question, **lead with an honest comparison and a
+recommendation in prose**, and invite discussion before offering a structured
+choice. Multiple-choice too early narrows the space to whatever the options
+happened to contain.
