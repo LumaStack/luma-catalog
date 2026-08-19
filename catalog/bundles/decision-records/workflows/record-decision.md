@@ -7,7 +7,7 @@ preload: mandatory
 
 # Record a decision
 
-## 1. Find the store
+## 1. Find where decisions live
 
 Look in this order and take the first that exists:
 
@@ -89,7 +89,7 @@ When the file is genuinely painful rather than merely long:
    order they were originally settled.
 2. `decided` comes from each entry's own settled date, not the date of the
    migration.
-3. Delete `DECISIONS.md`. Leaving it behind is the split store from step 1,
+3. Delete `DECISIONS.md`. Leaving it behind is the split from step 1,
    created deliberately.
 
 **This is effectively one-way.** Once records exist separately they accumulate

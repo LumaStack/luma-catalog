@@ -9,12 +9,12 @@ tags:
   - docs
 starters:
   project:
-    - luma/luma-directory-structure
+    - luma/luma-layout
     - luma/git-secrets
     - luma/project-documentation
     - luma/decision-records
   organization:
-    - luma/luma-directory-structure
+    - luma/luma-layout
     - luma/decision-records
 requires:
   - bundle: luma/git-secrets

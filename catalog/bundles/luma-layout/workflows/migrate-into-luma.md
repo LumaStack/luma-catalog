@@ -1,10 +1,10 @@
 ---
 type: workflow
-title: Migrate into the store
+title: Migrate into luma
 description: Move an existing project's scattered conventions, decisions and notes into .luma/. Use on a project that already has this material somewhere else.
 ---
 
-# Migrate into the store
+# Migrate into luma
 
 Most projects already hold this material — in a `docs/` folder, a wiki, a long
 `CONTRIBUTING.md`, or somebody's head. Migration is mostly sorting, and the

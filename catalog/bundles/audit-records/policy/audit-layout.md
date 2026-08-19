@@ -111,7 +111,7 @@ is written by whoever acted on it, in their own Document.**
 
 Current state is *derived* by reading audit, response and verification together.
 It is never stored, because storing it would mean somebody editing a record they
-did not write — which is the one thing an append-only store exists to prevent.
+did not write — which is the one thing an append-only record exists to prevent.
 
 The cost is that *"show me every open finding"* reads three Documents rather
 than one field. That is what a derived index is for, and an index is a cache: it
@@ -132,7 +132,7 @@ Uncommon, and worth having a rule for before it happens rather than after.
 
 **One repository owns the record.** The audit lives there, in its `.luma/`, and
 **the commit in the directory name is that repository's**. There is no shared
-place for it to live, and inventing one would mean a store nothing owns.
+place for it to live, and inventing one would mean a directory nothing owns.
 
 Choose the owner by **where the work will happen** — the repository whose change
 would resolve the most findings. Failing that, the one most affected. Do not

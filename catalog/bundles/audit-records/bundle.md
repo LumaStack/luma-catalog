@@ -60,7 +60,7 @@ that exception does not extend to agents.
 **Nothing records its own status.** Findings are immutable. What happened to one
 is written by whoever acted on it, in their own document, and the current state
 is *derived* by reading the exchange. Storing a status would mean somebody
-editing a record they did not write — the one thing an append-only store exists
+editing a record they did not write — the one thing an append-only record exists
 to prevent.
 
 **Disagreement and acceptance are outcomes, not failures.** *You are right and
