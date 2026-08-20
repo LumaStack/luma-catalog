@@ -35,12 +35,23 @@ Migrating into the wrong place is the failure that matters here, and it is
 silent — an idea filed under the wrong organization is one the people who would
 act on it never see.
 
-At minimum, ask. Three questions:
+At minimum, ask. Four questions:
 
 - **Which organization is this repository under**, and is there more than one in
   play? Somebody working across two is the case that goes wrong.
 - **What other projects exist** that an idea might belong to?
 - **Is there a headquarters** for any of those organizations?
+- **If there is no headquarters**, where do private ideas belong?
+
+**That last one is the only question here whose wrong answer cannot be undone.**
+An organization-scoped idea often names customers, people, or strategy, and the
+tempting move with nowhere obvious to put it is whichever repository is to hand.
+If that repository is public, the idea is published permanently — deleting it
+afterwards no more unpublishes it than deleting a committed credential does.
+
+**With no private destination, do not file it.** Say so, hold the idea, and ask.
+A private repository that already exists, or somewhere outside git entirely, are
+both better answers than the nearest convenient place.
 
 Cheap discovery that narrows the questions rather than replacing them:
 
