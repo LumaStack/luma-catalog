@@ -43,7 +43,7 @@ git log --oneline -1 && git status --short
 | --- | --- |
 | is `pinned.commit` an ancestor of `HEAD`? | the tree moved. Every path and line number is suspect |
 | is `pinned.branch` still checked out? | you may be in the wrong tree entirely |
-| are `pinned.prs` still open? | *next steps* about them are probably done |
+| are `pinned.pull_requests` still open? | *next steps* about them are probably done |
 | how old is `created`? | hours: trust it. Months: treat every claim as a lead to verify |
 
 **A `kind: close` note is a red flag.** [[session-close]] deletes its note as its
@@ -78,6 +78,16 @@ something else entirely.
 Say what you found and what you intend, in a few lines, and start. **Do not
 silently execute a plan written weeks ago** — and do not re-derive it from
 scratch either, which throws away the thing you were handed.
+
+**A note with no *next* is not incomplete.** A `kind: close` note deliberately
+records state and problems rather than plans, because a plan read after an
+unknown gap is unfalsifiable. Take **problems left behind** as verified-at-the-
+time observations, not as a queue: **check each against the repository before
+believing it.** Something described as broken may have been fixed by whoever came
+through in between, and the note has no way to know.
+
+Then form the plan yourself and put it to the user, which is what the close was
+counting on.
 
 ## 6. Delete the note
 

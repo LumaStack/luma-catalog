@@ -17,6 +17,54 @@ things down rather than setting them up.
 | **budget** | whatever it takes. Nothing is left to protect |
 | **ends with** | no note, nothing running, and a repository that can be picked up cold |
 
+## Two modes, and the caller says which
+
+**The mode is declared, never inferred.**
+
+| invoked as | mode | means |
+| --- | --- | --- |
+| `session-close` | **winding up** | the work reached an end. Make it durable and whole, and take the time |
+| `session-close now` | **stopping hard** | mid-task, stopping immediately, no pretence of coming back soon |
+
+**Do not guess from context.** Urgency is not visible from inside the session,
+and both errors cost: a proper close run as a hard stop skips the retrospective
+and the learnings, which is the half that makes the practice improve; a hard stop
+run as a proper close spends time somebody does not have, which is why they said
+*now*.
+
+**Plain `session-close` is the default**, so an omitted mode does more work
+rather than less. If the session looks rushed and no mode was given, **say so and
+let them choose** — one sentence, not a checklist.
+
+The steps below are the same in both modes. A hard stop has one extra obligation
+in step 2, and **neither mode writes next steps.**
+
+## Close does not write next steps
+
+**Record state and problems. Not plans.**
+
+This is the rule that most separates close from the other two, and it comes from
+the unbounded gap: other people, other agents and other systems will come
+through before anybody reads this. A recommended action written today is
+evaluated against a repository that has moved, by somebody with no way to tell
+that it has.
+
+**State can be checked; a plan cannot.** A reader can look at *`src/gate.py`
+still resolves the old config path* and verify it in ten seconds. Given *next:
+update the gate to the new path*, they have no way to detect that it was done
+in September by somebody else. The first is falsifiable and the second is
+merely confident, which is exactly the wrong way round for something that will
+be read cold.
+
+So: **what is true, what is broken, and what was deliberately abandoned.**
+Anybody arriving later can form a plan from accurate state faster than they can
+audit a stale one.
+
+**Not a licence to be vague.** *"Some tests are failing"* is not state. *"`tests/
+test_gate.py::test_denies_config_writes` fails with `AssertionError` at line 41;
+it passed before the path rename"* is. The more precisely a problem is
+described, the longer it stays useful.
+
 ## The exit test
 
 **Could someone with only this repository — no agent memory, no state directory,
@@ -57,6 +105,29 @@ so anything you leave, somebody finds later with no way to ask.
 - A branch nobody will return to? Say so in the record, or merge it, or delete
   it — with the user's agreement.
 
+### Stopping hard — `session-close now` only
+
+**Reach a stopping point; do not reach a finish line.** The distinction is what
+keeps a rushed close honest.
+
+**Start nothing new.** Not the small fix that would make it tidy, not the test
+that would prove the last change worked. Whatever is unfinished is already the
+problem to be recorded, and adding to it makes the record wrong as well.
+
+**Never leave a half-applied sweep.** A rename applied to four files out of
+eleven, a migration run against one environment, a mass edit interrupted — these
+are the worst thing to walk away from, because the repository looks coherent and
+is not. **Finish the sweep or revert it.** If neither is possible, that is the
+single most important line in the record.
+
+**Prefer reverting an incoherent change to committing it**, unless it cost
+enough that losing it hurts. If you commit it, commit it alone, with a message
+saying it is incomplete and how.
+
+**Then say precisely how it is broken.** Which command fails, with what output,
+and what was true before. That is the state a future reader can verify — see
+above.
+
 ## 3. Shut down what is running
 
 Background processes, dev servers, subagents, worktrees. **Stop them.**
@@ -68,11 +139,21 @@ make no sense to them.
 ## 4. Give the loose ends a home
 
 **Everything unfinished becomes something, or it evaporates**, because the note
-is about to be deleted.
+is about to be deleted. Three outcomes, and every loose end takes one:
 
-- **Will be picked up** → an idea or a backlog item.
+- **Something is broken or half-done** → **a problem left behind.** Written as
+  state: what is wrong, how to see it, what was true before. Not as an
+  instruction to fix it.
+- **Worth doing, nobody is doing it** → an idea. That is a proposal entering the
+  same queue as any other, not a plan waiting to be executed — which is why it is
+  allowed here and a next step is not.
 - **Will not be picked up** → **recorded as deliberately abandoned**, with what
   was tried and why it was dropped.
+
+**A problem left behind is not an idea.** Filing *"the gate tests fail after the
+rename"* as an idea puts a defect in a list people browse when looking for
+optional work. It is a fact about the current state of the repository, and it
+belongs where somebody arriving will see it.
 
 Abandonment is a real outcome and worth the same care as a decision. Without it
 the next person restarts the dead end, spends the same hours, and reaches the
@@ -93,19 +174,27 @@ everybody wants to leave. Do it anyway.
   was.
 - What should become a policy, a memory, or an idea. Route it.
 
+**On `session-close now`, keep it to what would change behaviour** — one or two
+things, not a review. The rest is lost, and that is the cost of stopping hard
+rather than a step to fake at speed.
+
 ## 6. Apply the learnings, or queue them explicitly
 
-**If there is time, apply them now.** A learning recorded and never applied is a
-learning that did not happen, and close is the natural moment: the work is done,
+**Winding up: apply them now.** A learning recorded and never applied is a
+learning that did not happen, and this is the natural moment — the work is done,
 nothing is in flight, and the change is small and obvious while the session is
 still fresh. A misleading comment, a missing line in the readme, a policy that
-sent you the wrong way — fix it.
+sent you the wrong way: fix it.
 
-**If you are in a hurry, capture it as work to do next time**, and capture it as
-work rather than as an observation. *"The contributing guide describes the old
-gate path"* is a note nobody acts on. *"Update `CONTRIBUTING.md` to the current
-gate path — it still says the pre-rename one"* is a thing somebody can pick up
-in five minutes.
+**`session-close now`: queue them, and queue them as work.** Not as an
+observation. *"The contributing guide describes the old gate path"* is a note
+nobody acts on. *"Update `CONTRIBUTING.md` to the current gate path — it still
+says the pre-rename one"* is a thing somebody can pick up in five minutes.
+
+**This is the one place a hard stop may write an instruction**, and it survives
+the staleness objection for a reason: it describes a defect in a document whose
+content is stated, so a reader can check whether it still holds. *Update X, it
+says Y* is falsifiable. *Next: finish the refactor* is not.
 
 **Say which learnings were applied and which were queued.** Otherwise a reader
 cannot tell a fixed problem from an open one, and the queued ones look like
@@ -120,10 +209,15 @@ it was written**:
 - Versions of anything that matters — tool, spec, dependency.
 - The date.
 
-Read in six months, *next: rerun the gate tests* may name a file that no longer
-exists on a branch that merged. Pinning is what lets a reader tell **still true**
-from **was true in August**, and it is the difference between a useful record and
-a confidently misleading one.
+Pinning is what lets a reader tell **still true** from **was true in August**,
+and it is the difference between a useful record and a confidently misleading
+one.
+
+It is also why state survives the gap and plans do not. *`tests/test_gate.py`
+fails at commit `4a9c1f2`* stays checkable forever — a reader compares it
+against what is there now and learns something either way. The same record
+saying *next: fix the gate tests* is unfalsifiable six months later, and reads
+as current no matter how wrong it has become.
 
 ## 8. Delete the note
 
@@ -149,7 +243,8 @@ Short and specific:
 - What was **deliberately abandoned**, so they can object while somebody still
   remembers.
 - Which learnings were applied, and which are queued.
-- What is still open, and what would restart it.
+- **Problems left behind**, as state: what is broken and how to see it. If a hard
+  stop left a sweep half-applied, that goes first.
 - **Recommended practices this project does not have**, if any — filtered by the
   catalog's `requires` obligation, not everything that was skipped. Name the gap
   and the command that closes it, and leave it there: adoption is a durable
@@ -157,4 +252,5 @@ Short and specific:
   position to decide on one. See [[where-knowledge-goes]].
 
 **No prompt for a successor**, because there is not one. If it turns out there
-is, that was a [[session-handoff]].
+is, that was a [[session-handoff]] — and a handoff *does* write next steps,
+because its successor arrives before they can rot.

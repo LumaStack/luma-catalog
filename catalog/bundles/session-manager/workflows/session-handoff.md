@@ -125,7 +125,7 @@ At `~/.local/state/luma/sessions/<project>/<branch>.md`, or committed to
 type: session_note
 kind: handoff
 created: { by: agent:<model>, at: <timestamp> }
-pinned: { branch: <branch>, commit: <short-sha>, prs: [<numbers>] }
+pinned: { branch: <branch>, commit: <short-sha>, pull_requests: [<numbers>] }
 ---
 ```
 

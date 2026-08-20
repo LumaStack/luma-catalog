@@ -32,11 +32,11 @@ What the format genuinely does not have is **who this was written for** and
 
 ## `kind` decides how a reader treats it
 
-| | written for | a reader should |
-| --- | --- | --- |
-| `checkpoint` | the same session, minutes later | expect it to be current, and terse |
-| `handoff` | a named successor, soon | expect tailoring to a specific agent |
-| `close` | a stranger, at an unknown time | expect it to stand alone, and to be old |
+| | written for | timeline | a reader should |
+| --- | --- | --- | --- |
+| `checkpoint` | the same session | continued once checkpoint is resolved | expect it to be current, and terse |
+| `handoff` | a named successor | picked up next available, it rots without recency | expect tailoring to a specific agent |
+| `close` | a stranger | at an unknown time | expect it to stand alone, and not always contain next steps since they could rot |
 
 **Finding a `close` note at all is a signal that something went wrong.**
 [[session-close]] drains and deletes its note as its last act, so one surviving
@@ -50,7 +50,7 @@ anything was lost.
 ## `pinned` is what makes trust decay checkable
 
 ```yaml
-pinned: { branch: fix/gate-paths, commit: 4a9c1f2, prs: [12] }
+pinned: { branch: fix/gate-paths, commit: 4a9c1f2, pull_requests: [12] }
 ```
 
 A note's claims are true of a particular tree. Six months later *next: rerun the

@@ -105,6 +105,29 @@ not need to. And **close cannot leave the mess a handoff can**: a handoff may
 pass over a running process with an explanation, because there is somebody to
 explain it to.
 
+**And close writes no next steps.** Checkpoint and handoff do, because their
+reader arrives before a plan can rot. A close is read after other people, agents
+and systems have come through, and **a stale plan is unfalsifiable** — nobody
+can tell that *next: update the gate path* was done in September by somebody
+else. So close records what is true, what is broken, and what was abandoned, and
+trusts whoever arrives to plan from accurate state faster than they could audit
+a stale one.
+
+## Close has two modes, and the caller declares which
+
+**`session-close`** — winding up. The work reached an end and should be made
+durable and whole.
+
+**`session-close now`** — stopping hard. Mid-task, no pretence of coming back
+soon. Reach a stopping point rather than a finish line: start nothing new, never
+leave a sweep half-applied, and record precisely what was left broken.
+
+**Declared, not inferred.** Urgency is not visible from inside a session, and
+both errors cost — a proper close run as a hard stop drops the retrospective,
+which is the half that makes the practice improve, and a hard stop run as a
+proper close spends time somebody has already said they do not have. Omitting
+the mode gets the thorough one, so the default does more work rather than less.
+
 ## Close is where the practice improves
 
 It is the only one of the three that sees the whole arc — checkpoint is

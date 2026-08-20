@@ -129,7 +129,7 @@ Update in place at `~/.local/state/luma/sessions/<project>/<branch>.md` — see
 type: session_note
 kind: checkpoint
 created: { by: agent:<model>, at: <timestamp> }
-pinned: { branch: <branch>, commit: <short-sha>, prs: [<numbers>] }
+pinned: { branch: <branch>, commit: <short-sha>, pull_requests: [<numbers>] }
 ---
 ```
 
