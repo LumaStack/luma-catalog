@@ -33,6 +33,14 @@ For each idea that survived a second reading:
 **Most ideas will not move, and that is correct.** A session where everything
 advanced was not a session, it was enthusiasm.
 
+**An idea that reaches `stable` should lean towards moving into the proper
+backlog, if one exists** — unless there is a reason to keep it as an idea.
+Including but not limited to: it is inspirational, grandiose, or visionary; it
+is marked `someday`; or something similar.
+
+`stable` therefore does not mean *ready to build*. It means *worked out* — and
+some ideas are worked out **as ideas** and belong nowhere else.
+
 ## 3. Prune
 
 Archive anything that meets a pruning test in [[tending-ideas]] — the reason is
@@ -83,4 +91,4 @@ Note, wherever the project keeps such things:
 - **Anything the process made awkward**
 
 *There is no default cadence yet, deliberately.* A few sessions of this is what
-turns it into a setting rather than a guess.
+turns it into a default setting rather than a guess.

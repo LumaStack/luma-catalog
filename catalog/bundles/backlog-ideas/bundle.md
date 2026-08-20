@@ -75,9 +75,11 @@ will measure from.
 Three gaps, recorded rather than worked around, because each needs something
 that does not exist.
 
-**A graduated idea has nowhere to go.** When one becomes real work, the honest
-destination is a backlog item. For now it stays here marked `stable` and
-somebody remembers, which is not good enough.
+**A graduated idea has nowhere to go yet.** The destination is settled — a
+`stable` idea leans towards the proper backlog unless it is one of the kinds
+that stay ideas, which are named. What is missing is the backlog. Until there
+is one, such an idea stays here marked `stable` and somebody remembers, which
+is not good enough.
 
 **Nothing says when an idea stops being one.** Length is the symptom, not the
 trigger, and the actual trigger needs the backlog tool to answer.

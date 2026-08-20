@@ -93,10 +93,13 @@ Deletion always needs confirmation, whatever the retention setting says.
 
 Two gaps, recorded here rather than worked around:
 
-**An idea that graduates has nowhere to go.** When one becomes real work, the
-honest destination is a backlog item, and there is no backlog tool yet. For now
-it stays, marked `stable`, and somebody remembers. *That is not good enough and
-is known not to be.*
+**An idea that graduates has nowhere to go yet.** The destination is settled —
+a `stable` idea leans towards the proper backlog, unless it is one of the kinds
+that stay ideas: inspirational, grandiose, visionary, or marked `someday`. What
+is missing is the backlog itself.
+
+Until there is one, such an idea stays here marked `stable` and somebody
+remembers. *That is not good enough and is known not to be.*
 
 **Nothing distinguishes rejected from retired.** An idea deliberately declined
 and one that simply expired are both `archived`. That is the same gap the

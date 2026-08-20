@@ -10,6 +10,24 @@ A one-off per project. The risk is not the moving — it is **removing the
 original before anybody has checked**, so verification is a step rather than a
 feeling.
 
+## 0. Ask how involved they want to be
+
+**Before reading anything**, because it changes how every step below is run.
+
+| | |
+| --- | --- |
+| **delegated** | run the whole thing and record what happened. They read the result |
+| **reviewed** | propose in batches — a table of title, one-line explanation, and where each would go — take feedback, and repeat until they are ready to sign off |
+| **together** | one idea at a time: show what is needed to judge it, recommend where it goes, and decide keep-or-prune jointly |
+
+**Ask rather than assume.** A long `IDEAS.md` is somebody's accumulated
+thinking, and running `delegated` over it uninvited is how a migration becomes
+something that happened *to* them.
+
+**`delegated` still stops at step 7.** Deleting the original always needs their
+confirmation, whichever mode is chosen — the mode governs how much they are
+consulted along the way, never whether they consent to the destructive step.
+
 ## 1. Read the whole file first
 
 Not every entry deserves to survive. A long-lived `IDEAS.md` accumulates things
