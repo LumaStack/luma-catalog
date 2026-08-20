@@ -24,27 +24,38 @@ Ask **who would act on this**, not what it is about.
 | `department` | several projects under one team would, and no other team cares |
 | `organization` | it is about how the organization works, not how anything is built |
 
-**When unclear, choose `project`.** A project-scoped idea is cheap to promote
-later; an organization-scoped one nobody owns is the kind that goes stale in
-silence. Narrow and promotable beats broad and orphaned.
+**When unclear, ask for guidance or lean towards `project`.** A project-scoped
+idea is cheap to promote later; an organization-scoped one nobody owns is the
+kind that goes stale in silence. Narrow and promotable beats broad and
+orphaned.
 
 ## The file follows the scope
 
-An idea scoped to the organization belongs in the organization's own `.luma/`,
+An idea scoped to the organization belongs in the organization's own repository,
 not in whichever repository somebody happened to be working in. An idea captured
 in the wrong place is one the people who would act on it never see.
 
 **Do not let the location be decided by where you were standing.** That is the
-most common way an idea ends up invisible, and it happens silently.
+most common way an idea ends up invisible, and it happens silently. Ideas belong
+in the repository that would most naturally act upon them.
 
-## One idea per file, or one theme
+If an organization's headquarters is present, ask it — it has the breadth to
+see where an idea belongs, which a single repository does not. *Not implemented
+yet.*
+
+**Asking is a person or an agent consulting it, never a tool depending on it.**
+Foreman must work in a repository belonging to no organization at all, so
+nothing in the toolchain may require a headquarters to be reachable. Absent one,
+this step is skipped and the guidance above stands on its own.
+
+## One idea or theme per file
 
 Both are fine, and the test is whether they **rise and fall together**. Three
 variations on the same underlying change are one file. Three unrelated
-improvements that happen to touch the same subsystem are three.
+improvements that happen to touch the same subsystem are three separate files.
 
 A themed file that starts collecting unrelated entries has become a second
-`IDEAS.md`, which is what this exists to replace.
+`IDEAS.md` junk drawer, which is what this system exists to replace.
 
 ## Naming
 
