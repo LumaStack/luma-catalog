@@ -37,7 +37,7 @@ without its values. Keep secrets out of it and it belongs in the repository.
 ## What a scanner will and will not catch
 
 A scanner finds credentials with a **distinctive prefix and a fixed shape** —
-the ones providers designed to be recognisable. It does not find a password in a
+the ones providers designed to be recognizable. It does not find a password in a
 configuration file, a token in a variable named `key`, or anything a human would
 have to judge.
 

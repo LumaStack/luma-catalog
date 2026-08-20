@@ -14,7 +14,7 @@ luma-foreman inspect
 
 One command covers both halves. It reports machine-derived identities in commit
 metadata, malformed author addresses, home directory paths in tracked content,
-credentials with a recognisable shape, and files that are a secret by their name
+credentials with a recognizable shape, and files that are a secret by their name
 alone. It needs no configuration and works in a bare clone, which is what lets
 it run in continuous integration.
 
@@ -56,7 +56,7 @@ will not appear here. Most real credential leaks live exactly there. Use a
 dedicated history scanner for that question.
 
 **Shape is not meaning.** It finds credentials that providers designed to be
-recognisable, and identities that are wrong by their form —
+recognizable, and identities that are wrong by their form —
 `someone@laptop.local`, `first.last.com`, `/Users/<name>/notes.txt`. It cannot know
 that a well-formed address at a real domain is personal rather than
 professional, or that a variable named `key` holds one.

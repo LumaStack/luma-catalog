@@ -55,7 +55,7 @@ complaints, from people who assumed `0.x` behaved like `1.x`.
 
 **Say so when you use that permission.** A breaking change shipping as a patch
 should be stated in the release notes and in the release commit. It otherwise
-reads as a miscategorisation to whoever finds it later, including you.
+reads as a miscategorization to whoever finds it later, including you.
 
 ## Reaching 1.0.0
 

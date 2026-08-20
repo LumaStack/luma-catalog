@@ -28,7 +28,7 @@ They hold for code as readily as for process.
 | **condition** | what *is* | nobody can find what you are talking about |
 | **criteria** | what *should be*, by whose rule | it reads as taste, and gets dismissed as taste |
 | **cause** | why it is that way | the symptom gets fixed and returns |
-| **effect** | what it costs if nothing changes | it cannot be prioritised against anything else |
+| **effect** | what it costs if nothing changes | it cannot be prioritized against anything else |
 | **recommendation** | what would resolve it | the respondent guesses, and guesses wrong |
 
 ## Criteria is what separates a finding from an opinion

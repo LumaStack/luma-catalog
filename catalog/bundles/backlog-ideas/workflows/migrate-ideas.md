@@ -45,13 +45,16 @@ At minimum, ask. Four questions:
 
 **That last one is the only question here whose wrong answer cannot be undone.**
 An organization-scoped idea often names customers, people, or strategy, and the
-tempting move with nowhere obvious to put it is whichever repository is to hand.
-If that repository is public, the idea is published permanently — deleting it
+tempting move with nowhere obvious to put it is whichever repository happens to
+be open. If that one is public, the idea is published permanently — deleting it
 afterwards no more unpublishes it than deleting a committed credential does.
 
-**With no private destination, do not file it.** Say so, hold the idea, and ask.
-A private repository that already exists, or somewhere outside git entirely, are
-both better answers than the nearest convenient place.
+**With no private destination, do not file sensitive or private ideas.** Say so,
+hold the idea, and ask. A private repository that already exists, or somewhere
+outside git entirely, both beat the nearest convenient place.
+
+Ordinary ideas are unaffected — most are not sensitive, and the absence of a
+private home is no reason to stop migrating the ones that were never private.
 
 Cheap discovery that narrows the questions rather than replacing them:
 
