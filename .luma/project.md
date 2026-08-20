@@ -1,6 +1,7 @@
 ---
 type: project
 title: luma-catalog
+disclosure_level: public
 description: The universal bundles any organization can adopt — standards, workflows and types. Open it to read, change or add a shipped bundle. Not for the format they are written in, nor the tool that installs them.
 owns:
   - the universal catalog and everything published in it
