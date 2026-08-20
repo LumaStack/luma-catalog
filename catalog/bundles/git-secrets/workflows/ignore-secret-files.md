@@ -62,4 +62,4 @@ git rm --cached <path>
 This catches files that are secrets by *name*. It does nothing about a token
 pasted into a source file, a password in a configuration value, or a key in a
 comment. For those, [[audit-sensitive-data]] — and even that finds only what has
-a recognisable shape.
+a recognizable shape.

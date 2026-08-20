@@ -35,12 +35,26 @@ Migrating into the wrong place is the failure that matters here, and it is
 silent — an idea filed under the wrong organization is one the people who would
 act on it never see.
 
-At minimum, ask. Three questions:
+At minimum, ask. Four questions:
 
 - **Which organization is this repository under**, and is there more than one in
   play? Somebody working across two is the case that goes wrong.
 - **What other projects exist** that an idea might belong to?
 - **Is there a headquarters** for any of those organizations?
+- **If there is no headquarters**, where do private ideas belong?
+
+**That last one is the only question here whose wrong answer cannot be undone.**
+An organization-scoped idea often names customers, people, or strategy, and the
+tempting move with nowhere obvious to put it is whichever repository happens to
+be open. If that one is public, the idea is published permanently — deleting it
+afterwards no more unpublishes it than deleting a committed credential does.
+
+**With no private destination, do not file sensitive or private ideas.** Say so,
+hold the idea, and ask. A private repository that already exists, or somewhere
+outside git entirely, both beat the nearest convenient place.
+
+Ordinary ideas are unaffected — most are not sensitive, and the absence of a
+private home is no reason to stop migrating the ones that were never private.
 
 Cheap discovery that narrows the questions rather than replacing them:
 
@@ -57,7 +71,8 @@ remote tells you where this repository lives, not where an idea should.
 ideas directory needs one created and said so. A repository with **no luma at
 all** is a different case: do not install `.luma/` there to make room for an
 idea — ask, and if the answer is no, use whatever that repository already keeps
-prose in.
+prose in. If a user agrees to adding `.luma/`, ask if it's their intention to
+conform all affected repositories to using the standardized `.luma/` layout.
 
 *The better version is not implemented: asking foreman or a headquarters for
 this on the user's behalf.* A headquarters has the breadth to answer properly,

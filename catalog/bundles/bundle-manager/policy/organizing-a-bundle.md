@@ -177,7 +177,7 @@ place and be pointed at. It stops working the day two bundles must agree on a
 there is nowhere to put the agreement, because no bundle can read another.
 
 At that point the choice is a foundation bundle both vendor from, or real
-resolution. **Neither is built, and the trigger is worth recognising rather than
+resolution. **Neither is built, and the trigger is worth recognizing rather than
 solving early:** it is the first time two bundles cannot both be correct, not
 merely the first time they mention each other.
 
