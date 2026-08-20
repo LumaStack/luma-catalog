@@ -150,6 +150,11 @@ Short and specific:
   remembers.
 - Which learnings were applied, and which are queued.
 - What is still open, and what would restart it.
+- **Recommended practices this project does not have**, if any — filtered by the
+  catalog's `requires` obligation, not everything that was skipped. Name the gap
+  and the command that closes it, and leave it there: adoption is a durable
+  change to the repository, and somebody who is shutting down is not in a
+  position to decide on one. See [[where-knowledge-goes]].
 
 **No prompt for a successor**, because there is not one. If it turns out there
 is, that was a [[session-handoff]].

@@ -79,14 +79,19 @@ Only what you have **observed, tested, or read in the source** — see
 [[session-continuity]] for why belief stays in the note. Then
 [[where-knowledge-goes]] decides the destination.
 
-- **Records** — a decision made, a finding, an incident. Only if the tier exists.
+- **Records** — a decision made, a finding, an incident.
 - **Ideas** — something worth doing that nobody is doing.
-- **Journal or log** — only if established, by the detection rule in
-  [[where-knowledge-goes]]. Do not start one on the way past.
+- **Journal or log** — narrative, or per-event.
 - **Memory** — only what is true of this operator rather than this repository.
 
+**Every one of these is conditional on the practice already existing here.** Do
+it if established, skip it if it is not — and **never start one on the way past**,
+which creates something nobody agreed to and makes the next session's detection
+wrong. The detection rule is in [[where-knowledge-goes]].
+
 **Nothing has a home? Leave it in the note and say so.** Do not invent a
-directory.
+directory. Skips are collected here and reported once at the end of the session,
+not at every checkpoint.
 
 ## 4. Retract anything an earlier checkpoint got wrong
 
@@ -141,6 +146,11 @@ it toward what they cannot see:
 - **Done** and **next**, as checkboxes.
 - **What was written durably, and where.** Paths, so they can check.
 - **What is uncertain**, named as uncertain.
-- **What was skipped**, and because of budget or because it did not apply.
+- **What was skipped for budget** — that is this checkpoint's own choice and
+  worth knowing now.
+
+**Not the missing practices.** A project without journaling does not need
+telling four times a day. Those go in the note and surface once, at
+[[session-handoff]] or [[session-close]].
 
 Then continue working.

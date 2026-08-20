@@ -71,6 +71,23 @@ they are protecting. A checkpoint that costs more than it saves has done harm,
 which is why it has a budget, a stopping rule, and permission to defer anything
 ambiguous rather than ask.
 
+## It never starts a practice on the way out
+
+Every routing attempt has two outcomes and no third: **do it if the practice is
+established here, skip it if it is not.** Not logging, not journaling, not
+decision records.
+
+Beginning one at the end of a session creates something nobody agreed to and
+nobody continues — and it corrupts the next session's detection, because now the
+directory exists and has an entry in it, so one agent's improvisation looks like
+a practice this project has.
+
+**Skips are reported, filtered to what is actually recommended.** The catalog's
+`requires` obligation is the filter, so nothing has to be invented — and a
+project without journaling is not told about it four times a day. **The report
+does not offer to fix anything**: the end of a session is the worst available
+moment to decide what a repository should adopt.
+
 ## Handoff and close are not the same workflow
 
 The distinction most likely to be argued with, so: **handoff builds for a

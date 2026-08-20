@@ -100,6 +100,34 @@ is not insurance. It is the largest known hole in this bundle.
 **Signal.** Any host agent exposing a pre-compaction hook. Worth watching for
 actively rather than waiting to stumble on.
 
+## Acting on what was skipped
+
+**Wanted, and undecided.** The workflows report recommended practices this
+project does not have — see [[where-knowledge-goes]]. Something should let a
+person act on that: show what exists, what does not, and offer to adopt the
+missing ones.
+
+**Today.** The report says what was skipped. Adopting is `luma-foreman adopt`,
+run by hand, whenever the user chooses.
+
+**It should be a separate command, not a step in these workflows.** The end of a
+session is the worst available moment to decide what a project should adopt: the
+user is leaving, and adoption is a durable change to the repository being made
+under time pressure by somebody who has already stopped thinking about it. A
+report costs nothing and can be ignored; a prompt has to be answered.
+
+Separating them also keeps the workflows honest. A step that offers to install
+things has stopped ending the session and started changing the project, which is
+a different act needing different consent.
+
+**Possibly over-complicated, and recorded as such.** The whole feature may turn
+out to be a menu in front of a command that is already one line. **The narrow
+version is the safe one**: report the gap, name the command that closes it, and
+let somebody run it when they mean to.
+
+**Signal.** Somebody reading a skip report and wanting to act on it immediately.
+If that never happens, the report was enough and this was not worth building.
+
 ## Adapters for other agents
 
 **Wanted.** These four workflows available as `/session-checkpoint` and friends

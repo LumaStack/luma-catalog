@@ -127,20 +127,59 @@ rather than to map one kind to many bundles.
 **Two bundles claiming one kind, with no configuration, is a conflict to
 surface** — not to resolve by picking the first. Say which two, and ask.
 
-## "Only if established" needs a detection rule
+## Do the thing if it is established; skip it if it is not
 
-Both journaling and logging are conditional in these workflows, and *established*
-must not mean *it feels like this project might*.
+**This is the rule for every kind, not a caveat on logging.** Each routing
+attempt has exactly two outcomes: the practice exists here and you follow it, or
+it does not and you skip it and say so.
+
+**There is no third outcome where you start one.** Not logging, not journaling,
+not decision records, not a `docs/adr/` directory. Beginning a practice on the
+way out of a session creates something nobody agreed to and nobody will
+continue — one lonely entry that reads, six months later, as a thing this
+project used to do. It also makes the *next* session's detection wrong, because
+now the directory exists and has an entry in it, and the practice looks
+established when it is one agent's improvisation.
+
+*Established* must not mean *it feels like this project might*.
 
 **Established means one of:** the directory exists and has entries in it; a
 config key names it; or a bundle declaring it is in `adopted.toml`.
 
-**Absent all three, it is not established, and you do not start one.** Beginning
-a journal on the way out of a session creates a practice nobody agreed to and
-nobody will continue — one lonely entry that reads, six months later, as a thing
-this project used to do.
+If you think a missing practice is worth having, **that is an idea** — capture it
+as one, and it goes through the same consideration as anything else somebody
+proposes.
 
-If you think one is missing, that is an idea. Capture it as one.
+## Report what was skipped, but only what is recommended
+
+A skip is only useful if somebody hears about it, and **only worth hearing about
+if they would plausibly want it.**
+
+**Report a skip when the missing thing is recommended or mandatory.** The
+catalog already carries this — `requires` declares an obligation per bundle, and
+that field is the filter. Nothing has to be invented and nothing has to be
+guessed at.
+
+**Do not report the rest.** A project with no journaling practice does not need
+telling at the end of every session, and *"reporting five gaps at a project that
+just adopted its first bundle is how a report gets ignored"* is already the
+catalog's own reasoning about mandates. The same logic applies with more force
+here, because this runs several times a day rather than once at adoption.
+
+**`requires`, not `starters`.** They answer different questions — what every
+project owes, versus what a new one begins with — and conflating them produces
+either a nagging report or an empty one.
+
+**Report once per session, not once per checkpoint.** Four checkpoints surfacing
+the same missing bundle is nagging, and it spends context on a fact that has not
+changed. Skips belong in the closing report of [[session-handoff]] or
+[[session-close]].
+
+**Report; do not offer to fix.** The end of a session is the worst available
+moment to decide what a project should adopt — the user is leaving, and adoption
+is a durable change to the repository made under time pressure. Say what was
+skipped and stop. Installing it is a separate act, at a moment somebody chose;
+see [[future-hooks]].
 
 ## Memory and the repository are different destinations
 

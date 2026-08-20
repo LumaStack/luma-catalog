@@ -74,13 +74,17 @@ did not.
 
 - **Records** — decisions, findings, incidents.
 - **Ideas** — including work you started and are not finishing.
-- **Journal or log** — only if established.
+- **Journal or log** — narrative, or per-event.
 - **Memory** — only what is true of this operator, not this repository.
 - **Documentation** — if you learned how something works and the repository
   documents such things, that is documentation, not a note.
 
+**Each is conditional on the practice existing here.** Do it if established,
+skip it if not, and never start one on the way out — see [[where-knowledge-goes]].
+
 **Anything with no home stays in the note, flagged.** An unhoused kind of
-knowledge is usually a missing bundle and worth surfacing.
+knowledge is usually a missing bundle and worth surfacing — in step 8, filtered
+to what is actually recommended.
 
 ## 4. Write the dead ends
 
@@ -133,7 +137,19 @@ first; for a stranger it means orientation first.
 exist anywhere else?* Anything that does not, route it now. The note is going to
 be deleted by whoever consumes it.
 
-## 8. Give the user a prompt to paste
+## 8. Report the gaps worth reporting
+
+Once, here — not at every checkpoint.
+
+**Only what is recommended or mandatory.** The catalog's `requires` field carries
+the obligation, and that is the filter. A project with no journaling practice
+does not need telling; a project with no secrets rule does.
+
+**Report; do not offer to fix.** Name the gap and the command that would close
+it, and leave it. Adoption is a durable change to the repository and the end of
+a session is the worst moment to decide on one. See [[where-knowledge-goes]].
+
+## 9. Give the user a prompt to paste
 
 The deliverable. It must work as the **first message of a session that has none
 of this context**.
