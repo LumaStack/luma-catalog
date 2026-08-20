@@ -21,10 +21,13 @@ One or two sentences. The idea, not the plan.
 ---
 type: idea
 title: <the idea in one line>
-captured: YYYY-MM-DD
-originated: human:<id>        # or agent:<model> if no person was involved
+created: { by: human:<id>, at: <timestamp> }
 ---
 ```
+
+`created.by` is **whoever had the idea**, not whoever typed it. An agent
+transcribing without shaping is not the author. Use `agent:<model>` only when
+**no person was involved at all**.
 
 **Do not stop to research, weigh, or fill in fields.** `horizon` and `scope`
 are asked for in step 4, and absent `horizon` already means `someday`.
@@ -57,8 +60,8 @@ one missed.
 
 - **Propose the merge before making it.** Say what you would add to the existing
   idea and what you would drop.
-- **Get agreement**, then append to the existing file and add yourself to
-  `contributors`.
+- **Get agreement**, then append to the existing file and add whoever was
+  present to `contributors`.
 - **Then delete the duplicate you just wrote.** It is yours and it is minutes
   old, so this is the one deletion that needs nobody's permission.
 
@@ -81,7 +84,7 @@ Only now, and **ask rather than assume**:
 **A drive-by capture is a complete capture.** Treating a thin idea as a failure
 is what makes people stop capturing.
 
-## Working with a human present
+## Working with a human who is actually reading
 
 **Propose; do not file.** Say the idea, ask whether it is worth keeping, take
 the refinement, and get agreement before writing anything durable.
@@ -89,14 +92,33 @@ the refinement, and get agreement before writing anything durable.
 An agent that files ideas unilaterally during a session fills the list with
 material nobody chose — and the cost lands on whoever tends it later.
 
-Once agreed: the human is `originated`, the agent is a `contributor`. That
-holds even if the agent phrased it better, asked the question that prompted it,
-and wrote every word of the file.
+Once agreed: **`created.by` is the human**, even if the agent phrased it better,
+asked the question that prompted it, and wrote every word of the file.
+
+**If they led you to it, it is theirs** — `created.by: human:`, with you as a
+contributor. Steering an agent toward an idea is having it; producing the
+sentence is not.
+
+**Name a person only if they saw it and replied.** Not *a session was open* —
+auto mode with nobody reading, or a subprocess whose output never surfaced, is
+not a human being present, whatever the session claims.
+
+From your side the test is mechanical: **did you show this to them and get a
+reply?** If not, name nobody. That is what makes proposing before filing
+load-bearing rather than polite — it produces the evidence that somebody saw
+it.
 
 ## Working alone
 
-An agent may capture its own idea with `originated: agent:<model>`, which makes
-*no human has seen this* something a person can search for.
+An agent may capture its own with `created.by: agent:<model>`, which makes *no
+human had this idea* something a person can search for.
 
-**Flag it when you next speak to one.** An agent-only idea nobody has read is
-the state this field exists to make visible, not a state to leave sitting.
+**Flag it when you next speak to one.** When they read it and approve it, that
+is a `verified` entry — not authorship and not contribution:
+
+```yaml
+verified: [{ by: human:<id>, at: <timestamp> }]
+```
+
+*Needs human eyes* is then checkable rather than remembered: `created.by` is an
+agent and `verified` holds no human.

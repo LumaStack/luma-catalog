@@ -46,11 +46,12 @@ add the original's author to `contributors`.
 
 Follow [[capture-idea]] from step 1, with two differences:
 
-- **`captured` is the date the idea was written, not today** — if the file or
-  its history says. Backdating to today erases how long something has been
-  waiting, which is exactly what the tending session reads.
-- **`originated` is whoever actually had it.** If that is unrecoverable,
-  `unknown:unknown` is honest and better than guessing.
+- **`created.at` is when the idea was written, not today** — if the file or its
+  history says. Backdating to today erases how long something has been waiting,
+  which is exactly what a tending session reads.
+- **`created.by` is whoever actually had it.** If that is unrecoverable,
+  `unknown:unknown` is honest and far better than guessing — a name attached to
+  an idea somebody never had is the one error here worth avoiding outright.
 
 ## 5. Mark it migrated, in the original
 

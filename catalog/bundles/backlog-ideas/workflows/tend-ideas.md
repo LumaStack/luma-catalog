@@ -56,7 +56,7 @@ never delete an idea it did not originate.
 Ideas drift together as they mature. Two files describing one thing is worse
 than either alone, because a reader cannot tell which is current.
 
-Merge into whichever is better developed, add the other's `originated` to
+Merge into whichever is better developed, carry the other's `created.by` into
 `contributors`, and archive the loser rather than deleting it — the second
 file's framing may be what somebody remembers.
 

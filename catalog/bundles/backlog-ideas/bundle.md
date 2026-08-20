@@ -41,14 +41,24 @@ session that prunes.
 Searching for duplicates first interrupts the run of ideas and usually finds
 nothing — so it is step three, and merging is proposed rather than performed.
 
-**`originated` answers *was a person involved*, not *who typed it*.** Agents
-write up almost everything; attribution by authorship would mark every idea as
-the agent's and destroy the only signal that matters. An `agent:` origin means
-**no human has looked at this yet** — a state somebody can search for.
+**Authorship is `created.by`, and it means *who had the idea*.** Agents write up
+almost everything, so an agent that transcribes without shaping is not the
+author — any more than a keyboard is. `created.by: agent:` means **no human had
+this**, and a person reading it later files a `verified` entry rather than
+claiming authorship. Between them, *needs human eyes* is checkable rather than
+remembered.
 
-**Growth stages reuse `lifecycle_status`.** Seedling is `draft`, budding is
-`provisional`, evergreen is `stable`, pruned is `archived`. No second vocabulary
-for a ladder the format already has.
+**A person is named only if they saw the idea and replied.** Not *a session was
+open* — auto mode with nobody reading, or a subprocess whose output never
+surfaced, is nobody present. Leading an agent to an idea is having it; producing
+the sentence is not. And being named is involvement rather than endorsement, so
+nobody inherits blame for an idea they were merely party to.
+
+**Almost everything reuses a core field.** Growth stages are `lifecycle_status`
+— seedling `draft`, budding `provisional`, evergreen `stable`, pruned
+`archived`. Dates and authorship are `created`. Human review is `verified`. The
+type declares only `horizon`, `scope` and `archived`, because those are the
+three things the format genuinely does not have.
 
 ## Archive freely; delete carefully
 

@@ -3,18 +3,6 @@ type: type_definition
 defines: idea
 extends: document
 fields:
-  captured:
-    obligation: mandatory
-    field_type: date
-    desc: "when it was written down — not when it was had, which nobody remembers"
-  originated:
-    obligation: mandatory
-    field_type: actor
-    desc: "who had the idea (§7.4). human: means a person did, whoever wrote it up"
-  contributors:
-    obligation: optional
-    field_type: list
-    desc: "anyone who shaped it afterwards — actors, same grammar as originated"
   horizon:
     obligation: recommended
     field_type: enum
@@ -39,17 +27,90 @@ while the current task continues.
 **It is not a task, a plan, or a specification.** An idea that is fully worked
 out has stopped being one; see the growth stages below.
 
-## The fields are few on purpose
+## Three fields, because the root already has the rest
 
-Capture is the moment ideas are cheapest to lose and most expensive to
-interrupt. Everything here is either free to write or optional at capture time.
+An earlier draft of this type declared `captured` and `originated`. Both were
+core fields wearing new names:
 
-`captured` is the date it was **written down**. Nobody remembers when they had
-an idea, and a date invented after the fact is worse than the honest one.
+| declared | is really |
+| --- | --- |
+| `captured` | `created.at` |
+| `originated` | `created.by` — and **immutable**, which is what an origin should be |
 
-`horizon` is the only judgement asked for, and **absent means `someday`** —
-which is honest, since an idea nobody has classified is one nobody has decided
-to do soon.
+`created` is an `actor_event` (§7.1) carrying **both** the author and the time.
+Declaring either half again would have produced two fields holding one fact,
+free to disagree.
+
+`created` is `optional` at the root and inheritance is add-only (§10.3), so this
+type cannot strengthen it. **Treat it as required in practice** — an idea with no
+date and no author cannot be tended, because tending reads exactly those two
+things.
+
+## `created.by` answers *was a person involved*
+
+Not *who typed it*. The specification is explicit that `created.by` is the
+original-author record and that a git author is often merely whoever was running
+an agent.
+
+**An agent that transcribes an idea without shaping it is not its author**, any
+more than a keyboard is. The person who had it is.
+
+`created.by: agent:<model>` therefore means something precise and worth being
+able to find: **no human had this idea.**
+
+## The one rule: a person appears only if they saw it
+
+**The question this type exists to answer is whether an idea passed a human by
+without notice.** Everything about authorship and contribution serves that and
+nothing else.
+
+So the rule is uniform across every field that names a person:
+
+> **Record a human only when they saw the idea and responded to it.**
+
+Not *a session was open*. Not *they were nominally present*. An agent running in
+auto mode while nobody is reading, or working in a subprocess whose output never
+surfaced, has **not** had a human present — whatever the session claims.
+
+From an agent's side this is testable rather than a judgement: **did I show this
+to them and get a reply?** If not, do not name them. That is what makes the
+propose-before-filing step load-bearing rather than courteous — it is what
+produces the evidence.
+
+## Which field depends on what they did
+
+| what happened | where it goes |
+| --- | --- |
+| they had the idea | `created.by` |
+| they led the agent to it, or shaped it in the exchange | `contributors` |
+| they read it afterwards and approved it | `verified` |
+
+**Leading counts as having it.** If a person steered an agent toward an idea and
+the agent produced the words, it is as much theirs — `created.by: human:` with
+the agent as a contributor, not the reverse.
+
+**The check spans all three.** An idea that passed everybody by is one with no
+human in `created.by`, `contributors`, or `verified`:
+
+```yaml
+created: { by: agent:opus-5, at: 2026-08-20T09:00:00Z }
+# no contributors, no verified — nobody has seen this
+```
+
+Once a person reads it, a `verified` entry clears that. They have not authored
+or shaped it, and recording them as though they had would be a different lie
+than the one this avoids.
+
+## Being named is not endorsement
+
+`contributors` records involvement; `verified` records vouching. A bad idea's
+contributor list says who was in the exchange, not who stood behind it, so
+nobody inherits blame for an idea they were merely party to.
+
+**And nobody is named for an idea they never saw.** Telling a person *you did
+this* about something unfamiliar is worse than an incomplete list — it reads as
+a verification that never happened, and it can attach somebody to a mistake they
+had no part in.
 
 ## `horizon` — three values, and deliberately no fourth
 
@@ -66,22 +127,10 @@ are widely understood and neither needed inventing.
 Adding that value would invite this to become a task list, which is the failure
 this type most needs to avoid.
 
-## `originated` is the human-or-not signal, not a credit line
+**Absent means `someday`** — honest, and it costs nothing to leave off at
+capture.
 
-The question it answers is **was a person involved in having this**, not who
-deserves attribution.
-
-- **`human:<id>`** — a person had it. Still true if an agent asked the question
-  that prompted it, wrote every word of the file, and improved it afterwards.
-  That agent is a `contributor`.
-- **`agent:<model>`** — **no person was involved in having it.** This is the
-  case worth being able to find: an idea nobody has looked at yet.
-
-That distinction has to survive being written up, because agents write up
-almost everything. Attribution by *who typed it* would mark every idea as the
-agent's and lose the only signal that matters.
-
-## Growth stages use `lifecycle_status`, not a field of their own
+## Growth stages use `lifecycle_status`
 
 The gardening ladder is already the root type's:
 
@@ -93,6 +142,10 @@ The gardening ladder is already the root type's:
 | **pruned** | `archived` | set aside, with `archived` dated |
 
 Absent means `draft`, which is correct: everything starts as a seedling.
+
+`archived` is the one date the root cannot supply. `modified` advances on every
+edit, so it cannot say *when this was set aside* — and retention, once it is a
+setting, has to measure from something that does not move.
 
 ## Size is a symptom, not a limit
 

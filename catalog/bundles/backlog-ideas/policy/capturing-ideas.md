@@ -41,7 +41,7 @@ cannot tell which is current.
 weigh feasibility, do not fill in every field. Interrupting a run of ideas to
 tidy the last one is how the next three are lost.
 
-Everything except `title`, `captured` and `originated` can wait — and the
+Everything except `title` and `created` can wait — and the
 workflow asks afterwards how much you want to fill in, rather than demanding it
 up front. See [[capture-idea]].
 
@@ -71,13 +71,20 @@ enthusiasm that produced it. See [[tending-ideas]].
 
 ## Human-partnered and agent-only capture are different, and only one is solved
 
-**With a human present, an agent proposes and never files unilaterally.**
+**With a human reading, an agent proposes and never files unilaterally.**
 Present the idea, ask whether it is worth keeping, take refinements, and get
 agreement before writing anything durable. An agent that files ideas during a
 working session floods the list with material nobody chose.
 
-**Working alone, an agent may capture its own** — with `originated: agent:<model>`,
-which is what makes *no human has seen this* a state somebody can search for.
+**A session being open is not a human being present.** Auto mode with nobody
+reading, or work in a subprocess whose output never surfaced, is the agent-alone
+case however it looks from inside. The test is whether you showed it and got a
+reply.
+
+**Working alone, an agent may capture its own** — with `created.by: agent:<model>`,
+which is what makes *no human had this idea* a state somebody can search for.
+When a person later reads and approves it, that is a `verified` entry rather
+than authorship or contribution.
 
 *The right shape for agent-only capture is not yet worked out.* The volume and
 selection pressure are different when nobody is filtering in real time, and a
