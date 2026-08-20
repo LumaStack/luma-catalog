@@ -107,6 +107,42 @@ generality it does not have, for the benefit of one bundle.
 `data/` was the other candidate. `repositories/` says what is in it, and a
 reader browsing the repository learns something from the name.
 
+## Record what you cannot read, and never claim completeness
+
+**Repositories missing from a sweep are often missing by design.** An
+organization running least privilege has repositories the indexing account
+cannot open — the permission model working, not an obstacle to route around.
+
+**Record that they exist.** Not the contents, not a guessed description:
+`access: restricted`, the location, and nothing else. **An entry is a note that a
+door exists; it is not a key**, and being listed grants nobody anything.
+
+**The alternative is worse than the objection.** Anything reasoning from an index
+treats an absent entry as an answer, so an agent that cannot see the billing
+service concludes there is none and proposes building one. **A second system
+doing one job, written by whoever lacked access to the first**, is a worse
+outcome on every axis including security. [[knowing-without-access]] carries the
+full argument.
+
+**A sensible default, not a rule.** In some organizations a name alone is a
+disclosure, and a security owner may decide restricted repositories are never
+indexed — per repository or wholesale. **That is a legitimate configuration**
+whose cost is understood, and this bundle does not argue with it twice.
+
+### The index is only as complete as the account that built it
+
+**A sweep cannot discover what it cannot see.** Restricted repositories reach the
+index another way: somebody adds one, a reference in another repository points at
+one, or a sweep runs with wider credentials.
+
+So **never claim completeness** — not in the generated index, not in a report,
+not in a summary to a person. It holds *the repositories we know about*, never
+*all the repositories*.
+
+That distinction sounds pedantic and is the whole thing. **An index that implies
+it is exhaustive re-creates the failure this stance exists to prevent**:
+something concluding that what is not listed does not exist.
+
 ## Removal is never automatic
 
 **A repository missing from a scan is ambiguous.** Deleted, renamed,

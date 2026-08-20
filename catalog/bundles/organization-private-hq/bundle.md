@@ -56,7 +56,11 @@ consequences. Never as a default anybody drifts into.
 - [[verify-headquarters]] — still there, still private, still readable by more
   than one person.
 
-**Concept** — [[why-a-headquarters]], read when deciding whether to have one.
+**Concepts** — retrieved when relevant, never preloaded.
+
+- [[why-a-headquarters]] — read when deciding whether to have one.
+- [[knowing-without-access]] — the stance on indexing repositories nobody here
+  can read. Read when it is challenged.
 
 **Type** — [[repository]] · **Templates** —
 [a repository entry](templates/repository-entry.md) ·
@@ -133,6 +137,30 @@ only content a tool overwrites wholesale.
 deleted, renamed, transferred, made private, or simply invisible to the account
 that ran the sweep — and an entry deleted wrongly takes the organization's
 judgements with it.
+
+## Repositories nobody here can read are still recorded
+
+An organization running least privilege will have repositories the indexing
+account cannot open. **That is the permission model working**, and the index
+records their existence anyway: `access: restricted`, a location, and nothing
+else. **An entry is a note that a door exists; it is not a key.**
+
+**Because the alternative is worse than the objection.** Anything reasoning from
+an index treats an absent entry as an answer — so an agent that cannot see the
+billing service concludes there is none and proposes building one. **A second
+system doing one job, written by whoever lacked access to the first**, is worse
+on every axis including security.
+
+**And the index never claims completeness.** A sweep cannot discover what it
+cannot see, so it holds *the repositories we know about*, never *all the
+repositories*. An index implying otherwise re-creates the exact failure it exists
+to prevent.
+
+**This is a default, and it yields.** In some organizations a name alone is a
+disclosure. A security owner may decide restricted repositories are never
+indexed, per repository or wholesale — a legitimate configuration whose cost is
+understood. [[knowing-without-access]] argues the trade-off once so that nobody
+has to argue it again.
 
 ## Two failures this is built around
 

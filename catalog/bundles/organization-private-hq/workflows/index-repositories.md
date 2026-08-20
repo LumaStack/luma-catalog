@@ -41,6 +41,26 @@ than exist — which looks identical to a small organization.
 Other hosts have equivalents. Where none is available, a hand-supplied list is
 fine: the index does not care how a repository was found.
 
+**What you cannot see will not be listed, and that is usually deliberate.** An
+organization running least privilege has repositories this account cannot open,
+so a sweep is a view rather than a census.
+
+**Record the ones you know of anyway** — from a person, from a reference in
+another repository, or from a sweep run with wider credentials:
+
+```yaml
+access: restricted
+description:            # leave it out. Do not guess, do not infer from the name
+```
+
+**Do not retry, do not work around the permission, and above all do not conclude
+the repository does not exist.** Something reasoning from this index treats an
+absent entry as an answer, and the answer it reaches is *build a second one*.
+See [[knowing-without-access]], including why a security owner may tell you to
+stop recording these at all.
+
+**Never report the sweep as complete.** It covers what this account can see.
+
 ## 3. Compare against what is already recorded
 
 Three sets, and each is handled differently:
@@ -171,6 +191,10 @@ hand-edit it.
 Enough to scan: name, one line, in-scope or not, and a link. **A generated file
 that disagrees with its source is a second answer nobody asked for**, so if the
 index and an entry conflict, the entry wins and the index was stale.
+
+**Say on its face that it is not exhaustive**, and mark restricted entries as
+such. A reader who takes this for a census will conclude that what is not listed
+does not exist, which is the one failure the whole design is arranged to avoid.
 
 ## 8. Commit it into the headquarters
 
