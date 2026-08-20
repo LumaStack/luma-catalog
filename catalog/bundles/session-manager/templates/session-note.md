@@ -19,7 +19,7 @@ type: session_note
 kind: checkpoint          # checkpoint | handoff | close
 title: <what this session is doing, in one line>
 created: { by: agent:<model>, at: 2026-08-20T09:00:00Z }
-pinned: { branch: <branch>, commit: <short-sha>, prs: [<numbers>] }
+pinned: { branch: <branch>, commit: <short-sha>, pull_requests: [<numbers>] }
 ---
 ```
 
@@ -93,9 +93,20 @@ Order the note for that successor. A post-compaction agent wants the dead ends
 first — everything else is recoverable from the repository. A stranger wants
 orientation first.
 
-## For a close, add
+## For a close, drop `## Next` and add
+
+**A close writes no next steps.** Other people, agents and systems come through
+before anybody reads it, and a recommended action is unfalsifiable once stale —
+it reads as current no matter how wrong it has become. State can be checked
+against the repository; a plan cannot.
 
 ```markdown
+## Problems left behind
+
+<What is broken, how to see it, and what was true before. State, not
+instructions. "Some tests fail" is not state — the command, its output,
+and the commit where it started failing is.>
+
 ## Deliberately abandoned
 
 <What was dropped and why, so nobody restarts it.>
@@ -106,6 +117,9 @@ orientation first.
 - **queued** — <what to do next time, written as work rather than as an
   observation>
 ```
+
+**`## Next` belongs to checkpoint and handoff only.** Both are read within hours
+by somebody who can still tell whether the plan holds.
 
 **A close note should not survive.** [[session-close]] drains it into durable
 homes and deletes it. If one is worth keeping for audit or study, it moves to

@@ -38,6 +38,17 @@ whatever you write will need retracting.
 
 **When nothing has changed since the last one.** Say so and stop — see step 0.
 
+## First: is a forced compaction close?
+
+**A glance, and usually nothing follows from it.** If there is room, run the
+steps as written and do not mention the check — see [[context-budget]].
+
+If one is near, two things change. **Order by what cannot be recovered** — dead
+ends first, since a summary keeps conclusions and discards refuted paths. And
+**write it as a handoff rather than a checkpoint**, because a compaction changes
+who your reader is: they will be working from a summary, and a terse note that
+assumes shared context will fail them.
+
 ## 0. Is there anything to checkpoint?
 
 Read the existing note first:
@@ -129,7 +140,7 @@ Update in place at `~/.local/state/luma/sessions/<project>/<branch>.md` — see
 type: session_note
 kind: checkpoint
 created: { by: agent:<model>, at: <timestamp> }
-pinned: { branch: <branch>, commit: <short-sha>, prs: [<numbers>] }
+pinned: { branch: <branch>, commit: <short-sha>, pull_requests: [<numbers>] }
 ---
 ```
 

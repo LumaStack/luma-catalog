@@ -133,7 +133,8 @@ Regardless of which workflow wrote it:
 - **Where I am** — branch, whether the tree is clean, what the current task is.
 - **What is in flight** — half-finished edits, open pull requests, anything
   running.
-- **What I would do next**, and why that rather than something else.
+- **What I would do next**, and why that rather than something else. **Checkpoint
+  and handoff only** — see below.
 - **The dead ends.** What was tried and did not work. This is the most expensive
   thing lost in a compaction and the least likely to be recovered, because a
   summary keeps conclusions and discards refuted paths. The next agent will
@@ -141,6 +142,27 @@ Regardless of which workflow wrote it:
 - **What was not done** — scope skipped, checks not run, files not read. Silence
   reads as coverage.
 - **What is believed rather than confirmed.**
+
+## A plan is only good for as long as its reader arrives
+
+**Checkpoint and handoff write next steps. Close does not.**
+
+The difference is the gap. A checkpoint is read minutes later and a handoff
+within hours or days, by somebody who can still tell whether the plan holds. A
+close is read at an unknown time, after other people, other agents and other
+systems have come through — and **a stale plan is unfalsifiable.** A reader
+cannot detect that *next: update the gate path* was done in September by
+somebody else; it reads as current no matter how wrong it has become.
+
+**State survives the gap; plans do not.** *`tests/test_gate.py` fails at commit
+`4a9c1f2`* stays checkable forever — compare it against what is there now and you
+learn something either way. So close records **what is true, what is broken, and
+what was deliberately abandoned**, and trusts whoever arrives to plan from
+accurate state faster than they could audit a stale one.
+
+This is also the honest reading of *stopping hard*. A session cut short mid-task
+has left problems, not a plan — and writing the plan it would have followed
+dresses an interruption up as a roadmap.
 
 ## Cost is a first-class constraint
 

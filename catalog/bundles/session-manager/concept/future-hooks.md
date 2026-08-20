@@ -94,11 +94,22 @@ data. That decision is open and this depends on it, so this waits.
 elapsed time, context pressure, or a hook before an irreversible command.
 
 **Today.** [[session-checkpoint]] is invoked by hand, which is a real weakness:
-**compaction is usually unannounced**, and insurance you have to remember to buy
-is not insurance. It is the largest known hole in this bundle.
+**a forced compaction is unannounced**, and insurance you have to remember to
+buy is not insurance. It is the largest known hole in this bundle.
+
+[[context-budget]] mitigates it without curing it — the three ending workflows
+check the remaining room first and reorder under pressure. That still depends on
+an agent noticing, which is the part a hook would replace.
 
 **Signal.** Any host agent exposing a pre-compaction hook. Worth watching for
 actively rather than waiting to stumble on.
+
+**Also wanted: a reliable reading of remaining context.** Where the harness does
+not report one, [[context-budget]]'s bands are proxies — session length, how
+much has been read, whether a compaction has already happened — and a band
+chosen from proxies is guesswork dressed as procedure. The mitigation is the
+asymmetry: acting early is cheap and acting late costs the session, so bias
+early and be wrong harmlessly.
 
 ## Acting on what was skipped
 

@@ -42,7 +42,11 @@ note.
 - [[session-close]] — wind down, apply what was learned, leave nothing behind.
 - [[session-resume]] — pick up what another session left, and destroy it.
 
-**Concept** — [[future-hooks]], what this would use if it existed.
+**Concepts**
+
+- [[context-budget]] — how much room is left, and what changes on each side of a
+  forced compaction. Checkpoint, handoff and close all check it first.
+- [[future-hooks]] — what this would use if it existed.
 
 **Type** — [[session_note]] · **Template** —
 [a session note](templates/session-note.md)
@@ -105,6 +109,29 @@ not need to. And **close cannot leave the mess a handoff can**: a handoff may
 pass over a running process with an explanation, because there is somebody to
 explain it to.
 
+**And close writes no next steps.** Checkpoint and handoff do, because their
+reader arrives before a plan can rot. A close is read after other people, agents
+and systems have come through, and **a stale plan is unfalsifiable** — nobody
+can tell that *next: update the gate path* was done in September by somebody
+else. So close records what is true, what is broken, and what was abandoned, and
+trusts whoever arrives to plan from accurate state faster than they could audit
+a stale one.
+
+## Close has two modes, and the caller declares which
+
+**`session-close`** — winding up. The work reached an end and should be made
+durable and whole.
+
+**`session-close hard-stop`** — stopping hard. Mid-task, no pretence of coming
+back soon. Reach a stopping point rather than a finish line: start nothing new,
+never leave a sweep half-applied, and record precisely what was left broken.
+
+**Declared, not inferred.** Urgency is not visible from inside a session, and
+both errors cost — a proper close run as a hard stop drops the retrospective,
+which is the half that makes the practice improve, and a hard stop run as a
+proper close spends time somebody has already said they do not have. Omitting
+the mode gets the thorough one, so the default does more work rather than less.
+
 ## Close is where the practice improves
 
 It is the only one of the three that sees the whole arc — checkpoint is
@@ -124,10 +151,16 @@ logging bundle, memory tooling, `luma-foreman where <kind>`.
 That file shrinking is the measure of progress here. One that never shrinks is a
 wish list.
 
-**The largest known hole: compaction is usually unannounced**, and
+**The largest known hole: a forced compaction is unannounced**, and
 [[session-checkpoint]] has to be remembered. Insurance you have to remember to
 buy is not insurance, and no host agent currently exposes a hook that would fix
 it.
+
+[[context-budget]] is the mitigation rather than the cure. Checkpoint, handoff
+and close each glance at the remaining room first — a cheap check that changes
+nothing in the usual case, and under pressure reorders the work by **what cannot
+be recovered from disk.** A compaction destroys only the conversation, so dead
+ends and unwritten decisions come first and `git status` comes last.
 
 ## Consumers
 

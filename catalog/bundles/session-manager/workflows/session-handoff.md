@@ -20,6 +20,24 @@ nobody is.
 rather than a close, and it changes what you write: what they will already know,
 what tools they have, what idiom they read.
 
+## First: is a forced compaction close?
+
+**A glance, and usually nothing follows from it.** If there is room, run the
+steps as written and say nothing — see [[context-budget]].
+
+If one is near, this is the workflow most at risk from it. Its budget assumes
+the context is ending anyway, which is true — but **a half-finished handoff looks
+complete**, and nothing in it announces that the dead ends were never reached.
+
+So **do not begin a full handoff you cannot finish.** Write the note in one pass,
+smallest useful version first, then enrich. Order it by what cannot be
+recovered: dead ends, then decisions made aloud and never written, then what is
+believed rather than confirmed. Where things stand is re-derivable from the
+repository; none of those are.
+
+**Step 1 still runs** — knowing the successor is what makes this a handoff, and
+it costs one question. Steps 3 and 6 are the ones to compress.
+
 ## 1. Ask who is picking this up
 
 Ask first, because the answer shapes everything after it:
@@ -125,7 +143,7 @@ At `~/.local/state/luma/sessions/<project>/<branch>.md`, or committed to
 type: session_note
 kind: handoff
 created: { by: agent:<model>, at: <timestamp> }
-pinned: { branch: <branch>, commit: <short-sha>, prs: [<numbers>] }
+pinned: { branch: <branch>, commit: <short-sha>, pull_requests: [<numbers>] }
 ---
 ```
 
