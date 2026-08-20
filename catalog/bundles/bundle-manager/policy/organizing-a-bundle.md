@@ -13,6 +13,7 @@ preload: mandatory
   _types/          Type Definitions — only if the bundle declares its own
   workflows/       procedures — type: workflow
   policy/          adopted courses of action — type: policy
+  concepts/        background that explains — type: concept
   scripts/         executables a workflow invokes — never run on adoption
   templates/       assets to copy — no frontmatter
 ```
@@ -26,6 +27,74 @@ root is perfectly conformant.
 Follow it anyway. A reader opening any bundle should see its shape in one
 glance, and a bundle with three documents at the root becomes a bundle with
 fifteen at the root.
+
+## The three document directories are three disclosure tiers
+
+`workflows/`, `policy/` and `concepts/` are not an arbitrary filing scheme. They
+are the format's three-way partition, which cuts documents by **how each one
+reaches a consumer** — and that decides what a reader pays for:
+
+| tier | what belongs there | when it loads |
+| --- | --- | --- |
+| **`policy/`** | what to do, and what outranks what | **standing** — kept present |
+| **`workflows/`** | the procedures | **invoked** — loaded while being followed |
+| **`concepts/`** | background that explains: rationale, models, open questions | **retrieved** — when relevant, and not otherwise |
+
+**Filing by tier is a cost decision, not a tidiness one.** A `preload:
+mandatory` policy is loaded into every session that touches the bundle. Put the
+argument for the bundle's existence there and every consumer pays for it forever,
+to answer a question they are not asking.
+
+### The test: is the reader working *on* this, or *through* it?
+
+**Through it** — following a procedure, obeying a rule, ending a session. They
+need to know what to do and what wins when two things conflict. That is
+`policy/` and `workflows/`.
+
+**On it** — deciding whether to adopt it, arguing with a step, extending it,
+judging whether it still earns its place. That is `concepts/`, and it should
+never be preloaded.
+
+**A rule stays standing even when its reasoning moves.** The format asks that a
+policy carry its reasoning, and that stays true — but a clause, not a section.
+When the argument grows past what a reader needs at the moment of obeying, the
+argument is what leaves, and the rule keeps a sentence of it.
+
+Watch for the inverse mistake too. **Something operational hidden in a concept is
+never present when it is needed** — a rule about what outranks what, filed as
+background, is loaded only by people already reasoning about the bundle and
+never by the agent about to violate it.
+
+### `preload` and `type` must agree
+
+They answer overlapping questions, so a document can state both and contradict
+itself.
+
+**A `concept` marked `preload: mandatory` is mistyped.** If it genuinely must be
+present at all times, its reach is *standing*, which makes it a policy. **A
+`policy` marked `optional` is worth a second look** — a rule nobody loads unless
+they think to is not governing anything, though it can be right where a bundle
+holds rules for a narrow case.
+
+Nothing enforces this. It is a cheap thing to check in [[audit-bundle]].
+
+### `concept` is under review, and this leans on it
+
+Worth saying plainly rather than discovering later. The format marks `concept`
+*under review* — it adds no fields, and no consumer has ever treated it
+differently from the root document, which by the format's own test reads as
+falsified rather than merely unused.
+
+**What is being claimed here is its retrieval mode, not its shape.** A concept is
+*retrieved when relevant*, which is the whole reason to file rationale
+separately from a rule that is preloaded. That claim is real and measurable:
+the cost of a mandatory policy is paid in every session, and moving the argument
+out of one is a saving anybody can check.
+
+**If `concept` is removed from the format, this convention survives and the type
+name changes.** The tier distinction does not depend on the name — it depends on
+`preload` and on where a reader looks. Nothing here would need rewriting beyond
+a frontmatter value and a directory.
 
 ## Directories group documents; the `type` identifies them
 
@@ -50,6 +119,16 @@ shape a harness wants when the workflow is projected into a skill.
 
 **`policy/`** — courses of action this bundle's adopter takes on. Rules,
 conventions, boundaries, definitions of done.
+
+**`concepts/`** — background a reader needs in order to reason about the bundle
+rather than to use it. Why it exists, the model it assumes, what it deliberately
+does not do, what would falsify it, and what it is waiting on that does not
+exist yet.
+
+**Most bundles need none**, and an empty one is noise. A bundle earns its first
+concept when a policy has grown an argument longer than the rule it justifies —
+which is the moment that argument starts costing every consumer who preloads
+the rule.
 
 **`templates/`** — files meant to be copied and filled in. **Assets by
 default**: no frontmatter, no `type`, outside validation, linked with ordinary

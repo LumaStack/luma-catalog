@@ -55,6 +55,26 @@ That is the field working as intended. Marking every workflow mandatory would
 impose the whole bundle on any consumer that touched it, which is the cost that
 keeps `mandatory` meaning something.
 
+**The three document directories are three disclosure tiers**, which is the
+point of filing by type at all:
+
+| tier | what belongs there | when it loads |
+| --- | --- | --- |
+| **`policy/`** | what to do, and what outranks what | **standing** |
+| **`workflows/`** | the procedures | **invoked** |
+| **`concepts/`** | background that explains — rationale, models, open questions | **when relevant** |
+
+The test is whether the reader is working **through** the bundle or **on** it.
+Following a procedure is *through*; deciding whether to keep it is *on*.
+
+Getting it wrong is expensive in one direction and dangerous in the other:
+rationale in a mandatory policy is charged to every consumer in every session,
+and something operational filed as background is never loaded by the agent about
+to violate it.
+
+This bundle has no `concepts/`, and **most bundles should not.** One is earned
+when a policy grows an argument longer than the rule it justifies.
+
 ## Consumers
 
 Both levels. An organization curates a catalog and a project writes bundles it
