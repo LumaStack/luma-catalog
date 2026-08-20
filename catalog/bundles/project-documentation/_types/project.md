@@ -3,6 +3,11 @@ type: type_definition
 defines: project
 extends: document
 fields:
+  disclosure_level:
+    obligation: recommended
+    field_type: enum
+    values: [public, internal, confidential, restricted]
+    desc: "how widely this repository is disclosed. Absent refuses organization-private data — undeclared is not permission"
   owns:
     obligation: recommended
     field_type: list of text
@@ -40,7 +45,65 @@ anything else about the project is fetched. The root declares it `optional` and
 inheritance is add-only, so this type cannot strengthen it — **treat it as
 required in practice.** A project descriptor without one has no reason to exist.
 
-## Two fields, because boundaries are the other thing outsiders need
+## `disclosure_level` — how widely this repository is disclosed
+
+**The scale is people, not sensitivity.** `public` is the widest and `restricted`
+the narrowest:
+
+| | who sees it |
+| --- | --- |
+| `public` | anyone |
+| `internal` | the whole organization |
+| `confidential` | a named group within it |
+| `restricted` | a named few |
+
+**Content may only go where disclosure is no wider than its own
+classification.** A `public` repository accepts only public content; a
+`restricted` one accepts anything. That is the entire rule, and it is one
+comparison.
+
+### It is a declaration, not a state
+
+**This is the property the field exists for.** A repository's hosting visibility
+is ambient — it is true today and can change tomorrow, and reading it answers a
+different question than the one being asked.
+
+`LumaStack/luma-hq` is private today and is *planned to be published*. Its
+`disclosure_level` is `public`, so it refuses organization-private data **now**,
+while it is still private. **Checking `isPrivate` would return true and permit
+the write** — which is exactly how a repository ends up holding something that
+becomes public later.
+
+**Never derive this from the host.** If it can be inferred from ambient state, it
+is not doing the job.
+
+### Absent refuses
+
+**Undeclared is not permission.** A repository with no `disclosure_level` does
+not accept organization-private data, and nothing can be written there on the
+strength of it looking safe.
+
+**The tempting mistake is to treat absent as the most restrictive value.** That
+reads as *safest*, and the safest value is the one that permits the most — so
+the default would grant maximum access to every repository that never said
+anything. **Absent means undeclared, and undeclared refuses.** You declare to
+gain a capability, never to lose one.
+
+**Scoped, so it does not break ordinary work.** What is refused is a write of
+organization-private data. A repository that has never heard of any of this is
+unaffected in every other respect.
+
+### It sets a ceiling; it does not grant permission
+
+A correct `disclosure_level` is necessary and never sufficient. **The destination
+must also be established as the intended one**, by identity rather than by
+inference — see the `luma/organization-private-hq` bundle, where the headquarters
+is named in machine-local configuration and matched by remote URL.
+
+Two independent checks, both of which must pass. **The field can only ever
+refuse.**
+
+## Two more fields, because boundaries are the other thing outsiders need
 
 `owns` and `must_not_own` are what let somebody detect that **two projects are
 about to collide**, which is a question no single repository can answer and

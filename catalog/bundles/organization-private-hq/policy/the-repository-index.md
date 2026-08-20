@@ -7,6 +7,48 @@ preload: mandatory
 
 # The repository index
 
+## Where it may be written, and nowhere else
+
+**An index is organization-private data.** It names repositories, including ones
+most people cannot see, and where it is written is not a judgement call.
+
+**[[create-headquarters]] is a prerequisite.** Not a recommendation — until a
+headquarters has been established and recorded, [[index-repositories]] fails and
+writes nothing. **There is no fallback and there must never be one**: a workflow
+that picks a likely candidate when it cannot find the declared one is a workflow
+that will eventually pick wrong, quietly.
+
+Four checks, all of which must pass, **and any that cannot be performed is a
+failure rather than a pass**:
+
+| | |
+| --- | --- |
+| **established** | a machine-local declaration names the headquarters by remote URL |
+| **identity** | the repository you are in *is* that one — `git remote get-url origin` equal, not similar |
+| **declared** | its `disclosure_level` accepts organization-private data. **Absent refuses** |
+| **actual** | it is private right now |
+
+### Why not one check
+
+**Because the single check this replaced was passing.** It confirmed the
+destination repository was private. It was private. **Privacy was never the
+question** — *is this the headquarters* was, and a check that confirms the wrong
+property is worse than no check, because its passing is read as assurance.
+
+The four fail for four different reasons — ambient state, identity, declared
+intent, current reality — so no single mistake defeats them all.
+
+### Declared beats actual, always
+
+`disclosure_level` is a **declaration**; hosting visibility is **ambient state**.
+A repository can be private today and planned for publication, and its history
+goes with it when that happens. **The declaration refuses now; the visibility
+check would permit.**
+
+That is the whole failure mode: *the tool inferring its destination from ambient
+state.* Every control worth having is one that does not depend on getting the
+ambient state right.
+
 A headquarters reasons across repositories, so it needs to know which ones exist
 and roughly what each is for. **That knowledge is a liability the moment it is
 copied**, because the repositories keep changing and the copy does not.
