@@ -17,6 +17,57 @@ than none.
 Read [[the-repository-index]] first: what is stored, what is not, and why the
 answer is *as little as possible*.
 
+## 0. The destination gate — refuse before doing anything
+
+**This runs first, before the sweep.** An index is organization-private data,
+and where it is written is not a judgement call.
+
+**All four must pass. Any that cannot be performed is a failure, not a pass.**
+
+**1. A headquarters has been established.** [[create-headquarters]] writes a
+machine-local declaration naming it:
+
+```sh
+cat ~/.config/luma/luma-foreman/headquarters.toml   # url = "git@github.com:acme/acme-hq.git"
+```
+
+**No declaration means stop.** Do not search for a likely candidate, do not offer
+to use the repository you are standing in. Say that no headquarters has been
+established and that [[create-headquarters]] establishes one. **This workflow has
+no fallback and must not acquire one.**
+
+**2. You are standing in that repository.** Compare by remote URL, which is local
+and needs no network:
+
+```sh
+git remote get-url origin
+```
+
+**It must equal the declared URL.** Not resemble it, not share a name — equal it.
+A repository named `acme-hq` in the wrong account is a different repository.
+
+**3. Its `disclosure_level` accepts organization-private data.** Read
+`.luma/project.md` in the repository you are standing in.
+
+**Absent refuses.** Undeclared is not permission, and a repository that has never
+said what it is has not said it will hold this. **`public` refuses** — including
+when the repository is private today, because a repository planned for
+publication is one whose history goes with it.
+
+**4. It is private now.** The weakest of the four and still worth running: a
+declaration saying `internal` on a repository that is currently public is a
+contradiction somebody needs to hear about immediately.
+
+### Why four checks and not one
+
+**Because the single check this replaced was passing.** It confirmed the
+destination was private, which was true, and privacy was never the question —
+*is this the headquarters* was. **A check that confirms the wrong property is
+worse than no check**, because its passing is read as assurance.
+
+Each of these can fail independently, and **no two of them fail for the same
+reason.** Ambient state, identity, declared intent, current reality.
+
 ## 1. Ask which accounts to sweep
 
 > *Which hosting accounts hold your repositories?*
@@ -209,10 +260,16 @@ that made it complete.
 
 ## 8. Commit it into the headquarters
 
-**Check where you are.** These entries name the organization's repositories,
-including private ones, and that is not a list to commit anywhere else.
+**Run the step 0 gate again, immediately before writing.** All four checks, not a
+recollection that they passed earlier. A sweep takes time, branches get switched,
+and **the only check that counts is the one performed against the state you are
+about to write into.**
 
-**Confirm the repository is private before committing**, every time — see
-[[verify-headquarters]]. Cheap, and the one check that matters most here: an
-index of private repositories in a public headquarters publishes the shape of
-the organization in a single commit.
+An index of private repositories in the wrong repository publishes the shape of
+the organization in a single commit, and no later correction removes it — a
+merged pull request keeps its own refs, which the repository owner cannot alter
+or delete.
+
+**If any check fails, write nothing and say which one.** Not a partial commit,
+not a local file kept for later, not a suggestion of somewhere else it could go.
+**The absence of a destination is the finding.**

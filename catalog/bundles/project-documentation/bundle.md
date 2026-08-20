@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.3.0
 published: 2026-08-19
 consumers: [project]
 entry_point: policy/readme
@@ -91,7 +91,17 @@ from what a project publishes about its code.
 
 ## Version
 
-`0.2.0` — the project descriptor is new content, and existing use is unaffected.
+`0.3.0` — `disclosure_level` is new content; existing use is unaffected.
+
+**It was added after a real failure rather than in anticipation of one.** An
+organization's private index was written into a repository that is published
+software, and the guard that should have stopped it checked whether the
+destination was *private*. It was. **Privacy was the wrong property**, and the
+check passing read as assurance.
+
+`disclosure_level` is the declared answer to the question actually being asked,
+and it refuses on a repository that is private today and planned for publication
+— the case that defeats every check derived from ambient state.
 
 The README shape and the document matrix are drawn from practice; the conditions
 in the matrix have not been tested against a project that had none of these

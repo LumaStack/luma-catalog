@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.3.0
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -107,6 +107,28 @@ than the rule being stated once at creation.
 happened, somebody may have had a reason, and silently reverting it destroys the
 record of a decision.
 
+## Where private data may be written
+
+**[[create-headquarters]] is a prerequisite for [[index-repositories]].** Until a
+headquarters has been established and recorded, indexing fails and writes
+nothing. **No fallback, ever** — a workflow that picks a likely candidate when it
+cannot find the declared one will eventually pick wrong, quietly.
+
+Four checks, all required, **and any that cannot be performed is a failure rather
+than a pass**: a machine-local declaration names the headquarters by remote URL;
+the repository you are in *is* that one; its `disclosure_level` accepts
+organization-private data, where **absent refuses**; and it is private now.
+
+**Declared beats actual.** `disclosure_level` is a declaration; hosting
+visibility is ambient state. A repository can be private today and planned for
+publication — and its history goes with it. The declaration refuses now; a
+visibility check would permit.
+
+**Why four and not one:** the single check this replaced *was passing.* It
+confirmed the destination was private, which was true, and privacy was never the
+question. **A check that confirms the wrong property is worse than no check**,
+because its passing reads as assurance.
+
 ## The repository index, and how it avoids rotting
 
 A headquarters reasons across repositories, so it has to know which exist and
@@ -193,7 +215,16 @@ occasionally needs to know one exists.
 
 ## Version
 
-`0.2.0` — reading `.luma/project.md` is new content, and existing use is
+`0.3.0` — the destination gate is new content; existing use is unaffected,
+except that `index-repositories` now **fails where it previously proceeded.**
+That is the intended change.
+
+**It was written after this bundle failed in exactly the way it was meant to
+prevent.** An index was written into published software because the guard
+confirmed the destination was private, which was true and irrelevant. The gate
+that replaced it checks four things, none of which is *privacy alone*.
+
+`0.2.0` — reading `.luma/project.md` was new content, and existing use was
 unaffected.
 
 **The naming rules have been run once and the workflows not at all.**

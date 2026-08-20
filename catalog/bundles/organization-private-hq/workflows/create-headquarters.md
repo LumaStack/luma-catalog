@@ -93,10 +93,10 @@ gh repo view <org>/<slug>-hq --json name,visibility,isPrivate,url 2>&1
 
 Three outcomes:
 
-**It exists and is private.** Nothing to create. Go to
-[[verify-headquarters]] to check the rest, and record the location as
-configuration — see [[what-a-headquarters-holds]] for where, which depends on
-whether the recording repository is public.
+**It exists and is private.** Nothing to create — **and this workflow is not
+finished.** Steps 8 and 9 still apply: a headquarters that exists but has
+declared nothing and been recorded nowhere is one no tool can safely write to.
+Skip to them, then run [[verify-headquarters]] for the rest.
 
 **It exists and is public.** Stop. **This is a finding, not a step to fix in
 passing** — say plainly that it is public, that anything already in it has been
@@ -137,8 +137,11 @@ An empty repository is a decision nobody can act on. Enough to be useful:
   carries the shape; without it, a `DECISIONS.md` is enough to begin.
 - **`catalog/`**, if the organization will have its own bundles. It names the
   universal catalog upstream rather than forking it.
-- **`.luma/`**, because a headquarters is a repository and keeps the same tiers.
-  `luma/luma-layout` carries the layout and the workflow that initializes it.
+- **`.luma/project.md`**, declaring what this repository is and **how widely it
+  is disclosed.** This is not optional here — see step 8.
+- **`.luma/`** more broadly, because a headquarters is a repository and keeps the
+  same tiers. `luma/luma-layout` carries the layout and the workflow that
+  initializes it.
 
 **Create only what will have contents.** An empty `catalog/` is a question a
 reader has to answer.
@@ -146,12 +149,49 @@ reader has to answer.
 **Then commit it.** A repository whose shape exists only on your machine is not
 yet a repository anybody can use.
 
-## 8. Record where it is, and who can read it
+## 8. Declare its disclosure level
 
-**The location is configuration** — in a private repository `.luma/config/` is
-fine; in a public one it is machine-local and never committed. See
-[[what-a-headquarters-holds]].
+In `.luma/project.md`, using the `project` type from
+`luma/project-documentation`:
 
-**Then grant read access to more than one person.** A headquarters only its
-creator can open is the organization's reasoning held hostage to one account,
-and it is the failure nobody notices until the moment it matters.
+```yaml
+disclosure_level: internal      # or confidential, or restricted
+```
+
+**Nothing writes organization-private data here until this exists.** Absent
+refuses — undeclared is not permission, and a repository that has never said what
+it is has not said it will hold this.
+
+**Never `public`.** A headquarters that declares itself public is a
+contradiction, and the declaration is what a guard reads rather than the hosting
+visibility — which is ambient, true today, and answers a different question.
+
+## 9. Record where it is, so a tool can find it without guessing
+
+Write the machine-local declaration. **This is the step that makes a headquarters
+a fact rather than an assumption**, and without it [[index-repositories]] fails
+by design rather than picking a likely candidate.
+
+```toml
+# ~/.config/luma/luma-foreman/headquarters.toml
+url = "git@github.com:acme/acme-hq.git"
+```
+
+**Machine-local, never committed.** Two reasons. A committed pointer is one file
+that can be wrong for everybody at once. And to read a pointer inside the
+headquarters you would have to already know which repository that is, which is
+the question being answered.
+
+**By remote URL, not by name.** A repository called `acme-hq` in the wrong
+account is a different repository, and the URL is the only form that cannot be
+confused. It is also local — `git remote get-url origin` reads `.git/config` and
+needs no network.
+
+**Each operator writes their own.** That is not duplication to be eliminated; it
+is what stops one mistaken commit redirecting everybody's tooling at once.
+
+## 10. Grant read access to more than one person
+
+A headquarters only its creator can open is the organization's reasoning held
+hostage to one account, and it is the failure nobody notices until the moment it
+matters.
