@@ -73,6 +73,25 @@ no access to this machine — pick this up?**
 If no, something is in the wrong place. Checkpoint and handoff cannot pass this
 test and do not need to. Close is defined by it.
 
+## First: is a forced compaction close?
+
+**A glance, and usually nothing follows from it.** If there is room, run the
+steps as written and say nothing — see [[context-budget]].
+
+If one is near, **a close cannot be attempted at full length.** It is the most
+expensive of the three and the only one with a step that cannot be resumed: a
+compaction between draining the note and deleting it leaves a successor with
+a note whose contents may or may not have reached a durable home.
+
+**Then this is not a `session-close`. It is a `session-close hard-stop`, and the
+context is what forced it.** Say that plainly — running out of room is a
+legitimate reason to stop hard, and dressing it as a proper close claims a
+thoroughness that did not happen.
+
+**Step 1 is the one that must complete**, ahead of shutting things down and well
+ahead of the retrospective. Everything else in the repository survives a
+compaction; the note's unrouted contents do not.
+
 ## 1. Drain the session note
 
 Read every note this session wrote:

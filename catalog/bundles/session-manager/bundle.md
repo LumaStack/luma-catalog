@@ -42,7 +42,11 @@ note.
 - [[session-close]] — wind down, apply what was learned, leave nothing behind.
 - [[session-resume]] — pick up what another session left, and destroy it.
 
-**Concept** — [[future-hooks]], what this would use if it existed.
+**Concepts**
+
+- [[context-budget]] — how much room is left, and what changes on each side of a
+  forced compaction. Checkpoint, handoff and close all check it first.
+- [[future-hooks]] — what this would use if it existed.
 
 **Type** — [[session_note]] · **Template** —
 [a session note](templates/session-note.md)
@@ -147,10 +151,16 @@ logging bundle, memory tooling, `luma-foreman where <kind>`.
 That file shrinking is the measure of progress here. One that never shrinks is a
 wish list.
 
-**The largest known hole: compaction is usually unannounced**, and
+**The largest known hole: a forced compaction is unannounced**, and
 [[session-checkpoint]] has to be remembered. Insurance you have to remember to
 buy is not insurance, and no host agent currently exposes a hook that would fix
 it.
+
+[[context-budget]] is the mitigation rather than the cure. Checkpoint, handoff
+and close each glance at the remaining room first — a cheap check that changes
+nothing in the usual case, and under pressure reorders the work by **what cannot
+be recovered from disk.** A compaction destroys only the conversation, so dead
+ends and unwritten decisions come first and `git status` comes last.
 
 ## Consumers
 
