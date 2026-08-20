@@ -7,12 +7,26 @@ description: Choosing the scope — project, department or organization — and 
 # Where an idea lives
 
 ```
-.luma/backlog/ideas/<slug>.md
+.luma/backlog/ideas/<slug>.md        preferred
+docs/ideas/<slug>.md                 where luma is not installed
 ```
 
-Ideas live in the backlog tier, because that is what the tier is for: **what we
-intend and have not done.** One file per idea, or per closely-bound theme of
-ideas.
+**Preferred, not required.** `.luma/backlog/ideas/` is the right home because
+the backlog tier is exactly what the practice needs — *what we intend and have
+not done* — but **not every repository has luma installed, and an idea still
+has to go somewhere.**
+
+What actually matters is **one file per idea, in one consistent place**, with
+frontmatter a reader and a tool can both use. None of that depends on the path.
+
+**Never create `.luma/` in a repository that has not adopted it.** Bringing a
+directory structure into somebody's project because you wanted to file an idea
+is a change they did not ask for. Ask — and if the answer is no, use whatever
+the repository already keeps such material in.
+
+**Where luma is absent**, follow what is there rather than inventing: `docs/`
+if that is where prose lives, or a sibling of whatever `IDEAS.md` you are
+replacing. Consistency within a repository beats consistency across them.
 
 ## Choosing the scope
 

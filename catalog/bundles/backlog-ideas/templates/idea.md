@@ -1,7 +1,7 @@
 # Idea template
 
-Copy the blocks to `.luma/backlog/ideas/<slug>.md`. **Copy the blocks, not this
-file.**
+Copy the blocks to `.luma/backlog/ideas/<slug>.md` — or wherever this repository
+keeps ideas, if luma is not installed. **Copy the blocks, not this file.**
 
 The point is that this is fast. **Two fields capture an idea** — everything else
 waits for a tending session, and `horizon` already defaults to `someday` when

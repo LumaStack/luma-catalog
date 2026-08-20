@@ -12,7 +12,7 @@ One pass over the whole list, done deliberately rather than continuously.
 ## 1. Read everything before changing anything
 
 ```sh
-ls .luma/backlog/ideas/
+ls <ideas-directory>/          # .luma/backlog/ideas/, or wherever they live here
 ```
 
 **Read the whole list first.** Judging each idea as you reach it means judging

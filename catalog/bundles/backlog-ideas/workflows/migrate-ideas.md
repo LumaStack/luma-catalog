@@ -53,9 +53,11 @@ ls -d ../*/.git 2>/dev/null         # sibling repositories, if they are checked 
 hint about what somebody has cloned, not a statement about what exists — and a
 remote tells you where this repository lives, not where an idea should.
 
-**A destination may not exist yet.** If an idea belongs to the organization and
-that repository has no `.luma/backlog/ideas/`, that is a thing to create and say
-you created, not a reason to file the idea somewhere convenient instead.
+**A destination may not exist yet, and may not want to.** A repository with no
+ideas directory needs one created and said so. A repository with **no luma at
+all** is a different case: do not install `.luma/` there to make room for an
+idea — ask, and if the answer is no, use whatever that repository already keeps
+prose in.
 
 *The better version is not implemented: asking foreman or a headquarters for
 this on the user's behalf.* A headquarters has the breadth to answer properly,
@@ -98,7 +100,7 @@ well-placed one, and the signal is gone.
 ## 5. Check whether a version already exists
 
 ```sh
-grep -ril "<a distinctive word>" .luma/backlog/ideas/
+grep -ril "<a distinctive word>" <ideas-directory>/
 ```
 
 **If one does**, do not create a second. Read both, decide what this entry adds
@@ -121,7 +123,7 @@ Follow [[capture-idea]] from step 1, with two differences:
 In `IDEAS.md`, against each entry:
 
 ```markdown
-> *Migrated to `.luma/backlog/ideas/<slug>.md`.*
+> *Migrated to `<ideas-directory>/<slug>.md`.*
 ```
 
 **Do not delete anything yet.** The marker is what makes step 6 possible, and a

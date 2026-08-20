@@ -32,8 +32,9 @@ whoever suggested it and whoever wrote it down. Both count.
 **Do not stop to research, weigh, or fill in fields.** `horizon` and `scope`
 are asked for in step 4, and absent `horizon` already means `someday`.
 
-Put it in `.luma/backlog/ideas/<slug>.md` — see [[where-an-idea-lives]] for the
-scope call, and take the default (`project`) if it is not obvious. It is cheap
+Put it in `.luma/backlog/ideas/<slug>.md`, or wherever this repository keeps
+ideas if luma is not installed — see [[where-an-idea-lives]]. Take the default
+(`project`) if the scope is not obvious. It is cheap
 to move later and expensive to interrupt the flow now.
 
 ## 2. Ask whether there are more ideas
@@ -51,8 +52,8 @@ Deliberately after capture, not before. Searching first interrupts the flow and
 usually finds nothing.
 
 ```sh
-ls .luma/backlog/ideas/
-grep -ril "<a distinctive word>" .luma/backlog/ideas/
+ls <ideas-directory>/
+grep -ril "<a distinctive word>" <ideas-directory>/
 ```
 
 **If a version already exists**, the new file is not the keeper. Read both and

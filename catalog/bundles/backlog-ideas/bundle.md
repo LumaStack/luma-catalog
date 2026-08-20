@@ -9,8 +9,9 @@ description: Ideas as individual files rather than one growing IDEAS.md — what
 
 # Backlog ideas
 
-One file per idea, in `.luma/backlog/ideas/`, instead of a single `IDEAS.md`
-that grows until nobody opens it.
+One file per idea — preferably in `.luma/backlog/ideas/`, and anywhere
+consistent when luma is not installed — instead of a single `IDEAS.md` that
+grows until nobody opens it.
 
 **The goal is a list of mostly good ideas, not a record of every thought anyone
 had.** Everything here serves that: a test for what earns a file, a capture path
@@ -61,6 +62,16 @@ work is real and worth recording, and is still not a human having seen it.
 `archived`. Dates and authorship are `created`. Human review is `verified`. The
 type declares only `horizon`, `scope` and `archived`, because those are the
 three things the format genuinely does not have.
+
+## It prefers `.luma/`, and does not require it
+
+The backlog tier is the right home, but **not every repository has luma
+installed and an idea still has to go somewhere.** What the practice actually
+needs is one file per idea in one consistent place, with frontmatter — none of
+which depends on the path.
+
+**Never create `.luma/` in a repository that has not adopted it.** Filing an
+idea is not a reason to bring a directory structure into somebody's project.
 
 ## Archive freely; delete carefully
 
