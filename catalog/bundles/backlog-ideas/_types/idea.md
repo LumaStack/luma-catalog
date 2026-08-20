@@ -29,88 +29,82 @@ out has stopped being one; see the growth stages below.
 
 ## Three fields, because the root already has the rest
 
-An earlier draft of this type declared `captured` and `originated`. Both were
-core fields wearing new names:
+`horizon`, `scope` and `archived` are the only things the format does not
+already supply. Dates and authorship are `created`, growth stages are
+`lifecycle_status`, who was involved is `contributors`, and who vouched for it
+is `verified`.
 
-| declared | is really |
+`archived` earns its place because `modified` advances on every edit and so
+cannot say *when this was set aside* — which is the clock retention will need.
+
+## `contributors` is the field that matters
+
+Everyone **actively in the exchange the idea came out of**, human and agent
+alike. Not who typed it, not who owns the repository — who was in it.
+
+| what happened | `contributors` |
 | --- | --- |
-| `captured` | `created.at` |
-| `originated` | `created.by` — and **immutable**, which is what an origin should be |
+| a human paired with an agent, and the **agent** suggested the idea | **human and agent** |
+| a human had the idea and the **agent transcribed** it | **human and agent** |
+| a session was open in auto mode and the human never acknowledged the idea | **agent only** |
+| no human was ever present; the agent was asked to work independently | **agent only** |
 
-`created` is an `actor_event` (§7.1) carrying **both** the author and the time.
-Declaring either half again would have produced two fields holding one fact,
-free to disagree.
+Transcribing counts. So does suggesting. **The exchange produced the idea, and
+everyone in it contributed to it** — apportioning who did more is a judgement
+nobody can make reliably and nothing here needs.  The reason we care is so we 
+can provide opportunities for additional oversight by humans; not for accolades
+or posterity.
+
+## Active means saw it and responded
+
+The third row is the one an agent gets wrong by default.
+
+**A session being open is not a human being present.** An agent running in auto
+mode while nobody reads, or working in a subprocess whose output never surfaced,
+has had **no human in the exchange** whatever the session claims. A person who
+was around an hour ago and never saw this idea did not contribute to it.
+
+From an agent's side the test is mechanical rather than a judgement: **did I put
+this in front of them and get some kind of acknowledgement?** If not, name nobody.
+
+That is what makes proposing before filing load-bearing rather than courteous —
+it is the thing that produces the evidence.
+
+## No human in `contributors` is the signal
+
+```yaml
+contributors: [agent:opus-5]     # nobody has seen this
+```
+
+That state is the point of the field. **An idea nobody has looked at should be
+findable**, and it is what a later verification pass keys on.
+
+The failure it avoids is naming somebody who was not there. Telling a person
+*you did this* about an idea they have never seen reads as a verification that
+never happened — and it can attach them to a undesirable outcome they had no part in.
+
+## `verified` is separate, and open to agents
+
+Confirmation is not contribution. Whoever reads an idea afterwards and vouches
+for it files a `verified` event (§7.2):
+
+```yaml
+contributors: [agent:opus-5]
+verified: [{ by: agent:reviewer, at: 2026-08-20T10:00:00Z }]
+```
+
+An agent working alone may be overseen by other agents, and that oversight is
+real and worth recording — it is simply **not a human having seen it**. Both
+questions stay answerable because they are asked of different fields.
+
+## `created` still applies, and is not the signal
+
+The root's `created` records who authored the document and when (§7.1). Leave it
+meaning that.
 
 `created` is `optional` at the root and inheritance is add-only (§10.3), so this
 type cannot strengthen it. **Treat it as required in practice** — an idea with no
-date and no author cannot be tended, because tending reads exactly those two
-things.
-
-## `created.by` answers *was a person involved*
-
-Not *who typed it*. The specification is explicit that `created.by` is the
-original-author record and that a git author is often merely whoever was running
-an agent.
-
-**An agent that transcribes an idea without shaping it is not its author**, any
-more than a keyboard is. The person who had it is.
-
-`created.by: agent:<model>` therefore means something precise and worth being
-able to find: **no human had this idea.**
-
-## The one rule: a person appears only if they saw it
-
-**The question this type exists to answer is whether an idea passed a human by
-without notice.** Everything about authorship and contribution serves that and
-nothing else.
-
-So the rule is uniform across every field that names a person:
-
-> **Record a human only when they saw the idea and responded to it.**
-
-Not *a session was open*. Not *they were nominally present*. An agent running in
-auto mode while nobody is reading, or working in a subprocess whose output never
-surfaced, has **not** had a human present — whatever the session claims.
-
-From an agent's side this is testable rather than a judgement: **did I show this
-to them and get a reply?** If not, do not name them. That is what makes the
-propose-before-filing step load-bearing rather than courteous — it is what
-produces the evidence.
-
-## Which field depends on what they did
-
-| what happened | where it goes |
-| --- | --- |
-| they had the idea | `created.by` |
-| they led the agent to it, or shaped it in the exchange | `contributors` |
-| they read it afterwards and approved it | `verified` |
-
-**Leading counts as having it.** If a person steered an agent toward an idea and
-the agent produced the words, it is as much theirs — `created.by: human:` with
-the agent as a contributor, not the reverse.
-
-**The check spans all three.** An idea that passed everybody by is one with no
-human in `created.by`, `contributors`, or `verified`:
-
-```yaml
-created: { by: agent:opus-5, at: 2026-08-20T09:00:00Z }
-# no contributors, no verified — nobody has seen this
-```
-
-Once a person reads it, a `verified` entry clears that. They have not authored
-or shaped it, and recording them as though they had would be a different lie
-than the one this avoids.
-
-## Being named is not endorsement
-
-`contributors` records involvement; `verified` records vouching. A bad idea's
-contributor list says who was in the exchange, not who stood behind it, so
-nobody inherits blame for an idea they were merely party to.
-
-**And nobody is named for an idea they never saw.** Telling a person *you did
-this* about something unfamiliar is worse than an incomplete list — it reads as
-a verification that never happened, and it can attach somebody to a mistake they
-had no part in.
+date cannot be tended, because tending reads how long something has been sitting.
 
 ## `horizon` — three values, and deliberately no fourth
 

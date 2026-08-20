@@ -37,24 +37,26 @@ archived: 2026-11-04              # only when pruning
 ---
 ```
 
-**Name a person only if they saw the idea and replied.** A human who led the
-agent to it is `created.by`; one who shaped it in the exchange is a
-`contributor`; one who read and approved it afterwards is in `verified`.
+**`contributors` is everyone actively in the exchange** — human and agent,
+whoever suggested it and whoever wrote it down.
 
-**A session being open is not enough** — auto mode with nobody reading, or a
-subprocess nothing surfaced, is nobody present.
+**Name a person only if they saw it and replied.** A session being open is not
+enough: auto mode with nobody reading, or a subprocess nothing surfaced, is
+nobody present.
 
-**Being listed is not endorsement** — that is `verified`.
+**Being listed is not endorsement** — that is `verified`, and an agent can file
+one too.
 
 ## When an agent had the idea alone
 
 ```yaml
-created:  { by: agent:<model>, at: 2026-08-20T09:00:00Z }
-verified: [{ by: human:<id>,  at: 2026-08-20T14:00:00Z }]   # once a person reads it
+contributors: [agent:<model>]                               # nobody has seen this
+verified: [{ by: human:<id>, at: 2026-08-20T14:00:00Z }]    # until a person reads it
 ```
 
-A human who approves an unchanged idea has not authored or shaped it. `verified`
-records that a person has now seen it, which is what clears *needs human eyes*.
+No human in `contributors` is the signal. `verified` records that somebody read
+it afterwards — a person, or an overseeing agent, which is worth recording and
+is still not a human having seen it.
 
 ## Body
 

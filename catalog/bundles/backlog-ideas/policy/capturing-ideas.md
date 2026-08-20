@@ -7,33 +7,34 @@ preload: mandatory
 
 # What is worth capturing
 
-**The goal is a list of mostly good ideas, not a record of every thought anyone
+**The goal is a list of generally usable ideas, not a record of every thought anyone
 had.** A list nobody trusts is a list nobody reads, and the fastest way to get
 there is to capture everything.
 
 ## The test: all three, or do not write a file
 
-**You would plausibly do it.** Not *this is interesting* — *we might actually
-build this*. Interesting-but-never is a conversation, not a file.
+**You would plausibly do it.** Not *this is interesting*. 
+Interesting-but-never is a conversation, not a file.
 
 **You cannot do it now.** No time, no clarity, or too large to start. This is
 the whole reason capture exists: the idea would otherwise be lost while the
 current work continues.
 
-**Forgetting it would cost something.** If losing it is fine, losing it is fine.
+**Forgetting it would cost something.** If losing it is fine, skip capture.
 
 ## What disqualifies one
 
-**You could just do it.** If acting takes less time than capturing, act. A file
+**You should do it now.** If acting takes less time than capturing, act. A file
 is overhead that has to be tended, read, and eventually pruned.
 
 **It is an observation, not a proposal.** *"The build is slow"* is a complaint.
 *"Cache the dependency layer"* is an idea. The first belongs in a conversation
 or an issue.
 
-**It is a variation of something already captured.** Append to that one.
-Two files describing one idea is worse than either alone, because the reader
-cannot tell which is current.
+**It is a variation of something already captured.** Append extracted value 
+into the similar existing idea. Two files describing one idea is worse than 
+either alone, because the reader cannot tell which is current and idea maintenance
+becomes unnecessarily burdensome.
 
 ## Capture optimises for flow, not for completeness
 

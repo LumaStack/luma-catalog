@@ -21,11 +21,14 @@ Recorded in `lifecycle_status`, not a field of their own:
 | --- | --- | --- |
 | **seedling** | `draft` | captured. Nobody has thought about it since |
 | **budding** | `provisional` | read again, and it survived. Shape emerging |
-| **evergreen** | `stable` | worked out. Waiting only on capacity |
+| **evergreen** | `stable` | worked out. Waiting only on capacity. |
 | **pruned** | `archived` | set aside, `archived` dated |
 
 **Most ideas should be seedlings**, and that is healthy. A list where everything
 is evergreen means somebody has been polishing instead of deciding.
+
+Stable ideas typically belong in a backlog, immediately - unless they are 
+inspirational, grandiose, or marked as someday.
 
 ## Tending is a session, not a habit
 
@@ -68,8 +71,10 @@ this and set it aside* is worth more than silence, and it stops the same idea
 being captured again in four months.
 
 **Never delete another person's idea without asking.** Pruning is normal;
-deleting somebody's contribution without a word is not, and the social cost of
-getting it wrong is far higher than the storage.
+marking other people's ideas as archived is acceptable, although it's a best
+practice to notify them; deleting somebody's contribution without a word is 
+not acceptable (assuming they have not left the organization), and the 
+social cost of getting it wrong is far higher than the storage.
 
 An agent should **never delete** an idea it did not originate. Archive it and
 say so.

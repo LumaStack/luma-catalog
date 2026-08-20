@@ -41,18 +41,20 @@ session that prunes.
 Searching for duplicates first interrupts the run of ideas and usually finds
 nothing — so it is step three, and merging is proposed rather than performed.
 
-**Authorship is `created.by`, and it means *who had the idea*.** Agents write up
-almost everything, so an agent that transcribes without shaping is not the
-author — any more than a keyboard is. `created.by: agent:` means **no human had
-this**, and a person reading it later files a `verified` entry rather than
-claiming authorship. Between them, *needs human eyes* is checkable rather than
-remembered.
+**`contributors` is everyone actively in the exchange** — human and agent alike,
+whoever suggested it and whoever wrote it down. Both count, and apportioning who
+did more is a judgement nobody can make reliably.
 
-**A person is named only if they saw the idea and replied.** Not *a session was
-open* — auto mode with nobody reading, or a subprocess whose output never
-surfaced, is nobody present. Leading an agent to an idea is having it; producing
-the sentence is not. And being named is involvement rather than endorsement, so
-nobody inherits blame for an idea they were merely party to.
+**No human in `contributors` is the signal.** A session being open is not a
+human being present: auto mode with nobody reading, or a subprocess whose output
+never surfaced, is nobody there whatever the session claims. The test from an
+agent's side is mechanical — *did I put this in front of them and get a reply?*
+— which is what makes proposing before filing load-bearing rather than
+courteous.
+
+**Confirmation is separate, and open to agents.** `verified` records whoever
+read an idea afterwards and vouched for it. An agent overseeing another agent's
+work is real and worth recording, and is still not a human having seen it.
 
 **Almost everything reuses a core field.** Growth stages are `lifecycle_status`
 — seedling `draft`, budding `provisional`, evergreen `stable`, pruned

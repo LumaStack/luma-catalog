@@ -21,13 +21,13 @@ One or two sentences. The idea, not the plan.
 ---
 type: idea
 title: <the idea in one line>
-created: { by: human:<id>, at: <timestamp> }
+created: { by: <you>, at: <timestamp> }
+contributors: [<everyone actively in the exchange>]
 ---
 ```
 
-`created.by` is **whoever had the idea**, not whoever typed it. An agent
-transcribing without shaping is not the author. Use `agent:<model>` only when
-**no person was involved at all**.
+**`contributors` is everyone who was in the exchange** — human and agent alike,
+whoever suggested it and whoever wrote it down. Both count.
 
 **Do not stop to research, weigh, or fill in fields.** `horizon` and `scope`
 are asked for in step 4, and absent `horizon` already means `someday`.
@@ -95,23 +95,24 @@ material nobody chose — and the cost lands on whoever tends it later.
 Once agreed: **`created.by` is the human**, even if the agent phrased it better,
 asked the question that prompted it, and wrote every word of the file.
 
-**If they led you to it, it is theirs** — `created.by: human:`, with you as a
-contributor. Steering an agent toward an idea is having it; producing the
-sentence is not.
+**Both of you are contributors**, whichever of you said it first. A human who
+led you to an idea and a human who had it outright are the same case, and you
+transcribing it does not make it less theirs or more yours.
 
 **Name a person only if they saw it and replied.** Not *a session was open* —
 auto mode with nobody reading, or a subprocess whose output never surfaced, is
 not a human being present, whatever the session claims.
 
-From your side the test is mechanical: **did you show this to them and get a
-reply?** If not, name nobody. That is what makes proposing before filing
-load-bearing rather than polite — it produces the evidence that somebody saw
-it.
+From your side the test is mechanical: **did you put this in front of them and
+get a reply?** If not, name nobody. That is what makes proposing before filing
+load-bearing rather than polite — it produces the evidence.
 
 ## Working alone
 
-An agent may capture its own with `created.by: agent:<model>`, which makes *no
-human had this idea* something a person can search for.
+An agent may capture its own with only agents in `contributors`, which makes
+*nobody has seen this* something a person can search for. Overseeing agents that
+review it go in `verified`, which is real and worth recording — and is still not
+a human having seen it.
 
 **Flag it when you next speak to one.** When they read it and approve it, that
 is a `verified` entry — not authorship and not contribution:
