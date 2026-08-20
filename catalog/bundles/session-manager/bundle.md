@@ -118,9 +118,9 @@ a stale one.
 **`session-close`** — winding up. The work reached an end and should be made
 durable and whole.
 
-**`session-close now`** — stopping hard. Mid-task, no pretence of coming back
-soon. Reach a stopping point rather than a finish line: start nothing new, never
-leave a sweep half-applied, and record precisely what was left broken.
+**`session-close hard-stop`** — stopping hard. Mid-task, no pretence of coming
+back soon. Reach a stopping point rather than a finish line: start nothing new,
+never leave a sweep half-applied, and record precisely what was left broken.
 
 **Declared, not inferred.** Urgency is not visible from inside a session, and
 both errors cost — a proper close run as a hard stop drops the retrospective,

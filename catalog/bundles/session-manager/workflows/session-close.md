@@ -24,13 +24,13 @@ things down rather than setting them up.
 | invoked as | mode | means |
 | --- | --- | --- |
 | `session-close` | **winding up** | the work reached an end. Make it durable and whole, and take the time |
-| `session-close now` | **stopping hard** | mid-task, stopping immediately, no pretence of coming back soon |
+| `session-close hard-stop` | **stopping hard** | mid-task, stopping immediately, no pretence of coming back soon |
 
 **Do not guess from context.** Urgency is not visible from inside the session,
 and both errors cost: a proper close run as a hard stop skips the retrospective
 and the learnings, which is the half that makes the practice improve; a hard stop
 run as a proper close spends time somebody does not have, which is why they said
-*now*.
+*hard-stop*.
 
 **Plain `session-close` is the default**, so an omitted mode does more work
 rather than less. If the session looks rushed and no mode was given, **say so and
@@ -105,7 +105,7 @@ so anything you leave, somebody finds later with no way to ask.
 - A branch nobody will return to? Say so in the record, or merge it, or delete
   it — with the user's agreement.
 
-### Stopping hard — `session-close now` only
+### Stopping hard — `session-close hard-stop` only
 
 **Reach a stopping point; do not reach a finish line.** The distinction is what
 keeps a rushed close honest.
@@ -174,7 +174,7 @@ everybody wants to leave. Do it anyway.
   was.
 - What should become a policy, a memory, or an idea. Route it.
 
-**On `session-close now`, keep it to what would change behaviour** — one or two
+**On `session-close hard-stop`, keep it to what would change behaviour** — one or two
 things, not a review. The rest is lost, and that is the cost of stopping hard
 rather than a step to fake at speed.
 
@@ -186,7 +186,7 @@ nothing is in flight, and the change is small and obvious while the session is
 still fresh. A misleading comment, a missing line in the readme, a policy that
 sent you the wrong way: fix it.
 
-**`session-close now`: queue them, and queue them as work.** Not as an
+**`session-close hard-stop`: queue them, and queue them as work.** Not as an
 observation. *"The contributing guide describes the old gate path"* is a note
 nobody acts on. *"Update `CONTRIBUTING.md` to the current gate path — it still
 says the pre-rename one"* is a thing somebody can pick up in five minutes.
