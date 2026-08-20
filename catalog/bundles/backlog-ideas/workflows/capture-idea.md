@@ -36,7 +36,7 @@ Put it in `.luma/backlog/ideas/<slug>.md` — see [[where-an-idea-lives]] for th
 scope call, and take the default (`project`) if it is not obvious. It is cheap
 to move later and expensive to interrupt the flow now.
 
-## 2. Ask whether there are more
+## 2. Ask whether there are more ideas
 
 **Ideas arrive in runs.** The one that surfaced is often the one on top, and
 stopping to tidy it is how the next three are lost.
@@ -46,6 +46,7 @@ until the run is done.
 
 ## 3. Now check for duplicates
 
+Once we've confirmed idea flow has reached a pause.
 Deliberately after capture, not before. Searching first interrupts the flow and
 usually finds nothing.
 
@@ -84,7 +85,7 @@ Only now, and **ask rather than assume**:
 **A drive-by capture is a complete capture.** Treating a thin idea as a failure
 is what makes people stop capturing.
 
-## Working with a human who is actually reading
+## Working with a human who is actually acknowledging
 
 **Propose; do not file.** Say the idea, ask whether it is worth keeping, take
 the refinement, and get agreement before writing anything durable.
