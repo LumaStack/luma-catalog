@@ -29,6 +29,22 @@ idea is cheap to promote later; an organization-scoped one nobody owns is the
 kind that goes stale in silence. Narrow and promotable beats broad and
 orphaned.
 
+## The list of scopes will grow
+
+`project`, `department` and `organization` are a **first guess**, made before
+any real backlog met them. Some ideas will fit none of them, and some will fit
+badly — belonging to a customer, a product line, a community, a piece of shared
+infrastructure that no single project owns.
+
+**When that happens, record it rather than forcing the nearest fit.** An idea
+with no good home is evidence about this list, and it is the only evidence there
+will be.
+
+**The default is what puts that evidence at risk.** An awkward idea quietly
+filed as `project` is indistinguishable from a well-placed one, so leaning on
+the default without noting the discomfort is how a missing scope stays missing.
+Lean on it, and say when you did.
+
 ## The file follows the scope
 
 An idea scoped to the organization belongs in the organization's own repository,

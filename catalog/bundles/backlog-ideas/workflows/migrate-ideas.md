@@ -85,6 +85,16 @@ found.
 project-scoped idea is cheap to promote later; one filed under an organization
 nobody checks is the kind that goes quiet.
 
+**When nothing fits, say so rather than forcing it.** The three scopes are a
+first guess, and a migration is the first time many ideas meet them at once —
+which makes it the best opportunity to find out where they are wrong.
+
+Record the mismatch: *this belongs to a customer, a product line, a
+community, something that is not a project and not the organization.* That note
+is the evidence the list needs to grow, and **the `project` default is what
+destroys it** — an awkward idea quietly filed as `project` looks exactly like a
+well-placed one, and the signal is gone.
+
 ## 5. Check whether a version already exists
 
 ```sh
