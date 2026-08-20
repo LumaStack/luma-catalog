@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-18
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -73,6 +73,15 @@ not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
 
-`0.1.0`. The layout was reasoned through carefully and **has never been used** —
-nothing has adopted anything yet, and the first real project to migrate into it
-will find things this could not.
+`0.2.0` — `.luma/project.md` is a reserved path this layout did not previously
+document. New content; existing use is unaffected.
+
+It is also the **first thing at the root of `.luma/` rather than inside a tier**,
+which is a shape worth watching. The justification is that it has no lifecycle of
+its own — it names the repository the tiers belong to — and **if a second file
+ever claims the same exemption, that is the moment to check whether the four
+tiers are actually short one.**
+
+The layout was reasoned through carefully and **has never been used** — nothing
+has adopted anything yet, and the first real project to migrate into it will
+find things this could not.

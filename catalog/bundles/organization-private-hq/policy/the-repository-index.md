@@ -107,6 +107,57 @@ generality it does not have, for the benefit of one bundle.
 `data/` was the other candidate. `repositories/` says what is in it, and a
 reader browsing the repository learns something from the name.
 
+## Record what you cannot read
+
+**Repositories missing from a sweep are often missing by design.** An
+organization running least privilege has repositories the indexing account
+cannot open — the permission model working, not an obstacle to route around.
+
+**Record that they exist.** Not the contents, not a guessed description:
+`access: restricted`, the location, and nothing else. **An entry is a note that a
+door exists; it is not a key**, and being listed grants nobody anything.
+
+**The alternative is worse than the objection.** Anything reasoning from an index
+treats an absent entry as an answer, so an agent that cannot see the billing
+service concludes there is none and proposes building one. **A second system
+doing one job, written by whoever lacked access to the first**, is a worse
+outcome on every axis including security. [[knowing-without-access]] carries the
+full argument.
+
+**A sensible default, not a rule.** In some organizations a name alone is a
+disclosure, and a security owner may decide restricted repositories are never
+indexed — per repository or wholesale. **That is a legitimate configuration**
+whose cost is understood, and this bundle does not argue with it twice.
+
+### Completeness is asserted, never assumed
+
+**A sweep cannot discover what it cannot see.** Restricted repositories reach the
+index another way: somebody adds one, a reference in another repository points at
+one, or a sweep runs with wider credentials.
+
+**Many organizations will make a point of listing every repository**, and theirs
+is more useful for it — an agent that can rely on the index can stop looking.
+**What a reader cannot do is infer that.** A complete index and a partial one
+look identical from the inside, and both mistakes cost: assuming complete when it
+is not produces a duplicate of something that already exists, and treating a
+complete one as partial wastes the effort that made it complete.
+
+**So the organization states it, and the index carries the statement on its
+face.** Absent one, a reader treats the index as partial.
+
+**A useful claim names its scope** — which accounts, whether restricted
+repositories are included, and as of when:
+
+> *Complete for the `acme` and `acme-labs` accounts, restricted repositories
+> included, as of 2026-08-20.*
+
+**A bare *"complete"* is worse than none**, because it invites reliance without
+saying what is being relied on.
+
+**A scan cannot establish this about itself.** It only ever knows what it saw, so
+completeness is a statement about how the organization manages its repositories
+— made by the organization, carried forward by the sweep.
+
 ## Removal is never automatic
 
 **A repository missing from a scan is ambiguous.** Deleted, renamed,

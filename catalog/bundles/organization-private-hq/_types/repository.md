@@ -12,6 +12,11 @@ fields:
     field_type: enum
     values: [true, false]
     desc: "whether this headquarters reasons about it. Absent means undecided, which is different from false"
+  access:
+    obligation: optional
+    field_type: enum
+    values: [readable, restricted]
+    desc: "whether the indexing account can read it. Absent means readable"
 ---
 
 # repository
@@ -22,10 +27,10 @@ has to hold in order to reason about it.
 **It is a cache with judgements attached, not a description.** The repository
 describes itself; this points at it and records what the organization decided.
 
-## Two fields, because everything else is either core or derivable
+## Three fields, because everything else is either core or derivable
 
-`url` and `in_scope` are the only things the format does not already supply and
-no scan can produce.
+`url`, `in_scope` and `access` are the only things the format does not already
+supply and no scan can produce.
 
 **`url` is mandatory** because an entry that cannot be resolved is worse than
 absent — it names something without letting anybody check it, which is how a
@@ -40,6 +45,31 @@ forks every time it runs.
 **Absent is not `false`.** Undecided means nobody has looked, which is a state
 worth finding; `false` means somebody looked and said no. Collapsing them turns
 a backlog into a decision that was never made.
+
+## `access` exists so that silence is never mistaken for absence
+
+**An organization running least privilege will have repositories the indexing
+account cannot read.** That is the permission model working. `access: restricted`
+records the one thing that is still knowable: **it exists, and we cannot see
+inside it.**
+
+Without the field, an entry with no description is ambiguous in a way that
+matters — *nobody has written one* and *nobody here may read it* call for
+opposite responses. The first is a gap to offer to fill; the second is a
+boundary to leave alone.
+
+```yaml
+access: restricted     # do not fetch, do not describe, do not conclude absence
+```
+
+**Absent means `readable`**, because it is mechanically true: if the description
+was fetched, the repository could be read. There is no undecided state here.
+
+**What it obliges a reader to do** is not conclude that a capability is missing.
+An agent that cannot see a billing service and decides there is none proposes
+building a second one — which is a worse outcome than knowing there is a door it
+may not open. See [[knowing-without-access]] for the full argument, and for why
+this is a default a security owner may overrule.
 
 ## The core fields carry the rest
 

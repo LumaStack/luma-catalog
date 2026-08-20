@@ -41,6 +41,29 @@ than exist — which looks identical to a small organization.
 Other hosts have equivalents. Where none is available, a hand-supplied list is
 fine: the index does not care how a repository was found.
 
+**What you cannot see will not be listed, and that is usually deliberate.** An
+organization running least privilege has repositories this account cannot open,
+so a sweep is a view rather than a census.
+
+**Record the ones you know of anyway** — from a person, from a reference in
+another repository, or from a sweep run with wider credentials:
+
+```yaml
+access: restricted
+description:            # leave it out. Do not guess, do not infer from the name
+```
+
+**Do not retry, do not work around the permission, and above all do not conclude
+the repository does not exist.** Something reasoning from this index treats an
+absent entry as an answer, and the answer it reaches is *build a second one*.
+See [[knowing-without-access]], including why a security owner may tell you to
+stop recording these at all.
+
+**Report what the sweep covered, not that it covered everything.** It saw what
+this account can see. If the organization has stated its index is complete —
+and many will — carry that statement rather than re-deriving it; a scan can only
+ever know what it saw.
+
 ## 3. Compare against what is already recorded
 
 Three sets, and each is handled differently:
@@ -90,14 +113,60 @@ modified: { by: process:index-repositories, at: <timestamp> }
 stale_after: <a date somebody will actually recheck by>
 ```
 
-**The host's description is a fallback, not the target.** What is wanted is a
-sentence that answers *when should somebody open this?* — the same job a
-workflow's `description` does. Most repository descriptions on a hosting account
-do not answer it, because they were written for a different audience.
+### Where `description` comes from, in order
 
-**Where the repository says it better, take that.** Its readme's opening line,
-or its own project descriptor if it has one. **The repository owns this fact**;
-the headquarters is only collecting it.
+**The repository owns this fact and the headquarters must never become its
+author.** A description written here is a copy, and a copy of something that
+changes is wrong from the first commit that changes it, with nothing announcing
+the drift.
+
+**1. `.luma/project.md`** — the repository's own descriptor, written to answer
+exactly this question. Take it and cite it.
+
+```sh
+gh api repos/<org>/<name>/contents/.luma/project.md --jq .content | base64 -d
+```
+
+**2. Derived, with the source recorded.** No descriptor: fall back to the
+readme's opening line or the hosting description, and **say where it came from.**
+Both were written for a human who had already arrived, so they usually answer a
+different question — which is why this is second, and visibly so.
+
+**3. Absent.** Nothing usable: **leave `description` out.** *Nobody has said what
+this is for* is honest, findable, and fixable.
+
+### Never invent one
+
+**An invented description is indistinguishable from an authored one**, and
+something selecting repositories on a guess is worse off than something that
+knows it does not know.
+
+Deriving is not inventing — the difference is provenance. A fallback recorded
+with its source stays visibly second-best. **A sentence composed from reading the
+code and stored as though the project said it does not**, and it will be
+believed, propagated, and never corrected, because nothing marks it as a guess.
+
+### Offering to write one
+
+Closing the gap properly means the repository gets its own descriptor, and that
+is worth offering.
+
+**Ask per repository, and never in bulk.** An organization owner may not own
+every repository in it, and a sweep that opens forty pull requests is one
+somebody has to apologize for.
+
+**It goes as a pull request against that repository**, never a direct commit.
+The descriptor is a claim the repository makes about itself, so its own people
+decide the wording — and the direction of this bundle is *collect*, which
+writing into a project repository inverts.
+
+**Only where `.luma/` already exists.** A repository that has not adopted it has
+nowhere to put a descriptor, and having something to file is not a reason to
+introduce a directory structure into somebody's project. Report that as the gap
+it is.
+
+What belongs in one is `luma/project-documentation`'s business, not this
+bundle's.
 
 **Never overwrite an adjudicated value with a derived one.** If somebody wrote a
 better description by hand, refreshing must not replace it. The presence of
@@ -125,6 +194,18 @@ hand-edit it.
 Enough to scan: name, one line, in-scope or not, and a link. **A generated file
 that disagrees with its source is a second answer nobody asked for**, so if the
 index and an entry conflict, the entry wins and the index was stale.
+
+**State the coverage on its face**, and mark restricted entries as such.
+
+**If the organization has asserted the index is complete, reproduce that
+assertion with its scope** — which accounts, whether restricted repositories are
+included, as of when. **Otherwise say what the sweep covered** and leave it
+there.
+
+Both readings are load-bearing. A reader who takes a partial index for a census
+concludes that what is not listed does not exist; a reader who treats a
+genuinely complete one as partial hedges every conclusion and wastes the effort
+that made it complete.
 
 ## 8. Commit it into the headquarters
 

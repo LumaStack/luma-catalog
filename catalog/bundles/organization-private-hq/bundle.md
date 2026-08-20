@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -56,7 +56,11 @@ consequences. Never as a default anybody drifts into.
 - [[verify-headquarters]] — still there, still private, still readable by more
   than one person.
 
-**Concept** — [[why-a-headquarters]], read when deciding whether to have one.
+**Concepts** — retrieved when relevant, never preloaded.
+
+- [[why-a-headquarters]] — read when deciding whether to have one.
+- [[knowing-without-access]] — the stance on indexing repositories nobody here
+  can read. Read when it is challenged.
 
 **Type** — [[repository]] · **Templates** —
 [a repository entry](templates/repository-entry.md) ·
@@ -134,6 +138,33 @@ deleted, renamed, transferred, made private, or simply invisible to the account
 that ran the sweep — and an entry deleted wrongly takes the organization's
 judgements with it.
 
+## Repositories nobody here can read are still recorded
+
+An organization running least privilege will have repositories the indexing
+account cannot open. **That is the permission model working**, and the index
+records their existence anyway: `access: restricted`, a location, and nothing
+else. **An entry is a note that a door exists; it is not a key.**
+
+**Because the alternative is worse than the objection.** Anything reasoning from
+an index treats an absent entry as an answer — so an agent that cannot see the
+billing service concludes there is none and proposes building one. **A second
+system doing one job, written by whoever lacked access to the first**, is worse
+on every axis including security.
+
+**And completeness is asserted, never assumed.** Many organizations will make a
+point of listing every repository, and theirs is more useful for it — but a
+complete index and a partial one look identical from the inside, and **a scan
+cannot establish this about itself**, since it only ever knows what it saw. So
+the organization states it, naming the accounts, whether restricted repositories
+are included, and as of when; the sweep carries that forward; and absent a
+statement a reader treats the index as partial.
+
+**This is a default, and it yields.** In some organizations a name alone is a
+disclosure. A security owner may decide restricted repositories are never
+indexed, per repository or wholesale — a legitimate configuration whose cost is
+understood. [[knowing-without-access]] argues the trade-off once so that nobody
+has to argue it again.
+
 ## Two failures this is built around
 
 **One reader.** An organization's reasoning behind a single account, recoverable
@@ -162,7 +193,10 @@ occasionally needs to know one exists.
 
 ## Version
 
-`0.1.0`. **The naming rules have been run once and the workflows not at all.**
+`0.2.0` — reading `.luma/project.md` is new content, and existing use is
+unaffected.
+
+**The naming rules have been run once and the workflows not at all.**
 The suffix list is drawn from common legal forms rather than from anything
 encountered, and it will be missing entries — treat it as a starting set, not a
 specification.
@@ -172,10 +206,9 @@ as configuration rather than named in public repositories, but nothing reads
 that configuration yet, so where it belongs has been reasoned rather than
 demonstrated.
 
-**The index has a gap it cannot close alone.** A repository ought to publish its
-own answer to *when should somebody open this?*, and the headquarters should
-merely collect it. **No such descriptor exists**, so today the host's description
-field is the fallback — and most were written for a different audience, so they
-answer a different question. Until a repository can state it, the best
-descriptions here will be hand-written, which is the one derived field most
-likely to rot.
+**The descriptor this depends on now exists and nothing has one.**
+`.luma/project.md` is where a repository answers *when should somebody open
+this?*, defined by `luma/project-documentation` — so the headquarters collects
+rather than authors. No repository has written one yet, so in practice every
+description here starts as a derived fallback, which is the one field most
+likely to rot until that changes.

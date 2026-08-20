@@ -99,3 +99,27 @@ line saying no is what makes the sweep idempotent.**
 **Leave `in_scope` absent if nobody has decided.** Undecided and *decided
 against* are different states, and only one of them is a question worth finding
 later.
+
+## For a repository you cannot read
+
+```yaml
+---
+type: repository
+title: acme-billing
+url: https://github.com/acme/acme-billing
+in_scope: true
+access: restricted
+---
+```
+
+**No `description`, and do not guess one** — not from the name, not from what it
+probably does. `access: restricted` says the gap is a **boundary rather than an
+omission**, which is what stops somebody helpfully offering to fill it.
+
+**In scope and unreadable is a normal state**, not a contradiction. The
+organization reasons about this repository; this account cannot open it.
+
+**The entry buys one thing: nothing concludes the repository does not exist.** An
+agent that cannot see a billing service and finds no entry proposes building
+one. See [[knowing-without-access]] — including why a security owner may
+legitimately tell you not to record these at all.
