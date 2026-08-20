@@ -9,6 +9,7 @@ preload: mandatory
 
 ```
 .luma/
+  project.md          what this repository is, for something outside it
   backlog/            what we intend
   bundles/            what is in force — adopted, or written here
     adopted.toml      what this project took, and proof of what it looked like
@@ -48,6 +49,21 @@ Not by topic, and not by who wrote it:
 | `bundles/` | **what is in force.** Adopted whole, or written here |
 | `records/` | **what happened, and why.** Append-only, dated, never edited |
 | `config/` | how a tool behaves here |
+
+### `project.md` sits above the tiers, not inside one
+
+It is the only file at the root of `.luma/`, and deliberately so: **it names the
+repository the tiers belong to.**
+
+It has no lifecycle of its own — it is not intended, not in force, not a record
+of what happened, and not how a tool behaves. Filing it under any of the four
+would be filing identity as though it were content, and the directory it named
+would then be wrong about what it holds.
+
+**One file, and the bar for a second is high.** Anything else that seems to
+belong at this level almost certainly has a lifecycle and belongs in a tier. The
+content and shape are the `project-documentation` bundle's to define; this
+layout says only that the path is reserved and what it is for.
 
 A glossary and a guardrail live in the same place not because they are similar,
 but because they have the same lifecycle: both are live, both are currently in

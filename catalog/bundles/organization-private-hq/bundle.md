@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -162,7 +162,10 @@ occasionally needs to know one exists.
 
 ## Version
 
-`0.1.0`. **The naming rules have been run once and the workflows not at all.**
+`0.2.0` — reading `.luma/project.md` is new content, and existing use is
+unaffected.
+
+**The naming rules have been run once and the workflows not at all.**
 The suffix list is drawn from common legal forms rather than from anything
 encountered, and it will be missing entries — treat it as a starting set, not a
 specification.
@@ -172,10 +175,9 @@ as configuration rather than named in public repositories, but nothing reads
 that configuration yet, so where it belongs has been reasoned rather than
 demonstrated.
 
-**The index has a gap it cannot close alone.** A repository ought to publish its
-own answer to *when should somebody open this?*, and the headquarters should
-merely collect it. **No such descriptor exists**, so today the host's description
-field is the fallback — and most were written for a different audience, so they
-answer a different question. Until a repository can state it, the best
-descriptions here will be hand-written, which is the one derived field most
-likely to rot.
+**The descriptor this depends on now exists and nothing has one.**
+`.luma/project.md` is where a repository answers *when should somebody open
+this?*, defined by `luma/project-documentation` — so the headquarters collects
+rather than authors. No repository has written one yet, so in practice every
+description here starts as a derived fallback, which is the one field most
+likely to rot until that changes.

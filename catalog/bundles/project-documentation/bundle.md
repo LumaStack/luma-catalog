@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-19
 consumers: [project]
 entry_point: policy/readme
@@ -27,8 +27,33 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
+- [[the-project-descriptor]] — the one file written for something *outside* the
+  repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
-- [the README template](templates/readme.md)
+- [[describe-project]] — write or refresh the descriptor.
+- **Type** — [[project]]
+- [the README template](templates/readme.md) ·
+  [the project descriptor](templates/project.md)
+
+## Two audiences, and one of them never arrives
+
+Everything else here is written for a person who has already opened the
+repository. **`.luma/project.md` is written for something that has not**, and is
+deciding whether to.
+
+That is the whole reason it is separate from the README rather than derived from
+it. A front door assumes somebody is at the door; a descriptor is read *before*,
+by something that will stop if the answer is no — so it is one sentence
+answering **when should somebody open this?** rather than four sections that
+hook a reader.
+
+**The repository owns it, and that is the point.** Anything collecting
+descriptions — an organization's index, a search tool, an agent choosing where to
+work — could write them instead, and a written-elsewhere description is wrong
+from the first commit that changes the project, with nothing announcing the
+drift. Written here, it changes **in the same commit as the change that
+invalidated it**, reviewed by the people who caused it. That is the only
+mechanism where keeping it true is cheaper than not.
 
 ## The README default
 
@@ -66,6 +91,17 @@ from what a project publishes about its code.
 
 ## Version
 
-`0.1.0`. The README shape and the document matrix are drawn from practice; the
-conditions in the matrix have not been tested against a project that had none of
-these documents and needed to be talked through acquiring them.
+`0.2.0` — the project descriptor is new content, and existing use is unaffected.
+
+The README shape and the document matrix are drawn from practice; the conditions
+in the matrix have not been tested against a project that had none of these
+documents and needed to be talked through acquiring them.
+
+**The descriptor has been written zero times.** Its bet is that a repository
+will keep its own one-sentence description true because updating it lands in the
+same pull request as the change — which is reasoning, not evidence. **If
+descriptors go stale anyway, the argument for the repository owning this
+collapses**, and collecting them centrally was right all along.
+
+**The type name is also unsettled.** `project` is a loaded word for what is, in
+practice, one repository describing itself. See the type for why it stayed.
