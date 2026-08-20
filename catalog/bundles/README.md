@@ -41,5 +41,3 @@ category is browsing metadata rather than routing.
 
 If browsing ever gets hard, that is a multi-valued field on the bundle. Never a
 directory.
-
-Empty for now.
