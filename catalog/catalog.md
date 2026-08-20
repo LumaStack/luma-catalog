@@ -16,7 +16,7 @@ starters:
   organization:
     - luma/luma-layout
     - luma/decision-records
-    - luma/organization-hq
+    - luma/organization-private-hq
 requires:
   - bundle: luma/git-secrets
     obligation: recommended
@@ -49,11 +49,16 @@ nagging report or an empty one. Four bundles for a new project, three for a new
 headquarters — enough to have somewhere to put decisions and a rule about
 secrets, without deciding how anybody releases or merges.
 
-`luma/organization-hq` is a starter rather than a requirement on purpose. A
-headquarters is worth having and **not worth creating before there is
+`luma/organization-private-hq` is a starter rather than a requirement on
+purpose. A headquarters is worth having and **not worth creating before there is
 cross-project reasoning to put in it**, which is a judgement only the
 organization can make. What the bundle buys a new headquarters is the recurring
 check that it is still private, which is the part nobody remembers to do.
+
+**`private` is in the name deliberately.** A bundle name is the one thing read
+before anything is loaded, so it is the only warning that survives an agent
+skimming a listing — and publishing a headquarters is the most damaging thing
+available at this level.
 
 Nothing here is `optional`. Every bundle in this catalog is available by being
 in it, so an `optional` entry would restate the directory listing. `optional`

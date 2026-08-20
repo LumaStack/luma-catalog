@@ -32,7 +32,19 @@ part that made it useful.
 ## It stays private
 
 **This is the rule the bundle exists to protect**, and it is not a default to be
-weighed against convenience.
+weighed against convenience. It is in the bundle's name because a name is the
+only warning that survives being skimmed.
+
+**Publishing a headquarters is the worst outcome available at this level.** Not
+an embarrassment — a handover of trade secrets and institutional knowledge to
+anybody who wants them. What an organization worked out over years, why it beat
+a competitor, what it learned the expensive way: all of it in one repository,
+organized, indexed, and far easier to read than the systems it describes.
+
+**An agent must never publish this repository, or copy from it into anything
+public, without a person deciding.** Not to share one useful standard, not
+because a link would be convenient, not to make a nice public readme. If
+publishing seems right, say so and stop.
 
 A headquarters accumulates exactly what should not be public: which vendors you
 depend on, what your internal services are called, which projects are struggling,
@@ -53,6 +65,11 @@ checked once at creation is a rule that was true once.
 plainly, say what is already published, and let somebody decide — do not quietly
 make it private and report success, because the exposure already happened and
 the record of it matters.
+
+**Some organizations will publish theirs, and a few are right to.** That changes
+nothing above. It is a decision made deliberately, once, with the contents
+reviewed, by people who own the consequences — not a default anybody drifts
+into, and never a call an agent makes on its own.
 
 ## Recommended, and genuinely optional
 
