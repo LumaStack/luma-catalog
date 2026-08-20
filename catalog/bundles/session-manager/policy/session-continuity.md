@@ -7,72 +7,6 @@ preload: mandatory
 
 # How a session survives its own end
 
-## Why this exists
-
-A session is a working memory that dies, and by default what survives it is a
-summary — **written under pressure, by the agent that is about to disappear,
-keeping conclusions and discarding the reasoning that produced them.** Seven
-things follow from refusing to accept that.
-
-**Work resumes across a boundary.** A machine, an agent, a repository, or a gap
-of months, and each breaks something different: a state directory does not cross
-machines, a memory store does not cross agents, and a decision taken in one
-repository is invisible in the four others it governs. Something has to be
-written where the next reader will actually be standing.
-
-**Durable knowledge stops depending on somebody being in the mood.** Left to
-judgement, recording happens when nobody is busy — which is never at the end of
-hard work, which is exactly when there is most worth recording.
-
-**Standing obligations get a moment that reliably arrives.** Most governance
-already exists and simply never fires: decisions that should be recorded,
-audits that should be answered, records that should be current. **Nothing is
-missing except an occasion.** Sessions end whether or not anybody remembers to
-care, so attaching obligations to that boundary is what turns *should* into
-*did*.
-
-**Learnings are applied while the session that learned them is still alive.** A
-learning filed for a later review nobody schedules is a learning that did not
-happen. The moment you understand why something was confusing is the cheapest
-moment it will ever be to fix.
-
-**Nothing is left in an unstable state.** A rename applied to four files out of
-eleven, a dev server still running, a worktree holding a branch nobody can now
-check out, an incoherent change committed to look tidy. **These are worse than
-unfinished work, because the repository looks coherent and is not** — and
-whoever finds it has nobody to ask.
-
-**Guesses stop hardening into facts.** Each session inherits the last one's
-claims. Without marking what was confirmed and what was merely believed, one
-agent's hypothesis becomes the next one's premise, and **nothing announces the
-promotion.** This is the correctness argument, and it is the strongest one here.
-
-**Agent work becomes reviewable.** Otherwise three hours of it is a diff. What
-was tried and abandoned, what was assumed, what was deliberately not done —
-that is what a person needs in order to judge the work rather than just accept
-it, and it matters more the less anybody was watching.
-
-### The cadence is events, not a clock
-
-**A timer is the wrong instrument.** It interrupts mid-thought, which is both
-the most expensive moment to stop and the one where you have least worth saying
-— you do not yet know what you have learned.
-
-So each workflow is triggered by something that has already happened: a
-[[session-checkpoint]] at a seam, a [[session-handoff]] at a transfer, a
-[[session-close]] at an end. **A seam is already a pause**, so the cost of
-stopping there is close to zero.
-
-Three layers, and none of them is an interval. **Events** decide when a workflow
-is appropriate. **The user decides** by invoking one, and their invocation
-outranks any heuristic — including which mode, which is why
-`session-close hard-stop` is declared rather than inferred. **The harness may
-eventually fire one**, and the obvious candidate is a checkpoint before a forced
-compaction; that hook does not exist yet, and it is the largest known hole in
-this bundle. See [[context-budget]] and [[future-hooks]].
-
-## Three ways to end one
-
 A session ends three ways, and **the only thing that separates them is who reads
 what you leave behind, and when.** Everything else — which steps run, how much
 they may cost, how the prose is written — falls out of that.
@@ -97,6 +31,25 @@ them up.
 That is the whole difference, and it is why *handoff with nobody to hand to* is
 not close. A handoff that cannot name its successor has lost the thing that
 makes it a handoff.
+
+**Why any of this is worth doing** is [[why-this-exists]] — read it when
+deciding whether to keep, extend or adopt the bundle, not while using it.
+
+## When one runs: events, not a clock
+
+**A timer would interrupt mid-thought** — the most expensive moment to stop, and
+the one where you have least worth saying, because you do not yet know what you
+have learned. So each workflow fires on something that has already happened: a
+seam, a transfer, an end. **A seam is already a pause.**
+
+**The user's invocation outranks any heuristic.** If they ask for a workflow, run
+it; if they declare a mode, take it. `session-close hard-stop` is declared rather
+than inferred for exactly this reason, and urgency is not visible from inside a
+session anyway.
+
+**A harness may eventually fire one** — a checkpoint before a forced compaction
+is the obvious candidate. That hook does not exist, which is the largest known
+hole here. See [[context-budget]].
 
 ## The invariant: a note is a pointer, never the only copy
 
