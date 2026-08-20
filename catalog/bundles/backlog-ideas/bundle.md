@@ -9,8 +9,9 @@ description: Ideas as individual files rather than one growing IDEAS.md — what
 
 # Backlog ideas
 
-One file per idea, in `.luma/backlog/ideas/`, instead of a single `IDEAS.md`
-that grows until nobody opens it.
+One file per idea — preferably in `.luma/backlog/ideas/`, and anywhere
+consistent when luma is not installed — instead of a single `IDEAS.md` that
+grows until nobody opens it.
 
 **The goal is a list of mostly good ideas, not a record of every thought anyone
 had.** Everything here serves that: a test for what earns a file, a capture path
@@ -41,14 +42,36 @@ session that prunes.
 Searching for duplicates first interrupts the run of ideas and usually finds
 nothing — so it is step three, and merging is proposed rather than performed.
 
-**`originated` answers *was a person involved*, not *who typed it*.** Agents
-write up almost everything; attribution by authorship would mark every idea as
-the agent's and destroy the only signal that matters. An `agent:` origin means
-**no human has looked at this yet** — a state somebody can search for.
+**`contributors` is everyone actively in the exchange** — human and agent alike,
+whoever suggested it and whoever wrote it down. Both count, and apportioning who
+did more is a judgement nobody can make reliably.
 
-**Growth stages reuse `lifecycle_status`.** Seedling is `draft`, budding is
-`provisional`, evergreen is `stable`, pruned is `archived`. No second vocabulary
-for a ladder the format already has.
+**No human in `contributors` is the signal.** A session being open is not a
+human being present: auto mode with nobody reading, or a subprocess whose output
+never surfaced, is nobody there whatever the session claims. The test from an
+agent's side is mechanical — *did I put this in front of them and get a reply?*
+— which is what makes proposing before filing load-bearing rather than
+courteous.
+
+**Confirmation is separate, and open to agents.** `verified` records whoever
+read an idea afterwards and vouched for it. An agent overseeing another agent's
+work is real and worth recording, and is still not a human having seen it.
+
+**Almost everything reuses a core field.** Growth stages are `lifecycle_status`
+— seedling `draft`, budding `provisional`, evergreen `stable`, pruned
+`archived`. Dates and authorship are `created`. Human review is `verified`. The
+type declares only `horizon`, `scope` and `archived`, because those are the
+three things the format genuinely does not have.
+
+## It prefers `.luma/`, and does not require it
+
+The backlog tier is the right home, but **not every repository has luma
+installed and an idea still has to go somewhere.** What the practice actually
+needs is one file per idea in one consistent place, with frontmatter — none of
+which depends on the path.
+
+**Never create `.luma/` in a repository that has not adopted it.** Filing an
+idea is not a reason to bring a directory structure into somebody's project.
 
 ## Archive freely; delete carefully
 
@@ -63,9 +86,11 @@ will measure from.
 Three gaps, recorded rather than worked around, because each needs something
 that does not exist.
 
-**A graduated idea has nowhere to go.** When one becomes real work, the honest
-destination is a backlog item. For now it stays here marked `stable` and
-somebody remembers, which is not good enough.
+**A graduated idea has nowhere to go yet.** The destination is settled — a
+`stable` idea leans towards the proper backlog unless it is one of the kinds
+that stay ideas, which are named. What is missing is the backlog. Until there
+is one, such an idea stays here marked `stable` and somebody remembers, which
+is not good enough.
 
 **Nothing says when an idea stops being one.** Length is the symptom, not the
 trigger, and the actual trigger needs the backlog tool to answer.

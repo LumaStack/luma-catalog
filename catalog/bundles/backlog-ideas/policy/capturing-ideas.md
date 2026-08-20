@@ -7,33 +7,34 @@ preload: mandatory
 
 # What is worth capturing
 
-**The goal is a list of mostly good ideas, not a record of every thought anyone
+**The goal is a list of generally usable ideas, not a record of every thought anyone
 had.** A list nobody trusts is a list nobody reads, and the fastest way to get
 there is to capture everything.
 
 ## The test: all three, or do not write a file
 
-**You would plausibly do it.** Not *this is interesting* — *we might actually
-build this*. Interesting-but-never is a conversation, not a file.
+**You would plausibly do it.** Not *this is interesting*. 
+Interesting-but-never is a conversation, not a file.
 
 **You cannot do it now.** No time, no clarity, or too large to start. This is
 the whole reason capture exists: the idea would otherwise be lost while the
 current work continues.
 
-**Forgetting it would cost something.** If losing it is fine, losing it is fine.
+**Forgetting it would cost something.** If losing it is fine, skip capture.
 
 ## What disqualifies one
 
-**You could just do it.** If acting takes less time than capturing, act. A file
+**You should do it now.** If acting takes less time than capturing, act. A file
 is overhead that has to be tended, read, and eventually pruned.
 
 **It is an observation, not a proposal.** *"The build is slow"* is a complaint.
 *"Cache the dependency layer"* is an idea. The first belongs in a conversation
 or an issue.
 
-**It is a variation of something already captured.** Append to that one.
-Two files describing one idea is worse than either alone, because the reader
-cannot tell which is current.
+**It is a variation of something already captured.** Append extracted value 
+into the similar existing idea. Two files describing one idea is worse than 
+either alone, because the reader cannot tell which is current and idea maintenance
+becomes unnecessarily burdensome.
 
 ## Capture optimises for flow, not for completeness
 
@@ -41,7 +42,7 @@ cannot tell which is current.
 weigh feasibility, do not fill in every field. Interrupting a run of ideas to
 tidy the last one is how the next three are lost.
 
-Everything except `title`, `captured` and `originated` can wait — and the
+Everything except `title` and `created` can wait — and the
 workflow asks afterwards how much you want to fill in, rather than demanding it
 up front. See [[capture-idea]].
 
@@ -71,13 +72,20 @@ enthusiasm that produced it. See [[tending-ideas]].
 
 ## Human-partnered and agent-only capture are different, and only one is solved
 
-**With a human present, an agent proposes and never files unilaterally.**
+**With a human reading, an agent proposes and never files unilaterally.**
 Present the idea, ask whether it is worth keeping, take refinements, and get
 agreement before writing anything durable. An agent that files ideas during a
 working session floods the list with material nobody chose.
 
-**Working alone, an agent may capture its own** — with `originated: agent:<model>`,
-which is what makes *no human has seen this* a state somebody can search for.
+**A session being open is not a human being present.** Auto mode with nobody
+reading, or work in a subprocess whose output never surfaced, is the agent-alone
+case however it looks from inside. The test is whether you showed it and got a
+reply.
+
+**Working alone, an agent may capture its own** — with `created.by: agent:<model>`,
+which is what makes *no human had this idea* a state somebody can search for.
+When a person later reads and approves it, that is a `verified` entry rather
+than authorship or contribution.
 
 *The right shape for agent-only capture is not yet worked out.* The volume and
 selection pressure are different when nobody is filtering in real time, and a

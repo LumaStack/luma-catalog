@@ -12,7 +12,7 @@ One pass over the whole list, done deliberately rather than continuously.
 ## 1. Read everything before changing anything
 
 ```sh
-ls .luma/backlog/ideas/
+ls <ideas-directory>/          # .luma/backlog/ideas/, or wherever they live here
 ```
 
 **Read the whole list first.** Judging each idea as you reach it means judging
@@ -32,6 +32,14 @@ For each idea that survived a second reading:
 
 **Most ideas will not move, and that is correct.** A session where everything
 advanced was not a session, it was enthusiasm.
+
+**An idea that reaches `stable` should lean towards moving into the proper
+backlog, if one exists** — unless there is a reason to keep it as an idea.
+Including but not limited to: it is inspirational, grandiose, or visionary; it
+is marked `someday`; or something similar.
+
+`stable` therefore does not mean *ready to build*. It means *worked out* — and
+some ideas are worked out **as ideas** and belong nowhere else.
 
 ## 3. Prune
 
@@ -56,7 +64,7 @@ never delete an idea it did not originate.
 Ideas drift together as they mature. Two files describing one thing is worse
 than either alone, because a reader cannot tell which is current.
 
-Merge into whichever is better developed, add the other's `originated` to
+Merge into whichever is better developed, carry the other's `created.by` into
 `contributors`, and archive the loser rather than deleting it — the second
 file's framing may be what somebody remembers.
 
@@ -83,4 +91,4 @@ Note, wherever the project keeps such things:
 - **Anything the process made awkward**
 
 *There is no default cadence yet, deliberately.* A few sessions of this is what
-turns it into a setting rather than a guess.
+turns it into a default setting rather than a guess.

@@ -1,11 +1,11 @@
 # Idea template
 
-Copy the blocks to `.luma/backlog/ideas/<slug>.md`. **Copy the blocks, not this
-file.**
+Copy the blocks to `.luma/backlog/ideas/<slug>.md` — or wherever this repository
+keeps ideas, if luma is not installed. **Copy the blocks, not this file.**
 
-The whole point is that this is fast. **Only the first three fields are needed
-to capture something** — everything else can wait for a tending session, and
-`horizon` already defaults to `someday` when absent.
+The point is that this is fast. **Two fields capture an idea** — everything else
+waits for a tending session, and `horizon` already defaults to `someday` when
+absent.
 
 ## Frontmatter — capture
 
@@ -13,16 +13,14 @@ to capture something** — everything else can wait for a tending session, and
 ---
 type: idea
 title: <the idea in one line>
-captured: YYYY-MM-DD
-originated: human:<id>
+created: { by: human:<id>, at: 2026-08-20T09:00:00Z }
 ---
 ```
 
-`originated` answers **was a person involved in having this**, not who typed it.
-An agent that prompted the idea, phrased it and wrote the file is a
-`contributor`; the person who had it is the originator. Use `agent:<model>` only
-when **no person was involved at all** — that is the case somebody needs to be
-able to find.
+`created.by` is **whoever had the idea**, not whoever typed it. An agent that
+transcribes without shaping is not the author, any more than a keyboard is. Use
+`agent:<model>` only when **no person was involved at all** — that is the case
+somebody needs to be able to find.
 
 ## Frontmatter — when curating
 
@@ -30,15 +28,35 @@ able to find.
 ---
 type: idea
 title: <the idea in one line>
-captured: YYYY-MM-DD
-originated: human:<id>
+created: { by: human:<id>, at: 2026-08-20T09:00:00Z }
 contributors: [agent:<model>]
 horizon: next | later | someday
 scope: project | department | organization
 lifecycle_status: draft
-archived: YYYY-MM-DD          # only when pruning
+archived: 2026-11-04              # only when pruning
 ---
 ```
+
+**`contributors` is everyone actively in the exchange** — human and agent,
+whoever suggested it and whoever wrote it down.
+
+**Name a person only if they saw it and replied.** A session being open is not
+enough: auto mode with nobody reading, or a subprocess nothing surfaced, is
+nobody present.
+
+**Being listed is not endorsement** — that is `verified`, and an agent can file
+one too.
+
+## When an agent had the idea alone
+
+```yaml
+contributors: [agent:<model>]                               # nobody has seen this
+verified: [{ by: human:<id>, at: 2026-08-20T14:00:00Z }]    # until a person reads it
+```
+
+No human in `contributors` is the signal. `verified` records that somebody read
+it afterwards — a person, or an overseeing agent, which is worth recording and
+is still not a human having seen it.
 
 ## Body
 
@@ -75,5 +93,5 @@ archived: YYYY-MM-DD          # only when pruning
   tidy afterwards.
 - **Does something like it already exist?** Check *after* capturing, not before,
   and merge rather than accumulate.
-- **Working with a person?** Propose it and get agreement before writing
-  anything durable.
+- **Working with a person?** Propose it — including who you would list as a
+  contributor — and get agreement before writing anything durable.
