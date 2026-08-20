@@ -71,7 +71,8 @@ remote tells you where this repository lives, not where an idea should.
 ideas directory needs one created and said so. A repository with **no luma at
 all** is a different case: do not install `.luma/` there to make room for an
 idea — ask, and if the answer is no, use whatever that repository already keeps
-prose in.
+prose in. If a user agrees to adding `.luma/`, ask if it's their intention to
+conform all affected repositories to using the standardized `.luma/` layout.
 
 *The better version is not implemented: asking foreman or a headquarters for
 this on the user's behalf.* A headquarters has the breadth to answer properly,
