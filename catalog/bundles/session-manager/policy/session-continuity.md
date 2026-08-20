@@ -32,6 +32,25 @@ That is the whole difference, and it is why *handoff with nobody to hand to* is
 not close. A handoff that cannot name its successor has lost the thing that
 makes it a handoff.
 
+**Why any of this is worth doing** is [[why-this-exists]] — read it when
+deciding whether to keep, extend or adopt the bundle, not while using it.
+
+## When one runs: events, not a clock
+
+**A timer would interrupt mid-thought** — the most expensive moment to stop, and
+the one where you have least worth saying, because you do not yet know what you
+have learned. So each workflow fires on something that has already happened: a
+seam, a transfer, an end. **A seam is already a pause.**
+
+**The user's invocation outranks any heuristic.** If they ask for a workflow, run
+it; if they declare a mode, take it. `session-close hard-stop` is declared rather
+than inferred for exactly this reason, and urgency is not visible from inside a
+session anyway.
+
+**A harness may eventually fire one** — a checkpoint before a forced compaction
+is the obvious candidate. That hook does not exist, which is the largest known
+hole here. See [[context-budget]].
+
 ## The invariant: a note is a pointer, never the only copy
 
 **Anything in a session note that would hurt to lose means an earlier step was

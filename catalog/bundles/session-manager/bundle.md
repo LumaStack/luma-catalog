@@ -42,8 +42,10 @@ note.
 - [[session-close]] — wind down, apply what was learned, leave nothing behind.
 - [[session-resume]] — pick up what another session left, and destroy it.
 
-**Concepts**
+**Concepts** — retrieved when relevant, never preloaded.
 
+- [[why-this-exists]] — the case for the whole thing. Read when deciding whether
+  to keep, extend or adopt it, **not while using it.**
 - [[context-budget]] — how much room is left, and what changes on each side of a
   forced compaction. Checkpoint, handoff and close all check it first.
 - [[future-hooks]] — what this would use if it existed.
