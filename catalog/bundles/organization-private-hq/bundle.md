@@ -151,10 +151,13 @@ billing service concludes there is none and proposes building one. **A second
 system doing one job, written by whoever lacked access to the first**, is worse
 on every axis including security.
 
-**And the index never claims completeness.** A sweep cannot discover what it
-cannot see, so it holds *the repositories we know about*, never *all the
-repositories*. An index implying otherwise re-creates the exact failure it exists
-to prevent.
+**And completeness is asserted, never assumed.** Many organizations will make a
+point of listing every repository, and theirs is more useful for it — but a
+complete index and a partial one look identical from the inside, and **a scan
+cannot establish this about itself**, since it only ever knows what it saw. So
+the organization states it, naming the accounts, whether restricted repositories
+are included, and as of when; the sweep carries that forward; and absent a
+statement a reader treats the index as partial.
 
 **This is a default, and it yields.** In some organizations a name alone is a
 disclosure. A security owner may decide restricted repositories are never

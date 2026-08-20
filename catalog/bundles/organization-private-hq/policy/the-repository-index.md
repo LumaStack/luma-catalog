@@ -107,7 +107,7 @@ generality it does not have, for the benefit of one bundle.
 `data/` was the other candidate. `repositories/` says what is in it, and a
 reader browsing the repository learns something from the name.
 
-## Record what you cannot read, and never claim completeness
+## Record what you cannot read
 
 **Repositories missing from a sweep are often missing by design.** An
 organization running least privilege has repositories the indexing account
@@ -129,19 +129,34 @@ disclosure, and a security owner may decide restricted repositories are never
 indexed — per repository or wholesale. **That is a legitimate configuration**
 whose cost is understood, and this bundle does not argue with it twice.
 
-### The index is only as complete as the account that built it
+### Completeness is asserted, never assumed
 
 **A sweep cannot discover what it cannot see.** Restricted repositories reach the
 index another way: somebody adds one, a reference in another repository points at
 one, or a sweep runs with wider credentials.
 
-So **never claim completeness** — not in the generated index, not in a report,
-not in a summary to a person. It holds *the repositories we know about*, never
-*all the repositories*.
+**Many organizations will make a point of listing every repository**, and theirs
+is more useful for it — an agent that can rely on the index can stop looking.
+**What a reader cannot do is infer that.** A complete index and a partial one
+look identical from the inside, and both mistakes cost: assuming complete when it
+is not produces a duplicate of something that already exists, and treating a
+complete one as partial wastes the effort that made it complete.
 
-That distinction sounds pedantic and is the whole thing. **An index that implies
-it is exhaustive re-creates the failure this stance exists to prevent**:
-something concluding that what is not listed does not exist.
+**So the organization states it, and the index carries the statement on its
+face.** Absent one, a reader treats the index as partial.
+
+**A useful claim names its scope** — which accounts, whether restricted
+repositories are included, and as of when:
+
+> *Complete for the `acme` and `acme-labs` accounts, restricted repositories
+> included, as of 2026-08-20.*
+
+**A bare *"complete"* is worse than none**, because it invites reliance without
+saying what is being relied on.
+
+**A scan cannot establish this about itself.** It only ever knows what it saw, so
+completeness is a statement about how the organization manages its repositories
+— made by the organization, carried forward by the sweep.
 
 ## Removal is never automatic
 

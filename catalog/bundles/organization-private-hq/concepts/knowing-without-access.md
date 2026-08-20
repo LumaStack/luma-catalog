@@ -92,13 +92,39 @@ Restricted repositories do not appear in a listing that lacks permission for
 them, so they reach the index another way: a person adds one, a reference in
 another repository points at one, or a sweep runs with wider credentials.
 
-Which means **the index is only ever as complete as the account that built it**,
-and:
+Which means **an index is only as complete as the account that built it** — and
+whether that is complete *enough* is not something a reader can work out.
 
-**Never claim completeness.** Not in the generated index, not in a report, not
-in a summary to a person. It holds *the repositories we know about*, never *all
-the repositories*.
+## Completeness is asserted, never assumed
 
-The distinction sounds pedantic and is the whole thing. An index that implies it
-is exhaustive re-creates the exact failure this stance exists to prevent — an
-agent concluding that what is not listed does not exist.
+**Plenty of organizations will make a point of listing every repository**, and
+theirs is more useful for it — an agent that can rely on the index can stop
+looking. Nothing here discourages that.
+
+**What a reader cannot do is infer it.** A complete index and a partial one look
+identical from the inside, and both failures are real:
+
+**Assuming complete when it is not** produces the duplicate service above.
+
+**Treating a genuinely complete index as partial** wastes the effort somebody
+spent making it complete, and leaves every conclusion hedged when it did not
+need to be.
+
+So completeness is **a claim somebody makes**, carried on the index's face, and
+in its absence the index is treated as partial.
+
+### A useful claim names its scope
+
+*"Complete"* on its own is close to meaningless. Complete **for which accounts**,
+**including restricted repositories or not**, and **as of when**:
+
+> *Complete for the `acme` and `acme-labs` accounts, restricted repositories
+> included, as of 2026-08-20.*
+
+That is something an agent can act on and a person can check. **A bare
+assertion is worse than none**, because it invites reliance without saying what
+is being relied on.
+
+**The organization makes the claim; the sweep carries it.** It is a statement
+about how the organization manages its repositories, not something a scan can
+establish about itself — a scan only ever knows what it saw.

@@ -59,7 +59,10 @@ absent entry as an answer, and the answer it reaches is *build a second one*.
 See [[knowing-without-access]], including why a security owner may tell you to
 stop recording these at all.
 
-**Never report the sweep as complete.** It covers what this account can see.
+**Report what the sweep covered, not that it covered everything.** It saw what
+this account can see. If the organization has stated its index is complete —
+and many will — carry that statement rather than re-deriving it; a scan can only
+ever know what it saw.
 
 ## 3. Compare against what is already recorded
 
@@ -192,9 +195,17 @@ Enough to scan: name, one line, in-scope or not, and a link. **A generated file
 that disagrees with its source is a second answer nobody asked for**, so if the
 index and an entry conflict, the entry wins and the index was stale.
 
-**Say on its face that it is not exhaustive**, and mark restricted entries as
-such. A reader who takes this for a census will conclude that what is not listed
-does not exist, which is the one failure the whole design is arranged to avoid.
+**State the coverage on its face**, and mark restricted entries as such.
+
+**If the organization has asserted the index is complete, reproduce that
+assertion with its scope** — which accounts, whether restricted repositories are
+included, as of when. **Otherwise say what the sweep covered** and leave it
+there.
+
+Both readings are load-bearing. A reader who takes a partial index for a census
+concludes that what is not listed does not exist; a reader who treats a
+genuinely complete one as partial hedges every conclusion and wastes the effort
+that made it complete.
 
 ## 8. Commit it into the headquarters
 
