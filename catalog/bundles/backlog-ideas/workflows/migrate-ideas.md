@@ -59,6 +59,32 @@ Migrating into the wrong place is the failure that matters here, and it is
 silent — an idea filed under the wrong organization is one the people who would
 act on it never see.
 
+### Read the declaration first
+
+**A headquarters declares itself, and that beats anything you can work out.**
+
+```sh
+cat ~/.config/luma/luma-leader/config.toml   # [headquarters] url = "…/acme-hq.git"
+```
+
+Written by `create-internal-hq` for exactly this purpose. **Where it exists it is
+the answer** — not a hint to weigh against a directory listing, and not something
+a nearby repository can override.
+
+**Where it is absent, infer — and say that you are inferring.** An organization
+that has not established a headquarters yet is an ordinary case, not an error, so
+fall back to sibling directories, remotes, and whatever paper trail is around.
+Then put what you found in front of them as a guess rather than a finding.
+
+**What inference gets wrong, and did.** A fresh agent running this workflow found
+a repository named `luma-hq` checked out as a sibling, with an ideas directory
+inside it, and concluded that was the headquarters. It was the engine. Every
+signal available pointed the same wrong way, and no amount of care would have
+helped — the declaration was sitting unread two directories away.
+
+**A name ending in `-hq` means an organization's own headquarters**, which makes
+that particular inference safe now. It is still an inference.
+
 At minimum, ask. Four questions:
 
 - **Which organization is this repository under**, and is there more than one in
