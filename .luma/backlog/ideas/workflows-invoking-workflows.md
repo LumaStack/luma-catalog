@@ -128,6 +128,11 @@ differently every run.
 
 ### Writing a `when` two agents read the same way
 
+**A loose contract, not a spec.** Nothing validates these and nothing should —
+the point is enough shared shape that two readers reach the same conclusion.
+Breaking one should feel like writing badly, not like an error, and the
+consequence is a misread rather than a rejection.
+
 ```
 When <artifact> <is | is not> <state observable right now>.
 ```
@@ -136,10 +141,10 @@ When <artifact> <is | is not> <state observable right now>.
 its `stale_after`* — not *when the index is out of date*. An agent can open a
 file; it cannot open a situation.
 
-**One condition, never a compound.** *When A and B* is where prose starts growing
-operators, and *and* invites *or*, which invites precedence. If two things
-genuinely gate it, that is usually two invocations — or the same marker placed in
-a step that only runs under the first condition.
+**Prefer one condition to a compound.** *When A and B* is where prose starts
+growing operators, and *and* invites *or*, which invites precedence. Where two
+things genuinely gate it, that is often two invocations — or the same marker
+placed in a step that only runs under the first.
 
 **Testable at the moment it is read.** Present tense, checkable now. *When the
 descriptor is absent* works; *when this will be needed later* is a prediction, and
@@ -149,7 +154,7 @@ two agents will predict differently.
 difference between `require` and `recommend`. A condition says whether the
 situation applies; the level says how much it costs to skip.
 
-**If it cannot be evaluated, run it.** An agent that cannot tell whether the index
+**If it cannot be evaluated, run it — this one is firm.** An agent that cannot tell whether the index
 is stale should refresh it. This is safe precisely because of the standing
 consequence below — anything invocable is cheap to invoke redundantly — and the
 alternative fails silently: skipping when unsure means the thing quietly does not
