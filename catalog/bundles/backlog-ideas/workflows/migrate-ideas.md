@@ -20,6 +20,17 @@ feeling.
 | **reviewed** | propose in batches — a table of title, one-line explanation, and where each would go — take feedback, and repeat until they are ready to sign off |
 | **together** | one idea at a time: show what is needed to judge it, recommend where it goes, and decide keep-or-prune jointly |
 
+**Show them that table. Do not ask an open question.** *How involved do you want
+to be?* makes somebody invent options they have no way of knowing exist — and the
+natural answer to it is *you decide*, which lands on `delegated`, the one mode
+this step warns about. Put the three choices in front of them with the one line
+each, and let them pick.
+
+**Unless they already named one.** *Mode: together* in the opening request is an
+answer; re-presenting the table then is noise. **Confirm what it means in one
+line** — *together, so one idea at a time, propose and stop, nothing filed until
+you say* — so they know what they opted into without being asked again.
+
 **Ask rather than assume.** A long `IDEAS.md` is somebody's accumulated
 thinking, and running `delegated` over it uninvited is how a migration becomes
 something that happened *to* them.
