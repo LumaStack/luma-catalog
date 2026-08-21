@@ -79,7 +79,7 @@ is deliberate: a project must keep working from a bare clone with no network.
 
 | repository | kind | |
 | --- | --- | --- |
-| [`luma-hq`](https://github.com/LumaStack/luma-hq) | engine | argue standards into existence |
+| [`luma-leader`](https://github.com/LumaStack/luma-leader) | engine | argue standards into existence |
 | [`luma-foreman`](https://github.com/LumaStack/luma-foreman) | engine | apply them, one repository at a time |
 | `luma-catalog` | content | this repository — universal bundles |
 | your organization's hq | content | your governance, learnings, analysis |

@@ -196,7 +196,7 @@ half-finished migration with no markers is worse than one not started.
 sent on its own.**
 
 ```
-**11 → luma-hq, persona-templates.md.**
+**11 → luma-leader, persona-templates.md.**
 
 ## 12 of 14 — <title>
 ```

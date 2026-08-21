@@ -23,7 +23,7 @@ failure rather than a pass**:
 
 | | |
 | --- | --- |
-| **established** | `~/.config/luma/luma-hq/config.toml` names the headquarters by remote URL |
+| **established** | `~/.config/luma/luma-leader/config.toml` names the headquarters by remote URL |
 | **identity** | the repository you are in *is* that one — `git remote get-url origin` equal, not similar |
 | **declared** | its `disclosure_level` accepts organization-internal data. **Absent refuses** |
 | **actual** | it is private right now |
@@ -51,7 +51,7 @@ ambient state right.
 
 ### The pointer belongs to the organization tool
 
-`~/.config/luma/luma-hq/config.toml`, **not** foreman's configuration.
+`~/.config/luma/luma-leader/config.toml`, **not** foreman's configuration.
 
 **Foreman runs inside other people's project repositories**, on machines with no
 connection to any headquarters, and its boundary is stated as a test: *if a

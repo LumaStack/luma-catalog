@@ -143,7 +143,7 @@ nothing. **No fallback, ever** — a workflow that picks a likely candidate when
 cannot find the declared one will eventually pick wrong, quietly.
 
 Four checks, all required, **and any that cannot be performed is a failure rather
-than a pass**: `~/.config/luma/luma-hq/config.toml` names the headquarters by
+than a pass**: `~/.config/luma/luma-leader/config.toml` names the headquarters by
 remote URL; the repository you are in *is* that one, compared normalised; its
 `disclosure_level` accepts organization-internal data, where **absent refuses**;
 and it is private now.

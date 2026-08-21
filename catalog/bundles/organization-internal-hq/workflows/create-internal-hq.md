@@ -244,7 +244,7 @@ a fact rather than an assumption**, and without it [[index-repositories]] fails
 by design rather than picking a likely candidate.
 
 ```toml
-# ~/.config/luma/luma-hq/config.toml
+# ~/.config/luma/luma-leader/config.toml
 [headquarters]
 url = "https://github.com/acme/acme-hq.git"
 ```
@@ -255,7 +255,7 @@ its own boundary is explicit: *if a check ever needs organization context in
 order to run, the boundary has been broken.* A key naming an organization's
 internal repository, in the tool that runs everywhere, is that boundary crossed.
 
-Organization-level work is `luma-hq`'s, so the pointer is its configuration —
+Organization-level work is `luma-leader`'s, so the pointer is its configuration —
 under `~/.config/luma/<repository-name>/`, the same shape every luma tool uses.
 
 **A section rather than a file of its own**, because a headquarters pointer will

@@ -68,7 +68,7 @@ comparison.
 is ambient — it is true today and can change tomorrow, and reading it answers a
 different question than the one being asked.
 
-`LumaStack/luma-hq` is the worked example. It was private for months while
+`LumaStack/luma-leader` is the worked example. It was private for months while
 *planned to be published*, and its `disclosure_level` was `public` throughout —
 so it refused organization-internal data the entire time it was still private.
 **Checking `isPrivate` would have returned true and permitted the write**, which

@@ -28,7 +28,7 @@ and where it is written is not a judgement call.
 machine-local declaration naming it:
 
 ```sh
-cat ~/.config/luma/luma-hq/config.toml   # [headquarters] url = "…/acme-hq.git"
+cat ~/.config/luma/luma-leader/config.toml   # [headquarters] url = "…/acme-hq.git"
 ```
 
 **It belongs to the organization tool, not the project tool.** Foreman runs
@@ -77,7 +77,7 @@ readable right now. **Stop, say what is exposed, change nothing** — flipping t
 repository private destroys the record of a decision and un-publishes nothing.
 
 **Declared `public` while actually private is not an error.** It is the safe
-direction. `luma-hq` was the worked example until 2026-08-20: declared `public`
+direction. `luma-leader` was the worked example until 2026-08-20: declared `public`
 while still private, refusing internal data throughout, and then published with
 nothing to clean out of the tree. Report the mismatch once; do not treat it as a
 fault.
