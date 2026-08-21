@@ -32,7 +32,7 @@ so.
 ```yaml
 ---
 type: workflow
-uses:
+invokes:
   record-the-run: { workflow: acme/journal, level: require }
   refresh-index:  { workflow: luma/organization-internal-hq#index-repositories, level: recommend, absent: silent }
   need-gh:        { command: "gh", level: require }
@@ -44,15 +44,22 @@ before: [record-the-run]
 A marker sits at the point in the body where it should play:
 
 ```
-luma-use: refresh-index
+luma-invoke: refresh-index
 ```
 
-**Vendor-namespaced for the same reason `.luma/` is.** A bare `use:` or `run:`
-occurs in ordinary prose constantly, and a token that can appear by accident is
-one that will. Backticks are optional; it reads as a directive either way.
+**`luma-invoke:` — namespaced, consistent with `.luma/` and the format's own
+name.** Bare `invoke:` would probably survive prose, since *invoke* is rare in
+ordinary writing where *run* is constant. It is not worth the residual risk: a
+marker that can occur by accident is one that eventually will, and this one
+changes what an agent does.
 
-**`uses:` and `luma-use:` share a root deliberately** — declare it in one, invoke
-it with the other, and nobody has to remember an exception.
+**The namespace is a settled position, not a new one.** The same reasoning chose
+a vendor-named `.luma/` over a generic directory — the namespace is owned, so
+nobody can claim it out from under you — and the format itself is
+`luma-knowledge-format`. A prefix here is consistent rather than exceptional.
+
+**The field and the marker share a root** — declare it in `invokes:`, place it
+with `luma-invoke:`. Nothing to remember.
 
 **It must render visibly.** An HTML comment would hide it, and invisible
 behaviour is the tax this design exists to avoid.
@@ -126,12 +133,25 @@ than one, or none, is a publish-time error. Sniffing the type from the shape of 
 implicit typing, and this system chooses declaration over inference everywhere
 else.
 
-**`uses:` is the only word true of all three targets.** You use a workflow, a
-command and a bundle. `runs:` and `calls:` are true of two — you do not run a
-bundle. `needs:` is worse than weak: it names a *dependency*, contradicting the
-rule below that an entry is conditional on presence and never a dependency. The
-cost of `uses:` is that it carries less alone; the target key on the next line
-carries the rest.
+**`invokes:` is the format's own word.** SPEC partitions the three base types by
+how a Document is engaged with, and a workflow is the one that is **invoked** —
+so the field and the type it sits on agree rather than describing the same thing
+two ways.
+
+**It covers every target, once *invoke* is read properly.** The narrow reading is
+*execute*, which is why `bundle:` looked like a misfit. The other sense — **call
+upon, bring into force** — is ordinary English: invoke a clause, invoke a right,
+invoke a precedent. *Invoke a policy at step twelve* means bring it to bear here,
+which is exactly the operation.
+
+`runs:` and `calls:` are true of two targets out of three. `uses:` is true of all
+three and says almost nothing — it was a vaguer word chosen to make a merge read,
+when the merge was fine. `needs:` is worse than weak: it names a *dependency*,
+contradicting the rule below that an entry is conditional on presence and never
+one.
+
+**The one cost:** to a programmer *invoke* leans toward execution, so `bundle:`
+may momentarily read as *run the bundle*. One sentence of documentation fixes it.
 
 **Bundles are opaque in a way even workflows are not, which is why they belong
 here.** A workflow runs and finishes; **a loaded bundle persists**, bringing
@@ -283,13 +303,13 @@ in exchange for a case nobody can name concretely. **Re-open when somebody can
 name a real instance** of wanting custom behaviour at interior points of several
 workflows they did not write, which forking the few that matter does not serve.
 
-**The name: `uses:` for the field, `luma-use:` for the marker.** `trigger` was
+**The name: `invokes:` for the field, `luma-invoke:` for the marker.** `trigger` was
 unavailable — *re-open trigger* runs through `DECISIONS.md` and is the tightest
 term in the vocabulary. `runs:` held it while the targets were workflows and
-commands, and lost the moment bundles joined: you do not run a bundle. `calls:`
-and `invokes:` fail the same way. `needs:` fails worse, naming a dependency where
-the design insists on none. `cues` and `checkpoints` were considered earlier and
-did not survive.
+commands, and lost the moment bundles joined: you do not run a bundle. `uses:`
+replaced it and was too vague to carry anything. `needs:` names a dependency
+where the design insists on none. `cues` and `checkpoints` were considered
+earlier and did not survive.
 
 ## Notes
 
@@ -301,7 +321,7 @@ them.
 **`horizon: later` is an assumption, not a judgement anybody made.**
 
 **Nothing here is unresolved any more, but nothing is built either.** The design
-settled over one long conversation; no workflow declares a `uses:` block, nothing
+settled over one long conversation; no workflow declares an `invokes:` block, nothing
 reads one, and the four levels have met no real case except the one that produced
 them. **The first workflow to declare an invocation is the test**, and it will
 probably find something this could not.
