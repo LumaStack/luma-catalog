@@ -128,10 +128,20 @@ differently every run.
 
 ### Writing a `when` two agents read the same way
 
-**A loose contract, not a spec.** Nothing validates these and nothing should —
-the point is enough shared shape that two readers reach the same conclusion.
-Breaking one should feel like writing badly, not like an error, and the
-consequence is a misread rather than a rejection.
+**A loose, extendable contract — not a spec.** Nothing validates these and
+nothing should. The point is enough shared shape that two readers reach the same
+conclusion; breaking one should feel like writing badly rather than like an
+error, and the consequence is a misread rather than a rejection.
+
+**Extendable the way tags are.** These forms are a starting set, not a closed
+list. An organization that keeps hitting a shape not covered here adds its own and
+records it where its people will find it — the same move as extending a tag
+vocabulary or a starter. **What must survive any extension** is the small part
+that makes conditions readable at all: they turn on something observable, they
+are testable when read, and an unevaluable one runs rather than skipping.
+
+New forms are additive by construction. A reader who knows only the ones below
+still reads those correctly, which is what makes extending safe.
 
 ```
 When <artifact> <is | is not> <state observable right now>.
