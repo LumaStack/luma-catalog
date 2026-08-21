@@ -173,9 +173,22 @@ a fact rather than an assumption**, and without it [[index-repositories]] fails
 by design rather than picking a likely candidate.
 
 ```toml
-# ~/.config/luma/luma-foreman/headquarters.toml
-url = "git@github.com:acme/acme-hq.git"
+# ~/.config/luma/luma-hq/config.toml
+[headquarters]
+url = "https://github.com/acme/acme-hq.git"
 ```
+
+**It belongs to the organization tool.** Foreman runs inside other people's
+project repositories, on machines with no connection to any headquarters, and
+its own boundary is explicit: *if a check ever needs organization context in
+order to run, the boundary has been broken.* A key naming an organization's
+private repository, in the tool that runs everywhere, is that boundary crossed.
+
+Organization-level work is `luma-hq`'s, so the pointer is its configuration —
+under `~/.config/luma/<repository-name>/`, the same shape every luma tool uses.
+
+**A section rather than a file of its own**, because a headquarters pointer will
+not be the only thing this tool needs to know.
 
 **Machine-local, never committed.** Two reasons. A committed pointer is one file
 that can be wrong for everybody at once. And to read a pointer inside the

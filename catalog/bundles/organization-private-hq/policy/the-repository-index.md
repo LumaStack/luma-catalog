@@ -23,7 +23,7 @@ failure rather than a pass**:
 
 | | |
 | --- | --- |
-| **established** | a machine-local declaration names the headquarters by remote URL |
+| **established** | `~/.config/luma/luma-hq/config.toml` names the headquarters by remote URL |
 | **identity** | the repository you are in *is* that one — `git remote get-url origin` equal, not similar |
 | **declared** | its `disclosure_level` accepts organization-private data. **Absent refuses** |
 | **actual** | it is private right now |
@@ -48,6 +48,20 @@ check would permit.**
 That is the whole failure mode: *the tool inferring its destination from ambient
 state.* Every control worth having is one that does not depend on getting the
 ambient state right.
+
+### The pointer belongs to the organization tool
+
+`~/.config/luma/luma-hq/config.toml`, **not** foreman's configuration.
+
+**Foreman runs inside other people's project repositories**, on machines with no
+connection to any headquarters, and its boundary is stated as a test: *if a
+check ever needs organization context in order to run, the boundary has been
+broken.* A key naming an organization's private repository, held by the tool
+that runs everywhere, is that boundary crossed — and it would travel to every
+machine the tool is installed on.
+
+Indexing repositories is organization-level work. **The tool that does
+organization-level work holds the organization-level pointer.**
 
 A headquarters reasons across repositories, so it needs to know which ones exist
 and roughly what each is for. **That knowledge is a liability the moment it is

@@ -115,9 +115,15 @@ nothing. **No fallback, ever** — a workflow that picks a likely candidate when
 cannot find the declared one will eventually pick wrong, quietly.
 
 Four checks, all required, **and any that cannot be performed is a failure rather
-than a pass**: a machine-local declaration names the headquarters by remote URL;
-the repository you are in *is* that one; its `disclosure_level` accepts
-organization-private data, where **absent refuses**; and it is private now.
+than a pass**: `~/.config/luma/luma-hq/config.toml` names the headquarters by
+remote URL; the repository you are in *is* that one, compared normalised; its
+`disclosure_level` accepts organization-private data, where **absent refuses**;
+and it is private now.
+
+**The pointer is the organization tool's, not foreman's.** Foreman runs inside
+other people's repositories and must not hold an organization's context — its own
+boundary says so as a test: *if a check ever needs organization context in order
+to run, the boundary has been broken.*
 
 **Declared beats actual.** `disclosure_level` is a declaration; hosting
 visibility is ambient state. A repository can be private today and planned for
