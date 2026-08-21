@@ -151,11 +151,19 @@ state, and would record a soon-to-be-published repository as safe. **It is an
 independent assertion checked against an independently observed reality**, and
 the gap is reported rather than reconciled.
 
-**Tightening the declaration is free; loosening it is consequential.** Widening
-disclosure only ever refuses more. Narrowing it permits content that was
-previously refused — the one edit to this field that can cause a leak, and one
-that deserves the scrutiny of the change it enables rather than of a one-line
-diff.
+**Tightening the declaration is cheap and reversible; loosening it may not be
+recoverable at all.** Widening disclosure only ever refuses more — it can break
+a workflow, and everything it breaks is an interruption somebody notices in
+minutes. Narrowing it permits content that was previously refused, which is the
+one edit to this field that can cause a leak, and a leak is forked and cached
+before anybody looks.
+
+**And syncing the declaration to reality is not housekeeping.** A repository
+declaring `public` because it is planned for publication, "corrected" to
+`internal` because it is *currently* private, has just admitted private data to
+a repository about to be published — a change that reads in the diff as making a
+file agree with the world. **Matching reality is an observation, and
+observations do not grant permissions.**
 
 **Why four and not one:** the single check this replaced *was passing.* It
 confirmed the destination was private, which was true, and privacy was never the

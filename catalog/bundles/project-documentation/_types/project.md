@@ -133,20 +133,52 @@ entirely decides what is true of the repository.
 
 The coupling is asymmetric, in the same direction as everything else here.
 
-**Tightening is free.** Widening the declared disclosure — `internal` to
-`public` — narrows what may be written and takes effect immediately. It needs
-no permission and no evidence, because the worst it can do is refuse something.
+**Tightening is cheap and reversible — not free.** Widening the declared
+disclosure — `internal` to `public` — narrows what may be written and takes
+effect immediately. It can genuinely break something: a workflow that was
+writing there now refuses, and somebody is blocked until it is sorted out.
 
-**Loosening is consequential.** Narrowing the declared disclosure — `public` to
-`internal` — **permits content that was previously refused.** It is the only
-edit to this field that can cause a leak, and it deserves the scrutiny of the
-change it enables rather than the scrutiny of a one-line diff. A person decides
-it, and reality should already support it.
+**But everything it breaks is recoverable.** The cost is an interruption
+somebody notices within minutes, and loosening it back is available if the
+tightening was wrong.
+
+**Loosening is consequential and may not be recoverable at all.** Narrowing the
+declared disclosure — `public` to `internal` — **permits content that was
+previously refused.** It is the only edit to this field that can cause a leak,
+and a leak is not an interruption: it is forked, cloned and cached before
+anybody looks.
+
+So it deserves the scrutiny of the change it enables rather than the scrutiny of
+a one-line diff. A person decides it, and reality should already support it.
 
 **Reality becoming more permissive invalidates a narrower declaration.** When a
 repository is made public, every declaration narrower than `public` is now
 false, and the content it admitted is already exposed. That is the error case
 above — reported, never auto-corrected in either direction.
+
+### Syncing to reality is not housekeeping
+
+**The most dangerous edit to this field is the one that looks like tidying up.**
+
+A repository declares `public` because it is planned for publication. Somebody
+notices it is *currently* private, treats the declaration as a stale value, and
+"corrects" it to `internal`. **Organization-private data is now writable into a
+repository that is about to be published** — and the change reads, in the diff,
+as making a file agree with the world.
+
+**Warn on any edit that loosens this field. Warn harder when the reason given is
+that it had fallen out of sync**, because *it did not match reality* is the most
+plausible-sounding justification for the most dangerous change available here.
+
+**Matching reality is not a reason.** The declaration is allowed to be stricter
+than reality and usually should be. **A divergence is more often a signal that
+reality is behind than that the declaration is wrong** — the fix for a
+`public` declaration on a private repository is usually to publish it, or to
+leave both alone, never to loosen the declaration.
+
+**Require the reason to be about the content, not the metadata.** *Nothing
+sensitive will ever live here* is a reason. *It didn't match* is an observation,
+and observations do not grant permissions.
 
 ### The asymmetry every rule here rests on
 
