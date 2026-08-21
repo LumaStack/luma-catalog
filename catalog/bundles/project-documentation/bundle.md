@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-19
 consumers: [project]
 entry_point: policy/readme
@@ -90,6 +90,18 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.4.0` — the declared-versus-actual rules are new content; existing use is
+unaffected.
+
+**The governing asymmetry, now stated outright:** being wrong toward restriction
+is an inconvenience somebody notices and fixes; being wrong toward permission is
+forked, cloned and cached before anybody looks. Absent refusing, the declaration
+beating the observation, an unperformable check failing — those are not separate
+decisions but one principle applied repeatedly.
+
+**And the field never publishes anything.** A tool reading `public` and widening
+access has inverted a safety limit into a command.
 
 `0.3.0` — `disclosure_level` is new content; existing use is unaffected.
 

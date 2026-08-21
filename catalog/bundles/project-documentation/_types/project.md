@@ -93,7 +93,137 @@ gain a capability, never to lose one.
 organization-private data. A repository that has never heard of any of this is
 unaffected in every other respect.
 
-### It sets a ceiling; it does not grant permission
+### It never causes anything to be published
+
+**This field constrains writes. It is not an instruction about visibility.**
+
+A tool that reads `disclosure_level: public` and makes the repository public has
+turned a safety limit into a command — the exact inversion of what it is for.
+**Nothing may publish a repository, widen its access, or treat its contents as
+publishable on the strength of this field.** Publishing is a decision a person
+makes, every time.
+
+The asymmetry is the point: **it may only ever narrow what happens, never widen
+it.** A control that can widen access is not a safety control.
+
+### Neither drives the other
+
+The obvious question is which way the coupling runs, and **both obvious answers
+are wrong.**
+
+**The value must never drive reality.** A tool that publishes a repository
+because a line in a file changed has made a text edit into an irreversible
+disclosure. Desired-state reconciliation is fine for resources you can put back;
+publication is not one of them. **Nothing changes visibility, access, or
+membership on the strength of this field.**
+
+**The value must not be derived from reality either.** That sounds safe and
+destroys the property the field exists for. A repository that is private today
+and planned for publication would be recorded as `internal` — and would then
+accept organization-private data right up until the day it is published, which
+is the failure this was built to prevent. **A field derived from ambient state
+is ambient state.**
+
+**So it is an independent assertion, checked against an independently observed
+reality, with the gap between them reported.** This is a policy bound, not a
+desired state. It says what must be true of the content, and something else
+entirely decides what is true of the repository.
+
+### Which edits are cheap and which are consequential
+
+The coupling is asymmetric, in the same direction as everything else here.
+
+**Tightening is cheap and reversible — not free.** Widening the declared
+disclosure — `internal` to `public` — narrows what may be written and takes
+effect immediately. It can genuinely break something: a workflow that was
+writing there now refuses, and somebody is blocked until it is sorted out.
+
+**But everything it breaks is recoverable.** The cost is an interruption
+somebody notices within minutes, and loosening it back is available if the
+tightening was wrong.
+
+**Loosening is consequential and may not be recoverable at all.** Narrowing the
+declared disclosure — `public` to `internal` — **permits content that was
+previously refused.** It is the only edit to this field that can cause a leak,
+and a leak is not an interruption: it is forked, cloned and cached before
+anybody looks.
+
+So it deserves the scrutiny of the change it enables rather than the scrutiny of
+a one-line diff. A person decides it, and reality should already support it.
+
+**Reality becoming more permissive invalidates a narrower declaration.** When a
+repository is made public, every declaration narrower than `public` is now
+false, and the content it admitted is already exposed. That is the error case
+above — reported, never auto-corrected in either direction.
+
+### Syncing to reality is not housekeeping
+
+**The most dangerous edit to this field is the one that looks like tidying up.**
+
+A repository declares `public` because it is planned for publication. Somebody
+notices it is *currently* private, treats the declaration as a stale value, and
+"corrects" it to `internal`. **Organization-private data is now writable into a
+repository that is about to be published** — and the change reads, in the diff,
+as making a file agree with the world.
+
+**Warn on any edit that loosens this field. Warn harder when the reason given is
+that it had fallen out of sync**, because *it did not match reality* is the most
+plausible-sounding justification for the most dangerous change available here.
+
+**Matching reality is not a reason.** The declaration is allowed to be stricter
+than reality and usually should be. **A divergence is more often a signal that
+reality is behind than that the declaration is wrong** — the fix for a
+`public` declaration on a private repository is usually to publish it, or to
+leave both alone, never to loosen the declaration.
+
+**Require the reason to be about the content, not the metadata.** *Nothing
+sensitive will ever live here* is a reason. *It didn't match* is an observation,
+and observations do not grant permissions.
+
+### The asymmetry every rule here rests on
+
+**Being wrong toward restriction is an inconvenience. Being wrong toward
+permission is unrecoverable.**
+
+Too restrictive means somebody cannot read something they should, notices, and
+it is fixed in a minute. Too permissive means data is out — forked, cloned,
+cached, indexed — and no correction retrieves it.
+
+**So every rule here fails toward restriction, deliberately.** Absent refuses.
+The declaration beats the observation. A check that cannot be performed is a
+failure rather than a pass. The field can narrow and never widen. **None of
+those are separate decisions; they are one principle applied four times**, and
+the cost of each is a mild inconvenience against an outcome nobody can undo.
+
+### When declared and actual disagree
+
+**Never resolve a mismatch silently**, and the two cases are nothing alike.
+
+| declared | actually | | |
+| --- | --- | --- | --- |
+| `public` | private | more restricted than declared | **report. Not an error** |
+| `internal` or narrower | **public** | **more permissive than declared** | **error. Stop** |
+
+**More restricted than declared is the safe direction and often correct.** A
+repository planned for publication declares `public` while it is still private,
+which is the whole reason this is a declaration — it refuses today, before the
+publication that would make a mistake permanent. Say so where a person will see
+it; do not treat it as a fault.
+
+**More permissive than declared is a showstopper.** Content the organization
+believes is internal is publicly readable *right now*. Somebody changed the
+visibility and did not change the declaration, or the declaration was
+aspirational.
+
+**Error immediately, say what is exposed, and change nothing.** The exposure has
+already happened, quietly flipping the repository private destroys the record of
+a decision somebody made, and it does not un-publish anything anyway.
+
+**Hosting visibility can only prove one direction.** `public` and `private` are
+coarser than this ladder, so a private repository declaring `restricted` cannot
+be checked against the host at all. What *is* checkable is the case that
+matters — **actually public, declared anything else** — which is the
+unrecoverable one.
 
 A correct `disclosure_level` is necessary and never sufficient. **The destination
 must also be established as the intended one**, by identity rather than by
