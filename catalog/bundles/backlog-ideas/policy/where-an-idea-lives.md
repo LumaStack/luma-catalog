@@ -53,6 +53,36 @@ question**, and the one that goes wrong in an organization with several.
 backlog that will hold it. This is the primary test and it settles most cases
 outright — concrete where the alternatives are hypothetical.
 
+**Governing content is a tool idea; writing content is a content idea.** The
+sharpest form of the rule, and the one that resolves the case people get wrong:
+
+| | |
+| --- | --- |
+| *content should behave like this* · *this should be checked* · *this should be enforced* | **the tool that governs it** |
+| *we should write one of these* · *this entry is missing* · *this needs updating* | **the repository that holds it** |
+
+A blog is the clearest analogy. **The text formatter goes in the codebase, not in
+the repository holding the text it formats.** *Write a post about X* goes with the
+posts.
+
+**Two ways this goes wrong, both seen:**
+
+**Topic association is not a build site.** An idea *about* bundles feels like it
+belongs with the bundles. It belongs wherever somebody would do the work. Asking
+*what is this about* returns the wrong answer confidently, where *where would
+somebody open an editor* returns the right one.
+
+**Structural correctness of an artifact is not routing of an idea.** *This field
+belongs on that type, and that type is defined in the format* can be entirely true
+and still be the wrong home — because a field declaration is a paragraph, and the
+behaviour that makes it mean anything is the idea. **The format supplies the
+shape; the consumer supplies the behaviour**, and the consumer is where it goes.
+
+**Check the ideas already filed before choosing.** The same shape has usually been
+routed before, and a precedent on disk beats an argument in the moment. It is also
+mechanical: grep the existing idea files for the pattern rather than reasoning from
+first principles each time.
+
 **Then to where the mechanism runs.** A capability that executes inside projects
 belongs with the tool that runs there, whatever repository the idea was written
 in. A repository that is structurally never present when the work happens cannot
