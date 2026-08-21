@@ -62,6 +62,13 @@ right.
 **Signal.** The backlog tool that `luma/backlog-ideas` is already waiting on.
 One arrival closes both gaps.
 
+**A candidate exists and has not been checked.** `LumaStack/luma-backlog`
+describes itself as a backlog manager built for the AI world. Whether it is the
+tool this entry is waiting on is **unconfirmed** — this was written without
+looking, which is the failure the whole gap-recording habit is supposed to
+prevent. Establish it before changing anything here; guessing the other way
+repeats the mistake.
+
 ## Memory tooling
 
 **Wanted.** A luma-owned memory store, so *what is true of this operator*
@@ -71,6 +78,10 @@ invisible to every other.
 **Today.** Write in the running agent's own format and follow its own index
 conventions, then **name in the session note where they went** — which is the
 whole mitigation, and a thin one.
+
+**A candidate exists and has not been checked.** `LumaStack/mind-core` describes
+itself as global agent context and memory management. Whether it is what this
+entry wants is **unconfirmed**, and was recorded without looking.
 
 **Signal.** Foreman growing memory as a projection target. When it does, the
 luma store becomes the destination and the agent-specific store becomes
