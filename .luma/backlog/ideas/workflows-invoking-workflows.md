@@ -69,155 +69,60 @@ Those are **frontmatter type names**. This would be the **first token the format
 reserves inside prose**, which needs two things a type name does not.
 
 **Where it is active.** A line whose first non-whitespace content is
-`luma-invoke:`. **Inert inside a fenced code block** — otherwise documentation
-showing an example fires it, and every document explaining this feature becomes a
-document that performs it.
+`luma-invoke:`. **Inert inside a fenced code block.**
 
 **What a tool that has not implemented it must do.** The permissive-conformance
 law says no consumer rejects a bundle over something it does not understand, so
 rejecting is out. **But ignoring is worse**: a `require`-level invocation that
-silently does not happen is the failure this whole design exists to prevent.
+silently does not happen is the failure this whole design exists to prevent. So
+the rule is neither — **a tool that meets `luma-invoke:` and cannot act on it says
+so.** Unimplemented is not absent, and the difference has to reach the person.
+That is the `inform`-versus-`silent` distinction, applied one layer down to the
+tool itself.
 
-So the rule is neither: **a tool that meets `luma-invoke:` and cannot act on it
-says so.** Unimplemented is not the same as absent, and the difference has to
-reach the person. That is the same distinction the levels draw between `inform`
-and `silent`, applied one layer down to the tool itself.
+**Reserving it means nothing else may use the token** — not as a heading, not as a
+field, not as prose. That is the cost of a keyword, and the reason it is
+namespaced: `luma-invoke:` is unlikely to be wanted for anything else, where a
+bare `invoke:` might be.
 
-**And reserving it means nothing else may use the token** — not as a heading, not
-as a field, not as prose. That is the cost of a keyword and the reason it is
-namespaced: `luma-invoke:` is unlikely to be wanted for anything else, where
-`invoke:` might be.
+### Showing the marker without firing it, and the `noop` that makes it work
 
-**It must render visibly.** An HTML comment would hide it, and invisible
-behaviour is the tax this design exists to avoid.
+**Needed: a way to write about `luma-invoke:` in documentation.** Code fences and
+inline backticks cover most of it, and a line prefix technically works — but
+relying on indentation is fragile, since a formatter reflowing a document can
+unindent a line and turn a quoted example into a live directive.
 
-**Why not attach to a step number.** Numbers are positions. `migrate-ideas` was
-renumbered on 2026-08-21 — a step inserted, 8→9 and 9→10 — and anything declaring
-*run before step 8* would have moved silently, with nothing failing and no diff to
-notice. A prose reference to "step 9" did break, and was caught by hand.
+**The mechanism is the one already established: the frontmatter is the
+authority.** A marker means something because a slug declares it, so an example
+with no declaration is inert on its own. What that leaves is a collision between
+two cases that look identical:
 
-**Why a slug rather than inline.** Inline is renumber-safe but cannot be
-pre-flighted: *does this workflow need anything I do not have* becomes
-prose-parsing. Frontmatter is the manifest, the marker is the timing, and neither
-duplicates the other.
+| | |
+| --- | --- |
+| marker with a matching entry | fires |
+| marker with a `noop` entry | **silently nothing** — declared, deliberate |
+| marker with no entry at all | **error** — that is a typo |
 
-**Slugs rather than identifiers.** These sit in a document people read.
-`refresh-index` says what is about to happen; `a3f9c2` says go and look it up.
-
-**A preset over two fields.** `level` is mandatory and sets both defaults;
-`present` and `absent` are written only to disagree with it.
+**Without the `noop`, unmatched has to mean one or the other**, and both are bad:
+silently ignoring makes a mistyped slug vanish, erroring makes documentation
+impossible.
 
 ```yaml
-level:   require | recommend | optional | best-attempt    # mandatory
-present: run | ask                                        # default: from the level
-absent:  block | inform | pause | silent                  # default: from the level
+invokes:
+  show-the-syntax: { noop: "documentation example" }
 ```
 
-| level | sets `present` | sets `absent` |
-| --- | --- | --- |
-| `require` | run | block, and help them install it — **if they decline, the workflow exits with an error** |
-| `recommend` | run | inform |
-| `best-attempt` | run | silent |
-| `optional` | **ask** | pause, and ask whether to install it and then run it |
+**Silent, and it does not explain itself at run time** — no warning, no note that
+something was skipped. The reason string is for whoever reads the file, not for
+the output.
 
-**`present` and `absent` as a pair is what makes it readable** — same shape,
-opposite condition, and a reader who meets one knows the other exists. That
-symmetry is worth more than the field count.
+**A reserved escape token was the alternative** — `luma-example:` prefixing a
+quoted directive. Not taken: it reserves a second keyword, it infers intent from
+syntax rather than declaration, and it gives up typo detection, since a quoted
+example and a mistyped slug become indistinguishable again.
 
-**`run` is the default for `present`, because the common case is a workflow doing
-what it declared.** Asking is the exception, so the unusual entries are the ones
-that look unusual — which is what matters when skimming forty of them.
-
-**Nothing pauses when the tool is present, except `optional`.** Consent to the
-workflow is consent to what it declares. Stopping to say *I recommend the thing I
-told you I would do* is noise, and noise teaches people to skim past the pause
-that mattered.
-
-**`optional` is opt-in where the others are opt-out**, and it does not lean either
-way. Declaring something optional is the author saying *I do not know whether you
-want this* — so an agent that manufactures a recommendation is inventing an
-opinion the author declined to have. It is also why its absence behaviour is to
-ask about installing: it was already interrupting.
-
-**`best-attempt` stays a preset rather than folding into `recommend` +
-`absent: silent`.** Presets cost one word, `run` with a silent absence is common,
-and writing the override every time is worse than naming it. Some skips are
-noise, and a workflow reporting every optional thing it did not do trains people
-to skim past the one that mattered.
-
-**`level` is mandatory rather than defaulted.** It is the one field carrying the
-semantics, entries are few per workflow, and every candidate default fails in a
-different way: `require` blocks over tools nobody needed and is the only level
-that may demand an install; `optional` pauses on every unlabelled entry until
-people click yes reflexively; `best-attempt` means a forgotten annotation
-silently never happens. `recommend` was the least bad — it never surprises — but
-*absent refuses* is the instinct applied everywhere else here, and one word per
-entry buys zero accidental semantics.
-
-**A target is a workflow, a command, or a bundle, and which one is declared
-rather than inferred.** Exactly one of `workflow:`, `command:` or `bundle:`; more
-than one, or none, is a publish-time error. Sniffing the type from the shape of the value would be
-implicit typing, and this system chooses declaration over inference everywhere
-else.
-
-**`invokes:` is the format's own word.** SPEC partitions the three base types by
-how a Document is engaged with, and a workflow is the one that is **invoked** —
-so the field and the type it sits on agree rather than describing the same thing
-two ways.
-
-**It covers every target, once *invoke* is read properly.** The narrow reading is
-*execute*, which is why `bundle:` looked like a misfit. The other sense — **call
-upon, bring into force** — is ordinary English: invoke a clause, invoke a right,
-invoke a precedent. *Invoke a policy at step twelve* means bring it to bear here,
-which is exactly the operation.
-
-`runs:` and `calls:` are true of two targets out of three. `uses:` is true of all
-three and says almost nothing — it was a vaguer word chosen to make a merge read,
-when the merge was fine. `needs:` is worse than weak: it names a *dependency*,
-contradicting the rule below that an entry is conditional on presence and never
-one.
-
-**The one cost:** to a programmer *invoke* leans toward execution, so `bundle:`
-may momentarily read as *run the bundle*. One sentence of documentation fixes it.
-
-**Bundles are opaque in a way even workflows are not, which is why they belong
-here.** A workflow runs and finishes; **a loaded bundle persists**, bringing
-policy and guardrails that shape every decision afterwards, with nothing marking
-where that began. *Go read it* means the whole bundle, not one document — and its
-`preload: mandatory` documents pull in more, so the reachable set is not visible
-from the manifest either.
-
-**All four levels fit a bundle**, which is the confirming signal. Unlike a plain
-document, where `optional` is nonsense — nobody pauses to ask permission before
-reading — *shall I load the security policy bundle?* is a fair question, because
-loading costs context and changes behaviour.
-
-**`preload` supplies the payload, not the timing.** It is eager and
-non-negotiable: adopted bundle, documents in context from the start, nobody
-chooses — and that is exactly what makes it the right enforcement path for policy
-and mandates. What it cannot do is load something at step twelve, conditionally.
-So a `bundle:` entry says **when** and **whether**; the bundle's preload set
-answers **what arrives**, because its author already decided what is needed in
-order to work with it.
-
-**This is where a prose `when` earns its place most clearly** — *load the
-TypeScript policy when the project actually has TypeScript* is the case no level
-can express.
-
-**Commands and documents stay out, because the contract is for opacity.** A
-fenced command shows its whole self before it runs. A `[[wikilink]]` is
-transparent and changes nothing. Neither needs declaring, and agents already
-handle both. **`command:` is a narrow escape hatch** for when the *absence*
-behaviour is invisible — `gh` being missing is not in the fence — and a fenced
-command remains the normal way to run one.
-
-**A workflow can refuse; a command cannot — and that asymmetry is load-bearing.**
-The rule elsewhere is that the callee owns destructive consent: creating a
-repository or publishing requires agreement no matter who called it. A shell
-command has no prose, no level of its own, and no way to stop and ask. **For a
-command, the caller's `level` is the only protection there is** — so a
-destructive one wants `optional`, or an explicit warning in the prose beside the
-marker, because nothing downstream will do it.
+**This is past where reasoning without an implementation is useful.** Recorded as
+something that has to work rather than as a settled mechanism.
 
 **Conditions are prose in the body, introduced by *when*, beside the marker.**
 
