@@ -43,8 +43,19 @@ and needs no network:
 git remote get-url origin
 ```
 
-**It must equal the declared URL.** Not resemble it, not share a name — equal it.
-A repository named `acme-hq` in the wrong account is a different repository.
+**Compare normalised.** The same repository has several legitimate spellings —
+`git@github.com:acme/acme-hq.git`, `https://github.com/acme/acme-hq.git`, either
+without the `.git`. Strip the scheme, the credentials and the suffix, and compare
+what is left: `github.com/acme/acme-hq`.
+
+**Then it must be equal.** Not resemble, not share a name — equal. A repository
+called `acme-hq` in a different account is a different repository.
+
+**Normalising is not loosening.** Two spellings of one repository are one
+repository, and a check that rejects the operator who cloned over HTTPS is a
+check that gets worked around. Foreman hit this exact bug once already, in the
+hook-command comparison — a correctly wired setup read as unwired because one
+path had several valid forms.
 
 **3. Its `disclosure_level` accepts organization-private data.** Read
 `.luma/project.md` in the repository you are standing in.

@@ -187,6 +187,11 @@ account is a different repository, and the URL is the only form that cannot be
 confused. It is also local — `git remote get-url origin` reads `.git/config` and
 needs no network.
 
+**Write whatever `git remote get-url origin` returns**, and let the comparison
+normalise. The same repository has several valid spellings and operators clone
+differently — one over SSH, one over HTTPS — so a pointer that has to match
+character for character is one that fails for a colleague and not for you.
+
 **Each operator writes their own.** That is not duplication to be eliminated; it
 is what stops one mistaken commit redirecting everybody's tooling at once.
 
