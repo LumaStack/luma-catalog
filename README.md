@@ -1,10 +1,11 @@
 # luma-catalog
 
 **Standards, workflows and knowledge that give your agents superpowers.**
-Move faster together, drop in best practice, and get it right the first time.
+Drop in best practices, move faster together, and get things right the first time.
 
-Universal bundles — standards, workflows, and types that any organization can
-adopt, published so a project can pin one and not have it change underneath.
+A catalog of universal bundles containing standards, workflows, and knowledge
+that any organization can adopt — versioned and vendored, so you're in control.
+Use our catalog, or run your own alongside it.
 
 > **Status:** seed. The shape is settled; the shelves are empty.
 
