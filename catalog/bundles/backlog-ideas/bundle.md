@@ -118,11 +118,13 @@ about what it builds. The same shape holds, and `scope` records which.
 `0.4.0` — what a messy `IDEAS.md` actually contains, and what to do about each
 shape; new content, existing use unaffected.
 
-**The governing rule is *surface, do not resolve*.** Every shape in that table is
-a place an agent could quietly decide and produce something that looks clean —
-reconstructing a dead entry, merging two that disagree, flattening an order that
-meant something. Clean is not the goal. Nothing lost and nothing invented is the
-goal, and a mess reported honestly beats a tidy file nobody agreed to.
+**The governing rule is *surface and help resolve, never resolve alone*.** Every
+shape in that table is a place an agent could quietly decide and produce
+something that looks clean — reconstructing a dead entry, merging two that
+disagree, flattening an order that meant something. But flagging a mess and
+stopping is half a job: propose the split, read both duplicates, name which
+contradiction you think survives. Do the reading, then stop before the decision.
+Clean is not the goal; nothing lost and nothing invented is.
 
 `0.3.0` — `migrate-ideas` reads the headquarters declaration before inferring
 anything, and takes the project list from the headquarters index where one

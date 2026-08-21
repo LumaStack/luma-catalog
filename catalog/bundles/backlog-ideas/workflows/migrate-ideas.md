@@ -231,10 +231,19 @@ the person who wrote it.
 | **Ordering that carries meaning** — a list where position implies priority | Ask before flattening. One file per idea destroys order, and if order was the only record of priority, it is gone |
 | **Wildly uneven size** — one-liners beside two-page essays | Not a problem to fix. Size is not quality, and normalising it is enlargement |
 
-**The rule underneath all of them: surface, do not resolve.** Every row above is a
-place where an agent could quietly decide and produce something that looks clean.
-Clean is not the goal — **the goal is that nothing is lost and nothing is
-invented**, and a mess reported honestly beats a tidy file somebody did not agree
+**The rule underneath all of them: surface and help resolve — never resolve
+alone.**
+
+**Do the work.** Propose the split and say where each half goes. Read both
+duplicates and say what one has that the other lacks. Name which of two
+contradicting entries you think survives, and why. Say what an undecodable entry
+appears to be about and how confident that is. **An agent that flags a mess and
+stops has done half a job**, and leaves the person with the part that needed the
+reading.
+
+**Then stop.** Every row above is a place where deciding quietly produces
+something that looks clean, and clean is not the goal — **nothing lost and
+nothing invented** is. A mess reported honestly beats a tidy file nobody agreed
 to.
 
 **Migration preserves; it does not improve.** Step 8 verifies this at the end,
