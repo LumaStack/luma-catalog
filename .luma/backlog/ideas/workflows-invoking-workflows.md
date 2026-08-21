@@ -129,13 +129,19 @@ something that has to work rather than as a settled mechanism.
 Exactly one target key per entry, **declared rather than inferred** from the shape
 of the value; more than one, or none, is a publish-time error.
 
-| | | |
+| target | horizon | |
 | --- | --- | --- |
-| `workflow:` | **start here** | the core case |
-| `command:` | **then** | narrow — only when the *absence* behaviour is invisible |
-| `bundle:` | **then** | resolves to its `entry_point` |
-| `policy:` | **likely next** | brings rules into force |
-| `concept:` | **probably never** | see the test |
+| `workflow:` | **now** | the core case, and the only one needed to prove the mechanism |
+| `command:` | **next** | narrow — only when the *absence* behaviour is invisible |
+| `bundle:` | **next** | resolves to its `entry_point` |
+| `policy:` | **someday** | brings rules into force |
+| `concept:` | **deferred, not scheduled** | fails the test three ways — see below |
+
+**Ship `workflow:` alone first.** It is the case the whole design was reasoned
+from, and it exercises every part of the mechanism — slug, marker, levels,
+`absent`, `noop`, prose `when`. The others add target kinds to a thing already
+working, which is a smaller change than it looks and a much smaller risk than
+building four at once and finding the shape wrong.
 
 ### The admission test — all four, not a general impression
 
@@ -178,6 +184,13 @@ being missing does.
 **`concept` fails three of four**, which is the point of writing the test down:
 adding it would be symmetry for its own sake, and it would teach people that every
 reference wants a slug — the ceremony this design exists not to become.
+
+**Deferred rather than rejected, with a trigger.** It is recorded because it has a
+defensible-sounding case — *it is a document type too* — that will be raised again
+by somebody who has not seen the test. **Re-open if a real case appears that a
+`[[wikilink]]` cannot express**: most likely a concept that might not be adopted,
+where absence needs an answer, or one costly enough to load that asking first
+makes sense. Either would flip two of the four checks, and that is the bar.
 
 **When a candidate passes three and fails one, the answer is no.** A partial pass
 is how a mechanism grows into something nobody can explain, one reasonable
