@@ -106,6 +106,48 @@ makes, every time.
 The asymmetry is the point: **it may only ever narrow what happens, never widen
 it.** A control that can widen access is not a safety control.
 
+### Neither drives the other
+
+The obvious question is which way the coupling runs, and **both obvious answers
+are wrong.**
+
+**The value must never drive reality.** A tool that publishes a repository
+because a line in a file changed has made a text edit into an irreversible
+disclosure. Desired-state reconciliation is fine for resources you can put back;
+publication is not one of them. **Nothing changes visibility, access, or
+membership on the strength of this field.**
+
+**The value must not be derived from reality either.** That sounds safe and
+destroys the property the field exists for. A repository that is private today
+and planned for publication would be recorded as `internal` — and would then
+accept organization-private data right up until the day it is published, which
+is the failure this was built to prevent. **A field derived from ambient state
+is ambient state.**
+
+**So it is an independent assertion, checked against an independently observed
+reality, with the gap between them reported.** This is a policy bound, not a
+desired state. It says what must be true of the content, and something else
+entirely decides what is true of the repository.
+
+### Which edits are cheap and which are consequential
+
+The coupling is asymmetric, in the same direction as everything else here.
+
+**Tightening is free.** Widening the declared disclosure — `internal` to
+`public` — narrows what may be written and takes effect immediately. It needs
+no permission and no evidence, because the worst it can do is refuse something.
+
+**Loosening is consequential.** Narrowing the declared disclosure — `public` to
+`internal` — **permits content that was previously refused.** It is the only
+edit to this field that can cause a leak, and it deserves the scrutiny of the
+change it enables rather than the scrutiny of a one-line diff. A person decides
+it, and reality should already support it.
+
+**Reality becoming more permissive invalidates a narrower declaration.** When a
+repository is made public, every declaration narrower than `public` is now
+false, and the content it admitted is already exposed. That is the error case
+above — reported, never auto-corrected in either direction.
+
 ### The asymmetry every rule here rests on
 
 **Being wrong toward restriction is an inconvenience. Being wrong toward

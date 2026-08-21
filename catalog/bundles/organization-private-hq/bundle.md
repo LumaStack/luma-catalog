@@ -144,6 +144,19 @@ field can narrow but never widen — **one principle applied four times.**
 **Nothing publishes on the strength of this field.** A tool reading `public` and
 widening access has turned a safety limit into a command.
 
+**Neither drives the other.** The value does not change the repository — a text
+edit must never become an irreversible disclosure. And it is not derived from
+the repository either, because a field derived from ambient state *is* ambient
+state, and would record a soon-to-be-published repository as safe. **It is an
+independent assertion checked against an independently observed reality**, and
+the gap is reported rather than reconciled.
+
+**Tightening the declaration is free; loosening it is consequential.** Widening
+disclosure only ever refuses more. Narrowing it permits content that was
+previously refused — the one edit to this field that can cause a leak, and one
+that deserves the scrutiny of the change it enables rather than of a one-line
+diff.
+
 **Why four and not one:** the single check this replaced *was passing.* It
 confirmed the destination was private, which was true, and privacy was never the
 question. **A check that confirms the wrong property is worse than no check**,
