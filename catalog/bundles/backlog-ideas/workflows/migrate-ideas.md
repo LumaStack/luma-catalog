@@ -106,16 +106,51 @@ outside git entirely, both beat the nearest convenient place.
 Ordinary ideas are unaffected — most are not sensitive, and the absence of a
 private home is no reason to stop migrating the ones that were never private.
 
-Cheap discovery that narrows the questions rather than replacing them:
+### Finding the projects, best source first
+
+**1. The headquarters index, where there is one.** The declaration points at the
+headquarters; the headquarters holds `repositories/index.md`, an entry per
+repository saying what each is for.
+
+```sh
+# already read above: [headquarters] url
+gh api repos/<account>/<hq>/contents/repositories/index.md --jq .content | base64 -d
+```
+
+Fetch it if the headquarters is not cloned locally rather than giving up — it is
+one call and it is the difference between a list and a guess.
+
+**One property makes it decisive: it knows about repositories that are not
+checked out here.** Every other method can only find what somebody happened to
+clone, so they do not merely produce a worse list — they produce one that is
+silently missing whatever is not on this machine, and looks complete.
+
+It also carries routing signal nothing else has. An idea does not belong in
+something at `attention: winding-down`, and `in_scope: false` records that the
+organization already decided not to reason about it.
+
+**Say so if it is past its `stale_after`.** A stale index still beats inference
+by a distance; presenting it as current is what makes it a problem.
+
+**2. Inference, where there is no headquarters.** An ordinary case — a
+headquarters is recommended, not required.
 
 ```sh
 git remote -v                       # which organization this repository belongs to
-ls -d ../*/.git 2>/dev/null         # sibling repositories, if they are checked out side by side
+ls -d ../*/.git 2>/dev/null         # siblings, if they are checked out side by side
 ```
 
-**Confirm what you find rather than acting on it.** Sibling directories are a
-hint about what somebody has cloned, not a statement about what exists — and a
-remote tells you where this repository lives, not where an idea should.
+**Say that you are inferring, and say what it cannot see.** Sibling directories
+are a fact about somebody's disk, not about the organization. A remote says where
+this repository lives, not where an idea should.
+
+**3. Ask, whichever tier produced the list.** An index is authoritative about
+what exists. It is not authoritative about where *this* idea belongs, and neither
+is a directory listing.
+
+**Fall through rather than failing.** If the index is missing, unreadable, or
+shaped differently than expected, drop to inference — the shape belongs to
+another bundle and may change without this one knowing.
 
 **A destination may not exist yet, and may not want to.** A repository with no
 ideas directory needs one created and said so. A repository with **no luma at

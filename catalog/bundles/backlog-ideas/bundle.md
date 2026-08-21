@@ -116,13 +116,21 @@ about what it builds. The same shape holds, and `scope` records which.
 ## Version
 
 `0.3.0` — `migrate-ideas` reads the headquarters declaration before inferring
-anything; new content, existing use unaffected.
+anything, and takes the project list from the headquarters index where one
+exists; new content, existing use unaffected.
 
 **A fresh agent got this wrong on its first run**, concluding that a
 similarly-named engine repository was the headquarters. The declaration it needed
 was written by `create-internal-hq` and sitting unread. Reading it first is not a
 replacement for asking — an organization with no headquarters yet is an ordinary
 case — but a declaration beats a directory listing wherever one exists.
+
+**The index is the better source for a different reason: it knows about
+repositories that are not checked out.** Sibling-directory discovery can only
+find what somebody happened to clone, so it does not merely produce a worse list
+— it produces one that is silently incomplete and looks finished. The index also
+carries `attention` and `in_scope`, which are routing signal nothing on disk
+has.
 
 `0.2.0` — everything learned from the first real migration is new content;
 existing use is unaffected. What counts as signoff. How briefly to report, and
