@@ -40,7 +40,20 @@ before: [record-the-run]
 ---
 ```
 
-A marker naming `refresh-index` sits in whatever step it belongs to.
+A marker sits at the point in the body where it should play:
+
+```
+luma-run: refresh-index
+```
+
+**Vendor-namespaced for the same reason `.luma/` is.** `run:` occurs in ordinary
+prose constantly — *run: the following command* — and a token that can appear by
+accident is one that will. `run-workflow:` is unambiguous but does not echo the
+`runs:` key it refers to. Backticks are optional; it reads as a directive either
+way.
+
+**It must render visibly.** An HTML comment would hide it, and invisible
+behaviour is the tax this design exists to avoid.
 
 **Why not attach to a step number.** Numbers are positions. `migrate-ideas` was
 renumbered on 2026-08-21 — a step inserted, 8→9 and 9→10 — and anything declaring
@@ -197,20 +210,29 @@ caller knows things the callee cannot — *this is about to spend a minute on
 network calls the user did not ask for*. But creating a repository or publishing
 requires agreement no matter who called it.
 
-## Why not now
+## Two questions, closed
 
-Two things are unresolved.
+**Organization-imposed invocations: not a mechanism.** The worry was that an
+organization wants behaviour inside workflows it did not write and cannot edit.
+It dissolves into two cases that already have answers. **One workflow needing an
+organization-specific change** is a fork into your own catalog — supported,
+cheap, and the promotion path back upstream is designed for it. **Every workflow
+should journal** is a *runner* concern: whatever executes workflows writes the
+record, no workflow declares anything, and nothing needs an attachment point. It
+felt like injection only because journaling was being pictured as something a
+workflow *does*, when it is something that happens *around* a workflow being done.
 
-**Organization-imposed versus workflow-declared.** Everything above is a workflow
-declaring its own invocations. *Every workflow writes a record* is imposed on all
-of them and nobody opts in — closer to a bundle with `obligation: mandatory` than
-to a field in a workflow. It may be a second mechanism rather than a value.
+**Deferred: extension points, or plugins.** A workflow declaring named interior
+places that others may attach to, filled by an organization's catalog. Rejected
+for now as overkill — it charges every workflow author a maintenance obligation
+in exchange for a case nobody can name concretely. **Re-open when somebody can
+name a real instance** of wanting custom behaviour at interior points of several
+workflows they did not write, which forking the few that matter does not serve.
 
-**The name.** `trigger` is taken: *re-open trigger* runs through `DECISIONS.md`
-and is the tightest term in the vocabulary. `cues`, `runs` and `checkpoints` were
-considered without landing. `runs` is honest and boring; `cues` names the moment
-rather than the action, which matters if one moment carries a log write, a rot
-check and an invocation at once.
+**The name: `runs:` for the field, `luma-run:` for the marker.** `trigger` was
+unavailable — *re-open trigger* runs through `DECISIONS.md` and is the tightest
+term in the vocabulary. `cues` and `checkpoints` were considered; `runs` is honest
+and boring, and boring is right for something read forty times a day.
 
 ## Notes
 
@@ -220,3 +242,9 @@ reads one, and the four levels have met no real case except the one that produce
 them.
 
 **`horizon: later` is an assumption, not a judgement anybody made.**
+
+**Nothing here is unresolved any more, but nothing is built either.** The design
+settled over one long conversation; no workflow declares a `runs:` block, nothing
+reads one, and the four levels have met no real case except the one that produced
+them. **The first workflow to declare an invocation is the test**, and it will
+probably find something this could not.
