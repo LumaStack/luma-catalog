@@ -124,6 +124,65 @@ example and a mistyped slug become indistinguishable again.
 **This is past where reasoning without an implementation is useful.** Recorded as
 something that has to work rather than as a settled mechanism.
 
+### The target set is open, and starts at three
+
+Exactly one target key per entry, **declared rather than inferred** from the shape
+of the value; more than one, or none, is a publish-time error.
+
+| | | |
+| --- | --- | --- |
+| `workflow:` | **start here** | the core case |
+| `command:` | **then** | narrow — only when the *absence* behaviour is invisible |
+| `bundle:` | **then** | resolves to its `entry_point` |
+| `policy:` | **likely next** | brings rules into force |
+| `concept:` | **probably never** | see the test |
+
+### The admission test — all four, not a general impression
+
+A new target kind is admitted only if every one of these holds. They are ordered
+so the mechanical checks come first and the judgement call comes last.
+
+**1. Is it opaque from where the caller stands?** Can a reader of the calling
+workflow see what they are agreeing to without leaving the page? A fenced command
+shows its whole self. A `[[wikilink]]` can be followed and changes nothing. **If
+it is visible, it needs no declaration** — that is what keeps commands and plain
+documents out.
+
+**2. Does it have one unambiguous starting point?** A workflow starts at the top.
+A bundle starts at its `entry_point`. A command is itself. **Something with no
+defined place to begin cannot be invoked, only read** — and this is why a bundle
+without an `entry_point` is not invocable, which fell out of the test rather than
+being decided separately.
+
+**3. Does all four levels mean something on it?** This is the sharpest check
+because it is nearly mechanical. `optional` on a concept is nonsense — nobody
+pauses to ask permission before reading something. **If a level reads as
+gibberish for the kind, the mechanism does not fit it**, and stretching it there
+will produce entries nobody knows how to write.
+
+**4. Does absence need an answer?** If *it is not there* is unremarkable, the
+levels buy nothing and the entry is ceremony. This is what narrows `command:` to
+its escape-hatch role: an ordinary fenced command does not need one, and `gh`
+being missing does.
+
+**Applied to the candidates:**
+
+| | opaque | one entry point | four levels fit | absence matters |
+| --- | --- | --- | --- | --- |
+| `workflow` | yes | yes | yes | yes |
+| `command` | only its absence | yes | yes | **only sometimes** — hence narrow |
+| `bundle` | yes, and it persists | `entry_point`, or not invocable | yes | yes |
+| `policy` | in effect, though readable | probably its own top | plausibly | yes |
+| `concept` | **no** | **no** | **no** | no |
+
+**`concept` fails three of four**, which is the point of writing the test down:
+adding it would be symmetry for its own sake, and it would teach people that every
+reference wants a slug — the ceremony this design exists not to become.
+
+**When a candidate passes three and fails one, the answer is no.** A partial pass
+is how a mechanism grows into something nobody can explain, one reasonable
+exception at a time.
+
 **Conditions are prose in the body, introduced by *when*, beside the marker.**
 
 > Refresh the index first when it is past its `stale_after`. `[[refresh-index]]`
