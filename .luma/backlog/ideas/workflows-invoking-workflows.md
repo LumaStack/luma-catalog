@@ -32,10 +32,11 @@ so.
 ```yaml
 ---
 type: workflow
-runs:
+uses:
   record-the-run: { workflow: acme/journal, level: require }
   refresh-index:  { workflow: luma/organization-internal-hq#index-repositories, level: recommend, absent: silent }
-  fetch-upstream: { command: "git fetch --all", level: best-attempt }
+  need-gh:        { command: "gh", level: require }
+  load-security:  { bundle: luma/git-secrets, level: recommend }
 before: [record-the-run]
 ---
 ```
@@ -43,14 +44,15 @@ before: [record-the-run]
 A marker sits at the point in the body where it should play:
 
 ```
-luma-run: refresh-index
+luma-use: refresh-index
 ```
 
-**Vendor-namespaced for the same reason `.luma/` is.** `run:` occurs in ordinary
-prose constantly — *run: the following command* — and a token that can appear by
-accident is one that will. `run-workflow:` is unambiguous but does not echo the
-`runs:` key it refers to. Backticks are optional; it reads as a directive either
-way.
+**Vendor-namespaced for the same reason `.luma/` is.** A bare `use:` or `run:`
+occurs in ordinary prose constantly, and a token that can appear by accident is
+one that will. Backticks are optional; it reads as a directive either way.
+
+**`uses:` and `luma-use:` share a root deliberately** — declare it in one, invoke
+it with the other, and nobody has to remember an exception.
 
 **It must render visibly.** An HTML comment would hide it, and invisible
 behaviour is the tax this design exists to avoid.
@@ -118,15 +120,49 @@ silently never happens. `recommend` was the least bad — it never surprises —
 *absent refuses* is the instinct applied everywhere else here, and one word per
 entry buys zero accidental semantics.
 
-**A target is a workflow or a command, and which one is declared rather than
-inferred.** Exactly one of `workflow:` or `command:`; both or neither is a
-publish-time error. Sniffing the type from the shape of the value would be
+**A target is a workflow, a command, or a bundle, and which one is declared
+rather than inferred.** Exactly one of `workflow:`, `command:` or `bundle:`; more
+than one, or none, is a publish-time error. Sniffing the type from the shape of the value would be
 implicit typing, and this system chooses declaration over inference everywhere
 else.
 
-**`runs:` names the act rather than the cargo**, which is why it survives having
-two kinds of target. `workflows:` would be a lie for half the entries the moment
-a command appears.
+**`uses:` is the only word true of all three targets.** You use a workflow, a
+command and a bundle. `runs:` and `calls:` are true of two — you do not run a
+bundle. `needs:` is worse than weak: it names a *dependency*, contradicting the
+rule below that an entry is conditional on presence and never a dependency. The
+cost of `uses:` is that it carries less alone; the target key on the next line
+carries the rest.
+
+**Bundles are opaque in a way even workflows are not, which is why they belong
+here.** A workflow runs and finishes; **a loaded bundle persists**, bringing
+policy and guardrails that shape every decision afterwards, with nothing marking
+where that began. *Go read it* means the whole bundle, not one document — and its
+`preload: mandatory` documents pull in more, so the reachable set is not visible
+from the manifest either.
+
+**All four levels fit a bundle**, which is the confirming signal. Unlike a plain
+document, where `optional` is nonsense — nobody pauses to ask permission before
+reading — *shall I load the security policy bundle?* is a fair question, because
+loading costs context and changes behaviour.
+
+**`preload` supplies the payload, not the timing.** It is eager and
+non-negotiable: adopted bundle, documents in context from the start, nobody
+chooses — and that is exactly what makes it the right enforcement path for policy
+and mandates. What it cannot do is load something at step twelve, conditionally.
+So a `bundle:` entry says **when** and **whether**; the bundle's preload set
+answers **what arrives**, because its author already decided what is needed in
+order to work with it.
+
+**This is where a prose `when` earns its place most clearly** — *load the
+TypeScript policy when the project actually has TypeScript* is the case no level
+can express.
+
+**Commands and documents stay out, because the contract is for opacity.** A
+fenced command shows its whole self before it runs. A `[[wikilink]]` is
+transparent and changes nothing. Neither needs declaring, and agents already
+handle both. **`command:` is a narrow escape hatch** for when the *absence*
+behaviour is invisible — `gh` being missing is not in the fence — and a fenced
+command remains the normal way to run one.
 
 **A workflow can refuse; a command cannot — and that asymmetry is load-bearing.**
 The rule elsewhere is that the callee owns destructive consent: creating a
@@ -247,10 +283,13 @@ in exchange for a case nobody can name concretely. **Re-open when somebody can
 name a real instance** of wanting custom behaviour at interior points of several
 workflows they did not write, which forking the few that matter does not serve.
 
-**The name: `runs:` for the field, `luma-run:` for the marker.** `trigger` was
+**The name: `uses:` for the field, `luma-use:` for the marker.** `trigger` was
 unavailable — *re-open trigger* runs through `DECISIONS.md` and is the tightest
-term in the vocabulary. `cues` and `checkpoints` were considered; `runs` is honest
-and boring, and boring is right for something read forty times a day.
+term in the vocabulary. `runs:` held it while the targets were workflows and
+commands, and lost the moment bundles joined: you do not run a bundle. `calls:`
+and `invokes:` fail the same way. `needs:` fails worse, naming a dependency where
+the design insists on none. `cues` and `checkpoints` were considered earlier and
+did not survive.
 
 ## Notes
 
@@ -262,7 +301,7 @@ them.
 **`horizon: later` is an assumption, not a judgement anybody made.**
 
 **Nothing here is unresolved any more, but nothing is built either.** The design
-settled over one long conversation; no workflow declares a `runs:` block, nothing
+settled over one long conversation; no workflow declares a `uses:` block, nothing
 reads one, and the four levels have met no real case except the one that produced
 them. **The first workflow to declare an invocation is the test**, and it will
 probably find something this could not.
