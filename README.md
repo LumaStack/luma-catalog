@@ -1,5 +1,7 @@
 # luma-catalog
 
+**Standards, workflows and knowledge that give your agents superpowers.**
+
 Universal bundles — standards, workflows, and types that any organization can
 adopt, published so a project can pin one and not have it change underneath.
 
