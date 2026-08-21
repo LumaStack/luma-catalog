@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.4.1
 published: 2026-08-20
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
@@ -114,6 +114,16 @@ Both levels. An organization has ideas about how it works; a project has ideas
 about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
+
+`0.4.1` — answer from the sources before asking; clarification, no behaviour
+removed.
+
+**A second test run read the headquarters index for its repository table and then
+asked how many organizations were in play** — which the same file states three
+paragraphs higher, along with which accounts are empty and which are excluded on
+purpose. The step said *"at minimum, ask. Four questions"*, which reads as a
+checklist to run regardless of what is already known. Asking something the index
+answered tells the person their headquarters is not being used.
 
 `0.4.0` — what a messy `IDEAS.md` actually contains, and what to do about each
 shape; new content, existing use unaffected.

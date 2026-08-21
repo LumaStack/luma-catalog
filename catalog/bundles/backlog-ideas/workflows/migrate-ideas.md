@@ -85,7 +85,13 @@ helped — the declaration was sitting unread two directories away.
 **A name ending in `-hq` means an organization's own headquarters**, which makes
 that particular inference safe now. It is still an inference.
 
-At minimum, ask. Four questions:
+**Answer what the sources can answer, then ask only what is left.** These four
+questions are what must be *known*, not a checklist to read aloud. Asking one the
+index already answered is worse than redundant — it tells the person their
+headquarters is not being used, and teaches them to supply by hand what the
+system was built to hold.
+
+Four questions:
 
 - **Which organization is this repository under**, and is there more than one in
   play? Somebody working across two is the case that goes wrong.
@@ -131,6 +137,16 @@ organization already decided not to reason about it.
 
 **Say so if it is past its `stale_after`.** A stale index still beats inference
 by a distance; presenting it as current is what makes it a problem.
+
+**Read the coverage statement, not only the table.** The prose above the listing
+is where the index says **which accounts were swept**, which are empty and why,
+and which are deliberately excluded. That answers *how many organizations are in
+play* outright — the question most likely to be asked of somebody who already
+wrote the answer down.
+
+It also says whether the index claims to be complete. **Where it does not, it is
+a view rather than a census**, so *is anything missing* is answered by the
+document too: possibly, and here is what it covered.
 
 **2. Inference, where there is no headquarters.** An ordinary case — a
 headquarters is recommended, not required.
