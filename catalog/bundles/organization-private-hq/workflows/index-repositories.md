@@ -28,8 +28,12 @@ and where it is written is not a judgement call.
 machine-local declaration naming it:
 
 ```sh
-cat ~/.config/luma/luma-foreman/headquarters.toml   # url = "git@github.com:acme/acme-hq.git"
+cat ~/.config/luma/luma-hq/config.toml   # [headquarters] url = "…/acme-hq.git"
 ```
+
+**It belongs to the organization tool, not the project tool.** Foreman runs
+inside other people's repositories and must not hold an organization's context —
+if a check ever needs it in order to run, the boundary has been broken.
 
 **No declaration means stop.** Do not search for a likely candidate, do not offer
 to use the repository you are standing in. Say that no headquarters has been
