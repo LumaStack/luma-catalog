@@ -33,9 +33,9 @@ so.
 ---
 type: workflow
 runs:
-  refresh-index:  { run: luma/organization-internal-hq#index-repositories, level: best-attempt }
   record-the-run: { run: ..., level: require }
-  fetch-upstream: { run: ..., level: recommend, absent: pause }   # override, rarely written
+  refresh-index:  { run: luma/organization-internal-hq#index-repositories, level: recommend, absent: silent }
+  fetch-extras:   { run: ..., level: optional }
 before: [record-the-run]
 ---
 ```
@@ -55,61 +55,55 @@ duplicates the other.
 **Slugs rather than identifiers.** These sit in a document people read.
 `refresh-index` says what is about to happen; `a3f9c2` says go and look it up.
 
-**Four levels, and they are not one ladder.**
+**A preset over two fields.** `level` is mandatory and sets both defaults;
+`present` and `absent` are written only to disagree with it.
 
-| | when present | when absent |
+```yaml
+level:   require | recommend | optional | best-attempt    # mandatory
+present: run | ask                                        # default: from the level
+absent:  block | inform | pause | silent                  # default: from the level
+```
+
+| level | sets `present` | sets `absent` |
 | --- | --- | --- |
-| `require` | must run; fail loudly | block, and help them install it. **If they decline, the workflow exits with an error** |
-| `recommend` | pause, say why, let them decline | inform — or `pause`, if the maintainer overrides |
-| `optional` | pause, ask whether they want it run | pause, ask whether to install it and then run it |
-| `best attempt` | run it | do not run it, silently |
+| `require` | run | block, and help them install it — **if they decline, the workflow exits with an error** |
+| `recommend` | run | inform |
+| `best-attempt` | run | silent |
+| `optional` | **ask** | pause, and ask whether to install it and then run it |
 
-**`optional` and `best attempt` are opposites, not neighbours on a scale.**
-`best attempt` is the quiet one — *do it if you can, do not bother me*. `optional`
-is the loud one — *this is available, do you want it?* One defaults to yes and
-says nothing; the other defaults to no and interrupts.
+**`present` and `absent` as a pair is what makes it readable** — same shape,
+opposite condition, and a reader who meets one knows the other exists. That
+symmetry is worth more than the field count.
 
-**`recommend` and `optional` differ by default, not by volume.** Recommend is *I
-am about to, unless you stop me*. Optional is *shall I?*
+**`run` is the default for `present`, because the common case is a workflow doing
+what it declared.** Asking is the exception, so the unusual entries are the ones
+that look unusual — which is what matters when skimming forty of them.
 
-The structure underneath:
-
-| | initiates automatically | asks first |
-| --- | --- | --- |
-| **blocking** | `require` | — |
-| **non-blocking** | `best attempt` | `recommend` leans yes · `optional` leans no |
-
-**One field, four words, and a key most workflows never write.** There are two
-real dimensions and neither derives from the other — what happens when the thing
-is present, and how loud its absence is. Twelve combinations, of which these four
-are the useful ones; *ask before running, then say nothing when it is missing* is
-not a policy anybody wants. **A second field would expose all twelve to get four**,
-and make every author set two things correctly instead of picking one word.
-
-**`absent:` exists because exactly one cell is genuinely ambiguous.** For
-`recommend`, whether a missing tool is worth stopping for depends on whether the
-maintainer thinks somebody might go and install it mid-flow. Every other cell is
-determined by what the level means — blocking *is* require, asking *is* optional,
-quiet *is* best attempt.
-
-**It defaults to `inform`, because a pause with no decision attached is only an
-interruption.** The tool is not there; the user cannot run it either way.
-
-**Five values and no key was the alternative** — split `recommend` in two. Not
-taken: the two names would be near-synonyms, a reader would have to memorise
-which meant which absence behaviour, and `absent: pause` says it on its face. If
-a second cell ever proves ambiguous the key already covers it, with no fifth name
-invented to find out.
-
-**`best attempt` earns its place because some skips are noise.** A workflow that
-reports every optional thing it did not do trains people to skim past the one
+**Nothing pauses when the tool is present, except `optional`.** Consent to the
+workflow is consent to what it declares. Stopping to say *I recommend the thing I
+told you I would do* is noise, and noise teaches people to skim past the pause
 that mattered.
 
-**Nothing installs without asking — but more than `require` may ask.** An earlier
-version of this said only a required invocation could suggest an install. That
-was really a rule against installing *silently*: `optional` is already
-interrupting, so offering an install is the same interruption. What survives is
-*never install unasked*, not *only require may ask*.
+**`optional` is opt-in where the others are opt-out**, and it does not lean either
+way. Declaring something optional is the author saying *I do not know whether you
+want this* — so an agent that manufactures a recommendation is inventing an
+opinion the author declined to have. It is also why its absence behaviour is to
+ask about installing: it was already interrupting.
+
+**`best-attempt` stays a preset rather than folding into `recommend` +
+`absent: silent`.** Presets cost one word, `run` with a silent absence is common,
+and writing the override every time is worse than naming it. Some skips are
+noise, and a workflow reporting every optional thing it did not do trains people
+to skim past the one that mattered.
+
+**`level` is mandatory rather than defaulted.** It is the one field carrying the
+semantics, entries are few per workflow, and every candidate default fails in a
+different way: `require` blocks over tools nobody needed and is the only level
+that may demand an install; `optional` pauses on every unlabelled entry until
+people click yes reflexively; `best-attempt` means a forgotten annotation
+silently never happens. `recommend` was the least bad — it never surprises — but
+*absent refuses* is the instinct applied everywhere else here, and one word per
+entry buys zero accidental semantics.
 
 **A trigger is conditional on presence, never a dependency.** Bundles are
 self-contained and depend on nothing — that is what makes promotion a directory
