@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.1
+version: 0.5.0
 published: 2026-08-20
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
@@ -114,6 +114,24 @@ Both levels. An organization has ideas about how it works; a project has ideas
 about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
+
+`0.5.0` — duplicate detection, ordering, and untitled entries; new content,
+existing use unaffected.
+
+**The duplicate check was a grep, which finds shared vocabulary when a duplicate
+is shared intent in different vocabulary.** A third test run walked past two
+entries that were the same thought with almost no words in common. So the
+destinations are read once at the start — titles and opening lines, a short list —
+and every idea is compared against it deliberately at its turn. Missing one early
+is a courtesy lost; missing one at its turn creates a second file.
+
+**Nothing is deferred to the end.** The same run proposed grouping the awkward
+entries and handling them after the rest, which puts the decisions needing most
+attention where there is least, and breaks the only progress signal there is.
+
+**An entry with no heading is not a special case** — it is an entry with a missing
+title, inferred and said to be inferred. Treating it as a category is how it ends
+up in the group at the end.
 
 `0.4.1` — answer from the sources before asking; clarification, no behaviour
 removed.

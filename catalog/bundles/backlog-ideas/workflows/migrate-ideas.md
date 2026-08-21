@@ -228,6 +228,25 @@ Length is not evidence it survived — the longest entries are often the ones th
 got resolved most thoroughly. Check whether its conclusion is recorded somewhere
 before assuming it is still open.
 
+### Take them in order, and defer nothing
+
+**File order, or `created` date where entries carry one.** First to last, one at a
+time, whatever each turns out to be.
+
+**Nothing is grouped and handled at the end.** Batching the awkward ones —
+entries that are not ideas, settled reasoning, anything that resists the shape —
+means those decisions arrive when attention is lowest, after the user has already
+made twenty. **The awkward ones need the most attention and would get the least.**
+
+It also breaks the only progress signal there is. *Nine of seventeen* means
+nothing if four were quietly set aside.
+
+**An entry with no heading is not a special case.** It is an entry with a missing
+title: infer one, **say plainly that it was inferred**, and present it exactly
+like the others. Nothing else about it changes — same review shape, same
+decision, same turn. Treating it as a category of its own is how it ends up
+deferred to a group at the end.
+
 ### The file will be messy, and that is normal
 
 **Ideas are captured mid-thought, under time pressure, by somebody who assumed
@@ -241,7 +260,7 @@ the person who wrote it.
 | **One entry holding several different ideas** | Notify, and recommend a split. Do not perform one silently — the denominator was agreed up front, and changing it is theirs |
 | **Two entries that are the same idea** | Step 5 checks the destination for duplicates. Check within the source too, and propose a merge rather than filing both |
 | **Two entries that contradict each other** | Do not resolve it. File both and say they conflict. **That disagreement is information**, and picking a winner silently destroys it |
-| **Loose prose outside any heading** — an intro, a stray bullet list | Decide once, up front: part of the following entry, its own idea, or not an idea. A heading-based read cannot see it at all |
+| **Loose prose outside any heading** — an intro, a stray bullet list | A heading-based read cannot see it at all, so read the file rather than its headings. If it is an idea it is an ordinary idea with an inferred title; if it is file framing it is not an idea. Either way it takes its turn in order |
 | **Entries that are not ideas** — logs, notes, meeting scraps, a decision record | Do not force them into idea shape. Say what they actually are and where they would belong. **Keep the user informed**, so nothing is lost by being categorised wrong |
 | **Asides to the author** — *ugh revisit*, *Ben: fix this* | Keep them verbatim inside the idea. They are the honest signal about how much somebody trusted it |
 | **Ordering that carries meaning** — a list where position implies priority | Ask before flattening. One file per idea destroys order, and if order was the only record of priority, it is gone |
@@ -291,12 +310,35 @@ well-placed one, and the signal is gone.
 
 ## 5. Check whether a version already exists
 
+**A grep finds shared vocabulary. A duplicate is shared intent with different
+vocabulary.** Those are not the same search, and the second is the one that
+matters — two entries describing one want in unrelated words look nothing alike
+to a text search and identical to a reader.
+
+**So read the destinations once, at the start.** Titles and opening lines of every
+idea already filed in every candidate repository. That list is short — usually
+tens, not hundreds — and holding it is what makes the per-idea check possible.
+
 ```sh
-grep -ril "<a distinctive word>" <ideas-directory>/
+head -12 <ideas-directory>/*.md          # title and first lines of each
+grep -ril "<a distinctive word>" <ideas-directory>/   # cheap second pass, not the primary
 ```
 
-**If one does**, do not create a second. Read both, decide what this entry adds
-that the existing idea lacks, propose the merge, get agreement, then append.
+**Then check every idea against it, deliberately.** Not *does this word appear*
+but **does anything already filed want the same thing.** State the comparison out
+loud at its turn — *this resembles X, and here is what it adds* — so the user can
+correct a wrong call, and so a real overlap cannot pass silently.
+
+**Missing one at pre-flight is fine; missing one at its turn is not.** The early
+pass is a courtesy that saves work later. The per-idea check is the one the
+migration depends on, and it is the last chance before a second file exists.
+
+**Check within the source file too**, not only against the destination. Two
+entries in one `IDEAS.md` saying the same thing in different words is the common
+case, since they were written months apart by somebody who had forgotten.
+
+**When one exists**, do not create a second. Read both, decide what this entry
+adds that the existing idea lacks, propose the merge, get agreement, then append.
 
 **Combine `contributors` — the union of both, not just the author.** An absorbed
 idea may have had several people and agents in the exchange that produced it, and
