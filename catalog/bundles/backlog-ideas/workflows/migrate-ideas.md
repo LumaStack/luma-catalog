@@ -35,8 +35,20 @@ the template with the next idea in it — not a status paragraph. They are tryin
 to get back to deciding, and a summary of where things stand does not let them.
 
 **`delegated` still stops at step 10.** Deleting the original always needs their
-confirmation, whichever mode is chosen — the mode governs how much they are
-consulted along the way, never whether they consent to the destructive step.
+confirmation, whichever mode is chosen.
+
+**The mode governs who is asked. It never governs what is checked.** Every step
+below runs identically in all three: the denominator is settled before reviewing
+begins, entries are taken in order with nothing deferred, the landscape is loaded
+once and every idea is checked against it at its turn, and nothing acquires detail
+the original did not have.
+
+**`delegated` is the one that will drift**, because there is nobody watching to
+notice a skipped check. It is *run this without consulting me*, not *run this
+faster* — and an agent that reads seventeen entries in one pass and files them has
+done a different job with the same name. The per-idea close read is not a courtesy
+to the reviewer; **it is how a duplicate becomes visible at all**, and skipping it
+produces a second file nobody asked for regardless of who was watching.
 
 **Only an explicit decision advances a step.** A question, a request for more
 detail, a correction to something unrelated, or agreement to a different point is
