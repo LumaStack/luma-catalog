@@ -17,6 +17,11 @@ fields:
     field_type: enum
     values: [readable, restricted]
     desc: "whether the indexing account can read it. Absent means readable"
+  attention:
+    obligation: optional
+    field_type: enum
+    values: [investing, steady, reducing, winding-down, undecided]
+    desc: "how much the organization is putting in, and which way that is moving. Absent means nobody has said; `undecided` means somebody looked and could not say"
 ---
 
 # repository
@@ -35,6 +40,75 @@ supply and no scan can produce.
 **`url` is mandatory** because an entry that cannot be resolved is worse than
 absent — it names something without letting anybody check it, which is how a
 stale index survives.
+
+## `attention` is direction, and `lifecycle_status` is position
+
+**They are two axes and neither substitutes for the other.** `lifecycle_status`
+— core, from the format — says how far along a thing is: `draft`, `provisional`,
+`stable`. `attention` says how much the organization is putting in: `investing`,
+`steady`, `winding-down`.
+
+**The combinations are the point.** *Stable and winding-down* is a successful
+product being sunset; *draft and winding-down* is an experiment that did not work.
+Fused into one field those are the same word, and they call for opposite
+decisions.
+
+**The scale measures what goes in, not what the repository is.** People, budget,
+attention — more of it, level, less of it, or none:
+
+| | |
+| --- | --- |
+| `investing` | more going in |
+| `steady` | level |
+| `reducing` | less going in, and staying |
+| `winding-down` | going to zero |
+| `undecided` | nobody has said which |
+
+**`trimming` and `winding-down` differ by destination, not by rate.** Trimming has
+no endpoint: still yours, still running, costing less. Winding-down is aimed at
+zero. Something can be trimmed for years and be healthy, and can be wound down
+gently and still be dying. **Filing a trimmed thing as winding-down reads as a
+death sentence to everyone downstream**, which is the mistake this value exists
+to prevent.
+
+**`reducing` and `winding-down` differ by destination, not by rate.** Reducing has
+no endpoint: still yours, still running, costing less. Winding-down is aimed at
+zero. Something can be reduced for years and be healthy, and can be wound down
+gently and still be dying. **Filing a reduced thing as winding-down reads as a
+death sentence to everyone downstream**, which is the distinction this value
+exists to protect.
+
+**`reducing` rather than `trimming` or `narrowing`, deliberately.** Those name
+*what* shrinks — resources for one, scope for the other — and the field does not
+need to know: what is being reduced is whatever was going in. Saying less
+carried more, and it removed a caveat about scope and resources being
+independent axes.
+
+**It names what the organization is doing, not what the repository is.** That is
+why `investing` rather than `growing`: the other values describe decisions —
+withdrawing, holding, not having decided — and a value describing the artifact
+instead breaks the set. `investing` is also the true antonym of `winding-down`,
+resources going in against resources coming out. *`building` was the other
+finalist and lost on collision: in a repository index, beside a language and a
+description, it reads as build status before it reads as intent.*
+
+**`undecided` is the value that earns the field.** Absent means nobody has
+looked. `undecided` means somebody looked and could not say — which is a real
+state, often the most common one, and the only one that is actionable as a
+question. A repository nobody has decided about is invisible without it.
+
+**Terms that look like values and are not.** *Life support* is `stable` plus
+`winding-down`, and adding it as a value would re-fuse the axes. *Retired* is
+`lifecycle_status: archived`, which already exists. *Deprecated* is neither — it
+is a public declaration to consumers, independent of both, and would be its own
+field with a date if it is ever needed.
+
+**A gap in the format, recorded rather than worked around.** `lifecycle_status`
+is not purely position: `draft`, `provisional` and `stable` are points on a path,
+but `archived` is a direction that already completed. So the format carries the
+same conflation in miniature, and *stable, and being wound down* has no
+representation there — you either misreport it as `stable` or jump to `archived`
+before it is true. That is the gap this field fills.
 
 **`in_scope` is what the index is actually for.** Nothing outside the
 organization knows whether a repository matters to it, and no amount of scanning

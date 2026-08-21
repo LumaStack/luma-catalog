@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.5.0
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -283,6 +283,16 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.5.0` — the `attention` field is new content; existing use is unaffected.
+
+**It exists because four repositories in the first real index had no way to say
+what they were.** Experimental things that stalled, awaiting a decision nobody
+had made — and `lifecycle_status` could only call them `draft`, which says how far
+along they are and nothing about whether anyone intends to continue. `attention`
+is the direction; `lifecycle_status` stays the position. The pair distinguishes a
+successful product being sunset from an experiment that did not work, which one
+field cannot.
 
 `0.4.0` — mismatch handling is new content; existing use is unaffected.
 
