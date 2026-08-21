@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -283,6 +283,14 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.6.0` — repository entries move under their account,
+`repositories/<account>/<name>.md`. **Breaking for anybody who already has a flat
+`repositories/`**: existing entries must be moved and the index regenerated.
+
+The flat layout could collide. Hyphens appear in account and repository names
+both, so `acme-widgets/web` and `acme/widgets-web` produce the same filename. A
+directory separator cannot appear in either half.
 
 `0.5.0` — the `attention` field is new content; existing use is unaffected.
 

@@ -1,6 +1,6 @@
 # Repository entry template
 
-Copy the blocks to `repositories/<name>.md` in the headquarters. **Copy the
+Copy the blocks to `repositories/<account>/<name>.md` in the headquarters. **Copy the
 blocks, not this file.**
 
 **The whole point is that this is small.** Everything the repository can answer
@@ -13,7 +13,7 @@ repository instead.
 ```yaml
 ---
 type: repository
-title: acme-web
+title: acme/acme-web
 url: https://github.com/acme/acme-web
 in_scope: true
 description: <when somebody should open this repository>
@@ -37,7 +37,7 @@ not
 ```yaml
 ---
 type: repository
-title: acme-web
+title: acme/acme-web
 url: https://github.com/acme/acme-web
 in_scope: true
 description: The customer-facing storefront — anything a buyer sees, checkout, payments.

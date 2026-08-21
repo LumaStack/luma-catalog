@@ -266,10 +266,19 @@ nobody anything they can act on.
 
 ## 7. Regenerate the index
 
-`repositories/index.md` is generated from the entries. Rewrite it whole; never
-hand-edit it.
+Entries are written to `repositories/<account>/<name>.md`, with the account taken
+from the host's own `owner.login` — never from user input, and never from a
+directory that happens to exist already. **One source for casing every time**, or
+a case-insensitive filesystem ends up holding two accounts that are the same
+account.
 
-Enough to scan: name, one line, in-scope or not, and a link. **A generated file
+`repositories/index.md` is generated from the entries and sits above the account
+directories. Rewrite it whole; never hand-edit it.
+
+Enough to scan: name, one line, in-scope or not, and a link. **Show the account
+with the name** — two repositories called `web` in different accounts are
+indistinguishable otherwise, which is the same collision the directories exist to
+prevent, one level up. **A generated file
 that disagrees with its source is a second answer nobody asked for**, so if the
 index and an entry conflict, the entry wins and the index was stale.
 

@@ -109,14 +109,34 @@ The test: **would a wrong value here cause a wrong decision at the organization
 level?** If not, leave it out. An index that carries everything is an index
 nobody refreshes, because refreshing it is a project.
 
-## One file per repository
+## One file per repository, under its account
 
 ```
 repositories/
-  index.md          generated — never hand-edited
-  acme-web.md
-  acme-api.md
+  index.md              generated — never hand-edited
+  acme/
+    web.md
+    api.md
+  acme-internal/
+    billing.md
 ```
+
+**The account is a directory, not a filename prefix.** `acme-web.md` looks
+simpler and is ambiguous: hyphens appear in account names and repository names
+both, so `acme-widgets/web` and `acme/widgets-web` flatten to the same file. A
+directory separator is the one character that cannot appear in either half, so
+nesting cannot collide.
+
+It also groups the way people think — an organization with several accounts reads
+them as several accounts — and stays browsable at two hundred repositories where
+a flat directory does not.
+
+**Casing is the account's own, taken from the host.** `owner.login` from the API,
+never from user input and never from a directory that already exists. Hosts treat
+these names case-insensitively, so two accounts cannot differ only by case — but
+a tool that writes `Acme/` sometimes and `acme/` others produces two entries for
+one account on a case-insensitive filesystem, and git will track both. **The rule
+is not which case to use; it is to take it from one source every time.**
 
 **Not one manifest.** Four reasons, and the last is decisive.
 
