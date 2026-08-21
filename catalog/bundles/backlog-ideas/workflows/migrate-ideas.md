@@ -315,9 +315,23 @@ vocabulary.** Those are not the same search, and the second is the one that
 matters — two entries describing one want in unrelated words look nothing alike
 to a text search and identical to a reader.
 
-**So read the destinations once, at the start.** Titles and opening lines of every
-idea already filed in every candidate repository. That list is short — usually
-tens, not hundreds — and holding it is what makes the per-idea check possible.
+**Two passes, and they are not the same check twice.**
+
+**The first pass loads the landscape.** Titles and opening lines of every idea
+already filed in every candidate repository — a short list, usually tens rather
+than hundreds. Its job is not to find duplicates. Its job is to know what exists,
+which is what makes the real check possible later. Anything it happens to catch is
+a bonus.
+
+**The second pass, per idea, is the check.** It happens at an idea's turn, and it
+can only happen there — **you cannot recognise a duplicate until you understand
+the entry**, and understanding it is exactly what you are doing in order to present
+it. At pre-flight you are skimming seventeen; at its turn you are reading one.
+
+**And the landscape moves while the run is happening.** File ideas four through
+eight and idea twelve has five new duplicate candidates that did not exist when the
+file was first read. **No single up-front pass can see what the run itself
+creates.**
 
 ```sh
 head -12 <ideas-directory>/*.md          # title and first lines of each
