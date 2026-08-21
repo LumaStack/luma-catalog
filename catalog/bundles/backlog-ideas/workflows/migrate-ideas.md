@@ -171,9 +171,9 @@ launders stale material into the place people are told to trust.**
 
 ### Settle the denominator before reviewing anything
 
-**A heading is not an idea.** It is where somebody stopped typing. Real files
-contain headings holding five unrelated one-liners, headings whose sub-sections
-are each independently buildable, and headings that are one idea across two pages.
+**A heading is not necessarily a unit of thought.** Real files contain headings
+holding five unrelated one-liners, headings whose sub-sections are each
+independently buildable, and headings that are one idea across two pages.
 
 **So count reviewable ideas, not sections, and agree the count first.** Propose
 the split — *this section is five ideas, these four sub-entries are their own,
@@ -211,6 +211,35 @@ conversation with a decision behind it has stopped being a wanted capability.
 Length is not evidence it survived — the longest entries are often the ones that
 got resolved most thoroughly. Check whether its conclusion is recorded somewhere
 before assuming it is still open.
+
+### The file will be messy, and that is normal
+
+**Ideas are captured mid-thought, under time pressure, by somebody who assumed
+they would remember.** A long `IDEAS.md` is not a tidy list with a few defects —
+it is a sediment. Expect these, and do not treat any of them as a problem with
+the person who wrote it.
+
+| Mess | Rule |
+| --- | --- |
+| **An entry nobody can decode any more** — the context died with the conversation | **Never reconstruct meaning.** Migrate it verbatim with a note saying it is unrecoverable, or drop it **with permission only**. A reconstructed idea is indistinguishable from an authored one, and will be believed |
+| **One entry holding several different ideas** | Notify, and recommend a split. Do not perform one silently — the denominator was agreed up front, and changing it is theirs |
+| **Two entries that are the same idea** | Step 5 checks the destination for duplicates. Check within the source too, and propose a merge rather than filing both |
+| **Two entries that contradict each other** | Do not resolve it. File both and say they conflict. **That disagreement is information**, and picking a winner silently destroys it |
+| **Loose prose outside any heading** — an intro, a stray bullet list | Decide once, up front: part of the following entry, its own idea, or not an idea. A heading-based read cannot see it at all |
+| **Entries that are not ideas** — logs, notes, meeting scraps, a decision record | Do not force them into idea shape. Say what they actually are and where they would belong. **Keep the user informed**, so nothing is lost by being categorised wrong |
+| **Asides to the author** — *ugh revisit*, *Ben: fix this* | Keep them verbatim inside the idea. They are the honest signal about how much somebody trusted it |
+| **Ordering that carries meaning** — a list where position implies priority | Ask before flattening. One file per idea destroys order, and if order was the only record of priority, it is gone |
+| **Wildly uneven size** — one-liners beside two-page essays | Not a problem to fix. Size is not quality, and normalising it is enlargement |
+
+**The rule underneath all of them: surface, do not resolve.** Every row above is a
+place where an agent could quietly decide and produce something that looks clean.
+Clean is not the goal — **the goal is that nothing is lost and nothing is
+invented**, and a mess reported honestly beats a tidy file somebody did not agree
+to.
+
+**Migration preserves; it does not improve.** Step 8 verifies this at the end,
+but by then an enlarged idea is already written. It is a stance for the whole
+run, not a check at the finish.
 
 ## 4. Decide where each one lives
 

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-20
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
@@ -115,6 +115,15 @@ about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
 
+`0.4.0` — what a messy `IDEAS.md` actually contains, and what to do about each
+shape; new content, existing use unaffected.
+
+**The governing rule is *surface, do not resolve*.** Every shape in that table is
+a place an agent could quietly decide and produce something that looks clean —
+reconstructing a dead entry, merging two that disagree, flattening an order that
+meant something. Clean is not the goal. Nothing lost and nothing invented is the
+goal, and a mess reported honestly beats a tidy file nobody agreed to.
+
 `0.3.0` — `migrate-ideas` reads the headquarters declaration before inferring
 anything, and takes the project list from the headquarters index where one
 exists; new content, existing use unaffected.
@@ -134,7 +143,7 @@ has.
 
 **Step 3 also settles the denominator before the review starts.** The same test
 run found sixteen reviewable ideas inside eight headings and had to raise it
-unprompted — a heading is where somebody stopped typing, not a unit of thought.
+unprompted — a heading is not necessarily a unit of thought.
 Agreeing the count first keeps *3 of 8* meaningful and keeps the question away
 from the middle of a content decision.
 
