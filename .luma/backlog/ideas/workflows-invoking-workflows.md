@@ -131,11 +131,14 @@ of the value; more than one, or none, is a publish-time error.
 
 | target | horizon | |
 | --- | --- | --- |
-| `workflow:` | **now** | the core case, and the only one needed to prove the mechanism |
-| `command:` | **next** | narrow — only when the *absence* behaviour is invisible |
-| `bundle:` | **next** | resolves to its `entry_point` |
+| `workflow:` | **next** | the core case, and the only one needed to prove the mechanism |
+| `command:` | **later** | narrow — only when the *absence* behaviour is invisible |
+| `bundle:` | **later** | resolves to its `entry_point` |
 | `policy:` | **someday** | brings rules into force |
-| `concept:` | **deferred, not scheduled** | fails the test three ways — see below |
+| `concept:` | **deferred** | fails the test three ways, and is not on the ladder — see below |
+
+*Same three words the `idea` type uses, deliberately — a second scale beside an
+existing one is a second thing to learn.*
 
 **Ship `workflow:` alone first.** It is the case the whole design was reasoned
 from, and it exercises every part of the mechanism — slug, marker, levels,
