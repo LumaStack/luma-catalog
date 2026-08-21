@@ -47,6 +47,25 @@ of a decision somebody made. Say what happened; let a person choose.
 enterprise may be exactly right, or may be far wider than intended. Report it and
 ask rather than accepting it.
 
+### Check it against what the repository declares
+
+Compare the hosting visibility with `disclosure_level` in `.luma/project.md`.
+**The two failures are nothing alike.**
+
+**Actually wider than declared is a showstopper.** A headquarters declaring
+`internal` that is publicly readable has already exposed everything in it. Stop,
+say what is exposed, and change nothing — the exposure happened, and reverting
+quietly destroys the record of whoever made the change.
+
+**Actually narrower than declared is worth a line and no more.** Being wrong
+toward restriction is an inconvenience; being wrong toward permission cannot be
+undone.
+
+**A missing `disclosure_level` on a headquarters is a finding.** Nothing writes
+organization-private data to a repository that has not said it accepts it, so an
+undeclared headquarters is one that silently stopped working — see
+[[create-headquarters]] step 8.
+
 ## 3. More than one person can read it
 
 ```sh

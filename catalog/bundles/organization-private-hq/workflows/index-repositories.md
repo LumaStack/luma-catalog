@@ -69,9 +69,20 @@ said what it is has not said it will hold this. **`public` refuses** — includi
 when the repository is private today, because a repository planned for
 publication is one whose history goes with it.
 
-**4. It is private now.** The weakest of the four and still worth running: a
-declaration saying `internal` on a repository that is currently public is a
-contradiction somebody needs to hear about immediately.
+**4. Declared and actual agree — in the direction that matters.**
+
+**A repository that is actually public while declaring anything narrower is a
+showstopper.** Content the organization believes is internal is publicly
+readable right now. **Stop, say what is exposed, change nothing** — flipping the
+repository private destroys the record of a decision and un-publishes nothing.
+
+**Declared `public` while actually private is not an error.** It is the safe
+direction, and `luma-hq` is a live example: private today, planned for
+publication, refusing private data now. Report it once; do not treat it as a
+fault.
+
+**And nothing here ever publishes anything.** A tool that reads `public` and
+widens access has turned a safety limit into a command.
 
 ### Why four checks and not one
 

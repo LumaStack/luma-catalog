@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -130,6 +130,20 @@ visibility is ambient state. A repository can be private today and planned for
 publication — and its history goes with it. The declaration refuses now; a
 visibility check would permit.
 
+**And a mismatch is never resolved silently.** Actually public while declaring
+narrower is a **showstopper** — content believed internal is readable right now,
+so stop, say what is exposed, and change nothing. Declaring `public` while
+actually private is the **safe direction and often correct**; report it once.
+
+**The asymmetry behind every rule here:** being wrong toward restriction is an
+inconvenience somebody notices and fixes in a minute; being wrong toward
+permission is forked, cloned and cached before anybody looks. So absent refuses,
+the declaration beats the observation, an unperformable check fails, and the
+field can narrow but never widen — **one principle applied four times.**
+
+**Nothing publishes on the strength of this field.** A tool reading `public` and
+widening access has turned a safety limit into a command.
+
 **Why four and not one:** the single check this replaced *was passing.* It
 confirmed the destination was private, which was true, and privacy was never the
 question. **A check that confirms the wrong property is worse than no check**,
@@ -220,6 +234,13 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.4.0` — mismatch handling is new content; existing use is unaffected.
+
+Actually public while declaring narrower now **stops the workflow**, because
+content believed internal is readable right now and no correction retrieves it.
+Declaring `public` while actually private is reported and is not a fault — it is
+the safe direction, and this stack has a live example of it.
 
 `0.3.0` — the destination gate is new content; existing use is unaffected,
 except that `index-repositories` now **fails where it previously proceeded.**

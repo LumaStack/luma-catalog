@@ -93,7 +93,63 @@ gain a capability, never to lose one.
 organization-private data. A repository that has never heard of any of this is
 unaffected in every other respect.
 
-### It sets a ceiling; it does not grant permission
+### It never causes anything to be published
+
+**This field constrains writes. It is not an instruction about visibility.**
+
+A tool that reads `disclosure_level: public` and makes the repository public has
+turned a safety limit into a command — the exact inversion of what it is for.
+**Nothing may publish a repository, widen its access, or treat its contents as
+publishable on the strength of this field.** Publishing is a decision a person
+makes, every time.
+
+The asymmetry is the point: **it may only ever narrow what happens, never widen
+it.** A control that can widen access is not a safety control.
+
+### The asymmetry every rule here rests on
+
+**Being wrong toward restriction is an inconvenience. Being wrong toward
+permission is unrecoverable.**
+
+Too restrictive means somebody cannot read something they should, notices, and
+it is fixed in a minute. Too permissive means data is out — forked, cloned,
+cached, indexed — and no correction retrieves it.
+
+**So every rule here fails toward restriction, deliberately.** Absent refuses.
+The declaration beats the observation. A check that cannot be performed is a
+failure rather than a pass. The field can narrow and never widen. **None of
+those are separate decisions; they are one principle applied four times**, and
+the cost of each is a mild inconvenience against an outcome nobody can undo.
+
+### When declared and actual disagree
+
+**Never resolve a mismatch silently**, and the two cases are nothing alike.
+
+| declared | actually | | |
+| --- | --- | --- | --- |
+| `public` | private | more restricted than declared | **report. Not an error** |
+| `internal` or narrower | **public** | **more permissive than declared** | **error. Stop** |
+
+**More restricted than declared is the safe direction and often correct.** A
+repository planned for publication declares `public` while it is still private,
+which is the whole reason this is a declaration — it refuses today, before the
+publication that would make a mistake permanent. Say so where a person will see
+it; do not treat it as a fault.
+
+**More permissive than declared is a showstopper.** Content the organization
+believes is internal is publicly readable *right now*. Somebody changed the
+visibility and did not change the declaration, or the declaration was
+aspirational.
+
+**Error immediately, say what is exposed, and change nothing.** The exposure has
+already happened, quietly flipping the repository private destroys the record of
+a decision somebody made, and it does not un-publish anything anyway.
+
+**Hosting visibility can only prove one direction.** `public` and `private` are
+coarser than this ladder, so a private repository declaring `restricted` cannot
+be checked against the host at all. What *is* checkable is the case that
+matters — **actually public, declared anything else** — which is the
+unrecoverable one.
 
 A correct `disclosure_level` is necessary and never sufficient. **The destination
 must also be established as the intended one**, by identity rather than by
