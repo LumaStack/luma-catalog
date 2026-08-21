@@ -3,7 +3,7 @@ type: idea
 title: A shared language for workflows invoking other workflows
 created: { by: human:benlinton, at: 2026-08-21T00:00:00Z }
 contributors: [human:benlinton, agent:claude-opus-5]
-horizon: later
+horizon: next
 scope: project
 lifecycle_status: draft
 ---
@@ -325,7 +325,8 @@ above is unbuilt and unvalidated** — no workflow declares an invocation, nothi
 reads one, and the four levels have met no real case except the one that produced
 them.
 
-**`horizon: later` is an assumption, not a judgement anybody made.**
+**`horizon: next`** — set deliberately on 2026-08-21, not defaulted. The first
+target kind is `next` and the idea cannot trail its own contents.
 
 **Nothing here is unresolved any more, but nothing is built either.** The design
 settled over one long conversation; no workflow declares an `invokes:` block, nothing
