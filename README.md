@@ -4,8 +4,8 @@
 Drop in best practices, move faster together, and get things right the first time.
 
 A catalog of universal bundles containing standards, workflows, and knowledge
-that any organization can adopt, published so a project can pin one and not have
-it change underneath. Use our catalog, or run your own alongside it.
+that any organization can adopt — versioned and vendored, so you're in control.
+Use our catalog, or run your own alongside it.
 
 > **Status:** seed. The shape is settled; the shelves are empty.
 
