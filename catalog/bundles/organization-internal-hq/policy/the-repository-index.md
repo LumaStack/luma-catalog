@@ -9,10 +9,10 @@ preload: mandatory
 
 ## Where it may be written, and nowhere else
 
-**An index is organization-private data.** It names repositories, including ones
+**An index is organization-internal data.** It names repositories, including ones
 most people cannot see, and where it is written is not a judgement call.
 
-**[[create-headquarters]] is a prerequisite.** Not a recommendation — until a
+**[[create-internal-hq]] is a prerequisite.** Not a recommendation — until a
 headquarters has been established and recorded, [[index-repositories]] fails and
 writes nothing. **There is no fallback and there must never be one**: a workflow
 that picks a likely candidate when it cannot find the declared one is a workflow
@@ -25,7 +25,7 @@ failure rather than a pass**:
 | --- | --- |
 | **established** | `~/.config/luma/luma-hq/config.toml` names the headquarters by remote URL |
 | **identity** | the repository you are in *is* that one — `git remote get-url origin` equal, not similar |
-| **declared** | its `disclosure_level` accepts organization-private data. **Absent refuses** |
+| **declared** | its `disclosure_level` accepts organization-internal data. **Absent refuses** |
 | **actual** | it is private right now |
 
 ### Why not one check
@@ -56,7 +56,7 @@ ambient state right.
 **Foreman runs inside other people's project repositories**, on machines with no
 connection to any headquarters, and its boundary is stated as a test: *if a
 check ever needs organization context in order to run, the boundary has been
-broken.* A key naming an organization's private repository, held by the tool
+broken.* A key naming an organization's internal repository, held by the tool
 that runs everywhere, is that boundary crossed — and it would travel to every
 machine the tool is installed on.
 

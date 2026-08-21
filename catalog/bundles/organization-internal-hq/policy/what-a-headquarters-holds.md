@@ -1,13 +1,13 @@
 ---
 type: policy
 title: What a headquarters holds
-description: What belongs in an organization's private repository, what stays in a project, what goes upstream — and the rule that it stays private.
+description: What belongs in an organization's internal repository, what stays in a project, what goes upstream — and the rule that it stays private.
 preload: mandatory
 ---
 
 # What a headquarters holds
 
-An organization's headquarters is **one private repository holding what is
+An organization's headquarters is **one internal repository holding what is
 specific to you**: your standards, your boundaries, what you have already
 learned, and what to build next.
 

@@ -24,9 +24,33 @@ feeling.
 thinking, and running `delegated` over it uninvited is how a migration becomes
 something that happened *to* them.
 
-**`delegated` still stops at step 9.** Deleting the original always needs their
+**`together` and `reviewed` both present ideas one way** — see
+[the idea review template](../templates/idea-review.md). Run without it the shape
+drifts, and somebody reading a dozen reviews in a row has to relearn where the
+recommendation is each time.
+
+**Use it again whenever the thread is lost.** If they ask *what is next*, or the
+migration has been interrupted for more than a round of discussion, the answer is
+the template with the next idea in it — not a status paragraph. They are trying
+to get back to deciding, and a summary of where things stand does not let them.
+
+**`delegated` still stops at step 10.** Deleting the original always needs their
 confirmation, whichever mode is chosen — the mode governs how much they are
 consulted along the way, never whether they consent to the destructive step.
+
+**Only an explicit decision advances a step.** A question, a request for more
+detail, a correction to something unrelated, or agreement to a different point is
+**not** signoff. Neither is silence, and neither is interest.
+
+**If they open another topic mid-migration, nothing advanced.** Answer it, then
+return to the idea that was on the table and ask again — naming which one it is,
+because they will have lost the thread and the agent is the one holding it.
+
+**Propose and stop.** In `together` mode especially, the recommendation and the
+writing are two turns and never one. An agent that recommends a destination and
+files it in the same breath has replaced their judgement with its own while
+appearing to collaborate — and because the output looks identical either way,
+nobody notices until an idea is somewhere they never agreed to put it.
 
 ## 2. Find out where ideas can go
 
@@ -89,6 +113,20 @@ For each entry, decide: *migrate*, *drop*, or *already happened*.
 **Record what you drop and why**, in the commit if nowhere else. *We
 deliberately stopped wanting this* is worth keeping; silence is not.
 
+Two tests catch most of what should not survive:
+
+**A topic is not an idea.** *Competitive analysis*, *observability*, *developer
+experience* — these name a subject without saying what would be built or what is
+wrong now. Migrating one produces a file nobody can act on, in the list people
+are told holds actionable wants. Prune it: if a real want appears later it will
+be a better idea than the placeholder was.
+
+**Settled is *already happened*, however long the entry is.** A design
+conversation with a decision behind it has stopped being a wanted capability.
+Length is not evidence it survived — the longest entries are often the ones that
+got resolved most thoroughly. Check whether its conclusion is recorded somewhere
+before assuming it is still open.
+
 ## 4. Decide where each one lives
 
 Per entry, against the destinations from step 2: **who would act on this?**
@@ -119,8 +157,12 @@ grep -ril "<a distinctive word>" <ideas-directory>/
 ```
 
 **If one does**, do not create a second. Read both, decide what this entry adds
-that the existing idea lacks, propose the merge, get agreement, then append and
-add the original's author to `contributors`.
+that the existing idea lacks, propose the merge, get agreement, then append.
+
+**Combine `contributors` — the union of both, not just the author.** An absorbed
+idea may have had several people and agents in the exchange that produced it, and
+carrying only whoever wrote it down discards the rest. Absorbing is the one
+operation that edits an already-filed idea, so it is worth doing completely.
 
 ## 6. Otherwise create it
 
@@ -133,6 +175,12 @@ Follow [[capture-idea]] from step 1, with two differences:
   `unknown:unknown` is honest and far better than guessing — a name attached to
   an idea somebody never had is the one error here worth avoiding outright.
 
+**And `horizon` gets decided, not defaulted.** Absent means `someday`, which is
+indistinguishable from *nobody judged this* — so the one pass that reads every
+idea in the file is the pass that should set it. **Ask rather than guess**: the
+horizon is a claim about their priorities, and it is the one field an agent has
+no standing to invent.
+
 ## 7. Mark it migrated, in the original
 
 In `IDEAS.md`, against each entry:
@@ -144,7 +192,100 @@ In `IDEAS.md`, against each entry:
 **Do not delete anything yet.** The marker is what makes step 6 possible, and a
 half-finished migration with no markers is worse than one not started.
 
-## 8. Verify before removing anything
+**Then say where it landed, in one line, carried into the next idea rather than
+sent on its own.**
+
+```
+**11 → luma-hq, persona-templates.md.**
+
+## 12 of 14 — <title>
+```
+
+The frontmatter was proposed and agreed before anything was written, so restating
+it is noise — and noise between ideas is what makes a long migration feel longer
+than it is.
+
+**Carried rather than separate, because correction latency is identical either
+way.** Their next chance to interject is their next message, whether or not a
+confirmation turn was spent first. A separate turn costs a round trip and buys
+nothing, while a lead-in line keeps each idea readable as one block.
+
+The exception is narrow: **anything in the file that was not in the proposal gets
+a sentence.** A clarification recorded, a duplicate found, a caveat added — those
+are new information. Everything else, they have already read, and silence means
+it went in as proposed.
+
+## 8. Report the breakdown
+
+**Every fifteen decisions, and always when a source file is finished** —
+whichever comes first. End of file is the stronger trigger, because it is when
+somebody decides whether to delete the original. The interval exists only so a
+sixty-entry file does not arrive as one enormous table with cold early rows.
+
+Two tables, because a pruned entry needs a reason where a migrated one needs
+metadata.
+
+```markdown
+**Migrated**
+
+| # | Title | Landed | Modifications | Metadata |
+|---|---|---|---|---|
+| 1 | <title> | `<repo>` · <file> | none | someday · project |
+| 8 | <title> | `<repo>` · <file> | retitled · context added | someday · project |
+| 5 | <title> | `<repo>` · <file> | absorbed into <file> | *target's* |
+| 14 | <title> | `<repo>` · <file> | split 1 of 2 | someday · project |
+
+**Pruned**
+
+| # | Title | Why |
+|---|---|---|
+| 6 | <title> | Already happened — settled in `DECISIONS.md` |
+
+`<repo>` 8 · `<repo>` 3 · pruned 3
+```
+
+**`Modifications` is the column that earns the table.** Its vocabulary is
+`none` · `retitled` · `notes added` · `split N of M` · `absorbed into X` ·
+`absorbed #N` · `new capture`. Scanning it answers the only question worth asking
+in bulk: *did my idea go in as I wrote it?*
+
+**One → many is a split; many → one is an absorb**, and both are visible from the
+same column. An absorbed row names the file that swallowed it; the receiving row
+gains `absorbed #N`, so the table never claims a file was unchanged while an idea
+disappeared into it. Where the target existed before this migration it has no row
+of its own, and the absorbed row is the only trace — which is why it must name
+the file.
+
+**An absorbed idea's metadata is the target's.** It does not get its own
+`horizon` or `scope`; it inherits what the file it joined already declares.
+Writing its proposed metadata there would be fiction.
+
+**Name an internal repository generically.** If a destination is an
+organization's internal headquarters, the table says so and gives the path within
+it — never the repository name, because these tables get pasted into places the
+name should not reach.
+
+### Write it into the original, not just the chat
+
+**The breakdown goes at the top of `IDEAS.md` before anything is deleted.** Show
+it in the conversation too — that is what they respond to — but the file is where
+it has to live.
+
+**Because the chat is not the paper trail.** A migration ends with somebody
+deciding whether to delete the original, and that decision should be made against
+a file that says what happened to every entry. Markers alone do not do it: they
+are scattered through the file, they say nothing about what was modified, and
+nobody reads a hundred of them to reconstruct a summary.
+
+**And deletion is what makes it permanent.** Once the file is gone, its last
+committed version is the only record — so that version should be the complete
+one. A half-marked file frozen in history is a worse artifact than no file at
+all, because it looks like a record and is not.
+
+Deleting is still step 10, and still needs their confirmation. This only ensures
+that whatever they decide, the evidence outlives the conversation.
+
+## 9. Verify before removing anything
 
 **Both a person and an agent, if you can get both.** They miss different things:
 an agent catches an entry with no marker, a person catches an entry whose
@@ -156,7 +297,7 @@ meaning did not survive the rewrite.
   the moment to improve an idea**, and an idea silently enlarged during a move
   is one nobody agreed to
 
-## 9. Archive, then delete on confirmation
+## 10. Archive, then delete on confirmation
 
 **Archiving needs nobody's permission. Deleting needs the user's.**
 

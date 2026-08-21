@@ -19,12 +19,12 @@ answer is *as little as possible*.
 
 ## 0. The destination gate — refuse before doing anything
 
-**This runs first, before the sweep.** An index is organization-private data,
+**This runs first, before the sweep.** An index is organization-internal data,
 and where it is written is not a judgement call.
 
 **All four must pass. Any that cannot be performed is a failure, not a pass.**
 
-**1. A headquarters has been established.** [[create-headquarters]] writes a
+**1. A headquarters has been established.** [[create-internal-hq]] writes a
 machine-local declaration naming it:
 
 ```sh
@@ -37,7 +37,7 @@ if a check ever needs it in order to run, the boundary has been broken.
 
 **No declaration means stop.** Do not search for a likely candidate, do not offer
 to use the repository you are standing in. Say that no headquarters has been
-established and that [[create-headquarters]] establishes one. **This workflow has
+established and that [[create-internal-hq]] establishes one. **This workflow has
 no fallback and must not acquire one.**
 
 **2. You are standing in that repository.** Compare by remote URL, which is local
@@ -61,7 +61,7 @@ check that gets worked around. Foreman hit this exact bug once already, in the
 hook-command comparison — a correctly wired setup read as unwired because one
 path had several valid forms.
 
-**3. Its `disclosure_level` accepts organization-private data.** Read
+**3. Its `disclosure_level` accepts organization-internal data.** Read
 `.luma/project.md` in the repository you are standing in.
 
 **Absent refuses.** Undeclared is not permission, and a repository that has never
@@ -77,8 +77,9 @@ readable right now. **Stop, say what is exposed, change nothing** — flipping t
 repository private destroys the record of a decision and un-publishes nothing.
 
 **Declared `public` while actually private is not an error.** It is the safe
-direction, and `luma-hq` is a live example: private today, planned for
-publication, refusing private data now. Report it once; do not treat it as a
+direction. `luma-hq` was the worked example until 2026-08-20: declared `public`
+while still private, refusing internal data throughout, and then published with
+nothing to clean out of the tree. Report the mismatch once; do not treat it as a
 fault.
 
 **And nothing here ever publishes anything.** A tool that reads `public` and

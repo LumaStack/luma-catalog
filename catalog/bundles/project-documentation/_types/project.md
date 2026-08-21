@@ -7,7 +7,7 @@ fields:
     obligation: recommended
     field_type: enum
     values: [public, internal, confidential, restricted]
-    desc: "how widely this repository is disclosed. Absent refuses organization-private data — undeclared is not permission"
+    desc: "how widely this repository is disclosed. Absent refuses organization-internal data — undeclared is not permission"
   owns:
     obligation: recommended
     field_type: list of text
@@ -68,11 +68,14 @@ comparison.
 is ambient — it is true today and can change tomorrow, and reading it answers a
 different question than the one being asked.
 
-`LumaStack/luma-hq` is private today and is *planned to be published*. Its
-`disclosure_level` is `public`, so it refuses organization-private data **now**,
-while it is still private. **Checking `isPrivate` would return true and permit
-the write** — which is exactly how a repository ends up holding something that
-becomes public later.
+`LumaStack/luma-hq` is the worked example. It was private for months while
+*planned to be published*, and its `disclosure_level` was `public` throughout —
+so it refused organization-internal data the entire time it was still private.
+**Checking `isPrivate` would have returned true and permitted the write**, which
+is exactly how a repository ends up holding something that becomes public later.
+
+**The declaration was right for months before the world caught up with it**,
+which is the whole argument for declaring rather than observing.
 
 **Never derive this from the host.** If it can be inferred from ambient state, it
 is not doing the job.
@@ -80,7 +83,7 @@ is not doing the job.
 ### Absent refuses
 
 **Undeclared is not permission.** A repository with no `disclosure_level` does
-not accept organization-private data, and nothing can be written there on the
+not accept organization-internal data, and nothing can be written there on the
 strength of it looking safe.
 
 **The tempting mistake is to treat absent as the most restrictive value.** That
@@ -90,7 +93,7 @@ anything. **Absent means undeclared, and undeclared refuses.** You declare to
 gain a capability, never to lose one.
 
 **Scoped, so it does not break ordinary work.** What is refused is a write of
-organization-private data. A repository that has never heard of any of this is
+organization-internal data. A repository that has never heard of any of this is
 unaffected in every other respect.
 
 ### It never causes anything to be published
@@ -120,7 +123,7 @@ membership on the strength of this field.**
 **The value must not be derived from reality either.** That sounds safe and
 destroys the property the field exists for. A repository that is private today
 and planned for publication would be recorded as `internal` — and would then
-accept organization-private data right up until the day it is published, which
+accept organization-internal data right up until the day it is published, which
 is the failure this was built to prevent. **A field derived from ambient state
 is ambient state.**
 
@@ -227,7 +230,7 @@ unrecoverable one.
 
 A correct `disclosure_level` is necessary and never sufficient. **The destination
 must also be established as the intended one**, by identity rather than by
-inference — see the `luma/organization-private-hq` bundle, where the headquarters
+inference — see the `luma/organization-internal-hq` bundle, where the headquarters
 is named in machine-local configuration and matched by remote URL.
 
 Two independent checks, both of which must pass. **The field can only ever

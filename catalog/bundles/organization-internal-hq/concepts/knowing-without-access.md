@@ -46,7 +46,7 @@ whoever ran the sweep could already see. Nothing is fetched that permissions
 denied, nothing is inferred about what is inside, and **no access is granted by
 being listed.** An entry is a note that a door exists; it is not a key.
 
-**It lives in the private headquarters**, which is subject to the same rules as
+**It lives in the internal headquarters**, which is subject to the same rules as
 everything else there — see [[what-a-headquarters-holds]].
 
 **And it makes the boundary visible rather than invisible.** A restricted

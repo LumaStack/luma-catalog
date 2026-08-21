@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-20
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
@@ -34,7 +34,7 @@ session that prunes.
 - [[tend-ideas]] — the gardening session.
 - [[migrate-ideas]] — move an existing `IDEAS.md` across, once.
 
-**Template** — [an idea](templates/idea.md)
+**Templates** — [an idea](templates/idea.md) · [an idea review](templates/idea-review.md)
 
 ## Three ideas worth knowing before reading further
 
@@ -114,6 +114,22 @@ Both levels. An organization has ideas about how it works; a project has ideas
 about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
+
+`0.2.0` — everything learned from the first real migration is new content;
+existing use is unaffected. What counts as signoff. How briefly to report, and
+where. A review template, because the shape drifted between the first idea and
+the twelfth. Two triage tests — a topic is not an idea, and settled is *already
+happened* however long the entry. `horizon` decided rather than defaulted.
+Combining `contributors` when one idea absorbs another. A breakdown table with a
+`Modifications` column. And the routing rules in [[where-an-idea-lives]], which
+had scope but nothing about choosing between repositories.
+
+**It was written after `migrate-ideas` failed twice in one session, both times by
+appearing to work.** The agent recommended a destination and filed the idea in the
+same turn; and separately, read agreement about the *process* as agreement about
+an *idea*. Neither raised an error, and both replaced the user's judgement with
+the agent's while looking collaborative. The mode table said "decide jointly" and
+said nothing about what deciding looks like.
 
 `0.1.0`. The capture path is drawn from established practice — capture widely,
 judge later, prune deliberately — but **nothing here has been run on a real

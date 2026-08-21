@@ -4,39 +4,67 @@ version: 0.4.0
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
-description: The private repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
+description: The internal repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
 ---
 
-# Organization private headquarters
+# Organization internal headquarters
 
 Some decisions outlive the project that prompted them. *We do not use that
 vendor.* *That team owns authentication.* Each gets decided once, in whichever
 repository happened to raise it, and then binds four others that cannot see it.
 
-**A headquarters is one private repository where those live.** It is a
+**A headquarters is one internal repository where those live.** It is a
 repository like any other, so the same `.luma/` tiers apply — an organization has
 a headquarters, and so does each project.
 
-## `private` is in the name on purpose
+## `internal` is in the name on purpose
 
 A bundle name is **the one thing read before anything is loaded** — the only
 warning that survives an agent skimming a listing and picking a workflow. So the
-warning is in the name.
+audience is in the name.
 
 **`organization-` leads because a catalog is a flat directory**, and the subject
-is what groups related bundles in a listing. `private` sits where somebody
+is what groups related bundles in a listing. `internal` sits where somebody
 reading the name will still see it.
+
+**It was `private` until 2026-08-20, and the swap costs something worth naming.**
+*Private* is the louder word, and a louder warning is not nothing. But it names
+a **hosting setting** rather than an audience — ambient, true today, and
+changeable by anybody with admin rights without announcement. A bundle named for
+a setting is wrong the moment the setting changes, and it leaves no way to say
+*this is ours, and we have deliberately chosen to show it to people*. **Internal
+is what the content is; private is how it is currently stored.** The name should
+carry the durable half.
+
+The warning that was doing the real work is kept where it cannot be skimmed
+past — here, and at the top of every workflow that writes.
 
 **Publishing a headquarters is the worst outcome available at this level.** Not
 an embarrassment — a handover of trade secrets and institutional knowledge to
 anybody who wants them: what an organization worked out over years, why it beat
 a competitor, what it learned the expensive way, all in one place and easier to
-read than the systems it describes.
+read than the systems it describes. **And it does not reverse**: every fork,
+clone and cache keeps what it took.
 
-**An agent never publishes it, or copies from it into anything public, without a
-person deciding.** A few organizations will publish theirs and some are right
-to — deliberately, once, with the contents reviewed, by people who own the
-consequences. Never as a default anybody drifts into.
+**So a headquarters is private by default and strongly recommended to stay
+private.** Internal does not mean casually shareable; it means the audience is
+this organization, and privacy is how that is normally enforced.
+
+**Publishing one takes more than one round of signoff, and an agent never
+initiates it.** Not a confirmation prompt, and never inferred from a
+`disclosure_level` edit, a visibility setting, or a person saying yes once while
+thinking about something else. The bar is deliberately higher than anything else
+in this bundle:
+
+- **A person asks for it explicitly** — never an agent proposing it, and never a
+  step reached by following this workflow.
+- **The contents are reviewed first**, in full, by somebody who would recognise
+  what should not leave. Publishing unreviewed is publishing blind.
+- **They confirm again afterwards**, separately, knowing what the review found.
+
+A few organizations will publish theirs and some are right to. That is a
+decision taken once, in the open, by people who own the consequences — never a
+default anybody drifts into.
 
 ## What is here
 
@@ -49,7 +77,7 @@ consequences. Never as a default anybody drifts into.
 
 **Workflows**
 
-- [[create-headquarters]] — derive the name, find out whether it exists, create
+- [[create-internal-hq]] — derive the name, find out whether it exists, create
   it with agreement.
 - [[index-repositories]] — sweep the hosting accounts, record one entry each,
   refresh what changed.
@@ -107,9 +135,9 @@ than the rule being stated once at creation.
 happened, somebody may have had a reason, and silently reverting it destroys the
 record of a decision.
 
-## Where private data may be written
+## Where internal data may be written
 
-**[[create-headquarters]] is a prerequisite for [[index-repositories]].** Until a
+**[[create-internal-hq]] is a prerequisite for [[index-repositories]].** Until a
 headquarters has been established and recorded, indexing fails and writes
 nothing. **No fallback, ever** — a workflow that picks a likely candidate when it
 cannot find the declared one will eventually pick wrong, quietly.
@@ -117,7 +145,7 @@ cannot find the declared one will eventually pick wrong, quietly.
 Four checks, all required, **and any that cannot be performed is a failure rather
 than a pass**: `~/.config/luma/luma-hq/config.toml` names the headquarters by
 remote URL; the repository you are in *is* that one, compared normalised; its
-`disclosure_level` accepts organization-private data, where **absent refuses**;
+`disclosure_level` accepts organization-internal data, where **absent refuses**;
 and it is private now.
 
 **The pointer is the organization tool's, not foreman's.** Foreman runs inside
@@ -160,7 +188,7 @@ before anybody looks.
 
 **And syncing the declaration to reality is not housekeeping.** A repository
 declaring `public` because it is planned for publication, "corrected" to
-`internal` because it is *currently* private, has just admitted private data to
+`internal` because it is *currently* private, has just admitted internal data to
 a repository about to be published — a change that reads in the diff as making a
 file agree with the world. **Matching reality is an observation, and
 observations do not grant permissions.**

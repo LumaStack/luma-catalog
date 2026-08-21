@@ -16,7 +16,7 @@ starters:
   organization:
     - luma/luma-layout
     - luma/decision-records
-    - luma/organization-private-hq
+    - luma/organization-internal-hq
 requires:
   - bundle: luma/git-secrets
     obligation: recommended
@@ -49,7 +49,7 @@ nagging report or an empty one. Four bundles for a new project, three for a new
 headquarters — enough to have somewhere to put decisions and a rule about
 secrets, without deciding how anybody releases or merges.
 
-`luma/organization-private-hq` is a starter rather than a requirement on
+`luma/organization-internal-hq` is a starter rather than a requirement on
 purpose. A headquarters is worth having and **not worth creating before there is
 cross-project reasoning to put in it**, which is a judgement only the
 organization can make. What the bundle buys a new headquarters is the recurring

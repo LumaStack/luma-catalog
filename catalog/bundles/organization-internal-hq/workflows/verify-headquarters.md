@@ -62,9 +62,9 @@ toward restriction is an inconvenience; being wrong toward permission cannot be
 undone.
 
 **A missing `disclosure_level` on a headquarters is a finding.** Nothing writes
-organization-private data to a repository that has not said it accepts it, so an
+organization-internal data to a repository that has not said it accepts it, so an
 undeclared headquarters is one that silently stopped working — see
-[[create-headquarters]] step 8.
+[[create-internal-hq]] step 8.
 
 ## 3. More than one person can read it
 

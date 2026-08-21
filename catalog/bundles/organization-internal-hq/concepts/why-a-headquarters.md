@@ -1,7 +1,7 @@
 ---
 type: concept
 title: Why a headquarters
-description: What a private organization repository is for, why it is recommended rather than required, and what would show it was the wrong idea. Read when deciding whether to have one.
+description: What an internal organization repository is for, why it is recommended rather than required, and what would show it was the wrong idea. Read when deciding whether to have one.
 ---
 
 # Why a headquarters
