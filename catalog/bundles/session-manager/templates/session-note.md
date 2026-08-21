@@ -11,6 +11,27 @@ nothing.
 from the repository root, commands in full, no pronoun without a referent in the
 note itself.
 
+## It must also work for a reader who has none of this
+
+**Nothing is guaranteed to consume a session note.** [[session-resume]] deletes
+one — where it has been adopted, projected into the running agent, and
+remembered. Assume none of that. A note that only makes sense to somebody
+holding this bundle is a note that outlives its usefulness and gets believed.
+
+**So the note explains itself, in its own first lines**, before any content:
+
+```markdown
+> **Session note.** Working state left by the previous session so this one can
+> pick up without re-deriving it. **Read it, act on it, then delete this file.**
+> It is a pointer, not a record — everything in it that matters lives somewhere
+> durable too. If it is more than a few days old, check its `pinned` values
+> against the repository before trusting anything below.
+```
+
+**Four words are doing the work: *then delete this file*.** Without them the
+note's ephemerality depends on a person remembering, and the failure is silent —
+a stale note is trusted precisely because nothing announces it is stale.
+
 ## Frontmatter
 
 ```yaml
