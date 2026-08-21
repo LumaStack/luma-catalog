@@ -33,9 +33,9 @@ so.
 ---
 type: workflow
 runs:
-  record-the-run: { run: ..., level: require }
-  refresh-index:  { run: luma/organization-internal-hq#index-repositories, level: recommend, absent: silent }
-  fetch-extras:   { run: ..., level: optional }
+  record-the-run: { workflow: acme/journal, level: require }
+  refresh-index:  { workflow: luma/organization-internal-hq#index-repositories, level: recommend, absent: silent }
+  fetch-upstream: { command: "git fetch --all", level: best-attempt }
 before: [record-the-run]
 ---
 ```
@@ -117,6 +117,24 @@ people click yes reflexively; `best-attempt` means a forgotten annotation
 silently never happens. `recommend` was the least bad — it never surprises — but
 *absent refuses* is the instinct applied everywhere else here, and one word per
 entry buys zero accidental semantics.
+
+**A target is a workflow or a command, and which one is declared rather than
+inferred.** Exactly one of `workflow:` or `command:`; both or neither is a
+publish-time error. Sniffing the type from the shape of the value would be
+implicit typing, and this system chooses declaration over inference everywhere
+else.
+
+**`runs:` names the act rather than the cargo**, which is why it survives having
+two kinds of target. `workflows:` would be a lie for half the entries the moment
+a command appears.
+
+**A workflow can refuse; a command cannot — and that asymmetry is load-bearing.**
+The rule elsewhere is that the callee owns destructive consent: creating a
+repository or publishing requires agreement no matter who called it. A shell
+command has no prose, no level of its own, and no way to stop and ask. **For a
+command, the caller's `level` is the only protection there is** — so a
+destructive one wants `optional`, or an explicit warning in the prose beside the
+marker, because nothing downstream will do it.
 
 **Conditions are prose in the body, introduced by *when*, beside the marker.**
 
