@@ -132,6 +132,12 @@ find what somebody happened to clone, so it does not merely produce a worse list
 carries `attention` and `in_scope`, which are routing signal nothing on disk
 has.
 
+**Step 3 also settles the denominator before the review starts.** The same test
+run found sixteen reviewable ideas inside eight headings and had to raise it
+unprompted — a heading is where somebody stopped typing, not a unit of thought.
+Agreeing the count first keeps *3 of 8* meaningful and keeps the question away
+from the middle of a content decision.
+
 `0.2.0` — everything learned from the first real migration is new content;
 existing use is unaffected. What counts as signoff. How briefly to report, and
 where. A review template, because the shape drifted between the first idea and

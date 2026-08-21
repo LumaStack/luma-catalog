@@ -169,6 +169,30 @@ Not every entry deserves to survive. A long-lived `IDEAS.md` accumulates things
 that were done, abandoned, or overtaken, and **migrating them unchanged
 launders stale material into the place people are told to trust.**
 
+### Settle the denominator before reviewing anything
+
+**A heading is not an idea.** It is where somebody stopped typing. Real files
+contain headings holding five unrelated one-liners, headings whose sub-sections
+are each independently buildable, and headings that are one idea across two pages.
+
+**So count reviewable ideas, not sections, and agree the count first.** Propose
+the split — *this section is five ideas, these four sub-entries are their own,
+these two headings are one idea* — and get it confirmed before idea one.
+
+**Because the alternative is discovering it at idea seven.** A denominator that
+moves mid-review makes *3 of 8* meaningless, forces a decision about splitting
+while somebody is trying to decide about content, and means the person cannot
+tell how much is left. It also lands the question at the worst moment: they are
+deep in one idea and now have to arbitrate the shape of the whole file.
+
+**Splitting is the common case and merging is rare.** Long entries accumulate;
+they seldom fuse. When two headings genuinely are one idea, say which survives
+and why, since that is a rewrite rather than a move.
+
+**If they would rather not decide up front, take the sections as given and say
+so** — an agreed wrong denominator beats a silent one, and a heading that turns
+out to hold three ideas can be split at its own turn.
+
 For each entry, decide: *migrate*, *drop*, or *already happened*.
 
 **Record what you drop and why**, in the commit if nowhere else. *We
