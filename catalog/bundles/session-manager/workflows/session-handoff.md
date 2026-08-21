@@ -155,6 +155,26 @@ first; for a stranger it means orientation first.
 exist anywhere else?* Anything that does not, route it now. The note is going to
 be deleted by whoever consumes it.
 
+### Pin last, and then stop working
+
+**`pinned` is written after everything else, not with the frontmatter.** Steps 8
+and 9 still follow, and anything that lands a commit, merges a pull request or
+changes a branch between here and the end leaves the note describing a world
+that no longer exists.
+
+**A note stale by one minute is worse than one stale by a month.** A reader
+checking a month-old pin expects drift and verifies. A reader checking a pin
+written minutes ago finds a mismatch and concludes the note is much older than
+it is — so they discount the dead ends too, which is the part they most needed.
+
+**And once the note is written, the session is over.** Not *nearly* over —
+over. Merging one more pull request, taking one more instruction, landing one
+more fix: each of those invalidates the note you just handed over.
+
+If work does continue, **the handoff has not happened yet.** Go back, do the
+work, and write the note again. Re-pinning a note whose body is now also wrong
+is patching a record instead of making one.
+
 ## 8. Report the gaps worth reporting
 
 Once, here — not at every checkpoint.

@@ -150,6 +150,27 @@ let somebody run it when they mean to.
 **Signal.** Somebody reading a skip report and wanting to act on it immediately.
 If that never happens, the report was enough and this was not worth building.
 
+## Anything that runs the arriving workflow automatically
+
+**Wanted.** A session that opens and consumes the note waiting for it, without
+anybody remembering to ask.
+
+**Today.** [[session-resume]] is a document. Nothing loads it, nothing fires it,
+and the note's deletion depends on a person reading an instruction and acting on
+it. The mitigation is that every note explains itself in its own first lines —
+see [[session-continuity]] — which works without the bundle and still relies on
+somebody obeying prose.
+
+**This is the load-bearing weakness.** The whole design rests on notes being
+consumed and destroyed; an unconsumed note goes stale, gets believed, and does
+more damage than never having written one. Every other gap here costs
+convenience. This one costs correctness.
+
+**Signal.** Any harness with a session-start hook, or a projection that can mark
+a workflow as *run me on arrival*. Worth watching for as actively as the
+pre-compaction hook, and for the same reason: both replace *an agent remembered*
+with *the harness did it*.
+
 ## Adapters for other agents
 
 **Wanted.** These four workflows available as `/session-checkpoint` and friends

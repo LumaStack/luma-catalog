@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-20
 consumers: [project, organization]
 entry_point: policy/session-continuity
@@ -172,7 +172,23 @@ eventually let it hold one.
 
 ## Version
 
-`0.1.0`. **Nothing here has been run.** The reasoning is drawn from real losses
+`0.2.0` — two fixes from the first real run, which is also the answer to the
+line below.
+
+**`session-handoff` had no rule about work continuing after the note is
+written.** It went stale within a minute of being handed over, because a pull
+request merged after step 7. `pinned` is now written last, and the workflow says
+plainly that once the note exists the session is over — if work continues, the
+handoff has not happened yet.
+
+**And nothing consumes a note.** `session-resume` has to be adopted, projected
+and invoked, and none of that held. Every note now explains itself in its own
+first lines — what it is, that it should be deleted, that its age is worth
+checking — which works when the bundle is absent. That narrows the gap and does
+not close it; the closing move is a harness hook, recorded in
+[[future-hooks]].
+
+`0.1.0`. **The rest of this has still not been run.** The reasoning is drawn from real losses
 — dead ends re-run after a compaction, learnings recorded and never applied,
 notes found months later and believed — but the workflows themselves are
 untested.
