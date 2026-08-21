@@ -61,6 +61,33 @@ nobody can claim it out from under you — and the format itself is
 **The field and the marker share a root** — declare it in `invokes:`, place it
 with `luma-invoke:`. Nothing to remember.
 
+### `luma-invoke:` is reserved, and reserving prose is new
+
+The format already reserves names — `document`, `concept`, `workflow`, `policy`,
+`bundle`, `type_definition` belong to it and a bundle should not redefine them.
+Those are **frontmatter type names**. This would be the **first token the format
+reserves inside prose**, which needs two things a type name does not.
+
+**Where it is active.** A line whose first non-whitespace content is
+`luma-invoke:`. **Inert inside a fenced code block** — otherwise documentation
+showing an example fires it, and every document explaining this feature becomes a
+document that performs it.
+
+**What a tool that has not implemented it must do.** The permissive-conformance
+law says no consumer rejects a bundle over something it does not understand, so
+rejecting is out. **But ignoring is worse**: a `require`-level invocation that
+silently does not happen is the failure this whole design exists to prevent.
+
+So the rule is neither: **a tool that meets `luma-invoke:` and cannot act on it
+says so.** Unimplemented is not the same as absent, and the difference has to
+reach the person. That is the same distinction the levels draw between `inform`
+and `silent`, applied one layer down to the tool itself.
+
+**And reserving it means nothing else may use the token** — not as a heading, not
+as a field, not as prose. That is the cost of a keyword and the reason it is
+namespaced: `luma-invoke:` is unlikely to be wanted for anything else, where
+`invoke:` might be.
+
 **It must render visibly.** An HTML comment would hide it, and invisible
 behaviour is the tax this design exists to avoid.
 
