@@ -105,6 +105,73 @@ silently never happens. `recommend` was the least bad — it never surprises —
 *absent refuses* is the instinct applied everywhere else here, and one word per
 entry buys zero accidental semantics.
 
+**Conditions are prose in the body, introduced by *when*, beside the marker.**
+
+> Refresh the index first when it is past its `stale_after`. `[[refresh-index]]`
+
+**Because the consumer is an agent reading markdown, not a machine evaluating a
+predicate.** A `when:` expression in frontmatter would be structured data, which
+needs a vocabulary or an expression language — and that is the failure the tags
+decision holds hardest against: *every policy system that collapsed did so by
+growing one more operator at a time, each individually reasonable.* Prose has no
+parser to grow.
+
+**It also keeps the halves honest.** Frontmatter is machine-facing and answers
+*could this run* — which is what pre-flight needs. The body is agent-facing and
+answers *should it, here, now*. A condition refines **when**, not **what**, so it
+belongs with the marker rather than the manifest.
+
+**A condition must turn on something observable** — a date, a file's presence, a
+declared value. *When the index is past its `stale_after`* is checkable and two
+agents will agree. *When it seems out of date* is a vibe, and will be judged
+differently every run.
+
+### Writing a `when` two agents read the same way
+
+```
+When <artifact> <is | is not> <state observable right now>.
+```
+
+**Name the artifact, not the situation.** *When `repositories/index.md` is past
+its `stale_after`* — not *when the index is out of date*. An agent can open a
+file; it cannot open a situation.
+
+**One condition, never a compound.** *When A and B* is where prose starts growing
+operators, and *and* invites *or*, which invites precedence. If two things
+genuinely gate it, that is usually two invocations — or the same marker placed in
+a step that only runs under the first condition.
+
+**Testable at the moment it is read.** Present tense, checkable now. *When the
+descriptor is absent* works; *when this will be needed later* is a prediction, and
+two agents will predict differently.
+
+**Do not restate the level.** *When it matters* is not a condition, it is the
+difference between `require` and `recommend`. A condition says whether the
+situation applies; the level says how much it costs to skip.
+
+**If it cannot be evaluated, run it.** An agent that cannot tell whether the index
+is stale should refresh it. This is safe precisely because of the standing
+consequence below — anything invocable is cheap to invoke redundantly — and the
+alternative fails silently: skipping when unsure means the thing quietly does not
+happen and nothing says so.
+
+**Most invocations need no condition at all.** Three things absorb the common
+cases: a callee that is idempotent no-ops when nothing changed, so *skip if
+fresh* never reaches the caller; placement answers *only in this branch*, since
+the marker goes in the step where the condition already holds; and `optional`
+answers *genuinely uncertain and expensive*, because if the callee cannot cheaply
+decide, the caller — which has less information — certainly cannot.
+
+**Standing consequence: a workflow that can be invoked must be cheap to invoke
+redundantly.** That is the price of not having machine conditions, and
+`index-repositories` already pays it — *it is idempotent or it is worthless*.
+
+**Re-open trigger:** if anything ever *executes* workflows rather than reading
+them, conditions have to become machine-evaluable. The bounded version is the
+tags pattern — the invoked workflow publishes the conditions it understands,
+callers pick from that list, and anything outside it is an error. A closed list
+cannot grow an operator at a time.
+
 **A trigger is conditional on presence, never a dependency.** Bundles are
 self-contained and depend on nothing — that is what makes promotion a directory
 copy. A workflow naming another bundle's workflow must still work standalone with
@@ -117,12 +184,7 @@ requires agreement no matter who called it.
 
 ## Why not now
 
-Three things are unresolved, and the first is the motivating example.
-
-**Conditions.** *Run it if the index is stale* is a predicate, and the four levels
-have no room for one — they say how hard to push, never whether to bother.
-Without conditions a `before` entry always runs or never does, which does not
-express the case this started from.
+Two things are unresolved.
 
 **Organization-imposed versus workflow-declared.** Everything above is a workflow
 declaring its own invocations. *Every workflow writes a record* is imposed on all
