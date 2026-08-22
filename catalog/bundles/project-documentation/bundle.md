@@ -27,8 +27,8 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
-- [[documents-are-loaded]] — a document is context an agent pays for on every
-  read, so what it contains is a cost. Where reasoning that changed course goes.
+- [[reasoning-that-changed-course]] — a false start belongs in the commit, not in
+  the document; and the record types that are the exception.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
@@ -93,7 +93,8 @@ from what a project publishes about its code.
 
 ## Version
 
-`0.5.0` — [[documents-are-loaded]] is new content; existing use is unaffected.
+`0.5.0` — [[reasoning-that-changed-course]] is new content; existing use is
+unaffected.
 
 **The bundle was written entirely for human readers** — the front door, the
 newcomer, the stranger with nowhere to report a vulnerability — and never said
