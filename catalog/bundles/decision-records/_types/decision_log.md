@@ -32,8 +32,10 @@ between equals.
 ## Graduating
 
 When the file becomes unwieldy, split it: one `decision` document per entry,
-under `.luma/records/decisions/`. The workflow in [[record-decision]] describes
-the mechanics.
+under `.luma/records/decisions/`. [[migrate-decisions]] is that job — it settles
+the numbering in one pass, reconstructs what supersedes what from prose that
+recorded it as an edit, and repoints everything that cited the file before
+removing it.
 
 "Unwieldy" is deliberately a judgment. A rule that fails a project for keeping
 twenty decisions in one file is a rule people route around, so a tool should

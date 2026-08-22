@@ -7,6 +7,23 @@ preload: mandatory
 
 # Record a decision
 
+## Before anything: if you are looking for a decision, not writing one
+
+**Load [[find-decision]] whenever any of these happens:**
+
+- a link or citation to a decision does not resolve
+- you have an `ADR-NNNN` and cannot find the file
+- you are about to conclude that something **was never decided**
+
+**That last trigger is the one that matters.** A record that has moved into
+`archived/` is invisible to anybody looking only in `decisions/`, and the cost of
+missing it is not a dead link — it is deciding something afresh that already had
+an answer, with no supersession and no sign anybody had been there before.
+
+**The number survives every move.** Same `ADR-NNNN`, same decision, wherever the
+file is now — so a broken link is a lookup problem rather than a lost record.
+[[find-decision]] has the search order and what to do with what it turns up.
+
 ## 1. Find where decisions live
 
 Look in this order and take the first that exists:
@@ -81,17 +98,77 @@ Do not silently edit a settled record.
 The second is the one people get wrong by reaching for the first, and the cost
 is that the reasoning which produced the original position disappears.
 
-## 6. Graduating from a file to a directory
+**The test between them: would somebody who followed the old text now be in
+breach?** If no, correct it — the record got better at saying what it always
+said. If yes, the position moved and it needs a new number, however small the
+edit looks. **A decision is never reversed under the number it was decided
+under**, because that number is cited in places no edit can reach.
 
-When the file is genuinely painful rather than merely long:
+**When the test fails, say so and say why** — quote both texts, name who would
+newly be in breach, and **lead with what is not being refused**: they can have
+the change, today; only the number is unavailable. Then draft the superseding
+record rather than leaving them with a task.
 
-1. One `decision` document per entry, `ADR-NNNN-<slug>.md`, numbered in the
-   order they were originally settled.
-2. `decided` comes from each entry's own settled date, not the date of the
-   migration.
-3. Delete `DECISIONS.md`. Leaving it behind is the split from step 1,
-   created deliberately.
+**A silent no teaches people the tool is broken**, and a refusal nobody explains
+is also a refusal nobody can push back on — which is how a rule that is drawn in
+slightly the wrong place stays there. [[decision-guidelines]] has the full
+shape, including what to do when the same refusal keeps recurring.
 
-**This is effectively one-way.** Once records exist separately they accumulate
+## 6. Archiving moves the file
+
+A record that is no longer the answer goes into `archived/`, beneath the
+decisions directory:
+
+```
+.luma/records/decisions/
+    ADR-0007-catalog-not-registry.md
+    archived/
+        ADR-0004-vendor-the-catalog-per-project.md
+```
+
+Four things happen together, and doing one without the others is the common
+mistake:
+
+1. `lifecycle_status: archived`, and `superseded_by` where something replaced it
+2. `archived: YYYY-MM-DD` — the date it stopped being the answer
+3. `archived_reason` — `superseded`, `retired`, `invalidated` or `noise`
+4. The file moves
+
+**Take a moment over `archived_reason`.** It is the field that tells a later
+reader whether `archived/` holds finished business or an open gap — `invalidated`
+means the project used to have an answer here and no longer does. See
+`_types/decision` for what each value means and for the two things that look like
+values and are not.
+
+**The directory is what saves the context.** Nothing loads `archived/` by
+default and a glob over `decisions/*.md` skips it, so what a reader opens is only
+what still holds. That is the honest answer to *these records are getting
+expensive* — a loading problem rather than a reason to delete anything.
+
+**A move breaks inbound links**, because a Document ID is the whole path.
+Repoint them in the same commit.
+
+**Assume you will miss one.** A `CLAUDE.md`, a commit template, a document nobody
+thought to grep — repointing is best-effort, and the record is still findable by
+number when it fails. That is [[find-decision]]'s job, and it is the reason
+archiving is safe rather than merely tidy.
+
+**Deleting an archived record is a separate, deliberate act** —
+[[prune-archived-decisions]], which only reaches `archived/` and only past a
+retention period the project has set. Nothing about archiving implies it.
+
+## 7. Graduating from a file to a directory
+
+When the file is genuinely painful rather than merely long, that is its own
+workflow — [[migrate-decisions]]. It splits the entries, reconstructs what
+supersedes what, repoints everything that cited the file, and only then removes
+it.
+
+**Do not do it by hand from this workflow.** The mechanics look simple and the
+two things that go wrong are not visible while you are doing them: the numbering
+has to be settled in one pass before anything is written, and every citation of
+the old file breaks silently the moment it is deleted.
+
+**It is effectively one-way.** Once records exist separately they accumulate
 their own `modified` and `verified` events, and collapsing them back discards
 all of it.
