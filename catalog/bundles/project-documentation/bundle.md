@@ -27,8 +27,8 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
-- [[reasoning-that-changed-course]] — steering the mess of how a conclusion was
-  reached into history, where it has its own job. A preference, with examples.
+- [[where-history-belongs]] — history stays in loaded context only where it earns
+  its place; where it goes otherwise, and what earning it looks like.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
@@ -93,8 +93,7 @@ from what a project publishes about its code.
 
 ## Version
 
-`0.5.0` — [[reasoning-that-changed-course]] is new content; existing use is
-unaffected.
+`0.5.0` — [[where-history-belongs]] is new content; existing use is unaffected.
 
 **A preference with examples, deliberately not a rule or a test.** Documentation
 keeps producing cases nobody anticipated, and both earlier drafts of this tried to
