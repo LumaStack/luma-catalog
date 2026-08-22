@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Reasoning that changed course belongs in history
-description: Where history belongs — in git, in records, in backlog journals, in logs, and in whatever else a team already uses. Not a comprehensive list. With examples of what usually goes where, and reasons a document sometimes keeps its history anyway.
+description: History stays in loaded context only where it earns its place; otherwise it belongs in git, in records, in backlog journals, in logs, or wherever else a team already keeps it. Neither list is comprehensive.
 ---
 
 # Reasoning that changed course belongs in history
@@ -81,16 +81,25 @@ to belong in history.
 
 That is a lean, not a boundary. Plenty of things sit on it.
 
-## Reasons a document keeps its history anyway
+## History stays in loaded context only where it earns its place
 
-Several, and there will be others nobody has hit yet:
+**This is not only about documents.** A policy, a workflow, a guide — anything an
+agent loads is context somebody pays for, and the same question applies to all of
+it. History that earns its place stays. History that does not should move to one
+of the homes above.
 
-- **Re-litigation is likely.** A compressed *this was considered and not taken,
+**Earning its place means providing value to a reader now** — such as, and
+certainly not limited to:
+
+- **preventing re-litigation.** A compressed *this was considered and not taken,
   because* saves the next person a week — the version that fits in a paragraph,
   not the argument as it happened.
-- **The rule is unreadable without the failure that produced it.** Some constraints
-  only make sense once you know what went wrong, and stripping the story leaves
-  something nobody can apply.
+- **justifying why something is the way it is.** Some constraints only make sense
+  once you know what went wrong, and stripping the story leaves a rule nobody can
+  apply or trust.
+
+And others, including kinds nobody here has thought of:
+
 - **The reader is learning rather than looking something up.** Explanation and
   tutorial material often teaches through the wrong turn.
 - **The history is the subject** — a postmortem, a migration guide, a document about
