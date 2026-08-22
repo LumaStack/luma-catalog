@@ -27,8 +27,8 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
-- [[reasoning-that-changed-course]] — a false start belongs in the commit, not in
-  the document; and the record types that are the exception.
+- [[reasoning-that-changed-course]] — a false start usually belongs in the commit
+  rather than the document, and the test for when it does not.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
@@ -95,6 +95,15 @@ from what a project publishes about its code.
 
 `0.5.0` — [[reasoning-that-changed-course]] is new content; existing use is
 unaffected.
+
+**Guidance rather than a rule, deliberately.** A documentation system keeps
+producing cases where showing how a conclusion was reached is exactly what a
+reader needs, so the policy avoids rather than forbids.
+
+**The governing test is not whether something is history.** It is whether keeping
+it stops somebody re-deriving a dead end. A summary of what was rejected passes; a
+record of the back-and-forth before deciding does not. Framing it that way makes
+the exceptions fall out of the principle rather than being enumerated beside it.
 
 **The bundle was written entirely for human readers** — the front door, the
 newcomer, the stranger with nowhere to report a vulnerability — and never said
