@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Reasoning that changed course belongs in history
-description: A preference for steering the mess of how a conclusion was reached into git history, where it has its own job — with examples of what usually goes where, and reasons a document sometimes keeps its history anyway.
+description: Where history belongs — in git, in records, in backlog journals, in logs, and in whatever else a team already uses. Not a comprehensive list. With examples of what usually goes where, and reasons a document sometimes keeps its history anyway.
 ---
 
 # Reasoning that changed course belongs in history
@@ -10,9 +10,43 @@ description: A preference for steering the mess of how a conclusion was reached 
 It is not a list to apply exhaustively — documentation keeps producing cases
 nobody anticipated, and a rule written today would be wrong in some of them.
 
-**The short version: steer the mess into history, and let the document say what is
-true now.** Lean that way by default. Depart from it when there is a reason, and
-the reason does not have to appear below.
+**The short version: steer the mess somewhere holding it is the job, and let the
+document say what is true now.** Lean that way by default. Depart from it when
+there is a reason, and the reason does not have to appear below.
+
+## Where history belongs
+
+**History belongs in git, in records, in backlog journals, in logs, and in
+whatever else a team already uses for it.**
+
+**That is not a comprehensive list and should not be read as one.** What the places
+on it have in common is that holding the reasoning is their job — so any
+destination with that property qualifies, including ones nobody here has thought
+of.
+
+Some of them, with what each is good for:
+
+- **git history** — the commit message. [[merge-commits]] in the
+  `luma/git-workflow` bundle rests its case against squashing on the commit
+  message being where rationale lives, so this is a home that already claims the
+  job.
+- **pull request bodies and review threads** — the same property, and often the
+  more natural place for an argument that involved several people.
+- **records** — a decision record keeps deferred alternatives and re-open
+  triggers; an audit record keeps a finding and the answer to it.
+- **backlog journals** — how an intention changed, kept beside the intention
+  itself rather than in the document describing what is now planned.
+- **logs** — `log.md` is reserved for this by the `luma/luma-layout` bundle:
+  append-only, newest first, and never rewritten once written.
+- **wherever a team already keeps this** — an issue tracker, a design archive, a
+  wiki. A destination that exists and is used beats a better one that is not.
+
+**They are not equivalent, and one distinction is worth keeping straight.** Git
+history and pull requests sit outside the working tree, so they cost a reader
+nothing until somebody goes looking. Records and journals are committed and
+loadable, so they cost what a document costs. The difference is that in them the
+reasoning is not noise: the same paragraph is clutter in a policy document and
+content in a decision record, and nothing about the paragraph changed.
 
 ## History is not being discarded, it is being concentrated
 
@@ -35,11 +69,11 @@ Illustrative, not exhaustive.
 | --- | --- |
 | what was decided, and what is in force | the document |
 | what was rejected, and why it stays rejected | the document |
-| the back-and-forth before deciding | the commit message |
-| scratchpad notes and working thoughts | the commit message, or nowhere |
-| what an earlier draft said | the commit message |
-| that somebody was wrong, and corrected it | the commit message |
-| how long it took, and how many attempts | the commit message |
+| the back-and-forth before deciding | history — usually the commit or the pull request |
+| scratchpad notes and working thoughts | history, or nowhere |
+| what an earlier draft said | history |
+| that somebody was wrong, and corrected it | history |
+| how long it took, and how many attempts | history |
 
 **The pattern underneath, loosely:** content describing *the shape of the answer*
 tends to belong in the document; content describing *the shape of the work* tends
@@ -80,15 +114,6 @@ constraint, and nothing in the text marks which sentences are still in force.
 
 That gives *every document is a liability until somebody reads it* — from
 [[which-document]] — a second and sharper reason.
-
-## Where the mess goes instead
-
-**The commit message.** [[merge-commits]] in the `luma/git-workflow` bundle rests
-its case against squashing on the commit message being where rationale lives, so
-this is a home that already exists and already claims the job.
-
-Pull request bodies and review threads do the same work with the same property:
-available to somebody looking for them, invisible to everybody else.
 
 ## What this is not
 
