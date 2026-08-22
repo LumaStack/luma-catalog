@@ -27,8 +27,8 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
-- [[reasoning-that-changed-course]] — a false start usually belongs in the commit
-  rather than the document, and the test for when it does not.
+- [[reasoning-that-changed-course]] — steering the mess of how a conclusion was
+  reached into history, where it has its own job. A preference, with examples.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
@@ -96,14 +96,16 @@ from what a project publishes about its code.
 `0.5.0` — [[reasoning-that-changed-course]] is new content; existing use is
 unaffected.
 
-**Guidance rather than a rule, deliberately.** A documentation system keeps
-producing cases where showing how a conclusion was reached is exactly what a
-reader needs, so the policy avoids rather than forbids.
+**A preference with examples, deliberately not a rule or a test.** Documentation
+keeps producing cases nobody anticipated, and both earlier drafts of this tried to
+close the question — first by asking whether something was history, then by asking
+whether keeping it prevented re-derivation. Each was a real consideration promoted
+into the only one.
 
-**The governing test is not whether something is history.** It is whether keeping
-it stops somebody re-deriving a dead end. A summary of what was rejected passes; a
-record of the back-and-forth before deciding does not. Framing it that way makes
-the exceptions fall out of the principle rather than being enumerated beside it.
+**History is concentrated rather than discarded.** Git history has its own job —
+detective work when something breaks, and learning what a process gets wrong — and
+that job is served better when the material is in one place than when it is
+sprinkled through documents, where it also costs every reader on every read.
 
 **The bundle was written entirely for human readers** — the front door, the
 newcomer, the stranger with nowhere to report a vulnerability — and never said
