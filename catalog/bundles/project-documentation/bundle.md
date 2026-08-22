@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.4.0
-published: 2026-08-19
+version: 0.5.0
+published: 2026-08-22
 consumers: [project]
 entry_point: policy/readme
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
@@ -27,6 +27,8 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
+- [[documents-are-loaded]] — a document is context an agent pays for on every
+  read, so what it contains is a cost. Where reasoning that changed course goes.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
@@ -90,6 +92,27 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.5.0` — [[documents-are-loaded]] is new content; existing use is unaffected.
+
+**The bundle was written entirely for human readers** — the front door, the
+newcomer, the stranger with nowhere to report a vulnerability — and never said
+that these documents are also loaded into agents, in full, repeatedly, against a
+finite budget. That turns noise from a matter of taste into a recurring cost, and
+gives *every document is a liability until somebody reads it* a second and sharper
+reason.
+
+**It also relocates something rather than forbidding it.** Reasoning that changed
+course is worth keeping — it is how a team learns what its process gets wrong. It
+belongs in git history, where it costs a reader nothing until they go looking. The
+policy sends it somewhere that already claims the job: `luma/git-workflow` rests
+its case against squashing on the commit message being where rationale lives.
+
+**The exception is named as a type rather than a circumstance.** Decision records
+and audit records exist precisely to show their work. *Show your work where it
+matters* is a judgement every author makes generously about their own writing; *a
+decision record shows its work, a README does not* is a fact about which file is
+open.
 
 `0.4.0` — the declared-versus-actual rules are new content; existing use is
 unaffected.
