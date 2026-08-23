@@ -1,0 +1,79 @@
+name: ci
+
+# **Merging to `main` is publication.** A bundle becomes available by being here,
+# so there is no later moment at which anything could be refused — which is why
+# every check the curator was designed to run "at publication" runs here, before
+# the merge, and why a red run blocks it. An unenforced check is decoration.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  # **Pinned, not floating.** These tools are cloned from repositories that can
+  # change under this one, and a check whose behaviour moves on its own is a
+  # check nobody can reason about — a green run today and a red run tomorrow on
+  # the same content, with nothing in this repository's history to explain it.
+  # Bumping a pin is a deliberate act, visible in a diff, reviewed like any
+  # other change.
+  #
+  # The cost is that a fix upstream does not arrive until somebody edits these
+  # lines. That is the trade, taken knowingly.
+  CURATOR_SHA: 886a569bf2921de411ae449cf03d7a3d5807dc1c  # luma-catalog-curator
+  FOREMAN_SHA: ebfa3860dcc686320f234f58920001b96e11b322  # luma-foreman
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      # Full history: the version check compares this tree against the base
+      # branch, and a shallow clone has nothing to compare with.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          # The floor both tools state. Neither has dependencies, so this is
+          # the whole runtime.
+          python-version: '3.11'
+
+      - name: Clone the tools at their pinned commits
+        run: |
+          set -eu
+          git clone -q https://github.com/LumaStack/luma-catalog-curator.git "$RUNNER_TEMP/curator"
+          git -C "$RUNNER_TEMP/curator" checkout -q "$CURATOR_SHA"
+          git clone -q https://github.com/LumaStack/luma-foreman.git "$RUNNER_TEMP/foreman"
+          git -C "$RUNNER_TEMP/foreman" checkout -q "$FOREMAN_SHA"
+
+      # Contradictions no individual project could ever detect: a bundle both
+      # mandated and deprecated, a starter pinning what this catalog's own
+      # mandate forbids, a requirement naming a bundle nobody publishes.
+      - name: The catalog agrees with itself
+        run: |
+          set -eu
+          "$RUNNER_TEMP/curator/bin/luma-catalog-curator" check .
+
+      # **Only on a pull request, because only a pull request has a base.** On a
+      # merge to main the comparison has already been made against the same
+      # content, and re-running it against the previous commit would ask a
+      # different and less useful question.
+      - name: Every changed bundle said so in its version
+        if: github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          set -eu
+          git fetch --no-tags origin "+refs/heads/$BASE:refs/remotes/origin/$BASE"
+          "$RUNNER_TEMP/curator/bin/luma-catalog-curator" check --against "origin/$BASE" .
+
+      # A dangling wikilink, an unquoted wikilink in frontmatter, a template
+      # carrying live frontmatter. Every one is conformant, so the bundle
+      # publishes cleanly and the defect travels to every adopter.
+      - name: No bundle is broken in a way only foreman notices
+        run: |
+          set -eu
+          "$RUNNER_TEMP/foreman/bin/luma-foreman" inspect
