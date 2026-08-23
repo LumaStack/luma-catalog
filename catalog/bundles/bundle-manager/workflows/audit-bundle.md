@@ -64,13 +64,13 @@ checklist rather than a feeling.
 
 ## Loading
 
-- **No `concept` is `preload: mandatory`.** Standing presence is what makes
-  something a policy; a concept that must always be loaded is mistyped.
+- **Nothing in `concepts/` is `preload: mandatory`.** Standing presence is what
+  makes something a policy; background that must always be loaded is misfiled.
 - **A `preload: mandatory` policy carries no long argument.** Every consumer
   pays for it in every session. Reasoning past a clause or two belongs in
   `concepts/` — see [[organizing-a-bundle]].
-- **Nothing operational is filed as a concept.** A rule about what outranks what,
-  put in background, is never loaded by the agent about to break it.
+- **Nothing operational is filed under `concepts/`.** A rule about what outranks
+  what, put in background, is never loaded by the agent about to break it.
 - Not everything is mandatory. A bundle marking all its documents mandatory
   imposes itself whole, which is the cost that keeps the field meaningful.
 

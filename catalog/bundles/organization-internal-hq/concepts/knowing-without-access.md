@@ -1,5 +1,5 @@
 ---
-type: concept
+type: document
 title: Knowing without access
 description: Why the index records repositories it cannot read, why that is not a security weakness, and why the stance is a default rather than a rule. Read when somebody challenges it.
 ---

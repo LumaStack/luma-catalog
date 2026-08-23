@@ -1,5 +1,5 @@
 ---
-type: concept
+type: document
 title: Hooks into tools that do not exist yet
 description: What this bundle would use if it existed, what it does instead today, and how to tell when each gap has closed. Read before adding a workaround.
 ---

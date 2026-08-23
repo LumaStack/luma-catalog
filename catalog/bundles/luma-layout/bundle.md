@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.2.0
-published: 2026-08-18
+version: 0.3.0
+published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
 description: The .luma directory every luma tool writes into — the four tiers, what belongs in each, and the committed-only invariant that makes it trustworthy.
@@ -72,6 +72,17 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.3.0` — `.luma/_types/` is documented: contracts for Documents that live in no
+bundle. New content; existing use is unaffected, and the directory is absent in
+most repositories.
+
+**It exists because `project.md` has no bundle to resolve its type from.** The
+format resolves a contract from the bundle a Document lives in, and this one
+lives above the tiers — so the repository has to answer for it. It is also the
+project's *single* answer, where a bundle's `_types/` is scoped to that bundle:
+adopted bundles may legitimately disagree about a type used inside them, but the
+one file at `.luma/project.md` cannot have two contracts.
 
 `0.2.0` — `.luma/project.md` is a reserved path this layout did not previously
 document. New content; existing use is unaffected.

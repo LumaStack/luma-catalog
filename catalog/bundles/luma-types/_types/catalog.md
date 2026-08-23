@@ -1,10 +1,6 @@
 ---
 type: type_definition
 defines: luma/catalog
-vendored_from:
-  resource: https://github.com/LumaStack/luma-catalog
-  version: "0.1.0"
-  at: 2026-08-22
 extends: document
 fields:
   tags:
