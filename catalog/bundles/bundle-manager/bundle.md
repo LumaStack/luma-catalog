@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.1.0
-published: 2026-08-18
+version: 0.2.0
+published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
 description: Creating, updating, auditing, repairing, migrating and retiring bundles — the layout they use and which catalog they belong in.
@@ -25,6 +25,8 @@ belongs in, and a procedure for each thing you do to a bundle over its life.
   something is a document, an asset, or a type. Read first.
 - [[where-a-bundle-belongs]] — project, organization, or universal, and how a
   bundle moves between them.
+- [[an-index-of-what-exists]] — load the index, never the content. How a bundle
+  stays large without being expensive, and why the alternative fails silently.
 
 **Workflows**
 
@@ -81,6 +83,18 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.2.0` — adds [[an-index-of-what-exists]]. New content; existing use unaffected.
+
+**Named because it had been rediscovered three times.** It is the answer in
+`find-decision`, in situational mandates, and in conditional loading generally,
+and it existed only inside those three discussions — so the next person to hit a
+context budget would have invented it a fourth time.
+
+**And it turns out to be an assembly rather than an invention.** `description` on
+every document, the `index.md` the format already reserves as *derived
+navigation*, and `preload` on that index. Three existing parts nobody had put
+together.
 
 `0.1.0`. These conventions were extracted from writing three bundles in one
 afternoon — real practice, but not much of it, and the audit checklist in
