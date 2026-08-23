@@ -1,6 +1,5 @@
 # luma-catalog
 
-> [!NOTE]
 > **Policies, workflows and knowledge that give your agents superpowers.**<br>
 > Drop in best practices, move faster together, and get things right the first time.
 
