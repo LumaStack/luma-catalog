@@ -102,7 +102,7 @@ bundle rather than defined here. Breaking for anything matching on the bare type
 name.
 
 **This bundle stopped being the type's owner because more than one tool needs to
-agree on it.** foreman reads a project descriptor, so would a cataloger, so does
+agree on it.** foreman reads a project descriptor, so would a curator, so does
 the backlog tool — and a contract three tools depend on cannot belong to whichever
 bundle happened to need it first. It is vendored here like anywhere else, with
 `vendored_from` recording the version taken.
