@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -72,6 +72,21 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.4.0` — two corrections and one addition. Existing use is unaffected; both
+corrections remove a copy rather than requiring one.
+
+**`.luma/_types/` states which contract wins; it is not the project's spare
+copy.** `0.3.0` said it holds one contract *"whatever the adopted bundles happen
+to carry individually"*, which endorses a second copy sitting beside an adopted
+bundle that already has the type. **Vendoring is for travel** — a copy inside one
+repository goes nowhere and drifts for free. Three cases now decide it, and only
+two of them put a file there.
+
+**`adopted.toml` records the commit.** A version says which release of a bundle
+and a checksum says which bytes; neither says **alongside what**. Two bundles
+adopted from one commit came from an internally consistent set, and that is worth
+a line while nothing has written this file yet.
 
 `0.3.0` — `.luma/_types/` is documented: contracts for Documents that live in no
 bundle. New content; existing use is unaffected, and the directory is absent in

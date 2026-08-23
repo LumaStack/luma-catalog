@@ -1,6 +1,7 @@
 ---
 type: type_definition
 defines: luma/catalog
+version: "0.1.0"
 extends: document
 fields:
   tags:

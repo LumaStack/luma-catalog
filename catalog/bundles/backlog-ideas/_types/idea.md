@@ -1,9 +1,10 @@
 ---
 type: type_definition
 defines: luma/idea
+version: "0.1.0"
 vendored_from:
   resource: https://github.com/LumaStack/luma-catalog
-  version: "0.2.0"
+  version: "0.1.0"          # the type's own version, not the bundle's
   at: 2026-08-23
 extends: document
 fields:
