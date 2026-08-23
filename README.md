@@ -35,7 +35,7 @@ LICENSE
 
 `catalog.md` holds only what is true of *this* catalog. Everything general —
 what each field means, how two catalogs resolve, what `mandatory` does — lives
-in [`catalog/_types/catalog.md`](catalog/_types/catalog.md), so it is written
+in [`catalog/bundles/luma-types/_types/catalog.md`](catalog/bundles/luma-types/_types/catalog.md), so it is written
 once rather than copied into every catalog that ever exists.
 
 **Everything under `catalog/` is the catalog; everything outside it maintains
@@ -94,7 +94,7 @@ require a fork, that is a defect worth reporting rather than a workflow.
 
 `upstream` points at where else to look; it does not inherit content. A project
 configured with one catalog reads the whole chain — see
-[`catalog/_types/catalog.md`](catalog/_types/catalog.md) for how each list
+[`catalog/bundles/luma-types/_types/catalog.md`](catalog/bundles/luma-types/_types/catalog.md) for how each list
 resolves when two catalogs speak at once.
 
 ## Contributing

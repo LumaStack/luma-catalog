@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.3.0
 published: 2026-08-23
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
@@ -133,6 +133,19 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.3.0` — each type declares its own `version`, and `vendored_from` cites that
+rather than this bundle's.
+
+**Because a bundle version answers the wrong question for a copied type.** At
+`0.2.0` this bundle had already produced the failure the field exists to prevent:
+a vendored `luma/catalog` recorded `0.1.0` while the bundle read `0.2.0`, so a
+drift check would have called a byte-identical copy stale — `luma/catalog` had not
+changed at all, `luma/idea` had been added beside it.
+
+All three start at `0.1.0`. The knowledge format is deliberate that a type version
+is a label rather than a promise: compare for equality, infer nothing from which
+tier moved.
 
 `0.2.0` — adds `luma/idea`, which gains a `contributors` field it had been
 carrying in every file without declaring anywhere.

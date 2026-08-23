@@ -1,6 +1,7 @@
 ---
 type: type_definition
 defines: luma/project
+version: "0.1.0"
 extends: document
 fields:
   description:

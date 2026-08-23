@@ -25,7 +25,7 @@ requires:
 # The universal catalog
 
 Bundles useful to an organization with no connection to Luma. What each field
-means and how it resolves is in [`_types/catalog.md`](_types/catalog.md).
+means and how it resolves is in [`bundles/luma-types/_types/catalog.md`](bundles/luma-types/_types/catalog.md) — the one canonical copy, published in the `luma/luma-types` bundle rather than duplicated beside this file.
 
 No `upstream`: this is the root of the chain.
 

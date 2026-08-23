@@ -36,18 +36,24 @@ repository the tiers belong to — so there is no bundle to resolve its `type`
 from, and the format says outright that whoever puts a Document there owes it an
 answer. `.luma/_types/` is that answer.
 
-**It is the project's single answer, and that is the point.** Where a bundle's
-`_types/` is scoped to that bundle, this one is scoped to the whole repository:
-one contract for `luma/project`, whatever the adopted bundles happen to carry
-individually. Two bundles disagreeing about a type used *inside* them is fine.
-Two answers for the file at `.luma/project.md` is not, because there is only one
-of it.
+**It states which contract wins — it is not the project's spare copy.** That
+distinction decides whether a file belongs here at all:
 
-**Vendored, like any shared type**, with `vendored_from` recording the version
-taken. That second job matters more here than elsewhere: it is how anything
-collecting descriptors across an organization can ask which contract a given
-project is written against, instead of guessing from which fields happen to be
-present.
+| | |
+| --- | --- |
+| **no adopted bundle provides the type** | this is the only answer. **Put it here** |
+| **exactly one adopted bundle provides it** | **pure duplication.** Reference the adopted copy and put nothing here |
+| **two adopted bundles provide it and disagree** | **put it here.** This is the disambiguation the directory exists for |
+
+**Vendoring is for travel. Within one repository, reference.** A copy of a file
+that already exists in the same checkout goes nowhere and drifts for free — it
+takes all the cost of vendoring and none of the benefit, which is
+self-containment when a bundle *moves*.
+
+**Where a file does belong here, it carries `vendored_from`** with the version
+taken. That matters more here than elsewhere: it is how anything collecting
+descriptors across an organization can ask which contract a given project is
+written against, instead of guessing from which fields happen to be present.
 
 **Empty is the normal state.** A repository whose `.luma/` holds only a
 descriptor and a backlog needs nothing here — the directory appears when
@@ -137,8 +143,15 @@ to be different, that is a different bundle in your own namespace.
 ["luma/git-secrets"]
 version  = "0.1.0"
 source   = "https://github.com/LumaStack/luma-catalog"
+commit   = "abc1234"
 checksum = "sha256:9f2c…"
 ```
+
+**`commit` records which state of the catalog this came from**, and it is the
+cheapest thing here. Two bundles adopted from the same commit are known to have
+come from one internally consistent set; from different commits, that is visible
+and checkable. Nothing else answers that — a version says *which release of this
+bundle*, and a checksum says *which bytes*, and neither says *alongside what*.
 
 The checksum is the point: drift-checking compares it against the vendored files
 to detect an edited copy. **A hand-edited checksum makes that check silently
@@ -146,8 +159,9 @@ start passing**, which is why the value lives nowhere near a file you are invite
 to edit — and why it is not in `config/`.
 
 It is **not a lockfile**, though it resembles one. Bundles are committed, so
-nothing is ever restored from it. It answers two questions only: has anyone
-edited this copy, and is a newer version available.
+nothing is ever restored from it. It answers three questions only: has anyone
+edited this copy, is a newer version available, and what was this taken
+alongside.
 
 ## Generated files are never the source
 
