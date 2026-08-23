@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.2.1
 published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -83,6 +83,11 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.2.1` — a wikilink in [[an-index-of-what-exists]] pointed into another bundle
+and therefore at nothing. Named in prose instead. **Found by `luma-foreman
+inspect` the first time anything ran it across the whole catalog**, which is the
+defect class this bundle's opening paragraph warns about.
 
 `0.2.0` — adds [[an-index-of-what-exists]]. New content; existing use unaffected.
 
