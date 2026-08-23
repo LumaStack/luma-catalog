@@ -8,6 +8,11 @@ on:
   pull_request:
   push:
     branches: [main]
+  # Weekly, so a pin that has gone stale says so rather than waiting for
+  # somebody to wonder. See the `pins` job.
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,9 +26,10 @@ env:
   # other change.
   #
   # The cost is that a fix upstream does not arrive until somebody edits these
-  # lines. That is the trade, taken knowingly.
-  CURATOR_SHA: 886a569bf2921de411ae449cf03d7a3d5807dc1c  # luma-catalog-curator
-  FOREMAN_SHA: ebfa3860dcc686320f234f58920001b96e11b322  # luma-foreman
+  # lines. That is the trade, taken knowingly — and the `pins` job below is what
+  # keeps it a trade rather than a slow drift nobody chose.
+  CURATOR_SHA: 247ca4e032c52b832a32d4189d064136d80a2072  # luma-catalog-curator
+  FOREMAN_SHA: 4183a6c202aa6bc79dbdaf77eff9323ef1c95869  # luma-foreman
 
 jobs:
   check:
@@ -77,3 +83,42 @@ jobs:
         run: |
           set -eu
           "$RUNNER_TEMP/foreman/bin/luma-foreman" inspect
+
+  # **A pin nobody bumps is a pin nobody decided.** Pinning is the right call and
+  # its failure mode is silent: the pinned commit keeps working, so nothing ever
+  # surfaces that the tool moved on. This does not bump anything — bumping stays
+  # deliberate — it only makes going stale visible.
+  #
+  # It fails rather than warns, because a warning in a scheduled run is a
+  # notification nobody reads. A red weekly run is the whole mechanism.
+  pins:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The pinned tools are still current
+        run: |
+          set -eu
+          behind=0
+          while read -r name repo sha; do
+            head=$(git ls-remote "https://github.com/LumaStack/$repo.git" HEAD | cut -f1)
+            if [ "$head" = "$sha" ]; then
+              printf '%-24s current  %s\n' "$name" "$(echo "$sha" | cut -c1-7)"
+            else
+              printf '%-24s BEHIND   pinned %s, upstream %s\n' \
+                "$name" "$(echo "$sha" | cut -c1-7)" "$(echo "$head" | cut -c1-7)"
+              behind=1
+            fi
+          done <<EOF
+          CURATOR_SHA luma-catalog-curator $CURATOR_SHA
+          FOREMAN_SHA luma-foreman $FOREMAN_SHA
+          EOF
+
+          if [ "$behind" -eq 1 ]; then
+            echo
+            echo "A pinned tool has moved on. Read what changed, then bump the SHA in"
+            echo ".github/workflows/ci.yml — deliberately, in a pull request, like any"
+            echo "other change. Staying behind is a legitimate answer; not knowing is not."
+            exit 1
+          fi
