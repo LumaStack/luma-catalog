@@ -1,10 +1,6 @@
 ---
 type: type_definition
 defines: luma/idea
-vendored_from:
-  resource: https://github.com/LumaStack/luma-catalog
-  version: "0.2.0"
-  at: 2026-08-23
 extends: document
 fields:
   horizon:

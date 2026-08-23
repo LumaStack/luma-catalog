@@ -30,7 +30,7 @@ elegance: they are reading a dozen of these in a row.
 **My recommendation — <destination>, `scope: <x>`, `horizon: <y>`:**
 
 ​```yaml
-type: idea
+type: luma/idea
 title: <title>
 created: { by: <actor>, at: <timestamp> }
 contributors: [<everyone in the exchange>]

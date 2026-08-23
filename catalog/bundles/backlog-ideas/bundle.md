@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.5.0
-published: 2026-08-20
+version: 0.6.0
+published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
 description: Ideas as individual files rather than one growing IDEAS.md — what earns a file, how capture stays fast, and how the list gets tended rather than accumulating.
@@ -60,8 +60,8 @@ work is real and worth recording, and is still not a human having seen it.
 **Almost everything reuses a core field.** Growth stages are `lifecycle_status`
 — seedling `draft`, budding `provisional`, evergreen `stable`, pruned
 `archived`. Dates and authorship are `created`. Human review is `verified`. The
-type declares only `horizon`, `scope` and `archived`, because those are the
-three things the format genuinely does not have.
+type declares only `horizon`, `scope`, `archived` and `contributors`, because
+those are the four things the format genuinely does not have.
 
 ## It prefers `.luma/`, and does not require it
 
@@ -114,6 +114,22 @@ Both levels. An organization has ideas about how it works; a project has ideas
 about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
+
+`0.6.0` — `idea` becomes `luma/idea`, vendored from the `luma/luma-types` bundle
+rather than defined here, and gains `contributors`.
+
+**It stopped being this bundle's to own because a second maintainer is coming.**
+The capture-and-tend practice defines ideas today; a backlog tool will become
+their primary maintainer, and a contract two things must agree on does not belong
+to whichever needed it first.
+
+**`contributors` was the field this bundle called *the field that matters* and
+never declared.** It appeared in every idea's frontmatter and in no contract —
+`recommended`, `list of actor`. It can be strengthened later without a
+supersession now that inheritance permits raising an obligation.
+
+*Migration:* replace `type: idea` with `type: luma/idea`. The fields are
+otherwise identical.
 
 `0.5.0` — duplicate detection, ordering, and untitled entries; new content,
 existing use unaffected.
