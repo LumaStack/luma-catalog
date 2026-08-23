@@ -70,8 +70,9 @@ never by the agent about to violate it.
 They answer overlapping questions, so a document can state both and contradict
 itself.
 
-**A `concept` marked `preload: mandatory` is mistyped.** If it genuinely must be
-present at all times, its reach is *standing*, which makes it a policy. **A
+**A document in `concepts/` marked `preload: mandatory` is misfiled.** If it
+genuinely must be present at all times, its reach is *standing*, which makes it a
+policy. **A
 `policy` marked `optional` is worth a second look** — a rule nobody loads unless
 they think to is not governing anything, though it can be right where a bundle
 holds rules for a narrow case.
@@ -126,7 +127,8 @@ does not do, what would falsify it, and what it is waiting on that does not
 exist yet.
 
 **Most bundles need none**, and an empty one is noise. A bundle earns its first
-concept when a policy has grown an argument longer than the rule it justifies —
+background document when a policy has grown an argument longer than the rule it
+justifies —
 which is the moment that argument starts costing every consumer who preloads
 the rule.
 
@@ -156,8 +158,8 @@ evaluate.
 **`_types/`** — Type Definitions, for types **this bundle declares**. Reserved
 by the format, so the name is not ours to change.
 
-**Never vendor a built-in.** `document`, `concept`, `workflow`, `policy`,
-`bundle` and `type_definition` are supplied by the format, and copying one into a
+**Never vendor a built-in.** `document`, `workflow`, `policy`, `bundle` and
+`type_definition` are supplied by the format, and copying one into a
 bundle creates a private definition that can drift from the real one while every
 consumer still assumes the format's meaning. A bundle that declares no types of
 its own has no `_types/` directory.
@@ -165,6 +167,32 @@ its own has no `_types/` directory.
 That is not hypothetical: this catalog carried eighteen vendored copies of
 `workflow` and `policy` before they became built in, every one identical and
 every one a place drift could start.
+
+### Before declaring a type, look for one that exists
+
+**A type this bundle needs but did not invent is usually somebody else's
+already.** Check in this order:
+
+1. **The format's built-ins** — never vendored, never redeclared.
+2. **A shared type library**, where the organization keeps types more than one
+   tool must agree on. Vendor from there rather than writing a second definition
+   of the same idea.
+3. **Another bundle in this catalog** — if one already declares it, that is
+   evidence the type is shared and belongs in the library rather than copied a
+   second time.
+
+**Two bundles declaring the same idea under different names is the failure this
+prevents**, and it is invisible: both are conformant, both validate, and nothing
+reports that a reader has to reconcile them by hand.
+
+**Where the shared library lives is an organization's choice, not this bundle's.**
+Find it the way any repository is found — through the organization's repository
+index — rather than from a path written down here, because a path hardcoded in a
+published bundle is wrong for everyone who is not us.
+
+**A vendored copy is a snapshot.** Record the version you took. Nothing in the
+format yet signals that a copy has gone stale or been edited, so re-vendoring is
+a deliberate act rather than something a tool will remind you about.
 
 ## Three rules that decide where something goes
 
@@ -270,8 +298,8 @@ This is why a bundle that needs a type **another bundle declares** carries its
 own copy rather than referencing it. Bundles have no dependencies, and vendoring
 is the mechanism.
 
-**That does not apply to built-ins.** `document`, `concept`, `workflow`,
-`policy`, `bundle` and `type_definition` come from the format, so a bundle using
+**That does not apply to built-ins.** `document`, `workflow`, `policy`, `bundle`
+and `type_definition` come from the format, so a bundle using
 them is already self-contained — copying one in creates a private definition
 that can drift while every consumer still assumes the format's meaning. See
 *Never vendor a built-in* above.

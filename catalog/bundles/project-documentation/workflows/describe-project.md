@@ -44,7 +44,7 @@ enough yet.
 
 ```yaml
 ---
-type: project
+type: luma/project
 title: <repository name>
 description: <when somebody should open this>
 ---

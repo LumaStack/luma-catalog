@@ -1,5 +1,5 @@
 ---
-type: catalog
+type: luma/catalog
 description: Universal bundles — the starting set any organization can adopt.
 tags:
   - service

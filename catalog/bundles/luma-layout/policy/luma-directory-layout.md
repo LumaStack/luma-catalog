@@ -17,12 +17,45 @@ preload: mandatory
   config/
     foreman.toml      how a tool behaves here
   records/            what happened, and why
+  _types/             contracts for documents that are in no bundle
 ```
 
 **This describes what the tools already do.** Adopting this bundle does not make
 the layout apply to you — anything writing into `.luma/` is bound by it whether
 you adopt or not. You adopt it so an agent working here can read the contract
 locally, without reaching for anything remote.
+
+## `_types/` holds contracts for documents that are in no bundle
+
+**Almost every Document gets its contract from the bundle it lives in.** The
+knowledge format resolves a type from *that* bundle's `_types/`, which is what
+lets two bundles hold different versions of one type without contradiction.
+
+**`project.md` is in no bundle.** It sits above the tiers, describing the
+repository the tiers belong to — so there is no bundle to resolve its `type`
+from, and the format says outright that whoever puts a Document there owes it an
+answer. `.luma/_types/` is that answer.
+
+**It is the project's single answer, and that is the point.** Where a bundle's
+`_types/` is scoped to that bundle, this one is scoped to the whole repository:
+one contract for `luma/project`, whatever the adopted bundles happen to carry
+individually. Two bundles disagreeing about a type used *inside* them is fine.
+Two answers for the file at `.luma/project.md` is not, because there is only one
+of it.
+
+**Vendored, like any shared type**, with `vendored_from` recording the version
+taken. That second job matters more here than elsewhere: it is how anything
+collecting descriptors across an organization can ask which contract a given
+project is written against, instead of guessing from which fields happen to be
+present.
+
+**Empty is the normal state.** A repository whose `.luma/` holds only a
+descriptor and a backlog needs nothing here — the directory appears when
+something outside a bundle needs a contract, and most projects never reach that.
+
+*Not to be confused with a bundle's own `_types/`, which is reserved by the
+format and scoped to that bundle. Same name, deliberately: same job, different
+scope.*
 
 ## Why one directory, and why hidden
 

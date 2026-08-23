@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.4.0
-published: 2026-08-19
+version: 0.5.0
+published: 2026-08-22
 consumers: [project]
 entry_point: policy/readme
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
@@ -90,6 +90,26 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.5.0` — `project` becomes `luma/project`, vendored from the `luma/luma-types`
+bundle rather than defined here. Breaking for anything matching on the bare type
+name.
+
+**This bundle stopped being the type's owner because more than one tool needs to
+agree on it.** foreman reads a project descriptor, so would a cataloger, so does
+the backlog tool — and a contract three tools depend on cannot belong to whichever
+bundle happened to need it first. It is vendored here like anywhere else, with
+`vendored_from` recording the version taken.
+
+**Namespaced rather than reserved in the format.** `project` is claimed across the
+industry; `luma/project` cannot collide with anybody else's. Making it a knowledge-
+format built-in was considered and declined — a consumer ignoring it reads the file
+correctly as a plain `document`, and the type changes at this organization's rate
+rather than the format's.
+
+*Migration:* replace `type: project` with `type: luma/project` in `.luma/project.md`.
+Nothing else changes; the fields are identical.
+
 
 `0.4.0` — the declared-versus-actual rules are new content; existing use is
 unaffected.

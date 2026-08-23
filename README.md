@@ -7,6 +7,8 @@ A catalog of universal bundles containing standards, workflows, and knowledge
 that any organization can adopt — versioned and vendored, so you're in control.
 Use our catalog, or run your own alongside it.
 
+[Browse the bundles](catalog/bundles).
+
 > **Status:** seed. The shape is settled; the shelves are empty.
 
 ## What a bundle is

@@ -9,7 +9,7 @@ optional and most repositories should leave it out.
 
 ```yaml
 ---
-type: project
+type: luma/project
 title: acme-web
 description: The customer-facing storefront — anything a buyer sees, checkout, or the payment integration.
 ---
@@ -30,7 +30,7 @@ only this sentence?** If two would read the same, it is not specific enough.
 
 ```yaml
 ---
-type: project
+type: luma/project
 title: acme-web
 description: The customer-facing storefront — anything a buyer sees, checkout, or the payment integration.
 owns: [storefront, checkout, payment-integration]
