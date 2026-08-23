@@ -53,7 +53,9 @@ jobs:
       # mandated and deprecated, a starter pinning what this catalog's own
       # mandate forbids, a requirement naming a bundle nobody publishes.
       - name: The catalog agrees with itself
-        run: "$RUNNER_TEMP/curator/bin/luma-catalog-curator" check .
+        run: |
+          set -eu
+          "$RUNNER_TEMP/curator/bin/luma-catalog-curator" check .
 
       # **Only on a pull request, because only a pull request has a base.** On a
       # merge to main the comparison has already been made against the same
@@ -72,4 +74,6 @@ jobs:
       # carrying live frontmatter. Every one is conformant, so the bundle
       # publishes cleanly and the defect travels to every adopter.
       - name: No bundle is broken in a way only foreman notices
-        run: "$RUNNER_TEMP/foreman/bin/luma-foreman" inspect
+        run: |
+          set -eu
+          "$RUNNER_TEMP/foreman/bin/luma-foreman" inspect
