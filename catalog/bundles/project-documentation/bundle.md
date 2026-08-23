@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.1
+version: 0.7.0
 published: 2026-08-23
 consumers: [project]
 entry_point: policy/readme
@@ -27,6 +27,8 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
+- [[reserved-document-names]] — which filenames a tool matches, where the
+  capitals are load-bearing, and where they are only typography.
 - [[where-history-belongs]] — history stays in loaded context only where it earns
   its place; where it goes otherwise, and what earning it looks like.
 - [[the-project-descriptor]] — the one file written for something *outside* the
@@ -92,6 +94,19 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.7.0` — adds [[reserved-document-names]]. New content; existing use is
+unaffected.
+
+**Written because the convention is copied without its reasons.** Capitals on
+`README.md` are cargo from 1970s ASCII sort order; capitals on
+`CODE_OF_CONDUCT.md` are a tool matching a name and failing silently when it
+does not. Those are different facts wearing the same typography, and nothing
+here said which was which.
+
+It also records that the sources disagree — GNU says `COPYING` where GitHub
+looks for `LICENSE`, and GNU's own `ChangeLog` is CamelCase — so *all-caps is
+the convention* was never true.
 
 `0.6.1` — a wikilink in `where-history-belongs` pointed into the
 `luma/git-workflow` bundle and therefore at nothing. Named in prose instead —
