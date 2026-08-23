@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.5.0
-published: 2026-08-22
+version: 0.6.0
+published: 2026-08-23
 consumers: [project]
 entry_point: policy/readme
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
@@ -27,6 +27,8 @@ we have*, it is **what condition have we hit**.
   that earns each one.
 - [[documentation-layout]] — prose goes in `docs/`; what stays at the root and
   why.
+- [[where-history-belongs]] — history stays in loaded context only where it earns
+  its place; where it goes otherwise, and what earning it looks like.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
@@ -91,7 +93,7 @@ from what a project publishes about its code.
 
 ## Version
 
-`0.5.0` — `project` becomes `luma/project`, vendored from the `luma/luma-types`
+`0.6.0` — `project` becomes `luma/project`, vendored from the `luma/luma-types`
 bundle rather than defined here. Breaking for anything matching on the bare type
 name.
 
@@ -110,6 +112,37 @@ rather than the format's.
 *Migration:* replace `type: project` with `type: luma/project` in `.luma/project.md`.
 Nothing else changes; the fields are identical.
 
+`0.5.0` — [[where-history-belongs]] is new content; existing use is unaffected.
+
+**A preference with examples, deliberately not a rule or a test.** Documentation
+keeps producing cases nobody anticipated, and both earlier drafts of this tried to
+close the question — first by asking whether something was history, then by asking
+whether keeping it prevented re-derivation. Each was a real consideration promoted
+into the only one.
+
+**History is concentrated rather than discarded.** Git history has its own job —
+detective work when something breaks, and learning what a process gets wrong — and
+that job is served better when the material is in one place than when it is
+sprinkled through documents, where it also costs every reader on every read.
+
+**The bundle was written entirely for human readers** — the front door, the
+newcomer, the stranger with nowhere to report a vulnerability — and never said
+that these documents are also loaded into agents, in full, repeatedly, against a
+finite budget. That turns noise from a matter of taste into a recurring cost, and
+gives *every document is a liability until somebody reads it* a second and sharper
+reason.
+
+**It also relocates something rather than forbidding it.** Reasoning that changed
+course is worth keeping — it is how a team learns what its process gets wrong. It
+belongs in git history, where it costs a reader nothing until they go looking. The
+policy sends it somewhere that already claims the job: `luma/git-workflow` rests
+its case against squashing on the commit message being where rationale lives.
+
+**The exception is named as a type rather than a circumstance.** Decision records
+and audit records exist precisely to show their work. *Show your work where it
+matters* is a judgement every author makes generously about their own writing; *a
+decision record shows its work, a README does not* is a fact about which file is
+open.
 
 `0.4.0` — the declared-versus-actual rules are new content; existing use is
 unaffected.
