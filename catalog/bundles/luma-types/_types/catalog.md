@@ -1,9 +1,13 @@
 ---
 type: type_definition
 defines: luma/catalog
-version: "0.1.0"
+version: "0.2.0"
 extends: document
 fields:
+  namespace:
+    obligation: recommended
+    field_type: text
+    desc: "the prefix every Bundle this catalog publishes is addressed under"
   tags:
     obligation: recommended
     field_type: list of text
@@ -25,7 +29,30 @@ fields:
 **A catalog publishes Bundles and says how strongly consumers should adopt
 them.** A Document with `type: luma/catalog` sits at the root of a catalog's
 content directory and is the only thing in that repository authoritative about
-the four fields above.
+the five fields above.
+
+## `namespace`
+
+**Every Bundle is addressed `<namespace>/<name>`, and the namespace belongs to
+the catalog rather than to the Bundle.** `luma/decision-records` is *the
+`decision-records` published by the `luma` catalog*; the same Bundle promoted
+into another organization's catalog is that organization's to name.
+
+**Without it a catalog cannot be addressed by a tool.** A catalog that writes
+`luma/git-secrets` in its own `starters` is naming a prefix nothing in the file
+declares, so anything adopting from it has to be told out of band what to call
+what it just took — and a name learned out of band is a name that gets typed
+wrongly.
+
+`recommended` rather than `mandatory` because an adopter may always name the
+namespace explicitly, so an undeclared one costs a keystroke rather than
+breaking anything. It is also the honest obligation for a field added after
+catalogs existed.
+
+**A namespace is not resolved and points at nothing.** It does not have to be
+globally unique, no registry issues one, and two organizations may both publish
+`acme/`. Collisions are visible in one place — an adopting project, whose
+`.luma/bundles/` would hold both — rather than something a catalog can prevent.
 
 ## Why this is not a format built-in
 

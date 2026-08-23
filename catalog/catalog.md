@@ -1,5 +1,6 @@
 ---
 type: luma/catalog
+namespace: luma
 description: Universal bundles — the starting set any organization can adopt.
 tags:
   - service
@@ -28,6 +29,10 @@ Bundles useful to an organization with no connection to Luma. What each field
 means and how it resolves is in [`bundles/luma-types/_types/catalog.md`](bundles/luma-types/_types/catalog.md) — the one canonical copy, published in the `luma/luma-types` bundle rather than duplicated beside this file.
 
 No `upstream`: this is the root of the chain.
+
+`namespace: luma` is what makes `luma/decision-records` addressable by something
+other than a person. It had been written throughout the starters below and
+declared nowhere, which a reader absorbs without noticing and a tool cannot.
 
 ## What is claimed, and what is not
 
