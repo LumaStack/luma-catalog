@@ -170,7 +170,7 @@ under somebody's organization is visible to their whole team and is not yours to
 do unprompted.
 
 ```sh
-gh repo create <account>/<slug>-hq --private --description "<Organization>'s headquarters — standards, decisions and boundaries"
+gh repo create <account>/<slug>-hq --private --description "<Organization>'s headquarters — policies, decisions and boundaries"
 ```
 
 **`--private` is not optional and not a default to rely on.** State it, and

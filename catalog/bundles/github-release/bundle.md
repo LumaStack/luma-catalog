@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-18
 consumers: [project]
 entry_point: workflows/publish-release
@@ -37,7 +37,7 @@ headquarters is a repository too, but it is not something you cut versions of.
 
 ## Loading
 
-Only [[publish-release]] is `preload: mandatory`. The two standards are
+Only [[publish-release]] is `preload: mandatory`. The two policies are
 `optional`: they are read when the workflow points at them or when someone
 questions a version number, not held in context against the possibility.
 
@@ -53,6 +53,14 @@ to undo than anything else in the workflow, and on a managed machine it may not
 be yours to do.
 
 ## Version
+
+`0.1.1` — *standard* becomes *policy*. Wording only: `policy` is the document
+type the format defines and the word this estate uses everywhere else, and
+`standard` was deliberately freed for the organization level rather than left
+doing double duty.
+
+Patch because a reader who correctly understood `0.1.0` behaves identically.
+The subject noun changed; nothing it requires, permits or forbids did.
 
 `0.1.0`. The conventions here are drawn from releases actually cut rather than
 imagined, but the workflow's `gh` handling has not yet been run against a

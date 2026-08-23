@@ -8,7 +8,7 @@ preload: mandatory
 # What a headquarters holds
 
 An organization's headquarters is **one internal repository holding what is
-specific to you**: your standards, your boundaries, what you have already
+specific to you**: your policies, your boundaries, what you have already
 learned, and what to build next.
 
 It is a repository like any other, so the same `.luma/` tiers apply to it. **The
@@ -42,7 +42,7 @@ a competitor, what it learned the expensive way: all of it in one repository,
 organized, indexed, and far easier to read than the systems it describes.
 
 **An agent must never publish this repository, or copy from it into anything
-public, without a person deciding.** Not to share one useful standard, not
+public, without a person deciding.** Not to share one useful policy, not
 because a link would be convenient, not to make a nice public readme. If
 publishing seems right, say so and stop.
 
@@ -74,7 +74,7 @@ into, and never a call an agent makes on its own.
 ## Recommended, and genuinely optional
 
 **An organization can work without one.** Small teams, single-project
-organizations, and anyone whose standards fit in one repository's `.luma/` are
+organizations, and anyone whose policies fit in one repository's `.luma/` are
 not missing anything.
 
 What a headquarters buys is **somewhere for a decision that outlives the project
@@ -99,7 +99,7 @@ So where it lives is recorded as configuration:
 - **In a public one** — machine-local, in `~/.config/luma/`, never committed.
 
 **Nothing at runtime should need it.** A check that requires reading the
-headquarters has broken the boundary: standards are argued and settled here, and
+headquarters has broken the boundary: policies are argued and settled here, and
 travel outward as executable checks that run without it.
 
 ## One reader is a single point of failure

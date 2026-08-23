@@ -55,7 +55,7 @@ argument with no rotation available.
 ## Why recommended rather than required
 
 **An organization with one project does not need one**, and neither does one
-whose standards fit comfortably in a single `.luma/`. Creating a headquarters
+whose policies fit comfortably in a single `.luma/`. Creating a headquarters
 before there is cross-project reasoning to put in it produces an empty
 repository that makes the practice look like ceremony.
 
