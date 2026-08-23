@@ -1,5 +1,5 @@
 ---
-type: idea
+type: luma/idea
 title: Meta-skills that generate a project's own practice rather than copying a template
 created: { by: human:benlinton, at: 2026-08-09T00:00:00Z }
 contributors: [human:benlinton, agent:claude-opus-5]

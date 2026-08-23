@@ -19,7 +19,7 @@ One or two sentences. The idea, not the plan.
 
 ```yaml
 ---
-type: idea
+type: luma/idea
 title: <the idea in one line>
 created: { by: <you>, at: <timestamp> }
 contributors: [<everyone actively in the exchange>]

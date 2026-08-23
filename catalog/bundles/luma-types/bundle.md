@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.1.0
-published: 2026-08-22
+version: 0.2.0
+published: 2026-08-23
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
 ---
@@ -18,6 +18,9 @@ format means by vendoring, and it is the only sharing mechanism the format has.
   consumers to adopt them.
 - **`luma/project`** — a repository describing itself, for something outside it
   to read.
+- **`luma/idea`** — something worth doing that nobody is doing yet. Shared
+  because the capture-and-tend practice defines them today and a backlog tool
+  will become their primary maintainer.
 
 ## Why these are not built into the format
 
@@ -130,6 +133,14 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.2.0` — adds `luma/idea`, which gains a `contributors` field it had been
+carrying in every file without declaring anywhere.
+
+**Promoted before a second consumer exists, deliberately.** A backlog tool will
+become the primary maintainer of ideas, and waiting for it would mean
+reconciling copies rather than gathering evidence — the same call made for
+`luma/catalog`.
 
 `0.1.0`. Both types are extracted from working practice rather than invented, but
 that practice is days old and nothing has vendored them yet. `1.0.0` would claim

@@ -11,7 +11,7 @@ absent.
 
 ```yaml
 ---
-type: idea
+type: luma/idea
 title: <the idea in one line>
 created: { by: human:<id>, at: 2026-08-20T09:00:00Z }
 ---
@@ -26,7 +26,7 @@ somebody needs to be able to find.
 
 ```yaml
 ---
-type: idea
+type: luma/idea
 title: <the idea in one line>
 created: { by: human:<id>, at: 2026-08-20T09:00:00Z }
 contributors: [agent:<model>]
