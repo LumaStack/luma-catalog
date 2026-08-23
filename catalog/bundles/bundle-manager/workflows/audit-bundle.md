@@ -64,8 +64,10 @@ checklist rather than a feeling.
 
 ## Loading
 
-- **Nothing in `concepts/` is `preload: mandatory`.** Standing presence is what
-  makes something a policy; background that must always be loaded is misfiled.
+- **Nothing in `concepts/` is `preload: mandatory` without a reason.** Not a
+  contradiction — background can legitimately be wanted upfront — but it is the
+  most expensive filing decision available, and rationale everybody preloads is
+  usually a policy that grew an argument.
 - **A `preload: mandatory` policy carries no long argument.** Every consumer
   pays for it in every session. Reasoning past a clause or two belongs in
   `concepts/` — see [[organizing-a-bundle]].
