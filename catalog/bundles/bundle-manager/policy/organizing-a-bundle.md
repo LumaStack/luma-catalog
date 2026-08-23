@@ -28,22 +28,27 @@ Follow it anyway. A reader opening any bundle should see its shape in one
 glance, and a bundle with three documents at the root becomes a bundle with
 fifteen at the root.
 
-## The three document directories are three disclosure tiers
+## The three document directories follow the format's types
 
 `workflows/`, `policy/` and `concepts/` are not an arbitrary filing scheme. They
-are the format's three-way partition, which cuts documents by **how each one
-reaches a consumer** — and that decides what a reader pays for:
+follow the format's partition, which cuts documents by **what a consumer does
+with each one**:
 
-| tier | what belongs there | when it loads |
+| tier | what belongs there | what a consumer does |
 | --- | --- | --- |
-| **`policy/`** | what to do, and what outranks what | **standing** — kept present |
-| **`workflows/`** | the procedures | **invoked** — loaded while being followed |
-| **`concepts/`** | background that explains: rationale, models, open questions | **retrieved** — when relevant, and not otherwise |
+| **`policy/`** | what to do, and what outranks what | **is bound by it** — a rule constraining its own behaviour |
+| **`workflows/`** | the procedures | **runs it** |
+| **`concepts/`** | background that explains: rationale, models, open questions | **reads it** — an ordinary `document` |
 
-**Filing by tier is a cost decision, not a tidiness one.** A `preload:
-mandatory` policy is loaded into every session that touches the bundle. Put the
-argument for the bundle's existence there and every consumer pays for it forever,
-to answer a question they are not asking.
+**What a consumer does with a document is a different question from when it
+loads.** The type answers the first, `preload` answers the second, and they are
+orthogonal — a rule binds whether or not it happens to be in front of you.
+
+**Filing by tier is still a cost decision.** A `preload: mandatory` policy is
+loaded into every session that touches the bundle, so putting the argument for
+the bundle's existence there means every consumer pays for it forever to answer a
+question they are not asking. That is a `preload` decision which usually follows
+the tier — not the tier itself.
 
 ### The test: is the reader working *on* this, or *through* it?
 
@@ -65,19 +70,29 @@ never present when it is needed** — a rule about what outranks what, filed as
 background, is loaded only by people already reasoning about the bundle and
 never by the agent about to violate it.
 
-### `preload` and `type` must agree
+### `preload` and `type` answer different questions
 
-They answer overlapping questions, so a document can state both and contradict
-itself.
+**They used to overlap, and no longer do.** The format defined `policy` as
+*standing — kept present*, close enough to `preload: mandatory` that a document
+could state both and contradict itself. `0.0.11` redefined the types by what a
+consumer *does* — run it, be bound by it, read it — which leaves `preload` alone
+in answering whether you have it.
 
-**A document in `concepts/` marked `preload: mandatory` is misfiled.** If it
-genuinely must be present at all times, its reach is *standing*, which makes it a
-policy. **A
-`policy` marked `optional` is worth a second look** — a rule nobody loads unless
-they think to is not governing anything, though it can be right where a bundle
-holds rules for a narrow case.
+**So `policy` with `preload: optional` is an ordinary thing** rather than the
+smell it used to be: a rule that binds when it applies and costs nothing until
+then. Rules for a narrow case belong exactly there.
 
-Nothing enforces this. It is a cheap thing to check in [[audit-bundle]].
+**What is still worth a second look is a document in `concepts/` marked
+`preload: mandatory`** — not because it contradicts its type, since background
+can legitimately be wanted upfront, but because it is the most expensive filing
+decision available. *Rationale everybody preloads* is usually a policy that grew
+an argument.
+
+**And a rule nobody loads still governs nothing.** That is a reachability problem
+rather than a typing one: the answer is something always present naming the rules
+that exist, not marking every policy mandatory. Nothing here does that yet.
+
+Nothing enforces any of this. It is a cheap thing to check in [[audit-bundle]].
 
 ### `concept` is gone, and this convention outlived it
 
@@ -91,10 +106,11 @@ did: documents in `concepts/` are now `type: document`, and nothing else changed
 The tier distinction never depended on the type name — it depends on `preload`
 and on where a reader looks.
 
-**Which is worth keeping in mind for the tier above it.** `policy` is still a
-built-in and still defined as *standing — kept present*, which overlaps `preload`
-closely enough that the format has the question open. If it resolves the way
-`concept` did, this table changes a word and nothing else.
+**And the tier above it resolved differently, in `0.0.11`.** `policy` had the
+same shape of problem — defined as *standing — kept present*, overlapping
+`preload` — but it survived, because it was the definition that was wrong rather
+than the type. Redefined as *what binds you*, it stops competing with a loading
+field and starts saying something no other field does.
 
 ## Directories group documents; the `type` identifies them
 
