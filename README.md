@@ -1,10 +1,10 @@
 # luma-catalog
 
 > [!NOTE]
-> **Standards, workflows and knowledge that give your agents superpowers.**<br>
+> **Policies, workflows and knowledge that give your agents superpowers.**<br>
 > Drop in best practices, move faster together, and get things right the first time.
 
-A catalog of shared bundles containing standards, workflows, and knowledge
+A catalog of shared bundles containing policies, workflows, and knowledge
 that any organization can adopt — versioned and vendored, so you're in control.
 Use our catalog, or run your own alongside it.
 
@@ -14,23 +14,42 @@ Use our catalog, or run your own alongside it.
 
 A [Luma Knowledge Format](https://github.com/LumaStack/luma-knowledge-format)
 Bundle: a self-contained directory of typed markdown documents, plus whatever
-assets they reference, describing itself at its root with a `version`. Not a
-package — bundles never depend on one another, so adopting one is copying a
-directory and verifying one is a checksum over it.
+assets they reference, describing itself at its root with a `version`.
 
-A standard, a workflow, and a set of type definitions are all bundles. They
+**No bundle here depends on another**, so adopting one is copying a directory —
+there is nothing to resolve and no order to install in. That is the current
+model rather than a promise about the future: whether bundles should ever
+declare dependencies is
+[an open design question](https://github.com/LumaStack/luma-leader), and the
+position is *not yet* rather than *never*.
+
+**Verifying is three things, and only one of them is the checksum.** The
+checksum says the vendored copy is byte-for-byte what was adopted. Whether the
+bundle is internally sound, and whether the catalog holding it is
+self-consistent, are separate checks that run before anything is published —
+see below.
+
+A policy, a workflow, and a set of type definitions are all bundles. They
 differ in what they contain, not in how they travel.
 
 ## Layout
 
 ```
 catalog/
-  catalog.md       the vocabulary, the starters, and the requirements
-  _types/          Type Definitions — what `type: catalog` declares, and why
+  catalog.md       the namespace, the vocabulary, the starters, the requirements
   bundles/         one directory per bundle, flat
+.github/           the checks that gate a merge — see Contributing
+docs/
 README.md          everything else here maintains the catalog
 LICENSE
 ```
+
+**There is no `_types/` beside `catalog.md`.** The contract for
+`type: luma/catalog` is published in the `luma/luma-types` bundle and referenced
+from here rather than copied — *reference within a repository, vendor across
+them*. A second copy in this repository would have nothing keeping it in step,
+and the one that briefly existed had already drifted a version before it was
+removed.
 
 `catalog.md` holds only what is true of *this* catalog. Everything general —
 what each field means, how two catalogs resolve, what `mandatory` does — lives
@@ -81,7 +100,7 @@ from a bare clone with no network.
 
 | repository | kind | |
 | --- | --- | --- |
-| [`luma-leader`](https://github.com/LumaStack/luma-leader) | engine | argue standards into existence |
+| [`luma-leader`](https://github.com/LumaStack/luma-leader) | engine | argue policies into existence |
 | [`luma-foreman`](https://github.com/LumaStack/luma-foreman) | engine | apply them, one repository at a time |
 | `luma-catalog` | content | this repository — universal bundles |
 | your organization's hq | content | your governance, learnings, analysis |
