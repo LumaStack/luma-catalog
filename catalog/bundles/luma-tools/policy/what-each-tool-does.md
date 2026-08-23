@@ -1,7 +1,7 @@
 ---
 type: policy
 title: What each luma tool does
-description: The tools, the one job each performs, and the rule that decides which one you are talking to. Read before installing or invoking any of them.
+description: The tools, the one job each performs, and when to use them. Read before installing or invoking any of them.
 preload: mandatory
 ---
 
@@ -32,11 +32,9 @@ adopters never publish anything.
 
 **`luma-leader` and `luma-foreman` are role metaphors and the rest are not**,
 which is deliberate rather than untidy. Names of tools added from 2026-08-23
-onward say the verb they perform; the two that predate the rule keep their
-names, because a convention requiring everything to be renamed before it can be
-adopted is one nobody adopts.
+onward say the verb they perform.
 
-## Engines are installed and never forked. Everything else is yours
+## Engines are installed; not forked. Everything else is yours
 
 **That single line is what tells a tool from content**, and it settles most
 questions about what you may change.

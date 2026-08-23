@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.3.1
 published: 2026-08-23
 consumers: [project, organization]
 entry_point: workflows/adopt-knowledge
@@ -54,6 +54,14 @@ which is the same gap adoption exists to close, left open in the one place it is
 most embarrassing.
 
 ## Version
+
+`0.3.1` — wording in [[what-each-tool-does]]: a tighter description, a shorter
+heading, and a clause about renaming conventions cut as rationale nobody needed
+at that point.
+
+Patch because no normative sentence moved. A reader who correctly understood
+`0.3.0` behaves identically — which is the test, and it is the tier most easily
+got wrong for prose. Benjamin's wording.
 
 `0.3.0` — **`luma-catalog-curator` exists.** Built the same day it was named, so
 `0.2.0` was accurate for a few hours.
