@@ -11,11 +11,13 @@ tags:
 starters:
   project:
     - luma/luma-layout
+    - luma/luma-tools
     - luma/git-secrets
     - luma/project-documentation
     - luma/decision-records
   organization:
     - luma/luma-layout
+    - luma/luma-tools
     - luma/decision-records
     - luma/organization-internal-hq
 requires:
@@ -47,6 +49,12 @@ causes harm rather than inconvenience: a published credential cannot be
 unpublished, and a leaked identity is permanent in every clone. Everything else
 is quality of life, and reporting five gaps at a project that just adopted its
 first bundle is how a report gets ignored.
+
+**`luma/luma-tools` is in both starter sets** because anything adopting from
+this catalog is running `foreman` to do it — so *how the tool works* is
+knowledge every adopter needs and nobody currently gets. `luma/luma-maintainers`
+is in neither: it describes how this estate is maintained, which is somebody
+else's internals to anybody but us.
 
 **Starters carry the rest.** What a new project begins with is a different
 question from what every project owes, and conflating them produces either a
