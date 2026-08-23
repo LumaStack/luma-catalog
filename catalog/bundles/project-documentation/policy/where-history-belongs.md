@@ -23,7 +23,7 @@ already uses for it.**
 have in common is that holding the reasoning is their job — so any destination
 with that property qualifies, including ones nobody here has thought of.
 
-- **git history** — the commit message. [[merge-commits]] in the
+- **git history** — the commit message. The `merge-commits` policy in the
   `luma/git-workflow` bundle rests its case against squashing on the commit
   message being where rationale lives, so this is a home that already claims the
   job.

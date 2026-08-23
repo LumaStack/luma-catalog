@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.6.1
 published: 2026-08-23
 consumers: [project]
 entry_point: policy/readme
@@ -92,6 +92,10 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.6.1` — a wikilink in `where-history-belongs` pointed into the
+`luma/git-workflow` bundle and therefore at nothing. Named in prose instead —
+the sentence already said which bundle it meant, so nothing was lost.
 
 `0.6.0` — `project` becomes `luma/project`, vendored from the `luma/luma-types`
 bundle rather than defined here. Breaking for anything matching on the bare type

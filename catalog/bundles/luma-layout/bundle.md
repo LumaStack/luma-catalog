@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.5.0
 published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -72,6 +72,17 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.5.0` — how a tool writes into a file it does not own. New content; existing
+use is unaffected.
+
+**Written the day a tool first had to.** *Generated files are never the source*
+was true and unhelpful the moment something needed to put an index into a
+`CLAUDE.md` somebody had already written by hand — owning the file destroys
+their work, owning none of it means nothing reaches an agent. A delimited
+region is the answer, and the marker on generated output is the same problem
+from the other side: a tool cannot clean up after itself unless it can tell
+what it wrote.
 
 `0.4.0` — two corrections and one addition. Existing use is unaffected; both
 corrections remove a copy rather than requiring one.
