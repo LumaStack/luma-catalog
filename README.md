@@ -1,15 +1,14 @@
 # luma-catalog
 
+> [!NOTE]
 > **Standards, workflows and knowledge that give your agents superpowers.**<br>
 > Drop in best practices, move faster together, and get things right the first time.
 
-A catalog of universal bundles containing standards, workflows, and knowledge
+A catalog of shared bundles containing standards, workflows, and knowledge
 that any organization can adopt — versioned and vendored, so you're in control.
 Use our catalog, or run your own alongside it.
 
 [Browse the bundles](catalog/bundles).
-
-> **Status:** seed. The shape is settled; the shelves are empty.
 
 ## What a bundle is
 
@@ -42,8 +41,8 @@ once rather than copied into every catalog that ever exists.
 the catalog.** That boundary is structural rather than conventional so a program
 consuming this repository has one unambiguous answer for where content starts,
 and so a sparse checkout has one subtree to name. Documentation, contribution
-guidance and continuous integration will accumulate at the root over time and
-none of it is catalog content.
+guidance and the continuous integration that gates this repository live at the
+root, and none of it is catalog content.
 
 Inside, bundles are **flat**, and each declares in its `bundle.md` which kinds
 of consumer may adopt it:
@@ -73,9 +72,10 @@ is picked from rather than copied, and contains bundles.
 ## How this is consumed
 
 Never resolved, always copied. There is no client, no API, and no version
-solver — `luma-foreman` vendors a bundle into a project's `.luma/policy/`, and
-the vendored copy is the lockfile. That is the whole distribution model, and it
-is deliberate: a project must keep working from a bare clone with no network.
+solver — `luma-foreman` vendors a bundle into a project's
+`.luma/bundles/<org>/<name>/`, and the vendored copy is the lockfile. That is
+the whole distribution model, and it is deliberate: a project must keep working
+from a bare clone with no network.
 
 ## Where this sits
 
@@ -108,6 +108,36 @@ behind.
 What belongs here is anything that would help an organization with no connection
 to Luma. Anything naming your customers, your systems, or your people belongs in
 your own catalog.
+
+### Merging is publication
+
+There is no release step and no tag. **A bundle becomes available by being on
+`main`**, which is why everything that could refuse it has to run before the
+merge rather than after.
+
+Every pull request runs two tools, and a red run blocks the merge.
+
+[`luma-catalog-curator`](https://github.com/LumaStack/luma-catalog-curator)
+checks whether the catalog **agrees with itself** — a bundle both mandated and
+deprecated, a starter naming something nobody publishes, a requirement tagged
+outside the published vocabulary. Those are contradictions no single project
+could ever detect.
+
+[`luma-foreman`](https://github.com/LumaStack/luma-foreman) checks whether **any
+one bundle is broken in a way the format tolerates** — a dangling link, an
+unquoted wikilink in frontmatter, a template carrying live frontmatter. All
+three are conformant, so without this they publish cleanly and travel to every
+adopter.
+
+**The one that catches most contributors: change a bundle and its version has to
+move.** The check compares your branch against its base and reports any bundle
+whose files changed while `version` in its `bundle.md` did not. An adopter
+decides whether to take a change by comparing versions, so a change that does
+not move the number is a change nobody downstream can see.
+
+The tier is yours to judge. A patch that edits a normative sentence, or a
+non-major release that removes a document, is **surfaced as a notice rather than
+refused** — a second reader, not a gate.
 
 ## License
 
