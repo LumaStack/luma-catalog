@@ -104,7 +104,7 @@ the old name is claimed by something else.
 The reverse direction, and the one nobody checks.
 
 **Has anything from the headquarters been copied into a public repository?** A
-standard quoted into a public readme, a decision pasted into a public issue, an
+policy quoted into a public readme, a decision pasted into a public issue, an
 internal service named in a bundle promoted upstream.
 
 **Promotion is the likely path.** A bundle moving from the headquarters to the

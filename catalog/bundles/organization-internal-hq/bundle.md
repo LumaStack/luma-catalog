@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.6.1
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -283,6 +283,14 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.6.1` — *standard* becomes *policy*. Wording only: `policy` is the document
+type the format defines and the word this estate uses everywhere else, and
+`standard` was deliberately freed for the organization level rather than left
+doing double duty.
+
+Patch because a reader who correctly understood `0.6.0` behaves identically.
+The subject noun changed; nothing it requires, permits or forbids did.
 
 `0.6.0` — repository entries move under their account,
 `repositories/<account>/<name>.md`. **Breaking for anybody who already has a flat

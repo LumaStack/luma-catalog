@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-19
 consumers: [project, organization]
 entry_point: policy/semantic-versioning
@@ -49,11 +49,19 @@ starters are for. Composition belongs to the catalog, not to bundles.
 
 ## Consumers
 
-Both levels. An organization versions its published standards and its own
+Both levels. An organization versions its published policies and its own
 catalog contents; a project versions its packages, schemas and bundles. The
 rules are identical.
 
 ## Version
+
+`0.1.1` — *standard* becomes *policy*. Wording only: `policy` is the document
+type the format defines and the word this estate uses everywhere else, and
+`standard` was deliberately freed for the organization level rather than left
+doing double duty.
+
+Patch because a reader who correctly understood `0.1.0` behaves identically.
+The subject noun changed; nothing it requires, permits or forbids did.
 
 `0.1.0`. Extracted from a release bundle where it had been working, so the
 content is exercised — but it has never been read by somebody versioning

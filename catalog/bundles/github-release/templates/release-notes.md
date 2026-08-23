@@ -4,7 +4,7 @@ Copy the block below, fill it in, delete what does not apply. **Copy the block,
 not this file.**
 
 Title format: `vX.Y.Z — what changed, in a few words`
-Standard: `../policy/release-notes.md`
+Policy: `../policy/release-notes.md`
 
 ---
 

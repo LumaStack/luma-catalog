@@ -22,7 +22,7 @@ Making it public is not reversible: forks stay forked and clones stay cloned.
 
 - **Boundaries** — what each repository owns, what it must not own, and where
   two are about to collide.
-- **Standards** — what a well-formed project looks like here, and why each one
+- **Policies** — what a well-formed project looks like here, and why each one
   exists.
 - **Learnings** — what has been worked out once and should never be worked out
   again, with the reasoning that settled it.
@@ -38,7 +38,7 @@ Making it public is not reversible: forks stay forked and clones stay cloned.
 
 ## Conventions
 
-- **A standard without its reasoning is unfinished.** The answer is perishable;
+- **A policy without its reasoning is unfinished.** The answer is perishable;
   the argument is what survives, and it is what lets somebody disagree on the
   merits later instead of guessing at intent.
 - **Record a path not taken as deferred, with a re-open trigger** — not as
