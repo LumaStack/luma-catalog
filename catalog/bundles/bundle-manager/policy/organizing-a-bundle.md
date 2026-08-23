@@ -13,7 +13,7 @@ preload: mandatory
   _types/          Type Definitions — only if the bundle declares its own
   workflows/       procedures — type: workflow
   policy/          adopted courses of action — type: policy
-  concepts/        background that explains — type: concept
+  concepts/        background that explains — type: document
   scripts/         executables a workflow invokes — never run on adoption
   templates/       assets to copy — no frontmatter
 ```
@@ -60,7 +60,7 @@ policy carry its reasoning, and that stays true — but a clause, not a section.
 When the argument grows past what a reader needs at the moment of obeying, the
 argument is what leaves, and the rule keeps a sentence of it.
 
-Watch for the inverse mistake too. **Something operational hidden in a concept is
+Watch for the inverse mistake too. **Something operational filed as background is
 never present when it is needed** — a rule about what outranks what, filed as
 background, is loaded only by people already reasoning about the bundle and
 never by the agent about to violate it.
@@ -79,23 +79,22 @@ holds rules for a narrow case.
 
 Nothing enforces this. It is a cheap thing to check in [[audit-bundle]].
 
-### `concept` is under review, and this leans on it
+### `concept` is gone, and this convention outlived it
 
-Worth saying plainly rather than discovering later. The format marks `concept`
-*under review* — it adds no fields, and no consumer has ever treated it
-differently from the root document, which by the format's own test reads as
-falsified rather than merely unused.
+**The format removed the type in `0.0.10`**, on the grounds that it added no
+fields and no consumer ever treated it differently from the root — falsified
+rather than merely unused, by the format's own test. *Retrieved when relevant* is
+what a plain `document` already is.
 
-**What is being claimed here is its retrieval mode, not its shape.** A concept is
-*retrieved when relevant*, which is the whole reason to file rationale
-separately from a rule that is preloaded. That claim is real and measurable:
-the cost of a mandatory policy is paid in every session, and moving the argument
-out of one is a saving anybody can check.
+**This section predicted that and said the convention would survive**, which it
+did: documents in `concepts/` are now `type: document`, and nothing else changed.
+The tier distinction never depended on the type name — it depends on `preload`
+and on where a reader looks.
 
-**If `concept` is removed from the format, this convention survives and the type
-name changes.** The tier distinction does not depend on the name — it depends on
-`preload` and on where a reader looks. Nothing here would need rewriting beyond
-a frontmatter value and a directory.
+**Which is worth keeping in mind for the tier above it.** `policy` is still a
+built-in and still defined as *standing — kept present*, which overlaps `preload`
+closely enough that the format has the question open. If it resolves the way
+`concept` did, this table changes a word and nothing else.
 
 ## Directories group documents; the `type` identifies them
 
