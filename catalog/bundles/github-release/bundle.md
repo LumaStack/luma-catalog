@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.1
+version: 0.1.2
 published: 2026-08-18
 consumers: [project]
 entry_point: workflows/publish-release
@@ -53,6 +53,12 @@ to undo than anything else in the workflow, and on a managed machine it may not
 be yours to do.
 
 ## Version
+
+`0.1.2` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.1.1` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.1.1` — *standard* becomes *policy*. Wording only: `policy` is the document
 type the format defines and the word this estate uses everywhere else, and

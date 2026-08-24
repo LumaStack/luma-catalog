@@ -45,7 +45,7 @@ commit makes the record unverifiable exactly where verification matters.
 auditors — take a suffix: `2026-12-23-e286f3bd9c11-security`. Rare, and cheaper
 to allow for than to discover.
 
-## Three parties, and the independence is the point
+## The parties, and why their independence is the point
 
 The shape is internal audit's, compressed: an independent function reports
 findings, the party accountable for the work responds with a position and a plan,

@@ -70,7 +70,7 @@ everything below: checkpointing sooner than necessary costs a few hundred tokens
 and some redundancy. Checkpointing too late costs the session. There is no
 symmetric penalty to balance against, so bias hard toward early.
 
-## Three bands
+## The bands
 
 | | what changes |
 | --- | --- |

@@ -209,7 +209,7 @@ published bundle is wrong for everyone who is not us.
 format yet signals that a copy has gone stale or been edited, so re-vendoring is
 a deliberate act rather than something a tool will remind you about.
 
-## Three rules that decide where something goes
+## The rules that decide where something goes
 
 **Frontmatter with a `type` makes it a document. No frontmatter makes it an
 asset.** There is no third category — and frontmatter *without* a `type` is the

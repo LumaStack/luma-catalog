@@ -22,7 +22,7 @@ is what a later reader stands on when the conversation that produced it is gone.
 record is kept. A session note exists to be **consumed and destroyed** — see
 [[session-continuity]] for the invariant that makes destroying it safe.
 
-## Two fields, because the root supplies the rest
+## What this adds, because the root supplies the rest
 
 Who wrote it and when is `created`. Whether anybody has since confirmed it is
 `verified`. What it is about is `title` and `description`.

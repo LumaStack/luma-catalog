@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.2.1
 published: 2026-08-20
 consumers: [project, organization]
 entry_point: policy/session-continuity
@@ -171,6 +171,12 @@ of thing an organization has an opinion about, and `.luma/config/` will
 eventually let it hold one.
 
 ## Version
+
+`0.2.1` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.2.0` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.2.0` — two fixes from the first real run, which is also the answer to the
 line below.

@@ -23,7 +23,7 @@ breaking means for things that are not releases, the `v`-prefix boundary and the
 deprecate-before-removing rule are in the **versioning** bundle — worth adopting
 alongside this one, and not required by it.
 
-## Two cases to say out loud
+## Cases to say out loud
 
 Both read as mistakes later — most often to the person who made them — and one
 sentence at the time is cheaper than the archaeology.

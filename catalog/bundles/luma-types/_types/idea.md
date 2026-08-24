@@ -40,7 +40,7 @@ contract two things must agree on does not belong to whichever needed it first â
 see the `luma-types` bundle for why that is a vendored shared type rather than a
 knowledge-format built-in.
 
-## Four fields, because the root already has the rest
+## What this adds, because the root already has the rest
 
 `horizon`, `scope`, `archived` and `contributors` are the only things the format
 does not already supply. Dates and authorship are `created`, growth stages are

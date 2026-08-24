@@ -23,7 +23,7 @@ Later fixes depend on earlier ones being right.
 6. **Orphaned assets** — delete, or link them from the document that needs
    them.
 
-## Two repairs that are decisions, not fixes
+## Repairs that are decisions, not fixes
 
 **A link to a document that should exist but does not** is not a broken link —
 it is knowledge nobody has written yet. That is legal, and deleting the link to

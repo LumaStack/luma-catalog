@@ -67,7 +67,7 @@ needs in order to know this is the repository they want.
 **The test:** could somebody choose between this repository and four others using
 only this sentence? If two would read the same, it is not specific enough.
 
-## Two inherited fields are strengthened
+## Inherited fields that are strengthened
 
 Permitted by §10.3, which allows a subtype to raise an inherited obligation and
 never to lower one.

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-18
 consumers: [project]
 entry_point: policy/worktree-isolation
@@ -78,7 +78,7 @@ rather than papered over — a workflow claiming to handle them would be lying.
 
 `project` only. Worktrees are a property of one repository's checkout.
 
-## Three corrections to published practice
+## Corrections to published practice
 
 Each is a failure that exists in tooling or guides in current use:
 
@@ -96,6 +96,12 @@ writes the derived port with `cat >`, destroying the file it just copied. The
 failure looks exactly like the copy never happened. **Append.**
 
 ## Version
+
+`0.1.1` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.1.0` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.1.0`. Assembled from current practice, corrected where that practice is
 fragile, and **run by no fleet of agents on a real project yet.** The submodule

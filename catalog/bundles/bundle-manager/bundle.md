@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.1
+version: 0.2.2
 published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -83,6 +83,12 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.2.2` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.2.1` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.2.1` — a wikilink in [[an-index-of-what-exists]] pointed into another bundle
 and therefore at nothing. Named in prose instead. **Found by `luma-foreman

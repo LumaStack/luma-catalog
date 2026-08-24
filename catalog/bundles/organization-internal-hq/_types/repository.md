@@ -32,7 +32,7 @@ has to hold in order to reason about it.
 **It is a cache with judgements attached, not a description.** The repository
 describes itself; this points at it and records what the organization decided.
 
-## Three fields, because everything else is either core or derivable
+## What this adds, because everything else is core or derivable
 
 `url`, `in_scope` and `access` are the only things the format does not already
 supply and no scan can produce.

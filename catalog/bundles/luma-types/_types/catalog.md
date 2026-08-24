@@ -69,7 +69,7 @@ built in, adopting that draft would mean releasing the format.
 So it is namespaced and vendored instead — the sharing mechanism §10.4 already
 describes. The prefix is what makes anyone else's `catalog` possible.
 
-## Two fields are declared without a `field_type`, deliberately
+## Declaring a field without a `field_type`, deliberately
 
 `starters` and `requires` are nested records, and §10.2 has no user-definable
 object shape — `actor_event` is a fixed built-in, not a pattern to follow.
