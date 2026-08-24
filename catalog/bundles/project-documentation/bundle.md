@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.7.0
+version: 0.8.0
 published: 2026-08-23
 consumers: [project]
 entry_point: policy/readme
@@ -29,6 +29,8 @@ we have*, it is **what condition have we hit**.
   why.
 - [[reserved-document-names]] — which filenames a tool matches, where the
   capitals are load-bearing, and where they are only typography.
+- [[writing-style]] — the conventions every document here follows, and the
+  failure each one prevents.
 - [[where-history-belongs]] — history stays in loaded context only where it earns
   its place; where it goes otherwise, and what earning it looks like.
 - [[the-project-descriptor]] — the one file written for something *outside* the
@@ -39,7 +41,7 @@ we have*, it is **what condition have we hit**.
 - [the README template](templates/readme.md) ·
   [the project descriptor](templates/project.md)
 
-## Two audiences, and one of them never arrives
+## The audience that never arrives
 
 Everything else here is written for a person who has already opened the
 repository. **`.luma/project.md` is written for something that has not**, and is
@@ -94,6 +96,22 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.8.0` — adds [[writing-style]]. New content; existing use is unaffected.
+
+**One rule to start, and the shape matters more than the count.** Only
+conventions that can name what goes wrong without them belong there — a
+convention that cannot is a preference, and a preference in a policy is
+something future writers must obey and cannot argue with.
+
+The first rule is that a heading names what is beneath it rather than how many
+things are there. **Caught while writing the previous release**: a section
+introduced as *four sources* grew to five in the same sitting, and nothing
+flagged it because the prose still read fluently.
+
+**Two headings in this bundle broke it and are corrected here** — a policy its
+own bundle violates is not a policy. Nineteen more across the catalog are left
+for a deliberate sweep rather than folded in silently.
 
 `0.7.0` — adds [[reserved-document-names]]. New content; existing use is
 unaffected.
