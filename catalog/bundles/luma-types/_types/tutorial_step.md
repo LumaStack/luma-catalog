@@ -1,7 +1,7 @@
 ---
 type: type_definition
 defines: luma/tutorial_step
-version: "0.2.0"
+version: "0.3.0"
 extends: document
 fields:
   step:
@@ -133,6 +133,17 @@ decided what it is for.**
 practise it elsewhere, say *next* when ready — is rendered by the driving workflow
 from `pause`, so its wording stays consistent across every step and cannot be
 improvised into sounding like the agent talking to itself.
+
+**By default it is also the only place the pacing is mentioned at all.** Saying a
+pause is coming usually buys the reader nothing: they find out when it arrives,
+and stopping there reads as natural because it is the obvious thing to do at that
+point. Announced up front, it is a procedure somebody was enrolled in.
+
+**The exceptions are real and worth naming**, so this does not harden into a
+rule for its own sake. Announce a pause when the reader has to be mentally
+prepared for it, or when hitting it unwarned would be jarring — a wait long
+enough that silence would read as a failure is the obvious case. **A step that
+ends with an offer and a visible way to continue is not one of those.**
 
 ## When to reach for this over a plain document
 
