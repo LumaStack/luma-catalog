@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Delegate when the session still has a long way to run
+step: 9
+pause: practice
+---
+
 # Delegate when the session still has a long way to run
 
 A subagent reads a pile of files in its own context and hands back a short

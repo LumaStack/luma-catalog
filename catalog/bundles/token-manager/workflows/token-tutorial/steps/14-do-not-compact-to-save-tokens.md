@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Do not compact to save tokens
+step: 14
+pause: practice
+---
+
 # Do not compact to save tokens
 
 This one is exactly backwards, and people recommend it to each other constantly.

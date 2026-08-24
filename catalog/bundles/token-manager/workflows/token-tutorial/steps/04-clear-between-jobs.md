@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Clear between jobs
+step: 4
+pause: apply_elsewhere
+---
+
 # Clear between jobs
 
 **The highest-leverage thing in this tutorial costs nothing and is five letters

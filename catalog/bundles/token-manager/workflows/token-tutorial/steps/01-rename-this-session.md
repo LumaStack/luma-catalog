@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Name this session before we start
+step: 1
+pause: apply_here
+---
+
 # Name this session before we start
 
 One command first, and you are going to run it rather than read about it.

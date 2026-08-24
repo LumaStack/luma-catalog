@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Watch the meters
+step: 11
+pause: apply_here
+---
+
 # Watch the meters
 
 None of this sticks without a number in front of you, and most of the numbers are

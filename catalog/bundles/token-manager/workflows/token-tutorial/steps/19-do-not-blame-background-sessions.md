@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Do not chase the wrong culprit
+step: 19
+pause: apply_here
+---
+
 # Do not chase the wrong culprit
 
 A popular claim is that leaving Claude Code open in the background quietly burns
@@ -7,7 +14,7 @@ running while you feel like you did something.
 
 Here is what genuinely consumes while you are not looking.
 
-**Scheduled tasks**, for the reason a few screens back — full context on every
+**Scheduled tasks**, for the reason a few steps back — full context on every
 fire, and a guaranteed cache miss every time if the interval is longer than the
 cache lives.
 

@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Do not assume subagents save tokens
+step: 18
+pause: practice
+---
+
 # Do not assume subagents save tokens
 
 The advice everybody repeats is that delegating to subagents saves tokens.
@@ -14,7 +21,7 @@ four times the tokens of ordinary chat, and multi-agent systems around fifteen
 times.**
 
 None of that makes delegation wrong. It makes it a trade rather than a saving,
-and the earlier screen gave the conditions under which the trade pays.
+and the earlier step gave the conditions under which the trade pays.
 
 **What is wrong is delegating on the belief that it is free** — and above all,
 delegating and then ending the session, which is paying the whole setup cost and
