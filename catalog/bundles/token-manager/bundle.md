@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.7.0
+version: 0.7.1
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: workflows/token-tutorial/token-tutorial
@@ -103,6 +103,21 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.7.1` — wording in the opening three steps. No normative sentence moved, and a
+reader who correctly understood `0.7.0` behaves identically.
+
+The mechanism step counts in **turns** rather than messages and carries a bigger
+number — a 3,000-token file read on turn one costs 300,000 tokens by turn one
+hundred, which is the same arithmetic at a scale somebody feels. `/clear` leads
+with the instruction instead of a claim about itself, and `/rename` before
+`/clear` is put as muscle memory rather than as advice.
+
+**The version check flags this patch for editing a sentence containing
+*always*,** and the flag is answered rather than ignored: the edit was
+*to keep it simple* becoming *for simplicity* in front of it. The rule that
+follows the word is unchanged, so nobody behaves differently — which is the
+patch test, and the reason a notice asks for a reader instead of failing.
 
 `0.7.0` — the last step no longer points at a step that does not exist, and it
 stops implying the tutorial is over.
