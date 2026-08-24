@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-19
 consumers: [project, organization]
 entry_point: policy/audit-layout
@@ -74,6 +74,12 @@ Both levels. A project audits its code and its own practice; an organization
 audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
+
+`0.1.1` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.1.0` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.1.0`. The structure is borrowed from internal-audit practice, which is
 well-tested — but this particular compression of it, into files in a repository

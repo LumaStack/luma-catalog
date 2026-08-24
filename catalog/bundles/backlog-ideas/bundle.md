@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.6.1
 published: 2026-08-23
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
@@ -36,7 +36,7 @@ session that prunes.
 
 **Templates** — [an idea](templates/idea.md) · [an idea review](templates/idea-review.md)
 
-## Three ideas worth knowing before reading further
+## Worth knowing before reading further
 
 **Capture, then check.** Writing comes first because that is what is lost.
 Searching for duplicates first interrupts the run of ideas and usually finds
@@ -114,6 +114,12 @@ Both levels. An organization has ideas about how it works; a project has ideas
 about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
+
+`0.6.1` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.6.0` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.6.0` — `idea` becomes `luma/idea`, vendored from the `luma/luma-types` bundle
 rather than defined here, and gains `contributors`.

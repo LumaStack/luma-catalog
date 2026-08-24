@@ -37,3 +37,14 @@ something derive it rather than asserting it in prose.
 
 **Name the subject instead.** It survives every edit, and it tells a reader
 whether to stop.
+
+### The exception: when the number is the subject
+
+**A heading may carry a number when the number is what the section is about,
+rather than a tally of what follows.** *"Two versions at once: usually fine,
+once not"* is about the situation of holding two versions simultaneously — the
+section is not a list of two things, and the number cannot drift because it is
+not counting anything.
+
+The test: **would adding a paragraph make the heading wrong?** If yes, it was a
+tally. If no, the number belongs to the subject and can stay.

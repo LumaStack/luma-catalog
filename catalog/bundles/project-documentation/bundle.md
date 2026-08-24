@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.8.0
+version: 0.9.0
 published: 2026-08-23
 consumers: [project]
 entry_point: policy/readme
@@ -96,6 +96,24 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.9.0` — [[writing-style]] gains the exception: a heading may carry a number
+when the number is the subject rather than a tally of what follows, and the test
+is whether adding a paragraph would make the heading wrong.
+
+**Minor rather than patch, and the correction is worth recording.** This shipped
+as `0.8.1` alongside a heading rewrite, on the reasoning that the sweep was
+wording only. It is not — the exception is new guidance, and a reader who
+correctly understood `0.8.0` would now behave differently, which is the whole
+test.
+
+**Caught by the curator's own notice**, which flagged the file for a normative
+edit under a patch. Its literal claim was a false positive — the match was
+`cannot` in *"the number cannot drift"*, which is descriptive — but it pointed
+at the right file and the second reader it exists to summon found a real tier
+error. That is the check working as designed rather than in spite of itself.
+
+A heading in this bundle also no longer says how many things are beneath it.
 
 `0.8.0` — adds [[writing-style]]. New content; existing use is unaffected.
 

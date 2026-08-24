@@ -17,7 +17,7 @@ things down rather than setting them up.
 | **budget** | whatever it takes. Nothing is left to protect |
 | **ends with** | no note, nothing running, and a repository that can be picked up cold |
 
-## Two modes, and the caller says which
+## The caller says which mode
 
 **The mode is declared, never inferred.**
 

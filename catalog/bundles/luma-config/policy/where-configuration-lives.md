@@ -133,7 +133,7 @@ configuration. A parsed index is cache. Putting a decision under a cache path
 means clearing caches silently reverts behaviour with no trace of why — and
 nobody suspects the cache, because caches are supposed to be safe to clear.
 
-## Two kinds of configuration, and only one is committed
+## Only one kind of configuration is committed
 
 **Declarations** are the project stating its own rules: which policies apply,
 which exemptions were granted, what *done* means here. They are the same

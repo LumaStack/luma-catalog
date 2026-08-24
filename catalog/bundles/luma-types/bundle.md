@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.4.1
 published: 2026-08-23
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
@@ -133,6 +133,12 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.4.1` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.4.0` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.4.0` — `luma/catalog` gains `namespace` at `0.2.0`. Add-only; existing
 catalogs stay valid and the field is `recommended`.

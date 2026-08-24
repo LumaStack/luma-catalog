@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.1
+version: 0.6.2
 published: 2026-08-20
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -256,7 +256,7 @@ indexed, per repository or wholesale — a legitimate configuration whose cost i
 understood. [[knowing-without-access]] argues the trade-off once so that nobody
 has to argue it again.
 
-## Two failures this is built around
+## The failures this is built around
 
 **One reader.** An organization's reasoning behind a single account, recoverable
 right up until it is not. Access lists get updated when somebody joins and
@@ -283,6 +283,12 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.6.2` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.6.1` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.6.1` — *standard* becomes *policy*. Wording only: `policy` is the document
 type the format defines and the word this estate uses everywhere else, and

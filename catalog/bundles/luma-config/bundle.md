@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-19
 consumers: [project, organization]
 entry_point: policy/where-configuration-lives
@@ -67,6 +67,12 @@ Both levels. An organization's headquarters is a repository and configures its
 own tooling the same way.
 
 ## Version
+
+`0.1.1` — a heading no longer says how many things are beneath it. Wording only.
+
+Patch: no normative sentence moved and a reader who correctly understood
+`0.1.0` behaves identically. See `writing-style` in `luma/project-documentation`
+for the rule and the failure it prevents.
 
 `0.1.0`, and the precedence chain is **designed rather than built** — only one
 layer is read today. The rules here are what the chain will be when it exists,
