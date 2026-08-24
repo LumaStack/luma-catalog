@@ -138,11 +138,16 @@ practise it elsewhere, say *next* when ready — is rendered by the driving work
 from `pause`, so its wording stays consistent across every step and cannot be
 improvised into sounding like the agent talking to itself.
 
-**It is also the only place the pacing is ever mentioned.** Nothing explains up
-front that there will be steps, or pauses, or how many — the first closing block
-introduces the pattern by being it, which is why it feels like a natural place to
-stop rather than a procedure somebody was enrolled in. **A pause a reader had to
-be briefed about is one they are now waiting for** instead of using.
+**By default it is also the only place the pacing is mentioned at all.** Saying a
+pause is coming usually buys the reader nothing: they find out when it arrives,
+and stopping there reads as natural because it is the obvious thing to do at that
+point. Announced up front, it is a procedure somebody was enrolled in.
+
+**The exceptions are real and worth naming**, so this does not harden into a
+rule for its own sake. Announce a pause when the reader has to be mentally
+prepared for it, or when hitting it unwarned would be jarring — a wait long
+enough that silence would read as a failure is the obvious case. **A step that
+ends with an offer and a visible way to continue is not one of those.**
 
 ## When to reach for this over a plain document
 

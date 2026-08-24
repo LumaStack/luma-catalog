@@ -141,11 +141,15 @@ presenting a mixed set as though it were uniform.
 `0.7.0` — `luma/tutorial_step` reaches `0.3.0`: the closing block is the only
 place a walkthrough ever mentions its own pacing.
 
-**Because a pause you had to be briefed about is one the reader is waiting for
-rather than using.** Nothing explains up front that there will be steps, or
-pauses, or how many. The first closing block introduces the pattern by being it,
-which is why stopping there feels like the obvious thing to do rather than a
-procedure somebody was enrolled in.
+**Because saying a pause is coming usually buys the reader nothing.** They find
+out when it arrives, and stopping there reads as natural because it is the
+obvious thing to do at that point; announced up front it is a procedure somebody
+was enrolled in.
+
+**Stated as a default with its exceptions named**, rather than as a rule.
+Announce a pause when the reader has to be mentally prepared for it, or when
+hitting it unwarned would be jarring — a wait long enough that silence would read
+as a failure. Those are the exception, and a step ending in an offer is not one.
 
 `0.6.0` — `luma/tutorial_step` reaches `0.2.0`: a step's body must now carry a
 `## Takeaways` section under its prose.

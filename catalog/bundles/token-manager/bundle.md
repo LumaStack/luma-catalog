@@ -99,13 +99,15 @@ rediscovering at their own expense.
 
 It had been explaining the format before any of the material: one step at a time,
 a pause after each, what the pause was for. **All of that is the agent's business
-rather than the reader's.** The opening now says what the subject is and starts;
-the first closing block introduces the rhythm by arriving, and it reads as
-natural because stopping there is the obvious thing to do at that point.
+rather than the reader's**, and saying a pause is coming bought them nothing they
+would not learn a moment later by reaching it.
 
 The workflow keeps the reasoning — it is what needs to understand why the pause
-matters — and gains an explicit rule against describing it, alongside the
-existing one against announcing the step count.
+matters — and gains a rule against describing it, beside the existing one against
+announcing the step count. **Both are defaults with a named exception:** announce
+a pause when the reader must be prepared for it, or when hitting it unwarned
+would be jarring. Nothing here qualifies, since every pause ends a step with an
+offer and a visible way to continue.
 
 `0.4.0` — every step gains `## Takeaways`, and the workflow now specifies what the
 reader sees rather than leaving it to be improvised.
