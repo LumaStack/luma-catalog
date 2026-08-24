@@ -30,3 +30,11 @@ step's lesson arriving early, and you may as well collect it now.
 in one direction only — you add a server, install a plugin, change a setting, and
 six weeks later you are back to wondering why you keep hitting limits. Nothing
 announces that it has happened.
+
+## Takeaways
+
+- Measure before you change anything: the top problem differs on every machine.
+- The audit reads your memory files, MCP servers, deferral status, schedule intervals and cache hit rate.
+- It changes nothing — it reports, ranked by cost.
+- **Run it in a second window**, or its report rides along on every step left.
+- Re-run it every few weeks. Setups drift in one direction only.

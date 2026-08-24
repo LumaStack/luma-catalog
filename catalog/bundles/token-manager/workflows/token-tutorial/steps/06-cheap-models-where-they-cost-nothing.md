@@ -25,3 +25,11 @@ configured for it rather than on whatever your session happens to be using.
 That is how to collect the saving without paying the switching cost. Reaching for
 `/model` in the middle of a session is how to pay the cost and not collect the
 saving.
+
+## Takeaways
+
+- Choosing your model once does not force one tier for everything.
+- Use **the least capable model that will finish the job**.
+- **Subagents** set their own model in frontmatter and run in their own context — a small model there is free of your cache.
+- **Skills and commands** work the same way.
+- This is how to collect the saving without paying the switching cost.

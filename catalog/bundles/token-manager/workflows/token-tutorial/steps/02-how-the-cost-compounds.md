@@ -27,3 +27,10 @@ It also explains the most surprising thing in this tutorial. **What you
 personally type is a rounding error.** In a real session's logs, everything the
 human actually wrote came to about a hundredth of a percent of the bill. The
 rest was the agent re-reading things it had already been sent.
+
+## Takeaways
+
+- The model has **no memory**. Every turn resends the whole conversation from the top.
+- What a thing costs is **its size × the turns remaining**, not its size.
+- A 3,000-token file read on turn 4 of a 40-turn session is paid for 37 more times.
+- What *you* type is a rounding error — around a hundredth of a percent. The spend is re-reading.

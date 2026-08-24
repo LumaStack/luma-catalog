@@ -26,3 +26,11 @@ trying to be careful.
 
 If you are deep into a session and you genuinely want to be cheaper, the move is
 `/clear` and start again on the model you want. Not a switch in place.
+
+## Takeaways
+
+- Switching model mid-session is **the most expensive keystroke available to you**.
+- The model is part of the cache key: the whole conversation gets reprocessed at full price.
+- On a large context that's roughly a tenfold charge, paid immediately, for a saving that would have arrived slowly.
+- **Effort level and fast mode do exactly the same thing.**
+- Want cheaper mid-session? `/clear` and restart on the model you want.

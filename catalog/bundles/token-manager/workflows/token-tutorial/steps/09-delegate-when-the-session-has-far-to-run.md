@@ -28,3 +28,11 @@ it. Delegate when all of these hold:
 on every remaining turn, so the return scales with how much session is left.
 Delegate and then immediately end the session and you paid the setup cost for
 nothing.
+
+## Takeaways
+
+- A subagent moves tokens out of your context; it does not reduce total spend.
+- It loads its own system prompt, memory file and tools before reading anything.
+- Delegate when **all three** hold: high-volume output, you won't need the detail again, and many turns remain.
+- The third is the whole game — the return is the resends you avoided.
+- Delegate then end the session, and you paid setup for nothing.

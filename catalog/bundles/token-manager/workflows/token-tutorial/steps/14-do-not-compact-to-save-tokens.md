@@ -22,3 +22,11 @@ Clearing is the free one.
 
 And if what you actually want is to undo a few bad turns, `/rewind` takes you
 back to a point the cache already knows, so nothing has to be re-read.
+
+## Takeaways
+
+- Compacting sends your **entire conversation one more time** so a summary can be written.
+- It is the single most expensive message of a session, and it then discards your cache on purpose.
+- **It buys continuity, never savings.** Pay for it knowingly, mid-task, for that reason alone.
+- Clearing is the free one.
+- Undoing a few bad turns? **`/rewind`** returns to a point the cache already knows.

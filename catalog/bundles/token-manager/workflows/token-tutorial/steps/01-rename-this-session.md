@@ -28,3 +28,10 @@ that was already cached. Not everything in your terminal is like that, and by th
 end you will know which.
 
 Go ahead and run it, then tell me what you called it.
+
+## Takeaways
+
+- Run `/rename` and give this session a name you'll recognise.
+- A named session is one `/resume` can find again; an unnamed one is filed under something meaningless.
+- The habit is the **pair**: name it, then clear it. Naming is what makes clearing feel like filing rather than deleting.
+- Renaming costs no tokens and disturbs nothing already cached.

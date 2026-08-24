@@ -26,3 +26,11 @@ and the earlier step gave the conditions under which the trade pays.
 **What is wrong is delegating on the belief that it is free** — and above all,
 delegating and then ending the session, which is paying the whole setup cost and
 collecting none of the return.
+
+## Takeaways
+
+- Subagents **move** tokens, they don't save them.
+- A subagent loads its own system prompt, memory file and tools before it reads a line.
+- Published figures: agents use around **4×** the tokens of ordinary chat, multi-agent systems around **15×**.
+- That makes delegation a trade, not a saving — worth it under the conditions from earlier.
+- The mistake is believing it's free, and especially delegating then ending the session.

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-24
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
@@ -137,6 +137,23 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.6.0` — `luma/tutorial_step` reaches `0.2.0`: a step's body must now carry a
+`## Takeaways` section under its prose.
+
+**Because prose alone leaves nothing behind.** A step that reads well and buries
+its instruction in a paragraph was agreed with and not retained — an hour later
+the reader cannot say what they were meant to change. The list is the same
+content as the prose above it, which is the point: skim it or read the argument.
+**If a takeaway cannot be written, the step has not decided what it is for.**
+
+The type also now says where the closing *how to proceed* text comes from — the
+driving workflow renders it from `pause` — so its wording stays identical across
+every step instead of being improvised each time.
+
+**A body obligation rather than a field**, so nothing mechanical checks it. That
+is honest about what the format can express, and the alternative was a field
+restating what the heading already says.
 
 `0.5.0` — `luma/tutorial_step` and `luma/tutorial_quiz` arrive, both at `0.1.0`.
 Add-only: nothing existing changes, and a bundle that vendors neither is

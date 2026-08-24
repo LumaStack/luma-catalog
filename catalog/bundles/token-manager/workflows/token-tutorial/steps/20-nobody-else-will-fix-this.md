@@ -27,3 +27,14 @@ The whole tutorial in one pass:
 **And the labs are not going to fix this for you.** Not out of awkwardness —
 nobody is graded on how few tokens you use. It is your desk, and keeping it clean
 is your job.
+
+## Takeaways
+
+- You didn't run out because you asked too much — you ran out re-reading what you'd already sent.
+- **Clear between jobs.** Free, and it resets the base every other fix is a fraction of.
+- **Pick model and effort once**, at the start.
+- **Filter noisy tool output** before it lands.
+- **Disconnect unused tools**, and check the line still says *deferred*.
+- **Delegate only when the session has far to run.**
+- **Go and look at what fires at three in the morning.**
+- Nobody is graded on how few tokens you use. It's your desk.

@@ -20,3 +20,10 @@ the layout carries meaning — a scanned form, a diagram, a table whose structur
 is the point — the image is doing real work and you should keep it.
 
 If it is prose, you are paying twice for prose.
+
+## Takeaways
+
+- A PDF charges you **twice per page**: once for the text, again for the page rendered as an image.
+- **Convert it to plain text first** and the same document costs roughly a quarter as much.
+- Ask your agent to do the conversion before anybody reasons about the content.
+- Same exception as screenshots: if the layout carries meaning, the image is doing real work.
