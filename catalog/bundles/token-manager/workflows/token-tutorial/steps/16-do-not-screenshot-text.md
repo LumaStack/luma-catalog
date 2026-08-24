@@ -21,3 +21,10 @@ a UI that looks wrong — the image carries information the text does not, and i
 earns its cost.
 
 For anything you could have selected and copied, it is a straight loss.
+
+## Takeaways
+
+- A picture is not cheaper than the words in it — a screenshot runs to a couple of thousand tokens, more at 4K.
+- **Paste the text.** Cheaper, and your agent can actually edit text.
+- Send an error as an image and the best it can do is read it back to you.
+- **The exception:** when the *layout* is the question — a rendered page, a chart, a UI that looks wrong — the image earns its cost.

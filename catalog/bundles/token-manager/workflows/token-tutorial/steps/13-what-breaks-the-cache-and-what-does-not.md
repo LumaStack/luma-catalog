@@ -27,3 +27,10 @@ long session after an upgrade as about the most expensive request you will send.
 
 And note where a subagent sits. **Spawning one is cache-safe** — which is a
 different question from whether it was worth spawning.
+
+## Takeaways
+
+- **Rebuilds your cache:** switching model, changing effort, fast mode, compacting, toggling MCP servers where tools load up front, enabling a plugin that ships one.
+- **Leaves it alone:** editing files, editing your memory file, output style, permission mode, invoking skills and commands, recaps, rewinds, spawning a subagent.
+- **Upgrading then resuming a long session** is the nastiest — it doesn't feel like a change at all.
+- Spawning a subagent is cache-safe, which is a different question from whether it was worth it.

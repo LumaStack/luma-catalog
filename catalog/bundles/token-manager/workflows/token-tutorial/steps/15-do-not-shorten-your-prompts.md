@@ -22,3 +22,10 @@ the file, states the constraint and rules out the approach you already tried is
 cheaper than the terse one that sends your agent looking.
 
 Write the prompt that gets it right first time. That is the token optimisation.
+
+## Takeaways
+
+- Everything you type is roughly a hundredth of a percent of the bill. Prompt length is a rounding error.
+- **Vague prompts cost you — through rework, not length.** Wrong turns and stray file reads land in context and get resent.
+- So the incentive runs backwards from the folklore.
+- Name the file, state the constraint, rule out what you already tried. **The prompt that gets it right first time is the optimisation.**

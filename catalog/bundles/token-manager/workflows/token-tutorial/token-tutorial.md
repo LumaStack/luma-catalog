@@ -47,6 +47,21 @@ Then run the tutorial anyway — the reader will have to find their own equivale
 of each command, and that is a much smaller gap than not knowing what to look
 for.
 
+**Open with this, then go straight into step 1.** On Claude Code, as written; on
+anything else, replace the first line with the warning above.
+
+> These steps name Claude Code's commands directly — `/rename`, `/clear`,
+> `/context`, `/mcp`, `/usage`, `/cost`, `/rewind` — so they will work as
+> written.
+>
+> One step at a time, with a pause after each. The pause is the point: ask
+> whatever you want, go and try the thing, then say **next**. There's a short
+> quiz at the end.
+
+**Do not announce how many steps there are.** A number up front reads as a chore
+to get through, and the reader is about to be asked to stop and think after every
+one of them.
+
 ## The first step is the one they act on immediately
 
 Step 1 teaches `/rename` and has them run it, then and there. **Note the name
@@ -78,41 +93,69 @@ that begins by loading twenty steps into context has refuted itself before the
 first pause, and the reader is paying for every one of them on every turn of the
 walkthrough.
 
-**Present the step in full.** Do not summarise, condense or paraphrase it. The
-steps are already short, so a summary saves the reader nothing and costs them
-the wording that was chosen.
+**Present the step in full.** Do not summarise, condense or paraphrase it, and do
+not skip its `## Takeaways`. The steps are already short, so a summary saves the
+reader nothing and costs them the wording that was chosen.
 
 **Then stop.** Never advance on your own, however brief the step was.
 
-## The pause is the workflow
+## How a step is presented
 
-After each step, in this order:
+**Never say *screen*.** They are steps. The word does not appear in anything the
+reader sees, and it is not what the heading below says.
 
-**1. Invite questions.** Answer from the steps already presented and from what
-you can see of their setup. **If the answer is a later step, say which one is
-coming rather than reading ahead** — that is what the running order is for.
+Head each one exactly like this, with the number and title from its frontmatter:
 
-**2. Offer to wait**, in the form the step's own `pause` field gives:
+```
+**Step 4 — Clear between jobs**
+```
 
-| `pause` | the offer |
-| --- | --- |
-| `apply_here` | something they can change right now, safely, in this session — *if you want to go and do that, I'll wait* |
-| `apply_elsewhere` | something they can change, but not from inside this session — *open a second window and do it there; I'll be here* |
-| `practice` | a statement about how something works rather than something to change — *if you want to go and try that in another session, I'll wait* |
-| `none` | nothing to act on. Take questions and move on |
+Then the step's body verbatim, `## Takeaways` and all. **Then the closing block
+below, and nothing else.** No summary of your own, no observation about what was
+interesting, no preview of what is coming. The reader has just read it.
 
-**It is on the step rather than in the running order below**, deliberately. You
-read the step at the moment you need the answer, so the field is in front of you
-exactly when it applies — and there is only one copy of it to go stale. See
+## The closing block, word for word
+
+**Print the block matching the step's `pause` field, changing only the step
+number.** These are written out rather than described because an improvised
+version is where the tutorial stops sounding like it is talking to the reader and
+starts sounding like it is talking to itself.
+
+`apply_here`:
+
+> **Practice this here.** It is safe to do in this window — go ahead, I'll wait.
+>
+> Questions, or say **next** for step 5.
+
+`apply_elsewhere`:
+
+> **Practice this elsewhere.** Don't run it in this window — it would cost or
+> clear the session we are in. Open a second window if you want to do it now, and
+> I'll be here.
+>
+> Questions, or say **next** for step 5.
+
+`practice`:
+
+> **Nothing to change here** — this one is how the thing works. If you want to go
+> and watch it happen in another session, I'll wait.
+>
+> Questions, or say **next** for step 5.
+
+`none`:
+
+> Questions, or say **next** when you're ready.
+
+**Answer questions from the steps already presented** and from what you can see of
+their setup. If the answer is a later step, say which one is coming rather than
+reading ahead — that is what the running order is for.
+
+**If they take the offer, wait.** Do not fill the silence with the next step.
+
+**Never skip the block because a step seemed obvious, and never print the wrong
+one.** Offering to wait while somebody applies a fact they cannot act on is
+filler, and it teaches them the pause is ceremony they can ignore. See
 [[tutorial_step]] for what each value is claiming.
-
-If they take the offer, wait. Do not fill the silence with the next step.
-
-**3. Say how to continue** — they say *next*.
-
-**Do not skip the offer because a step seemed obvious, and do not give the
-wrong one.** Offering to wait while somebody applies a fact they cannot act on is
-filler, and it teaches them that the pause is ceremony they can ignore.
 
 ## Sending somebody away, and getting them back
 

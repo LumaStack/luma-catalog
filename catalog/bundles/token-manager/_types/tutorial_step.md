@@ -1,10 +1,10 @@
 ---
 type: type_definition
 defines: luma/tutorial_step
-version: "0.1.0"
+version: "0.2.0"
 vendored_from:
   resource: https://github.com/LumaStack/luma-catalog
-  version: "0.1.0"          # the type's own version, not the bundle's
+  version: "0.2.0"          # the type's own version, not the bundle's
   at: 2026-08-24
 extends: document
 fields:
@@ -32,11 +32,13 @@ neighbours; a step is delivered alone, and the reader is expected to stop.**
 
 ## How long a step should be
 
-**A rule of thumb for whoever writes one: it should fit on a laptop screen
-without scrolling.** Roughly a couple of hundred words.
+**A rule of thumb for whoever writes one: the whole thing should fit on a laptop
+screen without scrolling** — prose and `## Takeaways` together, around three
+hundred words and thirty-odd lines. The closing block the workflow adds is a few
+lines more, so leave it room.
 
 That is a sizing heuristic and nothing else — **call them steps everywhere a
-reader can see.** *Screen* describes the constraint an author is writing against;
+reader can see, including the heading each one is presented under.** *Screen* describes the constraint an author is writing against;
 it is not what the reader is being walked through, and using it in the prose
 makes the tutorial sound like it is about the display rather than the material.
 
@@ -108,14 +110,33 @@ the tutorial.** That is what `apply_elsewhere` is for, and the driving workflow
 should name the specific hazards outright rather than leaving the agent to infer
 them mid-run.
 
-## What the body should carry
+## The body has two parts, in this order
 
 **The prose the reader sees, and nothing else.** No presenter notes, no answer
 keys, no instructions to the agent — a step is read aloud more or less verbatim,
-and anything in it that was meant for the agent will be read aloud too.
+and anything in it meant for the agent gets read aloud too. Everything aimed at
+whoever runs the walkthrough belongs in the driving workflow, or in these fields.
 
-Everything aimed at whoever is running the walkthrough belongs in the workflow
-that drives it, or in these fields.
+**First, the explanation, written as talking to somebody.** Open with the problem,
+the pitfall or the trap. Say why they should care if it is not obvious. Then walk
+to the solution conversationally. This part is allowed to take its time — it is
+what makes the idea stick rather than merely land.
+
+**Then `## Takeaways`, and it is not optional.** A short list of the operative
+points, formatted to be scanned: what to do, what it costs, the number worth
+remembering. **The same content as the prose above it, and that is the point** —
+a reader who skims takes the list, a reader who wants the argument reads up.
+
+**The failure it prevents is a real one.** Prose that reads beautifully leaves
+nothing behind an hour later: the reader agreed with every sentence and cannot
+now say what they were supposed to change. Burying the instruction in a paragraph
+means it was never given. **If a takeaway cannot be written, the step has not
+decided what it is for.**
+
+**The closing block is not part of the body.** How to proceed — practise it here,
+practise it elsewhere, say *next* when ready — is rendered by the driving workflow
+from `pause`, so its wording stays consistent across every step and cannot be
+improvised into sounding like the agent talking to itself.
 
 ## When to reach for this over a plain document
 

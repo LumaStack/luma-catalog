@@ -25,3 +25,10 @@ running is not idle in the way an open terminal is idle.
 without you: something that fires on a schedule, something re-read on every turn,
 something still running after you stopped paying attention. Not the window you
 left open.
+
+## Takeaways
+
+- Leaving Claude Code open in the background is **not** your problem — it's documented at under four cents a session.
+- **Scheduled tasks are**: full context every fire, guaranteed cache miss if the interval outruns the cache.
+- **Live agent teams are**: each agent keeps consuming until it exits.
+- The shape to remember: what's expensive is whatever **repeats without you**, not the window you left open.

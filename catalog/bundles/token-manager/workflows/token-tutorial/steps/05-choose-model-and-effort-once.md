@@ -22,3 +22,10 @@ the beginning and self-defeating when you take it in the middle.
 
 This one has a trap attached to it that catches almost everybody, and it gets a
 step of its own in the second half.
+
+## Takeaways
+
+- Cache reads cost about a tenth of the normal rate. That discount is why long sessions are survivable.
+- **Model and effort level are both part of the cache key.**
+- Pick both *before* you start, then leave them alone.
+- Want a cheaper model? Start on it. Switching to it later is the expensive move.

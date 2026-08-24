@@ -28,3 +28,11 @@ One exception, and it is this session: **do not clear here.** Clearing is how th
 tutorial ends — it is the last thing you will be asked to do — and doing it now
 would take the tutorial with it. If you want to try it immediately, open a second
 window and try it there.
+
+## Takeaways
+
+- Finished one job and starting another? **`/clear`.**
+- It is the only fix here that deletes history rather than shrinking one slice of it — everything else is a fraction of the base it resets.
+- An old conversation isn't sitting quietly; it is resent on every message until the session ends.
+- **`/rename` first**, so `/resume` can find it if you were wrong.
+- Not in this window — clearing is how the tutorial ends.

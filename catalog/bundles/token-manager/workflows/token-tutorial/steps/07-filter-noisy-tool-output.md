@@ -26,3 +26,11 @@ tens of thousands of tokens to hundreds.
 **This is a build-once fix**, which makes it unusually good value. Your agent
 writes it, your agent installs it, and it keeps working in every session
 afterwards without you thinking about it again.
+
+## Takeaways
+
+- Long command output lands in your context verbatim and is resent on every message until you clear.
+- Your agent doesn't get to skim the 800 lines you ignored.
+- Fix it with a **`PreToolUse` hook** that rewrites noisy commands into quiet ones.
+- **Ask your agent to write it** — Anthropic ships an example to copy.
+- Build once, works in every session after.

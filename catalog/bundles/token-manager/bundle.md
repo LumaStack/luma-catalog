@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: workflows/token-tutorial/token-tutorial
@@ -94,6 +94,23 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.4.0` — every step gains `## Takeaways`, and the workflow now specifies what the
+reader sees rather than leaving it to be improvised.
+
+**From a real run, which is why each of these is here.** The agent headed steps
+*Screen 1 —* despite the word appearing nowhere in the material, so the workflow
+now gives the exact heading format. It ad-libbed the closing line into something
+that read as the model talking to itself, so the four closing blocks are written
+out word for word and rendered from `pause`. And it announced the step count up
+front, which turns a walkthrough into a chore to get through.
+
+**The steps themselves were the larger gap.** Each argued its case well and left
+the reader with nothing scannable — the instruction was in there, in a sentence,
+in a paragraph. Every step now closes with the operative points as a list.
+
+Minor: nothing an adopter must fix, and a step that somehow lacked takeaways
+still presents.
 
 `0.3.0` — the tutorial types moved to `luma/luma-types` and are vendored back.
 They are now `luma/tutorial_step` and `luma/tutorial_quiz`, and every step and the

@@ -27,3 +27,11 @@ the new behaviour**, and toggling servers mid-session is safe: connecting and
 disconnecting appends rather than rebuilding your cache. The audit workflow
 checks this too, along with the thing that silently switches deferral off — a
 proxy or gateway in front of the API, which nothing warns you about.
+
+## Takeaways
+
+- Every connected tool loads an instruction manual before you type a word.
+- **Tool deferral** cuts most of this and is on by default — the agent opens a section only when it needs it.
+- The contents page still costs, and grows with every server you add.
+- Run **`/mcp`** and switch off anything unused for a month. It stays configured.
+- Check **`/context`** says *deferred* — if so, toggling servers mid-session is free.
