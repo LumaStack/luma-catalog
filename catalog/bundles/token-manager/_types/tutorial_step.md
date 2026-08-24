@@ -45,7 +45,7 @@ makes the tutorial sound like it is about the display rather than the material.
 The constraint matters because a step is the unit of a stop. **Something too long
 to take in at once cannot be paused after** — the reader is still working through
 the first half when the offer to answer questions arrives, so they decline it, and
-the pause that the whole format exists for quietly becomes a formality. If a step
+the pause it was meant to allow quietly becomes a formality. If a step
 will not fit, it is two steps.
 
 ## `pause` is the field the type exists for

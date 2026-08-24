@@ -6,10 +6,11 @@ description: A paced tutorial on where an agent session's tokens actually go —
 
 # Walk me through token usage best practices
 
-**A tutorial, not a briefing.** The material is split into steps, each sized to
-be read in one go, and the whole point is the pause between them: the reader
-stops, asks whatever they want, and goes and applies the thing before the next
-one arrives.
+**A tutorial, not a briefing.** The subject is where an agent session's tokens
+actually go and what to do about it. The material is split into steps, each sized
+to be read in one go, with a pause after each — because an idea somebody stopped
+and applied is one they keep, and a wall of good advice read straight through is
+one they agree with and forget.
 
 | | |
 | --- | --- |
@@ -54,9 +55,10 @@ anything else, replace the first line with the warning above.
 > `/context`, `/mcp`, `/usage`, `/cost`, `/rewind` — so they will work as
 > written.
 >
-> One step at a time, with a pause after each. The pause is the point: ask
-> whatever you want, go and try the thing, then say **next**. There's a short
-> quiz at the end.
+> This is about where your tokens actually go, and what to do about it. One step
+> at a time, with a pause after each — so you can ask questions or go and try
+> something before moving on. Say **next** when you're ready for the next one.
+> There's a short quiz at the end.
 
 **Do not announce how many steps there are.** A number up front reads as a chore
 to get through, and the reader is about to be asked to stop and think after every
