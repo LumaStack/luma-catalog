@@ -19,8 +19,8 @@ session is one you can actually find again**, with `/resume`, by its name.
 That matters here specifically, because this tutorial ends by telling you to
 throw this conversation away — and you will be much more willing to do that, here
 and afterwards, once you know it is retrievable. **The habit worth taking is the
-pair, not the single command: name it, then clear it.** Naming is what makes
-clearing feel like filing rather than deleting.
+command pair: rename it, then clear it.** Naming is what makes
+clearing feel like archiving rather than deleting.
 
 It is also free in the sense this whole tutorial is about. Renaming a session
 changes nothing the model is sent, so it costs you no tokens and disturbs nothing
