@@ -35,7 +35,7 @@ question asked twice, a person confused once, a stranger with nowhere to report.
 Writing a document before its condition fires produces something nobody needed
 and everybody now has to maintain.
 
-## Four kinds, and why mixing them fails
+## The kinds, and why mixing them fails
 
 The [Diátaxis](https://diataxis.fr) framework is worth reading once. Its claim,
 compressed: documentation serves four distinct needs, and a document trying to
