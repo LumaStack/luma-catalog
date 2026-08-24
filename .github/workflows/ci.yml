@@ -28,8 +28,8 @@ env:
   # The cost is that a fix upstream does not arrive until somebody edits these
   # lines. That is the trade, taken knowingly — and the `pins` job below is what
   # keeps it a trade rather than a slow drift nobody chose.
-  CURATOR_SHA: 247ca4e032c52b832a32d4189d064136d80a2072  # luma-catalog-curator
-  FOREMAN_SHA: 4183a6c202aa6bc79dbdaf77eff9323ef1c95869  # luma-foreman
+  CURATOR_SHA: 08dcb7fa73ddcc834f02ce0d17e3fd20fe1ac3ab  # luma-catalog-curator
+  FOREMAN_SHA: 50e7849630c39479827e76d8f3af285ed5fb438a  # luma-foreman
 
 jobs:
   check:
