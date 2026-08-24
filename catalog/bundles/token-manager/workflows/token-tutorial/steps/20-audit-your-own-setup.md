@@ -21,9 +21,9 @@ history rather than doing new work.
 **It changes nothing.** It reports, sorted by cost, and finishes with the single
 highest-leverage change available to you.
 
-**Run it in a second window, not this one.** This session ends with `/clear`,
-so a report generated here goes with it. Run it where you will still have it
-tomorrow.
+**Run it in a second window, not this one.** It produces a substantial report,
+and you want that somewhere you will still be working tomorrow rather than in a
+tutorial session.
 
 **Then run it again every few weeks.** Setups drift in one direction only: you
 add a server, install a plugin, change a setting, and six weeks later you are
@@ -35,5 +35,5 @@ happened.
 - Run the audit **now that the findings mean something** — it ranks your problems, not everybody's.
 - It reads memory files, MCP servers, deferral status, schedule intervals and cache hit rate.
 - **It changes nothing.** It reports, sorted by cost, and names your single highest-leverage fix.
-- **Run it in a second window** — this session ends with `/clear`.
+- **Run it in a second window** — you want the report where you work, not in a tutorial session.
 - Re-run it every few weeks. Setups only ever drift one way.

@@ -31,5 +31,5 @@ human actually wrote came to about 0.01% of the bill. The rest was the agent re-
 
 - Every turn resends the whole conversation from the beginning of this session.
 - **Every new message costs everything that came before it.** Message #20 costs twenty messages, not one.
-- Continuing a session costs you far more than linearly — each turn adds to every turn after it.
+- Continuing a session costs you exponentially, not linearly.
 - What *you* type is a rounding error — around a hundredth of a percent. The spend is re-reading.
