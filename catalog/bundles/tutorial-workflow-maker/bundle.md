@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: policy/what-makes-a-tutorial-land
@@ -72,6 +72,23 @@ than saying what good looks like.
 produces an invented one; a script for a judgement call produces an agent that
 cannot handle the case the script missed.
 
+## It is meant to be improved by being used
+
+**The last step of [[create-tutorial]] feeds general learnings back here**, which
+is the only mechanism this bundle has for getting better — the rules it carries
+came from running a tutorial, not from reasoning about one, and there is no
+reason to expect that to change.
+
+**Two guards keep that from becoming noise.** It runs only for somebody who owns
+the catalog this lives in, because a vendored copy is a snapshot and an
+improvement to one is overwritten, unannounced, on the next adopt. And only
+learnings that would have helped a *different* tutorial come back — anything
+naming the subject just taught belongs in the tutorial that taught it.
+
+**Nothing to promote is the expected answer most times.** A workflow whose last
+step must produce something produces noise, and a policy that grows on every use
+becomes one nobody reads.
+
 ## The bet, stated as a bet
 
 **Most tools should eventually ship a tutorial beside their reference material** —
@@ -89,6 +106,24 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.2.0` — [[create-tutorial]] gains a final step: feed what you learned back into
+this bundle.
+
+**Because the rules here came from running a tutorial rather than reasoning about
+one**, and nothing else was going to keep that happening. Without a step for it,
+the second tutorial's lessons stay in the second tutorial.
+
+**Guarded twice.** Only for somebody who owns the catalog this bundle lives in —
+an adopter's improvement to a vendored copy is silently overwritten on the next
+adopt, so it is a change that looks applied and is not. And only for learnings
+that would have helped a tutorial about something else; the test is whether the
+improvement names the subject just taught.
+
+**With a bias against writing rules.** A first observation goes to
+[[lessons-from-the-first-tutorial]], not to [[what-makes-a-tutorial-land]]. A
+rule written from one instance carries the authority of a pattern and the
+evidence of an anecdote, and nobody downstream can tell which they are reading.
 
 `0.1.0`. **The rules come from one tutorial and one run of it.** They are
 well-motivated rather than proven — see [[lessons-from-the-first-tutorial]] for

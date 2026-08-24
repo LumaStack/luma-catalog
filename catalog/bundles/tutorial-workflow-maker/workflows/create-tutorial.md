@@ -13,7 +13,7 @@ perform: steps, a quiz, and the workflow that drives them.
 | | |
 | --- | --- |
 | **run it** | when a mechanism needs teaching, not documenting |
-| **ends with** | a tutorial in the target bundle, and a first run booked |
+| **ends with** | a tutorial in the target bundle, a first run booked, and anything general fed back here |
 
 [[what-makes-a-tutorial-land]] is the standard this works to. Read it first — the
 steps below assume it.
@@ -146,3 +146,57 @@ inheriting it.
 Version the target bundle, run its checks, and record what is untested in the
 version notes — **a tutorial that has been run once is not a tutorial that
 works.**
+
+## 11. Feed what you learned back into this bundle
+
+**Skip this entirely unless both are true: you own a catalog, and this bundle
+lives in it.** Ask, rather than assuming — most people running this workflow are
+adopters, and for them the answer is no.
+
+**Because a vendored copy is a snapshot.** Improve one and the edit survives
+exactly until somebody re-adopts, at which point it is overwritten with no
+warning — nothing in the format signals that a copy was edited. So an adopter's
+improvement is not a small win that might get lost; it is a change that looks
+applied and is not. If you have a path upstream, send it there. If not, record it
+wherever your project keeps learnings, and stop.
+
+### Only what would have helped a different tutorial
+
+**The test is one question: would this have helped somebody teaching something
+else?** If the improvement names your subject, your tool or your commands, it
+belongs in the tutorial you just made.
+
+| stays in your tutorial | comes back here |
+| --- | --- |
+| the wording of a step | wording the agent invented, because the template described an outcome instead of giving the text |
+| a hazard specific to your tool | a *kind* of hazard nothing prompted you to look for |
+| the order you chose | a question this workflow should have asked and did not |
+| a quiz question that fell flat | a way the quiz feedback format falls flat |
+
+**The recurring shape is a gap you had to fill yourself.** If you wrote something
+the templates did not provide, and the next tutorial would have to write it
+again, that is the thing to promote — and it is usually a template edit rather
+than a new rule.
+
+**Prefer strengthening a template over adding a rule.** A template gets copied; a
+rule has to be remembered. The guidance that actually got followed here arrived
+as text somebody was already editing.
+
+### One observation is not a rule
+
+**First time something has come up? Put it in [[lessons-from-the-first-tutorial]]
+with what you actually saw**, and leave [[what-makes-a-tutorial-land]] alone.
+Promote it to policy when a second tutorial hits the same thing.
+
+**A rule written from one instance carries the authority of a pattern and the
+evidence of an anecdote**, and nobody downstream can tell the difference — which
+is how a bundle accumulates rules that were somebody's one bad afternoon.
+
+### Nothing to promote is the normal outcome
+
+**Say so and stop.** A step that has to produce something produces noise, and a
+policy that grows every time somebody uses the workflow becomes one nobody reads.
+
+If there is a change, version this bundle, run its checks, and say in the version
+notes **which tutorial produced it and how many have now hit it** — that count is
+what a later reader needs to judge whether the rule was earned.
