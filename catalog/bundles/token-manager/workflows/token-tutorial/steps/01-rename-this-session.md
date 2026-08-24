@@ -27,11 +27,11 @@ changes nothing the model is sent, so it costs you no tokens and disturbs nothin
 that was already cached. Not everything in your terminal is like that, and by the
 end you will know which.
 
-Go ahead and run it, then tell me what you called it.
+Go ahead and run `/rename token tutorial` in this session.
 
 ## Takeaways
 
-- Run `/rename` and give this session a name you'll recognise.
-- A named session is one `/resume` can find again; an unnamed one is filed under something meaningless.
-- The habit is the **pair**: name it, then clear it. Naming is what makes clearing feel like filing rather than deleting.
-- Renaming costs no tokens and disturbs nothing already cached.
+- Renaming costs no tokens and does not disturb the cache.
+- Think of `/rename` as a way to **archive** or **save a session for later**.
+- Named sessions are easy to rediscover with `/resume` — although you can still find unnamed sessions without renaming.
+- A habit you should form is running `/rename` right before `/clear`; equivalent to archiving a session.

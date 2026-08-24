@@ -94,7 +94,7 @@ starts sounding like it is talking to itself.
 
 > **Practice this here.** It is safe to do in this window — go ahead, I'll wait.
 >
-> Questions, or say **next** for step 5.
+> Ask questions, or say **next** for step 5.
 
 `apply_elsewhere`:
 
@@ -102,18 +102,18 @@ starts sounding like it is talking to itself.
 > clear the session we are in. Open a second window if you want to do it now, and
 > I'll be here.
 >
-> Questions, or say **next** for step 5.
+> Ask questions, or say **next** for step 5.
 
 `practice`:
 
 > **Nothing to change here** — this one is how the thing works. If you want to go
 > and watch it happen in another session, I'll wait.
 >
-> Questions, or say **next** for step 5.
+> Ask questions, or say **next** for step 5.
 
 `none`:
 
-> Questions, or say **next** when you're ready.
+> Ask questions, or say **next** when you're ready.
 
 **Answer questions from the steps already presented** and from what you can see of
 their setup. If the answer is a later step, say which one is coming rather than

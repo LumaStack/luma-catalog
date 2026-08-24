@@ -135,7 +135,7 @@ starts sounding like it is talking to itself.
 
 > **Practice this here.** It is safe to do in this window — go ahead, I'll wait.
 >
-> Questions, or say **next** for step 5.
+> Ask questions, or say **next** for step 5.
 
 `apply_elsewhere`:
 
@@ -143,18 +143,18 @@ starts sounding like it is talking to itself.
 > clear the session we are in. Open a second window if you want to do it now, and
 > I'll be here.
 >
-> Questions, or say **next** for step 5.
+> Ask questions, or say **next** for step 5.
 
 `practice`:
 
 > **Nothing to change here** — this one is how the thing works. If you want to go
 > and watch it happen in another session, I'll wait.
 >
-> Questions, or say **next** for step 5.
+> Ask questions, or say **next** for step 5.
 
 `none`:
 
-> Questions, or say **next** when you're ready.
+> Ask questions, or say **next** when you're ready.
 
 **Answer questions from the steps already presented** and from what you can see of
 their setup. If the answer is a later step, say which one is coming rather than
@@ -175,7 +175,7 @@ were done in this session — and the reader cannot possibly know which, because
 step that says *clear between jobs* does not say *except right now*. **Knowing
 that is your job, not theirs.**
 
-**Say where they are before they go, every time.** *"You're on step 8, turning
+**Say where they are before they go, every time.** *"You're on step 7, turning
 off unused tools — say next when you're back."* A number and a title cost you one
 line and turn the trip back into a single word.
 
@@ -184,8 +184,8 @@ line and turn the trip back into a single word.
 | | what it would do |
 | --- | --- |
 | `/clear` | destroys the tutorial. It is also the tutorial's closing instruction, so this is a *later*, not a *no* |
-| `/compact` | the lesson from step 14, ignored, at the worst possible moment |
-| `/model`, effort level, fast mode | rebuilds this session's cache — step 12, exactly |
+| `/compact` | the lesson from step 13, ignored, at the worst possible moment |
+| `/model`, effort level, fast mode | rebuilds this session's cache — step 11, exactly |
 | running [[token-audit]] | its report would sit in this context and be resent on every remaining step |
 | building the output-filter hook | real work with real output, and it belongs in a session that is not this one |
 
@@ -224,35 +224,36 @@ anything; step 2 is the fact everything else is a consequence of.
 
 | | step | |
 | --- | --- | --- |
-| 3 | [[03-audit-your-own-setup]] | Start by measuring your own setup |
-| 4 | [[04-clear-between-jobs]] | Clear between jobs |
-| 5 | [[05-choose-model-and-effort-once]] | Choose your model and effort once, at the start |
-| 6 | [[06-cheap-models-where-they-cost-nothing]] | Put cheap models where they cannot cost you anything |
-| 7 | [[07-filter-noisy-tool-output]] | Put a filter in front of noisy commands |
-| 8 | [[08-turn-off-tools-you-do-not-use]] | Turn off the tools you never use |
-| 9 | [[09-delegate-when-the-session-has-far-to-run]] | Delegate when the session still has a long way to run |
-| 10 | [[10-match-schedules-to-the-cache-lifetime]] | Check what your scheduled tasks do at three in the morning |
-| 11 | [[11-watch-the-meters]] | Watch the meters |
+| 3 | [[03-clear-between-jobs]] | Clear between jobs |
+| 4 | [[04-choose-model-and-effort-once]] | Choose your model and effort once, at the start |
+| 5 | [[05-cheap-models-where-they-cost-nothing]] | Put cheap models where they cannot cost you anything |
+| 6 | [[06-filter-noisy-tool-output]] | Put a filter in front of noisy commands |
+| 7 | [[07-turn-off-tools-you-do-not-use]] | Turn off the tools you never use |
+| 8 | [[08-delegate-when-the-session-has-far-to-run]] | Delegate when the session still has a long way to run |
+| 9 | [[09-match-schedules-to-the-cache-lifetime]] | Check what your scheduled tasks do at three in the morning |
+| 10 | [[10-watch-the-meters]] | Watch the meters |
 
 **What not to do.**
 
 | | step | |
 | --- | --- | --- |
-| 12 | [[12-do-not-switch-model-mid-session]] | Do not switch to a cheaper model to save money |
-| 13 | [[13-what-breaks-the-cache-and-what-does-not]] | Do not treat every change as expensive |
-| 14 | [[14-do-not-compact-to-save-tokens]] | Do not compact to save tokens |
-| 15 | [[15-do-not-shorten-your-prompts]] | Do not write shorter prompts to save money |
-| 16 | [[16-do-not-screenshot-text]] | Do not screenshot text |
-| 17 | [[17-do-not-feed-raw-pdfs]] | Do not hand over a PDF as it is |
-| 18 | [[18-do-not-treat-subagents-as-free]] | Do not assume subagents save tokens |
-| 19 | [[19-do-not-blame-background-sessions]] | Do not chase the wrong culprit |
+| 11 | [[11-do-not-switch-model-mid-session]] | Do not switch to a cheaper model to save money |
+| 12 | [[12-what-breaks-the-cache-and-what-does-not]] | Do not treat every change as expensive |
+| 13 | [[13-do-not-compact-to-save-tokens]] | Do not compact to save tokens |
+| 14 | [[14-do-not-shorten-your-prompts]] | Do not write shorter prompts to save money |
+| 15 | [[15-do-not-screenshot-text]] | Do not screenshot text |
+| 16 | [[16-do-not-feed-raw-pdfs]] | Do not hand over a PDF as it is |
+| 17 | [[17-do-not-treat-subagents-as-free]] | Do not assume subagents save tokens |
+| 18 | [[18-do-not-blame-background-sessions]] | Do not chase the wrong culprit |
 
-**The close.** Present it, take questions, then offer the quiz. No wait offer —
-there is nothing new in it to go and do.
+**The close, then the one thing to go and do.** Present 19, take questions, then
+20 — which sends them off to measure their own setup, deliberately at the end
+where wandering off costs nothing.
 
 | | step | |
 | --- | --- | --- |
-| 20 | [[20-nobody-else-will-fix-this]] | One honest note to finish on |
+| 19 | [[19-nobody-else-will-fix-this]] | One honest note to finish on |
+| 20 | [[20-audit-your-own-setup]] | Now go and measure your own setup |
 
 ## The quiz
 

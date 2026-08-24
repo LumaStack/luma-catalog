@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: policy/what-makes-a-tutorial-land
@@ -111,6 +111,18 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.4.0` — the closing blocks in the driving-workflow template now open with
+**Ask questions** rather than *Questions*.
+
+**Because a closing line should tell the reader what to do.** *Questions, or say
+next* names a topic; *Ask questions, or say next* offers an action, and the
+difference matters at exactly the moment somebody is deciding whether to speak up
+or move on.
+
+Kept in step with `luma/token-manager`, whose tutorial carries the same blocks —
+that text is meant to be byte-identical across tutorials, so it is not a place
+where two bundles get to differ.
 
 `0.3.0` — the test step now says where to run it and what to bring back.
 
