@@ -13,7 +13,7 @@ perform: steps, a quiz, and the workflow that drives them.
 | | |
 | --- | --- |
 | **run it** | when a mechanism needs teaching, not documenting |
-| **ends with** | a tutorial in the target bundle, a first run booked, and anything general fed back here |
+| **ends with** | a tutorial in the target bundle, tested in a clean session, and anything general fed back here |
 
 [[what-makes-a-tutorial-land]] is the standard this works to. Read it first — the
 steps below assume it.
@@ -117,7 +117,7 @@ the target bundle, keeping `vendored_from` and updating `at`.
 **Bundles are self-contained and have no dependencies**, so the contract has to
 travel with the documents rather than being referred to across a boundary.
 
-## 9. Run it, at a person
+## 9. Test it in a clean session, and bring the transcript back
 
 **Every rule in [[what-makes-a-tutorial-land]] that matters came from a run, and
 none of them came from review.** Reading a tutorial tells you whether it is
@@ -126,7 +126,46 @@ different questions — the first run of the first tutorial found an invented
 heading, an improvised transition, and twenty steps that argued well and left
 nothing behind, none of which were visible on the page.
 
-**Watch for these specifically**, because they are the ones that recur:
+### Not in this session
+
+**The session that wrote the tutorial is the worst available place to test it.**
+Every step is already in context here, so the agent performing it knows what is
+coming without reading anything, answers questions from the conversation you just
+had rather than from the steps, and cannot experience the one-step-at-a-time
+constraint at all because there is nothing left to load.
+
+**It will go beautifully, and that result is worth nothing.** A tutorial is
+written for somebody arriving with none of this, and that is the only condition
+under which a gap in it shows up.
+
+So: **a fresh session, pointed at the driving workflow and nothing else.** A
+different person is better still, but a clean session is the part that is not
+optional.
+
+**Do not tell them what you are testing for.** Somebody watching for invented
+headings reads differently from somebody learning the material, and it is the
+second one you need. Ask them to go through it as though they wanted to know the
+subject.
+
+### Then have them paste the whole transcript back here
+
+**The actual text, both sides, not an account of how it went.** The failures live
+in exact wording — an invented heading, a transition that reads as the agent
+talking to itself — and a summary is precisely the layer at which wording
+disappears. *"It went fine"* is compatible with every defect listed below.
+
+**Paste it into this session**, which already holds the tutorial, the templates
+and the reasoning behind both. That is what lets one pass fix the step, the
+driving workflow and the template together, instead of guessing at which layer
+the problem came from.
+
+If it is too long to paste, ask for the opening and the first few steps verbatim,
+plus any moment that felt off — **verbatim for the parts you get**, since a
+paraphrased transition is a transition you cannot review.
+
+### What to read the transcript for
+
+These are the ones that recur:
 
 - **wording the agent invented** where the workflow described an outcome rather
   than giving the text
