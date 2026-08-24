@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: How the cost actually compounds
+step: 2
+pause: practice
+---
+
 # How the cost actually compounds
 
 The model has no memory. Not a short one — none at all. Every time you press
@@ -13,8 +20,8 @@ size multiplied by the turns left.** A 3,000-token file your agent reads on turn
 four of a forty-turn session does not cost 3,000 tokens. It costs 3,000 tokens
 thirty-seven more times.
 
-That is the entire mechanism. Every screen after this one is a consequence of
-it — which is why this is the screen worth actually holding on to.
+That is the entire mechanism. Every step after this one is a consequence of
+it — which is why this is the step worth actually holding on to.
 
 It also explains the most surprising thing in this tutorial. **What you
 personally type is a rounding error.** In a real session's logs, everything the

@@ -1,3 +1,9 @@
+---
+type: tutorial_quiz
+title: Quiz
+after_step: 20
+---
+
 # Quiz
 
 Ask these one at a time, in order. Present each question with its options through
@@ -123,7 +129,7 @@ is a fraction of. This session is done, and nothing in it needs resending on eve
 turn of whatever you do next. `/rename` first costs nothing and leaves `/resume` a
 way back if you want one.
 
-- **B** is the trap the tutorial spent a screen on, and picking it here is the
+- **B** is the trap the tutorial spent a step on, and picking it here is the
   most understandable wrong answer available. Compacting sends your entire
   conversation again so a summary can be written, then discards the cache on
   purpose. It buys continuity — which you do not need, because the tutorial is

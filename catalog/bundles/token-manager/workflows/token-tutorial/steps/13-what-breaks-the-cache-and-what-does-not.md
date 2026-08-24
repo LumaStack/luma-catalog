@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Do not treat every change as expensive
+step: 13
+pause: practice
+---
+
 # Do not treat every change as expensive
 
 The opposite mistake is becoming afraid to touch anything. Most of what you do in

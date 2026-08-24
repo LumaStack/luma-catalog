@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Check what your scheduled tasks do at three in the morning
+step: 10
+pause: apply_here
+---
+
 # Check what your scheduled tasks do at three in the morning
 
 Everything so far assumed you were at the keyboard. **A scheduled task fires on

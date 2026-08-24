@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: workflows/token-tutorial/token-tutorial
@@ -23,15 +23,22 @@ available to them.
 
 **Workflows**
 
-- [[token-tutorial]] — the mechanism and what follows from it, presented a screen
+- [[token-tutorial]] — the mechanism and what follows from it, presented a step
   at a time with a pause after each, ending in a quiz.
 - [[token-audit]] — measures one real setup and reports what is costing what.
   Changes nothing.
 
-The tutorial carries its screens beside it, as assets rather than documents. They
-are read one at a time and never all at once, which is both the cheap way to run
-a tutorial and the only way this particular tutorial can be run without
-contradicting itself.
+**Types** — [[tutorial_step]] · [[tutorial_quiz]]
+
+The tutorial carries its steps beside it as documents of those types, read one
+at a time and never all at once — both the cheap way to run a tutorial and the
+only way this particular tutorial can run without contradicting itself.
+
+**`tutorial_step` exists for one field.** A step declares whether the reader can
+act on it here, must go elsewhere, or has nothing to act on at all, because
+several of the recommendations would destroy the session delivering them and the
+reader has no way to tell which. That is a behaviour a consumer dispatches on,
+which is what earns a type rather than a label.
 
 ## Measure first, then learn what to do about it
 
@@ -73,7 +80,7 @@ meters for exactly that reason.
 Code and name its commands directly. The reasoning holds anywhere — no memory,
 everything resent each turn, a cache a model switch invalidates — while the
 keystrokes are between renamed and absent elsewhere. The tutorial says so before
-its first screen rather than letting somebody discover it at a command that does
+its first step rather than letting somebody discover it at a command that does
 not exist.
 
 ## Consumers
@@ -86,11 +93,31 @@ rediscovering at their own expense.
 
 ## Version
 
+`0.2.0` — the tutorial's steps became documents. They were assets with no
+frontmatter; they are now [[tutorial_step]] and [[tutorial_quiz]], and the
+walkthrough reads the same.
+
+**The change worth knowing about is where the pause kind lives.** It was a column
+in the workflow's running order and is now a `pause` field on each step. That
+removes the copy that could drift, and it puts the answer in the document the
+agent is already reading at the moment it needs it — rather than in a table it
+has to look back at, one step removed from the thing being described.
+
+**They are steps now, not screens.** The reader is walked through steps; *screen*
+survives only as the sizing rule an author writes against, in [[tutorial_step]].
+The directory moved with the word, so every Document ID under it changed from
+`.../screens/…` to `.../steps/…`. Wikilinks address the slug alone and are
+unaffected; anything referring to a full ID is not.
+
+**Minor rather than patch**, because an adopter reading the running order for the
+pause kind will no longer find it there, and because those IDs moved. Nothing
+they must fix, so not major: re-adopt and it works.
+
 `0.1.0`. **Untested as a walkthrough.** The material is drawn from real session
 logs and holds up, but nobody has yet sat through the paced version of it, and
-pacing is the thing most likely to be wrong: the screens may be too small, the
+pacing is the thing most likely to be wrong: the steps may be too small, the
 pause may come to feel like ceremony, and the *apply* offers on the middle
-screens may interrupt more than they help.
+steps may interrupt more than they help.
 
 **The split between what to do and what not to do is the structural bet.** It
 reads well and it duplicates one idea across the halves — choosing a model at the

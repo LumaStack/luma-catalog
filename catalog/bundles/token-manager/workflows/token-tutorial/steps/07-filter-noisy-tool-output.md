@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Put a filter in front of noisy commands
+step: 7
+pause: apply_elsewhere
+---
+
 # Put a filter in front of noisy commands
 
 You ask for a package to be installed. The command runs and eight hundred lines

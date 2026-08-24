@@ -1,12 +1,12 @@
 ---
 type: workflow
 title: Walk me through token usage best practices
-description: A paced tutorial on where an agent session's tokens actually go — presented a screen at a time, pausing after each one for questions or practice, and ending in a short quiz. Use when somebody wants to learn the material rather than measure a setup.
+description: A paced tutorial on where an agent session's tokens actually go — presented a step at a time, pausing after each one for questions or practice, and ending in a short quiz. Use when somebody wants to learn the material rather than measure a setup.
 ---
 
 # Walk me through token usage best practices
 
-**A tutorial, not a briefing.** The material is split into screens, each sized to
+**A tutorial, not a briefing.** The material is split into steps, each sized to
 be read in one go, and the whole point is the pause between them: the reader
 stops, asks whatever they want, and goes and applies the thing before the next
 one arrives.
@@ -25,9 +25,9 @@ want the audit and not this.
 rule as everything else the tutorial tells somebody to go and do. See *sending
 somebody away* below before running the first pause.
 
-## Say what this assumes, before screen 1
+## Say what this assumes, before step 1
 
-**The screens are written for Claude Code**, and they name its commands
+**The steps are written for Claude Code**, and they name its commands
 directly — `/rename`, `/clear`, `/context`, `/mcp`, `/usage`, `/cost`, `/rewind`.
 Tell the reader that up front, in a line, before you present anything.
 
@@ -47,15 +47,16 @@ Then run the tutorial anyway — the reader will have to find their own equivale
 of each command, and that is a much smaller gap than not knowing what to look
 for.
 
-## The first screen is the one they act on immediately
+## The first step is the one they act on immediately
 
-Screen 1 teaches `/rename` and has them run it, then and there. **Note the name
+Step 1 teaches `/rename` and has them run it, then and there. **Note the name
 they give you** — you will need it if this session has to be recovered later.
 
-**This is the one screen where sending them to a second window is exactly
-wrong**, and the mistake is easy to make once the *apply elsewhere* habit sets in.
-The command has to run *here*, because the entire purpose is to make *this*
-session findable again. Renaming a different one accomplishes nothing.
+**This is the one step where sending them to a second window is exactly
+wrong**, and the mistake is easy to make once the `apply_elsewhere` habit sets in.
+It is marked `pause: apply_here` and means it: the command has to run *here*,
+because the entire purpose is to make *this* session findable again. Renaming a
+different one accomplishes nothing.
 
 **Do not advance until they have actually run it** and told you what they called
 it. Everything after this leans on it: the tutorial ends by telling them to throw
@@ -66,44 +67,50 @@ If they would rather skip it, say what they are giving up — this session becom
 unfindable the moment it is cleared — and then move on. It is their call, not a
 gate.
 
-## Read one screen at a time
+## Read one step at a time
 
-**Read the file for the screen you are presenting, and no others.** Not the next
+**Read the file for the step you are presenting, and no others.** Not the next
 one, not a batch of them, not all of them up front to plan ahead. If you need to
-know what a later screen covers, the running order below has the titles.
+know what a later step covers, the running order below has the titles.
 
 This is not fussiness. A tutorial about the cost of loading things into context
-that begins by loading twenty screens into context has refuted itself before the
+that begins by loading twenty steps into context has refuted itself before the
 first pause, and the reader is paying for every one of them on every turn of the
 walkthrough.
 
-**Present the screen in full.** Do not summarise, condense or paraphrase it. The
-screens are already short, so a summary saves the reader nothing and costs them
+**Present the step in full.** Do not summarise, condense or paraphrase it. The
+steps are already short, so a summary saves the reader nothing and costs them
 the wording that was chosen.
 
-**Then stop.** Never advance on your own, however brief the screen was.
+**Then stop.** Never advance on your own, however brief the step was.
 
 ## The pause is the workflow
 
-After each screen, in this order:
+After each step, in this order:
 
-**1. Invite questions.** Answer from the screens already presented and from what
-you can see of their setup. **If the answer is a later screen, say which one is
+**1. Invite questions.** Answer from the steps already presented and from what
+you can see of their setup. **If the answer is a later step, say which one is
 coming rather than reading ahead** — that is what the running order is for.
 
-**2. Offer to wait**, in the form the running order gives for that screen:
+**2. Offer to wait**, in the form the step's own `pause` field gives:
 
-| kind | the offer |
+| `pause` | the offer |
 | --- | --- |
-| **apply here** | something they can change right now, safely, in this session — *if you want to go and do that, I'll wait* |
-| **apply elsewhere** | something they can change, but not from inside this session — *open a second window and do it there; I'll be here* |
-| **practice** | a statement about how something works rather than something to change — *if you want to go and try that in another session, I'll wait* |
+| `apply_here` | something they can change right now, safely, in this session — *if you want to go and do that, I'll wait* |
+| `apply_elsewhere` | something they can change, but not from inside this session — *open a second window and do it there; I'll be here* |
+| `practice` | a statement about how something works rather than something to change — *if you want to go and try that in another session, I'll wait* |
+| `none` | nothing to act on. Take questions and move on |
 
-If they take the offer, wait. Do not fill the silence with the next screen.
+**It is on the step rather than in the running order below**, deliberately. You
+read the step at the moment you need the answer, so the field is in front of you
+exactly when it applies — and there is only one copy of it to go stale. See
+[[tutorial_step]] for what each value is claiming.
+
+If they take the offer, wait. Do not fill the silence with the next step.
 
 **3. Say how to continue** — they say *next*.
 
-**Do not skip the offer because a screen seemed obvious, and do not give the
+**Do not skip the offer because a step seemed obvious, and do not give the
 wrong one.** Offering to wait while somebody applies a fact they cannot act on is
 filler, and it teaches them that the pause is ceremony they can ignore.
 
@@ -112,10 +119,10 @@ filler, and it teaches them that the pause is ceremony they can ignore.
 **A pause that strands the reader has done more damage than skipping the pause
 would have.** Much of what this tutorial recommends would wreck this session if it
 were done in this session — and the reader cannot possibly know which, because the
-screen that says *clear between jobs* does not say *except right now*. **Knowing
+step that says *clear between jobs* does not say *except right now*. **Knowing
 that is your job, not theirs.**
 
-**Say where they are before they go, every time.** *"You're on screen 8, turning
+**Say where they are before they go, every time.** *"You're on step 8, turning
 off unused tools — say next when you're back."* A number and a title cost you one
 line and turn the trip back into a single word.
 
@@ -124,26 +131,27 @@ line and turn the trip back into a single word.
 | | what it would do |
 | --- | --- |
 | `/clear` | destroys the tutorial. It is also the tutorial's closing instruction, so this is a *later*, not a *no* |
-| `/compact` | the lesson from screen 14, ignored, at the worst possible moment |
-| `/model`, effort level, fast mode | rebuilds this session's cache — screen 12, exactly |
-| running [[token-audit]] | its report would sit in this context and be resent on every remaining screen |
+| `/compact` | the lesson from step 14, ignored, at the worst possible moment |
+| `/model`, effort level, fast mode | rebuilds this session's cache — step 12, exactly |
+| running [[token-audit]] | its report would sit in this context and be resent on every remaining step |
 | building the output-filter hook | real work with real output, and it belongs in a session that is not this one |
 
 **When they ask for one of these, do not simply decline it.** Say what it would do
-to this session, name the screen that already covered it, and say where to do it
+to this session, name the step that already covered it, and say where to do it
 instead. **The tutorial is far more convincing for refusing to break its own rule
 in front of the reader** than it is for stating the rule.
 
-Everything on that list is *apply elsewhere*: a second window, this session left
-untouched, back here with a single *next*. Nothing is being withheld.
+Every step that recommends one of those is marked `pause: apply_elsewhere`: a
+second window, this session left untouched, back here with a single *next*.
+Nothing is being withheld.
 
 ## If it goes wrong anyway
 
 Somebody will clear this session, close the window, or run the audit inside it.
 
-**Recover; do not restart.** Ask which screen they had reached and resume from
+**Recover; do not restart.** Ask which step they had reached and resume from
 there — a number, or a half-remembered title matched against the running order, is
-enough. **Do not replay screens they have already sat through**, which is the
+enough. **Do not replay steps they have already sat through**, which is the
 response that makes people abandon a tutorial for good.
 
 If they renamed the session at the start, `/resume` brings the original back and
@@ -151,53 +159,54 @@ nothing at all is lost.
 
 ## Running order
 
-**Setup, then the mechanism.** Screen 1 is the only thing they do before learning
-anything; screen 2 is the fact everything else is a consequence of.
+**Setup, then the mechanism.** Step 1 is the only thing they do before learning
+anything; step 2 is the fact everything else is a consequence of.
 
-| | screen | pause |
+| | step | |
 | --- | --- | --- |
-| 1 | [Name this session before we start](screens/01-rename-this-session.md) | apply here, and only here |
-| 2 | [How the cost actually compounds](screens/02-how-the-cost-compounds.md) | practice |
+| 1 | [[01-rename-this-session]] | Name this session before we start |
+| 2 | [[02-how-the-cost-compounds]] | How the cost actually compounds |
 
 **What to do.**
 
-| | screen | pause |
+| | step | |
 | --- | --- | --- |
-| 3 | [Start by measuring your own setup](screens/03-audit-your-own-setup.md) | apply elsewhere |
-| 4 | [Clear between jobs](screens/04-clear-between-jobs.md) | apply elsewhere |
-| 5 | [Choose your model and effort once, at the start](screens/05-choose-model-and-effort-once.md) | apply elsewhere |
-| 6 | [Put cheap models where they cannot cost you anything](screens/06-cheap-models-where-they-cost-nothing.md) | apply here |
-| 7 | [Put a filter in front of noisy commands](screens/07-filter-noisy-tool-output.md) | apply elsewhere |
-| 8 | [Turn off the tools you never use](screens/08-turn-off-tools-you-do-not-use.md) | apply here |
-| 9 | [Delegate when the session still has a long way to run](screens/09-delegate-when-the-session-has-far-to-run.md) | practice |
-| 10 | [Check what your scheduled tasks do at three in the morning](screens/10-match-schedules-to-the-cache-lifetime.md) | apply here |
-| 11 | [Watch the meters](screens/11-watch-the-meters.md) | apply here |
+| 3 | [[03-audit-your-own-setup]] | Start by measuring your own setup |
+| 4 | [[04-clear-between-jobs]] | Clear between jobs |
+| 5 | [[05-choose-model-and-effort-once]] | Choose your model and effort once, at the start |
+| 6 | [[06-cheap-models-where-they-cost-nothing]] | Put cheap models where they cannot cost you anything |
+| 7 | [[07-filter-noisy-tool-output]] | Put a filter in front of noisy commands |
+| 8 | [[08-turn-off-tools-you-do-not-use]] | Turn off the tools you never use |
+| 9 | [[09-delegate-when-the-session-has-far-to-run]] | Delegate when the session still has a long way to run |
+| 10 | [[10-match-schedules-to-the-cache-lifetime]] | Check what your scheduled tasks do at three in the morning |
+| 11 | [[11-watch-the-meters]] | Watch the meters |
 
 **What not to do.**
 
-| | screen | pause |
+| | step | |
 | --- | --- | --- |
-| 12 | [Do not switch to a cheaper model to save money](screens/12-do-not-switch-model-mid-session.md) | practice |
-| 13 | [Do not treat every change as expensive](screens/13-what-breaks-the-cache-and-what-does-not.md) | practice |
-| 14 | [Do not compact to save tokens](screens/14-do-not-compact-to-save-tokens.md) | practice |
-| 15 | [Do not write shorter prompts to save money](screens/15-do-not-shorten-your-prompts.md) | practice |
-| 16 | [Do not screenshot text](screens/16-do-not-screenshot-text.md) | practice |
-| 17 | [Do not hand over a PDF as it is](screens/17-do-not-feed-raw-pdfs.md) | practice |
-| 18 | [Do not assume subagents save tokens](screens/18-do-not-treat-subagents-as-free.md) | practice |
-| 19 | [Do not chase the wrong culprit](screens/19-do-not-blame-background-sessions.md) | apply here |
+| 12 | [[12-do-not-switch-model-mid-session]] | Do not switch to a cheaper model to save money |
+| 13 | [[13-what-breaks-the-cache-and-what-does-not]] | Do not treat every change as expensive |
+| 14 | [[14-do-not-compact-to-save-tokens]] | Do not compact to save tokens |
+| 15 | [[15-do-not-shorten-your-prompts]] | Do not write shorter prompts to save money |
+| 16 | [[16-do-not-screenshot-text]] | Do not screenshot text |
+| 17 | [[17-do-not-feed-raw-pdfs]] | Do not hand over a PDF as it is |
+| 18 | [[18-do-not-treat-subagents-as-free]] | Do not assume subagents save tokens |
+| 19 | [[19-do-not-blame-background-sessions]] | Do not chase the wrong culprit |
 
 **The close.** Present it, take questions, then offer the quiz. No wait offer —
 there is nothing new in it to go and do.
 
-| | screen | pause |
+| | step | |
 | --- | --- | --- |
-| 20 | [One honest note to finish on](screens/20-nobody-else-will-fix-this.md) | — |
+| 20 | [[20-nobody-else-will-fix-this]] | One honest note to finish on |
 
 ## The quiz
 
-Read [the quiz](screens/quiz.md) once the close is done and they have said they
-are ready. Not before — it carries every answer, and having it in context while
-you are still presenting screens is how a hint leaks.
+Read [[quiz]] once the close is done and they have said they are ready. **Not
+before** — it carries every answer, and having it in context while you are still
+presenting steps is how a hint leaks. Its `after_step` field says the same
+thing in a form a tool can check.
 
 **One question at a time**, through the harness's interactive picker if there is
 one, otherwise a numbered list.
@@ -219,9 +228,9 @@ The last question asks whether to compact or clear to end the tutorial. **The
 answer is clear, and it is also the tutorial's final instruction rather than a
 hypothetical.**
 
-Once they have answered it, tell them to do it. They named this session on screen
+Once they have answered it, tell them to do it. They named this session on step
 1, so the way back already exists and all that is left is `/clear` — which is
-also the pair from that screen closing, an hour later, exactly as promised.
+also the pair from that step closing, an hour later, exactly as promised.
 
 **Then stop.** Do not offer to start something else in this session, do not
 summarise what was covered, do not compact. Beginning a new job in the session

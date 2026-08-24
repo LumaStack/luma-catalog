@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Put cheap models where they cannot cost you anything
+step: 6
+pause: apply_here
+---
+
 # Put cheap models where they cannot cost you anything
 
 Choosing your model once, at the start, sounds like it forces the whole session

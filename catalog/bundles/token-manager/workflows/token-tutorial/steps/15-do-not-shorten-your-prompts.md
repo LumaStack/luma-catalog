@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Do not write shorter prompts to save money
+step: 15
+pause: practice
+---
+
 # Do not write shorter prompts to save money
 
 The most common instinct, and the least effective thing you could act on.

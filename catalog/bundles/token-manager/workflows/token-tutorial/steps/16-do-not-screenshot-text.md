@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Do not screenshot text
+step: 16
+pause: practice
+---
+
 # Do not screenshot text
 
 A picture is not cheaper than the words in it. A screenshot of your screen runs

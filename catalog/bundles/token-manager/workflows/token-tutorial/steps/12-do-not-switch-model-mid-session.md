@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Do not switch to a cheaper model to save money
+step: 12
+pause: practice
+---
+
 # Do not switch to a cheaper model to save money
 
 This is the one worth actually remembering, because it is a mistake you make on

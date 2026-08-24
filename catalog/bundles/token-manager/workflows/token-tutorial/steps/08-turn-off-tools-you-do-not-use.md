@@ -1,3 +1,10 @@
+---
+type: tutorial_step
+title: Turn off the tools you never use
+step: 8
+pause: apply_here
+---
+
 # Turn off the tools you never use
 
 Connecting an MCP server takes one prompt and feels free. It is not. **Every tool
