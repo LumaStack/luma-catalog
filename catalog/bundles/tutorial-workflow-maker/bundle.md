@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: policy/what-makes-a-tutorial-land
@@ -111,6 +111,32 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.6.0` — what a first tutorial's revision pass taught, fed back.
+
+**`create-tutorial` gains boundary checks.** An instruction can be right for
+every step and wrong at the edges, and that is the defect a read-through never
+finds because it is correct everywhere you look. The first step, the last step,
+both sides of the quiz, and the first time the reader is asked to leave.
+
+**And a mechanical checklist**, each item of which has been wrong at least once:
+`title` matching the step's heading, `step` matching the filename, `after_step`
+on the quiz, and no step referring to another by number.
+
+**Ordering guidance: put the steps that send somebody away as late as you can.**
+Early on the reader leaves before they know enough for the errand to be worth
+doing, and some of them do not come back. Late it costs nothing. This is the
+hardest ordering mistake to see while writing, because *measure your setup first*
+sounds like obvious good sense.
+
+**The step template gains two writing rules** — state the rule before
+illustrating it rather than leaving the reader to induce it, and do no arithmetic
+in front of them that you could have done for them.
+
+**Nothing was promoted to [[what-makes-a-tutorial-land]].** These are still one
+tutorial's findings, so they went to the workflow, the template and
+[[lessons-from-the-first-tutorial]] — which is what this bundle's own rule about
+first observations asks for.
 
 `0.5.0` — the driving-workflow template says what the **last** step's closing
 block does.
