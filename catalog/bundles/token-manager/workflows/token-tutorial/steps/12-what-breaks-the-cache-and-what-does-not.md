@@ -1,7 +1,7 @@
 ---
 type: luma/tutorial_step
 title: Do not treat every change as expensive
-step: 13
+step: 12
 pause: practice
 ---
 
@@ -21,7 +21,7 @@ guessing produces paralysis in one direction and surprise bills in the other.
 | compacting | recaps and rewinds |
 | upgrading Claude Code, then resuming a long session | spawning a subagent |
 
-**The last entry on the left is the nastiest**, because it does not feel like a
+**Upgrading Claude mid-session is the nastiest**, because it does not feel like a
 change to the session at all. Anthropic's own documentation describes resuming a
 long session after an upgrade as about the most expensive request you will send.
 
@@ -31,6 +31,6 @@ different question from whether it was worth spawning.
 ## Takeaways
 
 - **Rebuilds your cache:** switching model, changing effort, fast mode, compacting, toggling MCP servers where tools load up front, enabling a plugin that ships one.
-- **Leaves it alone:** editing files, editing your memory file, output style, permission mode, invoking skills and commands, recaps, rewinds, spawning a subagent.
-- **Upgrading then resuming a long session** is the nastiest — it doesn't feel like a change at all.
+- **Leaves cache alone:** editing files, editing your memory file, output style, permission mode, invoking skills and commands, recaps, rewinds, spawning a subagent.
+- **Upgrading then resuming a long session** is the worst offender.
 - Spawning a subagent is cache-safe, which is a different question from whether it was worth it.

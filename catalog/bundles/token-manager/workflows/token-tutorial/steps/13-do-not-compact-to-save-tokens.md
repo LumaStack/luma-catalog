@@ -1,7 +1,7 @@
 ---
 type: luma/tutorial_step
 title: Do not compact to save tokens
-step: 14
+step: 13
 pause: practice
 ---
 
@@ -28,5 +28,5 @@ back to a point the cache already knows, so nothing has to be re-read.
 - Compacting sends your **entire conversation one more time** so a summary can be written.
 - It is the single most expensive message of a session, and it then discards your cache on purpose.
 - **It buys continuity, never savings.** Pay for it knowingly, mid-task, for that reason alone.
-- Clearing is the free one.
+- Clearing is the free one and usually the better choice.
 - Undoing a few bad turns? **`/rewind`** returns to a point the cache already knows.

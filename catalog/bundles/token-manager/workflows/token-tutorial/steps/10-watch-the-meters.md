@@ -1,7 +1,7 @@
 ---
 type: luma/tutorial_step
 title: Watch the meters
-step: 11
+step: 10
 pause: apply_here
 ---
 

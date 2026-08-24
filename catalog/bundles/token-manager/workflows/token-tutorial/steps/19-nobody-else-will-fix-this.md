@@ -1,7 +1,7 @@
 ---
 type: luma/tutorial_step
 title: One honest note to finish on
-step: 20
+step: 19
 pause: none
 ---
 
@@ -36,5 +36,4 @@ is your job.
 - **Filter noisy tool output** before it lands.
 - **Disconnect unused tools**, and check the line still says *deferred*.
 - **Delegate only when the session has far to run.**
-- **Go and look at what fires at three in the morning.**
-- Nobody is graded on how few tokens you use. It's your desk.
+- **Go and look at what fires when you aren't looking.**

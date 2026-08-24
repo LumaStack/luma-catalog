@@ -1,7 +1,7 @@
 ---
 type: luma/tutorial_step
 title: Put a filter in front of noisy commands
-step: 7
+step: 6
 pause: apply_elsewhere
 ---
 
@@ -9,7 +9,7 @@ pause: apply_elsewhere
 
 You ask for a package to be installed. The command runs and eight hundred lines
 come back — package names, version numbers, warnings, a funding notice. You did
-not read one of them. You wanted to know it worked.
+not read any of them. You wanted to know the command worked.
 
 **Your agent does not get to skim.** All eight hundred lines land in the
 conversation verbatim, and you pay for them again on every message until you

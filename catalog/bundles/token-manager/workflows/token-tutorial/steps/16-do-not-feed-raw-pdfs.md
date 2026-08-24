@@ -1,7 +1,7 @@
 ---
 type: luma/tutorial_step
 title: Do not hand over a PDF as it is
-step: 17
+step: 16
 pause: practice
 ---
 
@@ -11,8 +11,8 @@ A PDF charges you twice for every page. The words are charged as text — somewh
 in the low thousands of tokens per page — **and then the page is also rendered as
 an image and charged again.** Every page, both ways.
 
-**Convert it first.** Ask your agent to turn the document into plain text before
-anybody reasons about it, and the same document costs something like a quarter as
+**Convert it first.** Ask your agent to turn the document into plain text or markdown before
+anybody reasons about it, and the same document costs something around a quarter as
 much.
 
 This is the previous step one step larger, and it has the same exception. If

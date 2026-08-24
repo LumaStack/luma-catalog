@@ -45,10 +45,10 @@ multiplied by turns remaining.
 
 ---
 
-## 2. You are running low mid-session, so you switch from Opus to Sonnet to make the rest of it cheaper. What happens?
+## 2. You are mid-session, and you switch from Opus to Sonnet to make the rest of the session cheaper. What happens?
 
 - **A.** The rest of the session gets cheaper.
-- **B.** Your cache is invalidated and the whole conversation is reprocessed at full price.
+- **B.** Your cache is invalidated and the whole conversation is reprocessed at full price. It was cheaper to `/clear`.
 - **C.** Nothing, until your next message.
 - **D.** Your context is summarised down to fit the smaller model.
 
@@ -95,11 +95,11 @@ conversation. It does not touch the cache key, so nothing gets rebuilt.
 ## 4. When is delegating to a subagent actually worth it?
 
 - **A.** Always — a subagent runs in its own context, so it is free.
-- **B.** When the output is high volume, you will not need the detail again, and the session has many turns left.
-- **C.** When you are near the end of a session and want to finish cheaply.
-- **D.** Whenever the subagent runs a cheaper model than your main session.
+- **B.** When you are near the end of a session and want to finish cheaply.
+- **C.** Whenever the subagent runs a cheaper model than your main session.
+- **D.** When the output/input is high volume, you will not need the detail again, and the session has many turns left.
 
-**Correct: B.**
+**Correct: D.**
 
 A subagent spends real tokens — its own system prompt, its own copy of your
 memory file, its own tools, and then the reading. In isolation it often spends
@@ -109,9 +109,9 @@ scales with how much session is left. All of them have to hold together.
 
 - **A** is the myth. Delegation moves tokens rather than saving them, and end to
   end it can be a net loss.
-- **C** is the specific way to lose. You pay the whole setup cost and then end the
+- **B** is the specific way to lose. You pay the whole setup cost and then end the
   session before any of the return accrues.
-- **D** is a good idea attached to the wrong question. A cheap model makes the
+- **C** is a good idea attached to the wrong question. A cheap model makes the
   delegated work cheaper; it does not make delegating the right call.
 
 ---

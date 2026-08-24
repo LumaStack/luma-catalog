@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: workflows/token-tutorial/token-tutorial
@@ -42,17 +42,26 @@ several of the recommendations would destroy the session delivering them and the
 reader has no way to tell which. That is a behaviour a consumer dispatches on,
 which is what earns a type rather than a label.
 
-## Measure first, then learn what to do about it
+## Learn the mechanism, then measure
 
-**The workflows answer different questions, and the order matters.** *What is
-wrong with my setup* is answered by numbers from your own machine; *what should I
-do about it* is answered by the tutorial. Run the audit first and the tutorial
-stops being general advice and starts being a ranked list of your own problems —
-which is why the tutorial sends you to the audit near the start, before it has
-recommended anything.
+**The workflows answer different questions.** *What should I do about any of
+this* is answered by the tutorial; *what is wrong with my setup specifically* is
+answered by numbers from your own machine.
 
-Going the other way round works too, just less well. You learn the mechanism, and
-then have to guess which consequence of it is biting you.
+**The tutorial runs the audit as its last step**, and that ordering was got wrong
+the first time. Measuring first sounds obviously right — you would be ranking
+real problems instead of reading general advice — but **a finding you cannot
+interpret is not a ranked problem, it is a line of output.** *Tool deferral is
+not active* means nothing until you know what deferral was doing for you.
+
+The other cost is worse and less obvious. **Sending somebody off to run an audit
+three steps into a walkthrough is where they stop being in a walkthrough.** It is
+a long, output-heavy job in another window, and the tutorial is competing with
+whatever they find. At the end, wandering off costs nothing, because there is
+nothing left to lose them from.
+
+Somebody who already knows the material should run the audit on its own. It does
+not need the tutorial; the tutorial needs it last.
 
 ## Nothing here changes a setting
 
@@ -94,6 +103,31 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.6.0` — **the audit moved from the third step to the last**, and the prose was
+worked over throughout.
+
+The ordering is the substantive change and the reasoning is above, under *learn
+the mechanism, then measure*. Short version: a finding you cannot interpret is
+not a ranked problem, and step three is where a reader stops being in a
+walkthrough.
+
+**The mechanism step now states the rule before the example.** It had asked the
+reader to infer *each message re-buys everything before it* from a worked case;
+it now says so, then walks the ladder. The file-cost example lost its arithmetic
+step too — *read at the beginning of a forty-turn session* rather than *on turn
+four*, which is one less thing to hold.
+
+**`/rename` is framed as archiving**, which is a mental model rather than a
+mechanism, and it survives the reader forgetting the details.
+
+**Every step from 3 onward was renumbered**, so their Document IDs and wikilink
+slugs moved — `04-clear-between-jobs` is now `03-clear-between-jobs`, and so on.
+Nothing outside the tutorial links to an individual step, and the running order
+moved with them, so an adopter re-adopts and it works. Anything that did cite a
+step by ID does not.
+
+Wording throughout is the author's, not tidied into house voice.
 
 `0.5.0` — the opening stops narrating how the tutorial works.
 

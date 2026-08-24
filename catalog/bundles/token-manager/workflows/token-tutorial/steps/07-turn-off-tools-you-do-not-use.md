@@ -1,7 +1,7 @@
 ---
 type: luma/tutorial_step
 title: Turn off the tools you never use
-step: 8
+step: 7
 pause: apply_here
 ---
 
@@ -13,7 +13,7 @@ back — and your agent has to read the manual before it is allowed to touch the
 tool. A single large server can run to tens of thousands of tokens on its own,
 and it loads before you have typed a word.
 
-Recent versions fix most of this with tool deferral: the agent loads a contents
+Newer harness versions fix most of this with tool deferral: the agent loads a contents
 page and opens a section only when it actually needs that tool. Same tools
 available, a fraction of the weight. It is on by default.
 
@@ -24,9 +24,10 @@ deleted — it stays configured and stops loading.
 
 Then run `/context` and find the tools line. **If it says deferred, you are on
 the new behaviour**, and toggling servers mid-session is safe: connecting and
-disconnecting appends rather than rebuilding your cache. The audit workflow
-checks this too, along with the thing that silently switches deferral off — a
-proxy or gateway in front of the API, which nothing warns you about.
+disconnecting appends rather than rebuilding your cache. The audit at the end of
+this tutorial checks that line for you, along with the thing that silently
+switches deferral off — a proxy or gateway in front of the API, which nothing
+warns you about.
 
 ## Takeaways
 
