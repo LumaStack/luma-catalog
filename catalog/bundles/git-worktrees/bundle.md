@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.1
+version: 0.2.0
 published: 2026-08-18
 consumers: [project]
 entry_point: policy/worktree-isolation
@@ -38,6 +38,11 @@ That gap is what this bundle closes.
 starts in one. By the time a collision is visible it has already happened — an
 edit swept into the wrong commit, a rename breaking another session's working
 directory, an unexplained divergence nobody can trace.
+
+**The shared checkout is not a workspace.** It holds `main` and worktrees are
+created from it; nobody edits there, including the person supervising. It is the
+one directory with no collision detector, and an edit made in it is invisible to
+every worktree — so a merge reverts it with nothing in the diff to show why.
 
 **Create them through the path that runs the whole lifecycle**, never a bare
 `git worktree add`. That path provisions, locks while live, sweeps up, and
@@ -96,6 +101,23 @@ writes the derived port with `cat >`, destroying the file it just copied. The
 failure looks exactly like the copy never happened. **Append.**
 
 ## Version
+
+`0.2.0` — **the shared checkout is declared off limits for editing**, with the
+check that catches it and the repair that does not lose the work.
+
+The bundle had covered agents colliding with each other, which git reports, and
+missed the case it cannot: **a second writer in the shared checkout collides with
+nothing**, because that checkout sits on `main` and nothing else has it checked
+out. The edit is invisible inside every worktree, and the merge reverts it
+silently.
+
+**Found by a person doing it** — reviewing alongside an agent, with a checkout
+already open, editing the obvious file in the obvious place. The near-miss was a
+rewrite that would have vanished at merge with nothing in the diff to explain it.
+
+The repair is *move the work and say so*, deliberately: asking for it to be
+redone loses whatever was better about the first attempt, and quietly working
+around it makes the wrong tree the normal one.
 
 `0.1.1` — a heading no longer says how many things are beneath it. Wording only.
 

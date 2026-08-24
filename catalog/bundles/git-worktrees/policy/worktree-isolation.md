@@ -82,6 +82,70 @@ git branch --show-current          # which branch
 git rev-parse --git-common-dir     # the shared object database
 ```
 
+## The shared checkout is not a workspace
+
+**It exists to create worktrees from and to hold `main`. Nobody edits in it** —
+not the agents, and not the person watching them.
+
+**Because there is no collision detector on it.** Git's one-branch-one-worktree
+rule is what makes concurrent work safe, and it does not apply here: the shared
+checkout sits on `main`, which nothing else has checked out, so a second writer
+in that directory collides with nothing and is reported by nothing.
+
+**And a worktree is branched from the committed state.** Edits sitting
+uncommitted in the shared checkout are invisible inside every worktree. The
+sequence that follows is not exotic:
+
+1. Somebody edits a file in the shared checkout.
+2. An agent, in a worktree, edits the same file — reading the committed version.
+3. The worktree's branch merges, reverting the first edit **with nothing in the
+   diff to show it happened.**
+
+Nobody sees a conflict, because to git there was never a conflict. This also
+breaks the `--ff-only` rule above: a shared checkout with local edits cannot be
+kept cleanly on `main`.
+
+**People are the likely offender, and it is not carelessness.** Agents are told
+to work in a worktree. The person reviewing alongside them has a perfectly good
+checkout already open, and editing it is the obvious thing to do.
+
+### Check the shared checkout before every commit
+
+Not only when something looks wrong. **The failure is silent, and by merge time
+the evidence is gone.**
+
+```sh
+MAIN="$(git rev-parse --git-common-dir)/.."
+git -C "$MAIN" status --short --untracked-files=no
+```
+
+Anything listed that the committing session did not put there is misplaced work.
+
+**`--untracked-files=no` is what makes this usable.** The shared checkout always
+has untracked entries — the worktrees directory itself, editor state, build
+output — and a check that cries wolf on every run is one people stop reading.
+Modified tracked files are the case that reverts silently, so that is the signal.
+**Untracked files in the shared checkout are worth a separate look**, less
+urgently: they are not in any diff, so they cannot be reverted by a merge, but
+they also will not travel.
+
+### Move it, then say so
+
+**Never ask for the work to be redone, and never quietly work around it.**
+Redoing it loses whatever was better about the first attempt; working around it
+makes the wrong tree the normal one.
+
+```sh
+MAIN=$(git rev-parse --git-common-dir)/..
+git -C "$MAIN" diff > /tmp/misplaced.patch     # tracked edits
+git apply /tmp/misplaced.patch                 # from inside the worktree
+```
+
+**Verify the content arrived before resetting anything.** Untracked files are not
+in that diff and have to be moved separately. Then clear the shared checkout, and
+**say plainly what happened and where to edit next time** — a repeat is the same
+silent revert, and the whole value of detecting it is that somebody finds out.
+
 ## What is shared, and what is not
 
 | | |
