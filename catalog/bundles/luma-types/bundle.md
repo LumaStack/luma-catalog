@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.7.0
 published: 2026-08-24
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
@@ -137,6 +137,15 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.7.0` — `luma/tutorial_step` reaches `0.3.0`: the closing block is the only
+place a walkthrough ever mentions its own pacing.
+
+**Because a pause you had to be briefed about is one the reader is waiting for
+rather than using.** Nothing explains up front that there will be steps, or
+pauses, or how many. The first closing block introduces the pattern by being it,
+which is why stopping there feels like the obvious thing to do rather than a
+procedure somebody was enrolled in.
 
 `0.6.0` — `luma/tutorial_step` reaches `0.2.0`: a step's body must now carry a
 `## Takeaways` section under its prose.

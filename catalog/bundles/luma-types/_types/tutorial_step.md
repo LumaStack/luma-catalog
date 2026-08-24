@@ -1,7 +1,7 @@
 ---
 type: type_definition
 defines: luma/tutorial_step
-version: "0.2.0"
+version: "0.3.0"
 extends: document
 fields:
   step:
@@ -133,6 +133,12 @@ decided what it is for.**
 practise it elsewhere, say *next* when ready — is rendered by the driving workflow
 from `pause`, so its wording stays consistent across every step and cannot be
 improvised into sounding like the agent talking to itself.
+
+**It is also the only place the pacing is ever mentioned.** Nothing explains up
+front that there will be steps, or pauses, or how many — the first closing block
+introduces the pattern by being it, which is why it feels like a natural place to
+stop rather than a procedure somebody was enrolled in. **A pause a reader had to
+be briefed about is one they are now waiting for** instead of using.
 
 ## When to reach for this over a plain document
 

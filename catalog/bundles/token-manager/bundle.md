@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.5.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: workflows/token-tutorial/token-tutorial
@@ -94,6 +94,18 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.5.0` — the opening stops narrating how the tutorial works.
+
+It had been explaining the format before any of the material: one step at a time,
+a pause after each, what the pause was for. **All of that is the agent's business
+rather than the reader's.** The opening now says what the subject is and starts;
+the first closing block introduces the rhythm by arriving, and it reads as
+natural because stopping there is the obvious thing to do at that point.
+
+The workflow keeps the reasoning — it is what needs to understand why the pause
+matters — and gains an explicit rule against describing it, alongside the
+existing one against announcing the step count.
 
 `0.4.0` — every step gains `## Takeaways`, and the workflow now specifies what the
 reader sees rather than leaving it to be improvised.

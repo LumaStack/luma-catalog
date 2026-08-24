@@ -55,14 +55,17 @@ anything else, replace the first line with the warning above.
 > `/context`, `/mcp`, `/usage`, `/cost`, `/rewind` — so they will work as
 > written.
 >
-> This is about where your tokens actually go, and what to do about it. One step
-> at a time, with a pause after each — so you can ask questions or go and try
-> something before moving on. Say **next** when you're ready for the next one.
-> There's a short quiz at the end.
+> This is about where your tokens actually go, and what to do about it. There's a
+> short quiz at the end.
 
-**Do not announce how many steps there are.** A number up front reads as a chore
-to get through, and the reader is about to be asked to stop and think after every
-one of them.
+**Do not explain the pacing to them, and do not announce how many steps there
+are.** No *one step at a time*, no *I'll pause after each*, no count. The pause
+introduces itself when the first one arrives, and it reads as natural because it
+is the obvious thing to do at that moment.
+
+Described up front instead, it becomes a procedure the reader has been enrolled
+in — and a number turns the whole thing into a queue to get through, right before
+they are asked to stop and think after each one.
 
 ## The first step is the one they act on immediately
 
