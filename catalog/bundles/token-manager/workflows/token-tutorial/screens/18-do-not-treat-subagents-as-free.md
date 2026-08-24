@@ -1,0 +1,21 @@
+# Do not assume subagents save tokens
+
+The advice everybody repeats is that delegating to subagents saves tokens.
+**It does not save them. It moves them.**
+
+Run the arithmetic on a typical delegation. The subagent reads several thousand
+tokens of files and hands back a summary a fraction of that size, and your
+context is clearly better off. But before it read anything it loaded its own
+system prompt, its own copy of your memory file and its own tool definitions —
+and end to end it can spend more than it saved.
+
+The published figures are blunt about the scale. **Agents use in the region of
+four times the tokens of ordinary chat, and multi-agent systems around fifteen
+times.**
+
+None of that makes delegation wrong. It makes it a trade rather than a saving,
+and the earlier screen gave the conditions under which the trade pays.
+
+**What is wrong is delegating on the belief that it is free** — and above all,
+delegating and then ending the session, which is paying the whole setup cost and
+collecting none of the return.
