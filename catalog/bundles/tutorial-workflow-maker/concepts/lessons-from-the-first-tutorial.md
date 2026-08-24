@@ -68,6 +68,48 @@ when hitting it unwarned would be jarring.
 law, because the law is easier to state and sounds more confident. The cost lands
 later, on somebody who has a genuine exception and no permission to take it.
 
+## The second pass found different things than the run did
+
+**The run found what the agent did wrong. A read-through by the author found what
+the writing did wrong**, and they barely overlap — which is an argument for doing
+both rather than treating either as the review.
+
+**An explanation that makes the reader derive the rule.** The mechanism step
+described a worked example and left *each message re-buys everything before it*
+to be induced from it. Every reader would get there; some slowly, none certain.
+Stating the rule and then illustrating it is strictly better and costs nothing.
+
+**Arithmetic the reader has to perform.** *A file read on turn four of a forty-turn
+session costs thirty-seven more times* asks for a subtraction before anybody can
+agree with it. *Read at the start, so it costs forty times* is the same fact with
+the work already done.
+
+**A step that sends people away, placed early.** The audit was step three. It is
+a long job in another window, before the reader knows enough for its findings to
+mean anything — so it is both the least useful place for it and the point they
+are most likely not to come back from. It is now last. **This one was argued for
+in `bundle.md` before it was argued against**, which is worth knowing: *measure
+first* is a genuinely appealing principle that happens to be wrong inside a
+walkthrough.
+
+**Cross-references by number.** Moving one step falsified every *step 12* in the
+prose, silently. The references that used *the previous step* and *the earlier
+step* survived untouched. That is a clean natural experiment, and the rule falls
+out of it.
+
+## Boundaries are where correct-everywhere instructions fail
+
+**The closing block said *next for step 21*.** The instruction — take the step
+number, add one — is right nineteen times out of twenty, and reading it will
+never tell you about the twentieth. Only arriving at the end does.
+
+**This is the general shape worth carrying**, not the specific bug. An
+instruction that holds across a range usually has an edge it does not hold at,
+and the edges of a tutorial are enumerable: the first step, the last step, the
+handoff into the quiz, the handoff out of it, and the first time the reader is
+asked to leave. Checking them takes a minute and is not something a careful
+read-through substitutes for.
+
 ## What is still untested
 
 **Whether twenty steps is too many.** Nobody has been through the whole thing in

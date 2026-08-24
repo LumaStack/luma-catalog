@@ -58,6 +58,18 @@ not there.
 **Six to ten per group is comfortable, fifteen is a stretch.** If it does not fill
 that, do not pad it.
 
+**Put the steps that send somebody away as late as you can.** A step that hands
+the reader a long job in another window is a step some of them do not come back
+from — and early on they leave before they know enough for the job to be worth
+doing. At the end it costs nothing, because there is nothing left to lose them
+from. This is the ordering mistake that is hardest to see while writing, because
+sending somebody to measure their own setup *first* sounds like obvious good
+sense.
+
+**Reordering later is expensive, so spend the time here.** Moving one step
+renumbers every file after it, every `step` field, the running order, and any
+prose that named a step by number.
+
 ## 4. Classify every step's `pause` — before writing the prose
 
 **This is the step of this workflow most likely to be skipped and the one that
@@ -179,6 +191,36 @@ These are the ones that recur:
 **Fix the workflow, not the transcript.** Each of those is a gap in what the
 driving workflow specified, and fixing it once is what stops the next tutorial
 inheriting it.
+
+### Check the boundaries specifically
+
+**An instruction can be right for every step and wrong at the edges**, and that
+is the defect a read-through never finds, because it is correct everywhere you
+look. Go to the edges deliberately:
+
+- **The first step.** Does the opening arrive before it, once, and does the step
+  work for somebody who has been told nothing yet?
+- **The last step.** *Say next for step N+1* points at nothing here. It should
+  send them to the quiz.
+- **The handoff into the quiz**, and out of the quiz into whatever ends the
+  tutorial. Both are transitions no step owns.
+- **The first `apply_elsewhere`**, which is the first time anybody is asked to
+  leave, and the first chance to strand them.
+
+### And check what the files say about themselves
+
+Cheap, mechanical, and each one has been wrong at least once:
+
+- **`title` matches the step's `# heading`.** The reader sees both — the heading
+  the workflow prints, then the one in the body — so a mismatch shows them two
+  names for the same step. Editing one and forgetting the other is the normal way
+  it happens.
+- **`step` matches the filename's number**, and the running order lists every
+  step exactly once.
+- **`after_step` on the quiz is the last step's number.**
+- **No step refers to another by number.** *The previous step*, *the earlier
+  step* survive a reorder; *step 12* does not, and nothing reports it when it
+  goes stale.
 
 ## 10. Publish it
 
