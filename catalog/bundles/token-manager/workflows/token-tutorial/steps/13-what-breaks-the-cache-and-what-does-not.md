@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Do not treat every change as expensive
 step: 13
 pause: practice

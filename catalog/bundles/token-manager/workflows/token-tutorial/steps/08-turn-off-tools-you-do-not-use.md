@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Turn off the tools you never use
 step: 8
 pause: apply_here

@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Name this session before we start
 step: 1
 pause: apply_here

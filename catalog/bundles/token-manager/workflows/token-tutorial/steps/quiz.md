@@ -1,5 +1,5 @@
 ---
-type: tutorial_quiz
+type: luma/tutorial_quiz
 title: Quiz
 after_step: 20
 ---

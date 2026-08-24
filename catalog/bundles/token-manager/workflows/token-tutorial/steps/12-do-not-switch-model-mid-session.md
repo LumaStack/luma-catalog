@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Do not switch to a cheaper model to save money
 step: 12
 pause: practice

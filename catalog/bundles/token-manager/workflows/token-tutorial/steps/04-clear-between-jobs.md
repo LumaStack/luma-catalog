@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Clear between jobs
 step: 4
 pause: apply_elsewhere

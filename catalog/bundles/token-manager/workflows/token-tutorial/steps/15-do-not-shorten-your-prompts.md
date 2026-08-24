@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Do not write shorter prompts to save money
 step: 15
 pause: practice

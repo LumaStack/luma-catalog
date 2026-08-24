@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Put cheap models where they cannot cost you anything
 step: 6
 pause: apply_here

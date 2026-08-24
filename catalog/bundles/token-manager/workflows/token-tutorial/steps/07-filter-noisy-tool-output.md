@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Put a filter in front of noisy commands
 step: 7
 pause: apply_elsewhere

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.3.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: workflows/token-tutorial/token-tutorial
@@ -28,7 +28,9 @@ available to them.
 - [[token-audit]] — measures one real setup and reports what is costing what.
   Changes nothing.
 
-**Types** — [[tutorial_step]] · [[tutorial_quiz]]
+**Types** — [[tutorial_step]] · [[tutorial_quiz]], both vendored from
+`luma/luma-types` rather than invented here. They describe any paced walkthrough,
+not this one, and the next tutorial takes the same copies.
 
 The tutorial carries its steps beside it as documents of those types, read one
 at a time and never all at once — both the cheap way to run a tutorial and the
@@ -92,6 +94,24 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.3.0` — the tutorial types moved to `luma/luma-types` and are vendored back.
+They are now `luma/tutorial_step` and `luma/tutorial_quiz`, and every step and the
+quiz declare the namespaced names.
+
+**Because they were never token-specific.** They describe a paced walkthrough,
+and this bundle happens to be the first one. Left here, the second tutorial would
+either link across bundles — which breaks self-containment — or declare its own
+`step` under a different name, and both copies would validate cleanly while
+meaning subtly different things. That is the failure that is invisible until
+somebody has to reconcile them.
+
+**Breaking, and shipped as a minor under the `0.y.z` permission.** Anything
+dispatching on the un-namespaced `tutorial_step` must now match
+`luma/tutorial_step`. No deprecation cycle, because nothing uses the old names —
+they were published hours ago and this bundle has no adopters. Saying that
+plainly is the condition on taking the exception; a dead name kept to protect
+nobody would be worse.
 
 `0.2.0` — the tutorial's steps became documents. They were assets with no
 frontmatter; they are now [[tutorial_step]] and [[tutorial_quiz]], and the
