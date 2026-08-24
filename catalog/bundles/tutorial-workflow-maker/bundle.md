@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.3.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: policy/what-makes-a-tutorial-land
@@ -74,10 +74,15 @@ cannot handle the case the script missed.
 
 ## It is meant to be improved by being used
 
-**The last step of [[create-tutorial]] feeds general learnings back here**, which
-is the only mechanism this bundle has for getting better — the rules it carries
-came from running a tutorial, not from reasoning about one, and there is no
-reason to expect that to change.
+**[[create-tutorial]] ends by testing the tutorial and feeding general learnings
+back here**, which is the only mechanism this bundle has for getting better — the
+rules it carries came from running a tutorial, not from reasoning about one, and
+there is no reason to expect that to change.
+
+**The test has to happen in a clean session**, because the one that wrote the
+tutorial already holds every step and will perform it flawlessly from memory. A
+tutorial is written for somebody arriving with none of that, and that is the only
+condition under which a gap in it appears.
 
 **Two guards keep that from becoming noise.** It runs only for somebody who owns
 the catalog this lives in, because a vendored copy is a snapshot and an
@@ -106,6 +111,24 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.3.0` — the test step now says where to run it and what to bring back.
+
+It had asked for a run without saying **not in the session that wrote it**. That
+session holds every step already, so the agent performing it knows what is coming
+without reading, answers from the authoring conversation rather than the
+material, and never meets the one-step-at-a-time constraint because nothing is
+left to load. **It goes beautifully and proves nothing.**
+
+**And the transcript comes back verbatim, both sides.** The defects worth finding
+are exact wording — an invented heading, a transition that reads as the agent
+talking to itself — and a summary is the layer at which wording disappears.
+Pasted into the authoring session, which still holds the tutorial, the templates
+and the reasoning, one pass can fix all three rather than guessing which layer
+produced the problem.
+
+Also: **do not tell the tester what you are testing for.** Somebody watching for
+invented headings reads differently from somebody learning the subject.
 
 `0.2.0` — [[create-tutorial]] gains a final step: feed what you learned back into
 this bundle.
