@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.5.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: policy/what-makes-a-tutorial-land
@@ -111,6 +111,17 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.5.0` — the driving-workflow template says what the **last** step's closing
+block does.
+
+**Every block takes the step number and adds one**, which is correct for every
+step except the one that matters most to get right. The template now says the
+final step points at the quiz rather than at a step number that does not exist.
+
+**Found by a tutorial reaching its own ending**, which is the class of defect
+review does not catch: the instruction was correct in general and wrong exactly
+once, at the boundary.
 
 `0.4.0` — the closing blocks in the driving-workflow template now open with
 **Ask questions** rather than *Questions*.

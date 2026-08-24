@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.7.0
 published: 2026-08-24
 consumers: [project, organization]
 entry_point: workflows/token-tutorial/token-tutorial
@@ -103,6 +103,24 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.7.0` — the last step no longer points at a step that does not exist, and it
+stops implying the tutorial is over.
+
+**The closing block said *next for step 21*.** Every block takes the step number
+and adds one, which is right nineteen times out of twenty. The last one now says
+*next for the quiz*.
+
+**And the audit step said this session ends with `/clear`.** It does, eventually,
+but the quiz comes first — and the reader being told to clear before answering the
+last question is the one instruction that could actually cost them the tutorial.
+The reason to run the audit elsewhere is now simply that a substantial report
+belongs where you work, which is true and does not reach for the ending.
+
+**`exponentially` restored** in the mechanism step's takeaways. Its ordinary
+sense — *increasing more and more rapidly* — is the one meant and the one a
+reader will take; the correction to it was reading a plain word as a technical
+claim.
 
 `0.6.0` — **the audit moved from the third step to the last**, and the prose was
 worked over throughout.

@@ -115,6 +115,11 @@ starts sounding like it is talking to itself.
 
 > Ask questions, or say **next** when you're ready.
 
+**On the last step, say *for the quiz* instead of a step number.** There is no
+step after it, and *next for step 21* points at nothing:
+
+> Ask questions, or say **next** for the quiz.
+
 **Answer questions from the steps already presented** and from what you can see of
 their setup. If the answer is a later step, say which one is coming rather than
 reading ahead.
