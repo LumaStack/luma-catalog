@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Do not compact to save tokens
 step: 14
 pause: practice

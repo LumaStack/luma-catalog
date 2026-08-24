@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Do not assume subagents save tokens
 step: 18
 pause: practice

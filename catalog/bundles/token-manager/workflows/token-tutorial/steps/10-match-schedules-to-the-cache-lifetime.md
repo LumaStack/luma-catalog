@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Check what your scheduled tasks do at three in the morning
 step: 10
 pause: apply_here

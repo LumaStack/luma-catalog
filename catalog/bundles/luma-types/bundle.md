@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.4.1
-published: 2026-08-23
+version: 0.5.0
+published: 2026-08-24
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
 ---
@@ -21,6 +21,10 @@ format means by vendoring, and it is the only sharing mechanism the format has.
 - **`luma/idea`** — something worth doing that nobody is doing yet. Shared
   because the capture-and-tend practice defines them today and a backlog tool
   will become their primary maintainer.
+- **`luma/tutorial_step`** — one step of a paced walkthrough, carrying whether
+  the reader can act on it from inside the session being taught.
+- **`luma/tutorial_quiz`** — the questions that check a walkthrough landed, and
+  the earliest moment they may be read.
 
 ## Why these are not built into the format
 
@@ -84,8 +88,8 @@ matters depends on where the documents live — see below.
 documents are checked against the copy that travelled with them. No
 contradiction, and no need to coordinate.
 
-**The exception is a document that lives outside every bundle** — and both types
-here describe exactly that. `.luma/project.md` is one file declaring one
+**The exception is a document that lives outside every bundle**, which
+`luma/catalog` and `luma/project` describe exactly. `.luma/project.md` is one file declaring one
 `type: luma/project`, and it is inside no bundle, so nothing decides between two
 contracts claiming it. **Those need one answer per project.**
 
@@ -133,6 +137,22 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.5.0` — `luma/tutorial_step` and `luma/tutorial_quiz` arrive, both at `0.1.0`.
+Add-only: nothing existing changes, and a bundle that vendors neither is
+unaffected.
+
+**Promoted on stated intent rather than on a third copy.** The usual bar is
+several bundles already declaring the same idea, and only one does — but a
+walkthrough format is something built explicitly to be shared, and the
+alternative is the second tutorial bundle inventing its own `step` under a
+different name while both validate cleanly. That is the failure a shared library
+exists to prevent, and it is invisible once it happens.
+
+**What they are not is a tutorial engine.** Bundles have no dependencies, so each
+tutorial carries its own driving workflow and vendors these for the contract.
+The types hold what a step and a quiz *are*; running one stays with whoever runs
+it.
 
 `0.4.1` — a heading no longer says how many things are beneath it. Wording only.
 

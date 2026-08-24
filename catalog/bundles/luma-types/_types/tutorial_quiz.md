@@ -2,10 +2,6 @@
 type: type_definition
 defines: luma/tutorial_quiz
 version: "0.1.0"
-vendored_from:
-  resource: https://github.com/LumaStack/luma-catalog
-  version: "0.1.0"          # the type's own version, not the bundle's
-  at: 2026-08-24
 extends: document
 fields:
   after_step:

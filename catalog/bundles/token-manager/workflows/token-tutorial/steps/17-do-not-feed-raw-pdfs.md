@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Do not hand over a PDF as it is
 step: 17
 pause: practice

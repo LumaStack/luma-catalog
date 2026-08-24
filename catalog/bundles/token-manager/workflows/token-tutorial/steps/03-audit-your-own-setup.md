@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Start by measuring your own setup
 step: 3
 pause: apply_elsewhere

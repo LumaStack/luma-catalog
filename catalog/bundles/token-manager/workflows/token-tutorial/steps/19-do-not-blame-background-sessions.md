@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: Do not chase the wrong culprit
 step: 19
 pause: apply_here

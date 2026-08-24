@@ -1,5 +1,5 @@
 ---
-type: tutorial_step
+type: luma/tutorial_step
 title: One honest note to finish on
 step: 20
 pause: none
