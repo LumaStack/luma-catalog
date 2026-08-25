@@ -62,7 +62,7 @@ hook-command comparison — a correctly wired setup read as unwired because one
 path had several valid forms.
 
 **3. Its `disclosure_level` accepts organization-internal data.** Read
-`.luma/project.md` in the repository you are standing in.
+`.luma/PROJECT.md` in the repository you are standing in.
 
 **Absent refuses.** Undeclared is not permission, and a repository that has never
 said what it is has not said it will hold this. **`public` refuses** — including
@@ -198,11 +198,11 @@ author.** A description written here is a copy, and a copy of something that
 changes is wrong from the first commit that changes it, with nothing announcing
 the drift.
 
-**1. `.luma/project.md`** — the repository's own descriptor, written to answer
+**1. `.luma/PROJECT.md`** — the repository's own descriptor, written to answer
 exactly this question. Take it and cite it.
 
 ```sh
-gh api repos/<org>/<name>/contents/.luma/project.md --jq .content | base64 -d
+gh api repos/<org>/<name>/contents/.luma/PROJECT.md --jq .content | base64 -d
 ```
 
 **2. Derived, with the source recorded.** No descriptor: fall back to the

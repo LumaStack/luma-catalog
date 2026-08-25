@@ -6,7 +6,7 @@ description: The file a repository publishes about itself for something outside 
 
 # The project descriptor
 
-`.luma/project.md` — one file, usually one good sentence, answering **when
+`.luma/PROJECT.md` — one file, usually one good sentence, answering **when
 should somebody open this repository?**
 
 It exists because something outside the repository eventually has to choose

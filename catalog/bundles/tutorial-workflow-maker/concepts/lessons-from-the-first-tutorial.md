@@ -88,7 +88,7 @@ the work already done.
 a long job in another window, before the reader knows enough for its findings to
 mean anything — so it is both the least useful place for it and the point they
 are most likely not to come back from. It is now last. **This one was argued for
-in `bundle.md` before it was argued against**, which is worth knowing: *measure
+in `BUNDLE.md` before it was argued against**, which is worth knowing: *measure
 first* is a genuinely appealing principle that happens to be wrong inside a
 walkthrough.
 

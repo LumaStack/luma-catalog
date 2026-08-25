@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.2.1
-published: 2026-08-20
+version: 0.3.0
+published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/session-continuity
 description: Ending an agent session without losing what it learned — checkpoint while working, hand off to a successor, or close for good, each writing for a different reader.
@@ -171,6 +171,13 @@ of thing an organization has an opinion about, and `.luma/config/` will
 eventually let it hold one.
 
 ## Version
+
+`0.3.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.2.1` — a heading no longer says how many things are beneath it. Wording only.
 

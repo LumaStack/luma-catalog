@@ -40,7 +40,7 @@ your own namespace:
 
 ```
 .luma/bundles/<your-org>/<name>/
-  bundle.md
+  BUNDLE.md
   policy/
   workflows/
 ```

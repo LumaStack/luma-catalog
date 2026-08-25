@@ -14,7 +14,7 @@ checklist rather than a feeling.
 
 ## The manifest
 
-- `bundle.md` exists at the root, with `type: bundle`.
+- `BUNDLE.md` exists at the root, with `type: bundle`.
 - **`version` is present.** Without it a bundle cannot be pinned, compared, or
   reported as outdated — a consumer can say nothing honest about it.
 - `entry_point`, if present, resolves to a document that exists.

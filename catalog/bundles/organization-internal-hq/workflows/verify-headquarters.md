@@ -49,7 +49,7 @@ ask rather than accepting it.
 
 ### Check it against what the repository declares
 
-Compare the hosting visibility with `disclosure_level` in `.luma/project.md`.
+Compare the hosting visibility with `disclosure_level` in `.luma/PROJECT.md`.
 **The two failures are nothing alike.**
 
 **Actually wider than declared is a showstopper.** A headquarters declaring

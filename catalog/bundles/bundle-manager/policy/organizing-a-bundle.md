@@ -9,7 +9,7 @@ preload: mandatory
 
 ```
 <bundle>/
-  bundle.md        the manifest — version, consumers, entry_point
+  BUNDLE.md        the manifest — version, consumers, entry_point
   _types/          Type Definitions — only if the bundle declares its own
   workflows/       procedures — type: workflow
   policy/          adopted courses of action — type: policy
@@ -18,7 +18,41 @@ preload: mandatory
   templates/       assets to copy — no frontmatter
 ```
 
-Only `bundle.md` is required. `_types/` is the one name reserved by the format,
+
+## Why one name shouts
+
+**ALL CAPS names a file that speaks for the thing containing it. Lowercase names
+one of the things contained.**
+
+`BUNDLE.md` speaks for the bundle. `templates/bundle.md` does not — it is a
+pattern for making one, so it stays lowercase; naming it `BUNDLE.md` would claim
+the templates directory *is* a bundle. A Type Definition at `_types/catalog.md`
+describes what a catalog is while living inside something else, so it stays
+lowercase too. **The rule excludes them rather than exempting them**, which is
+why there is no list to memorise.
+
+**A document that owns a directory follows the same rule.** Where a workflow
+carries steps or assets of its own, it takes a directory and speaks for it:
+
+```
+workflows/set-up-a-thing/
+  WORKFLOW.md      the workflow
+  steps/           reachable only through it, never listed separately
+```
+
+The **directory is the identity** — that document's ID is
+`workflows/set-up-a-thing`, and `WORKFLOW.md` is a local detail nothing
+references. Everything beneath belongs to it and is invisible above it.
+
+**The casing is a gate, not a label.** Nobody types all caps by accident, so a
+file becomes load-bearing only when somebody meant it to — and getting it wrong
+fails safe: write `bundle.md` and it is read as an ordinary document, ignored
+rather than silently treated as a manifest. That is the inverse of why
+`README.md` carries no rules at all: people edit a README without knowing rules
+exist, and nothing you write will change that. **Never make a `README.md`
+load-bearing.**
+
+Only `BUNDLE.md` is required. `_types/` is the one name reserved by the format,
 and most bundles do not need it at all — a bundle whose Documents are all
 `policy` and `workflow` declares no types, because those are built in. **The rest is convention, not specification** — the format leaves
 placement deliberately unspecified, and a bundle that puts a workflow at its
@@ -325,7 +359,7 @@ A Document's ID is its path within the bundle, so moving a document between
 directories changes its ID and breaks inbound links. Choose the directory when
 the document is created; reclassifying later is a rename with consequences.
 
-`entry_point` in `bundle.md` carries the **full ID** —
+`entry_point` in `BUNDLE.md` carries the **full ID** —
 `workflows/publish-release` — because it must be unambiguous. Wikilinks in
 prose use the slug alone. Where two documents in different directories share a
 slug, that ambiguity is currently unresolved by the format; avoid it.

@@ -18,7 +18,7 @@ hit**.
 | document | where | write it when |
 | --- | --- | --- |
 | **README.md** | root | always. Every repository, from the first commit |
-| **.luma/project.md** | `.luma/` | anything outside the repository has to choose between it and others — true from the moment a second exists. See [[the-project-descriptor]] |
+| **.luma/PROJECT.md** | `.luma/` | anything outside the repository has to choose between it and others — true from the moment a second exists. See [[the-project-descriptor]] |
 | **LICENSE** | root | anyone outside the team might use it. Absent, the default is *nobody may* |
 | **CONTRIBUTING.md** | root | somebody outside the core has offered to help, or you want them to |
 | **SECURITY.md** | root | a stranger finding a vulnerability would not know who to tell |

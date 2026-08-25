@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.7.0
-published: 2026-08-24
+version: 0.8.0
+published: 2026-08-25
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
 ---
@@ -31,7 +31,7 @@ format means by vendoring, and it is the only sharing mechanism the format has.
 Both were seriously considered as built-ins and both were declined on the
 format's own bar.
 
-**A consumer that ignores them is not broken.** It reads `.luma/project.md` as a
+**A consumer that ignores them is not broken.** It reads `.luma/PROJECT.md` as a
 plain `document` — which is correct and complete — and merely does not take part
 in a distribution model it was never part of. *"My tooling would break"* is
 explicitly the wrong kind of broken; it is true of every domain type ever
@@ -89,7 +89,7 @@ documents are checked against the copy that travelled with them. No
 contradiction, and no need to coordinate.
 
 **The exception is a document that lives outside every bundle**, which
-`luma/catalog` and `luma/project` describe exactly. `.luma/project.md` is one file declaring one
+`luma/catalog` and `luma/project` describe exactly. `.luma/PROJECT.md` is one file declaring one
 `type: luma/project`, and it is inside no bundle, so nothing decides between two
 contracts claiming it. **Those need one answer per project.**
 
@@ -137,6 +137,13 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.8.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.7.0` — `luma/tutorial_step` reaches `0.3.0`: the closing block is the only
 place a walkthrough ever mentions its own pacing.

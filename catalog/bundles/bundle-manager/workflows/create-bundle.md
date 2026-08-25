@@ -23,7 +23,7 @@ needed it, and promote when a second consumer actually appears.
 
 ## 3. Scaffold
 
-Copy [the bundle template](../templates/bundle.md) to `<bundle>/bundle.md` and
+Copy [the bundle template](../templates/bundle.md) to `<bundle>/BUNDLE.md` and
 create the directories you need — see [[organizing-a-bundle]]. Create only the
 directories that will have contents; an empty `policy/` is noise.
 

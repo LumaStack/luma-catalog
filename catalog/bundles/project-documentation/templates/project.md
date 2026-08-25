@@ -1,6 +1,6 @@
 # Project descriptor template
 
-Copy the block to `.luma/project.md`. **Copy the block, not this file.**
+Copy the block to `.luma/PROJECT.md`. **Copy the block, not this file.**
 
 **One sentence is a complete descriptor.** Everything past the frontmatter is
 optional and most repositories should leave it out.

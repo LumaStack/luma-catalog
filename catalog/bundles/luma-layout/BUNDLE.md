@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.5.0
-published: 2026-08-23
+version: 0.6.0
+published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
 description: The .luma directory every luma tool writes into — the four tiers, what belongs in each, and the committed-only invariant that makes it trustworthy.
@@ -73,6 +73,13 @@ not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
 
+`0.6.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
+
 `0.5.0` — how a tool writes into a file it does not own. New content; existing
 use is unaffected.
 
@@ -103,14 +110,14 @@ a line while nothing has written this file yet.
 bundle. New content; existing use is unaffected, and the directory is absent in
 most repositories.
 
-**It exists because `project.md` has no bundle to resolve its type from.** The
+**It exists because `PROJECT.md` has no bundle to resolve its type from.** The
 format resolves a contract from the bundle a Document lives in, and this one
 lives above the tiers — so the repository has to answer for it. It is also the
 project's *single* answer, where a bundle's `_types/` is scoped to that bundle:
 adopted bundles may legitimately disagree about a type used inside them, but the
-one file at `.luma/project.md` cannot have two contracts.
+one file at `.luma/PROJECT.md` cannot have two contracts.
 
-`0.2.0` — `.luma/project.md` is a reserved path this layout did not previously
+`0.2.0` — `.luma/PROJECT.md` is a reserved path this layout did not previously
 document. New content; existing use is unaffected.
 
 It is also the **first thing at the root of `.luma/` rather than inside a tier**,

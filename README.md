@@ -35,7 +35,7 @@ differ in what they contain, not in how they travel.
 
 ```
 catalog/
-  catalog.md       the namespace, the vocabulary, the starters, the requirements
+  CATALOG.md       the namespace, the vocabulary, the starters, the requirements
   bundles/         one directory per bundle, flat
 .github/           the checks that gate a merge — see Contributing
 docs/
@@ -43,14 +43,14 @@ README.md          everything else here maintains the catalog
 LICENSE
 ```
 
-**There is no `_types/` beside `catalog.md`.** The contract for
+**There is no `_types/` beside `CATALOG.md`.** The contract for
 `type: luma/catalog` is published in the `luma/luma-types` bundle and referenced
 from here rather than copied — *reference within a repository, vendor across
 them*. A second copy in this repository would have nothing keeping it in step,
 and the one that briefly existed had already drifted a version before it was
 removed.
 
-`catalog.md` holds only what is true of *this* catalog. Everything general —
+`CATALOG.md` holds only what is true of *this* catalog. Everything general —
 what each field means, how two catalogs resolve, what `mandatory` does — lives
 in [`catalog/bundles/luma-types/_types/catalog.md`](catalog/bundles/luma-types/_types/catalog.md), so it is written
 once rather than copied into every catalog that ever exists.
@@ -62,7 +62,7 @@ and so a sparse checkout has one subtree to name. Documentation, contribution
 guidance and the continuous integration that gates this repository live at the
 root, and none of it is catalog content.
 
-Inside, bundles are **flat**, and each declares in its `bundle.md` which kinds
+Inside, bundles are **flat**, and each declares in its `BUNDLE.md` which kinds
 of consumer may adopt it:
 
 ```yaml
@@ -149,7 +149,7 @@ adopter.
 
 **The one that catches most contributors: change a bundle and its version has to
 move.** The check compares your branch against its base and reports any bundle
-whose files changed while `version` in its `bundle.md` did not. An adopter
+whose files changed while `version` in its `BUNDLE.md` did not. An adopter
 decides whether to take a change by comparing versions, so a change that does
 not move the number is a change nobody downstream can see.
 
