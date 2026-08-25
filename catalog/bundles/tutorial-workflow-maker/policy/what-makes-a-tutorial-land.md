@@ -2,7 +2,9 @@
 type: policy
 title: What makes a tutorial land
 description: The rules a paced tutorial follows — how a step is shaped, how the agent presents it, what it must never do to the session it is running in, and what a quiz owes the reader. Read before writing or reviewing one.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - topic: writing or reviewing a paced tutorial
 ---
 
 # What makes a tutorial land

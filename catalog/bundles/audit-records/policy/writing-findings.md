@@ -2,6 +2,9 @@
 type: policy
 title: Writing a finding
 description: What makes a finding actionable rather than an opinion — the five parts, how to rate severity, and the failures that make audits get ignored.
+compliance: mandatory
+applies_to:
+  - topic: writing a finding in an audit
 sources:
   - id: audit-findings
     resource: https://simplerqms.com/audit-findings/

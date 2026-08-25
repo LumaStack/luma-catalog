@@ -2,6 +2,7 @@
 type: workflow
 title: Audit a bundle
 description: Check a bundle for the defects that are silent — broken links, unquoted wikilinks, orphaned assets, a missing manifest. Use before publishing or adopting.
+compliance: optional
 ---
 
 # Audit a bundle

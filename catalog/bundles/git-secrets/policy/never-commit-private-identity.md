@@ -2,7 +2,11 @@
 type: policy
 title: Private identity never reaches a repository
 description: Real names, personal emails, home paths and machine names must not appear in commits or tracked content. What to use instead, and why deletion does not undo it.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - command: git commit
+  - command: git config
+  - moment: before-commit
 ---
 
 # Private identity never reaches a repository

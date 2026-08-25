@@ -2,7 +2,9 @@
 type: policy
 title: The .luma directory layout
 description: The four directories every luma tool honours, what belongs in each, and the one invariant that makes the whole thing trustworthy.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - path: ".luma/**"
 ---
 
 # The `.luma` directory

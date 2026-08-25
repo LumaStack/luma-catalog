@@ -2,7 +2,9 @@
 type: policy
 title: Organizing a bundle
 description: The layout every bundle uses, what each directory is for, and the two rules that decide whether something is a document, an asset, or a type.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - topic: creating or restructuring a bundle
 ---
 
 # Organizing a bundle
@@ -23,6 +25,18 @@ preload: mandatory
 
 **ALL CAPS names a file that speaks for the thing containing it. Lowercase names
 one of the things contained.**
+
+**In plain terms:** a file in CAPITALS is the folder's own file — it tells you
+what the folder *is*. Everything in lowercase is one of the things the folder
+*holds*.
+
+`catalog/CATALOG.md` says what that catalog is. `.../git-workflow/BUNDLE.md`
+says what that bundle is. `.../policy/merge-commits.md` is one of the rules
+inside it.
+
+**The test, when you are unsure:** *is this file describing what surrounds it,
+or is it one of the things surrounded?* Describing — capitals. One of them —
+lowercase.
 
 `BUNDLE.md` speaks for the bundle. `templates/bundle.md` does not — it is a
 pattern for making one, so it stays lowercase; naming it `BUNDLE.md` would claim

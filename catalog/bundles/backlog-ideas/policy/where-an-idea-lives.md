@@ -2,6 +2,9 @@
 type: policy
 title: Where an idea lives
 description: Choosing the scope — project, department or organization — and the default that applies when it is unclear.
+compliance: mandatory
+applies_to:
+  - topic: capturing an idea worth keeping
 ---
 
 # Where an idea lives

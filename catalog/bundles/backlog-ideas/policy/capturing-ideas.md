@@ -2,7 +2,9 @@
 type: policy
 title: What is worth capturing
 description: The test for whether an idea earns a file, what disqualifies one, and why capture optimises for flow rather than completeness.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - topic: capturing an idea worth keeping
 ---
 
 # What is worth capturing

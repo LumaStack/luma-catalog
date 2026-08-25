@@ -2,6 +2,9 @@
 type: policy
 title: Reserved document names
 description: Which filenames are claimed by an outside convention or matched by a tool, where the capitals are load-bearing and where they are only typography, and the one distinction no convention gives you.
+compliance: mandatory
+applies_to:
+  - topic: naming a new file at a repository root
 ---
 
 # Reserved document names
