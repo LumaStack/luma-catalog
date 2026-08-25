@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -83,6 +83,14 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.4.0` — **the naming rule is written down**: ALL CAPS names a file that
+speaks for the thing containing it, lowercase names one of the things contained.
+With the case a document owns a directory, which is how a workflow carrying its
+own steps keeps them out of every consumer's standing surface.
+
+Minor, because an author who correctly understood the previous version would now
+lay a bundle out differently.
 
 `0.3.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
 ALL CAPS across the estate, because nobody types all caps by accident: a file
