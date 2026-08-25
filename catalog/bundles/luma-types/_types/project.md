@@ -31,7 +31,7 @@ fields:
 # luma/project
 
 **A repository describing itself, to be read by something outside it.** It lives
-at `.luma/project.md`.
+at `.luma/PROJECT.md`.
 
 ## Why this is not a format built-in
 

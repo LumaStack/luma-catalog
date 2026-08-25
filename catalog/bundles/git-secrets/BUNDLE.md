@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.1.0
-published: 2026-08-18
+version: 0.2.0
+published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/never-commit-private-identity
 description: Keeping credentials and private identity out of a repository — names, personal addresses, home paths, machine names, tokens and key files. Prevention first, then audit.
@@ -72,6 +72,13 @@ are the same either way, which is why `consumers` names both levels rather than
 forcing the choice on whoever publishes.
 
 ## Version
+
+`0.2.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.1.0`. The identity rules come from a real leak found in a real repository and
 the checks are implemented and tested — but these workflows have been run

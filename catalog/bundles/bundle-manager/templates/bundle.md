@@ -1,6 +1,6 @@
 # Bundle manifest template
 
-Copy the block below into `<bundle>/bundle.md` and fill it in. **Copy the block,
+Copy the block below into `<bundle>/BUNDLE.md` and fill it in. **Copy the block,
 not this file** — this file deliberately has no frontmatter of its own, because
 a template carrying `type: bundle` would be a second manifest inside this
 bundle, and every tool reading it would believe that.

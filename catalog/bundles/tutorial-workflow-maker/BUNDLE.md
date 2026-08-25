@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.6.0
-published: 2026-08-24
+version: 0.7.0
+published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/what-makes-a-tutorial-land
 description: Making paced tutorials — the standard a walkthrough is held to, a workflow that turns source material into one, and templates for the steps, the quiz and the workflow that performs them.
@@ -111,6 +111,13 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.7.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.6.0` — what a first tutorial's revision pass taught, fed back.
 

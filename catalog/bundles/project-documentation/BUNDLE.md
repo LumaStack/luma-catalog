@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.9.0
-published: 2026-08-23
+version: 0.10.0
+published: 2026-08-25
 consumers: [project]
 entry_point: policy/readme
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
@@ -44,7 +44,7 @@ we have*, it is **what condition have we hit**.
 ## The audience that never arrives
 
 Everything else here is written for a person who has already opened the
-repository. **`.luma/project.md` is written for something that has not**, and is
+repository. **`.luma/PROJECT.md` is written for something that has not**, and is
 deciding whether to.
 
 That is the whole reason it is separate from the README rather than derived from
@@ -96,6 +96,13 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.10.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.9.0` — [[writing-style]] gains the exception: a heading may carry a number
 when the number is the subject rather than a tally of what follows, and the test
@@ -164,7 +171,7 @@ format built-in was considered and declined — a consumer ignoring it reads the
 correctly as a plain `document`, and the type changes at this organization's rate
 rather than the format's.
 
-*Migration:* replace `type: project` with `type: luma/project` in `.luma/project.md`.
+*Migration:* replace `type: project` with `type: luma/project` in `.luma/PROJECT.md`.
 Nothing else changes; the fields are identical.
 
 `0.5.0` — [[where-history-belongs]] is new content; existing use is unaffected.

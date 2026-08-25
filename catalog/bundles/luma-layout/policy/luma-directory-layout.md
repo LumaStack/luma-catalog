@@ -9,7 +9,7 @@ preload: mandatory
 
 ```
 .luma/
-  project.md          what this repository is, for something outside it
+  PROJECT.md          what this repository is, for something outside it
   backlog/            what we intend
   bundles/            what is in force — adopted, or written here
     adopted.toml      what this project took, and proof of what it looked like
@@ -31,7 +31,7 @@ locally, without reaching for anything remote.
 knowledge format resolves a type from *that* bundle's `_types/`, which is what
 lets two bundles hold different versions of one type without contradiction.
 
-**`project.md` is in no bundle.** It sits above the tiers, describing the
+**`PROJECT.md` is in no bundle.** It sits above the tiers, describing the
 repository the tiers belong to — so there is no bundle to resolve its `type`
 from, and the format says outright that whoever puts a Document there owes it an
 answer. `.luma/_types/` is that answer.
@@ -89,7 +89,7 @@ Not by topic, and not by who wrote it:
 | `records/` | **what happened, and why.** Append-only, dated, never edited |
 | `config/` | how a tool behaves here |
 
-### `project.md` sits above the tiers, not inside one
+### `PROJECT.md` sits above the tiers, not inside one
 
 It is the only file at the root of `.luma/`, and deliberately so: **it names the
 repository the tiers belong to.**

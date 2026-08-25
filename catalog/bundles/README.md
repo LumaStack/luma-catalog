@@ -1,6 +1,6 @@
 # Bundles
 
-One directory per bundle, flat. Each carries a `bundle.md` at its root with a
+One directory per bundle, flat. Each carries a `BUNDLE.md` at its root with a
 `version` and a `consumers` list.
 
 ```yaml

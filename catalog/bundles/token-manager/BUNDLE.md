@@ -1,9 +1,9 @@
 ---
 type: bundle
-version: 0.7.1
-published: 2026-08-24
+version: 0.8.0
+published: 2026-08-25
 consumers: [project, organization]
-entry_point: workflows/token-tutorial/token-tutorial
+entry_point: workflows/token-tutorial
 description: Where an agent session's tokens actually go — a paced tutorial on the mechanism and the fixes that follow from it, and an audit that measures a real setup instead of guessing at it.
 ---
 
@@ -103,6 +103,13 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.8.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.7.1` — wording in the opening three steps. No normative sentence moved, and a
 reader who correctly understood `0.7.0` behaves identically.

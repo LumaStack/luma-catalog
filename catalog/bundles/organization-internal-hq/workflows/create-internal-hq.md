@@ -192,7 +192,7 @@ An empty repository is a decision nobody can act on. Enough to be useful:
 
 - **`README.md`** — what this repository is for and what belongs in it. Start
   from [the headquarters readme](../templates/headquarters-readme.md).
-- **`.luma/project.md`**, declaring what this repository is and **how widely it
+- **`.luma/PROJECT.md`**, declaring what this repository is and **how widely it
   is disclosed.** This is not optional here — see step 9.
 
 **And nothing else. Create no empty tiers.** `backlog/`, `policy/` and
@@ -218,7 +218,7 @@ yet a repository anybody can use.
 
 ## 9. Declare its disclosure level
 
-In `.luma/project.md`, using the `project` type from
+In `.luma/PROJECT.md`, using the `project` type from
 `luma/project-documentation`:
 
 ```yaml

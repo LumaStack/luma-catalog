@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.1.0
-published: 2026-08-18
+version: 0.2.0
+published: 2026-08-25
 consumers: [project]
 entry_point: policy/merge-commits
 description: How changes get integrated — merge commits rather than squash or rebase, and the repository settings that make it true.
@@ -51,6 +51,13 @@ organization's headquarters is a repository like any other rather than a level
 this applies at.
 
 ## Version
+
+`0.2.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.1.0`. The reasoning comes from a repository that hit the stale-branch failure
 twice in one week and changed strategy because of it — but this bundle has been

@@ -1,7 +1,7 @@
 ---
 type: workflow
 title: Describe a project
-description: Write or refresh the descriptor a repository publishes about itself at .luma/project.md. Use when a repository is one of several, or when what it is for has changed.
+description: Write or refresh the descriptor a repository publishes about itself at .luma/PROJECT.md. Use when a repository is one of several, or when what it is for has changed.
 ---
 
 # Describe a project
@@ -21,7 +21,7 @@ something to file is not a reason to bring a directory structure into a project
 that has not adopted it. Say that the repository has nowhere for this yet, and
 leave it.
 
-If one exists and `.luma/project.md` does too, this is a refresh: read it first
+If one exists and `.luma/PROJECT.md` does too, this is a refresh: read it first
 and change what is no longer true, rather than rewriting it.
 
 ## 2. Write the sentence

@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.1.2
-published: 2026-08-18
+version: 0.2.0
+published: 2026-08-25
 consumers: [project]
 entry_point: workflows/publish-release
 description: Cutting and publishing GitHub releases — choosing the version, the changelog, release titles and contents, and the gh workflow.
@@ -53,6 +53,13 @@ to undo than anything else in the workflow, and on a managed machine it may not
 be yours to do.
 
 ## Version
+
+`0.2.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.1.2` — a heading no longer says how many things are beneath it. Wording only.
 

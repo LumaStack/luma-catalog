@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.1.1
-published: 2026-08-19
+version: 0.2.0
+published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/semantic-versioning
 description: What a version number promises, when to bump which part, and the rules that get decided wrongly — for anything versioned, not only releases.
@@ -54,6 +54,13 @@ catalog contents; a project versions its packages, schemas and bundles. The
 rules are identical.
 
 ## Version
+
+`0.2.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
 
 `0.1.1` — *standard* becomes *policy*. Wording only: `policy` is the document
 type the format defines and the word this estate uses everywhere else, and

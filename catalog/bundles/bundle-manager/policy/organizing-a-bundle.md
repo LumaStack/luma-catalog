@@ -9,7 +9,7 @@ preload: mandatory
 
 ```
 <bundle>/
-  bundle.md        the manifest — version, consumers, entry_point
+  BUNDLE.md        the manifest — version, consumers, entry_point
   _types/          Type Definitions — only if the bundle declares its own
   workflows/       procedures — type: workflow
   policy/          adopted courses of action — type: policy
@@ -18,7 +18,7 @@ preload: mandatory
   templates/       assets to copy — no frontmatter
 ```
 
-Only `bundle.md` is required. `_types/` is the one name reserved by the format,
+Only `BUNDLE.md` is required. `_types/` is the one name reserved by the format,
 and most bundles do not need it at all — a bundle whose Documents are all
 `policy` and `workflow` declares no types, because those are built in. **The rest is convention, not specification** — the format leaves
 placement deliberately unspecified, and a bundle that puts a workflow at its
@@ -325,7 +325,7 @@ A Document's ID is its path within the bundle, so moving a document between
 directories changes its ID and breaks inbound links. Choose the directory when
 the document is created; reclassifying later is a rename with consequences.
 
-`entry_point` in `bundle.md` carries the **full ID** —
+`entry_point` in `BUNDLE.md` carries the **full ID** —
 `workflows/publish-release` — because it must be unambiguous. Wikilinks in
 prose use the slug alone. Where two documents in different directories share a
 slug, that ambiguity is currently unresolved by the format; avoid it.

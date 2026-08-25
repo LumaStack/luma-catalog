@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.6.2
-published: 2026-08-20
+version: 0.7.0
+published: 2026-08-25
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
 description: The internal repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
@@ -284,6 +284,13 @@ occasionally needs to know one exists.
 
 ## Version
 
+`0.7.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
+ALL CAPS across the estate, because nobody types all caps by accident: a file
+becomes load-bearing only when somebody deliberately made it so, and writing
+`bundle.md` now fails in the safe direction — ignored rather than silently wired
+into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
+breaking change: anything naming the old path by hand stops resolving.
+
 `0.6.2` — a heading no longer says how many things are beneath it. Wording only.
 
 Patch: no normative sentence moved and a reader who correctly understood
@@ -332,7 +339,7 @@ prevent.** An index was written into published software because the guard
 confirmed the destination was private, which was true and irrelevant. The gate
 that replaced it checks four things, none of which is *privacy alone*.
 
-`0.2.0` — reading `.luma/project.md` was new content, and existing use was
+`0.2.0` — reading `.luma/PROJECT.md` was new content, and existing use was
 unaffected.
 
 **The naming rules have been run once and the workflows not at all.**
@@ -346,7 +353,7 @@ that configuration yet, so where it belongs has been reasoned rather than
 demonstrated.
 
 **The descriptor this depends on now exists and nothing has one.**
-`.luma/project.md` is where a repository answers *when should somebody open
+`.luma/PROJECT.md` is where a repository answers *when should somebody open
 this?*, defined by `luma/project-documentation` — so the headquarters collects
 rather than authors. No repository has written one yet, so in practice every
 description here starts as a derived fallback, which is the one field most
