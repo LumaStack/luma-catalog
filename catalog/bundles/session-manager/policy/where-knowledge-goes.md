@@ -2,7 +2,9 @@
 type: policy
 title: Where knowledge goes
 description: How to find the durable home for something worth keeping, without this bundle containing the list — the resolution order, the kinds, and what to do when there is no destination.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - topic: deciding where something worth keeping belongs
 ---
 
 # Where knowledge goes

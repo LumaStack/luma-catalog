@@ -2,6 +2,7 @@
 type: workflow
 title: Hand off a session
 description: Transfer work to another agent or a future session so it resumes without losing what this one learned. Use before a compaction, before exiting, or when someone else takes over — the work is continuing, somewhere else.
+compliance: optional
 ---
 
 # Hand off a session

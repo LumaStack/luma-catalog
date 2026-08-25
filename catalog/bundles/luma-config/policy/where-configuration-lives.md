@@ -2,7 +2,10 @@
 type: policy
 title: Where configuration lives
 description: Two homes and one cache — what is committed, what belongs to the machine, and the test that tells them apart.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - path: ".luma/config/**"
+  - topic: deciding where a setting belongs
 sources:
   - id: xdg
     resource: https://specifications.freedesktop.org/basedir-spec/latest/

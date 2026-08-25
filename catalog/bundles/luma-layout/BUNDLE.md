@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.7.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -72,6 +72,15 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.7.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
+now says how strongly a rule binds and when it governs; *when it is delivered* is
+computed from those and never declared. Every rule here could state when it
+applies, so **nothing in this bundle is loaded unconditionally any more** — it
+arrives when the work matches and costs nothing before then.
+
+Minor: a consumer reading `preload` finds nothing, and the loading behaviour of
+every document changes.
 
 `0.6.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
 ALL CAPS across the estate, because nobody types all caps by accident: a file

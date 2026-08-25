@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.10.0
+version: 0.11.0
 published: 2026-08-25
 consumers: [project]
 entry_point: policy/readme
@@ -96,6 +96,15 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.11.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
+now says how strongly a rule binds and when it governs; *when it is delivered* is
+computed from those and never declared. Every rule here could state when it
+applies, so **nothing in this bundle is loaded unconditionally any more** — it
+arrives when the work matches and costs nothing before then.
+
+Minor: a consumer reading `preload` finds nothing, and the loading behaviour of
+every document changes.
 
 `0.10.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
 ALL CAPS across the estate, because nobody types all caps by accident: a file

@@ -2,6 +2,9 @@
 type: policy
 title: Where a bundle belongs
 description: Which catalog a bundle goes in — universal, an organization's private one, or the project it was written in — and how it moves between them.
+compliance: mandatory
+applies_to:
+  - topic: deciding which catalog a bundle belongs in
 ---
 
 # Where a bundle belongs

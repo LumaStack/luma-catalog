@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.8.0
+version: 0.9.0
 published: 2026-08-25
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
@@ -137,6 +137,15 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.9.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
+now says how strongly a rule binds and when it governs; *when it is delivered* is
+computed from those and never declared. Every rule here could state when it
+applies, so **nothing in this bundle is loaded unconditionally any more** — it
+arrives when the work matches and costs nothing before then.
+
+Minor: a consumer reading `preload` finds nothing, and the loading behaviour of
+every document changes.
 
 `0.8.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
 ALL CAPS across the estate, because nobody types all caps by accident: a file

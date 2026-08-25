@@ -2,6 +2,10 @@
 type: policy
 title: Choosing a release version
 description: Which part to bump when cutting a release, and the two cases that must be said out loud in the notes. Enough to act; the reasoning lives in the versioning bundle.
+compliance: mandatory
+applies_to:
+  - moment: before-release
+  - topic: choosing which part of a version to bump
 ---
 
 # Choosing a release version

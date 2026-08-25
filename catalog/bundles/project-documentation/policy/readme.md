@@ -2,7 +2,9 @@
 type: policy
 title: What a README is for
 description: A README answers what this is, why it exists, and where to go next — in that order. What belongs in one, what does not, and why the limit matters.
-preload: mandatory
+compliance: mandatory
+applies_to:
+  - path: "README.md"
 ---
 
 # What a README is for

@@ -2,7 +2,9 @@
 type: policy
 title: Writing style
 description: How prose is written here — the conventions a reader should be able to rely on across every document. Read before writing or editing documentation.
-preload: recommended
+compliance: recommended
+applies_to:
+  - topic: writing or editing prose
 ---
 
 # Writing style

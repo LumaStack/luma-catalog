@@ -2,6 +2,7 @@
 type: workflow
 title: Close a session
 description: Wind a session down for good — land everything durably, shut down what is running, and leave nothing that only exists in this machine or this conversation. Use when stopping with no idea when work resumes.
+compliance: optional
 ---
 
 # Close a session

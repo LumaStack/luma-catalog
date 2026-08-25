@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.7.0
+version: 0.8.0
 published: 2026-08-25
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
@@ -283,6 +283,15 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.8.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
+now says how strongly a rule binds and when it governs; *when it is delivered* is
+computed from those and never declared. Every rule here could state when it
+applies, so **nothing in this bundle is loaded unconditionally any more** — it
+arrives when the work matches and costs nothing before then.
+
+Minor: a consumer reading `preload` finds nothing, and the loading behaviour of
+every document changes.
 
 `0.7.0` — **the manifest is `BUNDLE.md`.** Reserved markdown files are now
 ALL CAPS across the estate, because nobody types all caps by accident: a file

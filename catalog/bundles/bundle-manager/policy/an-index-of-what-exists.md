@@ -2,6 +2,9 @@
 type: policy
 title: An index of what exists
 description: Always load what says a thing exists; load the thing when it matters. The pattern that lets a bundle be large without being expensive, assembled from three parts the format already has.
+compliance: recommended
+applies_to:
+  - topic: deciding what a consumer should load, and when
 ---
 
 # An index of what exists

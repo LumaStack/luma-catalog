@@ -2,6 +2,7 @@
 type: workflow
 title: Repair worktrees
 description: Diagnose and fix the states worktrees get stuck in — stale metadata, a branch that will not check out, a moved directory, a locked entry. Use when create or remove fails.
+compliance: optional
 ---
 
 # Repair worktrees

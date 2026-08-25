@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.5.1
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -83,6 +83,20 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.5.1` — the naming rule gains a plain-English restatement beneath the precise
+one. The abstract wording is what makes the rule exception-free, so it stays;
+the plain wording is what a person meeting it cold can act on. Patch: no rule
+changed, only how it is said.
+
+`0.5.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
+now says how strongly a rule binds and when it governs; *when it is delivered* is
+computed from those and never declared. Every rule here could state when it
+applies, so **nothing in this bundle is loaded unconditionally any more** — it
+arrives when the work matches and costs nothing before then.
+
+Minor: a consumer reading `preload` finds nothing, and the loading behaviour of
+every document changes.
 
 `0.4.0` — **the naming rule is written down**: ALL CAPS names a file that
 speaks for the thing containing it, lowercase names one of the things contained.

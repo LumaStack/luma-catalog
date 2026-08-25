@@ -2,6 +2,7 @@
 type: workflow
 title: Update a bundle
 description: Change a bundle's contents and version it correctly. Use when editing, extending, or fixing an existing bundle.
+compliance: optional
 ---
 
 # Update a bundle
