@@ -24,7 +24,7 @@ Four things look like documentation and are owned elsewhere:
 - **`CHANGELOG.md`** — the release bundle
 - **decision records** — `decision-records`, in `.luma/records/decisions/`
 - **audit and log records** — their own bundles, also under `.luma/records/`
-- **`AGENTS.md`, `CLAUDE.md`** — generated projections, never authored
+- **`AGENTS.md`, `CLAUDE.md`** — generated, never authored
 
 **The test between a document and a record:** if you would want to update it to
 keep it accurate, it is documentation. If updating it would falsify history, it

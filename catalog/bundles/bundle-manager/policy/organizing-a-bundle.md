@@ -195,7 +195,7 @@ at once — this one is workflows *and* policy — while a document is exactly o
 **`workflows/`** — procedures a person or agent follows. One document per
 procedure. If a workflow carries scripts or templates of its own, give it a
 directory: `workflows/<name>/<name>.md` beside its material. That matches the
-shape a harness wants when the workflow is projected into a skill.
+shape a harness wants when the workflow is written into a skill.
 
 **`policy/`** — courses of action this bundle's adopter takes on. Rules,
 conventions, boundaries, definitions of done.
@@ -289,7 +289,7 @@ unquoted one parses as a nested array and the link silently never resolves.
 ## Bundles may carry executables; adopting one runs nothing
 
 A workflow that ships `scripts/check.sh` is ordinary, and often necessary — it
-is what travels into a harness when the workflow is projected into a skill.
+is what travels into a harness when the workflow is written into a skill.
 Put such a script beside the workflow that owns it.
 
 **What a bundle must never do is run something as a side effect of being

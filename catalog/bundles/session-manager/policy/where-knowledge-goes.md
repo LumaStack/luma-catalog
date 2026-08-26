@@ -201,7 +201,7 @@ Today, memory means whatever the running agent has. Write in that agent's own
 format, follow its own index conventions, and **name in the session note where
 the memories went** — because the next agent may be a different one, with a
 different store, and no way to find yours. When luma grows memory tooling that
-becomes the destination and the agent-specific store becomes a projection of it;
+becomes the destination and the agent-specific store becomes generated from it;
 see [[future-hooks]].
 
 ## Route once, not once per checkpoint

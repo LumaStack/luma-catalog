@@ -134,13 +134,13 @@ something somebody has to prune later.
 ## Assume nothing will consume it
 
 **[[session-resume]] is what deletes a note — where it exists.** It has to be
-adopted, projected into whatever agent is running, and actually invoked. Assume
+taken, applied into whatever agent is running, and actually invoked. Assume
 none of those held.
 
 **So every note explains itself in its own first lines**: what it is, that it
 should be deleted after use, and that its age is worth checking. Those lines are
-the only mechanism that works when the bundle is absent, the projection failed,
-or the successor simply never ran the workflow.
+the only mechanism that works when the bundle is absent, `apply` failed, or
+the successor simply never ran the workflow.
 
 **This is the weakest part of the design and it is structural.** The whole model
 rests on notes being consumed and destroyed, and nothing in the format can force

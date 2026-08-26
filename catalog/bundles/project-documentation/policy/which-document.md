@@ -58,7 +58,7 @@ reading to understand has to skip the commands. **Split them and both work.**
 
 **`CHANGELOG.md`** is owned by the release bundle. **Decision, audit and log
 records** are owned by their record bundles and live in `.luma/records/`.
-**`AGENTS.md` and `CLAUDE.md`** are generated projections, never authored.
+**`AGENTS.md` and `CLAUDE.md`** are generated from `.luma/`, never authored.
 
 Named so an omission reads as a boundary rather than a gap.
 

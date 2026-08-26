@@ -83,7 +83,7 @@ whole mitigation, and a thin one.
 itself as global agent context and memory management. Whether it is what this
 entry wants is **unconfirmed**, and was recorded without looking.
 
-**Signal.** Foreman growing memory as a projection target. When it does, the
+**Signal.** Foreman growing memory as somewhere `apply` writes. When it does, the
 luma store becomes the destination and the agent-specific store becomes
 generated output — the same relationship `CLAUDE.md` already has to `.luma/`.
 
@@ -166,7 +166,7 @@ consumed and destroyed; an unconsumed note goes stale, gets believed, and does
 more damage than never having written one. Every other gap here costs
 convenience. This one costs correctness.
 
-**Signal.** Any harness with a session-start hook, or a projection that can mark
+**Signal.** Any harness with a session-start hook, or generated output that can mark
 a workflow as *run me on arrival*. Worth watching for as actively as the
 pre-compaction hook, and for the same reason: both replace *an agent remembered*
 with *the harness did it*.
@@ -176,8 +176,9 @@ with *the harness did it*.
 **Wanted.** These four workflows available as `/session-checkpoint` and friends
 in whatever agent is running, generated rather than hand-written per tool.
 
-**Today.** Whatever the host agent does with a `workflow` document. That is the
-projection problem foreman owns, and it is deliberately not solved here — a
+**Today.** Whatever the host agent does with a `workflow` document. Getting one
+in front of an agent is foreman's problem, and it is deliberately not solved
+here — a
 workflow naming its harness has bound vendor-neutral knowledge to whichever
 assistant happened to be current when it was written.
 
