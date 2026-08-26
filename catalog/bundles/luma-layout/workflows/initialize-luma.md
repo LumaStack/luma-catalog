@@ -38,11 +38,22 @@ correctness failure rather than an inconvenience.
 If something in here should not be committed, it is machine-local state and
 belongs in `~/.config/luma/` instead.
 
-## 4. Commit it before using it
+## 4. Commit it before using it, except for empty directories
 
 An empty committed `.luma/` is a claim that this project has one. A directory
 that exists only on your machine is not part of the project — it is something
 that will surprise the next person to clone.
+
+**Git tracks files, not directories, so an empty one cannot be committed.**
+`records/` therefore joins the repository with whatever is written into it
+first, and until then it exists only where you made it. That is expected rather
+than a step you missed, and it is not worth a placeholder file: `.luma/` holds
+things that mean something, and `.gitkeep` would be the only entry that does
+not.
+
+What this step is really asking for is that **everything with contents is
+committed before anybody relies on it** — `PROJECT.md` on day one, and each
+directory as it earns a file.
 
 ## 5. Adopt what you need
 

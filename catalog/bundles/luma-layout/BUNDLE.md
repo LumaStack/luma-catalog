@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.10.0
+version: 0.10.1
 published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -72,6 +72,22 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.10.1` — **"commit it before using it" asked for something git cannot do.**
+`initialize-luma` says to create `.luma/records` and then commit `.luma/`, but
+git tracks files rather than directories, so an empty `records/` cannot be
+committed at all. Whoever followed the step committed `PROJECT.md`, saw
+`records/` missing from a fresh clone, and concluded something had deleted it —
+the exact outcome the step exists to prevent.
+
+The step now names the exception and says what actually happens: `records/`
+joins the repository with whatever is written into it first.
+
+**No `.gitkeep`.** `.luma/` holds things that mean something, and a placeholder
+would be the only entry that does not.
+
+Patch: the instruction is the same one, no longer asking for an unreachable
+state.
 
 `0.10.0` — **the foreman commands were renamed.** `initialize-luma` now says
 `luma-foreman get`, and the `CLAUDE.md` marker example shows `luma-foreman
