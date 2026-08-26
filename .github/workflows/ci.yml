@@ -31,8 +31,8 @@ env:
   #
   # Until then this is a manual chore. Both pins were verified current on
   # 2026-08-24.
-  CURATOR_SHA: 7111a889a4f68e29117aea42d957c96a4557c922  # luma-catalog-curator
-  FOREMAN_SHA: 0f2a3efb6766f2f1081ac76c33ef981b53c06e00  # luma-foreman
+  CURATOR_SHA: ce22601a97e527c4b9ad46a493a13c48fcb66e7f  # luma-catalog-curator
+  FOREMAN_SHA: 41eb96e3fac7ab1c5a68243eb6f6f62d5071fa9b  # luma-foreman
 
 jobs:
   check:
