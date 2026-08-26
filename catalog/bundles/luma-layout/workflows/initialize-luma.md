@@ -17,16 +17,20 @@ moving an existing structure into it, or just add what is missing.
 
 ## 2. Create only what will have contents
 
-```sh
-mkdir -p .luma/records
-```
+Two files, and the directories they need:
 
-**Do not create all four directories up front.** An empty `backlog/` is a
-question a reader has to answer — *is this unused, or is something broken?* —
+- `.luma/PROJECT.md` — what this repository is, for something outside it
+- `.luma/config/<tool>.toml` — only if this project overrides something. A
+  catalog source is the usual reason
+
+**Do not create a directory before something is in it.** An empty `backlog/` is
+a question a reader has to answer — *is this unused, or is something broken?* —
 and directories cost nothing to add on first use.
 
-`records/` is the usual exception: something will write an audit or a decision
-almost immediately.
+**Git will not commit an empty one in any case**, so a directory made ahead of
+time exists only on the machine that made it and is absent from every clone.
+`records/` appears with the first decision or audit; `bundles/` with the first
+`luma-foreman get`.
 
 ## 3. Ignore nothing
 
@@ -44,16 +48,14 @@ An empty committed `.luma/` is a claim that this project has one. A directory
 that exists only on your machine is not part of the project — it is something
 that will surprise the next person to clone.
 
-**Git tracks files, not directories, so an empty one cannot be committed.**
-`records/` therefore joins the repository with whatever is written into it
-first, and until then it exists only where you made it. That is expected rather
-than a step you missed, and it is not worth a placeholder file: `.luma/` holds
-things that mean something, and `.gitkeep` would be the only entry that does
-not.
+**Except for empty directories, which git cannot commit at all.** That is why
+step 2 says not to make one: it would exist only where you made it. Do not
+reach for a `.gitkeep` to force the issue — `.luma/` holds things that mean
+something, and a placeholder would be the only entry that does not.
 
-What this step is really asking for is that **everything with contents is
-committed before anybody relies on it** — `PROJECT.md` on day one, and each
-directory as it earns a file.
+So what this step asks for is that **everything with contents is committed
+before anybody relies on it** — the descriptor on day one, and each directory
+as it earns a file.
 
 ## 5. Adopt what you need
 

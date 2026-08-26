@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.10.1
+version: 0.11.0
 published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -72,6 +72,29 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.11.0` — **a config file is named for its tool, and a config holds
+overrides.** The layout showed `foreman.toml`; the binary is `luma-foreman`, and
+a truncation makes a reader guess which tool a file belongs to. One file per
+tool, named for the tool.
+
+**And the directory now has a policy rather than only a purpose.** What is
+absent from a config follows the tool and improves with it; what is written down
+is frozen, so the smallest file ages best. Commented-out defaults are ruled out
+for the same reason — uncommenting is one keystroke, and a stale copy of a
+default becomes a frozen override pinned to the day the file was written. Point
+at documentation or a command that reads live values instead.
+
+**`initialize-luma` no longer creates `records/`.** The step existed because
+something writes a decision or an audit almost immediately — but if that is
+true the directory appears on its own, and git cannot commit an empty one, so
+what it created existed on one machine and reached no clone. The workflow now
+creates the two files that have contents on day one and lets every directory
+arrive with its first entry.
+
+Breaking, which below 1.0 the minor position carries: a project with
+`.luma/config/foreman.toml` has to rename it, and `luma-foreman` reports the old
+name rather than silently reading past it.
 
 `0.10.1` — **"commit it before using it" asked for something git cannot do.**
 `initialize-luma` says to create `.luma/records` and then commit `.luma/`, but
