@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.9.0
+version: 0.10.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -83,6 +83,18 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.10.0` — **`an-index-of-what-exists` stops teaching `preload` too.** The
+`0.9.0` sweep corrected `organizing-a-bundle` and never looked at its sibling in
+the same bundle — which is precisely the partial-sweep failure that produced the
+finding in the first place.
+
+The index policy argued from `preload` learning about conditions, and from the
+cost of `preload: mandatory` being spent carefully. Both are now stated in what
+exists: `matches` and the triggers it already carries, and `matches: always` as
+the expensive outcome somebody has to choose.
+
+Minor. No rule changed; the vocabulary it is stated in did.
 
 `0.9.0` — **`organizing-a-bundle` stops teaching `preload`.** It named the
 field ten times, including a section built on it, two releases after the format

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-25
 consumers: [project]
 entry_point: workflows/publish-release
@@ -37,9 +37,18 @@ headquarters is a repository too, but it is not something you cut versions of.
 
 ## Loading
 
-Only [[publish-release]] is `preload: mandatory`. The two policies are
-`optional`: they are read when the workflow points at them or when someone
-questions a version number, not held in context against the possibility.
+**Nothing here is loaded before work starts, and nothing needs to be.** No
+document declares `matches: always`. [[publish-release]] declares no `matches` at
+all: it is named as a skill and its body arrives when somebody invokes it, which
+is the right outcome for a procedure nobody runs by accident.
+
+**All three policies declare triggers**, which is what makes them cheap —
+[[changelog]] on the `CHANGELOG.md` path, [[release-notes]] on the
+`gh release create` command and the `before-release` event, and
+[[release-versions]] on that same event and on the topic of choosing which part
+of a version to bump. They arrive when the workflow reaches them or when someone
+questions a version number, rather than being held in context against the
+possibility.
 
 ## The one hard requirement
 
@@ -53,6 +62,17 @@ to undo than anything else in the workflow, and on a managed machine it may not
 be yours to do.
 
 ## Version
+
+`0.6.0` — **the Loading section described a removed field, and miscounted.** It
+claimed `publish-release` was `preload: mandatory` and that *the two policies*
+were `optional`. There are three policies, every one of them declaring triggers,
+and nothing here is loaded before work starts — `publish-release` declares no
+`matches` and is reached as a skill.
+
+The triggers are now named individually, because *cheap* is a claim a reader
+should be able to check rather than take.
+
+Minor. No document's frontmatter changed; the description of it did.
 
 `0.5.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs

@@ -69,8 +69,8 @@ for naming it once:
 - **Mandates that apply only sometimes.** A line per mandate — what it is, who
   mandated it, when it applies — so nothing concludes *no mandate applies* out
   of ignorance.
-- **Conditional loading generally.** The cheaper thing to try before making
-  `preload` learn about conditions at all.
+- **Conditional loading generally.** The cheaper thing to try before teaching
+  `matches` conditions richer than the triggers it already has.
 
 **If you are reaching for a `when` condition, try an index first.** It solves
 the same problem without anything having to evaluate prose, and it fails loudly
@@ -84,5 +84,5 @@ failure it was built to prevent, arriving from the other direction. Deriving it
 is what makes that a build step rather than a discipline.
 
 **And it only works while it stays short.** An index nobody reads because it is
-two pages long is a preloaded document that buys nothing, which is the exact
-cost `preload: mandatory` is supposed to be spent carefully.
+two pages long is loaded before every session and buys nothing — which is the
+exact cost `matches: always` exists to make somebody choose deliberately.
