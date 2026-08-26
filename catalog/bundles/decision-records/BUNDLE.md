@@ -152,9 +152,12 @@ promoting a record that misdescribes what it governs is worse than leaving it in
 should be promoted — say so, twice if it lingers, and change nothing. A
 time-based nudge is legitimate where a time-based permission is not.
 
-*`draft` is no longer described as uncited.* It can be cited and in use before
-anybody promotes it; what makes rewriting safe is that nothing is **binding**,
-not that nothing points at it.
+*And citing a draft is now discouraged rather than merely described.* The old
+text said of `draft` that *nothing is citing it*, as an observation. It is a
+rule now: the position under that number can still move, freely and in place,
+with no supersession and nothing in the history to show it did. What makes
+rewriting a draft safe is that nothing is **binding** — which is the same reason
+nothing should be pointing at it yet.
 
 Breaking, which below 1.0 the minor position carries: an author who followed the
 old text and set `provisional` on starting work was doing the right thing and is

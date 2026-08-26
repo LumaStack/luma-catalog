@@ -113,6 +113,11 @@ is useful. **Acting on it is not.** Prompt, do not promote:
   governs ships
 - **when a draft has been in use for a while** — the same observation, later
 
+**A citation appearing is the sharpest version of this signal**, because citing
+a draft is discouraged in the first place. It means somebody is relying on a
+position that can still move, and the answer is to promote the record or drop
+the citation — not to leave both as they are.
+
 A time-based nudge is legitimate where a time-based *permission* is not:
 nothing is being authorised, so a nudge that misfires costs a sentence.
 
@@ -123,7 +128,7 @@ settled the decision is *and* what you are permitted to change.
 
 | `lifecycle_status` | means | what you may edit |
 | --- | --- | --- |
-| `draft` | proposed, under discussion, not yet decided | anything — nothing is binding, so nothing depends on the position holding |
+| `draft` | proposed, under discussion, not yet decided | anything — nothing is binding, and citing one is discouraged |
 | `provisional` | decided and in force, but on trial | the explanation, freely and in place. No approval needed. **Still not the decision** |
 | `stable` | settled | the explanation only, and with approval first |
 | `archived` | no longer the current answer, kept as history | nothing |
@@ -173,8 +178,13 @@ was always intended"* changes nobody's standing — correction.
 
 **The one exception is `draft`**, which is not yet a decision. Nothing is
 binding, so nobody can be in breach of it, and rewriting it is what the status
-is for. A draft may well be cited by then — being used is how it earns
-promotion — but a citation of something not yet in force promises nothing.
+is for.
+
+**Citing a draft is discouraged, for exactly that reason.** The position under
+that number can still move — freely, in place, with no supersession and nothing
+in the history a reader would think to look for. An ADR number is a promise
+that the position never moved, and a `draft` is the one status that does not
+make it.
 
 **Reversal under the same number does not announce itself.** It arrives as a
 sequence of reasonable edits — a hedge added, a scope trimmed, an exception
