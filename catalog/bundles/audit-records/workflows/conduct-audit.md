@@ -6,7 +6,90 @@ description: Examine something, record what is wrong and why, and leave a record
 
 # Conduct an audit
 
-## 1. Pin the commit before you look at anything
+## 1. Ask three questions before looking at anything
+
+**An audit answers a question somebody has.** Guessing at it produces a document
+nobody needed, and the guess does not show up in the result. Write the answers
+into `audit.md` — they are the scope section, arrived at rather than
+reconstructed.
+
+### Targeted, or open-ended?
+
+**Ask this first, before asking what is wrong.** Otherwise anyone with a
+complaint ready gets a targeted audit without having chosen one — and the choice
+matters more than the complaint does.
+
+**Neither is the neutral option.** They are biased in opposite directions, and
+picking one is picking which bias you would rather have.
+
+| | **Targeted** | **Open-ended** |
+| --- | --- | --- |
+| **starts from** | problems you name | nothing |
+| **biased toward** | what you already suspect | what is easy to notice |
+| **finds** | instances, and how widespread they are | whatever is most prominent |
+| **misses** | anything not shaped like the worry — **including its cause** | anything subtle, or with no obvious surface |
+| **use when** | somebody is waiting on a specific answer | nobody knows where to look |
+
+**Tunnel vision is the cost of targeting, and it has a specific shape: a problem
+is usually a symptom, and an audit aimed at a symptom never looks at the cause.**
+*The same mistake keeps happening* is almost always one.
+
+**A targeted audit's finding count means little.** An auditor told to look for
+something finds things shaped like it, because looking harder produces more.
+**A long list is evidence of effort, not of severity** — read the severities.
+
+**Open-ended is not unbiased either.** With nothing stated, an auditor reports
+what it can see and argue: the countable, the greppable, the already familiar.
+**An auditor who has just worked on the subject cannot run an open-ended audit
+of it** — its own recent context is the anchor whether or not anyone named one.
+Say so in `audit.md`, or use a reader who has not seen the work.
+
+### What problems do you want to target?
+
+*Skip this if the audit is open-ended. An open-ended audit with a list of
+problems attached is a targeted audit that has not admitted it.*
+
+> *For example: something broke and you do not know how widely; the same mistake
+> keeps recurring; you inherited this and do not trust it; a rule exists that
+> nobody follows; you are about to publish and want to know what is
+> embarrassing. Your own answer beats any of these.*
+
+**Naming nothing is sometimes the better answer, and not only when you have no
+complaints.** If you already know what is wrong, an audit that confirms it buys
+little — where an open-ended one might find why it keeps happening. **Withhold a
+suspicion deliberately and it becomes a test of the audit** rather than an
+instruction to it.
+
+**A targeted audit owes an answer to what it was aimed at, either way.**
+*Asked to look for X. Found: two instances, F-002 and F-004* — or *Found: none,
+in tracked content only.* **A negative is a result**, and often the point: it is
+what lets somebody stop worrying, and an audit reporting only what it found
+cannot say it.
+
+### What is the scope of your search?
+
+**Ask, do not infer.** The problems usually imply a scope, and implying is how
+an audit ends up covering whatever was convenient.
+
+- a single backlog item
+- one feature, or one subsystem
+- a directory tree
+- one repository
+- several repositories
+- the whole estate
+
+**Then ask what to leave out.** They usually know something that would cost a
+day and answer nothing: vendored code, a subtree somebody else owns, generated
+files, an area audited last month.
+
+### When there is nobody to ask
+
+**An audit may run unattended — in continuous integration, on a schedule, inside
+a swarm.** It is open-ended, and `audit.md` says so: *"No interview conducted;
+scope chosen by the auditor."* A reader can then tell an audit nobody anchored
+from one where nobody was asked.
+
+## 2. Pin the commit before you look at anything
 
 ```sh
 git rev-parse --short=12 HEAD
@@ -27,17 +110,22 @@ If several audits of the same commit will run on the same day, add a scope
 suffix now rather than discovering the collision later:
 `${DATE}-${SHA}-security`.
 
-## 2. Decide the scope, and write down what you are not looking at
+## 3. Write the scope down, including what you are not looking at
 
-Before examining anything. Scope decided afterwards is scope fitted to what you
-happened to find.
+**Before examining anything.** Step 1 settled most of this; writing it down now
+is what stops it being reconstructed later. **Scope recorded afterwards is scope
+fitted to what you happened to find.**
 
 **The half people skip is what was excluded.** *"Reviewed the HTTP layer; did not
 examine authentication or the data model"* lets a reader tell *examined and
 clean* from *never looked*. Without it, a clean audit is indistinguishable from
 a shallow one.
 
-## 3. Examine
+**Exclusions come from two places and both belong here** — what you were told to
+leave out, and what you decided to. Say which is which where it matters: an area
+the owner ruled out reads differently from one you ran out of time for.
+
+## 4. Examine
 
 Where a tool does part of the job, run it and keep the output as evidence rather
 than as findings. `luma-foreman inspect` and its equivalents belong here.
@@ -46,7 +134,7 @@ than as findings. `luma-foreman inspect` and its equivalents belong here.
 finding with eleven locations. The judgement — does this matter, by whose rule,
 what does it cost — is the part you are here to add.
 
-## 4. Write one file per finding
+## 5. Write one file per finding
 
 ```
 findings/F-001-<short-slug>.md
@@ -64,15 +152,19 @@ severity rated on consequence rather than effort. [[writing-findings]] covers
 what makes each of those actionable, and [the finding template](../templates/finding.md)
 has the shape.
 
-## 5. Write `audit.md`
+## 6. Write `audit.md`
 
 Scope, commit, what was excluded, who audited, and a summary of the findings by
 severity. Not a restatement of them — a reader should be able to decide from this
 file alone whether they need to read the rest.
 
+**Plus what step 1 settled:** whether this was targeted or open-ended, what it
+was aimed at, and — for a targeted audit — **the answer to that aim, including
+when the answer is *nothing found***.
+
 [The audit template](../templates/audit.md).
 
-## 6. Stop before writing the response
+## 7. Stop before writing the response
 
 **You are not the party that answers this.** An auditor who writes the response
 is grading their own work, and the record loses the only property that made it
@@ -82,7 +174,7 @@ Where a swarm is doing every step, arrange that separation deliberately —
 nothing enforces it, and one agent doing both jobs is the easiest failure to
 commit by accident.
 
-## 7. Commit it
+## 8. Commit it
 
 One commit, the whole audit directory. It is a record: append-only, dated, and
 never edited afterwards. What happens next is written by somebody else in their
