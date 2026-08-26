@@ -16,7 +16,7 @@ matches:
     adopted.toml      what this project took, and proof of what it looked like
     luma/git-secrets/
   config/
-    foreman.toml      how a tool behaves here
+    luma-foreman.toml how a tool behaves here — one file per tool, named for it
   records/            what happened, and why
   _types/             contracts for documents that are in no bundle
 ```
@@ -109,6 +109,23 @@ A glossary and a guardrail live in the same place not because they are similar,
 but because they have the same lifecycle: both are live, both are currently in
 force. That is the only axis. Sorting by topic as well would mean two questions
 deciding one location, and every new item needing both answered.
+
+## A config holds overrides, and as little else
+
+**One file per tool, named for the tool** — `luma-foreman.toml`, not
+`foreman.toml`. The binary is what somebody is looking for when they open
+`config/`, and a truncation makes them guess which tool a file belongs to.
+
+**What is absent follows the tool and improves with it; what is written down is
+frozen.** Every value in a config is one an upgrade cannot move, so the smallest
+file is the one that ages best. A tool generating a config should write what has
+no default and stop.
+
+**Do not ship commented-out defaults.** They cannot change behaviour while they
+are comments, and uncommenting is one keystroke — at which point a stale copy of
+a default becomes a frozen override pinned to whatever it said the day the file
+was written. Where a reader needs to know what is settable, point at
+documentation or a command that reads the live values; a file cannot know them.
 
 ## Everything in `.luma/` is committed. No exceptions.
 
