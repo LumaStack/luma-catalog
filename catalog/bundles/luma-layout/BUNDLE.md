@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.11.0
+version: 0.11.1
 published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -72,6 +72,20 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.11.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
 
 `0.11.0` — **a config file is named for its tool, and a config holds
 overrides.** The layout showed `foreman.toml`; the binary is `luma-foreman`, and

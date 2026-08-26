@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.10.0
-published: 2026-08-25
+version: 0.10.1
+published: 2026-08-26
 consumers: [organization]
 entry_point: policy/what-a-headquarters-holds
 description: The internal repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
@@ -284,6 +284,20 @@ occasionally needs to know one exists.
 
 ## Version
 
+`0.10.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
+
 `0.10.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
 everything, and none does — what a rule governs is stated in its body, where no
@@ -328,7 +342,7 @@ breaking change: anything naming the old path by hand stops resolving.
 `0.6.2` — a heading no longer says how many things are beneath it. Wording only.
 
 Patch: no normative sentence moved and a reader who correctly understood
-`0.6.1` behaves identically. See `writing-style` in `luma/project-documentation`
+`0.6.1` behaves identically. See `writing-style` in `lumastack/luma-catalog/project-documentation`
 for the rule and the failure it prevents.
 
 `0.6.1` — *standard* becomes *policy*. Wording only: `policy` is the document
@@ -388,7 +402,7 @@ demonstrated.
 
 **The descriptor this depends on now exists and nothing has one.**
 `.luma/PROJECT.md` is where a repository answers *when should somebody open
-this?*, defined by `luma/project-documentation` — so the headquarters collects
+this?*, defined by `lumastack/luma-catalog/project-documentation` — so the headquarters collects
 rather than authors. No repository has written one yet, so in practice every
 description here starts as a derived fallback, which is the one field most
 likely to rot until that changes.

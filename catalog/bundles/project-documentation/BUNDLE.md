@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.15.1
+version: 0.15.2
 published: 2026-08-26
 consumers: [project]
 entry_point: policy/readme
@@ -97,6 +97,20 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.15.2` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
 
 `0.15.1` — **`AGENTS.md` and `CLAUDE.md` are no longer called "generated
 projections."** They are what `luma-foreman apply` writes, and foreman stopped
@@ -210,10 +224,10 @@ looks for `LICENSE`, and GNU's own `ChangeLog` is CamelCase — so *all-caps is
 the convention* was never true.
 
 `0.6.1` — a wikilink in `where-history-belongs` pointed into the
-`luma/git-workflow` bundle and therefore at nothing. Named in prose instead —
+`lumastack/luma-catalog/git-workflow` bundle and therefore at nothing. Named in prose instead —
 the sentence already said which bundle it meant, so nothing was lost.
 
-`0.6.0` — `project` becomes `luma/project`, vendored from the `luma/luma-types`
+`0.6.0` — `project` becomes `luma/project`, vendored from the `lumastack/luma-catalog/luma-types`
 bundle rather than defined here. Breaking for anything matching on the bare type
 name.
 
@@ -255,7 +269,7 @@ reason.
 **It also relocates something rather than forbidding it.** Reasoning that changed
 course is worth keeping — it is how a team learns what its process gets wrong. It
 belongs in git history, where it costs a reader nothing until they go looking. The
-policy sends it somewhere that already claims the job: `luma/git-workflow` rests
+policy sends it somewhere that already claims the job: `lumastack/luma-catalog/git-workflow` rests
 its case against squashing on the commit message being where rationale lives.
 
 **The exception is named as a type rather than a circumstance.** Decision records

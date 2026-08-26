@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.7.0
-published: 2026-08-25
+version: 0.7.1
+published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/audit-layout
 description: Audits as records — findings written by one party, answered by another, closed by the first. The whole exchange lives in git.
@@ -76,6 +76,20 @@ Both levels. A project audits its code and its own practice; an organization
 audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
+
+`0.7.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
 
 `0.7.0` — **independence is a session boundary, not a model boundary.** The rule
 said *one party must not write two of these*, which was wrong twice. It
@@ -167,7 +181,7 @@ breaking change: anything naming the old path by hand stops resolving.
 `0.1.1` — a heading no longer says how many things are beneath it. Wording only.
 
 Patch: no normative sentence moved and a reader who correctly understood
-`0.1.0` behaves identically. See `writing-style` in `luma/project-documentation`
+`0.1.0` behaves identically. See `writing-style` in `lumastack/luma-catalog/project-documentation`
 for the rule and the failure it prevents.
 
 `0.1.0`. The structure is borrowed from internal-audit practice, which is

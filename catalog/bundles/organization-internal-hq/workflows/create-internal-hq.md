@@ -219,7 +219,7 @@ yet a repository anybody can use.
 ## 9. Declare its disclosure level
 
 In `.luma/PROJECT.md`, using the `project` type from
-`luma/project-documentation`:
+`lumastack/luma-catalog/project-documentation`:
 
 ```yaml
 disclosure_level: internal      # or confidential, or restricted

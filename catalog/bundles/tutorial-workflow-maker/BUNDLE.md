@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.10.0
-published: 2026-08-25
+version: 0.10.1
+published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/what-makes-a-tutorial-land
 description: Making paced tutorials — the standard a walkthrough is held to, a workflow that turns source material into one, and templates for the steps, the quiz and the workflow that performs them.
@@ -34,7 +34,7 @@ one, and the parts that should not be rewritten each time.
 [the driving workflow](templates/driving-workflow.md)
 
 **Types** — [[tutorial_step]] · [[tutorial_quiz]], vendored from
-`luma/luma-types`. Copy them into whatever bundle you are building a tutorial
+`lumastack/luma-catalog/luma-types`. Copy them into whatever bundle you are building a tutorial
 in; the contract has to travel with the documents.
 
 **Concept**
@@ -111,6 +111,20 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.10.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
 
 `0.10.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
@@ -198,7 +212,7 @@ next* names a topic; *Ask questions, or say next* offers an action, and the
 difference matters at exactly the moment somebody is deciding whether to speak up
 or move on.
 
-Kept in step with `luma/token-manager`, whose tutorial carries the same blocks —
+Kept in step with `lumastack/luma-catalog/token-manager`, whose tutorial carries the same blocks —
 that text is meant to be byte-identical across tutorials, so it is not a place
 where two bundles get to differ.
 

@@ -24,7 +24,7 @@ have in common is that holding the reasoning is their job — so any destination
 with that property qualifies, including ones nobody here has thought of.
 
 - **git history** — the commit message. The `merge-commits` policy in the
-  `luma/git-workflow` bundle rests its case against squashing on the commit
+  `lumastack/luma-catalog/git-workflow` bundle rests its case against squashing on the commit
   message being where rationale lives, so this is a home that already claims the
   job.
 - **pull requests and review threads** — often the more natural place for an
@@ -33,7 +33,7 @@ with that property qualifies, including ones nobody here has thought of.
   triggers; an audit record keeps a finding and the answer to it.
 - **backlog journals** — how an intention changed, kept beside the intention
   rather than in whatever describes the current plan.
-- **logs** — `log.md` is reserved for this by the `luma/luma-layout` bundle:
+- **logs** — `log.md` is reserved for this by the `lumastack/luma-catalog/luma-layout` bundle:
   append-only, newest first, never rewritten.
 - **wherever a team already keeps this** — an issue tracker, a design archive, a
   wiki. A destination that exists and is used beats a better one that is not.

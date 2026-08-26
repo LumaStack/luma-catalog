@@ -1,6 +1,5 @@
 ---
 type: luma/catalog
-namespace: luma
 description: Universal bundles — the starting set any organization can adopt.
 tags:
   - service
@@ -10,31 +9,37 @@ tags:
   - docs
 starters:
   project:
-    - luma/luma-layout
-    - luma/luma-tools
-    - luma/git-secrets
-    - luma/project-documentation
-    - luma/decision-records
+    - lumastack/luma-catalog/luma-layout
+    - lumastack/luma-catalog/luma-tools
+    - lumastack/luma-catalog/git-secrets
+    - lumastack/luma-catalog/project-documentation
+    - lumastack/luma-catalog/decision-records
   organization:
-    - luma/luma-layout
-    - luma/luma-tools
-    - luma/decision-records
-    - luma/organization-internal-hq
+    - lumastack/luma-catalog/luma-layout
+    - lumastack/luma-catalog/luma-tools
+    - lumastack/luma-catalog/decision-records
+    - lumastack/luma-catalog/organization-internal-hq
 requires:
-  - bundle: luma/git-secrets
+  - bundle: lumastack/luma-catalog/git-secrets
     obligation: recommended
 ---
 
 # The universal catalog
 
 Bundles useful to an organization with no connection to Luma. What each field
-means and how it resolves is in [`bundles/luma-types/_types/catalog.md`](bundles/luma-types/_types/catalog.md) — the one canonical copy, published in the `luma/luma-types` bundle rather than duplicated beside this file.
+means and how it resolves is in [`bundles/luma-types/_types/catalog.md`](bundles/luma-types/_types/catalog.md) — the one canonical copy, published in the `lumastack/luma-catalog/luma-types` bundle rather than duplicated beside this file.
 
 No `upstream`: this is the root of the chain.
 
-`namespace: luma` is what makes `luma/decision-records` addressable by something
-other than a person. It had been written throughout the starters below and
-declared nowhere, which a reader absorbs without noticing and a tool cannot.
+**No `namespace`, deliberately.** It derives from where this catalog lives:
+`github.com/LumaStack/luma-catalog` gives `lumastack/luma-catalog`, so a bundle
+here is `lumastack/luma-catalog/decision-records`.
+
+Declaring one is allowed and wins wherever it appears. Do not, unless you need
+a name your address cannot give you. A declaration is a line a fork inherits by
+copying the file, and it is the only way a fork of this catalog could publish
+under this catalog's name — deriving costs nothing and cannot be inherited,
+because a fork lives somewhere else.
 
 ## What is claimed, and what is not
 
@@ -50,9 +55,9 @@ unpublished, and a leaked identity is permanent in every clone. Everything else
 is quality of life, and reporting five gaps at a project that just adopted its
 first bundle is how a report gets ignored.
 
-**`luma/luma-tools` is in both starter sets** because anything adopting from
+**`lumastack/luma-catalog/luma-tools` is in both starter sets** because anything adopting from
 this catalog is running `foreman` to do it — so *how the tool works* is
-knowledge every adopter needs and nobody currently gets. `luma/luma-maintainers`
+knowledge every adopter needs and nobody currently gets. `lumastack/luma-catalog/luma-maintainers`
 is in neither: it describes how this estate is maintained, which is somebody
 else's internals to anybody but us.
 
@@ -62,7 +67,7 @@ nagging report or an empty one. Four bundles for a new project, three for a new
 headquarters — enough to have somewhere to put decisions and a rule about
 secrets, without deciding how anybody releases or merges.
 
-`luma/organization-internal-hq` is a starter rather than a requirement on
+`lumastack/luma-catalog/organization-internal-hq` is a starter rather than a requirement on
 purpose. A headquarters is worth having and **not worth creating before there is
 cross-project reasoning to put in it**, which is a judgement only the
 organization can make. What the bundle buys a new headquarters is the recurring

@@ -243,7 +243,7 @@ nowhere to put a descriptor, and having something to file is not a reason to
 introduce a directory structure into somebody's project. Report that as the gap
 it is.
 
-What belongs in one is `luma/project-documentation`'s business, not this
+What belongs in one is `lumastack/luma-catalog/project-documentation`'s business, not this
 bundle's.
 
 **Never overwrite an adjudicated value with a derived one.** If somebody wrote a

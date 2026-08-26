@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.11.0
-published: 2026-08-25
+version: 0.11.1
+published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
 description: Ideas as individual files rather than one growing IDEAS.md — what earns a file, how capture stays fast, and how the list gets tended rather than accumulating.
@@ -115,6 +115,20 @@ about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
 
+`0.11.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
+
 `0.11.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
 everything, and none does — what a rule governs is stated in its body, where no
@@ -167,10 +181,10 @@ breaking change: anything naming the old path by hand stops resolving.
 `0.6.1` — a heading no longer says how many things are beneath it. Wording only.
 
 Patch: no normative sentence moved and a reader who correctly understood
-`0.6.0` behaves identically. See `writing-style` in `luma/project-documentation`
+`0.6.0` behaves identically. See `writing-style` in `lumastack/luma-catalog/project-documentation`
 for the rule and the failure it prevents.
 
-`0.6.0` — `idea` becomes `luma/idea`, vendored from the `luma/luma-types` bundle
+`0.6.0` — `idea` becomes `luma/idea`, vendored from the `lumastack/luma-catalog/luma-types` bundle
 rather than defined here, and gains `contributors`.
 
 **It stopped being this bundle's to own because a second maintainer is coming.**

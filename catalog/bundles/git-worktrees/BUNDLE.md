@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.6.0
-published: 2026-08-25
+version: 0.6.1
+published: 2026-08-26
 consumers: [project]
 entry_point: policy/worktree-isolation
 description: Isolated worktrees for concurrent agents in one repository — where they live, what has to be provisioned, and how to tear them down without leaving wreckage.
@@ -102,6 +102,20 @@ failure looks exactly like the copy never happened. **Append.**
 
 ## Version
 
+`0.6.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
+
 `0.6.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
 everything, and none does — what a rule governs is stated in its body, where no
@@ -163,7 +177,7 @@ around it makes the wrong tree the normal one.
 `0.1.1` — a heading no longer says how many things are beneath it. Wording only.
 
 Patch: no normative sentence moved and a reader who correctly understood
-`0.1.0` behaves identically. See `writing-style` in `luma/project-documentation`
+`0.1.0` behaves identically. See `writing-style` in `lumastack/luma-catalog/project-documentation`
 for the rule and the failure it prevents.
 
 `0.1.0`. Assembled from current practice, corrected where that practice is

@@ -34,12 +34,12 @@ the five fields above.
 ## `namespace`
 
 **Every Bundle is addressed `<namespace>/<name>`, and the namespace belongs to
-the catalog rather than to the Bundle.** `luma/decision-records` is *the
+the catalog rather than to the Bundle.** `lumastack/luma-catalog/decision-records` is *the
 `decision-records` published by the `luma` catalog*; the same Bundle promoted
 into another organization's catalog is that organization's to name.
 
 **Without it a catalog cannot be addressed by a tool.** A catalog that writes
-`luma/git-secrets` in its own `starters` is naming a prefix nothing in the file
+`lumastack/luma-catalog/git-secrets` in its own `starters` is naming a prefix nothing in the file
 declares, so anything adopting from it has to be told out of band what to call
 what it just took — and a name learned out of band is a name that gets typed
 wrongly.

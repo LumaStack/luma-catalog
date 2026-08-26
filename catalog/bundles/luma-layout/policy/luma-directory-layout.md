@@ -14,7 +14,7 @@ matches:
   backlog/            what we intend
   bundles/            what is in force — adopted, or written here
     adopted.toml      what this project took, and proof of what it looked like
-    luma/git-secrets/
+    lumastack/luma-catalog/git-secrets/
   config/
     luma-foreman.toml how a tool behaves here — one file per tool, named for it
   records/            what happened, and why
@@ -144,7 +144,7 @@ The namespace tells them apart, and it is more reliable than a directory would
 be:
 
 ```
-.luma/bundles/luma/git-secrets/     adopted — never edit it
+.luma/bundles/lumastack/luma-catalog/git-secrets/     adopted — never edit it
 .luma/bundles/acme-web/deploy/      ours — this project wrote it
 ```
 
@@ -158,7 +158,7 @@ to be different, that is a different bundle in your own namespace.
 ## `adopted.toml` is written by a tool, never by hand
 
 ```toml
-["luma/git-secrets"]
+["lumastack/luma-catalog/git-secrets"]
 version  = "0.1.0"
 source   = "https://github.com/LumaStack/luma-catalog"
 commit   = "abc1234"
