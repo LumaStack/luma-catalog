@@ -14,10 +14,13 @@ after the fact.
 
 ## Record it early, and record it small
 
-**Write the record while the decision is still being argued**, as a `draft`, or
-as `provisional` the moment you start acting on it. Capturing intent is the
-point; waiting until it is built means writing from memory about reasoning you
-have already lost.
+**Write the record while the decision is still being argued**, as a `draft`.
+Capturing intent is the point; waiting until it is built means writing from
+memory about reasoning you have already lost.
+
+**A record is born `draft` and stays there until its owner promotes it.** That
+is a separate act, never the same gesture as writing it — see *Promotion is
+somebody's decision*, below.
 
 **One decision per record.** A discussion that produced three independent
 choices produces three records. Bundled decisions cannot be superseded
@@ -63,6 +66,56 @@ Name the conditions concretely: *"if the platform gains feature X"*, *"above
 100 hosts"*, *"if cost exceeds $200 a month"*, *"if this tool becomes
 unmaintained"*. Vague triggers never fire.
 
+## Promotion is somebody's decision
+
+**Nothing promotes itself, and using a draft never promotes it.** A record
+leaves `draft` because its owner says so — not because work started, not
+because it got cited, not because time passed.
+
+**Acting on a draft is how it earns promotion, not a consequence of it.**
+`provisional` means *decided and in force, but on trial*. If reaching the trial
+required promoting first, a draft could never be tried at all and the rung
+would collapse into *not written up properly yet*.
+
+**The cost of getting this wrong is highest on a young record.** Only `draft`
+permits the decision itself to move. A record that arrived at `provisional`
+without anybody deciding it should is locked, and reversing it needs the
+supersession ceremony — a new number, an archival, a `superseded_by`. That
+machinery exists to protect citations, and a record written an hour ago has
+none.
+
+**This is not a rule about recency.** *It is only a day old* is unenforceable
+and slides a week at a time. The gate is authorship: the owner promotes, and
+whenever they do is the right time.
+
+### Promotion means reading it again
+
+**Check the record still describes the world before promoting it**, and expect
+to find that it does not. A record written before the work is a description of
+an intention; by the time it is in force, the thing it governs exists and can
+be compared against it. Names moved, a command was renamed, a count of three
+became a count of five.
+
+Correct what has drifted in the same commit as the promotion. Promoting a
+record that misdescribes the thing it governs is worse than leaving it in
+`draft`, because the status is what tells a reader to trust it.
+
+**This is also the moment the one-decision-per-record rule gets enforced.**
+Three positions bundled into one record are obvious to whoever has to read it
+and say *yes, this is in force*, and invisible to whoever is still writing it.
+
+### Say when a draft looks ready, and then leave it alone
+
+A draft that has gone into use probably should be promoted, and noticing that
+is useful. **Acting on it is not.** Prompt, do not promote:
+
+- **when a draft first goes into use** — something cites it, or the work it
+  governs ships
+- **when a draft has been in use for a while** — the same observation, later
+
+A time-based nudge is legitimate where a time-based *permission* is not:
+nothing is being authorised, so a nudge that misfires costs a sentence.
+
 ## What you may edit depends on how settled it is
 
 `lifecycle_status` is a **mutability ladder**, not just a label. It says how
@@ -70,7 +123,7 @@ settled the decision is *and* what you are permitted to change.
 
 | `lifecycle_status` | means | what you may edit |
 | --- | --- | --- |
-| `draft` | proposed, under discussion, not yet decided | anything — nothing is binding, nothing is citing it |
+| `draft` | proposed, under discussion, not yet decided | anything — nothing is binding, so nothing depends on the position holding |
 | `provisional` | decided and in force, but on trial | the explanation, freely and in place. No approval needed. **Still not the decision** |
 | `stable` | settled | the explanation only, and with approval first |
 | `archived` | no longer the current answer, kept as history | nothing |
@@ -119,7 +172,9 @@ record. *"Use TOML"* becoming *"use TOML, including machine-local settings, whic
 was always intended"* changes nobody's standing — correction.
 
 **The one exception is `draft`**, which is not yet a decision. Nothing is
-binding, nothing is citing it, and rewriting it is what the status is for.
+binding, so nobody can be in breach of it, and rewriting it is what the status
+is for. A draft may well be cited by then — being used is how it earns
+promotion — but a citation of something not yet in force promises nothing.
 
 **Reversal under the same number does not announce itself.** It arrives as a
 sequence of reasonable edits — a hedge added, a scope trimmed, an exception
