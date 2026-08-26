@@ -129,7 +129,7 @@ project does not have — see [[where-knowledge-goes]]. Something should let a
 person act on that: show what exists, what does not, and offer to adopt the
 missing ones.
 
-**Today.** The report says what was skipped. Adopting is `luma-foreman adopt`,
+**Today.** The report says what was skipped. Adopting is `luma-foreman get`,
 run by hand, whenever the user chooses.
 
 **It should be a separate command, not a step in these workflows.** The end of a

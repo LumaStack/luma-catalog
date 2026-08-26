@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.10.0
-published: 2026-08-25
+version: 0.10.1
+published: 2026-08-26
 consumers: [organization]
 entry_point: policy/the-estate
 description: Working on the luma tools themselves — the repositories and the boundary each defends, publishing to the universal catalog, and changing a type without making every tool upgrade at once.
@@ -63,6 +63,12 @@ no sensible project-level reading of *how the luma estate is maintained* —
 adopting it into a project would be adopting somebody else's internals.
 
 ## Version
+
+`0.10.1` — **`adopt` is now `get` and `outfit` is now `apply`**, where
+`the-estate` and `publish-to-the-catalog` mention them in passing.
+
+Patch: neither sentence tells anybody to run anything. The `## Version` history
+below is left as written — it records what was true at the time.
 
 `0.10.0` — **`the-estate` cited a field that never existed.** It described the
 adopter's missing selection as *the same question `preload_default` answers for

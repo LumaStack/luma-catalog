@@ -88,7 +88,7 @@ trees in one repository with nothing keeping them in step — and the drift chec
 cannot help, because it catches an *edited* copy rather than an *outdated* one.
 
 **The cost is real and is accepted.** An agent working in a catalog gets no
-generated index and no skills, because `outfit` projects what a project
+generated index and no skills, because `apply` projects what a project
 *adopted* and a catalog adopted nothing. It has to be pointed at
 `catalog/bundles/` by hand.
 

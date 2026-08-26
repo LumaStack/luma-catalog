@@ -293,7 +293,7 @@ is what travels into a harness when the workflow is projected into a skill.
 Put such a script beside the workflow that owns it.
 
 **What a bundle must never do is run something as a side effect of being
-adopted.** `foreman adopt` copies files; nothing executes. A script here runs
+adopted.** `foreman get` copies files; nothing executes. A script here runs
 when a person or an agent deliberately invokes it, having seen what it is.
 
 The difference is who chose. Code you ran on purpose is a script. Code that ran

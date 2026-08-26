@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.9.0
-published: 2026-08-25
+version: 0.10.0
+published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
 description: The .luma directory every luma tool writes into — the four tiers, what belongs in each, and the committed-only invariant that makes it trustworthy.
@@ -72,6 +72,13 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.10.0` — **the foreman commands were renamed.** `initialize-luma` now says
+`luma-foreman get`, and the `CLAUDE.md` marker example shows `luma-foreman
+apply`. `adopt` and `outfit` no longer exist.
+
+Breaking, which below 1.0 the minor position carries: `initialize-luma` is a
+sequence somebody runs, and on an older engine its first command fails.
 
 `0.9.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
