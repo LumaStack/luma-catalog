@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.7.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/audit-layout
@@ -45,11 +45,13 @@ the conversation.
 
 ## The four ideas worth knowing before reading further
 
-**Independence.** One party must not write two of the three documents. An
-auditor who writes the response is grading their own work; a respondent who
-writes the verification is closing their own findings. Where a swarm of agents
-does every step, that separation is arranged deliberately, because nothing
-enforces it.
+**Independence, and the unit it is measured in.** The respondent must not be the
+auditor and the verifier must not be the respondent — but the auditor returning
+to verify is the design, which is why they legitimately write two of the three.
+**The boundary is the session, not the model.** What compromises a record is
+carried context, so a fresh session of the same model is a real second party, a
+different model is better, and one session playing two parts is permitted,
+weakest, and has to be disclosed.
 
 **Any of the three may be a person, an agent, or a command.** They are recorded
 as actors — `human:fsmith`, `agent:opus-5`, `process:luma-foreman-inspect` — and
@@ -74,6 +76,34 @@ Both levels. A project audits its code and its own practice; an organization
 audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
+
+`0.7.0` — **independence is a session boundary, not a model boundary.** The rule
+said *one party must not write two of these*, which was wrong twice. It
+contradicted the table directly above it — the auditor writes rows 1 and 3 by
+design — and it pointed at the wrong axis.
+
+**What compromises a record is carried context, not identity.** An agent that
+argued a finding into existence defends it rather than re-deriving it. The model
+is not what does that; the retained working state is. So the old rule forbade
+something harmless — the same model appearing twice — and permitted the real
+failure, one continuous session playing two parts.
+
+**Three arrangements, ranked and all permitted**: a different model in its own
+session, the same model in a separate session, and one session doing both. The
+last is discouraged rather than forbidden, on the grounds that a rule nobody can
+satisfy gets ignored quietly instead of argued with — and it must be disclosed,
+with a named tell, a response that agrees with every finding.
+
+**This also unifies two ideas the bundle carried separately.** `0.6.0` said an
+auditor who has just worked on the subject cannot run an open-ended audit of it,
+because its own context is the anchor. That is the same boundary: anchoring and
+self-grading are one problem, and what carries between them is the session. The
+deterministic-command exception now rests on it too — a checker is exempt because
+it carries nothing between runs.
+
+Minor: no document changes shape, and every existing audit stays valid. What
+changed is which arrangements the workflows ask for and what they ask to be
+written down.
 
 `0.6.0` — **an audit starts by asking what it is for.** `conduct-audit` opens
 with three questions: is this targeted or open-ended, what problems is it aimed

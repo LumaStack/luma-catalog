@@ -42,7 +42,10 @@ something finds things shaped like it, because looking harder produces more.
 what it can see and argue: the countable, the greppable, the already familiar.
 **An auditor who has just worked on the subject cannot run an open-ended audit
 of it** — its own recent context is the anchor whether or not anyone named one.
-Say so in `audit.md`, or use a reader who has not seen the work.
+Say so in `audit.md`, or use a session that has not seen the work. **This is the
+same boundary independence turns on** ([[audit-layout]]): anchoring and
+self-grading are one problem wearing two hats, and what carries between them is
+the session.
 
 ### What problems do you want to target?
 
@@ -170,9 +173,16 @@ when the answer is *nothing found***.
 is grading their own work, and the record loses the only property that made it
 worth keeping.
 
-Where a swarm is doing every step, arrange that separation deliberately —
-nothing enforces it, and one agent doing both jobs is the easiest failure to
-commit by accident.
+**Hand off to a separate session, and prefer a different model.** The boundary is
+the session rather than the identity — a fresh session of the same model is a
+legitimate respondent, and a different model answering is better still. **This
+session continuing into the response is the weakest arrangement**: permitted, but
+it has to be disclosed in `response.md` so a reader can weigh it. The ladder is in
+[[audit-layout]].
+
+**It is the easiest failure to commit by accident**, because the session that
+just finished the audit is the one still open, and carrying on looks like
+momentum rather than a lost property.
 
 ## 8. Commit it
 
