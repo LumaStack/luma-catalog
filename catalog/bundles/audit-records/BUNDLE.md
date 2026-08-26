@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/audit-layout
@@ -74,6 +74,24 @@ Both levels. A project audits its code and its own practice; an organization
 audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
+
+`0.6.0` — **an audit starts by asking what it is for.** `conduct-audit` opens
+with three questions: is this targeted or open-ended, what problems is it aimed
+at, and what is the scope. **The shape is asked first, deliberately** — otherwise
+anybody with a complaint ready gets a targeted audit without having chosen one.
+
+**Both shapes are biased and the workflow says so.** Targeting is biased toward
+what is already suspected, and a problem is usually a symptom, so an audit aimed
+at one never looks at its cause. Open-ended is biased toward what is easy to
+notice — and an auditor who has just worked on the subject cannot run one, since
+its own context is the anchor whether or not anybody named one.
+
+**A targeted audit now owes an answer to what it was aimed at, including when
+the answer is *nothing found*.** A negative is a result, and an audit reporting
+only what it found cannot tell anybody to stop worrying.
+
+Minor: an existing audit stays valid and readable, and nothing about the finding
+or response format changes.
 
 `0.5.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
