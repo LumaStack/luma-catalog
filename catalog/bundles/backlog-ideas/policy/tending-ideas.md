@@ -2,7 +2,6 @@
 type: policy
 title: Tending ideas
 description: The gardening practice — growth stages, when to prune, archiving rather than deleting, and how long an archived idea is kept.
-compliance: recommended
 applies_to:
   - topic: pruning, archiving or reviewing a backlog
 sources:

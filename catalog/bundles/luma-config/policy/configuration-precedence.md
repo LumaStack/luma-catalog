@@ -2,7 +2,6 @@
 type: policy
 title: Configuration precedence
 description: Six layers, and why the committed file appears twice. What a project may suggest, what it may mandate, and what an operator may override.
-compliance: recommended
 applies_to:
   - path: ".luma/config/**"
   - topic: resolving which configuration value wins

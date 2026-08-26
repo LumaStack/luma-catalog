@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: workflows/record-decision
@@ -122,6 +122,14 @@ against the possibility. That is the field working as intended rather than an
 omission.
 
 ## Version
+
+`0.6.0` — **`compliance` is gone.** A policy binds because it is a policy —
+that is what the type means — and what happens when it is broken is what
+`on_violation` says. The field between them restated the type on documents that
+bind, and offered a soft tier to documents that arguably should not be policies
+at all.
+
+Minor. Nothing a reader is obliged to do has changed.
 
 `0.5.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
