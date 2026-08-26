@@ -64,7 +64,7 @@ tell that an omission is a boundary rather than a gap.
 | decision records | the decision-records bundle | a record of what happened, with its own contract and lifecycle |
 | audit and log records | their own record bundles | append-only, dated, machine-written |
 | everything in `.luma/` | the luma-layout bundle | that directory is how the project is run, not what it publishes |
-| `AGENTS.md`, `CLAUDE.md` | nothing — they are generated | projections of `.luma/`, disposable, never edited by hand |
+| `AGENTS.md`, `CLAUDE.md` | nothing — they are generated | written from `.luma/`, disposable, never edited by hand |
 
 **These bundles are named, not depended on.** Nothing here breaks if the release
 bundle is not adopted; you simply have no policy about your changelog. A bundle

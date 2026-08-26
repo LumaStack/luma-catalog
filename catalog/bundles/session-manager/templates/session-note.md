@@ -14,7 +14,7 @@ note itself.
 ## It must also work for a reader who has none of this
 
 **Nothing is guaranteed to consume a session note.** [[session-resume]] deletes
-one — where it has been adopted, projected into the running agent, and
+one — where it has been taken, applied into the running agent, and
 remembered. Assume none of that. A note that only makes sense to somebody
 holding this bundle is a note that outlives its usefulness and gets believed.
 

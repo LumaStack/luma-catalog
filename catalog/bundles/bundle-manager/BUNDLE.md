@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.10.1
+version: 0.10.2
 published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -83,6 +83,12 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.10.2` — **"projected into a skill" is now "written into a skill."** Foreman
+retired *projection*: it collided with the noun for a repository, most visibly
+in a command list that read `apply — project what this project adopted`.
+
+Patch: two sentences about the shape a harness wants, saying the same thing.
 
 `0.10.1` — **`foreman adopt` is now `foreman get`**, in the one place
 `organizing-a-bundle` mentions it.

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.1
+version: 0.6.2
 published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/session-continuity
@@ -171,6 +171,19 @@ of thing an organization has an opinion about, and `.luma/config/` will
 eventually let it hold one.
 
 ## Version
+
+`0.6.2` — **"projected into the running agent" is now "applied into the running
+agent."** Four places said a bundle had to be *adopted and projected*; both
+verbs were renamed in foreman, and `inspect` now reports the same failure as
+`unapplied`.
+
+The two `concepts/future-hooks` signals go with them. *A projection target* and
+*the projection problem foreman owns* both name foreman's write relationship —
+the document says so itself, calling it *the same relationship `CLAUDE.md`
+already has to `.luma/`*.
+
+Patch: the warning these sentences carry is unchanged. Nothing is guaranteed to
+consume a session note, so every note still has to explain itself.
 
 `0.6.1` — **`luma-foreman adopt` is now `luma-foreman get`**, in the one place
 `future-hooks` mentions it.
