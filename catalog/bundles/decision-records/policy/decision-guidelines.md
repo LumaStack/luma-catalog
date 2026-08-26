@@ -186,6 +186,12 @@ in the history a reader would think to look for. An ADR number is a promise
 that the position never moved, and a `draft` is the one status that does not
 make it.
 
+**Where it happens anyway, it should trigger a promotion request.** A citation
+is somebody relying on the record, which is the thing promotion exists to
+recognise. Leaving both standing — a live citation and a position still free to
+move — is the state to get out of, in either direction: promote the record, or
+drop the citation.
+
 **Reversal under the same number does not announce itself.** It arrives as a
 sequence of reasonable edits — a hedge added, a scope trimmed, an exception
 carved out — until the record says the opposite of what it said, with no archived

@@ -157,7 +157,9 @@ text said of `draft` that *nothing is citing it*, as an observation. It is a
 rule now: the position under that number can still move, freely and in place,
 with no supersession and nothing in the history to show it did. What makes
 rewriting a draft safe is that nothing is **binding** — which is the same reason
-nothing should be pointing at it yet.
+nothing should be pointing at it yet. Where something does, that is a promotion
+request: promote the record, or drop the citation, but do not leave a live
+citation against a position still free to move.
 
 Breaking, which below 1.0 the minor position carries: an author who followed the
 old text and set `provisional` on starting work was doing the right thing and is
