@@ -47,7 +47,7 @@ that will surprise the next person to clone.
 ## 5. Adopt what you need
 
 ```sh
-luma-foreman adopt luma/<bundle>
+luma-foreman get luma/<bundle>
 ```
 
 That creates `bundles/` and `bundles/adopted.toml` on first use. You do not

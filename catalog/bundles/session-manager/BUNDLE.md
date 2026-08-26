@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.6.0
-published: 2026-08-25
+version: 0.6.1
+published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/session-continuity
 description: Ending an agent session without losing what it learned — checkpoint while working, hand off to a successor, or close for good, each writing for a different reader.
@@ -171,6 +171,12 @@ of thing an organization has an opinion about, and `.luma/config/` will
 eventually let it hold one.
 
 ## Version
+
+`0.6.1` — **`luma-foreman adopt` is now `luma-foreman get`**, in the one place
+`future-hooks` mentions it.
+
+Patch: a passing reference in a concepts document. Nothing here instructs
+anybody to run it, so no reader's conduct changes.
 
 `0.6.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs

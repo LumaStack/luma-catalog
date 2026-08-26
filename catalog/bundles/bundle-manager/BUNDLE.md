@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.10.0
-published: 2026-08-25
+version: 0.10.1
+published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
 description: Creating, updating, auditing, repairing, migrating and retiring bundles — the layout they use and which catalog they belong in.
@@ -83,6 +83,12 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.10.1` — **`foreman adopt` is now `foreman get`**, in the one place
+`organizing-a-bundle` mentions it.
+
+Patch: the sentence makes a point about adoption copying files rather than
+executing them, and that point is unchanged. Only the command name moved.
 
 `0.10.0` — **`an-index-of-what-exists` stops teaching `preload` too.** The
 `0.9.0` sweep corrected `organizing-a-bundle` and never looked at its sibling in
