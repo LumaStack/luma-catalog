@@ -59,6 +59,13 @@ Everything it writes is generated. Commit it or ignore it, but regenerate rather
 than editing. Only the region between `luma:begin` and `luma:end` in `CLAUDE.md`
 is touched, so a hand-written file keeps the rest.
 
+**When git asks you to resolve a conflict in one of them, run `outfit` instead.**
+Two branches that both adopted something will both have rewritten `CLAUDE.md`,
+the skills and `routing.toml`, so a conflict there is normal rather than a
+warning. **Resolving it by hand produces a file that is wrong in a way nothing
+reports** — it survives review, and the next `outfit` silently discards it.
+Take either side, re-run, commit what the tool wrote.
+
 ## 4. Keep it honest
 
 ```bash

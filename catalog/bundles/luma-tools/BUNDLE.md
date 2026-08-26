@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.7.0
+version: 0.8.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: workflows/adopt-knowledge
@@ -54,6 +54,15 @@ which is the same gap adoption exists to close, left open in the one place it is
 most embarrassing.
 
 ## Version
+
+`0.8.0` — **what to do when a generated file conflicts.** Two branches that
+both adopted something will both have rewritten `CLAUDE.md`, the skills and
+`routing.toml`. Resolving that by hand produces a file that is wrong in a way
+nothing reports, and the next `outfit` discards it — so the answer is always to
+re-run the tool rather than to merge its output.
+
+Minor: an adopter following the old text was not told what to do at the one
+moment it matters.
 
 `0.7.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
