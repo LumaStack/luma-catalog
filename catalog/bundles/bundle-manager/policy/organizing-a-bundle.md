@@ -88,13 +88,13 @@ with each one**:
 | **`concepts/`** | background that explains: rationale, models, open questions | **reads it** — an ordinary `document` |
 
 **What a consumer does with a document is a different question from when it
-loads.** The type answers the first, `preload` answers the second, and they are
+loads.** The type answers the first, `matches` answers the second, and they are
 orthogonal — a rule binds whether or not it happens to be in front of you.
 
-**Filing by tier is still a cost decision.** A `preload: mandatory` policy is
-loaded into every session that touches the bundle, so putting the argument for
+**Filing by tier is still a cost decision.** A policy declaring `matches: always`
+is loaded into every session that touches the bundle, so putting the argument for
 the bundle's existence there means every consumer pays for it forever to answer a
-question they are not asking. That is a `preload` decision which usually follows
+question they are not asking. That is a `matches` decision which usually follows
 the tier — not the tier itself.
 
 ### The test: is the reader working *on* this, or *through* it?
@@ -105,7 +105,8 @@ need to know what to do and what wins when two things conflict. That is
 
 **On it** — deciding whether to adopt it, arguing with a step, extending it,
 judging whether it still earns its place. That is `concepts/`, and it should
-never be preloaded.
+never be loaded up front. Background carries no `matches` at all — it does not
+act, and it is reached *through* the rules and procedures that do.
 
 **A rule stays standing even when its reasoning moves.** The format asks that a
 policy carry its reasoning, and that stays true — but a clause, not a section.
@@ -117,27 +118,37 @@ never present when it is needed** — a rule about what outranks what, filed as
 background, is loaded only by people already reasoning about the bundle and
 never by the agent about to violate it.
 
-### `preload` and `type` answer different questions
+### `matches` and `type` answer different questions
 
 **They used to overlap, and no longer do.** The format defined `policy` as
-*standing — kept present*, close enough to `preload: mandatory` that a document
-could state both and contradict itself. `0.0.11` redefined the types by what a
-consumer *does* — run it, be bound by it, read it — which leaves `preload` alone
-in answering whether you have it.
+*standing — kept present*, close enough to a loading claim that a document could
+state both and contradict itself. `0.0.11` redefined the types by what a consumer
+*does* — run it, be bound by it, read it — which leaves `matches` alone in
+answering when you get it.
 
-**So `policy` with `preload: optional` is an ordinary thing** rather than the
-smell it used to be: a rule that binds when it applies and costs nothing until
-then. Rules for a narrow case belong exactly there.
+**So a policy that matches a narrow situation is an ordinary thing** rather than
+the smell it used to be: a rule that binds when it applies and costs nothing
+until then. Rules for a narrow case belong exactly there.
 
-**What is still worth a second look is a document in `concepts/` marked
-`preload: mandatory`** — not because it contradicts its type, since background
-can legitimately be wanted upfront, but because it is the most expensive filing
-decision available. *Rationale everybody preloads* is usually a policy that grew
-an argument.
+**Three outcomes, and only one is expensive.** A document declaring
+`matches: always` has its body loaded before work starts. One declaring
+triggers — a path, a command, an event, a topic — is named up front and delivered
+when the work matches. One declaring nothing is named and waits to be asked for.
+**Nobody writes the outcome; it follows from what was declared.**
+
+**`matches: always` is the one to justify.** It is the most expensive filing
+decision available, and since the default reversed it can only be chosen, never
+fallen into — a document that says nothing about what surfaces it is available on
+request. *Rationale everybody loads* is usually a policy that grew an argument.
 
 **And a rule nobody loads still governs nothing.** That is a reachability problem
 rather than a typing one: the answer is something always present naming the rules
-that exist, not marking every policy mandatory. Nothing here does that yet.
+that exist, not marking every policy `always`. See [[an-index-of-what-exists]].
+
+**Nothing in this catalog declares `matches: always`.** Nineteen bundles, and the
+expensive outcome is taken by no document at all — every rule here could say what
+surfaces it. That is the number to compare a new one against: **if a bundle needs
+it and none of these did, the reason should be written down.**
 
 Nothing enforces any of this. It is a cheap thing to check in [[audit-bundle]].
 
@@ -150,14 +161,20 @@ what a plain `document` already is.
 
 **This section predicted that and said the convention would survive**, which it
 did: documents in `concepts/` are now `type: document`, and nothing else changed.
-The tier distinction never depended on the type name — it depends on `preload`
-and on where a reader looks.
+The tier distinction never depended on the type name — it depends on what
+surfaces a document, and on where a reader looks.
 
 **And the tier above it resolved differently, in `0.0.11`.** `policy` had the
-same shape of problem — defined as *standing — kept present*, overlapping
-`preload` — but it survived, because it was the definition that was wrong rather
-than the type. Redefined as *what binds you*, it stops competing with a loading
-field and starts saying something no other field does.
+same shape of problem — defined as *standing — kept present*, overlapping a
+loading claim — but it survived, because it was the definition that was wrong
+rather than the type. Redefined as *what binds you*, it stops competing with a
+delivery field and starts saying something no other field does.
+
+*The field that occupied this slot has been renamed twice since: `preload` became
+`compliance` and `applies_to` in `0.0.12`, `compliance` was removed the following
+day, and `applies_to` became `matches` in `0.0.14`. **The argument above survived
+all three**, which is the reason it is still here — it was about the types, not
+about the field's name.*
 
 ## Directories group documents; the `type` identifies them
 
@@ -190,9 +207,8 @@ exist yet.
 
 **Most bundles need none**, and an empty one is noise. A bundle earns its first
 background document when a policy has grown an argument longer than the rule it
-justifies —
-which is the moment that argument starts costing every consumer who preloads
-the rule.
+justifies — which is the moment that argument starts costing every consumer the
+rule reaches.
 
 **`templates/`** — files meant to be copied and filled in. **Assets by
 default**: no frontmatter, no `type`, outside validation, linked with ordinary

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.8.0
+version: 0.9.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -83,6 +83,23 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.9.0` — **`organizing-a-bundle` stops teaching `preload`.** It named the
+field ten times, including a section built on it, two releases after the format
+removed it. An author following a binding policy was being told to declare
+something nothing reads — and the document would then get whatever the default
+is, with no warning. Silent, in the direction the loading design exists to end.
+
+**Rewritten against what exists**: `matches`, the three outcomes it produces, and
+`matches: always` as the one route to being loaded before work starts — which,
+since the default reversed, can only be chosen and never fallen into.
+
+**One `preload` reference survives on purpose**, as an aside recording that the
+field has been renamed twice since. The argument in that section was about the
+*types* rather than the field, which is why it outlived three renames and is
+still here.
+
+Minor. No rule changed; the vocabulary it is stated in did.
 
 `0.8.0` — **`applies_to` is now `matches`.** The old name obliged an author to
 write a false sentence: `applies_to: everything` claims a rule governs
