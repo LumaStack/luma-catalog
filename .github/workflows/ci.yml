@@ -30,12 +30,13 @@ env:
   # nobody has to notice. See `.luma/backlog/ideas/dependency-updates-need-a-real-tool.md`.
   #
   # Until then this is a manual chore. Both pins were verified current on
-  # 2026-08-26, and both are the commits that read `matches`. Bumping them is
-  # part of this migration rather than routine maintenance: the tools pinned
-  # before it read `applies_to` only, so against this tree they would find no
-  # triggers at all.
-  CURATOR_SHA: d0e92c9e32515eefe033f0efe7f5fea466e38337  # luma-catalog-curator
-  FOREMAN_SHA: dc00e530bb85636ae2f3399dc38d50b6a8ddd1e2  # luma-foreman
+  # 2026-08-26. Bumping them is part of the namespace change rather than
+  # routine maintenance, and in opposite directions: the curator pinned before
+  # it requires a declared `namespace:`, which this catalog no longer has, and
+  # the foreman pinned before it cannot derive one — so against this tree the
+  # old pair would fail the manifest and mis-address every bundle.
+  CURATOR_SHA: 407f9bc75ac6f448e6c6aa5105d3b2722ec461eb  # luma-catalog-curator
+  FOREMAN_SHA: d364442a1e1e55ce41e7473edde94e1382efca3d  # luma-foreman
 
 jobs:
   check:
