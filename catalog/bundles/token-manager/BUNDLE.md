@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.10.0
-published: 2026-08-25
+version: 0.10.1
+published: 2026-08-26
 consumers: [project, organization]
 entry_point: workflows/token-tutorial
 description: Where an agent session's tokens actually go — a paced tutorial on the mechanism and the fixes that follow from it, and an audit that measures a real setup instead of guessing at it.
@@ -29,7 +29,7 @@ available to them.
   Changes nothing.
 
 **Types** — [[tutorial_step]] · [[tutorial_quiz]], both vendored from
-`luma/luma-types` rather than invented here. They describe any paced walkthrough,
+`lumastack/luma-catalog/luma-types` rather than invented here. They describe any paced walkthrough,
 not this one, and the next tutorial takes the same copies.
 
 The tutorial carries its steps beside it as documents of those types, read one
@@ -103,6 +103,20 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.10.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
 
 `0.10.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
@@ -218,7 +232,7 @@ in a paragraph. Every step now closes with the operative points as a list.
 Minor: nothing an adopter must fix, and a step that somehow lacked takeaways
 still presents.
 
-`0.3.0` — the tutorial types moved to `luma/luma-types` and are vendored back.
+`0.3.0` — the tutorial types moved to `lumastack/luma-catalog/luma-types` and are vendored back.
 They are now `luma/tutorial_step` and `luma/tutorial_quiz`, and every step and the
 quiz declare the namespaced names.
 

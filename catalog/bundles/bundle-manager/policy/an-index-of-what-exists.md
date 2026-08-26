@@ -63,7 +63,7 @@ was added last.
 Three separate problems have landed on it independently, which is the argument
 for naming it once:
 
-- **`find-decision`**, in the `luma/decision-records` bundle, is `optional` —
+- **`find-decision`**, in the `lumastack/luma-catalog/decision-records` bundle, is `optional` —
   and the three lines that say it exists live in `record-decision`, which is
   no trigger of its own. The trigger is always there; the procedure is not.
 - **Mandates that apply only sometimes.** A line per mandate — what it is, who

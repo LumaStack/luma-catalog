@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.10.0
-published: 2026-08-25
+version: 0.10.1
+published: 2026-08-26
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
 ---
@@ -138,6 +138,20 @@ presenting a mixed set as though it were uniform.
 
 ## Version
 
+`0.10.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
+is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
+namespace now derives from where the catalog lives instead of being declared.
+Every reference in this bundle's prose is updated.
+
+**A fork can no longer publish under this catalog's name.** It lives somewhere
+else, so it is named something else, and its bundles sit beside these in a
+project rather than colliding with them.
+
+*Type names are unaffected.* `type: luma/catalog` and its siblings name the
+format, not this catalog, and resolve separately.
+
+Patch: nothing but the identifiers a reference points at.
+
 `0.10.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
@@ -212,7 +226,7 @@ it.
 `0.4.1` — a heading no longer says how many things are beneath it. Wording only.
 
 Patch: no normative sentence moved and a reader who correctly understood
-`0.4.0` behaves identically. See `writing-style` in `luma/project-documentation`
+`0.4.0` behaves identically. See `writing-style` in `lumastack/luma-catalog/project-documentation`
 for the rule and the failure it prevents.
 
 `0.4.0` — `luma/catalog` gains `namespace` at `0.2.0`. Add-only; existing
@@ -220,7 +234,7 @@ catalogs stay valid and the field is `recommended`.
 
 **Found by building rather than by reasoning.** The first tool to adopt a bundle
 had to be told what to call what it had just taken: the catalog writes
-`luma/git-secrets` throughout its own `starters` while declaring the `luma`
+`lumastack/luma-catalog/git-secrets` throughout its own `starters` while declaring the `luma`
 prefix nowhere. A catalog was addressable by a person reading it and not by
 anything else — invisible for as long as every reader was a person.
 

@@ -59,7 +59,7 @@ overstates how speculative it is.
 or it is recorded as deliberately abandoned. Both are honest and neither is
 right.
 
-**Signal.** The backlog tool that `luma/backlog-ideas` is already waiting on.
+**Signal.** The backlog tool that `lumastack/luma-catalog/backlog-ideas` is already waiting on.
 One arrival closes both gaps.
 
 **A candidate exists and has not been checked.** `LumaStack/luma-backlog`
