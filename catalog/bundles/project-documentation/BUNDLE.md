@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.13.0
+version: 0.14.0
 published: 2026-08-25
 consumers: [project]
 entry_point: policy/readme
@@ -31,8 +31,9 @@ we have*, it is **what condition have we hit**.
   capitals are load-bearing, and where they are only typography.
 - [[writing-style]] — the conventions every document here follows, and the
   failure each one prevents.
-- [[where-history-belongs]] — history stays in loaded context only where it earns
-  its place; where it goes otherwise, and what earning it looks like.
+- [[where-history-belongs]] — *background.* Where history usually belongs and
+  why. It says outright that it is preferences rather than rules, so it is a
+  `document` and binds nothing.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
 - [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
@@ -96,6 +97,14 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.14.0` — **`where-history-belongs` is background, not a policy.** It opens by
+saying so: *"Preferences, not rules… depart from any of it when there is a
+reason."* A document that disclaims binding is not a course of action adopted,
+so it is now `type: document` under `concepts/` and carries no trigger — only a
+rule that binds and a procedure that is run do.
+
+Minor: what it says is unchanged, what it obliges was never what it claimed.
 
 `0.13.0` — **`compliance` is gone.** A policy binds because it is a policy —
 that is what the type means — and what happens when it is broken is what

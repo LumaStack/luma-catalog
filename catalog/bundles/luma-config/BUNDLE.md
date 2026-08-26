@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/where-configuration-lives
@@ -26,8 +26,9 @@ in the one place whose job is saying what the rules are.
 - [[where-configuration-lives]] — the two homes, the XDG reasoning behind the
   machine-local side, and the test that tells configuration from cache. Read
   first.
-- [[configuration-precedence]] — six layers, and why the committed file appears
-  twice.
+- [[configuration-precedence]] — *background.* Six layers, and why the committed
+  file appears twice. It describes how resolution behaves rather than obliging
+  anybody, so it is a `document`.
 - [[add-a-setting]] — the four questions that decide where a new value goes.
 
 ## The two ideas worth carrying
@@ -67,6 +68,14 @@ Both levels. An organization's headquarters is a repository and configures its
 own tooling the same way.
 
 ## Version
+
+`0.6.0` — **`configuration-precedence` is background, not a policy.** It
+describes how resolution behaves — *the last one to speak wins* — so that a
+reader can predict it. Nobody can violate precedence. It is now `type: document`
+under `concepts/` and carries no trigger.
+
+Minor: the layers are unchanged; the claim that they bound anybody was the
+error.
 
 `0.5.0` — **`compliance` is gone.** A policy binds because it is a policy —
 that is what the type means — and what happens when it is broken is what

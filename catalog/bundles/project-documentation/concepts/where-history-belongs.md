@@ -1,9 +1,7 @@
 ---
-type: policy
+type: document
 title: Where history belongs
 description: History stays in loaded context only where it earns its place; otherwise it belongs in git, in records, in backlog journals, in logs, or wherever else a team already keeps it. Neither list is comprehensive.
-applies_to:
-  - topic: deciding whether history belongs in a document
 ---
 
 # Where history belongs
