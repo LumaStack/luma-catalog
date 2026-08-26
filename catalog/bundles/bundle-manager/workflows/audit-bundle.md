@@ -68,9 +68,9 @@ checklist rather than a feeling.
   contradiction — background can legitimately be wanted upfront — but it is the
   most expensive filing decision available, and rationale everybody loads is
   usually a policy that grew an argument.
-- **A policy with no `applies_to` carries no long argument.** Every consumer
-  pays for it in every session. Reasoning past a clause or two belongs in
-  `concepts/` — see [[organizing-a-bundle]].
+- **A policy declaring `matches: always` carries no long argument.** Every
+  consumer pays for it in every session. Reasoning past a clause or two belongs
+  in `concepts/` — see [[organizing-a-bundle]].
 - **Nothing operational is filed under `concepts/`.** A rule about what outranks
   what, put in background, is never loaded by the agent about to break it.
 - Not everything is mandatory. A bundle marking all its documents mandatory

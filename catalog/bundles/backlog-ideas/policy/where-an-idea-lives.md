@@ -2,7 +2,7 @@
 type: policy
 title: Where an idea lives
 description: Choosing the scope — project, department or organization — and the default that applies when it is unclear.
-applies_to:
+matches:
   - topic: capturing an idea worth keeping
 ---
 

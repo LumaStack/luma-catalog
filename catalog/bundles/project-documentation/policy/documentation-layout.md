@@ -2,7 +2,7 @@
 type: policy
 title: Where documentation lives
 description: Prose goes in docs/. What stays at the repository root and why, and which documents this bundle deliberately does not own.
-applies_to:
+matches:
   - path: "docs/**"
   - topic: deciding where a document belongs
 ---

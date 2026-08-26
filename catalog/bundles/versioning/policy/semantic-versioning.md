@@ -2,7 +2,7 @@
 type: policy
 title: Semantic versioning
 description: What each part of a version means, when to bump which, and the parts that get decided wrongly — the pre-1.0 rules, the v prefix, and deprecating before removing.
-applies_to:
+matches:
   - topic: choosing a version number
   - path: "**/BUNDLE.md"
 ---

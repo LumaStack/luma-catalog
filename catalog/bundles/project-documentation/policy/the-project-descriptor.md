@@ -2,7 +2,7 @@
 type: policy
 title: The project descriptor
 description: The file a repository publishes about itself for something outside it to read — where it lives, what belongs in it, and why the repository has to own it rather than whoever collects it.
-applies_to:
+matches:
   - path: ".luma/PROJECT.md"
 ---
 

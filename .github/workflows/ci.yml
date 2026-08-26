@@ -30,9 +30,12 @@ env:
   # nobody has to notice. See `.luma/backlog/ideas/dependency-updates-need-a-real-tool.md`.
   #
   # Until then this is a manual chore. Both pins were verified current on
-  # 2026-08-24.
-  CURATOR_SHA: ce22601a97e527c4b9ad46a493a13c48fcb66e7f  # luma-catalog-curator
-  FOREMAN_SHA: 41eb96e3fac7ab1c5a68243eb6f6f62d5071fa9b  # luma-foreman
+  # 2026-08-26, and both are the commits that read `matches`. Bumping them is
+  # part of this migration rather than routine maintenance: the tools pinned
+  # before it read `applies_to` only, so against this tree they would find no
+  # triggers at all.
+  CURATOR_SHA: d0e92c9e32515eefe033f0efe7f5fea466e38337  # luma-catalog-curator
+  FOREMAN_SHA: dc00e530bb85636ae2f3399dc38d50b6a8ddd1e2  # luma-foreman
 
 jobs:
   check:

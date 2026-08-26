@@ -2,7 +2,7 @@
 type: policy
 title: Which document to write
 description: The documents most projects can have, what each is called, and the condition that earns it. Write one when its condition is met, not before.
-applies_to:
+matches:
   - topic: deciding whether a document is worth writing
 ---
 
