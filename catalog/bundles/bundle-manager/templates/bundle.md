@@ -40,9 +40,10 @@ Why this exists, in a paragraph. What goes wrong without it.
 Which documents bind, and when each one comes up. **Nothing here says when a
 document loads** — that is computed from what it obliges and when it applies.
 
-Keep an eye on any policy with no `applies_to`: it loads into every session of
-every adopter, forever. That is the one expensive outcome, and it is reached by
-being unable to say when a rule applies rather than by choosing it.
+Keep an eye on any policy declaring `matches: always`: it loads into every
+session of every adopter, forever. That is the one expensive outcome, and it now
+has to be asked for — a policy that says nothing is available on request, so
+nobody buys the cost by forgetting a field.
 
 ## Version
 

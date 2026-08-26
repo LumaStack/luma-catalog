@@ -2,7 +2,7 @@
 type: policy
 title: Credentials are never committed
 description: What counts as a credential, which files never belong in a repository, and why rotation comes before cleanup.
-applies_to:
+matches:
   - command: git commit
   - command: git push
   - event: before-commit

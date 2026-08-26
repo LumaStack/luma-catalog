@@ -2,7 +2,7 @@
 type: policy
 title: Integrate with merge commits
 description: Pull requests are integrated with true merge commits. Squash and rebase merging are disabled at the forge, because they break the only reliable answer to "is this branch merged?"
-applies_to:
+matches:
   - command: gh pr merge
   - command: git merge
   - event: before-merge

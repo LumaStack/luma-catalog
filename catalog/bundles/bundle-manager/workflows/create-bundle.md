@@ -46,12 +46,15 @@ description: <one line — what this holds and who it is for>
 
 ## 5. Write the entry point first
 
-Whatever a reader must understand before anything else makes sense. Mark it
-`compliance: recommended` only where a policy is a strong default rather than a rule — a policy binds unless it says otherwise, so most say nothing.
+Whatever a reader must understand before anything else makes sense. **Say what
+surfaces it** — `matches: topic: …` for a subject, `matches: command: …` for a
+moment — so it arrives when the work matches and costs nothing before then.
 
-**Mark as little as possible mandatory.** A consumer that cannot load a
-mandatory document must fail rather than proceed, so every one you add is a
-requirement imposed on everybody who adopts.
+**Reach for `matches: always` as rarely as you can.** It asks for a permanent
+seat in every adopter's context, in every session, forever. A document that says
+nothing is available on request, which is the right default for almost
+everything: its name and line are in the index, so nothing is missed out of
+ignorance, and its body waits to be asked for.
 
 ## 6. Add types only if they change something
 

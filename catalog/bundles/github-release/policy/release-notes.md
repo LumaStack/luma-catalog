@@ -2,7 +2,7 @@
 type: policy
 title: Release titles and contents
 description: What a release is called and what it must contain. Release notes are the only thing most people will ever read about a version.
-applies_to:
+matches:
   - command: gh release create
   - event: before-release
 ---

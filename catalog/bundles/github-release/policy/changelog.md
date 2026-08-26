@@ -2,7 +2,7 @@
 type: policy
 title: The changelog
 description: CHANGELOG.md follows Keep a Changelog. The six change groups, the Unreleased section, and how the changelog differs from release notes.
-applies_to:
+matches:
   - path: "CHANGELOG.md"
 ---
 

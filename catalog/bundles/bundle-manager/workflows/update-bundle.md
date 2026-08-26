@@ -27,7 +27,7 @@ rather than a signal of how significant the work felt.
 
 Breaking, for a bundle, means: a document removed or renamed, a Type Definition
 gaining a mandatory field, an existing field's obligation strengthened, or a
-document gaining or losing an `applies_to` when it had one, or not.
+document gaining or losing a `matches` when it had one, or not.
 
 Below `1.0.0` a breaking change **may** ship as a patch. Say so where you record
 it, or it reads as a mistake later.

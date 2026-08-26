@@ -2,7 +2,7 @@
 type: policy
 title: Where configuration lives
 description: Two homes and one cache — what is committed, what belongs to the machine, and the test that tells them apart.
-applies_to:
+matches:
   - path: ".luma/config/**"
   - topic: deciding where a setting belongs
 sources:
