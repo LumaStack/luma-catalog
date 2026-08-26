@@ -3,19 +3,19 @@ type: type_definition
 defines: response
 fields:
   responds_to:
-    obligation: mandatory
+    field_presence: required
     field_type: text
     desc: "the audit this answers — its directory name, e.g. 2026-12-23-e286f3bd9c11"
   responded:
-    obligation: mandatory
+    field_presence: required
     field_type: date
     desc: "when the response was filed"
   respondent:
-    obligation: recommended
+    field_presence: recommended
     field_type: actor
     desc: "who or what answered (§7.4)"
   round:
-    obligation: optional
+    field_presence: optional
     field_type: number
     desc: "1 unless a verification reopened something and a second answer was needed"
 sources:

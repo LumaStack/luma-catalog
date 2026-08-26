@@ -4,12 +4,12 @@ defines: session_note
 extends: document
 fields:
   kind:
-    obligation: mandatory
+    field_presence: required
     field_type: enum
     values: [checkpoint, handoff, close]
     desc: "which workflow wrote it, and therefore who it was written for"
   pinned:
-    obligation: recommended
+    field_presence: recommended
     desc: "the state of the world this note assumed — branch, commit, open pull requests. No field_type: it is a record, which §10.2 cannot yet express"
 ---
 

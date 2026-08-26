@@ -2,7 +2,6 @@
 type: workflow
 title: Create a worktree
 description: Create an isolated worktree for a task, provision what it needs to run, and verify it before starting work. Use before beginning any task that runs alongside another agent.
-compliance: optional
 ---
 
 # Create a worktree

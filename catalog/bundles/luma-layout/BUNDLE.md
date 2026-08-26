@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.7.0
+version: 0.8.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -72,6 +72,15 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.8.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
+time and `applies_to` takes nouns. `compliance` is dropped wherever it was
+saying nothing: a policy binds unless it says otherwise, so only a strong
+default declares `recommended`, and a workflow's steps bind by being steps.
+Type Definitions use `field_presence: required` for what was
+`obligation: mandatory`, matching the format.
+
+Minor. Nothing a reader is obliged to do has changed; what declares it has.
 
 `0.7.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
 now says how strongly a rule binds and when it governs; *when it is delivered* is

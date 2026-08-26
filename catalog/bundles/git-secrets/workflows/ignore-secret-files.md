@@ -2,7 +2,6 @@
 type: workflow
 title: Ignore secret files
 description: Add the file patterns that are a credential by their name alone to .gitignore, before the commit that would have carried one. Use when starting a project or adding a tool that writes credentials.
-compliance: optional
 ---
 
 # Ignore secret files

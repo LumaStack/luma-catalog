@@ -2,7 +2,6 @@
 type: workflow
 title: Resume a session
 description: Pick up work another session left — find what it wrote, judge how much of it is still true, act on it, and destroy it. Use at the start of a session that is continuing somebody else's work.
-compliance: optional
 ---
 
 # Resume a session

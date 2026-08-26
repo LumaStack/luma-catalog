@@ -2,7 +2,6 @@
 type: workflow
 title: Configure git identity
 description: Set a repository's commit identity so it cannot leak a real name or personal address. Use when starting a project, cloning one, or on a new machine.
-compliance: optional
 ---
 
 # Configure git identity

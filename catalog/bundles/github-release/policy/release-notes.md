@@ -2,10 +2,9 @@
 type: policy
 title: Release titles and contents
 description: What a release is called and what it must contain. Release notes are the only thing most people will ever read about a version.
-compliance: mandatory
 applies_to:
   - command: gh release create
-  - moment: before-release
+  - event: before-release
 ---
 
 # Release titles and contents

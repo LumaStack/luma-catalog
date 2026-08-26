@@ -3,19 +3,19 @@ type: type_definition
 defines: verification
 fields:
   verifies:
-    obligation: mandatory
+    field_presence: required
     field_type: text
     desc: "the audit whose response this checks — its directory name"
   verified:
-    obligation: mandatory
+    field_presence: required
     field_type: date
     desc: "when the check was performed"
   verifier:
-    obligation: recommended
+    field_presence: recommended
     field_type: actor
     desc: "who or what checked (§7.4)"
   round:
-    obligation: optional
+    field_presence: optional
     field_type: number
     desc: "matches the response round it checks"
 ---

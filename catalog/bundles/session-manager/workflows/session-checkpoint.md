@@ -2,7 +2,6 @@
 type: workflow
 title: Checkpoint a session
 description: Snapshot where the work is so a crash or a compaction costs nothing, without stopping. Use mid-session after something starts working, before anything irreversible, or at a natural seam.
-compliance: optional
 ---
 
 # Checkpoint a session

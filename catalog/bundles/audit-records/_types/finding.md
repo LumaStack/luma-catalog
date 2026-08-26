@@ -3,16 +3,16 @@ type: type_definition
 defines: finding
 fields:
   finding_id:
-    obligation: mandatory
+    field_presence: required
     field_type: text
     desc: "stable within its audit — F-001, F-002. What a response and a verification refer to"
   severity:
-    obligation: mandatory
+    field_presence: required
     field_type: enum
     values: [high, medium, low]
     desc: "how much it matters if left alone"
   location:
-    obligation: recommended
+    field_presence: recommended
     field_type: text
     desc: "file, line, or the part of the system it concerns"
 ---

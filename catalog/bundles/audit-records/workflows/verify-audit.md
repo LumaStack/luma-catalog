@@ -2,7 +2,6 @@
 type: workflow
 title: Verify an audit response
 description: Check whether each finding is genuinely resolved and record a disposition. Use after a response is filed — this is what closes the loop.
-compliance: optional
 ---
 
 # Verify an audit response

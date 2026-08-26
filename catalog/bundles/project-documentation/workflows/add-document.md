@@ -2,7 +2,6 @@
 type: workflow
 title: Add a document
 description: Decide whether a document is needed, which one it is, and where it goes. Use when writing anything new, or when a document is outgrowing the file it is in.
-compliance: optional
 ---
 
 # Add a document

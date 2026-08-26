@@ -9,25 +9,25 @@ vendored_from:
 extends: document
 fields:
   description:
-    obligation: recommended
+    field_presence: recommended
     field_type: text
     desc: "when somebody should open this repository. Strengthened from the root's optional (§10.3) — the field this type exists to carry"
   lifecycle_status:
-    obligation: recommended
+    field_presence: recommended
     field_type: enum
     values: [draft, provisional, stable, archived]
     desc: "how mature the repository is. Strengthened from the root's optional (§10.3); absent means nobody has said"
   disclosure_level:
-    obligation: recommended
+    field_presence: recommended
     field_type: enum
     values: [public, internal, confidential, restricted]
     desc: "how widely this repository is disclosed. Absent refuses sensitive content — undeclared is not permission"
   owns:
-    obligation: recommended
+    field_presence: recommended
     field_type: list of text
     desc: "what this repository is responsible for. A claim, which its organization may adjudicate"
   must_not_own:
-    obligation: optional
+    field_presence: optional
     field_type: list of text
     desc: "what belongs to somebody else. The half that prevents scope creep"
 ---

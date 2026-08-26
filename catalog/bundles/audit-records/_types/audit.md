@@ -3,23 +3,23 @@ type: type_definition
 defines: audit
 fields:
   audited:
-    obligation: mandatory
+    field_presence: required
     field_type: date
     desc: "when the audit was performed"
   commit:
-    obligation: mandatory
+    field_presence: required
     field_type: text
     desc: "the full or 12-character commit the audit examined — what it says is true of"
   scope:
-    obligation: mandatory
+    field_presence: required
     field_type: text
     desc: "what was examined, and what deliberately was not"
   auditor:
-    obligation: recommended
+    field_presence: recommended
     field_type: actor
     desc: "who or what performed it (§7.4)"
   also_examined:
-    obligation: optional
+    field_presence: optional
     desc: "other repositories examined, each with the commit it was at — see below. No field_type: it is a list of records, which §10.2 cannot yet express"
 ---
 

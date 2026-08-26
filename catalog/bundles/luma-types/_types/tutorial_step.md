@@ -5,11 +5,11 @@ version: "0.3.0"
 extends: document
 fields:
   step:
-    obligation: mandatory
+    field_presence: required
     field_type: number
     desc: "position in the running order — the sequence is data rather than a filename convention"
   pause:
-    obligation: mandatory
+    field_presence: required
     field_type: enum
     values: [apply_here, apply_elsewhere, practice, none]
     desc: "what to offer the reader once this step has been presented, and where they can act on it"

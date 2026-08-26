@@ -2,7 +2,6 @@
 type: workflow
 title: Verify a headquarters
 description: Check that an organization's headquarters still exists, is still private, and can still be read by more than one person. Use periodically, and whenever anything about the organization's repositories changes.
-compliance: optional
 ---
 
 # Verify a headquarters

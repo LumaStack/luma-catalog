@@ -2,7 +2,6 @@
 type: policy
 title: Organizing a bundle
 description: The layout every bundle uses, what each directory is for, and the two rules that decide whether something is a document, an asset, or a type.
-compliance: mandatory
 applies_to:
   - topic: creating or restructuring a bundle
 ---

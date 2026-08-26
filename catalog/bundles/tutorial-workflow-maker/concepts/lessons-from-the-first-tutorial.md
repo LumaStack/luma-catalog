@@ -2,7 +2,6 @@
 type: document
 title: Lessons from the first tutorial
 description: Where the rules in this bundle came from — what a real run of the first paced tutorial exposed, and which mistakes were only visible once an agent performed it at somebody. Read when arguing with a rule, not while following one.
-compliance: optional
 ---
 
 # Lessons from the first tutorial

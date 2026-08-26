@@ -2,7 +2,6 @@
 type: workflow
 title: Tend the ideas
 description: A gardening session — read everything, advance what has grown, prune what has not, and record what the session taught about cadence. Use when the list feels unfamiliar.
-compliance: optional
 ---
 
 # Tend the ideas

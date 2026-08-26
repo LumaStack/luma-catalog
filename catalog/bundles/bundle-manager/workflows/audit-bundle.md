@@ -2,7 +2,6 @@
 type: workflow
 title: Audit a bundle
 description: Check a bundle for the defects that are silent — broken links, unquoted wikilinks, orphaned assets, a missing manifest. Use before publishing or adopting.
-compliance: optional
 ---
 
 # Audit a bundle
@@ -65,11 +64,11 @@ checklist rather than a feeling.
 
 ## Loading
 
-- **Nothing in `concepts/` is `preload: mandatory` without a reason.** Not a
+- **Nothing in `concepts/` binds.** A concept obliges nothing by definition; if one seems to, it is a policy wearing the wrong type. Not a
   contradiction — background can legitimately be wanted upfront — but it is the
-  most expensive filing decision available, and rationale everybody preloads is
+  most expensive filing decision available, and rationale everybody loads is
   usually a policy that grew an argument.
-- **A `preload: mandatory` policy carries no long argument.** Every consumer
+- **A policy with no `applies_to` carries no long argument.** Every consumer
   pays for it in every session. Reasoning past a clause or two belongs in
   `concepts/` — see [[organizing-a-bundle]].
 - **Nothing operational is filed under `concepts/`.** A rule about what outranks

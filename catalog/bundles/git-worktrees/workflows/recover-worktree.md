@@ -2,7 +2,6 @@
 type: workflow
 title: Recover a worktree
 description: Reclaim a worktree left behind by a crashed session or a failed setup — a lock nobody holds, or a half-created checkout. Use when create or remove is blocked by state nobody owns.
-compliance: optional
 ---
 
 # Recover a worktree

@@ -2,7 +2,6 @@
 type: policy
 title: How audits are stored
 description: Where an audit lives, how it is named, and the three-party loop — auditor, respondent, auditor again — that makes the record settle rather than accumulate.
-compliance: mandatory
 applies_to:
   - topic: conducting an audit, or recording one
 sources:

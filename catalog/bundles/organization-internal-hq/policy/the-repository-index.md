@@ -2,7 +2,6 @@
 type: policy
 title: The repository index
 description: Where a headquarters records the repositories it reasons about, why it is one file each, and the rule that keeps it from rotting — store only what cannot be derived.
-compliance: mandatory
 applies_to:
   - topic: recording or updating a repository in a headquarters
 ---
