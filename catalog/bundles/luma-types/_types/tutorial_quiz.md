@@ -5,7 +5,7 @@ version: "0.1.0"
 extends: document
 fields:
   after_step:
-    obligation: mandatory
+    field_presence: required
     field_type: number
     desc: "the step this follows — and so the earliest moment it may be read, because it carries its own answers"
 ---

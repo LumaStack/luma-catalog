@@ -2,7 +2,6 @@
 type: workflow
 title: Migrate a bundle
 description: Move a bundle between catalogs, or restructure one in place, without stranding the projects that adopted it. Use when promoting, relocating, or reorganizing.
-compliance: optional
 ---
 
 # Migrate a bundle

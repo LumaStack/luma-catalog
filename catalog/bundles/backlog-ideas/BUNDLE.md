@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.8.0
+version: 0.9.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/capturing-ideas
@@ -115,6 +115,15 @@ about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
 
+`0.9.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
+time and `applies_to` takes nouns. `compliance` is dropped wherever it was
+saying nothing: a policy binds unless it says otherwise, so only a strong
+default declares `recommended`, and a workflow's steps bind by being steps.
+Type Definitions use `field_presence: required` for what was
+`obligation: mandatory`, matching the format.
+
+Minor. Nothing a reader is obliged to do has changed; what declares it has.
+
 `0.8.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
 now says how strongly a rule binds and when it governs; *when it is delivered* is
 computed from those and never declared. Every rule here could state when it
@@ -148,7 +157,7 @@ to whichever needed it first.
 **`contributors` was the field this bundle called *the field that matters* and
 never declared.** It appeared in every idea's frontmatter and in no contract —
 `recommended`, `list of actor`. It can be strengthened later without a
-supersession now that inheritance permits raising an obligation.
+supersession now that inheritance permits raising a field_presence.
 
 *Migration:* replace `type: idea` with `type: luma/idea`. The fields are
 otherwise identical.

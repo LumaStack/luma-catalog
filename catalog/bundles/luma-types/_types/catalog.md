@@ -5,21 +5,21 @@ version: "0.2.0"
 extends: document
 fields:
   namespace:
-    obligation: recommended
+    field_presence: recommended
     field_type: text
     desc: "the prefix every Bundle this catalog publishes is addressed under"
   tags:
-    obligation: recommended
+    field_presence: recommended
     field_type: list of text
     desc: "the vocabulary a consumer may declare about itself, which starters and requires key on"
   starters:
-    obligation: optional
+    field_presence: optional
     desc: "named lists of Bundles a new consumer begins with — see below"
   requires:
-    obligation: optional
+    field_presence: optional
     desc: "obligations, with optional version constraints, deadlines and tags — see below"
   upstream:
-    obligation: optional
+    field_presence: optional
     field_type: uri
     desc: "the catalog this one sits below; where else to look, not content to inherit"
 ---
@@ -126,7 +126,7 @@ what it got.
 ```yaml
 requires:
   - bundle: upstream/change-review
-    obligation: mandatory
+    field_presence: required
     version: ">= 2.0.0"
     by: 2026-10-01
     tags: [infrastructure]

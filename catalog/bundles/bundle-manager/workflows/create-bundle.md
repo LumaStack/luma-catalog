@@ -2,7 +2,6 @@
 type: workflow
 title: Create a bundle
 description: Scaffold a new bundle, decide where it belongs, and get it to a publishable state. Use when asked to create, start, or extract a bundle.
-compliance: optional
 ---
 
 # Create a bundle
@@ -48,7 +47,7 @@ description: <one line — what this holds and who it is for>
 ## 5. Write the entry point first
 
 Whatever a reader must understand before anything else makes sense. Mark it
-`preload: mandatory` and leave everything else absent, which means `optional`.
+`compliance: recommended` only where a policy is a strong default rather than a rule — a policy binds unless it says otherwise, so most say nothing.
 
 **Mark as little as possible mandatory.** A consumer that cannot load a
 mandatory document must fail rather than proceed, so every one you add is a

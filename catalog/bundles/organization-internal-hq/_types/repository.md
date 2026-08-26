@@ -4,21 +4,21 @@ defines: repository
 extends: document
 fields:
   url:
-    obligation: mandatory
+    field_presence: required
     field_type: uri
     desc: "where the repository is. The one fact that makes the entry resolvable"
   in_scope:
-    obligation: recommended
+    field_presence: recommended
     field_type: enum
     values: [true, false]
     desc: "whether this headquarters reasons about it. Absent means undecided, which is different from false"
   access:
-    obligation: optional
+    field_presence: optional
     field_type: enum
     values: [readable, restricted]
     desc: "whether the indexing account can read it. Absent means readable"
   attention:
-    obligation: optional
+    field_presence: optional
     field_type: enum
     values: [investing, steady, reducing, winding-down, undecided]
     desc: "how much the organization is putting in, and which way that is moving. Absent means nobody has said; `undecided` means somebody looked and could not say"

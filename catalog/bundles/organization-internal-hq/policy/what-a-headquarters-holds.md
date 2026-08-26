@@ -2,7 +2,6 @@
 type: policy
 title: What a headquarters holds
 description: What belongs in an organization's internal repository, what stays in a project, what goes upstream — and the rule that it stays private.
-compliance: mandatory
 applies_to:
   - topic: deciding whether something belongs in a headquarters
 ---

@@ -2,7 +2,6 @@
 type: workflow
 title: Create a tutorial
 description: Turn source material into a paced tutorial — split it into steps, classify what the reader can safely act on, write the steps and quiz, and wire up the workflow that performs it. Use when something needs teaching rather than documenting.
-compliance: optional
 ---
 
 # Create a tutorial

@@ -2,7 +2,6 @@
 type: workflow
 title: Conduct an audit
 description: Examine something, record what is wrong and why, and leave a record somebody else can act on. Use when auditing a codebase, a process, or any artifact that has a commit.
-compliance: optional
 ---
 
 # Conduct an audit

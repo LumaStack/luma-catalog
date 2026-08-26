@@ -2,7 +2,6 @@
 type: workflow
 title: Initialize luma
 description: Initialize .luma/ in a repository that does not have one. Use when setting up luma in a project for the first time.
-compliance: optional
 ---
 
 # Initialize luma

@@ -2,7 +2,6 @@
 type: workflow
 title: Configure merge settings
 description: Disable squash and rebase merging at the forge and enable branch auto-delete. Written for GitHub; the equivalent setting exists elsewhere. Use when setting up a repository, or when a merge dropdown still offers squash.
-compliance: optional
 ---
 
 # Configure merge settings

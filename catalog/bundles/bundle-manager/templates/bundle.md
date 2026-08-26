@@ -35,11 +35,14 @@ Why this exists, in a paragraph. What goes wrong without it.
 - [[the-entry-point]] — the workflow. Start here.
 - [[a-policy]] — what this obliges.
 
-## Loading
+## When these apply
 
-Which documents are `preload: mandatory`, and why the rest are not. Keep the
-mandatory set small — a consumer that cannot load one must fail rather than
-proceed.
+Which documents bind, and when each one comes up. **Nothing here says when a
+document loads** — that is computed from what it obliges and when it applies.
+
+Keep an eye on any policy with no `applies_to`: it loads into every session of
+every adopter, forever. That is the one expensive outcome, and it is reached by
+being unable to say when a rule applies rather than by choosing it.
 
 ## Version
 

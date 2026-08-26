@@ -2,7 +2,6 @@
 type: workflow
 title: Delete a bundle
 description: Retire a bundle without breaking the projects that adopted it. Use when a bundle is superseded, wrong, or no longer maintained.
-compliance: optional
 ---
 
 # Delete a bundle

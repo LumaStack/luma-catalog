@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.1
+version: 0.6.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/organizing-a-bundle
@@ -49,7 +49,7 @@ bundle, and every tool reading it would believe that — which is the first thin
 
 ## Loading
 
-Only [[organizing-a-bundle]] is `preload: mandatory` — every workflow here
+Only [[organizing-a-bundle]] has no `applies_to` — every workflow here
 assumes it. The six workflows are `optional`: you load the one you are doing,
 not all six.
 
@@ -83,6 +83,15 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.6.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
+time and `applies_to` takes nouns. `compliance` is dropped wherever it was
+saying nothing: a policy binds unless it says otherwise, so only a strong
+default declares `recommended`, and a workflow's steps bind by being steps.
+Type Definitions use `field_presence: required` for what was
+`obligation: mandatory`, matching the format.
+
+Minor. Nothing a reader is obliged to do has changed; what declares it has.
 
 `0.5.1` — the naming rule gains a plain-English restatement beneath the precise
 one. The abstract wording is what makes the rule exception-free, so it stays;

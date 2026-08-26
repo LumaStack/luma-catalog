@@ -2,7 +2,6 @@
 type: workflow
 title: Migrate into luma
 description: Move an existing project's scattered conventions, decisions and notes into .luma/. Use on a project that already has this material somewhere else.
-compliance: optional
 ---
 
 # Migrate into luma

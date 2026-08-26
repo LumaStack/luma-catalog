@@ -2,7 +2,6 @@
 type: workflow
 title: Repair a bundle
 description: Fix what an audit found, in an order that avoids making it worse. Use after audit-bundle reports findings.
-compliance: optional
 ---
 
 # Repair a bundle

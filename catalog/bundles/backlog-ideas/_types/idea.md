@@ -9,21 +9,21 @@ vendored_from:
 extends: document
 fields:
   horizon:
-    obligation: recommended
+    field_presence: recommended
     field_type: enum
     values: [next, later, someday]
     desc: "how soon this needs deciding. Absent means someday"
   scope:
-    obligation: recommended
+    field_presence: recommended
     field_type: enum
     values: [project, department, organization]
     desc: "whose idea it is, and therefore where it lives"
   archived:
-    obligation: optional
+    field_presence: optional
     field_type: date
     desc: "when it was pruned — the clock retention is measured from"
   contributors:
-    obligation: recommended
+    field_presence: recommended
     field_type: list of actor
     desc: "everyone actively in the exchange that produced it, human and agent alike"
 ---

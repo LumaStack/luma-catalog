@@ -2,7 +2,6 @@
 type: workflow
 title: Index repositories
 description: Sweep an organization's hosting accounts, record one entry per repository, and refresh what has changed. Use on first setting up a headquarters, and periodically after.
-compliance: optional
 ---
 
 # Index repositories

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-25
 consumers: [project, organization]
 entry_point: policy/audit-layout
@@ -74,6 +74,15 @@ Both levels. A project audits its code and its own practice; an organization
 audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
+
+`0.4.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
+time and `applies_to` takes nouns. `compliance` is dropped wherever it was
+saying nothing: a policy binds unless it says otherwise, so only a strong
+default declares `recommended`, and a workflow's steps bind by being steps.
+Type Definitions use `field_presence: required` for what was
+`obligation: mandatory`, matching the format.
+
+Minor. Nothing a reader is obliged to do has changed; what declares it has.
 
 `0.3.0` — **`preload` is replaced by `compliance` and `applies_to`.** An author
 now says how strongly a rule binds and when it governs; *when it is delivered* is

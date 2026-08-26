@@ -2,10 +2,9 @@
 type: policy
 title: How a session survives its own end
 description: The three ways a session ends, who reads what each one leaves behind, and the invariant that makes a session note safe to destroy.
-compliance: mandatory
 applies_to:
-  - moment: session-start
-  - moment: session-end
+  - event: session-start
+  - event: session-end
 ---
 
 # How a session survives its own end
