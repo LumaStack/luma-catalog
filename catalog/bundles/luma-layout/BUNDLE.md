@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.12.0
+version: 0.13.0
 published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -21,10 +21,11 @@ is bound by FHS.
 
 ## What is here
 
-- [[luma-directory-layout]] — the four tiers, what belongs in each, and the one
-  invariant. Read first.
-- [[initialize-luma]] — initialize `.luma/` in a repository that has none.
-- [[migrate-into-luma]] — move an existing project's scattered material into it.
+- [[luma-directory-layout]] — the four tiers, what belongs in each, the one
+  invariant, and **how to resolve a location rather than hardcode one**.
+
+**One policy and nothing else.** Standing `.luma/` up and migrating into it are
+tool operations and moved to `luma-tools` in `0.13.0` — see below.
 
 ## Adopting this does not make it apply
 
@@ -51,18 +52,22 @@ rules are. Machine-local state lives in `~/.config/luma/`.
 
 ## What this bundle does not own
 
-**The tools are `luma-tools`' subject, not this one's.** This bundle says what
-`.luma/` holds and why it is committed; which program writes there, how to
-install it and how to upgrade it belong to `luma-tools`, and
-[[initialize-luma]] names it for depth rather than needing it.
+**The tools are `luma-tools`' subject.** This bundle says *where* things go;
+which program puts them there, how to install it and how to run it belong over
+there. Nothing here needs that bundle adopted.
 
-**The boundary is that the layout has to outlive any particular tool.** `.luma/`
-is a convention about where things live, and a bare clone with no tooling
-reproduces the project — so a rule that only makes sense while one engine exists
-is misfiled if it lands here.
+**This is the bundle other bundles point at.** A bundle that writes records names
+its kind — `records/audits/`, `records/incidents/` — and leaves where `records/`
+lives to this policy. **Six bundles currently hardcode the full path**, several
+hedging with *"or wherever this project keeps records"*, which is a promise with
+no mechanism behind it.
 
-*Nothing is required to be adopted alongside this. Adopting `luma-tools` too is
-a reasonable thing to do and not a dependency.*
+**Citing it is depth, never capability.** Bundles cannot read each other, so a
+citation is prose and adoption cannot fail because of it. That works while every
+bundle agrees on the default, which today they do — **and stops working the first
+time a project configures a different root**, when every hardcoded path is
+silently wrong at once. That is the trigger for real resolution, and it is
+recognised here rather than solved early.
 
 ## Consumers
 
@@ -88,6 +93,27 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.13.0` — **this bundle becomes a foundation, and sheds the tool work.**
+`initialize-luma` and `migrate-into-luma` move to `luma-tools`. Both were
+tool-driving — `initialize-luma` is now little more than *run `luma-foreman
+init`* — and a bundle whose job is *where things go* should not also carry *how
+to run the program that puts them there*. Each bundle is now one verb.
+
+**And it gains the rule that made it a foundation in the first place: how to
+resolve a location rather than hardcode one.** Explicit path, then
+`config/<tool>.toml`, then the tier default. Six bundles were copying
+`.luma/records/…` because there was nothing to cite, and several hedged about
+configured locations without saying how anyone would find one. **The hedge was
+the tell** — an author knowing the decision was somebody else's and having
+nowhere to point.
+
+**What an adopter has to do:** if you adopted `0.12.0` or earlier for
+`initialize-luma` or `migrate-into-luma`, adopt `luma-tools` — that is where they
+are now. The layout policy is unchanged apart from gaining a section.
+
+Minor rather than major: pre-`1.0`, and the only adopter of either workflow is
+`luma-foreman`, which already holds both bundles.
 
 `0.12.0` — **`initialize-luma` is thin, and stops reproducing what `init` does.**
 It walked through hand-creating `.luma/PROJECT.md` and the config file, in almost
