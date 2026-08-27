@@ -7,8 +7,9 @@ description: Stand up .luma/ in a repository that does not have one. Install for
 # Initialize luma
 
 **`luma-foreman init` does this.** The workflow exists to get you to that
-command, not to reproduce it — what the directory *holds* is
-[[luma-directory-layout]]; what makes it is the tool's business.
+command, not to reproduce it — what the directory *holds* is the
+`luma-directory-layout` policy in the `luma-layout` bundle; what makes it is the
+tool's business.
 
 ## 1. Stop if there is one already
 
