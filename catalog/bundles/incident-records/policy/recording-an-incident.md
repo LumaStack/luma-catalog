@@ -4,7 +4,6 @@ title: Recording an incident
 description: What counts as an incident, the four kinds and what each one owes, and why an outage and a data breach must not be recorded on the same form.
 matches:
   - topic: recording an incident, an outage, a breach or a policy violation
-  - event: incident-declared
 ---
 
 # Recording an incident

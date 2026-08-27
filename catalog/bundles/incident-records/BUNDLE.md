@@ -79,6 +79,16 @@ without guessing intent from shape. **It is provenance, not a dispatch key** —
 decisions and retirements have the same blind spot; this is one type carrying the
 field to see whether it earns its keep before four do.
 
+**No `event` trigger, and the first draft wrongly had one.** It declared
+`event: incident-declared`, which is not in the format's closed vocabulary —
+before-commit, before-merge, before-push, before-release, session-end,
+session-start. **A name nothing fires is a rule that never arrives**, and CI
+caught it before this shipped. The policy matches on topic alone, which is
+sufficient: an incident is declared by a person noticing, not by a hook.
+
+*If an `incident-declared` event is ever worth having, it belongs in the format
+as a vocabulary change, not invented in a bundle that reads it.*
+
 **What an adopter has to do:** decide where incidents live if not
 `.luma/records/incidents/`, and read the severity table before the first
 incident rather than during it.
