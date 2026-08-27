@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.1
+version: 0.2.0
 published: 2026-08-27
 consumers: [project, organization]
 entry_point: policy/recording-an-incident
@@ -59,6 +59,43 @@ Both levels. A project records its own incidents; an organization reads across
 them, which only works because they land in one place under one numbering.
 
 ## Version
+
+`0.2.0` — **`recorded_under` becomes `created_using`, and is fixed forever.**
+
+*The preposition was worked at.* `under` reads as a regime the record answered
+to; a bundle version is not that. `with` is instrumental but can read as
+accompaniment — *created with a colleague* — which matters in a type that already
+carries `detected_by` and `responders` as actors. **`using` can only mean
+instrument.**
+
+**It names the bundle version that created the record** — the adopted copy that
+was actually read, not what the catalog published then or has since. The vendored
+bundle under `.luma/bundles/` is the one in play, so there is nothing to
+disambiguate.
+
+**And it never changes, including by a future migration.** A single field
+overwritten on each migration would answer *which version created this* right up
+until the first migration, then quietly stop — the worst kind of change, because
+nothing announces it. `created_using` means one thing and always will.
+
+**Room for migrations, which do not exist.** No machinery ships here. When
+something does migrate records, `migrated_using` is **added beside** this field:
+purely additive, since a consumer must not reject a document for keys it does not
+understand, so a minor bump and no existing record becomes wrong. If chains turn
+out to be common, that field grows into a list — also additive. **Neither is
+designed now**, because a mechanism built before its first user is a guess with a
+version number.
+
+**The templates also stopped asserting a version they cannot know.** All four
+hardcoded `incident-records 0.1.0` and were already lying one release later — a
+provenance field lying about provenance. The catalog cannot know what any adopter
+holds, so a pre-filled value is wrong by construction rather than merely stale.
+They carry a placeholder and name the command that reads it,
+`luma-foreman bundle show incident-records`.
+
+Minor rather than patch: a required field is renamed, which breaks anything
+reading `recorded_under`. Nothing does — `0.1.x` shipped today and is adopted
+nowhere.
 
 `0.1.1` — **`recorded_under` keeps its place on better reasons than it was given.**
 `0.1.0` claimed the provenance it captures "cannot be reconstructed", which is

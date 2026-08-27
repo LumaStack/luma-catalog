@@ -39,10 +39,10 @@ fields:
     field_presence: required
     field_type: text
     desc: "who or what was affected, in one line. Nobody, honestly stated, is a valid and useful answer"
-  recorded_under:
+  created_using:
     field_presence: required
     field_type: text
-    desc: "the bundle and version that shaped this record — `lumastack/luma-catalog/incident-records 0.1.0`. Provenance for migration, never a dispatch key. See below"
+    desc: "the bundle and version that **created** this record — `<namespace>/incident-records 0.2.0`. Written once and never changed, including by a migration"
 ---
 
 # Incident
@@ -81,11 +81,36 @@ conditional field logic, which the format does not have and which would be a
 large thing to invent for this. **What fills the gap is the template and a
 reader**, and saying so is better than implying a check exists.
 
-## `recorded_under` — provenance, and deliberately not a dispatch key
+## `created_using` — the version that made this record
 
-**An incident says which bundle version shaped it.** Not the type alone: what an
-incident record actually looks like comes from the type *and* the kind's
-template, which version together as the bundle.
+**The bundle version that created this record, and it never changes.** Not what
+the catalog published at the time, and not what is available now — **the adopted
+copy that was actually read.** The vendored bundle under `.luma/bundles/` is the
+one in play, so there is no ambiguity to resolve.
+
+**It is not the type version.** What a record looks like comes from the type
+*and* the kind's template, which version together as the bundle — so the bundle
+is the unit, and the value carries its id so the answer survives the record being
+copied out of this repository.
+
+### Room for migrations, which do not exist yet
+
+**Nothing migrates incident records today**, and this ships no machinery for it.
+What it ships is a name that will still be true when something does.
+
+**`created_using` means one thing and will never have to mean another.** A single
+field called `bundle_version`, overwritten by each migration, would answer *which
+version created this* until the first migration and then quietly stop — the worst
+kind of change, because nothing announces it.
+
+**When migrations arrive, `migrated_using` is added beside it.** That is purely
+additive: consumers must not reject a document for keys they do not understand,
+so a new optional field is invisible to everything that has not learned it. Minor
+bump, nothing to rewrite, and no existing record becomes wrong.
+
+*If chains of migrations turn out to be common, that field grows into a list —
+also additive.* **Neither step is designed here**, because a mechanism built
+before its first user is a guess with a version number.
 
 **Git can usually answer this, and an earlier draft of this section wrongly said
 it could not.** The record is committed; at that commit `adopted.toml` names the
@@ -107,8 +132,16 @@ subtraction can answer* is a rule this same document applies to durations.
 - **The cost of asking.** `git log --follow`, then `git show <sha>:…/adopted.toml`,
   then parse. Nobody does that during a review; a field is free to read.
 
-**It costs an author nothing** — the template carries it pre-filled, so writing a
-record involves typing none of it.
+**Record the version that ran, not the version that exists.** The adopted copy
+under `.luma/bundles/` *is* what the author read — a project holding `0.1.0`
+while this catalog publishes `0.3.0` used `0.1.0`, and that is the honest answer.
+There is no ambiguity to resolve: the vendored copy is the one in play.
+
+**Which is why a template cannot carry a value.** The catalog does not know what
+any adopter holds, so anything pre-filled here would be wrong for somebody by
+construction rather than merely stale — and `0.1.0`'s templates hardcoded a
+version and were already lying one release later. The templates carry a
+placeholder and name the command that reads it: `luma-foreman bundle show`.
 
 **It must not become a version switch, and this is the part worth guarding.**
 `change-a-shared-type` states the rule it appears to contradict: *tools are
@@ -119,10 +152,14 @@ remains the technique.
 
 **What changes is that the impossibility is no longer the reason.** Field
 tolerance survives on its own merits — it is simpler, it does not break when a
-version string is wrong or missing, and it degrades well. `recorded_under` is for
+version string is wrong or missing, and it degrades well. `created_using` is for
 **a person reading history and a migration doing one deliberate pass**, not for a
 consumer branching at read time. *A tool that starts dispatching on it has taken
 a shortcut this field was not offered for.*
+
+**Nothing may rewrite `created_using`, including a future migration.** A
+migration that moves a record forward records that separately; overwriting this
+field would destroy the only answer to why the record looks the way it does.
 
 **It generalises**, and is not generalised here. Audits, decisions and
 retirements have the same blind spot and would want the same field; adding it to

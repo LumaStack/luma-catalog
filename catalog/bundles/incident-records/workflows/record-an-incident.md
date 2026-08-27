@@ -74,10 +74,20 @@ somebody edits it to tick things off, and the account of what happened drifts.
 The exception is the notification clock on a `data-breach`, which is in the
 template because missing it is the failure the record exists to prevent.
 
-## 7. Stamp `recorded_under` and commit
+## 7. Stamp `created_using` and commit
 
-`recorded_under` is the bundle and version you used. **It is provenance for
-whoever migrates these later**, not something a tool should branch on.
+`created_using` is the version **that ran** — the adopted copy you just read
+from, not whatever the catalog has published since:
+
+```bash
+luma-foreman bundle show incident-records
+```
+
+**Only you can answer it**, which is why the template leaves a placeholder — the
+catalog cannot know what you adopted, so any value it shipped would be wrong for
+somebody. **Nothing rewrites it afterwards** — not even a migration, which
+would record itself separately. It is the answer to *why does this record look
+like this*, and that answer does not change.
 
 Commit it while the incident is open, and again as it changes. **The commit
 history is a second, tamper-evident timeline** — which is worth more than any
