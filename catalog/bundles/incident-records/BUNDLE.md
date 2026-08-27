@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-27
 consumers: [project, organization]
 entry_point: policy/recording-an-incident
@@ -59,6 +59,24 @@ Both levels. A project records its own incidents; an organization reads across
 them, which only works because they land in one place under one numbering.
 
 ## Version
+
+`0.1.1` — **`recorded_under` keeps its place on better reasons than it was given.**
+`0.1.0` claimed the provenance it captures "cannot be reconstructed", which is
+false: the record is committed, and at that commit `adopted.toml` names the
+version held. Git answers this in the ordinary case, and *do not store what
+subtraction can answer* is a rule this bundle applies elsewhere.
+
+**What survives is narrower and holds.** The commit is not when the template was
+copied — a record opened during an incident and committed days later reports the
+wrong version confidently, and drafting late is normal for exactly this kind of
+work. Records also travel into registers and postmortems where history does not
+follow, and a hand-copied template leaves no adoption trace at all.
+
+*Whether that is enough is genuinely open*, which is why the field stays on one
+type rather than spreading to audits, decisions and retirements. If records never
+travel and drafts always land same-day, git is sufficient and this is ceremony.
+
+Patch: no field changed, only the argument for one.
 
 `0.1.0` — first release.
 
