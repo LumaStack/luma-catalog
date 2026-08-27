@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.11.1
+version: 0.12.0
 published: 2026-08-26
 consumers: [project, organization]
 entry_point: policy/luma-directory-layout
@@ -48,6 +48,22 @@ can live here, two agents on two machines read different rules for the same
 project — a correctness failure in the one system whose job is saying what the
 rules are. Machine-local state lives in `~/.config/luma/`.
 
+
+## What this bundle does not own
+
+**The tools are `luma-tools`' subject, not this one's.** This bundle says what
+`.luma/` holds and why it is committed; which program writes there, how to
+install it and how to upgrade it belong to `luma-tools`, and
+[[initialize-luma]] names it for depth rather than needing it.
+
+**The boundary is that the layout has to outlive any particular tool.** `.luma/`
+is a convention about where things live, and a bare clone with no tooling
+reproduces the project — so a rule that only makes sense while one engine exists
+is misfiled if it lands here.
+
+*Nothing is required to be adopted alongside this. Adopting `luma-tools` too is
+a reasonable thing to do and not a dependency.*
+
 ## Consumers
 
 Both levels. An organization's headquarters is a repository and keeps the same
@@ -72,6 +88,29 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.12.0` — **`initialize-luma` is thin, and stops reproducing what `init` does.**
+It walked through hand-creating `.luma/PROJECT.md` and the config file, in almost
+the words of `luma-foreman init`'s own help text, and **never mentioned the
+command**. An agent following it built by hand what one line does.
+
+It now checks for an existing `.luma/`, gets foreman if missing, and runs
+`init` — sixty-eight lines down to fifty-nine, and the ten that went were the
+ten doing the tool's job. The install lines are repeated rather than referenced
+**so that this works without `luma-tools` adopted** — a bundle may reference
+another for depth, never for capability.
+
+**It also carried a retired namespace.** `luma-foreman get luma/<bundle>` — the
+form replaced on 2026-08-26 when a catalog's namespace became derived rather than
+declared (`RET-0005`). It was the only instance across every published bundle,
+and it was reaching every adopter.
+
+**And the boundary with `luma-tools` is now stated** rather than left for a
+reader to infer, which `organizing-a-bundle` asks for: a bundle should say what
+it does not own, so an omission reads as a boundary instead of a gap.
+
+Minor: no rule changed and the layout is untouched. What changed is a procedure
+that had drifted into reproducing a tool.
 
 `0.11.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
 is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
