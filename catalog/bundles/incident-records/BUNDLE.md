@@ -60,33 +60,36 @@ them, which only works because they land in one place under one numbering.
 
 ## Version
 
-`0.2.0` — **`recorded_under` becomes `bundle_version`, and starts moving.**
+`0.2.0` — **`recorded_under` becomes `created_under`, and is fixed forever.**
 
-**The name says what it holds** rather than why it is there. And the semantics
-change with it: it was immutable creation-provenance, and it is now **what shape
-the record is currently in** — filled on creation, and **updated by a migration
-that brings the record forward**.
+**It names the bundle version that created the record** — the adopted copy that
+was actually read, not what the catalog published then or has since. The vendored
+bundle under `.luma/bundles/` is the one in play, so there is nothing to
+disambiguate.
 
-**That answers the question people actually ask.** *Find every incident below
-`0.3.0`* is one grep, and after migrating, the field says so. Creation-time
-provenance was the weaker question and git already answers it: the original value
-is in the record's own history.
+**And it never changes, including by a future migration.** A single field
+overwritten on each migration would answer *which version created this* right up
+until the first migration, then quietly stop — the worst kind of change, because
+nothing announces it. `created_under` means one thing and always will.
+
+**Room for migrations, which do not exist.** No machinery ships here. When
+something does migrate records, `migrated_under` is **added beside** this field:
+purely additive, since a consumer must not reject a document for keys it does not
+understand, so a minor bump and no existing record becomes wrong. If chains turn
+out to be common, that field grows into a list — also additive. **Neither is
+designed now**, because a mechanism built before its first user is a guess with a
+version number.
 
 **The templates also stopped asserting a version they cannot know.** All four
-hardcoded `incident-records 0.1.0`, so every record written from them would have
-claimed `0.1.0` — already false one release later, which is a provenance field
-lying about provenance.
-
-**Record the version that ran, not the version that exists.** The adopted copy
-under `.luma/bundles/` *is* what the author read; a project on `0.1.0` while this
-catalog publishes `0.3.0` used `0.1.0`. The catalog cannot know what anybody
+hardcoded `incident-records 0.1.0` and were already lying one release later — a
+provenance field lying about provenance. The catalog cannot know what any adopter
 holds, so a pre-filled value is wrong by construction rather than merely stale.
-The templates carry a placeholder and name the command that reads it —
+They carry a placeholder and name the command that reads it,
 `luma-foreman bundle show incident-records`.
 
-Minor rather than patch: a required field is renamed, which is breaking for
-anything reading `recorded_under`. Nothing does — `0.1.x` shipped today and is
-adopted nowhere.
+Minor rather than patch: a required field is renamed, which breaks anything
+reading `recorded_under`. Nothing does — `0.1.x` shipped today and is adopted
+nowhere.
 
 `0.1.1` — **`recorded_under` keeps its place on better reasons than it was given.**
 `0.1.0` claimed the provenance it captures "cannot be reconstructed", which is

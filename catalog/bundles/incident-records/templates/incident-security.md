@@ -22,7 +22,7 @@ began_at: YYYY-MM-DDTHH:MM:SSZ       # usually an estimate — say so in the bod
 detected_by: human:<id> | agent:<model> | process:<tool>
 responders: [human:<id>, ...]
 impact: <who or what was affected, one line>
-bundle_version: <namespace>/incident-records <version>   # luma-foreman bundle show incident-records
+created_under: <namespace>/incident-records <version>   # luma-foreman bundle show incident-records
 vector: <how access was gained>
 access_gained: <what the access allowed>
 exfiltration: none | unknown | some   # `some` means this is the wrong template
