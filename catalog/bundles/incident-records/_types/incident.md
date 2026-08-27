@@ -87,16 +87,28 @@ reader**, and saying so is better than implying a check exists.
 incident record actually looks like comes from the type *and* the kind's
 template, which version together as the bundle.
 
-**Two things it buys**, both of which arrive years later and cannot be
-reconstructed:
+**Git can usually answer this, and an earlier draft of this section wrongly said
+it could not.** The record is committed; at that commit `adopted.toml` names the
+version held. In the ordinary case the field is redundant, and *do not store what
+subtraction can answer* is a rule this same document applies to durations.
 
-- **Reading an old record correctly.** *Why does INC-0004 have no `began_at`?*
-  is answerable if you can see it was written under `0.1.0`, where the field did
-  not exist. Without it you are guessing whether somebody omitted it or could not
-  have supplied it.
-- **Migrating without changing meaning.** A migration that knows what a record
-  was written against can move it forward; one that does not has to infer intent
-  from shape, which is how a migration quietly rewrites what a record said.
+**It is kept for the cases where git answers wrongly or not at all:**
+
+- **The commit is not when the template was copied.** A record is opened during
+  an incident and committed days later. If the bundle upgraded in between,
+  `adopted.toml` at that commit reports **the wrong version, confidently** — and
+  incidents are exactly the work where a record is drafted long before it lands.
+  This is the case that makes the field a correctness measure rather than a
+  convenience.
+- **Records travel; history does not.** Copied into an organization's register, a
+  postmortem or a report, the file survives and its git history does not.
+- **A hand-copied template leaves no adoption trace.** Taken from the catalog
+  directly, or from a colleague, `adopted.toml` never mentions it.
+- **The cost of asking.** `git log --follow`, then `git show <sha>:…/adopted.toml`,
+  then parse. Nobody does that during a review; a field is free to read.
+
+**It costs an author nothing** — the template carries it pre-filled, so writing a
+record involves typing none of it.
 
 **It must not become a version switch, and this is the part worth guarding.**
 `change-a-shared-type` states the rule it appears to contradict: *tools are
@@ -115,6 +127,10 @@ a shortcut this field was not offered for.*
 **It generalises**, and is not generalised here. Audits, decisions and
 retirements have the same blind spot and would want the same field; adding it to
 one type to see whether it earns its keep is cheaper than adding it to four.
+
+**And it may not earn it.** If the drafted-late case turns out to be rare and
+records never travel, git is sufficient and this field is ceremony. That is a
+real possible outcome and the reason it is on one type rather than four.
 
 ## Status is derived, never stored
 
