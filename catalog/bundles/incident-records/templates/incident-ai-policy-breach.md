@@ -22,7 +22,7 @@ began_at: YYYY-MM-DDTHH:MM:SSZ       # usually an estimate — say so in the bod
 detected_by: human:<id> | agent:<model> | process:<tool>
 responders: [human:<id>, ...]
 impact: <who or what was affected, one line>
-created_under: <namespace>/incident-records <version>   # luma-foreman bundle show incident-records
+created_using: <namespace>/incident-records <version>   # luma-foreman bundle show incident-records
 model: <the model, exactly — including version>
 agent: <the agent or harness, if not the model directly>
 policy_violated: <the document, by id or path>

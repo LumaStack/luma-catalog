@@ -60,7 +60,13 @@ them, which only works because they land in one place under one numbering.
 
 ## Version
 
-`0.2.0` — **`recorded_under` becomes `created_under`, and is fixed forever.**
+`0.2.0` — **`recorded_under` becomes `created_using`, and is fixed forever.**
+
+*The preposition was worked at.* `under` reads as a regime the record answered
+to; a bundle version is not that. `with` is instrumental but can read as
+accompaniment — *created with a colleague* — which matters in a type that already
+carries `detected_by` and `responders` as actors. **`using` can only mean
+instrument.**
 
 **It names the bundle version that created the record** — the adopted copy that
 was actually read, not what the catalog published then or has since. The vendored
@@ -70,10 +76,10 @@ disambiguate.
 **And it never changes, including by a future migration.** A single field
 overwritten on each migration would answer *which version created this* right up
 until the first migration, then quietly stop — the worst kind of change, because
-nothing announces it. `created_under` means one thing and always will.
+nothing announces it. `created_using` means one thing and always will.
 
 **Room for migrations, which do not exist.** No machinery ships here. When
-something does migrate records, `migrated_under` is **added beside** this field:
+something does migrate records, `migrated_using` is **added beside** this field:
 purely additive, since a consumer must not reject a document for keys it does not
 understand, so a minor bump and no existing record becomes wrong. If chains turn
 out to be common, that field grows into a list — also additive. **Neither is

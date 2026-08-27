@@ -39,7 +39,7 @@ fields:
     field_presence: required
     field_type: text
     desc: "who or what was affected, in one line. Nobody, honestly stated, is a valid and useful answer"
-  created_under:
+  created_using:
     field_presence: required
     field_type: text
     desc: "the bundle and version that **created** this record — `<namespace>/incident-records 0.2.0`. Written once and never changed, including by a migration"
@@ -81,7 +81,7 @@ conditional field logic, which the format does not have and which would be a
 large thing to invent for this. **What fills the gap is the template and a
 reader**, and saying so is better than implying a check exists.
 
-## `created_under` — the version that made this record
+## `created_using` — the version that made this record
 
 **The bundle version that created this record, and it never changes.** Not what
 the catalog published at the time, and not what is available now — **the adopted
@@ -98,12 +98,12 @@ copied out of this repository.
 **Nothing migrates incident records today**, and this ships no machinery for it.
 What it ships is a name that will still be true when something does.
 
-**`created_under` means one thing and will never have to mean another.** A single
+**`created_using` means one thing and will never have to mean another.** A single
 field called `bundle_version`, overwritten by each migration, would answer *which
 version created this* until the first migration and then quietly stop — the worst
 kind of change, because nothing announces it.
 
-**When migrations arrive, `migrated_under` is added beside it.** That is purely
+**When migrations arrive, `migrated_using` is added beside it.** That is purely
 additive: consumers must not reject a document for keys they do not understand,
 so a new optional field is invisible to everything that has not learned it. Minor
 bump, nothing to rewrite, and no existing record becomes wrong.
@@ -152,12 +152,12 @@ remains the technique.
 
 **What changes is that the impossibility is no longer the reason.** Field
 tolerance survives on its own merits — it is simpler, it does not break when a
-version string is wrong or missing, and it degrades well. `created_under` is for
+version string is wrong or missing, and it degrades well. `created_using` is for
 **a person reading history and a migration doing one deliberate pass**, not for a
 consumer branching at read time. *A tool that starts dispatching on it has taken
 a shortcut this field was not offered for.*
 
-**Nothing may rewrite `created_under`, including a future migration.** A
+**Nothing may rewrite `created_using`, including a future migration.** A
 migration that moves a record forward records that separately; overwriting this
 field would destroy the only answer to why the record looks the way it does.
 

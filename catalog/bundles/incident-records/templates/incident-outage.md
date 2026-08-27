@@ -17,7 +17,7 @@ began_at: YYYY-MM-DDTHH:MM:SSZ       # usually an estimate — say so in the bod
 detected_by: human:<id> | agent:<model> | process:<tool>
 responders: [human:<id>, ...]
 impact: <who or what was affected, one line>
-created_under: <namespace>/incident-records <version>   # luma-foreman bundle show incident-records
+created_using: <namespace>/incident-records <version>   # luma-foreman bundle show incident-records
 services: [<what was down or degraded>]
 customer_facing_duration: <how long users felt it — often shorter than the total>
 trigger: self-inflicted | external

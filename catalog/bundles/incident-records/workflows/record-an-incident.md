@@ -74,9 +74,9 @@ somebody edits it to tick things off, and the account of what happened drifts.
 The exception is the notification clock on a `data-breach`, which is in the
 template because missing it is the failure the record exists to prevent.
 
-## 7. Stamp `created_under` and commit
+## 7. Stamp `created_using` and commit
 
-`created_under` is the version **that ran** — the adopted copy you just read
+`created_using` is the version **that ran** — the adopted copy you just read
 from, not whatever the catalog has published since:
 
 ```bash
