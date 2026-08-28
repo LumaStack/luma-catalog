@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.2.0
 published: 2026-08-28
 consumers: [project]
 entrypoint: policy/how-a-sweep-is-stored
@@ -27,8 +27,8 @@ because all of its state is on disk rather than in a conversation.
   record, and the two units that get confused. Read first.
 - [[the-pairing-turn]] — orientation before the person reads, judgement only
   after they have spoken. The rule the practice is built around.
-- [[choosing-an-order]] — four orders, what each buys and costs, and why the
-  choice is recorded.
+- [[choosing-an-order]] — five orders including a led one, what each buys and
+  costs, and why the choice is recorded rather than defaulted to.
 - [[what-a-sitting-produces]] — where each reaction goes, and why nothing worth
   keeping stays inside the sweep.
 
@@ -90,6 +90,34 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
+`0.2.0` — **first contact, and two of the four guesses were wrong.**
+
+**A person steering the sweep was treated as drift.** The orders were all
+computable — narrative, risk-weighted, dependency, directory — so *I want to
+look at the transport layer today* had nowhere to be recorded and read as a
+failure of discipline. It is neither: for somebody who knows the system, their
+instinct about what to read next is better information than any rule written
+down at the start. **`led` is now an order**, with the discipline that keeps it
+honest — look at what is still pending before choosing, so the choice is made
+with the cost visible. That is the only difference between steering and
+avoiding. Led-over-a-backbone is named too, because it is the common real shape.
+
+**The estimate was computed from a file count**, which is the wrong denominator
+by more than an order of magnitude. A hundred short documents is days; a hundred
+files of concurrency logic is months; the old arithmetic said the same number
+for both and would have mis-sold the sweep in both directions at once.
+**Estimate from the material, split the estimate when the scope is several
+kinds of thing, and stop guessing after the second sitting** — a measured rate
+is worth more than any care taken over the initial band.
+
+**The related claim went with it.** *A sitting that covers thirty files is a
+skim* was false for prose. The bound is comprehension, not a count: could you
+still say what each file did afterwards? A sitting of three dense files fails
+that as easily as one of thirty pages.
+
+Minor: new content and two corrections. Nothing an adopter must do has changed,
+and a sweep run under `0.1.0` is still valid under this.
+
 `0.1.0` — **nothing has run a sweep yet.**
 
 It was written straight into this catalog rather than in the project that wanted
@@ -101,9 +129,8 @@ rather than discovered by the first adopter.
 **The parts most likely to be wrong**, named now so the first sweep can watch
 for them:
 
-- **Three to eight files per sitting** is a guess. It is the range where a
-  cluster is coherent and an evening is enough, and both halves of that are
-  untested.
+- ~~**Three to eight files per sitting**~~ — wrong, and corrected in `0.2.0`.
+  It was an application-code number stated as a universal one.
 - **One pull request per sitting** may be too coarse for a sweep that fixes
   little and too fine for one that fixes a lot.
 - **The index as a table in one file** is chosen against this estate's usual

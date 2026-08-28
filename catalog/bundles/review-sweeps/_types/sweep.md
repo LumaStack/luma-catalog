@@ -9,7 +9,7 @@ fields:
   ordering:
     field_presence: required
     field_type: text
-    desc: "the order units are taken in: narrative, risk-weighted, dependency, directory"
+    desc: "the order units are taken in: narrative, risk-weighted, dependency, directory, or led"
   indexed_at:
     field_presence: required
     field_type: text
@@ -55,6 +55,10 @@ body — the field carries the name, the prose carries why.
 
 **Changing it mid-sweep is legitimate and gets a dated line in the body.**
 Silently drifting from it is what the field exists to make visible.
+
+**`led` is a value, not a blank.** A sweep whose person picks the next cluster
+each sitting is running a declared order and says so; the defect the field
+catches is a sweep claiming `narrative` while being led in practice.
 
 ## `indexed_at` is what keeps the index honest
 
