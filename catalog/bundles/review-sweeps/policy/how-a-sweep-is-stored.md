@@ -29,28 +29,19 @@ It churns — the index is edited at every slice, files are added when the tree
 moves under it, units go from pending to reviewed. `records/` is append-only
 and never edited, so a sweep filed there would break the tier on its first day.
 
-**This is the difference from an audit, and it is worth stating plainly because
-the two look alike from a distance.**
+**A sweep evaporates; an audit settles.** That is the lifecycle half of a
+larger distinction — what each is complete against, which one puts somebody on
+the hook, and why both need independence for opposite reasons. It is in
+[[sweeps-and-audits]] rather than here, because most work inside a sweep never
+has to ask it.
 
-| | **audit** | **sweep** |
-| --- | --- | --- |
-| pinned to | one commit | nothing — the code moves as you go |
-| written by | an auditor, for somebody else | the reader reading, for themselves |
-| the fixing | is somebody else's response, later | happens in the same slice |
-| independence | required between finding and answering | impossible, and not wanted |
-| ends as | a settled exchange | nothing — the outputs went elsewhere |
+**Do not file a sweep as an audit to make it look more rigorous.** It produces
+a commit pin that is false by the third file, and a record nobody owes an
+answer to, filed where things that settle are kept.
 
-**Do not file a sweep as an audit to make it look more rigorous.** An audit's
-value comes from a pinned commit and a party that did not write the finding
-answering it. A sweep has neither and is not trying to: it is one person
-building a model of their own system, fixing what they find on the way. Forcing
-it into the audit shape produces a commit pin that is false by the third file
-and a response written by the auditor, which is the one thing that shape exists
-to prevent.
-
-*The `audit-records` bundle owns audits. Where a sweep turns up something that
-genuinely wants an independent answer, that is a finding to raise there — not a
-reason to restructure the sweep.*
+*Audits are `audit-records`'. Where a sweep turns up something that genuinely
+wants an accountable answer, that is a finding to raise there — not a reason to
+restructure the sweep.*
 
 ## The slices are the source; the index is a cache
 
