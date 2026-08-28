@@ -1,9 +1,9 @@
 ---
 type: bundle
-version: 0.2.0
+version: 0.2.1
 published: 2026-08-27
 consumers: [project, organization]
-entry_point: policy/recording-an-incident
+entrypoint: policy/recording-an-incident
 description: Incidents as records — one place for everything that went wrong, and a different shape for each kind, because an outage and a data breach do not answer the same questions.
 ---
 
@@ -59,6 +59,10 @@ Both levels. A project records its own incidents; an organization reads across
 them, which only works because they land in one place under one numbering.
 
 ## Version
+
+`0.2.1` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+
+Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 
 `0.2.0` — **`recorded_under` becomes `created_using`, and is fixed forever.**
 

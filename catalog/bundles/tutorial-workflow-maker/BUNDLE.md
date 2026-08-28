@@ -1,9 +1,9 @@
 ---
 type: bundle
-version: 0.10.1
-published: 2026-08-26
+version: 0.10.2
+published: 2026-08-27
 consumers: [project, organization]
-entry_point: policy/what-makes-a-tutorial-land
+entrypoint: policy/what-makes-a-tutorial-land
 description: Making paced tutorials — the standard a walkthrough is held to, a workflow that turns source material into one, and templates for the steps, the quiz and the workflow that performs them.
 ---
 
@@ -111,6 +111,10 @@ that outlive any one repository, and *how we explain things to newcomers* is
 exactly the kind of thing worth deciding once.
 
 ## Version
+
+`0.10.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+
+Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 
 `0.10.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
 is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
