@@ -26,8 +26,9 @@ sometimes more — and survives every session boundary in between.
 
 **The tier is decided by lifecycle, and a sweep in progress is an intention.**
 It churns — the index is edited at every slice, files are added when the tree
-moves under it, rows go from pending to approved. `records/` is append-only and
-never edited, so a sweep filed there would break the tier on its first day.
+moves under it, rows go from pending to reviewed or approved. `records/` is
+append-only and never edited, so a sweep filed there would break the tier on
+its first day.
 
 **A sweep evaporates; an audit settles.** That is the lifecycle half of a
 larger distinction — what each is complete against, which one puts somebody on
@@ -62,8 +63,8 @@ derivation.*
 ## Two units, and confusing them is the common failure
 
 **The unit of coverage is the file.** Every file in scope appears in the index,
-so *approved with nothing found* stays distinguishable from *never looked at*.
-A sweep that cannot tell those apart has produced confidence it did not earn.
+so *read with nothing found* stays distinguishable from *never looked at*. A
+sweep that cannot tell those apart has produced confidence it did not earn.
 
 **The unit of a slice is a cluster** — a module, an execution path, a directory
 that means something. You review six files together because they only make
@@ -102,21 +103,36 @@ same at 60% whether nothing drifted or half of it did. One that records
 re-coverings shows drift accumulating while there is still time to cut the
 scope.
 
-## The reader owns every row's status
+## Two ways a row finishes, and they are not the same claim
 
-**A row is `approved` when the reader says it is.** They set it; the agent
-records it. Nothing else qualifies a status — not whether a full slice ran, not
-whether the file was rewritten rather than examined, not whether the agent
-would have concluded the same.
+| status | means | who may set it |
+| --- | --- | --- |
+| `reviewed` | read, and the reader is satisfied | **any party**, agent included |
+| `approved` | **signed off** | **a human only** |
 
-**The reader is usually the author, and the goal is usually about authorial
-intent.** *Does this still say what I meant* is a question only one party can
-answer, and an agent withholding a status over process is claiming standing it
-does not have.
+**`approved` is strictly stronger.** A row may go `reviewed` then `approved`,
+or straight to `approved` when a person read it themselves. Nothing requires
+the first before the second.
+
+**Both are needed because a sweep does not always have a human in it.**
+[[who-does-the-reading]] permits two agents, and a status only a person can set
+would leave such a sweep unable to finish a single row. **An agent must be able
+to say *I read this and it is fine*** — what it must not do is say *and that
+settles it*.
+
+**Neither party may withhold a status the other is entitled to set.** An agent
+records `approved` when the person gives it, whatever the agent thinks and
+however the file got that way — rewritten rather than examined, given without a
+full slice, given against the agent's advice. **The bundle exists to protect
+the reader's judgement and must never be turned against it.**
 
 **Challenge belongs before the status, never after it.** Ask what they made of
 it, name a goal they may have drifted from, say where you read it differently.
 Then record what they decide. [[the-pairing-turn]] draws that line.
+
+**The close reports both.** *Fifty-three approved, twelve reviewed and never
+signed off* is a true sentence about a sweep that ran out of the person's
+attention, and one status cannot say it.
 
 ## Rows are independent
 

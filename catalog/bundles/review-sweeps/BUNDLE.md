@@ -80,12 +80,18 @@ third file and a response written by its own auditor.
 **Coverage is derived, not stored.** Each slice says which files it covered;
 the index in `sweep.md` is a cache of that. When they disagree, the slices win.
 
-**The reader owns every row, and challenge is not veto.** A row is `approved`
-when the reader says it is — they set it, the agent records it. The agent's job
-before that is to argue: say the awkward thing, name a goal they have drifted
-from, offer a better idea. Its job after is to write down what they decided.
-**Ask, hear the answer, move on** — a concern raised twice after it is answered
-is a veto wearing a question mark.
+**A row finishes two ways, and they are not the same claim.** `reviewed` means
+read and satisfactory and **any party may set it, agent included**; `approved`
+means signed off and **only a person may give it**. Both are needed, because a
+sweep does not always have a human in it — a status only a person could set
+would leave an agent-agent sweep unable to finish a single row.
+
+**Neither party may withhold a status the other is entitled to set**, and
+challenge is not veto. The agent's job before a status is to argue: say the
+awkward thing, name a goal the reader has drifted from, offer a better idea.
+Its job after is to write down what they decided. **Ask, hear the answer, move
+on** — a concern raised twice after it is answered is a veto wearing a question
+mark.
 
 **Rows are independent.** Approving a file makes no claim about what it links
 to. The alternative is unbounded: in a project where content moves between
@@ -119,7 +125,7 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
-`0.7.0` — **the reader owns the row, and `reviewed` becomes `approved`.**
+`0.7.0` — **a row finishes two ways, and challenge is not veto.**
 
 **The bundle never said who sets a status**, so an agent filled the gap with
 *the process decides* and started policing whether a proper slice had happened
@@ -127,10 +133,24 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 good. **The bundle exists to protect the reader's judgement, and it was being
 used to overrule it.**
 
-**`reviewed` was half the cause.** It names a process, which invites the
-question *was a real review done*. **`approved` names a judgement**, and a
-judgement implies somebody making it — the word puts the reader in charge by
-construction rather than by a rule anybody has to remember.
+**One status could not carry it.** `reviewed` names a process, which invites
+the question *was a real review done* — the argument the agent picked.
+`approved` names a judgement, and a judgement implies somebody making it.
+
+**So there are two, because they are two different acts.** `reviewed` is *I
+read this and it is fine*, and **any party may say it, an agent included** —
+without that, [[who-does-the-reading]]'s agent-agent sweep could not finish a
+row, since a status only a person can give would strand every one of them at
+`pending`. `approved` is *signed off*, and **only a person may give it**.
+
+**Neither party may withhold a status the other is entitled to set.** An agent
+records `approved` whatever it thinks and however the file got that way. Its
+own view lives in `reviewed`, where it has no veto over anybody.
+
+*`covered` was considered for the agent-side status and rejected: like
+`reviewed` it is process-shaped, but unlike `reviewed` it is also the noun the
+index measures, and using one word for the measure and the act is what let them
+collapse in the first place.*
 
 **Challenge is the job; veto is not**, and [[the-pairing-turn]] now says what
 the reader is owed: brutal honesty, a better idea argued for, the goals they

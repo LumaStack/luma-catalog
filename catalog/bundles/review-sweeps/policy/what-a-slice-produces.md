@@ -28,7 +28,7 @@ and the slice is what you came for.
 | **this is wrong, and I can see the fix** | the finding, **and the fix as a proposal** | the sweep's routing, below |
 | **this is wrong and I do not understand it yet** | the finding, without one | `backlog-ideas`, or `audit-records` |
 | **this is fine, but I had to work out why** | a decision record | `decision-records` |
-| **this is fine** | the reader approves the row | the sweep index |
+| **this is fine** | the row is marked `reviewed`, or `approved` if a person signed off | the sweep index |
 
 *Those bundles are named rather than linked — they are separate and may not be
 adopted here. Where one is absent the destination is whatever this project

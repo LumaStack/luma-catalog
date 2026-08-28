@@ -74,14 +74,15 @@ together. A file missing from here can never be shown to have been read.>
 | cluster | file | status | slice |
 | --- | --- | --- | --- |
 | entrypoint | `src/cli.py` | approved | 001 |
-| entrypoint | `src/args.py` | approved | 001 |
+| entrypoint | `src/args.py` | reviewed | 001 |
 | gate | `src/gate.py` | pending | |
 | — | `src/generated_api.py` | skipped — generated | |
 
-`pending` · `approved` · `skipped` **with a reason, always**
+`pending` · `reviewed` · `approved` · `skipped` **with a reason, always**
 
-<`approved` is the reader's word, not the agent's — see the bundle's policy on
-who owns a row.>
+<`reviewed` — read and satisfactory; any party may set it, agent included.
+`approved` — signed off, and only a person may give it. Report the two
+separately at close: they are different claims.>
 
 <Strike a deleted file through rather than removing the row, so the index still
 explains itself.>
