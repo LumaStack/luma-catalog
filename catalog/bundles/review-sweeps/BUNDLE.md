@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.4.0
+version: 0.4.1
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -97,6 +97,21 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.4.1` — **concurrent sweeps are ordinary when they share neither owner nor
+territory.** The old wording led with *permitted, and usually a mistake* and
+then granted an exception, which made the common case read as a tolerated
+deviation. It also missed a dimension: it spoke only about overlapping scopes,
+never about who is reading.
+
+**The scarce resource is attention, and the failure is about the reader rather
+than the count.** Two sweeps are fine; one person running two is not. So the
+rule now states the ordinary case first, names the actual failure second, and
+gives one test — **overlap in either owner or territory collapses two sweeps
+into one.**
+
+Patch: a clarification. Nobody who read the old wording correctly behaves
+differently.
 
 `0.4.0` — **`sweep_session` is now `slice`, and a slice is no longer a pull
 request.**
