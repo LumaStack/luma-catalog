@@ -145,14 +145,19 @@ is the question anybody asks of a sweep and the date does not answer it.
 
 ## More than one sweep at a time
 
-**Permitted, and usually a mistake.** Two open sweeps over the same repository
-compete for the only scarce resource involved, which is the person's attention,
-and neither finishes.
+**Two sweeps sharing neither owner nor territory are ordinary**, and want no
+apology. Somebody reading the prose while somebody else reads the CLI is two
+sweeps, correctly — nothing is contended, and merging them would buy a single
+index nobody can act on alone.
 
-The case where it is right: **sweeps with different readers**, or genuinely
-disjoint scopes with different purposes — somebody reading the prose while
-somebody else reads the CLI. If the scopes overlap at all, they are one sweep
-with two people in it.
+**What fails is two sweeps competing for one person's attention.** Neither
+finishes, because attention is the only scarce resource involved and it does not
+divide. That is the mistake the rule is about, and it is a mistake about the
+reader rather than about the number.
+
+**Overlap in either dimension collapses them into one.** Same reader, or the
+same files, and what you have is one sweep with two indexes disagreeing about
+its coverage.
 
 ## Archive when closed; delete later and deliberately
 
