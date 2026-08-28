@@ -16,9 +16,9 @@ description: Settle what is being read and what is not, choose an order, and bui
 | *find out whether X is a problem* | a targeted audit. Answers one question, and somebody else can respond to it |
 | *I want to read this whole thing properly* | **a sweep** |
 
-**Say the cost out loud before agreeing.** A sweep over two hundred files is
-months of evenings. Somebody who wanted an afternoon's reassurance should find
-that out now rather than at file nine, and nobody is offended by being asked.
+**Say the cost out loud before agreeing** — see step 5 for how to arrive at it.
+Somebody who wanted an afternoon's reassurance should find out at the start
+rather than at file nine, and nobody is offended by being asked.
 
 ## 2. Settle the scope, and what is excluded
 
@@ -60,16 +60,44 @@ one after it.
 
 ## 5. Say how long this will actually take
 
-**Count the clusters and multiply by a sitting.** Then say the number.
+**Give a band, say it is a guess, and replace it with a measurement after two
+sittings.** A number said at the start is what stops a sweep dying at 15% with
+somebody concluding they were slow rather than that it was long. A number said
+*confidently* at the start is usually wrong.
 
-A hundred and forty files at six per sitting is twenty-three sittings. **That is
-the single most useful sentence in this workflow** — a sweep that dies at 15%
-almost always died because nobody said the number at the start, and the person
-concluded they were slow rather than that it was long.
+### Estimate from the material, never from the file count
 
-**If the number is unacceptable, cut the scope now**, not by quietly reviewing
-faster later. A sweep of the four subsystems that matter, finished, beats a
-sweep of everything, abandoned.
+**File count is the wrong denominator**, and using it is how a sweep gets
+mis-sold in both directions at once. What costs time is the reasoning a file
+demands, and that varies by more than an order of magnitude across a single
+repository.
+
+| material | a sitting is roughly | so |
+| --- | --- | --- |
+| **prose, docs, config** | a dozen files, sometimes thirty | **a hundred short documents is days, not months** |
+| **ordinary application code** | three to eight files | the middle case, and where the guess is safest |
+| **dense logic** — concurrency, parsing, anything with real invariants | one or two files, and sometimes half of one | a small directory can outlast a large one |
+
+**Say which of these the scope actually is**, and split the estimate when it is
+several. *Roughly four sittings for `docs/`, and fifteen for `src/`* is a useful
+sentence. *Nineteen sittings* is not, because the two halves are not made of the
+same stuff and the person will plan against the wrong one.
+
+### Then stop guessing
+
+**After the second sitting you have a rate.** Use it, say what it was, and
+revise the number in `sweep.md`.
+
+That revision is worth more than any care taken over the initial guess — it is
+measured on this material, by these people, at whatever depth they actually
+settled into. **Do not defend the original estimate against it.**
+
+### If the number is unacceptable, cut the scope now
+
+Not by quietly reviewing faster later. **A sweep of the four subsystems that
+matter, finished, beats a sweep of everything, abandoned** — and cutting at the
+start is a scope decision anybody can see, while cutting by acceleration is one
+that only shows up as coverage nobody trusts.
 
 ## 6. Write `sweep.md` and commit it
 

@@ -13,7 +13,7 @@ title: <what is being read, in a few words>
 created: YYYY-MM-DD
 lifecycle_status: provisional
 scope: <one line — and say what is excluded in the body>
-ordering: narrative | risk-weighted | dependency | directory
+ordering: narrative | risk-weighted | dependency | directory | led
 indexed_at: <12-character commit the index was last reconciled against>
 contributors:
   - human:<id>
@@ -43,8 +43,12 @@ exists to make visible.>
 
 ## Size
 
-<Units, clusters, and an honest estimate. The number said out loud at the start
-is what stops a sweep dying at 15% with somebody concluding they were slow.>
+<A band, said to be a guess, estimated from the material rather than the file
+count — prose and dense logic differ by more than an order of magnitude. Split
+it where the scope is several kinds of thing.>
+
+<Replace this with a measured rate after the second sitting, and say what the
+rate was. That number is worth more than any care taken over this one.>
 
 ## Index
 

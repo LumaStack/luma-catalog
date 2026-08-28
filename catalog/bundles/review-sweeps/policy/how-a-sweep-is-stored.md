@@ -83,9 +83,16 @@ read as a stranger**: you can see that a function is called and not whether the
 caller holds the lock it assumes. The index is a coverage ledger, not a running
 order.
 
-**One sitting, one note, several files marked off.** A sitting that covers one
-file is fine when the file genuinely stands alone. A sitting that covers thirty
-is not a sitting; it is a skim with a note attached.
+**One sitting, one note, several files marked off.**
+
+**The bound is comprehension, not a file count.** A sitting that covers one file
+is right when the file is dense enough to spend an evening on. A sitting that
+covers thirty short documents is also right, because thirty pages of prose is an
+amount of material a person can genuinely hold at once.
+
+The test is whether you could still say what each file did afterwards. **A
+sitting that fails that is a skim with a note attached**, at any size — and a
+sitting of three files can fail it just as easily as one of thirty.
 
 ## Naming
 
