@@ -133,7 +133,7 @@ repository.
 **Say which of these the scope actually is**, and split the estimate when it is
 several. *Roughly four slices for `docs/`, and fifteen for `src/`* is a useful
 sentence. *Nineteen slices* is not, because the two halves are not made of the
-same stuff and the person will plan against the wrong one.
+same stuff and the reader will plan against the wrong one.
 
 ### Then stop guessing
 
@@ -181,7 +181,7 @@ which is the next paragraph.
 
 **The number is a prompt, not a forecast.** Past churn predicts future churn
 badly — **a migration that just finished looks identical in the log to one that
-is half done**, and only the person can tell you which it was. So ask, rather
+is half done**, and only the reader can tell you which it was. So ask, rather
 than reporting the percentage as though it were a rate.
 
 ### If the number is unacceptable, cut the scope now

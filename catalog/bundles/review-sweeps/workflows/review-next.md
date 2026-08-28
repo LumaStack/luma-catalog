@@ -1,7 +1,7 @@
 ---
 type: workflow
 title: Review the next unit
-description: One slice — reconcile the index, orient without judging, let the person read first, then act on what they say. Use to continue an open sweep, including after a break.
+description: One slice — reconcile the index, orient without judging, let the reader read first, then act on what they say. Use to continue an open sweep, including after a break.
 ---
 
 # Review the next unit
@@ -38,7 +38,7 @@ and the index is a cache. Rebuild the row rather than trusting it.
 
 Say what changed and ask — *`src/gate.py` was covered in slice 004 and has been
 substantially rewritten since; do you want it re-covered, or does the earlier
-read still stand?* Both answers are common, and the person who read it is the
+read still stand?* Both answers are common, and the reader who read it is the
 one who can tell.
 
 **When a file is re-covered the row records it** — the earlier slice, the new
@@ -67,7 +67,7 @@ how often.
 **No judgement**, and this is the load-bearing constraint of the whole practice
 — see [[the-pairing-turn]]. *This is called from three places, one holding no
 lock* is orientation. *This is over-engineered* is a verdict, and saying it now
-means the person spends the slice reviewing your opinion instead of their code.
+means the reader spends the slice reviewing your opinion instead of their code.
 
 **A live hazard is the exception** and is said immediately.
 
@@ -92,13 +92,24 @@ run alone.
 as it goes and the ninth slice routinely falsifies the third; that is not a
 failure, it is the compounding the order was chosen for.
 
-## 6. Act, and route everything out
+## 6. Record, and route everything out
 
-Fix what you both understood here. Capture the rest where it belongs — see
-[[what-a-slice-produces]]. Nothing worth keeping stays in the slice note.
+**Record before fixing, and record whether or not anything gets fixed.** What
+is wrong, where, why it matters — and where you can see the answer, the fix as
+a *proposal*. See [[what-a-slice-produces]].
 
-**Propose before applying.** A change the person has not seen turns their
-review into a diff review of yours.
+**Write the reasoning, not just the diff.** A proposal is stale from the moment
+it is written; the reasoning survives being stale and the diff does not.
+
+**A fix may land now only if a person is in the sweep and says so.** With
+nobody human here, nothing lands during the slice — a third party works from
+the record afterwards, and the gap is where the findings get checked as a set.
+
+**Propose before applying, always.** A change the reader has not seen turns
+their review into a diff review of yours. And a yes to one fix is not a yes to
+the same fix in four other places.
+
+Nothing worth keeping stays in the slice note.
 
 ## 7. Write the slice and update the index
 

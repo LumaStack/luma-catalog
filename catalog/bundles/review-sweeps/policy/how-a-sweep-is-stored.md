@@ -9,8 +9,9 @@ matches:
 
 # How a sweep is stored
 
-A **sweep** is a person reading their own codebase from one end to the other,
-with an agent beside them. It runs for as long as it takes — hours, days,
+A **sweep** is one party reading a codebase from one end to the other, with a
+second beside it. **Usually a person with an agent, and not necessarily** — see
+[[who-does-the-reading]]. It runs for as long as it takes — hours, days,
 sometimes more — and survives every session boundary in between.
 
 ```
@@ -34,7 +35,7 @@ the two look alike from a distance.**
 | | **audit** | **sweep** |
 | --- | --- | --- |
 | pinned to | one commit | nothing — the code moves as you go |
-| written by | an auditor, for somebody else | the person reading, for themselves |
+| written by | an auditor, for somebody else | the reader reading, for themselves |
 | the fixing | is somebody else's response, later | happens in the same slice |
 | independence | required between finding and answering | impossible, and not wanted |
 | ends as | a settled exchange | nothing — the outputs went elsewhere |
@@ -88,7 +89,7 @@ ledger, not a running order.
 **The bound is comprehension, not a file count.** A slice that covers one file
 is right when the file is dense enough to spend an evening on. A slice that
 covers thirty short documents is also right, because thirty pages of prose is
-an amount of material a person can genuinely hold at once.
+an amount of material a reader can genuinely hold at once.
 
 The test is whether you could still say what each file did afterwards. **A
 slice that fails that is a skim with a note attached**, at any size — and a
@@ -151,9 +152,9 @@ sweeps, correctly — nothing is contended, and merging them would buy a single
 index nobody can act on alone.
 
 **What fails is two sweeps competing for one person's attention.** Neither
-finishes, because attention is the only scarce resource involved and it does not
-divide. That is the mistake the rule is about, and it is a mistake about the
-reader rather than about the number.
+finishes, because attention is the only scarce resource involved and it does
+not divide. That is the mistake the rule is about, and it is a mistake about
+the reader rather than about the number.
 
 **Overlap in either dimension collapses them into one.** Same reader, or the
 same files, and what you have is one sweep with two indexes disagreeing about

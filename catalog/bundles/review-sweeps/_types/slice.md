@@ -35,18 +35,21 @@ exists to preserve.
 
 ## `contributors` is how you tell the pairing happened
 
-**No human here is the signal.** A sweep is a person reading their own system;
-a slice with only an agent in `contributors` is an agent that reviewed some
-files, which is a different and much cheaper thing.
+**One name here is the signal.** A sweep has two parties — one orients, the
+other reads and speaks first — so a slice naming only the party that oriented
+records something that reviewed some files, which is a different and much
+cheaper thing.
 
-The test from an agent's side is mechanical: *did I hand this over and get a
-reply?* An open session is not a person being present — auto mode with nobody
-reading, or output nobody surfaced, is nobody there whatever the session
-claims.
+**Neither seat has to be human**; see [[who-does-the-reading]]. What has to be
+true is that the reader was a separate session and that it actually answered.
+
+The test is mechanical: *did I hand this over and get a reply?* An open session
+is not a party being present — auto mode with nobody reading, or output nobody
+surfaced, is nobody there whatever the session claims.
 
 ## Nothing records who read first
 
-The pairing turn asks that the agent orient without judging and that the person
+The pairing turn asks that one party orient without judging and that the reader
 speak first. **When that was inverted — they asked you to go first, or the file
 warranted it — say so in the prose**, the way any stated weakness is disclosed.
 

@@ -1,15 +1,15 @@
 ---
 type: policy
 title: The pairing turn
-description: Orientation before the person reads, judgement only after they have spoken — the turn order that keeps a paired review from becoming the agent's review with a human signing it.
+description: Orientation before the reader reads, judgement only after they have spoken — the turn order that keeps a paired review from becoming one party's review with the other signing it.
 matches:
-  - topic: reviewing code alongside a person
+  - topic: reviewing code alongside a second party
   - topic: giving feedback on a file somebody is about to read
 ---
 
 # The pairing turn
 
-**The person's own read is the product.** Everything else in a sweep — the
+**The reader's own read is the product.** Everything else in a sweep — the
 index, the ordering, the notes — is scaffolding around one thing: somebody
 looking at their own system and forming a view of it.
 
@@ -18,7 +18,7 @@ That is easy to destroy, and destroying it looks like being helpful.
 ## The failure this exists to prevent
 
 **An agent that opens with a list of findings has already reviewed the file.**
-What is left for the person is to agree, and they will: the findings are mostly
+What is left for the reader is to agree, and they will: the findings are mostly
 right, arguing costs effort, and the list arrived first and framed everything
 after it.
 
@@ -26,7 +26,7 @@ The sweep then produces the agent's judgement with somebody's name on it. It
 feels productive — a file per slice, findings, fixes, a green tick — and the
 thing it was for did not happen.
 
-**The tell is a person who agrees with everything.** A reader with their own
+**The tell is a reader who agrees with everything.** A reader with their own
 view disputes something eventually. A clean run of agreements over several
 slices is nearly always somebody reviewing a list rather than a codebase, and
 it is worth stopping to say so.
@@ -36,7 +36,7 @@ it is worth stopping to say so.
 | | | |
 | --- | --- | --- |
 | 1 | **agent orients** | what this is, how it connects, what moved recently. **No verdicts.** |
-| 2 | **the person reads, and speaks first** | their reaction, in their words, before the agent's |
+| 2 | **the reader reads, and speaks first** | their reaction, in their words, before the agent's |
 | 3 | **agent responds** | agrees, disagrees, adds what they did not raise |
 | 4 | **both act** | fix, record, or move on — see [[what-a-slice-produces]] |
 
@@ -62,7 +62,7 @@ the answer.
 ### Say when you are unsure
 
 **A confident wrong orientation is worse than no orientation**, and it fails in
-exactly the way this policy exists to prevent: it frames the person's read
+exactly the way this policy exists to prevent: it frames the reader's read
 before they start, and they will spend the slice looking where you pointed.
 
 So orientation carries its own uncertainty. *I cannot tell whether this lock is
@@ -85,7 +85,7 @@ leave unsaid for ten minutes, and nothing else.
 
 ## Step 3 is where the agent earns its place
 
-**An agent that only agrees is worth nothing here.** By step 3 the person has
+**An agent that only agrees is worth nothing here.** By step 3 the reader has
 committed to a view, so this is the moment disagreement is cheap and useful —
 say where you read it differently and why, including when they have just called
 something fine.
@@ -97,7 +97,7 @@ Three things belong here and nowhere else:
 - **What this file makes you doubt about one already reviewed.** A sweep learns
   as it goes, and the fifth slice routinely falsifies the second.
 
-## When the person asks you to go first
+## When the reader asks you to go first
 
 **They will, and the honest answer is to decline once and explain why in a
 sentence.** Not a refusal — offer the orientation, and offer to give a full
@@ -114,7 +114,13 @@ it is the ordinary division of labour, and it should still be written down.
 
 ## What none of this is about
 
-**It is not about who is more capable.** An agent may well read a given file
-better. The sweep is not a contest to produce the best review of a file — it
-exists so that a person ends up knowing their own system, and knowledge does
-not transfer by being told.
+**It is not about who is more capable.** The orienting party may well read a
+given file better. **A sweep is not a contest to produce the best review of a
+file** — it exists so that the reader arrives at its own account of the system,
+and an account handed over is not one that was arrived at.
+
+**Where the reader is a person, that is the whole return**: understanding does
+not transfer by being told, and a sweep that told them what to think produced
+nothing that outlasts the notes. **Where the reader is an agent**, nothing is
+retained either way, and what the sweep is worth is exactly the artifacts it
+left — which is a real difference, and [[who-does-the-reading]] covers it.
