@@ -25,9 +25,9 @@ reads as an oversight forever.
 ## 2. Confirm nothing worth keeping is still in the notes
 
 **This is the step that gets skipped, and it is the one that loses things.**
-Read the sweep sessions for anything phrased as *we should*, *worth
-revisiting*, or *not sure about this yet*, and route each one now — an idea, a
-finding, a decision, or a deliberate decision to drop it.
+Read the slices for anything phrased as *we should*, *worth revisiting*, or
+*not sure about this yet*, and route each one now — an idea, a finding, a
+decision, or a deliberate decision to drop it.
 
 The sweep is about to be archived. **Anything still inside it is being thrown
 away**, and doing that on purpose is fine while doing it by omission is not.
@@ -43,20 +43,24 @@ year later:
 - **what it changed about how you see the system** — the part worth writing.
   A sweep that taught you nothing about the shape of your own project was
   probably a skim
+- **drift against what was predicted** — how many files were re-covered, versus
+  the expectation recorded at the start. Both directions are worth a line: a
+  sweep that predicted heavy churn and saw none learned something about the
+  estimate, and one that was overrun learned something about the scope
 - **why it stopped**, when it stopped early. *Ran out of appetite* is a real
   reason and a useful one to have written down
 
 ## 4. Archive it
 
 ```sh
-git mv .luma/backlog/reviews/<slug> .luma/backlog/reviews/archived/<slug>
+git mv .luma/backlog/sweeps/<slug> .luma/backlog/sweeps/archived/<slug>
 ```
 
 Set `lifecycle_status: archived` and the `archived` date in `sweep.md`.
 
-**The sweep sessions go with it.** They are working notes whose value decays,
-and their content has already been routed out — what remains is the trail, and
-git keeps that whether or not the directory survives.
+**The slices go with it.** They are working notes whose value decays, and their
+content has already been routed out — what remains is the trail, and git keeps
+that whether or not the directory survives.
 
 ## 5. Deleting comes later, and separately
 

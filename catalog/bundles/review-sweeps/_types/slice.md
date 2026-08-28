@@ -1,18 +1,18 @@
 ---
 type: type_definition
-defines: sweep_session
+defines: slice
 fields:
   covers:
     field_presence: required
     field_type: list of text
-    desc: "the repository-relative paths read in this sweep session — the source coverage is derived from"
+    desc: "the repository-relative paths read in this slice — the source coverage is derived from"
   contributors:
     field_presence: recommended
     field_type: list of actor
     desc: "everyone present, human and agent alike (§7.4)"
 ---
 
-# Sweep session
+# Slice
 
 One session of a sweep: a cluster of files read together, what was concluded,
 and where each conclusion went.
@@ -26,18 +26,18 @@ the time rather than living here.
 The index in `sweep.md` is a cache of these lists. That is the whole reason
 this field is required and the whole reason it is paths rather than prose: a
 cache that cannot be rebuilt is a source, and this one has to be rebuildable
-because it is edited at every sweep session.
+because it is edited at every slice.
 
-**List every file read, including the ones where nothing was found.** A sweep
-session that names only the interesting files makes *examined and clean*
+**List every file read, including the ones where nothing was found.** A slice
+that names only the interesting files makes *examined and clean*
 indistinguishable from *never opened*, which is the distinction the index
 exists to preserve.
 
 ## `contributors` is how you tell the pairing happened
 
 **No human here is the signal.** A sweep is a person reading their own system;
-a sweep session with only an agent in `contributors` is an agent that reviewed
-some files, which is a different and much cheaper thing.
+a slice with only an agent in `contributors` is an agent that reviewed some
+files, which is a different and much cheaper thing.
 
 The test from an agent's side is mechanical: *did I hand this over and get a
 reply?* An open session is not a person being present — auto mode with nobody

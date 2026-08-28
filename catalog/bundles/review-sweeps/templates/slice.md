@@ -1,14 +1,13 @@
-# Sweep session template
+# Slice template
 
-Copy the blocks to
-`.luma/backlog/reviews/<slug>/sweep-sessions/<NNN>-<slug>.md`. **Copy the
-blocks, not this file.**
+Copy the blocks to `.luma/backlog/sweeps/<slug>/slices/<NNN>-<slug>.md`. **Copy
+the blocks, not this file.**
 
 ## Frontmatter
 
 ```yaml
 ---
-type: sweep_session
+type: slice
 title: <the cluster, in a few words>
 created: YYYY-MM-DD
 covers:
@@ -32,24 +31,29 @@ examined.
 ## What this is
 
 <The orientation, compressed to what is worth keeping. What these files do and
-how they connect — the part a later sweep session will want.>
+how they connect — the part a later slice will want.>
 
 ## What we made of it
 
-<Their read first, then yours. Where you disagreed, and why — a sweep session where
+<Their read first, then yours. Where you disagreed, and why — a slice where
 the agent agreed with everything is worth a second look.>
 
 <If the agent read first — because they asked, or because the file warranted
 it — say so here. A disclosed weakness can be discounted.>
 
+## Against the goal
+
+<One clause: did this slice serve what the sweep is for? Three in a row that
+did not is a signal, not a mood.>
+
 ## What this makes me doubt about earlier
 
 <Optional, and often the most valuable section. A sweep learns as it goes and
-the ninth sweep session routinely falsifies the third.>
+the ninth slice routinely falsifies the third.>
 
 ## Where it went
 
-<Every outcome, routed out of the sweep during this sweep session. Nothing worth
+<Every outcome, routed out of the sweep during this slice. Nothing worth
 keeping stays in this note — it is archived with the sweep and eventually
 deleted.>
 
@@ -63,7 +67,7 @@ deleted.>
 ## Still open
 
 <Only a conclusion the sweep genuinely has not reached yet — a suspicion needing
-more sweep sessions before it can be stated. Say what would confirm it.>
+more slices before it can be stated. Say what would confirm it.>
 
 <Not a to-do list. Anything actionable was routed above.>
 ```
