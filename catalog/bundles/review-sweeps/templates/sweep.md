@@ -15,6 +15,7 @@ lifecycle_status: provisional
 goal: <what you want to be true afterwards, stated so it can be checked>
 scope: <one line — and say what is excluded in the body>
 ordering: narrative | risk-weighted | dependency | directory | led
+pairing: human-agent | agent-agent
 indexed_at: <12-character commit the index was last reconciled against>
 contributors:
   - human:<id>        # or agent:<model> — the reader need not be a person
@@ -71,12 +72,12 @@ only the owner knows. Compare against it at close.>
 <Every file in scope. Grouped into the clusters expected to be reviewed
 together. A file missing from here can never be shown to have been read.>
 
-| cluster | file | status | slice |
-| --- | --- | --- | --- |
-| entrypoint | `src/cli.py` | approved | 001 |
-| entrypoint | `src/args.py` | reviewed | 001 |
-| gate | `src/gate.py` | pending | |
-| — | `src/generated_api.py` | skipped — generated | |
+| cluster | file | status | by | slice |
+| --- | --- | --- | --- | --- |
+| entrypoint | `src/cli.py` | approved | human:warden | 001 |
+| entrypoint | `src/args.py` | reviewed | agent:opus-5 | 001 |
+| gate | `src/gate.py` | pending | | |
+| — | `src/generated_api.py` | skipped — generated | | |
 
 `pending` · `reviewed` · `approved` · `skipped` **with a reason, always**
 

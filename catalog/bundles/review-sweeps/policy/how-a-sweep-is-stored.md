@@ -110,6 +110,15 @@ scope.
 | `reviewed` | read, and the reader is satisfied | **any party**, agent included |
 | `approved` | **signed off** | **a human only** |
 
+**Every row also records the actor** — `reviewed` by `agent:opus-5` and
+`reviewed` by `human:warden` are different facts, and the status alone cannot
+tell them apart.
+
+**Status and actor are not redundant.** The status says how strong the claim
+is; the actor says who made it. A person may legitimately mark a row `reviewed`
+rather than `approved` — *I have read this, it is fine for now, I am not
+signing off* — which is a real state an actor column alone cannot express.
+
 **`approved` is strictly stronger.** A row may go `reviewed` then `approved`,
 or straight to `approved` when a person read it themselves. Nothing requires
 the first before the second.

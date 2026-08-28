@@ -39,9 +39,11 @@ In `sweep.md`, under the index. Short, and answering what somebody would ask a
 year later:
 
 - **coverage** — approved, reviewed, skipped, pending, out of the total.
-  **Report approved and reviewed separately**: a row an agent was satisfied with
-  and one a person signed off are different claims, and merging them overstates
-  the weaker
+  **Report approved and reviewed separately, and report coverage by actor**: a
+  row an agent was satisfied with and one a person signed off are different
+  claims, and merging them overstates the weaker. **A sweep declared
+  `human-agent` whose rows are all `agent:` quietly became something else** —
+  say so
 - **what it produced** — pull requests landed, ideas filed, decisions recorded,
   findings raised. Counts and where they went, not a restatement
 - **what it changed about how you see the system** — the part worth writing.

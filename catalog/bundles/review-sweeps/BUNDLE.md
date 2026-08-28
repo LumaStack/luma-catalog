@@ -147,6 +147,27 @@ row, since a status only a person can give would strand every one of them at
 records `approved` whatever it thinks and however the file got that way. Its
 own view lives in `reviewed`, where it has no veto over anybody.
 
+**A `pairing` field declares who is in the sweep** — `human-agent` or
+`agent-agent` — before the first slice, and a slice may declare its own where
+it differs. **Every row now records its actor** as well as its status, because
+`reviewed` by an agent and `reviewed` by a person are different facts. The two
+are not redundant: the status says how strong the claim is, the actor says who
+made it, and **a person may legitimately mark a row `reviewed` rather than
+`approved`** — *read, fine for now, not signing off* — which an actor alone
+cannot express.
+
+**The declaration and the actors come apart, and that gap is the useful part.**
+A sweep declared `human-agent` whose rows are all `agent:` became something
+else without anybody deciding, so the close reports coverage by actor.
+
+**What this does not solve, and says so:** two sessions of one model both
+record `agent:opus-5`, so the index cannot show the independence the
+arrangement rests on. `audit-records` hit the same wall and declined to invent
+a field in passing; that reasoning holds, no agent-agent sweep has run, and
+until one does the disclosure belongs in a slice's prose. The trigger for
+solving it properly is somebody needing to check an independence claim and
+being unable to.
+
 *`covered` was considered for the agent-side status and rejected: like
 `reviewed` it is process-shaped, but unlike `reviewed` it is also the noun the
 index measures, and using one word for the measure and the act is what let them
