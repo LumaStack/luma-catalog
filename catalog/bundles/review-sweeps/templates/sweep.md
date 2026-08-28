@@ -61,6 +61,11 @@ it where the scope is several kinds of thing.>
 <Replace this with a measured rate after the second slice, and say what the
 rate was. That number is worth more than any care taken over this one.>
 
+**Expected drift:** <how much of the scope changed in a window the length of the
+estimate, and which parts — churn concentrates, so name the hot areas rather
+than giving one percentage. Say whether that churn is finishing or ongoing;
+only a person knows. Compare against it at close.>
+
 ## Index
 
 <Every file in scope. Grouped into the clusters expected to be reviewed

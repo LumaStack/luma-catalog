@@ -141,6 +141,18 @@ field is what a drifting sweep is compared against: three slices running that
 do not touch it mean the goal was wrong or the sweep has wandered, and neither
 is visible without it.
 
+**The estimate now warns about churn, not just length.** A sweep that takes six
+weeks reviews a codebase that gets six weeks of commits, and nothing said so
+until slice nine when rows started coming back. `start-a-sweep` measures how
+much of the scope moved in a window the length of the estimate, names the hot
+areas rather than reporting one percentage — churn concentrates, and the
+average hides the only part worth acting on — and offers the three responses,
+of which *freeze it* is available more often than people expect on a project
+with two committers. **The number is a prompt rather than a forecast**: a
+migration that just finished looks identical in the log to one that is half
+done, and only a person can say which it was. `close-a-sweep` compares the
+prediction against what actually drifted.
+
 **Two smaller additions.** Orientation now has to disclose its own uncertainty
 — a confident wrong orientation frames the person's read exactly as a verdict
 would, so unfamiliar territory is a reason to orient *less*, not harder. And a

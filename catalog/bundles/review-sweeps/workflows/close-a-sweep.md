@@ -43,6 +43,10 @@ year later:
 - **what it changed about how you see the system** — the part worth writing.
   A sweep that taught you nothing about the shape of your own project was
   probably a skim
+- **drift against what was predicted** — how many files were re-covered, versus
+  the expectation recorded at the start. Both directions are worth a line: a
+  sweep that predicted heavy churn and saw none learned something about the
+  estimate, and one that was overrun learned something about the scope
 - **why it stopped**, when it stopped early. *Ran out of appetite* is a real
   reason and a useful one to have written down
 

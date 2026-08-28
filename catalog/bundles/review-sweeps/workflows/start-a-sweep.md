@@ -144,6 +144,46 @@ That revision is worth more than any care taken over the initial guess — it is
 measured on this material, by these people, at whatever depth they actually
 settled into. **Do not defend the original estimate against it.**
 
+### Then say how much will move underneath it
+
+**A sweep that takes six weeks is reviewing a codebase that gets six weeks of
+commits.** The estimate is half the warning; the other half is how much of what
+you cover will have changed by the time you finish.
+
+Measure it over a window the length of the estimate:
+
+```sh
+git log --since="6 weeks ago" --name-only --pretty=format: -- <paths> \
+  | sort -u | wc -l
+```
+
+Against the file count in scope, that is a rough *expect this much to move
+while you sweep*. Record it in `sweep.md` beside the estimate, so the close can
+compare what actually happened.
+
+**Name the hot files, not just the percentage.** Churn concentrates — the usual
+shape is one subsystem moving and everything else sitting still — and a single
+number hides the only part worth acting on.
+
+**Three responses, and the first is available more often than people expect:**
+
+- **Freeze it.** On a project with one or two committers this is a genuine
+  choice, and it is much the cheapest of the three.
+- **Exclude the moving part and sweep it once it settles.** Reviewing code that
+  is being rewritten is work you will do twice.
+- **Accept it** and expect re-coverings — which the index records rather than
+  absorbs.
+
+**A hot area also argues about the order** ([[choosing-an-order]]): sweeping it
+last gives it time to settle, sweeping it first gets a read before it moves
+further. Which is right depends on whether the churn is finishing or starting,
+which is the next paragraph.
+
+**The number is a prompt, not a forecast.** Past churn predicts future churn
+badly — **a migration that just finished looks identical in the log to one that
+is half done**, and only the person can tell you which it was. So ask, rather
+than reporting the percentage as though it were a rate.
+
 ### If the number is unacceptable, cut the scope now
 
 Not by quietly reviewing faster later. **A sweep of the four subsystems that
