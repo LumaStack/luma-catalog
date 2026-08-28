@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.10.1
-published: 2026-08-26
+version: 0.11.0
+published: 2026-08-27
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
 ---
@@ -137,6 +137,27 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.11.0` — **`starters` is withdrawn from `luma/catalog`** *(breaking)*. It
+was written before anything could use it: a starter keys on what kind of
+consumer is adopting, and no consumer declares its kind — so the lists sat
+in a published catalog describing a bootstrap nothing performed. Nothing
+read them, and a declared mechanism nobody consumes is worse than a missing
+one, because it looks like an answer and stops anybody building the thing
+that would be one.
+
+**It also kept being cited as though it were built**, three times in one
+day's design work, including as an argument against a competing proposal.
+An unbuilt sketch that wins arguments is doing damage rather than waiting.
+
+`requires`, `tags` and `upstream` are untouched. The asymmetry that only
+`starters` could subtract goes with it, so both remaining lists merge
+additively and the resolution table says so.
+
+Minor with the removal stated outright, per pre-1.0: a catalog still
+declaring `starters` is declaring a field the type no longer defines, which
+§4 says a consumer tolerates and must not reject. What it was, and what
+would earn it back, is archived in `luma-leader`.
 
 `0.10.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
 is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the
