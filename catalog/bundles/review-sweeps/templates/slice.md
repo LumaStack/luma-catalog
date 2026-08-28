@@ -14,7 +14,7 @@ covers:
   - src/cli.py
   - src/args.py
 contributors:
-  - human:<id>
+  - human:<id>        # or agent:<model> — the reader need not be a person
   - agent:<model>
 ---
 ```

@@ -23,7 +23,7 @@ while its attention was not.
 | **risk-weighted** — churn × size, most-changed first | defects early, while attention is fresh | you meet the hardest code while your model of the system is weakest | *this thing keeps breaking* |
 | **dependency** — leaves first, upward | nothing is read before what it depends on | utilities read with no idea what uses them, which is the stranger problem in its purest form | correctness work, small codebases |
 | **directory** — top to bottom, alphabetical | zero decisions, obviously complete, trivially resumable | adjacency means nothing; two files beside each other may share no ideas | prose, config, anything without a call graph |
-| **led** — the person picks the next cluster each slice | attention goes where the interest is, which is the resource that actually runs out | coverage goes uneven, and the dull corners are never what anybody picks | *I know this codebase and I want to steer* |
+| **led** — the reader picks the next cluster each slice | attention goes where the interest is, which is the resource that actually runs out | coverage goes uneven, and the dull corners are never what anybody picks | *I know this codebase and I want to steer* |
 
 **Narrative is the usual answer for a first sweep**, because a first sweep is
 almost always somebody wanting to know their own system, and it is the only
@@ -31,7 +31,7 @@ order in which understanding accumulates rather than resets.
 
 **Led order is a real order, not the absence of one.** Steering deliberately —
 *today I want to look at the transport layer* — is a choice made per slice
-rather than up front, and it is the right one when the person knows the system
+rather than up front, and it is the right one when the reader knows the system
 well enough that their instinct about what to read next is better information
 than any rule you could write down at the start.
 

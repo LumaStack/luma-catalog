@@ -17,7 +17,7 @@ scope: <one line — and say what is excluded in the body>
 ordering: narrative | risk-weighted | dependency | directory | led
 indexed_at: <12-character commit the index was last reconciled against>
 contributors:
-  - human:<id>
+  - human:<id>        # or agent:<model> — the reader need not be a person
   - agent:<model>
 ---
 ```
@@ -64,7 +64,7 @@ rate was. That number is worth more than any care taken over this one.>
 **Expected drift:** <how much of the scope changed in a window the length of the
 estimate, and which parts — churn concentrates, so name the hot areas rather
 than giving one percentage. Say whether that churn is finishing or ongoing;
-only a person knows. Compare against it at close.>
+only the owner knows. Compare against it at close.>
 
 ## Index
 

@@ -82,9 +82,9 @@ whatever this project already does, own that. The staleness sentence is the
 only part that belongs here, because it is about the reading rather than the
 merging.*
 
-## The agent does not fix what the person has not agreed to
+## The agent does not fix what the reader has not agreed to
 
-**Applying a change the person has not seen turns their review into a diff
+**Applying a change the reader has not seen turns their review into a diff
 review of yours**, and it happens easily — the fix is obvious, it is right
 there, and asking feels like friction.
 

@@ -30,7 +30,7 @@ fields:
 
 # Sweep
 
-One long read of a codebase, by a person, with an agent beside them. The
+One long read of a codebase, by a reader with a second party beside them. The
 Document carries the scope, the order, and the index of what has been covered.
 
 **It is not a record**, and the fields say so: `indexed_at` moves, the index is

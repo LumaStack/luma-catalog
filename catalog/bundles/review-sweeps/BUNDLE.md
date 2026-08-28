@@ -1,11 +1,11 @@
 ---
 type: bundle
-version: 0.4.1
+version: 0.5.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
 entrypoint: policy/how-a-sweep-is-stored
-description: The review sweep — reading a whole codebase with an agent beside you, ordered and resumable, with the person's own read as the thing being protected.
+description: The review sweep — reading a whole codebase with an agent beside you, ordered and resumable, with the reader's own read as the thing being protected.
 ---
 
 # Review sweeps
@@ -32,8 +32,10 @@ and nothing about depth.
 
 - [[how-a-sweep-is-stored]] — where it lives, why it is backlog rather than a
   record, and the two units that get confused. Read first.
-- [[the-pairing-turn]] — orientation before the person reads, judgement only
+- [[the-pairing-turn]] — orientation before the reader reads, judgement only
   after they have spoken. The rule the practice is built around.
+- [[who-does-the-reading]] — the two parties, why neither has to be human, and
+  what changes when no human is in it.
 - [[choosing-an-order]] — five orders including a led one, what each buys and
   costs, and why the choice is recorded rather than defaulted to.
 - [[what-a-slice-produces]] — where each reaction goes, why nothing worth
@@ -52,19 +54,19 @@ and nothing about depth.
 
 ## Worth knowing before reading further
 
-**The person's own read is the product.** An agent that opens a file with a
-list of findings has already done the review, and what is left for the person
+**The reader's own read is the product.** An agent that opens a file with a
+list of findings has already done the review, and what is left for the reader
 is to agree — which they will. The sweep then produces the agent's judgement
 with somebody's name on it, and it looks exactly like success.
 
 Everything about the turn order follows from that. **Facts may be offered at
-any time; verdicts wait until the person has spoken.** *This is called from
+any time; verdicts wait until the reader has spoken.** *This is called from
 three places, one of them holding no lock* is orientation. *This is
 over-engineered* is a verdict.
 
 **It is not an audit, and the difference is not rigour.** An audit pins a
 commit and separates the party that finds from the party that answers. A sweep
-has neither: the code moves as you go, and the person finding is the person
+has neither: the code moves as you go, and the reader finding is the reader
 fixing. Filing a sweep as an audit produces a commit pin that is false by the
 third file and a response written by its own auditor.
 
@@ -97,6 +99,40 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.5.0` — **neither seat has to be human.**
+
+The bundle assumed a person reading with an agent, and said so in language that
+made anything else read as a degradation — *no human here is the signal*, *a
+sweep is a person reading their own system*. **The turn order was never about
+humanness.** It exists because a reader shown findings first is framed by them
+and forms no independent view, which is a property of reading. If anything it
+binds harder between two agents: an agent handed a findings list agrees more
+compliantly than a person would, with no irritation to push back with.
+
+**So the parties are now the reader and whoever orients**, and the language
+throughout says *reader* where it said *person*. Independence is the
+load-bearing property, and it is **the session rather than the model** — one
+session playing both parts is not a weak sweep, it is one agent reviewing with
+extra steps, and claiming otherwise asserts a property the record does not
+have.
+
+**Three things change when no human is in it**, none of them a prohibition. The
+goal stops being optional, because *I want to know this system* is checkable by
+the one who wanted it and there is no such fallback with two agents. Nothing is
+retained, so an agent-agent sweep is worth exactly the artifacts it left. And
+**the agreement check loses its observer** — the tell is a reader who agrees
+with everything, which assumes somebody notices, so it now has to be run
+deliberately by reading back three slices and asking whether the reader ever
+disputed anything.
+
+**Landing changes with nobody human in the loop is not forbidden here**,
+because what gates a merge is the project's business rather than this bundle's.
+It is named for what it is: an unsupervised agent editing a codebase with a
+review-shaped record attached.
+
+Minor: new content and a vocabulary shift. Nothing an adopter must do has
+changed, and a human-agent sweep behaves identically.
 
 `0.4.1` — **concurrent sweeps are ordinary when they share neither owner nor
 territory.** The old wording led with *permitted, and usually a mistake* and
