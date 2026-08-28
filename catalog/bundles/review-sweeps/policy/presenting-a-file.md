@@ -57,14 +57,46 @@ part of running one.
 [[who-does-the-reading]]. A sweep may be deep on its prose and shallow on its
 code, and the index says which.
 
-## Open it for them
+## Getting the file open
 
-**Run the command; do not print a path and hope.** A path is only clickable in
-some terminals, and a reader who has to select and paste has been given a chore
-rather than a file.
+**Settle once how files open here, and expect the answer to be the reader's
+terminal rather than a command you run.**
 
-Ask once what opens files on this machine, then use it every time — and open at
-the line under discussion rather than at the top, whenever there is one.
+| what opens files | who does it | the agent's job |
+| --- | --- | --- |
+| a **GUI editor** | the agent can launch it and it detaches | run the command, at the line under discussion |
+| a **terminal editor** | **only the reader can** — it needs to own a terminal | emit the reference and stop |
 
-*This is the first thing to check at the start of a sweep and the easiest to
-get wrong, because the agent cannot see whether the window opened.*
+**The second case is the common one and the easy one to get wrong.** An agent
+whose `EDITOR` is `vim` cannot open anything: a non-interactive call has no
+terminal to give it, so the attempt hangs or dies. **Printing the reference is
+not a failure to help — it is the mechanism**, because the reader's terminal
+already knows how to resolve one.
+
+**So write references as `path/to/file.md:10`, never as a bare `:10`.**
+Terminals that turn a reference into an editor jump match a path followed by a
+line; an offset on its own matches nothing and cannot be made to. It costs the
+agent nothing and it is the difference between a reference that opens and one
+that has to be typed out.
+
+*Where the reader's terminal does the opening, it is also better than the agent
+doing it: nothing steals focus, and they open what they want when they want
+it.*
+
+**Settle it before the first file, not during one.** It is the cheapest
+question in the sweep and the agent cannot tell it got it wrong — nothing
+reports that a window failed to open, or that a reference nobody could click
+was printed for the twentieth time.
+
+## The file is live while you are presenting it
+
+**A reader in deep mode has the file open and may edit it while you talk.**
+That is the arrangement working, not a problem — but it means **the copy you
+presented is already history.**
+
+**So re-read before editing, never edit from what you presented.** An agent
+applying a change against remembered text will silently miss where the reader
+has already been, and the failure looks like a no-op rather than an error.
+
+**Where an edit does not apply, say the file moved under you and re-read.** It
+is a fact about the file, not a complaint about the reader.

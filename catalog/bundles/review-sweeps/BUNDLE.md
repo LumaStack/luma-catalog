@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.8.0
+version: 0.9.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -128,12 +128,43 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
+`0.9.0` — **opening a file is often the reader's job, and the file is live
+while you present it.**
+
+**`0.8.0` said *run the command; do not print a path and hope*, which is wrong
+whenever the reader's editor runs in a terminal.** An agent whose `EDITOR` is
+`vim` cannot open anything — a non-interactive call has no terminal to give it,
+so the attempt hangs or dies. **Printing the reference is not a failure to
+help; it is the mechanism**, because the reader's terminal already knows how to
+resolve one. It is also better: nothing steals focus, and they open what they
+want when they want it.
+
+**So references are written in full — `path/to/file.md:10`, never a bare
+`:10`.** Terminals that turn a reference into an editor jump match a path
+followed by a line; an offset alone matches nothing and cannot be made to. It
+costs the agent nothing and decides whether a reference opens or has to be
+retyped.
+
+**The file is live while you are presenting it.** A reader in deep mode has it
+open and may edit while you talk — the arrangement working, not a problem. But
+**the copy you presented is already history**, so re-read before editing rather
+than applying changes against remembered text. That failure looks like a no-op
+rather than an error, which is why it needs saying.
+
+**And a finding may be about more than the file it was found in.** A claim
+repeated in six places is a finding about all six. **Route it at its real scope
+and say where it was found** — but do not chase it inside the slice, because
+following a finding out of the sweep's scope is how a slice becomes an
+afternoon.
+
+Minor: new content, and one instruction corrected.
+
 `0.8.0` — **how a file is presented, and going first as a declared
 arrangement.**
 
 **Found by the first slice, which spent its first three files arguing about
-presentation rather than about the files.** [[presenting-a-file]] settles it, with
-[the shape in a template](templates/file-presentation.md) for both modes:
+presentation rather than about the files.** [[presenting-a-file]] settles it,
+with [the shape in a template](templates/file-presentation.md) for both modes:
 **one file at a time** — a cluster presented at once buys nothing, since the
 reader can only read one while the others scroll away — then a data block, a
 summary of what the file *is*, what the agent makes of it, and **only then the
