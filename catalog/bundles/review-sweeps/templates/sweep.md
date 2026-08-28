@@ -1,8 +1,8 @@
 # Sweep template
 
 Copy the blocks to `.luma/backlog/reviews/<slug>/sweep.md`. **Copy the blocks,
-not this file** — this file has no frontmatter of its own on purpose, so nothing
-reads it as a real sweep.
+not this file** — this file has no frontmatter of its own on purpose, so
+nothing reads it as a real sweep.
 
 ## Frontmatter
 
@@ -35,7 +35,7 @@ nothing. Say which exclusions you were given and which you chose.>
 
 ## Order
 
-**<the order>** — <one sentence of why. This is what the sitting consults when
+**<the order>** — <one sentence of why. This is what the sweep session consults when
 the convenient next unit is not the correct one.>
 
 <A dated line here for every change of order. Silent drift is what this section
@@ -47,7 +47,7 @@ exists to make visible.>
 count — prose and dense logic differ by more than an order of magnitude. Split
 it where the scope is several kinds of thing.>
 
-<Replace this with a measured rate after the second sitting, and say what the
+<Replace this with a measured rate after the second sweep session, and say what the
 rate was. That number is worth more than any care taken over this one.>
 
 ## Index
@@ -55,7 +55,7 @@ rate was. That number is worth more than any care taken over this one.>
 <Every file in scope. Grouped into the clusters expected to be reviewed
 together. A file missing from here can never be shown to have been read.>
 
-| cluster | file | status | sitting |
+| cluster | file | status | sweep session |
 | --- | --- | --- | --- |
 | entrypoint | `src/cli.py` | reviewed | 001 |
 | entrypoint | `src/args.py` | reviewed | 001 |

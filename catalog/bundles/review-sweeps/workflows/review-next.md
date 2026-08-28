@@ -1,7 +1,7 @@
 ---
 type: workflow
 title: Review the next unit
-description: One sitting — reconcile the index, orient without judging, let the person read first, then act on what they say. Use to continue an open sweep, including after a break.
+description: One sweep session — reconcile the index, orient without judging, let the person read first, then act on what they say. Use to continue an open sweep, including after a break.
 ---
 
 # Review the next unit
@@ -28,28 +28,30 @@ git diff --name-status <indexed_at>..HEAD
 
 Update `indexed_at` to the current commit.
 
-**If the sittings and the index disagree, the sittings win** — they are the
-source and the index is a cache. Rebuild the row rather than trusting it.
+**If the sweep sessions and the index disagree, the sweep sessions win** — they
+are the source and the index is a cache. Rebuild the row rather than trusting
+it.
 
 ## 2. Pick the next cluster
 
 Follow the recorded order. **If the recorded order is not working, change it
-deliberately** — a dated line in `sweep.md` saying what changed and why. Not one
-convenient sitting at a time.
+deliberately** — a dated line in `sweep.md` saying what changed and why. Not
+one convenient sweep session at a time.
 
 **Three to eight files.** Fewer means a file read without its collaborators;
 more means a skim.
 
 ## 3. Orient — facts only, no verdicts
 
-**Read the cluster, then say what it is.** What these files do, how they connect,
-what calls in and what they call out, what changed here recently and how often.
+**Read the cluster, then say what it is.** What these files do, how they
+connect, what calls in and what they call out, what changed here recently and
+how often.
 
 **No judgement**, and this is the load-bearing constraint of the whole practice
 — see [[the-pairing-turn]]. *This is called from three places, one holding no
 lock* is orientation. *This is over-engineered* is a verdict, and saying it now
-means the person spends the sitting reviewing your opinion instead of their
-code.
+means the person spends the sweep session reviewing your opinion instead of
+their code.
 
 **A live hazard is the exception** and is said immediately.
 
@@ -59,7 +61,7 @@ Say what you would like from them — *read these four, tell me what you make of
 the retry logic* — and then stop.
 
 **Wait.** If they ask you to go first, decline once with the reason and offer
-the read afterwards; if they ask again, do it and note it in the sitting.
+the read afterwards; if they ask again, do it and note it in the sweep session.
 
 ## 5. Respond
 
@@ -67,26 +69,27 @@ Now the judgement. Where you agree, where you do not and why, and what they did
 not raise.
 
 **Disagree where you disagree**, including when they have just called something
-fine. An agent that only ratifies has added nothing to a sitting they could have
-run alone.
+fine. An agent that only ratifies has added nothing to a sweep session they
+could have run alone.
 
 **Say what this cluster makes you doubt about an earlier one.** A sweep learns
-as it goes and the ninth sitting routinely falsifies the third; that is not a
-failure, it is the compounding the order was chosen for.
+as it goes and the ninth sweep session routinely falsifies the third; that is
+not a failure, it is the compounding the order was chosen for.
 
 ## 6. Act, and route everything out
 
 Fix what you both understood here. Capture the rest where it belongs — see
-[[what-a-sitting-produces]]. Nothing worth keeping stays in the sitting note.
+[[what-a-sweep-session-produces]]. Nothing worth keeping stays in the sweep
+session note.
 
-**Propose before applying.** A change the person has not seen turns their review
-into a diff review of yours.
+**Propose before applying.** A change the person has not seen turns their
+review into a diff review of yours.
 
-## 7. Write the sitting and update the index
+## 7. Write the sweep session and update the index
 
-[The sitting template](../templates/sitting.md). It is a working note, not a
-report — what was covered, what was concluded, what left the sweep and where it
-went.
+[The sweep session template](../templates/sweep-session.md). It is a working
+note, not a report — what was covered, what was concluded, what left the sweep
+and where it went.
 
 Mark every file in the cluster reviewed, including the ones where nothing was
 found. **Reviewed and clean is a result**, and an index that records only
@@ -94,8 +97,8 @@ problems has unexplained gaps in place of evidence.
 
 ## 8. Commit, and land the fixes
 
-One commit for the sitting note and the index. The fixes go as one pull request
-for the sitting, whose body is the note.
+One commit for the sweep session note and the index. The fixes go as one pull
+request for the sweep session, whose body is the note.
 
-**Land it before the next sitting.** Otherwise the next one reviews code that is
-about to change.
+**Land it before the next sweep session.** Otherwise the next one reviews code
+that is about to change.

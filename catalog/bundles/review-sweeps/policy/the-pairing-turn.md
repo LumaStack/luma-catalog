@@ -23,13 +23,13 @@ right, arguing costs effort, and the list arrived first and framed everything
 after it.
 
 The sweep then produces the agent's judgement with somebody's name on it. It
-feels productive — a file per sitting, findings, fixes, a green tick — and the
-thing it was for did not happen.
+feels productive — a file per sweep session, findings, fixes, a green tick —
+and the thing it was for did not happen.
 
 **The tell is a person who agrees with everything.** A reader with their own
 view disputes something eventually. A clean run of agreements over several
-sittings is nearly always somebody reviewing a list rather than a codebase, and
-it is worth stopping to say so.
+sweep sessions is nearly always somebody reviewing a list rather than a
+codebase, and it is worth stopping to say so.
 
 ## The order
 
@@ -38,7 +38,7 @@ it is worth stopping to say so.
 | 1 | **agent orients** | what this is, how it connects, what moved recently. **No verdicts.** |
 | 2 | **the person reads, and speaks first** | their reaction, in their words, before the agent's |
 | 3 | **agent responds** | agrees, disagrees, adds what they did not raise |
-| 4 | **both act** | fix, record, or move on — see [[what-a-sitting-produces]] |
+| 4 | **both act** | fix, record, or move on — see [[what-a-sweep-session-produces]] |
 
 **Step 2 is the whole rule.** One and three are ordinary work and go wrong only
 by being run in the wrong order.
@@ -56,8 +56,8 @@ being asked for:
 | **verdict** | *this should be split in two* | **step 3** |
 
 **A fact narrows where to look. A verdict says what to conclude.** Orientation
-is allowed to be dense, technical and long — what it may not do is arrive at the
-answer.
+is allowed to be dense, technical and long — what it may not do is arrive at
+the answer.
 
 ### The exception, kept narrow on purpose
 
@@ -82,18 +82,18 @@ Three things belong here and nowhere else:
 - **What they did not mention.** They were reading for one thing; you were not.
 - **Where you disagree**, with the reason rather than the conclusion.
 - **What this file makes you doubt about one already reviewed.** A sweep learns
-  as it goes, and the fifth sitting routinely falsifies the second.
+  as it goes, and the fifth sweep session routinely falsifies the second.
 
 ## When the person asks you to go first
 
 **They will, and the honest answer is to decline once and explain why in a
-sentence.** Not a refusal — offer the orientation, and offer to give a full read
-after they have given theirs.
+sentence.** Not a refusal — offer the orientation, and offer to give a full
+read after they have given theirs.
 
 **If they ask again, do it.** Their sweep, their call, and a rule nobody can
 override gets the whole practice abandoned rather than argued with. Note in the
-sitting that the agent read first; a reader can discount a stated weakness, and
-an unstated one is the harder problem.
+sweep session that the agent read first; a reader can discount a stated
+weakness, and an unstated one is the harder problem.
 
 **Some files genuinely warrant it** — generated code, a vendored dependency, a
 file in a language they do not read. Going first there is not the failure mode;
@@ -103,5 +103,5 @@ it is the ordinary division of labour, and it should still be written down.
 
 **It is not about who is more capable.** An agent may well read a given file
 better. The sweep is not a contest to produce the best review of a file — it
-exists so that a person ends up knowing their own system, and knowledge does not
-transfer by being told.
+exists so that a person ends up knowing their own system, and knowledge does
+not transfer by being told.
