@@ -26,8 +26,8 @@ sometimes more — and survives every session boundary in between.
 
 **The tier is decided by lifecycle, and a sweep in progress is an intention.**
 It churns — the index is edited at every slice, files are added when the tree
-moves under it, units go from pending to reviewed. `records/` is append-only
-and never edited, so a sweep filed there would break the tier on its first day.
+moves under it, rows go from pending to approved. `records/` is append-only and
+never edited, so a sweep filed there would break the tier on its first day.
 
 **A sweep evaporates; an audit settles.** That is the lifecycle half of a
 larger distinction — what each is complete against, which one puts somebody on
@@ -62,8 +62,8 @@ derivation.*
 ## Two units, and confusing them is the common failure
 
 **The unit of coverage is the file.** Every file in scope appears in the index,
-so *reviewed and clean* stays distinguishable from *never looked at*. A sweep
-that cannot tell those apart has produced confidence it did not earn.
+so *approved with nothing found* stays distinguishable from *never looked at*.
+A sweep that cannot tell those apart has produced confidence it did not earn.
 
 **The unit of a slice is a cluster** — a module, an execution path, a directory
 that means something. You review six files together because they only make
@@ -101,6 +101,37 @@ the earlier slice named — never a row that quietly resets.
 same at 60% whether nothing drifted or half of it did. One that records
 re-coverings shows drift accumulating while there is still time to cut the
 scope.
+
+## The reader owns every row's status
+
+**A row is `approved` when the reader says it is.** They set it; the agent
+records it. Nothing else qualifies a status — not whether a full slice ran, not
+whether the file was rewritten rather than examined, not whether the agent
+would have concluded the same.
+
+**The reader is usually the author, and the goal is usually about authorial
+intent.** *Does this still say what I meant* is a question only one party can
+answer, and an agent withholding a status over process is claiming standing it
+does not have.
+
+**Challenge belongs before the status, never after it.** Ask what they made of
+it, name a goal they may have drifted from, say where you read it differently.
+Then record what they decide. [[the-pairing-turn]] draws that line.
+
+## Rows are independent
+
+**Approving a file makes no claim about anything it links to.** A document
+approved today may point at four that are still `pending`, and that is an
+ordinary state rather than an inconsistency.
+
+**The alternative is unbounded.** If a row could only be approved once
+everything it referenced was, then a project where things move — content split
+out, a document broken in two — becomes one where nothing can ever be approved,
+because every approval drags in more. **Coverage is per file, and the index is
+what holds it together.**
+
+**What a split does owe is a note**: the new rows exist, they are pending, and
+the slice that created them says so. That is bookkeeping, not a dependency.
 
 ## A slice is not an agent session
 

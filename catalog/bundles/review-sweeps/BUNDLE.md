@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.1
+version: 0.7.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -33,7 +33,8 @@ and nothing about depth.
 - [[how-a-sweep-is-stored]] — where it lives, why it is backlog rather than a
   record, and the two units that get confused. Read first.
 - [[the-pairing-turn]] — orientation before the reader reads, judgement only
-  after they have spoken. The rule the practice is built around.
+  after they have spoken, and what the reader is owed from the other party.
+  The rule the practice is built around.
 - [[who-does-the-reading]] — the two parties, why neither has to be human, and
   what changes when no human is in it.
 - [[choosing-an-order]] — five orders including a led one, what each buys and
@@ -79,6 +80,18 @@ third file and a response written by its own auditor.
 **Coverage is derived, not stored.** Each slice says which files it covered;
 the index in `sweep.md` is a cache of that. When they disagree, the slices win.
 
+**The reader owns every row, and challenge is not veto.** A row is `approved`
+when the reader says it is — they set it, the agent records it. The agent's job
+before that is to argue: say the awkward thing, name a goal they have drifted
+from, offer a better idea. Its job after is to write down what they decided.
+**Ask, hear the answer, move on** — a concern raised twice after it is answered
+is a veto wearing a question mark.
+
+**Rows are independent.** Approving a file makes no claim about what it links
+to. The alternative is unbounded: in a project where content moves between
+files, nothing could ever be approved, because every approval would drag in
+more.
+
 **Nothing worth keeping stays in the sweep.** It is backlog — it gets archived
 and eventually deleted — so a fix, an idea, a decision or a finding leaves at
 the slice that produced it. A slice that ends with six observations in a note
@@ -106,7 +119,52 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
-`0.6.1` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+`0.7.0` — **the reader owns the row, and `reviewed` becomes `approved`.**
+
+**The bundle never said who sets a status**, so an agent filled the gap with
+*the process decides* and started policing whether a proper slice had happened
+— refusing a status over a file the reader had read, written, and pronounced
+good. **The bundle exists to protect the reader's judgement, and it was being
+used to overrule it.**
+
+**`reviewed` was half the cause.** It names a process, which invites the
+question *was a real review done*. **`approved` names a judgement**, and a
+judgement implies somebody making it — the word puts the reader in charge by
+construction rather than by a rule anybody has to remember.
+
+**Challenge is the job; veto is not**, and [[the-pairing-turn]] now says what
+the reader is owed: brutal honesty, a better idea argued for, the goals they
+may have forgotten on a run this long, and ways to sweep faster. It also says
+where that stops — *did you consider X* is the agent's to ask, *this is not
+approved* is not its to say. **Raising a concern twice after it has been
+answered is the veto wearing a question mark.**
+
+**Rows are independent**, which is the flaw the same conversation exposed. If a
+row could only be approved once everything it linked to was, then a project
+where content moves — a document split into four — becomes one where nothing
+can ever be approved, because every approval drags in more. A split owes a
+**note** that the new rows exist and which approval created them; it does not
+owe a dependency.
+
+**And a slice now records what it half-finished**, in
+[[what-a-slice-produces]]. Content that moved and work that was started and not
+completed both get written where the next slice will meet them. **A sweep that
+generates its own loose ends and does not track them is worse than one that
+changed nothing**, because the index looks complete.
+
+*A `rewritten` status was considered and rejected. A file rewritten with its
+author present and approved by them is covered — that is what having a reader
+is for, and the status was solving a problem that only exists if you distrust
+them.*
+
+Minor: new content, and one status value renamed. An index using `reviewed`
+still reads correctly to a person; nothing parses it yet.
+
+`0.6.1` — **references to the knowledge format name sections instead of
+numbering them.** The format removed section numbers, so every `§n` here
+pointed at a position that no longer exists — and a stale number resolves to
+the wrong section rather than to nothing, which is why none of them were
+reported. Decorative citations are dropped; the rest name what they meant.
 
 Patch: wording only. No rule, field or procedure changed.
 
