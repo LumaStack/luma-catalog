@@ -1,0 +1,71 @@
+# Sweep template
+
+Copy the blocks to `.luma/backlog/reviews/<slug>/sweep.md`. **Copy the blocks,
+not this file** — this file has no frontmatter of its own on purpose, so nothing
+reads it as a real sweep.
+
+## Frontmatter
+
+```yaml
+---
+type: sweep
+title: <what is being read, in a few words>
+created: YYYY-MM-DD
+lifecycle_status: provisional
+scope: <one line — and say what is excluded in the body>
+ordering: narrative | risk-weighted | dependency | directory
+indexed_at: <12-character commit the index was last reconciled against>
+contributors:
+  - human:<id>
+  - agent:<model>
+---
+```
+
+## Body
+
+```markdown
+# Sweep: <what is being read>
+
+## Scope
+
+<What is in. Paths, or a description precise enough to enumerate from.>
+
+**Not included:** <the half people skip. Without it, finished coverage means
+nothing. Say which exclusions you were given and which you chose.>
+
+## Order
+
+**<the order>** — <one sentence of why. This is what the sitting consults when
+the convenient next unit is not the correct one.>
+
+<A dated line here for every change of order. Silent drift is what this section
+exists to make visible.>
+
+## Size
+
+<Units, clusters, and an honest estimate. The number said out loud at the start
+is what stops a sweep dying at 15% with somebody concluding they were slow.>
+
+## Index
+
+<Every file in scope. Grouped into the clusters expected to be reviewed
+together. A file missing from here can never be shown to have been read.>
+
+| cluster | file | status | sitting |
+| --- | --- | --- | --- |
+| entrypoint | `src/cli.py` | reviewed | 001 |
+| entrypoint | `src/args.py` | reviewed | 001 |
+| gate | `src/gate.py` | pending | |
+| — | `src/generated_api.py` | skipped — generated | |
+
+`pending` · `reviewed` · `skipped` **with a reason, always**
+
+<Strike a deleted file through rather than removing the row, so the index still
+explains itself.>
+
+## Closing summary
+
+<Written at close, not before. Coverage as counts; what it produced and where
+each thing went; what it changed about how you see the system; and why it
+stopped, if it stopped early.>
+```
