@@ -228,3 +228,29 @@ The test is not who wrote it. It is whether each finding says what is wrong, by
 whose rule, and what it costs. A command that produces that is an auditor. A
 command that produces a list of line numbers is evidence, and belongs cited
 *inside* a finding rather than filed as one.
+
+### Complete coverage is a different practice
+
+**An audit answers a question.** It can examine three files and be finished, if
+those three answered what it was aimed at, and it owes a reader only a statement
+of what it did *not* look at.
+
+**Wanting to say instead that everything has been looked at is a review sweep** —
+`lumastack/luma-catalog/review-sweeps`. It carries the machinery an audit has no
+use for: an index of every file in scope, an order chosen on purpose, and
+*reviewed and clean* as a recordable result.
+
+**The tell is somebody asking an audit how far through it is.** An audit has no
+answer to that, because completeness is not a property it has — and stretching
+one to cover a whole codebase produces a commit pin that is false long before
+the end.
+
+**The other direction is the real distinction: an audit puts somebody on the
+hook.** A respondent accountable for the thing takes a position on every
+finding, and that exchange is the record. A sweep puts nobody on the hook; its
+findings are work waiting to be done rather than claims waiting to be answered.
+**Where a sweep turns up something that genuinely needs an accountable answer,
+it belongs here.**
+
+*That bundle is named rather than linked. It may not be adopted, and nothing
+here depends on it.*

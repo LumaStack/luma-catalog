@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.7.2
-published: 2026-08-27
+version: 0.8.0
+published: 2026-08-28
 consumers: [project, organization]
 entrypoint: policy/audit-layout
 description: Audits as records — findings written by one party, answered by another, closed by the first. The whole exchange lives in git.
@@ -76,6 +76,27 @@ Both levels. A project audits its code and its own practice; an organization
 audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
+
+`0.8.0` — **complete coverage is named as somebody else's practice.**
+
+An audit answers a question and can be finished after three files; it owes a
+reader only a statement of what it did not examine. **Nothing said so**, which
+left *audit the whole codebase* looking like an ordinary request — and stretching
+one that way produces a commit pin false long before the end, plus an implied
+completeness the shape cannot deliver. **The tell is somebody asking an audit how
+far through it is.**
+
+`audit-layout` now points at `lumastack/luma-catalog/review-sweeps` for that,
+named rather than linked, and states the distinction that actually matters in
+the other direction: **an audit puts somebody accountable on the hook to answer
+every finding, and a sweep puts nobody on the hook at all.** Where a sweep turns
+up something needing an accountable answer, it belongs here.
+
+**No comparison table, deliberately.** The full one lives in that bundle, and a
+second copy here would drift — which this catalog treats as a finding rather
+than a merge.
+
+Minor: new content. Nothing an adopter must do has changed.
 
 `0.7.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
 
