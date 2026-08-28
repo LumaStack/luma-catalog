@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.7.0
+version: 0.8.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -37,6 +37,8 @@ and nothing about depth.
   The rule the practice is built around.
 - [[who-does-the-reading]] — the two parties, why neither has to be human, and
   what changes when no human is in it.
+- [[presenting-a-file]] — how a file is put in front of the reader: the shape,
+  the order it arrives in, and deep against shallow.
 - [[choosing-an-order]] — five orders including a led one, what each buys and
   costs, and why the choice is recorded rather than defaulted to.
 - [[what-a-slice-produces]] — a slice records and does not rewrite, why a
@@ -57,7 +59,8 @@ and nothing about depth.
   rigours of the same one. Read when deciding which you want, or when the two
   look interchangeable.
 
-**Templates** — [a sweep](templates/sweep.md) · [a slice](templates/slice.md)
+**Templates** — [a sweep](templates/sweep.md) · [a slice](templates/slice.md) ·
+[presenting a file](templates/file-presentation.md)
 
 ## Worth knowing before reading further
 
@@ -124,6 +127,45 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.8.0` — **how a file is presented, and going first as a declared
+arrangement.**
+
+**Found by the first slice, which spent its first three files arguing about
+presentation rather than about the files.** [[presenting-a-file]] settles it, with
+[the shape in a template](templates/file-presentation.md) for both modes:
+**one file at a time** — a cluster presented at once buys nothing, since the
+reader can only read one while the others scroll away — then a data block, a
+summary of what the file *is*, what the agent makes of it, and **only then the
+file opened.** A reader wants to know what they are looking for before they
+change windows.
+
+**The data block has to earn each row**, and the one that repays most is
+`cross-check`: a documented list against the code it lists, a count against
+what it counts, a flag against `--help`. **It is where a stale document
+announces itself, and it costs one command.** The starting set is six rows and
+is explicitly not a contract.
+
+**Open the file rather than printing a path.** A path is clickable in some
+terminals and not others, and a reader who has to select and paste has been
+given a chore. Ask once what opens files on this machine, then use it — at the
+line under discussion, not the top.
+
+**Deep and shallow are different presentations**, declared per area beside the
+pairing: deep gives the file in full and says what to attend to, shallow
+summarises and says what is wrong.
+
+**And going first is now a declared arrangement rather than a per-file
+exception**, which closes a gap this sweep recorded before its first slice. A
+reader may decide at the start that a whole area works that way — *show me the
+file with your read attached* — and it is roughly twice as fast. **What it
+costs is not nothing**: anchoring still operates, and some of what they would
+have seen unaided is gone. The protection is reduced rather than removed,
+because they have the file itself. **So it is declared, never drifted into** —
+a sweep that slid into it one file at a time lost the property without anybody
+choosing to.
+
+Minor: new content, and one workflow step restated.
 
 `0.7.0` — **a row finishes two ways, and challenge is not veto.**
 
