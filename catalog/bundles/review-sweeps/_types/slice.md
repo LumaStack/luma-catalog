@@ -9,7 +9,7 @@ fields:
   contributors:
     field_presence: recommended
     field_type: list of actor
-    desc: "everyone present, human and agent alike (§7.4)"
+    desc: "everyone present, human and agent alike"
 ---
 
 # Slice

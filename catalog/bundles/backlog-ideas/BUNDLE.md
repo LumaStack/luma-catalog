@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.11.2
-published: 2026-08-27
+version: 0.11.3
+published: 2026-08-28
 consumers: [project, organization]
 entrypoint: policy/capturing-ideas
 description: Ideas as individual files rather than one growing IDEAS.md — what earns a file, how capture stays fast, and how the list gets tended rather than accumulating.
@@ -115,7 +115,11 @@ about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
 
-`0.11.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+`0.11.3` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+
+Patch: wording only. No rule, field or procedure changed.
+
+`0.11.2` — **`entry_point` is now `entrypoint`.** One word, so the same word names the same thing at every level it appears.
 
 Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 

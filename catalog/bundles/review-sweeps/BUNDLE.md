@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.6.0
+version: 0.6.1
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -105,6 +105,10 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.6.1` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+
+Patch: wording only. No rule, field or procedure changed.
 
 `0.6.0` — **the comparison with audits is a background document, and it is no
 longer wrong.**

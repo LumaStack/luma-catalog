@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.8.0
+version: 0.8.2
 published: 2026-08-28
 consumers: [project, organization]
 entrypoint: policy/audit-layout
@@ -77,28 +77,34 @@ audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
 
-`0.8.0` — **complete coverage is named as somebody else's practice.**
+`0.8.2` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
 
-An audit answers a question and can be finished after three files; it owes a
-reader only a statement of what it did not examine. **Nothing said so**, which
-left *audit the whole codebase* looking like an ordinary request — and stretching
-one that way produces a commit pin false long before the end, plus an implied
-completeness the shape cannot deliver. **The tell is somebody asking an audit how
-far through it is.**
+Patch: wording only. No rule, field or procedure changed.
 
-`audit-layout` now points at `lumastack/luma-catalog/review-sweeps` for that,
-named rather than linked, and states the distinction that actually matters in
-the other direction: **an audit puts somebody accountable on the hook to answer
-every finding, and a sweep puts nobody on the hook at all.** Where a sweep turns
-up something needing an accountable answer, it belongs here.
+`0.8.1` — **the pointer to review sweeps is withdrawn.**
 
-**No comparison table, deliberately.** The full one lives in that bundle, and a
-second copy here would drift — which this catalog treats as a finding rather
-than a merge.
+`0.8.0` added a subsection routing *audit the whole codebase* to
+`lumastack/luma-catalog/review-sweeps`. **That bundle is `draft`**, and a settled
+practice pointing at an experimental one lends it standing it has not earned —
+every adopter of this bundle would have been told about something that may not
+survive.
 
-Minor: new content. Nothing an adopter must do has changed.
+**The direction was wrong, not just the timing.** A new practice has to situate
+itself against what already exists, and it does: that bundle names this one.
+**An established practice acquires no matching obligation**, or it slowly fills
+with pointers to experiments, each of which has to be removed by somebody who
+notices it went away.
 
-`0.7.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+**The gap it was filling is real and stays open.** Nothing here says an audit
+answers a question rather than covering a territory, so *audit the whole
+codebase* still reads as an ordinary request. Filling that needs a sentence about
+what an audit *is*, not a signpost to somebody else's bundle — and it is better
+written when whatever it points at has stopped moving.
+
+Patch: content withdrawn. Nobody adopted `0.8.0`, and nothing an adopter must do
+has changed in either direction.
+
+`0.7.2` — **`entry_point` is now `entrypoint`.** One word, so the same word names the same thing at every level it appears.
 
 Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 

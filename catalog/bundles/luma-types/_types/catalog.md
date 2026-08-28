@@ -63,12 +63,12 @@ perfectly usable from a git URL or a tarball.
 would give Bundles dependencies, which alters what a catalog resolves. Were this
 built in, adopting that draft would mean releasing the format.
 
-So it is namespaced and vendored instead — the sharing mechanism §10.4 already
+So it is namespaced and vendored instead — the sharing mechanism the format already
 describes. The prefix is what makes anyone else's `catalog` possible.
 
 ## Declaring a field without a `field_type`, deliberately
 
-`requires` is a nested record, and §10.2 has no user-definable object shape —
+`requires` is a nested record, and the format's field declarations have no user-definable object shape —
 `actor_event` is a fixed built-in, not a pattern to follow. Declaring it without
 describing its shape is legal and buys the half that matters: discovery. The
 shape is documented below instead.
@@ -100,7 +100,7 @@ requires:
     tags: [infrastructure]
 ```
 
-`obligation` reuses the format's own field ladder (§5) rather than inventing a
+`obligation` reuses the format's own field ladder rather than inventing a
 parallel vocabulary — the same question, *how strongly is this expected*, asked
 about a Bundle instead of a field:
 
@@ -114,7 +114,7 @@ about a Bundle instead of a field:
 A Bundle may appear more than once. Every entry whose tags match applies, and the
 strongest obligation among them is in force — so *mandatory for infrastructure,
 recommended for everyone else* is two entries rather than a conditional. That is
-the same most-restrictive-wins rule §10.3 uses for inherited field obligations.
+the same most-restrictive-wins rule inheritance uses for inherited field obligations.
 
 ### `requires` does not say "if you take A, take B"
 

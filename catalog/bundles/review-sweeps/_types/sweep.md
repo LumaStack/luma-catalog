@@ -21,7 +21,7 @@ fields:
   contributors:
     field_presence: recommended
     field_type: list of actor
-    desc: "everyone reading in this sweep, human and agent alike (§7.4)"
+    desc: "everyone reading in this sweep, human and agent alike"
   archived:
     field_presence: optional
     field_type: date
