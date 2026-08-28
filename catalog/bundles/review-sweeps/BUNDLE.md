@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.5.0
+version: 0.6.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -49,6 +49,12 @@ and nothing about depth.
   a sweep is resumed.
 - [[close-a-sweep]] — finish or abandon one without the index telling a lie
   afterwards.
+
+**Background**
+
+- [[sweeps-and-audits]] — why these are different practices rather than two
+  rigours of the same one. Read when deciding which you want, or when the two
+  look interchangeable.
 
 **Templates** — [a sweep](templates/sweep.md) · [a slice](templates/slice.md)
 
@@ -99,6 +105,40 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.6.0` — **the comparison with audits is a background document, and it is no
+longer wrong.**
+
+**Three of its five rows had gone false in `0.5.0`.** It still said fixing
+happens in the slice, that independence is *impossible, and not wanted*, and
+that a sweep is one person reading for themselves — all true when written, all
+untrue within a day. A comparison table is exactly the shape that rots quietly,
+because nothing breaks when it does.
+
+**Rewritten around what actually separates them.** An audit answers a question
+and can be complete after three files; a sweep covers a territory and is
+complete only when every row is accounted for. **The one to remember is
+obligation** — an audit puts somebody accountable on the hook to answer every
+finding, and a sweep puts nobody on the hook at all. The lifecycles follow from
+that rather than standing on their own.
+
+**Both need independence, for opposite reasons**, which is the part worth
+having written down: an audit's protects against self-grading, a sweep's
+against anchoring. Same mechanism, different failure, and a sweep needing it at
+all is days old.
+
+**It is `concepts/`, and the bundle's first.** The argument had grown longer
+than the rule it justified and was sitting in the entrypoint policy, so every
+reader of the bundle paid for an audit comparison most of them were not asking
+for. Background is read *through* the rules that reach it, and the operational
+half — *do not file a sweep as an audit* — stays in the policy where somebody
+about to do it will meet it.
+
+**It lives here rather than in `audit-records`, and there is no second copy.**
+Audits are a known practice; sweeps are not, so the new one is what has to say
+what it is not. Two copies would drift, which is a finding rather than a merge.
+
+Minor: new content and a correction to prose that had gone stale.
 
 `0.5.0` — **the parties, and what each of them may do.**
 
