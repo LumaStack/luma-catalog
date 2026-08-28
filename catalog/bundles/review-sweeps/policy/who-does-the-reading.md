@@ -78,15 +78,28 @@ So it has to be checked deliberately rather than felt: **read the last three
 slices and ask whether the reader ever disputed anything.** If not, that is a
 result about the sweep and not about the code, and it belongs in the notes.
 
-## Landing changes with no human in the loop
+## The sweep records; a third party fixes
 
-**Not forbidden, and worth being clear-eyed about.** An agent-agent sweep that
-proposes, agrees with itself, and merges is an unsupervised agent editing a
-codebase with a review-shaped record attached.
+**A sweep does not change code** — it records what is wrong and, optionally,
+what it would do about it. [[what-a-slice-produces]] has the rule.
 
-**Whether that is acceptable is the project's call, not this bundle's** — it
-depends on what else gates a merge. Where nothing else does, a human before the
-merge is the cheap version of the check the previous section describes.
+**Where a person is in the sweep, a fix may land immediately** because they are
+there to authorise it and the context is hot.
+
+**Where nobody is, nothing lands during the sweep at all.** A third party works
+from the record afterwards, separate from both sweep parties on the same
+reasoning that separates the reader from whoever orients: a party that argued a
+finding into existence will implement it rather than re-examine it.
+
+**The gap between recording and fixing is the point.** It is the only moment
+somebody can look at the findings as a set before any code has moved — drop the
+wrong ones, merge the four that are the same finding, notice the one that
+changes what the others mean. **Once the fixes are in, none of that is
+available.**
+
+**And the proposals are suggestions, not law.** They are stale from the moment
+they are written and staler by the day, which matters most here: the gap is
+longest exactly where nobody human saw the file.
 
 ## Say which arrangement it was
 

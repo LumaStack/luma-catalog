@@ -92,13 +92,24 @@ run alone.
 as it goes and the ninth slice routinely falsifies the third; that is not a
 failure, it is the compounding the order was chosen for.
 
-## 6. Act, and route everything out
+## 6. Record, and route everything out
 
-Fix what you both understood here. Capture the rest where it belongs — see
-[[what-a-slice-produces]]. Nothing worth keeping stays in the slice note.
+**Record before fixing, and record whether or not anything gets fixed.** What
+is wrong, where, why it matters — and where you can see the answer, the fix as
+a *proposal*. See [[what-a-slice-produces]].
 
-**Propose before applying.** A change the reader has not seen turns their
-review into a diff review of yours.
+**Write the reasoning, not just the diff.** A proposal is stale from the moment
+it is written; the reasoning survives being stale and the diff does not.
+
+**A fix may land now only if a person is in the sweep and says so.** With
+nobody human here, nothing lands during the slice — a third party works from
+the record afterwards, and the gap is where the findings get checked as a set.
+
+**Propose before applying, always.** A change the reader has not seen turns
+their review into a diff review of yours. And a yes to one fix is not a yes to
+the same fix in four other places.
+
+Nothing worth keeping stays in the slice note.
 
 ## 7. Write the slice and update the index
 

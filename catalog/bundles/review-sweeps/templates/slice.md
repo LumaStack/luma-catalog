@@ -57,12 +57,16 @@ the ninth slice routinely falsifies the third.>
 keeping stays in this note — it is archived with the sweep and eventually
 deleted.>
 
-| what | where it went |
-| --- | --- |
-| retry loop swallows the timeout | fixed — PR #214 |
-| this whole layer wants restructuring | idea — `.luma/backlog/ideas/flatten-the-transport-layer.md` |
-| why the cache is keyed on the raw path | decision — ADR-0012 |
-| the four config readers disagree | finding — audit 2026-09-02-a1b2c3d4e5f6 |
+| what is wrong | where it went | fix proposed? |
+| --- | --- | --- |
+| retry loop swallows the timeout | idea — `.luma/backlog/ideas/retry-swallows-timeout.md` | yes — reasoning recorded, landed as PR #214 |
+| this whole layer wants restructuring | idea — `.luma/backlog/ideas/flatten-the-transport-layer.md` | no — too large to see from here |
+| why the cache is keyed on the raw path | decision — ADR-0012 | n/a — nothing wrong |
+| the four config readers disagree | finding — audit 2026-09-02-a1b2c3d4e5f6 | yes, as a suggestion only |
+
+<A proposed fix is a suggestion, never a directive — record why, not just the
+diff. Whoever applies it re-derives first, because it is stale from the moment
+it is written.>
 
 ## Still open
 
