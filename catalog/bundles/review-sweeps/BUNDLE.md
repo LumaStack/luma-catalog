@@ -1,11 +1,11 @@
 ---
 type: bundle
-version: 0.3.0
+version: 0.4.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
 entrypoint: policy/how-a-sweep-is-stored
-description: Reading a whole codebase with an agent beside you — ordered, resumable, file by file, with the person's own read as the thing being protected.
+description: The review sweep — reading a whole codebase with an agent beside you, ordered and resumable, with the person's own read as the thing being protected.
 ---
 
 # Review sweeps
@@ -15,10 +15,16 @@ has no natural unit, no end, and no way to tell at any moment how much is left
 — so it starts, covers whatever was interesting, and stops without anybody
 deciding it had.
 
-A **sweep** gives it the three things it lacks: an order chosen on purpose, an
-index that makes coverage checkable, and a unit of work small enough to finish
-in an evening. It runs for weeks and survives every session boundary in
-between, because all of its state is on disk rather than in a conversation.
+A **review sweep** gives it the three things it lacks: an order chosen on
+purpose, an index that makes coverage checkable, and a unit of work small
+enough to finish in an evening. It runs for weeks and survives every session
+boundary in between, because all of its state is on disk rather than in a
+conversation.
+
+*Called a **sweep** in everyday use.* The full name is worth having because
+each half fixes the other's weakness — *review* says careful reading with
+judgement and nothing about coverage; *sweep* says complete ordered coverage
+and nothing about depth.
 
 ## What is here
 
@@ -30,19 +36,18 @@ between, because all of its state is on disk rather than in a conversation.
   after they have spoken. The rule the practice is built around.
 - [[choosing-an-order]] — five orders including a led one, what each buys and
   costs, and why the choice is recorded rather than defaulted to.
-- [[what-a-sweep-session-produces]] — where each reaction goes, and why
-  nothing worth keeping stays inside the sweep.
+- [[what-a-slice-produces]] — where each reaction goes, why nothing worth
+  keeping stays inside the sweep, and why a slice is not a pull request.
 
 **Workflows**
 
 - [[start-a-sweep]] — scope, order, index, and an honest estimate of the size.
-- [[review-next]] — one sweep session. This is the loop, and it is also how
+- [[review-next]] — one slice. This is the loop, and it is also how
   a sweep is resumed.
 - [[close-a-sweep]] — finish or abandon one without the index telling a lie
   afterwards.
 
-**Templates** — [a sweep](templates/sweep.md) · [a sweep
-session](templates/sweep-session.md)
+**Templates** — [a sweep](templates/sweep.md) · [a slice](templates/slice.md)
 
 ## Worth knowing before reading further
 
@@ -62,14 +67,13 @@ has neither: the code moves as you go, and the person finding is the person
 fixing. Filing a sweep as an audit produces a commit pin that is false by the
 third file and a response written by its own auditor.
 
-**Coverage is derived, not stored.** Each sweep session says which files it
-covered; the index in `sweep.md` is a cache of that. When they disagree, the
-sweep sessions win.
+**Coverage is derived, not stored.** Each slice says which files it covered;
+the index in `sweep.md` is a cache of that. When they disagree, the slices win.
 
 **Nothing worth keeping stays in the sweep.** It is backlog — it gets archived
 and eventually deleted — so a fix, an idea, a decision or a finding leaves at
-the sweep session that produced it. A sweep session that ends with six
-observations in a note has produced nothing.
+the slice that produced it. A slice that ends with six observations in a note
+has produced nothing.
 
 ## What it does not own
 
@@ -82,8 +86,8 @@ already uses, and the routing rule is unchanged.
 
 **Ending a session.** A sweep spans many, and what to write when one stops
 belongs to `session-manager`. What this bundle guarantees is that there is
-little to hand over: the index and the sweep sessions are on disk and
-committed, so a sweep survives a crash without anybody having prepared for one.
+little to hand over: the index and the slices are on disk and committed, so a
+sweep survives a crash without anybody having prepared for one.
 
 ## Consumers
 
@@ -93,11 +97,60 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
-`0.3.0` — **`sitting` is now `sweep_session`, and the bundle is marked `draft`.**
+`0.4.0` — **`sweep_session` is now `slice`, and a slice is no longer a pull
+request.**
 
-**The old name had to be taught.** *Sitting* was invented vocabulary carrying no
-clue about what it belonged to, so a reader met it cold and either guessed or
-looked it up. `sweep_session` says what it is, and the compound is always
+**The name failed twice for the same hidden reason**, which was worth finding.
+`sitting` and `session` both named *the human experience of doing the work* —
+you sit down, you have a session — and the thing is not defined by the
+experience. It is defined by the material: you stop when the cluster is read,
+not when you are tired. **A slice is material-side**, it implies the whole it
+was cut from and the siblings beside it, and it needs nobody taught.
+
+**It also settled a design question the word was quietly hiding.** *Slice* and
+*pass* differ on whether the same file can be covered twice — and the bundle
+had it both ways, with an index that partitioned and a reconciliation step that
+sent rows back to `pending`. **Slices partition the sweep**: each file is read
+once, and re-covering is an exception the index records with the earlier slice
+named. So `review-next` no longer resets a row unilaterally — it says what
+changed and asks, because the person who read it is the one who can tell.
+
+**The gain is visibility.** A ledger that churns silently looks the same at 60%
+whether nothing drifted or half of it did.
+
+**A slice is not a pull request boundary**, which was the last of the four
+flagged guesses to fall. Most slices produce no change at all — *reviewed and
+clean* is the common result — so the rule generated empty pull requests and
+buried the ones that mattered. The two sizes answer different questions: a
+slice is sized by what you can comprehend together, a pull request by what
+reviews well. **Fixes now batch by kind across slices**, which is also how the
+sweep learns, since slice 009 routinely reveals that 003 and 005 had the same
+problem. The only surviving constraint is staleness — do not read on top of
+your own large unlanded pile — and integration is left to `git-workflow`.
+
+**The path is `.luma/backlog/sweeps/<slug>/`.** It was `reviews/`, which was a
+slip: the container should carry the parent's name.
+
+**Two smaller additions.** Orientation now has to disclose its own uncertainty
+— a confident wrong orientation frames the person's read exactly as a verdict
+would, so unfamiliar territory is a reason to orient *less*, not harder. And a
+first sweep is asked to note where the practice fought it, since the bundle is
+`draft` and that is the only way the remaining guesses get corrected.
+
+**Breaking**, shipped as minor under the pre-1.0 allowance: the type, three
+documents and the directory are renamed, and the storage path moved. No
+adopters, so the migration cost is zero.
+
+*On the name: the full form is a **review sweep**, the short form a **sweep** —
+each half of the compound covers the other's blind spot, since* review *says
+nothing about coverage and* sweep *says nothing about depth.*
+
+`0.3.0` — **`sitting` is now `sweep_session`, and the bundle is marked
+`draft`.**
+
+**The old name had to be taught.** *Sitting* was invented vocabulary carrying
+no clue about what it belonged to, so a reader met it cold and either guessed
+or looked it up. `sweep_session` says what it is, and the compound is always
 qualified — it never appears as a bare *session*, which this estate spends on
 agent sessions.
 
@@ -161,8 +214,8 @@ for them:
 
 - ~~**Three to eight files per sweep session**~~ — wrong, and corrected in
   `0.2.0`. It was an application-code number stated as a universal one.
-- **One pull request per sweep session** may be too coarse for a sweep that fixes
-  little and too fine for one that fixes a lot.
+- ~~**One pull request per sweep session**~~ — wrong, and corrected in `0.4.0`.
+  Most slices produce no change at all, so it generated empty pull requests.
 - **The index as a table in one file** is chosen against this estate's usual
   one-file-per-item instinct, on the grounds that a coverage ledger's whole
   value is being readable at a glance and that a sweep has one writer. If sweeps

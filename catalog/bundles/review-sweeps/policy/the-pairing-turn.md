@@ -23,13 +23,13 @@ right, arguing costs effort, and the list arrived first and framed everything
 after it.
 
 The sweep then produces the agent's judgement with somebody's name on it. It
-feels productive — a file per sweep session, findings, fixes, a green tick —
-and the thing it was for did not happen.
+feels productive — a file per slice, findings, fixes, a green tick — and the
+thing it was for did not happen.
 
 **The tell is a person who agrees with everything.** A reader with their own
 view disputes something eventually. A clean run of agreements over several
-sweep sessions is nearly always somebody reviewing a list rather than a
-codebase, and it is worth stopping to say so.
+slices is nearly always somebody reviewing a list rather than a codebase, and
+it is worth stopping to say so.
 
 ## The order
 
@@ -38,7 +38,7 @@ codebase, and it is worth stopping to say so.
 | 1 | **agent orients** | what this is, how it connects, what moved recently. **No verdicts.** |
 | 2 | **the person reads, and speaks first** | their reaction, in their words, before the agent's |
 | 3 | **agent responds** | agrees, disagrees, adds what they did not raise |
-| 4 | **both act** | fix, record, or move on — see [[what-a-sweep-session-produces]] |
+| 4 | **both act** | fix, record, or move on — see [[what-a-slice-produces]] |
 
 **Step 2 is the whole rule.** One and three are ordinary work and go wrong only
 by being run in the wrong order.
@@ -58,6 +58,19 @@ being asked for:
 **A fact narrows where to look. A verdict says what to conclude.** Orientation
 is allowed to be dense, technical and long — what it may not do is arrive at
 the answer.
+
+### Say when you are unsure
+
+**A confident wrong orientation is worse than no orientation**, and it fails in
+exactly the way this policy exists to prevent: it frames the person's read
+before they start, and they will spend the slice looking where you pointed.
+
+So orientation carries its own uncertainty. *I cannot tell whether this lock is
+held on the third path* is useful. Quietly picking the likeliest reading and
+stating it as fact is the same failure as opening with verdicts, wearing a
+different hat.
+
+**Unfamiliar territory is a reason to orient less, not to orient harder.**
 
 ### The exception, kept narrow on purpose
 
@@ -82,7 +95,7 @@ Three things belong here and nowhere else:
 - **What they did not mention.** They were reading for one thing; you were not.
 - **Where you disagree**, with the reason rather than the conclusion.
 - **What this file makes you doubt about one already reviewed.** A sweep learns
-  as it goes, and the fifth sweep session routinely falsifies the second.
+  as it goes, and the fifth slice routinely falsifies the second.
 
 ## When the person asks you to go first
 
@@ -92,8 +105,8 @@ read after they have given theirs.
 
 **If they ask again, do it.** Their sweep, their call, and a rule nobody can
 override gets the whole practice abandoned rather than argued with. Note in the
-sweep session that the agent read first; a reader can discount a stated
-weakness, and an unstated one is the harder problem.
+slice that the agent read first; a reader can discount a stated weakness, and
+an unstated one is the harder problem.
 
 **Some files genuinely warrant it** — generated code, a vendored dependency, a
 file in a language they do not read. Going first there is not the failure mode;

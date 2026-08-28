@@ -37,7 +37,7 @@ See [[choosing-an-order]]. Narrative is the usual answer for a first sweep;
 directory order is right more often than it sounds.
 
 **One sentence of reason is enough**, and it is what makes the order survive
-the sweep session where a different one would be more convenient.
+the slice where a different one would be more convenient.
 
 ## 4. Build the index
 
@@ -55,15 +55,15 @@ read or not read, and the ones omitted for being trivial are exactly where a
 stale copy of something hides.
 
 **Group the rows into the clusters you expect to review together**, but do not
-over-plan it: the clustering is a first guess and every sweep session will
-revise the one after it.
+over-plan it: the clustering is a first guess and every slice will revise the
+one after it.
 
 ## 5. Say how long this will actually take
 
 **Give a band, say it is a guess, and replace it with a measurement after two
-sweep sessions.** A number said at the start is what stops a sweep dying at 15%
-with somebody concluding they were slow rather than that it was long. A number
-said *confidently* at the start is usually wrong.
+slices.** A number said at the start is what stops a sweep dying at 15% with
+somebody concluding they were slow rather than that it was long. A number said
+*confidently* at the start is usually wrong.
 
 ### Estimate from the material, never from the file count
 
@@ -72,21 +72,21 @@ mis-sold in both directions at once. What costs time is the reasoning a file
 demands, and that varies by more than an order of magnitude across a single
 repository.
 
-| material | a sweep session is roughly | so |
+| material | a slice is roughly | so |
 | --- | --- | --- |
 | **prose, docs, config** | a dozen files, sometimes thirty | **a hundred short documents is days, not months** |
 | **ordinary application code** | three to eight files | the middle case, and where the guess is safest |
 | **dense logic** — concurrency, parsing, anything with real invariants | one or two files, and sometimes half of one | a small directory can outlast a large one |
 
 **Say which of these the scope actually is**, and split the estimate when it is
-several. *Roughly four sweep sessions for `docs/`, and fifteen for `src/`* is a
-useful sentence. *Nineteen sweep sessions* is not, because the two halves are
-not made of the same stuff and the person will plan against the wrong one.
+several. *Roughly four slices for `docs/`, and fifteen for `src/`* is a useful
+sentence. *Nineteen slices* is not, because the two halves are not made of the
+same stuff and the person will plan against the wrong one.
 
 ### Then stop guessing
 
-**After the second sweep session you have a rate.** Use it, say what it was,
-and revise the number in `sweep.md`.
+**After the second slice you have a rate.** Use it, say what it was, and revise
+the number in `sweep.md`.
 
 That revision is worth more than any care taken over the initial guess — it is
 measured on this material, by these people, at whatever depth they actually
@@ -99,8 +99,18 @@ matter, finished, beats a sweep of everything, abandoned** — and cutting at th
 start is a scope decision anybody can see, while cutting by acceleration is one
 that only shows up as coverage nobody trusts.
 
-## 6. Write `sweep.md` and commit it
+## 6. If this is a first sweep, say so
+
+The practice itself is `draft`. **Keep a line in each slice note for where it
+fought you** — an order that stopped working, an estimate that was wrong by
+double, a step that produced nothing.
+
+That costs a sentence per slice and it is the only way the guesses get
+corrected. A sweep that ran fine and taught nobody anything about sweeping is a
+missed opportunity the second sweep pays for.
+
+## 7. Write `sweep.md` and commit it
 
 [The sweep template](../templates/sweep.md) has the shape. Commit before the
-first sweep session — the index is the thing that makes the sweep resumable,
-and a sweep that only exists in a conversation is one crash from gone.
+first slice — the index is the thing that makes the sweep resumable, and a
+sweep that only exists in a conversation is one crash from gone.
