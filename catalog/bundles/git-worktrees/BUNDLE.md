@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.6.2
-published: 2026-08-27
+version: 0.6.3
+published: 2026-08-28
 consumers: [project]
 entrypoint: policy/worktree-isolation
 description: Isolated worktrees for concurrent agents in one repository — where they live, what has to be provisioned, and how to tear them down without leaving wreckage.
@@ -102,7 +102,11 @@ failure looks exactly like the copy never happened. **Append.**
 
 ## Version
 
-`0.6.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+`0.6.3` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+
+Patch: wording only. No rule, field or procedure changed.
+
+`0.6.2` — **`entry_point` is now `entrypoint`.** One word, so the same word names the same thing at every level it appears.
 
 Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 

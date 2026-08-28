@@ -61,7 +61,7 @@ those three acts — not the committees around them.
 | 3 | `verification.md` | the **auditor** again |
 
 **Any of the three may be a person, an agent, or a command.** They are recorded
-as actors (§7.4), so `human:fsmith`, `agent:opus-5`, and
+as actors, so `human:fsmith`, `agent:opus-5`, and
 `process:luma-foreman-inspect` are all valid and all mean something different to
 a reader. Record the most specific one available — a report attributed to
 `unknown:unknown` cannot be weighed against anything.

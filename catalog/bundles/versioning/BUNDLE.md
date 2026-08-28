@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.5.1
-published: 2026-08-27
+version: 0.5.2
+published: 2026-08-28
 consumers: [project, organization]
 entrypoint: policy/semantic-versioning
 description: What a version number promises, when to bump which part, and the rules that get decided wrongly — for anything versioned, not only releases.
@@ -55,7 +55,11 @@ rules are identical.
 
 ## Version
 
-`0.5.1` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+`0.5.2` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+
+Patch: wording only. No rule, field or procedure changed.
+
+`0.5.1` — **`entry_point` is now `entrypoint`.** One word, so the same word names the same thing at every level it appears.
 
 Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 

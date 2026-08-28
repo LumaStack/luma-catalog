@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.11.0
+version: 0.11.1
 published: 2026-08-28
 consumers: [project, organization]
 entrypoint: policy/organizing-a-bundle
@@ -84,6 +84,10 @@ may later promote, and the procedure is the same at either end.
 
 ## Version
 
+`0.11.1` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+
+Patch: wording only. No rule, field or procedure changed.
+
 `0.11.0` — **a bundle no longer has one correct starting place.** The rule said
 a bundle is born in the project that needed it and promoted from there, which
 made two ordinary things read as violations: writing a bundle straight into a
@@ -116,7 +120,7 @@ in the manifest, then let first contact rewrite what it rewrites.
 Minor. Nothing an adopter must do has changed, and a bundle that followed the
 old rule is still following this one.
 
-`0.10.4` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears. The policy, the three workflows and the template all taught the old spelling, so each is corrected — a bundle that teaches a field name is wrong in a way that spreads.
+`0.10.4` — **`entry_point` is now `entrypoint`.** One word, so the same word names the same thing at every level it appears. The policy, the three workflows and the template all taught the old spelling, so each is corrected — a bundle that teaches a field name is wrong in a way that spreads.
 
 Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 

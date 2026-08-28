@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.6.2
-published: 2026-08-27
+version: 0.6.3
+published: 2026-08-28
 consumers: [project]
 entrypoint: workflows/publish-release
 description: Cutting and publishing GitHub releases — choosing the version, the changelog, release titles and contents, and the gh workflow.
@@ -63,7 +63,11 @@ be yours to do.
 
 ## Version
 
-`0.6.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+`0.6.3` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+
+Patch: wording only. No rule, field or procedure changed.
+
+`0.6.2` — **`entry_point` is now `entrypoint`.** One word, so the same word names the same thing at every level it appears.
 
 **Also: a release-title example named `preload`**, which the format released
 in `v0.0.12`. An example's content is arbitrary, so it cost nothing to stop

@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.8.1
+version: 0.8.2
 published: 2026-08-28
 consumers: [project, organization]
 entrypoint: policy/audit-layout
@@ -77,6 +77,10 @@ audits conformance across projects. The exchange is the same shape either way.
 
 ## Version
 
+`0.8.2` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
+
+Patch: wording only. No rule, field or procedure changed.
+
 `0.8.1` — **the pointer to review sweeps is withdrawn.**
 
 `0.8.0` added a subsection routing *audit the whole codebase* to
@@ -100,7 +104,7 @@ written when whatever it points at has stopped moving.
 Patch: content withdrawn. Nobody adopted `0.8.0`, and nothing an adopter must do
 has changed in either direction.
 
-`0.7.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+`0.7.2` — **`entry_point` is now `entrypoint`.** One word, so the same word names the same thing at every level it appears.
 
 Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 

@@ -13,7 +13,7 @@ fields:
   superseded_by:
     field_presence: optional
     field_type: wikilink
-    desc: "the decision that replaced this one — quoted (§8); set together with lifecycle_status: archived"
+    desc: "the decision that replaced this one — quoted; set together with lifecycle_status: archived"
   archived:
     field_presence: recommended
     field_type: date
@@ -46,7 +46,7 @@ root type, and between them they cover what an ADR calls *status*:
 | retired | `lifecycle_status: archived`, no `superseded_by` |
 | **rejected** | **no distinct expression — see below** |
 
-Supersession is a **relationship, not a status** — §6 of the specification says
+Supersession is a **relationship, not a status** — the specification's lifecycle rules say
 so directly — which is why `superseded_by` is a wikilink rather than a state.
 That makes the successor reachable from the document a reader actually lands on.
 
@@ -244,8 +244,8 @@ superseded_by: "[[ADR-0012-catalogs-do-not-inherit]]"
 
 **Quote it.** `[[…]]` is YAML flow-sequence syntax, so an unquoted wikilink
 parses as a nested array rather than a string and no parser complains — the
-record stays valid and the redirect simply never resolves. §8 of the
-specification carries the warning; this is the field in this bundle most likely
+record stays valid and the redirect simply never resolves. The specification's rules on links
+carry the warning; this is the field in this bundle most likely
 to meet it.
 
 The old reasoning stays readable, which is what lets someone see why the

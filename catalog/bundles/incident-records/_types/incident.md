@@ -31,10 +31,10 @@ fields:
   detected_by:
     field_presence: required
     field_type: actor
-    desc: "who or what noticed (§7.4). A `process:` here and a `human:` there is the difference between a check that works and one that does not"
+    desc: "who or what noticed. A `process:` here and a `human:` there is the difference between a check that works and one that does not"
   responders:
     field_presence: recommended
-    desc: "who acted. No field_type: a list of actors, which §10.2 cannot yet express"
+    desc: "who acted. No field_type: a list of actors, which the format's field declarations cannot yet express"
   impact:
     field_presence: required
     field_type: text
@@ -72,7 +72,7 @@ template is a complete document with its required sections, and
 ## The limitation, stated rather than discovered
 
 **A Type Definition cannot say *if `kind` is `data-breach` then jurisdictions are
-required*.** `field_presence` is per-field and unconditional (§10.2), so nothing
+required*.** `field_presence` is per-field and unconditional, so nothing
 mechanical enforces the per-kind requirements.
 
 **That is a real gap and it is carried deliberately.** The alternatives were a
