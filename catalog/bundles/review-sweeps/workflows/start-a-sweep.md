@@ -16,22 +16,74 @@ description: Settle what is being read and what is not, choose an order, and bui
 | *find out whether X is a problem* | a targeted audit. Answers one question, and somebody else can respond to it |
 | *I want to read this whole thing properly* | **a sweep** |
 
-**Say the cost out loud before agreeing** — see step 5 for how to arrive at it.
+**Say the cost out loud before agreeing** — see step 6 for how to arrive at it.
 Somebody who wanted an afternoon's reassurance should find out at the start
 rather than at file nine, and nobody is offended by being asked.
 
-## 2. Settle the scope, and what is excluded
+## 2. Settle what the sweep is for
 
-**Ask; do not infer.** The obvious scope is *the repository*, and it is usually
-wrong — vendored code, generated files, lockfiles, a subtree somebody else owns
-and a test corpus are all things a person will happily exclude when asked and
-will silently resent reviewing when not.
+**Ask this before scope, because the goal decides the scope.** *Everything* is
+what people answer when nobody asked them what they were trying to find out.
+
+**"Read the whole project" is a method, not a goal.** The goal is what you want
+to be true afterwards.
+
+> *For example: I inherited this and do not trust it. I want to answer questions
+> about this system without opening it. We keep shipping the same class of bug.
+> Somebody joins in a month and I want to know what will embarrass us. This is
+> about to be made public.*
+
+### Push once for a version you can check against
+
+**A goal you cannot check against is a mood.** Not a metric — just something
+that could be observed:
+
+| vague | checkable |
+| --- | --- |
+| *I want to understand it* | *I can answer questions about any part without opening the file* |
+| *make sure there are no mistakes* | *nothing here would embarrass us if a customer read it* |
+| *clean it up* | *a new joiner can find where anything lives in a minute* |
+
+**Understanding is a legitimate goal** and needs no apology. It gets sharper by
+asking *understand it well enough to do what?* — the answer names the test.
+
+**One push, then take what you get.** Somebody who genuinely just wants to read
+their own code is allowed to, and interrogating them into a measurable
+objective buys a worse answer than the honest vague one.
+
+### What the goal does once the sweep is running
+
+**It decides what is worth stopping on.** Two people with different goals
+reading the same file flag different things. With no goal written down the
+agent picks for them, silently, and its pick is the one that sticks.
+
+**It is the drift check.** When three slices running turn up nothing related to
+the goal, one of two things is true and both are worth saying out loud: the
+goal was wrong, or the sweep has wandered. Neither is visible without something
+to compare against.
+
+### A sharp goal is safer here than in an audit
+
+**A stated goal biases what you notice.** In a targeted audit that is a real
+hazard, because an audit only looks where it was aimed.
+
+**A sweep covers everything regardless.** The index does not care what you were
+looking for, so the coverage stays honest even where the attention did not.
+That is why a sweep can afford a sharper goal than an audit can.
+
+## 3. Settle the scope, and what is excluded
+
+**Ask; do not infer, and let the goal narrow it.** The obvious scope is *the
+repository*, and it is usually wrong — vendored code, generated files,
+lockfiles, a subtree somebody else owns and a test corpus are all things a
+person will happily exclude when asked and will silently resent reviewing when
+not.
 
 **Write both halves down.** What is in, and what was deliberately left out —
 separating what they excluded from what you did. A sweep that does not say what
 it skipped cannot make its own coverage mean anything later.
 
-## 3. Choose an order and record why
+## 4. Choose an order and record why
 
 See [[choosing-an-order]]. Narrative is the usual answer for a first sweep;
 directory order is right more often than it sounds.
@@ -39,7 +91,7 @@ directory order is right more often than it sounds.
 **One sentence of reason is enough**, and it is what makes the order survive
 the slice where a different one would be more convenient.
 
-## 4. Build the index
+## 5. Build the index
 
 Enumerate every file in scope, in the chosen order, and record the commit you
 enumerated at.
@@ -58,7 +110,7 @@ stale copy of something hides.
 over-plan it: the clustering is a first guess and every slice will revise the
 one after it.
 
-## 5. Say how long this will actually take
+## 6. Say how long this will actually take
 
 **Give a band, say it is a guess, and replace it with a measurement after two
 slices.** A number said at the start is what stops a sweep dying at 15% with
@@ -99,7 +151,7 @@ matter, finished, beats a sweep of everything, abandoned** — and cutting at th
 start is a scope decision anybody can see, while cutting by acceleration is one
 that only shows up as coverage nobody trusts.
 
-## 6. If this is a first sweep, say so
+## 7. If this is a first sweep, say so
 
 The practice itself is `draft`. **Keep a line in each slice note for where it
 fought you** — an order that stopped working, an estimate that was wrong by
@@ -109,7 +161,7 @@ That costs a sentence per slice and it is the only way the guesses get
 corrected. A sweep that ran fine and taught nobody anything about sweeping is a
 missed opportunity the second sweep pays for.
 
-## 7. Write `sweep.md` and commit it
+## 8. Write `sweep.md` and commit it
 
 [The sweep template](../templates/sweep.md) has the shape. Commit before the
 first slice — the index is the thing that makes the sweep resumable, and a

@@ -41,6 +41,11 @@ the agent agreed with everything is worth a second look.>
 <If the agent read first — because they asked, or because the file warranted
 it — say so here. A disclosed weakness can be discounted.>
 
+## Against the goal
+
+<One clause: did this slice serve what the sweep is for? Three in a row that
+did not is a signal, not a mood.>
+
 ## What this makes me doubt about earlier
 
 <Optional, and often the most valuable section. A sweep learns as it goes and

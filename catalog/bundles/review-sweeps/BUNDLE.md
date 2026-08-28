@@ -41,7 +41,8 @@ and nothing about depth.
 
 **Workflows**
 
-- [[start-a-sweep]] — scope, order, index, and an honest estimate of the size.
+- [[start-a-sweep]] — the goal, then scope, order, index, and an honest
+  estimate of the size.
 - [[review-next]] — one slice. This is the loop, and it is also how
   a sweep is resumed.
 - [[close-a-sweep]] — finish or abandon one without the index telling a lie
@@ -131,6 +132,15 @@ your own large unlanded pile — and integration is left to `git-workflow`.
 **The path is `.luma/backlog/sweeps/<slug>/`.** It was `reviews/`, which was a
 slip: the container should carry the parent's name.
 
+**A sweep is now aimed at something.** It had a scope and no goal, which meant
+nothing to check a slice against on a run that takes weeks — *read the whole
+project* is the method, not the reason. `start-a-sweep` asks what should be
+true afterwards before it asks what to cover, pushes once for an observable
+version, and takes the honest vague answer if that is what there is. The `goal`
+field is what a drifting sweep is compared against: three slices running that
+do not touch it mean the goal was wrong or the sweep has wandered, and neither
+is visible without it.
+
 **Two smaller additions.** Orientation now has to disclose its own uncertainty
 — a confident wrong orientation frames the person's read exactly as a verdict
 would, so unfamiliar territory is a reason to orient *less*, not harder. And a
@@ -138,8 +148,8 @@ first sweep is asked to note where the practice fought it, since the bundle is
 `draft` and that is the only way the remaining guesses get corrected.
 
 **Breaking**, shipped as minor under the pre-1.0 allowance: the type, three
-documents and the directory are renamed, and the storage path moved. No
-adopters, so the migration cost is zero.
+documents and the directory are renamed, the storage path moved, and `sweep`
+gains a required `goal`. No adopters, so the migration cost is zero.
 
 *On the name: the full form is a **review sweep**, the short form a **sweep** —
 each half of the compound covers the other's blind spot, since* review *says

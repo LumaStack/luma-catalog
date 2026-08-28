@@ -105,6 +105,11 @@ review into a diff review of yours.
 [The slice template](../templates/slice.md). It is a working note, not a report
 — what was covered, what was concluded, what left the sweep and where it went.
 
+**Say whether the slice served the goal.** One clause. It is how drift becomes
+visible early: three slices running that turn up nothing related to the goal
+mean either the goal was wrong or the sweep has wandered, and both are worth
+raising rather than absorbing.
+
 Mark every file in the cluster reviewed, including the ones where nothing was
 found. **Reviewed and clean is a result**, and an index that records only
 problems has unexplained gaps in place of evidence.

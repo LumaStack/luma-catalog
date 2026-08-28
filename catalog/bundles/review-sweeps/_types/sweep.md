@@ -2,6 +2,10 @@
 type: type_definition
 defines: sweep
 fields:
+  goal:
+    field_presence: required
+    field_type: text
+    desc: "what the sweep is for — what you want to be true afterwards, stated so it can be checked against"
   scope:
     field_presence: required
     field_type: text
@@ -36,6 +40,25 @@ carry is enough to resume it and enough to check its coverage.
 
 *Only what the format does not already have is declared here.* `created`,
 `lifecycle_status` and `title` are core fields and are used as they come.
+
+## `goal` is what the sweep is checked against
+
+**Not what it covers — what it is for.** *Read the whole project* is the
+method; the goal is what you want to be true afterwards, and it is the only
+thing that makes *on track* and *off track* mean anything during a run that
+takes weeks.
+
+**Checkable beats precise.** Not a metric — something that could be observed.
+*I can answer questions about any part without opening the file* is a goal. *I
+want to understand it* is the same wish with the test removed.
+
+**It decides what is worth stopping on.** Two readers with different goals flag
+different things in the same file; with nothing written down the agent chooses
+for them, silently.
+
+**It is what a drifting sweep is compared against.** Three slices running that
+turn up nothing related to the goal mean the goal was wrong or the sweep has
+wandered — and neither shows without this field.
 
 ## `scope` must say what was left out
 

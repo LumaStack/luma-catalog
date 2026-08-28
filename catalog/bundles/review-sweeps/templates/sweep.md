@@ -12,6 +12,7 @@ type: sweep
 title: <what is being read, in a few words>
 created: YYYY-MM-DD
 lifecycle_status: provisional
+goal: <what you want to be true afterwards, stated so it can be checked>
 scope: <one line — and say what is excluded in the body>
 ordering: narrative | risk-weighted | dependency | directory | led
 indexed_at: <12-character commit the index was last reconciled against>
@@ -26,9 +27,19 @@ contributors:
 ```markdown
 # Sweep: <what is being read>
 
+## Goal
+
+<What this sweep is for. Not "read everything" — that is the method. What do you
+want to be true afterwards, and how would you know?>
+
+**On track means:** <the observable version. Every slice gets checked against
+this; three in a row that do not touch it means the goal was wrong or the sweep
+has wandered.>
+
 ## Scope
 
-<What is in. Paths, or a description precise enough to enumerate from.>
+<What is in. Paths, or a description precise enough to enumerate from. The goal
+above should have narrowed this.>
 
 **Not included:** <the half people skip. Without it, finished coverage means
 nothing. Say which exclusions you were given and which you chose.>
