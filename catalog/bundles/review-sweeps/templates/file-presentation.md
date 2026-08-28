@@ -27,13 +27,15 @@ What the file is, in two or three sentences. Not what is wrong with it.
 
 ## What I make of it
 
-- Three or four bullets, strongest first. Line references inline, as `:35`.
+- Three or four bullets, strongest first. Line references in full, as
+  `path/to/file.md:35` — a bare `:35` cannot be opened from a terminal.
 - Say what you cannot vouch for as readily as what you can.
 ```
 
-**Then open it**, with whatever opens files on this machine, at the line under
-discussion where there is one. Not before — the reader wants to know what they
-are looking for before they change windows.
+**Then get it open**, however files open on this machine — which may mean the
+reader's own terminal resolving the reference rather than a command you run.
+Either way, not before: the reader wants to know what they are looking for
+before they change windows.
 
 ## Shallow — the agent reads, the reader takes the summary
 
@@ -55,7 +57,8 @@ it.
 
 ## Problems
 
-- What is wrong, with line references. This is the section shallow exists for.
+- What is wrong, with references in full as `path/to/file.md:35`. This is the
+  section shallow exists for.
 - Nothing found is a result: say so rather than leaving the section out.
 ```
 
