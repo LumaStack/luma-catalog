@@ -1,9 +1,9 @@
 ---
 type: bundle
-version: 0.13.0
-published: 2026-08-26
+version: 0.13.1
+published: 2026-08-27
 consumers: [project, organization]
-entry_point: policy/luma-directory-layout
+entrypoint: policy/luma-directory-layout
 description: The .luma directory every luma tool writes into — the four tiers, what belongs in each, and the committed-only invariant that makes it trustworthy.
 ---
 
@@ -93,6 +93,10 @@ result. Neither is right today: `core` would promise the model this bundle does
 not contain, and an agent opening it for that would find a directory layout.
 
 ## Version
+
+`0.13.1` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+
+Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 
 `0.13.0` — **this bundle becomes a foundation, and sheds the tool work.**
 `initialize-luma` and `migrate-into-luma` move to `luma-tools`. Both were

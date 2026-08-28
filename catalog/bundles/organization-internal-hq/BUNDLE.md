@@ -1,9 +1,9 @@
 ---
 type: bundle
-version: 0.10.1
-published: 2026-08-26
+version: 0.10.2
+published: 2026-08-27
 consumers: [organization]
-entry_point: policy/what-a-headquarters-holds
+entrypoint: policy/what-a-headquarters-holds
 description: The internal repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
 ---
 
@@ -283,6 +283,10 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.10.2` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+
+Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 
 `0.10.1` — **bundle IDs in this catalog gained their namespace.** A bundle here
 is `lumastack/luma-catalog/<name>` rather than `luma/<name>`, because the

@@ -1,9 +1,9 @@
 ---
 type: bundle
-version: 0.10.0
-published: 2026-08-26
+version: 0.10.1
+published: 2026-08-27
 consumers: [project, organization]
-entry_point: workflows/adopt-knowledge
+entrypoint: workflows/adopt-knowledge
 description: Using the luma tools — which one does what, getting them onto a machine, standing a project up, and the get-then-apply loop that puts knowledge in front of an agent.
 ---
 
@@ -57,6 +57,10 @@ which is the same gap adoption exists to close, left open in the one place it is
 most embarrassing.
 
 ## Version
+
+`0.10.1` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+
+Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 
 `0.10.0` — **`initialize-luma` and `migrate-into-luma` arrive from
 `luma-layout`.** Both are tool operations: one is now little more than *run

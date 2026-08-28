@@ -1,9 +1,9 @@
 ---
 type: bundle
-version: 0.11.0
+version: 0.11.1
 published: 2026-08-27
 consumers: [project, organization]
-entry_point: policy/the-estate
+entrypoint: policy/the-estate
 description: Working on the luma tools themselves — the repositories and the boundary each defends, publishing to the universal catalog, and changing a type without making every tool upgrade at once.
 ---
 
@@ -74,6 +74,10 @@ manifest contradict the body directly above.
 the top: adopt this only in a repository that is part of the estate.
 
 ## Version
+
+`0.11.1` — **`entry_point` is now `entrypoint`.** One word, per LKF §11.1, so the same word names the same thing at every level it appears.
+
+Patch: one key renamed. Same value, same meaning, same `optional` presence, and `luma-foreman` reads both spellings while the rename lands.
 
 `0.11.0` — **`consumers` was `organization` only, and the manifest contradicted
 the body.** The body tells estate repositories to adopt this, and says the
