@@ -7,18 +7,6 @@ tags:
   - infrastructure
   - design
   - docs
-starters:
-  project:
-    - lumastack/luma-catalog/luma-layout
-    - lumastack/luma-catalog/luma-tools
-    - lumastack/luma-catalog/git-secrets
-    - lumastack/luma-catalog/project-documentation
-    - lumastack/luma-catalog/decision-records
-  organization:
-    - lumastack/luma-catalog/luma-layout
-    - lumastack/luma-catalog/luma-tools
-    - lumastack/luma-catalog/decision-records
-    - lumastack/luma-catalog/organization-internal-hq
 requires:
   - bundle: lumastack/luma-catalog/git-secrets
     obligation: recommended
@@ -55,23 +43,16 @@ unpublished, and a leaked identity is permanent in every clone. Everything else
 is quality of life, and reporting five gaps at a project that just adopted its
 first bundle is how a report gets ignored.
 
-**`lumastack/luma-catalog/luma-tools` is in both starter sets** because anything adopting from
-this catalog is running `foreman` to do it — so *how the tool works* is
-knowledge every adopter needs and nobody currently gets. `lumastack/luma-catalog/luma-maintainers`
-is in neither: it describes how this estate is maintained, which is somebody
-else's internals to anybody but us.
+**Nothing says what a new consumer begins with.** `starters` did, and it is
+withdrawn — see `luma-leader`'s archived idea. It was written before anything
+could use it: a catalog cannot key a starter on a consumer's kind while no
+consumer declares one, so the lists sat here describing a bootstrap nothing
+performed. Bringing it back needs that gap closed first and a reason beyond
+symmetry with `requires`.
 
-**Starters carry the rest.** What a new project begins with is a different
-question from what every project owes, and conflating them produces either a
-nagging report or an empty one. Four bundles for a new project, three for a new
-headquarters — enough to have somewhere to put decisions and a rule about
-secrets, without deciding how anybody releases or merges.
-
-`lumastack/luma-catalog/organization-internal-hq` is a starter rather than a requirement on
-purpose. A headquarters is worth having and **not worth creating before there is
-cross-project reasoning to put in it**, which is a judgement only the
-organization can make. What the bundle buys a new headquarters is the recurring
-check that it is still private, which is the part nobody remembers to do.
+**What that costs is real and is accepted.** A new project adopting from here
+gets no suggested set, so somebody has to choose — which is what happened
+anyway, since nothing read the lists.
 
 **`private` is in the name deliberately.** A bundle name is the one thing read
 before anything is loaded, so it is the only warning that survives an agent
