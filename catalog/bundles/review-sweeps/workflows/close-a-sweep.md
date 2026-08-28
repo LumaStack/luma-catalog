@@ -19,15 +19,15 @@ anything. They stay pending, and the summary says how many there are — that is
 what makes the record honest and what lets somebody resume it later.
 
 **A `skipped` row needs a reason** the way an exclusion does. *Generated*,
-*vendored*, *reviewed last month under X* — anything except a blank, which reads
-as an oversight forever.
+*vendored*, *reviewed last month under X* — anything except a blank, which
+reads as an oversight forever.
 
 ## 2. Confirm nothing worth keeping is still in the notes
 
 **This is the step that gets skipped, and it is the one that loses things.**
-Read the sittings for anything phrased as *we should*, *worth revisiting*, or
-*not sure about this yet*, and route each one now — an idea, a finding, a
-decision, or a deliberate decision to drop it.
+Read the sweep sessions for anything phrased as *we should*, *worth
+revisiting*, or *not sure about this yet*, and route each one now — an idea, a
+finding, a decision, or a deliberate decision to drop it.
 
 The sweep is about to be archived. **Anything still inside it is being thrown
 away**, and doing that on purpose is fine while doing it by omission is not.
@@ -54,15 +54,15 @@ git mv .luma/backlog/reviews/<slug> .luma/backlog/reviews/archived/<slug>
 
 Set `lifecycle_status: archived` and the `archived` date in `sweep.md`.
 
-**The sittings go with it.** They are working notes whose value decays, and
-their content has already been routed out — what remains is the trail, and git
-keeps that whether or not the directory survives.
+**The sweep sessions go with it.** They are working notes whose value decays,
+and their content has already been routed out — what remains is the trail, and
+git keeps that whether or not the directory survives.
 
 ## 5. Deleting comes later, and separately
 
 **Archiving needs nobody's permission. Deleting does**, and an agent never
 deletes a sweep it did not run.
 
-There is no retention period here, deliberately. Nobody has run enough sweeps to
-know what one is, and a number invented now would be enforced for years on no
-evidence.
+There is no retention period here, deliberately. Nobody has run enough sweeps
+to know what one is, and a number invented now would be enforced for years on
+no evidence.

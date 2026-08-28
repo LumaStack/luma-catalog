@@ -1,13 +1,14 @@
-# Sitting template
+# Sweep session template
 
-Copy the blocks to `.luma/backlog/reviews/<slug>/sittings/<NNN>-<slug>.md`.
-**Copy the blocks, not this file.**
+Copy the blocks to
+`.luma/backlog/reviews/<slug>/sweep-sessions/<NNN>-<slug>.md`. **Copy the
+blocks, not this file.**
 
 ## Frontmatter
 
 ```yaml
 ---
-type: sitting
+type: sweep_session
 title: <the cluster, in a few words>
 created: YYYY-MM-DD
 covers:
@@ -31,11 +32,11 @@ examined.
 ## What this is
 
 <The orientation, compressed to what is worth keeping. What these files do and
-how they connect — the part a later sitting will want.>
+how they connect — the part a later sweep session will want.>
 
 ## What we made of it
 
-<Their read first, then yours. Where you disagreed, and why — a sitting where
+<Their read first, then yours. Where you disagreed, and why — a sweep session where
 the agent agreed with everything is worth a second look.>
 
 <If the agent read first — because they asked, or because the file warranted
@@ -44,11 +45,11 @@ it — say so here. A disclosed weakness can be discounted.>
 ## What this makes me doubt about earlier
 
 <Optional, and often the most valuable section. A sweep learns as it goes and
-the ninth sitting routinely falsifies the third.>
+the ninth sweep session routinely falsifies the third.>
 
 ## Where it went
 
-<Every outcome, routed out of the sweep during this sitting. Nothing worth
+<Every outcome, routed out of the sweep during this sweep session. Nothing worth
 keeping stays in this note — it is archived with the sweep and eventually
 deleted.>
 
@@ -62,7 +63,7 @@ deleted.>
 ## Still open
 
 <Only a conclusion the sweep genuinely has not reached yet — a suspicion needing
-more sittings before it can be stated. Say what would confirm it.>
+more sweep sessions before it can be stated. Say what would confirm it.>
 
 <Not a to-do list. Anything actionable was routed above.>
 ```
