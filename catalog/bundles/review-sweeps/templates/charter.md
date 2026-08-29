@@ -1,11 +1,11 @@
-# Sweep template
+# Charter template
 
 **This file is why the sweep exists and how it is being run.** The index of
 what has been covered lives beside it in `coverage.md` — see [the coverage
 template](coverage.md). This one is written once and rarely edited; that one
 changes at every slice.
 
-Copy the blocks to `.luma/backlog/sweeps/<slug>/sweep.md`. **Copy the blocks,
+Copy the blocks to `.luma/backlog/sweeps/<slug>/charter.md`. **Copy the blocks,
 not this file** — this file has no frontmatter of its own on purpose, so
 nothing reads it as a real sweep.
 
@@ -31,7 +31,7 @@ contributors:
 ## Body
 
 ```markdown
-# Sweep: <what is being read>
+# <what is being read>
 
 ## Goal
 

@@ -102,7 +102,7 @@ covering six files. Correct for a first sweep, ruinous for a tenth.
 new, `adaptive` is a licence to be distracted by whatever is more interesting
 than the next file.
 
-**Say which, in `sweep.md`.** A sweep that quietly starts rewriting its own
+**Say which, in `charter.md`.** A sweep that quietly starts rewriting its own
 goal was adaptive all along and nobody said so — so nobody budgeted for it, and
 the estimate is wrong for a reason the record does not show.
 
@@ -129,7 +129,7 @@ coverage ledger — a file left out of it is a file nobody can later prove was
 read or not read, and the ones omitted for being trivial are exactly where a
 stale copy of something hides.
 
-**Name the clusters in `sweep.md`, and say what each one is about.** Group by
+**Name the clusters in `charter.md`, and say what each one is about.** Group by
 what must be read together — a subsystem, an execution path, a set of documents
 answering one question — which is routinely not what shares a directory.
 
@@ -211,8 +211,8 @@ git log --since="6 weeks ago" --name-only --pretty=format: -- <paths> \
 ```
 
 Against the file count in scope, that is a rough *expect this much to move
-while you sweep*. Record it in `sweep.md` beside the estimate, so the close can
-compare what actually happened.
+while you sweep*. Record it in `charter.md` beside the estimate, so the close
+can compare what actually happened.
 
 **Name the hot files, not just the percentage.** Churn concentrates — the usual
 shape is one subsystem moving and everything else sitting still — and a single
@@ -254,9 +254,9 @@ That costs a sentence per slice and it is the only way the guesses get
 corrected. A sweep that ran fine and taught nobody anything about sweeping is a
 missed opportunity the second sweep pays for.
 
-## 9. Write `sweep.md` and `coverage.md`, and commit them
+## 9. Write `charter.md` and `coverage.md`, and commit them
 
-[The sweep template](../templates/sweep.md) and [the coverage
+[The charter template](../templates/charter.md) and [the coverage
 template](../templates/coverage.md) have the shapes. **Two files, because one
 should stay true as the work proceeds and the other is expected to go false and
 be brought back** — see [[how-a-sweep-is-stored]].
