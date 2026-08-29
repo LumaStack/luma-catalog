@@ -110,6 +110,15 @@ guess, and guesses are what the reader deletes later. Name the case.
 harness, and a missing tool — those have their own homes and a guardrail aimed
 at the wrong cause is charged to every session forever without ever firing.
 
+**And it has to fix the model rather than improve any model.** The question to
+ask is: *would a different model need this too?* If yes, it is a practice and
+not a correction, and it belongs in a model-neutral bundle.
+
+**Getting that wrong fails twice.** A practice filed here is charged to every
+session of one model, and withheld from every other model that needed it just
+as much. **A correction earns its seat because this model in particular gets it
+wrong; a practice never does.**
+
 **It has to be worth its recurring cost.** See [[the-per-session-budget]].
 
 ## The harness is a condition, not a bundle

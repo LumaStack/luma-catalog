@@ -18,6 +18,12 @@ wrong cause loads forever and never fires:
 **Where it is the harness and the harness is one of several**, it is still an
 enhancement with a scoping line. Where it is the prompt, it is not one at all.
 
+**Then the test that catches the commonest mistake: would a different model
+need this too?** If it would, you are holding a practice rather than a
+correction, and it belongs in a model-neutral bundle. *Offer to script a check
+you keep re-running* is a good habit for every agent alive; it fixes nothing
+about this model, so it does not go here.
+
 ## 2. Find the second instance
 
 **One occurrence is an anecdote.** Look back through the session for the same
