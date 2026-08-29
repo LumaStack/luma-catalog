@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.9.0
+version: 0.9.1
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -127,6 +127,23 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.9.1` — **examples name a fictional person, not a real one.**
+
+`templates/sweep.md` and [[how-a-sweep-is-stored]] carried a real workstation
+account, taken from a filesystem path. The catalog already had a convention for
+this — `human:fsmith`, used across five bundles — and it was missed.
+
+**Two faults, and they are separate.** Naming a real person in a published
+example is a **disclosure**, and in some organizations a workstation username is
+secret. And the value came from the **OS user** rather than a git or forge
+identity, which is wrong provenance anywhere: the logged-in account is not
+necessarily who acted.
+
+**Patch, and it needed to be one.** *Examples only* was the wrong reason not to
+bump — an adopter whose vendored copy carries the leaked value has no way to
+learn a fix exists unless the number moves, which is the whole point of a
+version.
 
 `0.9.0` — **opening a file is often the reader's job, and the file is live
 while you present it.**
