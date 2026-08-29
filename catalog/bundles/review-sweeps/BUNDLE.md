@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.10.0
+version: 0.11.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -59,8 +59,9 @@ and nothing about depth.
   rigours of the same one. Read when deciding which you want, or when the two
   look interchangeable.
 
-**Templates** — [a sweep](templates/sweep.md) · [a slice](templates/slice.md) ·
-[presenting a file](templates/file-presentation.md)
+**Templates** — [a sweep](templates/sweep.md) · [its
+coverage](templates/coverage.md) · [a slice](templates/slice.md) · [presenting
+a file](templates/file-presentation.md)
 
 ## Worth knowing before reading further
 
@@ -127,6 +128,35 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.11.0` — **the index moves out of `sweep.md` into `coverage.md`.**
+
+**The two stand in opposite relations to the truth**, which is the reason and
+not merely the convenience. A sweep's goal and reasoning **should stay true as
+the work proceeds, and get truer** as it teaches something. **The index is
+expected to go false** — every commit ages it — and is brought back at every
+slice.
+
+**So staleness means opposite things in them.** A stale index is the ordinary
+state between slices; a stale sweep is a defect, because it says the sweep is
+aimed at something it is not. **A file expected to rot must not live inside one
+expected to hold**, or nobody can tell which half has gone off.
+
+The practical annoyances follow from that rather than motivating it: a `git
+diff` of the sweep's thinking buried under status changes, and a rebuild of the
+index putting the reasoning in its blast radius.
+
+**The scope rule stays with the sweep; the enumeration goes with the index.**
+*Everything tracked except the generated adapters and the vendored bundles*
+does not change when a file is added — the list of rows does, and is supposed
+to.
+
+**`indexed_at` moves too**, because it is a fact about the index. `sweep` now
+carries no commit at all, which is right: a sweep is true of a moving target by
+construction.
+
+**Breaking**, shipped as minor under the pre-1.0 allowance: an existing sweep
+has to split its file in two and move `indexed_at`. The rows move verbatim.
 
 `0.10.0` — **what the first slice taught, once it had run.**
 

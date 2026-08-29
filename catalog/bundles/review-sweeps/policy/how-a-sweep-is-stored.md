@@ -16,11 +16,34 @@ sometimes more — and survives every session boundary in between.
 
 ```
 .luma/backlog/sweeps/the-cli-surface/
-  sweep.md                    scope, exclusions, the order chosen, the index
+  sweep.md                    why it exists, what it is aimed at, how it is run
+  coverage.md                 every file in scope, and what has happened to it
   slices/
     001-entrypoint-and-args.md
     002-the-permission-gate.md
 ```
+
+**They are separate because they stand in opposite relations to the truth.**
+
+| | | |
+| --- | --- | --- |
+| **`sweep.md`** | **stays true as things change, and gets truer** | the goal sharpens, the learnings accumulate, the scope rule holds |
+| **`coverage.md`** | **is expected to go false, and is brought back** | every commit ages it, and every slice reconciles it |
+
+**Staleness means opposite things in the two files.** A stale `coverage.md` is
+the normal state between slices — reconciliation exists because of it. A stale
+`sweep.md` is a defect: it says the sweep is aimed at something it is not.
+
+**So a file expected to rot must not live inside one expected to hold**, or
+nobody can tell which half has gone off. That is the whole reason for the
+split, and the practical annoyances follow from it — a `git diff` of the
+sweep's thinking buried under status changes, a rebuild of the index putting
+the reasoning in its blast radius.
+
+**The scope rule stays in `sweep.md`; the enumeration goes in `coverage.md`.**
+*Everything tracked except the generated adapters and the vendored bundles*
+does not change when a file is added. The list of eighty-seven rows does, and
+is supposed to.
 
 ## It is backlog, not a record
 
@@ -46,9 +69,9 @@ restructure the sweep.*
 
 ## The slices are the source; the index is a cache
 
-`sweep.md` carries a table of every in-scope file and its status. **That table
-is an index and can be rebuilt** — the truth is in the slices, each of which
-says which files it covered.
+`coverage.md` carries a table of every in-scope file and its status. **That
+table is an index and can be rebuilt** — the truth is in the slices, each of
+which says which files it covered.
 
 This matters the first time the table and the notes disagree, which they will.
 A slice note is written once and never revised; a table cell is edited every

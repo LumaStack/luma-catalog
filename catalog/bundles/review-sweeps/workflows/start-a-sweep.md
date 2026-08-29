@@ -201,8 +201,13 @@ That costs a sentence per slice and it is the only way the guesses get
 corrected. A sweep that ran fine and taught nobody anything about sweeping is a
 missed opportunity the second sweep pays for.
 
-## 8. Write `sweep.md` and commit it
+## 8. Write `sweep.md` and `coverage.md`, and commit them
 
-[The sweep template](../templates/sweep.md) has the shape. Commit before the
-first slice — the index is the thing that makes the sweep resumable, and a
-sweep that only exists in a conversation is one crash from gone.
+[The sweep template](../templates/sweep.md) and [the coverage
+template](../templates/coverage.md) have the shapes. **Two files, because one
+should stay true as the work proceeds and the other is expected to go false and
+be brought back** — see [[how-a-sweep-is-stored]].
+
+Commit before the first slice — the index is the thing that makes the sweep
+resumable, and a sweep that only exists in a conversation is one crash from
+gone.

@@ -10,7 +10,7 @@ description: One slice — reconcile the index, orient without judging, let the 
 separate resume procedure, because step 1 is the reconciliation a resume would
 have done.
 
-## 1. Reconcile the index against the tree
+## 1. Reconcile `coverage.md` against the tree
 
 The code moved since the index was built — by your own fixes, if nothing else.
 
@@ -26,10 +26,10 @@ git diff --name-status <indexed_at>..HEAD
 - **Substantially rewritten** files are the one case needing a decision, and it
   is not yours to make alone — see below.
 
-Update `indexed_at` to the current commit.
+Update `indexed_at` in `coverage.md` to the current commit.
 
-**If the slices and the index disagree, the slices win** — they are the source
-and the index is a cache. Rebuild the row rather than trusting it.
+**If the slices and `coverage.md` disagree, the slices win** — they are the
+source and the index is a cache. Rebuild the row rather than trusting it.
 
 ### Re-covering is asked for, never applied
 
@@ -122,7 +122,7 @@ the same fix in four other places.
 
 Nothing worth keeping stays in the slice note.
 
-## 7. Write the slice and update the index
+## 7. Write the slice and update `coverage.md`
 
 [The slice template](../templates/slice.md). It is a working note, not a report
 — what was covered, what was concluded, what left the sweep and where it went.
