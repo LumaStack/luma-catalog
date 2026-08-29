@@ -85,7 +85,7 @@ it skipped cannot make its own coverage mean anything later.
 
 ## 4. Decide whether the plan may move
 
-**`strict` or `evolving`, and it is a decision rather than a mood.**
+**`strict` or `adaptive`, and it is a decision rather than a mood.**
 
 **`strict`** — the goal, scope and strategy are fixed for this sweep. Anything
 that would change them is **recorded and left for a later sweep**. This is not
@@ -93,17 +93,17 @@ a blind sweep: it routes findings exactly as any sweep does, and *that is a
 real observation and this is not the sweep for it* is a legitimate journal
 entry.
 
-**`evolving`** — expect them to move, and budget for it. Right when the
+**`adaptive`** — expect them to move, and budget for it. Right when the
 practice or the material is genuinely new, and **expensive**: the first sweep
-ever run was evolving and produced thirteen releases of this bundle while
+ever run was adaptive and produced thirteen releases of this bundle while
 covering six files. Correct for a first sweep, ruinous for a tenth.
 
 **Most sweeps should be strict.** Once neither the practice nor the material is
-new, `evolving` is a licence to be distracted by whatever is more interesting
+new, `adaptive` is a licence to be distracted by whatever is more interesting
 than the next file.
 
 **Say which, in `sweep.md`.** A sweep that quietly starts rewriting its own
-goal was evolving all along and nobody said so — so nobody budgeted for it, and
+goal was adaptive all along and nobody said so — so nobody budgeted for it, and
 the estimate is wrong for a reason the record does not show.
 
 ## 5. Choose an order and record why

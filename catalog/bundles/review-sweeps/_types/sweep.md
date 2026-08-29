@@ -9,7 +9,7 @@ fields:
   strictness:
     field_presence: required
     field_type: enum
-    desc: "strict — the goal, scope and strategy are fixed for this sweep. evolving — expect them to move as the sweep learns"
+    desc: "strict — the goal, scope and strategy are fixed for this sweep. adaptive — expect them to move as the sweep learns"
   scope:
     field_presence: required
     field_type: text
@@ -70,7 +70,7 @@ wandered — and neither shows without this field.
 terms.** Both kinds record everything they find; they differ in what they do
 about the ones that would rewrite the sweep.
 
-| | **`strict`** | **`evolving`** |
+| | **`strict`** | **`adaptive`** |
 | --- | --- | --- |
 | the goal, scope and strategy | **fixed for this sweep** | **expected to move** |
 | something that would change them | recorded, and left for a later sweep | acted on, and the sweep says what changed and why |
@@ -81,17 +81,17 @@ about the ones that would rewrite the sweep.
 does; what it declines is redirecting itself. *That is a real observation and
 this is not the sweep for it* is a legitimate thing to write in a journal.
 
-**Choose `evolving` when the practice or the material is genuinely new**, and
-expect to pay for it. The first sweep ever run was `evolving` and produced
+**Choose `adaptive` when the practice or the material is genuinely new**, and
+expect to pay for it. The first sweep ever run was `adaptive` and produced
 thirteen releases of this bundle while covering six files — **correct for a
 first sweep, and ruinous for a tenth.**
 
 **Most sweeps should be `strict`.** Once neither the practice nor the material
-is new, `evolving` is a licence to be distracted by whatever is more
+is new, `adaptive` is a licence to be distracted by whatever is more
 interesting than the next file.
 
 **It is declared, not drifted into.** A sweep that quietly starts rewriting its
-own goal was `evolving` all along and nobody said so — which means nobody
+own goal was `adaptive` all along and nobody said so — which means nobody
 budgeted for it, and the estimate is now wrong for a reason the record does not
 show.
 

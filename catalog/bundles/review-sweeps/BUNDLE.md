@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.14.0
+version: 0.15.0
 published: 2026-08-28
 lifecycle_status: draft
 survival: experimental
@@ -130,6 +130,24 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.15.0` — **`evolving` becomes `adaptive`.**
+
+**`evolving` was compatible with the failure the rule forbids.** Things evolve
+on their own, over time, without anybody deciding — which is drift, and
+`0.14.0` says two paragraphs later that a sweep must never drift into moving
+its own goal. The word permitted what the rule prohibited.
+
+**`adaptive` implies adapting *to* something.** The plan moves because the
+sweep learned, not because time passed. It also pairs with `strict`: both are
+adjectives describing a posture a sweep is declared to have.
+
+*`adapting` was considered and rejected — a participle describes an activity in
+progress, and this field declares a disposition chosen before anything has
+adapted.*
+
+Minor: one enum value renamed, shipped as minor under the pre-1.0 allowance. A
+sweep declaring `evolving` reads correctly to a person; nothing parses it yet.
 
 `0.14.0` — **the bundle declares `survival: experimental`.** Nobody has
 finished a sweep. The practice has been corrected at every turn by the one that
