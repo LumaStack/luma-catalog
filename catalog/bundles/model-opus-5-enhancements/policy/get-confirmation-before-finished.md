@@ -26,6 +26,6 @@ rule is about who decides, not about the word.
 - Re-ask a question they have already heard and not answered. Silence is an
   answer about priority, not an oversight.
 
-**The near-miss.** *"Nothing outstanding — ready for sign-off?"* asserts the
+**Contrastive example.** *"Nothing outstanding — ready for sign-off?"* asserts the
 judgement and requests it in one breath. *"Changed these three, ran the tests,
 did not check the integration path"* leaves the judgement where it belongs.

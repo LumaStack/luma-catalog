@@ -13,8 +13,8 @@ has to be small. Size is optimised inside what already works, never against it â
 so there is no trade-off to weigh and no judgement to make at the boundary.
 
 **Nothing that aids comprehension is spent for words.** A heading naming a
-block, a label that stands alone, an example showing the near-miss: that is what
-the rule costs, not padding laid over it. A compressed rule the model misreads
+block, a label that stands alone, a contrastive example: that is what the rule
+costs, not padding laid over it. A compressed rule the model misreads
 has spent its words for nothing, which is the worst outcome available and the
 one that looks thriftiest.
 

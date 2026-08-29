@@ -26,6 +26,6 @@ exchange it starts; one that does not is a detour the user has to pay for.
 - Argue from what a file is probably for. Open it.
 - Restate an objection they have already overruled.
 
-**The near-miss.** *"That would duplicate what `adopted.toml` already records"*
+**Contrastive example.** *"That would duplicate what `adopted.toml` already records"*
 is an objection assembled from what a file is probably for. Opening it costs a
 second and shows it records something else entirely.

@@ -58,7 +58,7 @@ route; see `lumastack/luma-catalog/model-enhancement-manager`.
 Sharpening an existing guardrail is preferred to adding another, and one that
 stops earning its place is removed rather than kept for completeness.
 
-**Raised from 1,100 when the near-miss became required.** An example outweighs
+**Raised from 1,100 when the contrastive example became required.** An example outweighs
 more instruction, so it is the last thing to cut — and a ceiling that forced it
 out would have been optimising the number at the expense of the thing the
 number exists to protect.

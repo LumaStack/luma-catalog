@@ -31,12 +31,14 @@ NEVER is longer than its ALWAYS is inverted and will underperform.
 ## An example beats more instruction
 
 **This is the strongest single finding, and it changed this bundle.** Examples
-outweigh instructions, and a *negative* example — the near-miss, the thing that
-looks like compliance and is not — is what gives a rule an edge the model can
-locate. *(practice, consistent across sources)*
+outweigh instructions, and a **negative example** — the wrong version, the one
+that looks like compliance and is not — is what gives a rule a border the model
+can locate. Pairing it with the right version is a **contrastive example**, and
+the sources recommend the pair over the negative alone. *(practice, consistent
+across sources)*
 
-**Best practice guardrails include a near-miss**, showing the wrong version beside the
-right one. It is the last thing to cut, not the first.
+**Best practice guardrails include a contrastive example**, showing the wrong
+version beside the right one. It is the last thing to cut, not the first.
 
 **The leverage runs both ways, which is why a weak one is worse than none.** If
 an example outweighs the instruction it sits under, a bad example outweighs it
@@ -44,7 +46,7 @@ too — and teaches an edge that is wrong.
 
 **Where one cannot be written, that is evidence about the rule.** The research
 says examples are high-leverage; it does not say every rule has a good one. A
-guardrail with no near-compliance case is obvious or vague, and both are reasons
+guardrail with no case on the border is obvious or vague, and both are reasons
 to rework it — so the omission is stated and justified rather than silent.
 
 ## A guardrail has to admit a pass/fail

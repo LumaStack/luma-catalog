@@ -47,7 +47,7 @@ Two things it is easy to get wrong:
 always verify* describes nothing. The document is read by the thing doing it,
 and a hedge gives it room.
 
-**Make *Never* specific enough to catch the near-miss.** The failure returns
+**Make *Never* specific enough to catch the contrastive case.** The failure returns
 wearing a synonym, so name the synonyms.
 
 ## 5. Check it
@@ -66,9 +66,9 @@ for f in "$B"/policy/*.md; do
   done
 done
 
-# 1b. how many carry a near-miss — reported, never required
-printf 'near-miss present in %s of %s guardrails\n' \
-  "$(grep -lE '\*\*The near-miss\.\*\*' "$B"/policy/*.md | wc -l | tr -d ' ')" \
+# 1b. how many carry a contrastive example — reported, never required
+printf 'contrastive example in %s of %s guardrails\n' \
+  "$(grep -lE '\*\*Contrastive example\.\*\*' "$B"/policy/*.md | wc -l | tr -d ' ')" \
   "$(ls "$B"/policy/*.md | grep -cv entrypoint)"
 
 # 2. exactly one document declares matches — the entrypoint
@@ -84,7 +84,7 @@ wc -w "$B"/policy/*.md | tail -1
 for f in "$B"/policy/*.md; do
   [ "$(basename "$f")" = entrypoint.md ] && continue
   awk '/\*\*ALWAYS\*\*/{s=1;next} /\*\*NEVER\*\*/{s=2;next}
-       /\*\*(The|No) near-miss\.\*\*/{s=0} s==1{a+=NF} s==2{n+=NF}
+       /\*\*Contrastive example\.\*\*/{s=0} s==1{a+=NF} s==2{n+=NF}
        END{if(n>a) printf "%s: NEVER %d > ALWAYS %d — inverted\n", FILENAME, n, a}' "$f"
 done
 ```
@@ -92,7 +92,7 @@ done
 **Check 1** because the four parts became the shape after guardrails were
 already written, and nothing reported which ones lacked them.
 
-**Check 1b reports and does not fail**, deliberately. A near-miss is attempted
+**Check 1b reports and does not fail**, deliberately. A contrastive example is attempted
 every time and included only where a real one exists — enforcing its presence
 produces fabricated examples, which teach a wrong edge and are worse than the
 gap. The count is worth seeing; a failure here would be the mandate surviving
@@ -115,7 +115,7 @@ before it was written down.
 
 **Check 4 last**, because over the ceiling something comes out — and what comes
 out is a decision to record, not an oversight. Where the thing that would come
-out is a near-miss, raise the ceiling instead: an example outweighs more
+out is a contrastive example, raise the ceiling instead: an example outweighs more
 instruction, and a number that forces out the highest-leverage part is
 optimising itself.
 

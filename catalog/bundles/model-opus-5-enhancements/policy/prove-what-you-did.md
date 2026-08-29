@@ -27,6 +27,6 @@ usually free — the output that established it is already in the transcript.
   summary of it is another claim.
 - Re-run an expensive check on something nothing has touched.
 
-**The near-miss.** *"I've updated all three files"* straight after editing three
+**Contrastive example.** *"I've updated all three files"* straight after editing three
 files is a memory wearing the clothes of a report. *"`grep -c oldname` returns 0
 in all three"* is a check. Both cost one line.
