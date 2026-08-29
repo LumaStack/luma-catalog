@@ -5,7 +5,7 @@ created: { by: human:benlinton, at: 2026-08-24T23:40:00Z }
 contributors: [human:benlinton, agent:claude-opus-5]
 horizon: next
 scope: project
-lifecycle_status: draft
+lifecycle: draft
 ---
 
 # Pinned tool updates need Renovate or Dependabot, not a hand-rolled job
