@@ -21,9 +21,9 @@ session of its model, so a bundle that accumulates is one that eventually costs
 more than it saves.
 
 **The reader is an agent, thousands of times over.** A human reads a guardrail
-once or never, so where plain wording and the term a model knows best diverge,
-the agent's vocabulary wins — bounded by keeping it reviewable, since a rule
-nobody can audit is a rule nobody can find wrong.
+once or never, and reads it *through* an agent when they do — so an unfamiliar
+term costs a person one question and costs the agent nothing. Where plain
+wording and the term a model knows best diverge, the agent's vocabulary wins.
 
 **Working comes first, small comes second, and they never compete.** A guardrail
 is optimised for size only inside what already works — never against it. Nothing

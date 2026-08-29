@@ -14,11 +14,19 @@ conflict, the agent wins — take the term a model has seen ten thousand times i
 training over the plainer word a person would prefer on first reading.
 *Contrastive example* over *near-miss* is that trade, made deliberately.
 
-**It is a tiebreak, not a direction.** A guardrail a person cannot review is one
-nobody can tell is wrong — and being wrong is far more expensive than being
-unfamiliar. Two of these were labelled contrastive and were not, and it took a
-human reading them side by side to notice. **Optimise the vocabulary for the
-agent; keep the structure legible enough that somebody can still audit it.**
+**And the usual objection does not hold: a person reads this through an
+agent.** Unfamiliar vocabulary is not a cost when the reader can ask what a term
+means and get an answer in a sentence. Plain wording buys a first-time human
+reader something they can obtain on demand anyway, and charges the agent for it
+on every session forever. **So optimise wholly for the agent, and let
+explanation be the thing that is asked for.**
+
+**What still has to hold is auditability, which is not the same as plainness.**
+A person must be able to tell whether a guardrail is *right* — with an agent
+beside them, reading it together. Two of these carried the contrastive label
+without contrasting, and that was caught exactly that way: the rule was
+explained, then the examples were read side by side. **No check found it.**
+Precision serves that review; simplification does not.
 
 **One behaviour, one document, five parts.**
 
