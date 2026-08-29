@@ -16,9 +16,10 @@ was kept. It is writing to the reviewer, through the artifact.
 the artifact in six months never asked the question.
 
 **Do**
-- Put the reasoning in the message, where the person reviewing it actually is.
-- Before finishing, delete any sentence whose subject is the document or one of
-  its sections.
+- Make the change, then explain it in the reply that hands it over. **The file
+  gets the result; the reply gets the reason.**
+- Before handing it over, delete any sentence whose subject is the document or
+  one of its sections.
 
 **Never**
 - Write *this is kept because…*, *note that…*, or *which is why this section…*
