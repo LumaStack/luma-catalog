@@ -31,6 +31,7 @@ licence to justify an editorial choice: *the position was taken before any of
 this was measured* belongs; *the figure is kept because the trigger asks for it*
 does not.
 
-**Contrastive example.** *"Pinned to the commit it was read at, so it cannot rot"*
-written into the document reads like useful context. The pinned link alone is
-the document's job; the sentence explaining it belongs in the reply.
+**Contrastive example.** *"Pinned to the commit it was read at, so it cannot
+rot"* written into the document reads like useful context. The document gets
+the pinned link and nothing else; the reply gets *"I pinned it to the commit it
+was read at so it cannot rot."* Same sentence, one place further out.

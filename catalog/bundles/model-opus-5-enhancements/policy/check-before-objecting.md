@@ -26,6 +26,7 @@ exchange it starts; one that does not is a detour the user has to pay for.
 - Argue from what a file is probably for. Open it.
 - Restate an objection they have already overruled.
 
-**Contrastive example.** *"That would duplicate what `adopted.toml` already records"*
-is an objection assembled from what a file is probably for. Opening it costs a
-second and shows it records something else entirely.
+**Contrastive example.** *"That would duplicate what `adopted.toml` already
+records"* is an objection assembled from what a file is probably for. *"`grep
+commit adopted.toml` — it records the current adoption, not what was read, so
+the objection is wrong"* took one second and is worth saying.

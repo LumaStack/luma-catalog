@@ -71,6 +71,13 @@ printf 'contrastive example in %s of %s guardrails\n' \
   "$(grep -lE '\*\*Contrastive example\.\*\*' "$B"/policy/*.md | wc -l | tr -d ' ')" \
   "$(ls "$B"/policy/*.md | grep -cv entrypoint)"
 
+# 1c. and each one actually contrasts — two quoted fragments, not one plus prose
+for f in "$B"/policy/*.md; do
+  [ "$(basename "$f")" = entrypoint.md ] && continue
+  q=$(sed -n '/\*\*Contrastive example\.\*\*/,$p' "$f" | grep -o '\*"' | wc -l)
+  [ "$q" -eq 1 ] && echo "$f: one quoted side only — negative example, not contrastive"
+done
+
 # 2. exactly one document declares matches — the entrypoint
 grep -l '^matches:' "$B"/policy/*.md
 
@@ -91,6 +98,12 @@ done
 
 **Check 1** because the four parts became the shape after guardrails were
 already written, and nothing reported which ones lacked them.
+
+**Check 1c fails**, unlike 1b. Whether to have an example is a judgement;
+whether a thing labelled *contrastive* actually contrasts is not. Two of the
+four guardrails quoted the wrong version and described the right one in prose —
+a negative example wearing the contrastive label, and nothing caught it until a
+person read them side by side.
 
 **Check 1b reports and does not fail**, deliberately. A contrastive example is attempted
 every time and included only where a real one exists — enforcing its presence

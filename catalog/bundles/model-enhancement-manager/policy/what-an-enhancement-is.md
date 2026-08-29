@@ -16,7 +16,7 @@ matches:
 | **Goal** | what it should do instead, in a sentence |
 | **ALWAYS** | what to do, positively — two or three bullets |
 | **NEVER** | the edges — the specific things not to do |
-| **Contrastive example** | the wrong version beside the right one, where a real one exists |
+| **Contrastive example** | it going wrong, quoted, beside it going right — both quoted |
 
 **ALWAYS carries the rule; NEVER holds the edges.** A prohibition makes the
 model represent the banned behaviour and then invert it, where a positive
@@ -25,7 +25,13 @@ ALWAYS is inverted and will underperform. Both are still required: NEVER alone
 leaves nothing to replace the failure with, and a model given a prohibition and
 no substitute finds a neighbouring way to fail.
 
-**The contrastive example is the highest-leverage part when it is real.** An example
+**A contrastive example is it going wrong where it was close to going right.**
+An obvious failure teaches nothing — the model was never going to write that.
+The useful one is the version it would produce while believing it complied,
+quoted, beside the version that passes. **Both sides quoted**: describing the
+right one in prose makes it a negative example, which is weaker.
+
+**It is the highest-leverage part when it is real.** An example
 outweighs the instruction it sits under, and the useful example is the one that
 *looks* like compliance and is not. See [[what-makes-a-guardrail-stick]].
 
