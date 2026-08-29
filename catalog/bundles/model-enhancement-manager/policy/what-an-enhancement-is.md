@@ -1,0 +1,42 @@
+---
+type: policy
+title: What an enhancement is
+description: One observed model behaviour and its guardrail, in four parts. The bar it has to clear, and why the harness is a condition inside one rather than a bundle of its own.
+matches:
+  - topic: writing or reviewing a model enhancement
+---
+
+# What an enhancement is
+
+**One behaviour, one document, four parts.**
+
+| part | what it holds |
+| --- | --- |
+| **Behaviour** | what the model does, stated plainly and without excuse |
+| **Instead** | the desired behaviour, in a sentence |
+| **Do** | what to do, positively — two or three bullets |
+| **Never** | the specific things not to do, including the tempting near-misses |
+
+**Both halves are required.** *Do* alone leaves the failure available; *Never*
+alone leaves nothing to replace it with, and a model with a prohibition and no
+substitute finds a neighbouring way to fail.
+
+## The bar
+
+**It has to have cost somebody something.** A way a model *could* misbehave is a
+guess, and guesses are what the reader deletes later. Name the case.
+
+**It has to be the model.** Before writing one, rule out the prompt, the
+harness, and a missing tool — those have their own homes and a guardrail aimed
+at the wrong cause is charged to every session forever without ever firing.
+
+**It has to be worth its recurring cost.** See [[the-per-session-budget]].
+
+## The harness is a condition, not a bundle
+
+**One bundle per model. Where something is harness-specific, scope it in a
+line** — *"In Claude Code, …"* — inside the policy that needs it.
+
+Models turn over a few times a year and a harness changes weekly. A bundle per
+model×harness is a matrix nobody keeps current, and most behaviours are not
+harness-specific anyway.
