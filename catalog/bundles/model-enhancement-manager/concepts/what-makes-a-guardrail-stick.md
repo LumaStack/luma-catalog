@@ -35,8 +35,12 @@ outweigh instructions, and a *negative* example — the near-miss, the thing tha
 looks like compliance and is not — is what gives a rule an edge the model can
 locate. *(practice, consistent across sources)*
 
-**So every guardrail carries a near-miss**, showing the wrong version beside the
+**Best practice guardrails include a near-miss**, showing the wrong version beside the
 right one. It is the last thing to cut, not the first.
+
+**The leverage runs both ways, which is why a weak one is worse than none.** If
+an example outweighs the instruction it sits under, a bad example outweighs it
+too — and teaches an edge that is wrong.
 
 **Where one cannot be written, that is evidence about the rule.** The research
 says examples are high-leverage; it does not say every rule has a good one. A

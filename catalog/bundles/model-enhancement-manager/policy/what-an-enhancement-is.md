@@ -31,6 +31,15 @@ compliance and is not. See [[what-makes-a-guardrail-stick]].
 **It is required, and leaving it out needs a reason written in the document** —
 `**No near-miss.**` followed by why, never a silent omission.
 
+**A weak near-miss is worse than none, and this is not a formality.** An example
+outweighs the instruction it sits under — that is the whole reason to have one,
+and the leverage runs both ways. One that is vague, invented, or not actually a
+case of near-compliance teaches a wrong edge, and the model will follow it over
+the rule above it.
+
+**So: write a real one, or rework the rule until one exists, or state its
+absence. Never fabricate one to satisfy the requirement.**
+
 **Being unable to write one is a finding about the rule, not about the
 example.** A behaviour with no near-compliance case is either obvious enough
 that it needs no guardrail, or too vague for the model to know when it is

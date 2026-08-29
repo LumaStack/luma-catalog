@@ -61,6 +61,10 @@ gives it a target. A NEVER longer than its ALWAYS is inverted.
 trimming — an example outweighs more instruction. See
 [[what-makes-a-guardrail-stick]].
 
+**A weak one is worse than none.** An example outweighs the instruction above
+it, so a vague or invented near-miss teaches a wrong edge and gets followed over
+the rule. Never fabricate one to fill the slot.
+
 **If you cannot write one, stop and look at the rule.** A behaviour with no
 near-compliance case is obvious enough to need no guardrail, or too vague to be
 followed. Where it is genuinely absent, write `**No near-miss.**` and one line

@@ -76,6 +76,14 @@ grep -i 'Ceiling:' "$B"/BUNDLE.md || echo 'no ceiling declared'
 
 # 4. and met
 wc -w "$B"/policy/*.md | tail -1
+
+# 5. ALWAYS carries more than NEVER — an inverted guardrail underperforms
+for f in "$B"/policy/*.md; do
+  [ "$(basename "$f")" = entrypoint.md ] && continue
+  awk '/\*\*ALWAYS\*\*/{s=1;next} /\*\*NEVER\*\*/{s=2;next}
+       /\*\*(The|No) near-miss\.\*\*/{s=0} s==1{a+=NF} s==2{n+=NF}
+       END{if(n>a) printf "%s: NEVER %d > ALWAYS %d — inverted\n", FILENAME, n, a}' "$f"
+done
 ```
 
 **Check 1** because the near-miss became required after three guardrails were
@@ -90,6 +98,13 @@ costing more than it should.
 **Check 3** because a restructure removed the ceiling from `BUNDLE.md` entirely
 and it went unnoticed until somebody looked for it by hand. **A budget nobody
 states is a budget nobody exceeds.**
+
+**Check 5** because the rule that ALWAYS outweighs NEVER was stated and
+unenforced, which is the shape this bundle exists to name. **It is written in
+`awk` deliberately** — the obvious `sed` range uses `\|` alternation, which
+basic regular expressions do not support, so the range never terminates and
+every file reports as inverted. That version was written, run, and found wrong
+before it was written down.
 
 **Check 4 last**, because over the ceiling something comes out — and what comes
 out is a decision to record, not an oversight. Where the thing that would come
