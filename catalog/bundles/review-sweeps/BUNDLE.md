@@ -131,16 +131,22 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 `0.11.0` — **the index moves out of `sweep.md` into `coverage.md`.**
 
-**The two stand in opposite relations to the truth**, which is the reason and
-not merely the convenience. A sweep's goal and reasoning **should stay true as
-the work proceeds, and get truer** as it teaches something. **The index is
-expected to go false** — every commit ages it — and is brought back at every
-slice.
+**One is authored and the other is derived**, and everything else follows.
+`coverage.md`'s rows are the scope rule applied to the tree and its statuses
+are what the slices record — **delete it and it rebuilds exactly.** `sweep.md`
+is derivable from nothing: delete it and the goal, the reasoning and the
+learnings exist nowhere else.
 
-**So staleness means opposite things in them.** A stale index is the ordinary
-state between slices; a stale sweep is a defect, because it says the sweep is
-aimed at something it is not. **A file expected to rot must not live inside one
-expected to hold**, or nobody can tell which half has gone off.
+**So they lag differently.** A derived thing ages with every commit, which is
+what reconciliation is for; an authored thing changes only when its author
+changes their mind, and should get *truer* as the sweep teaches something. **A
+stale index is ordinary. A stale sweep is a defect** — it says the sweep is
+aimed at something it is not.
+
+**A derived file must not live inside an authored one**, or nobody can tell
+which half has gone off. **The test, where something is ambiguous:** could this
+be rebuilt from the repository and the slices? If yes it is coverage; if losing
+it would lose something nothing else records, it is the sweep.
 
 The practical annoyances follow from that rather than motivating it: a `git
 diff` of the sweep's thinking buried under status changes, and a rebuild of the

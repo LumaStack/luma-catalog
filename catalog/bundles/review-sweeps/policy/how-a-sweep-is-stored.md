@@ -23,22 +23,30 @@ sometimes more — and survives every session boundary in between.
     002-the-permission-gate.md
 ```
 
-**They are separate because they stand in opposite relations to the truth.**
+**One is authored and the other is derived**, and everything else follows from
+that.
 
 | | | |
 | --- | --- | --- |
-| **`sweep.md`** | **stays true as things change, and gets truer** | the goal sharpens, the learnings accumulate, the scope rule holds |
-| **`coverage.md`** | **is expected to go false, and is brought back** | every commit ages it, and every slice reconciles it |
+| **`sweep.md`** | **authored** | the goal, the scope rule, the order and why, what the sweep taught. **Derivable from nothing** — delete it and none of it exists anywhere else |
+| **`coverage.md`** | **derived** | the rows are the scope rule applied to the tree; the statuses are what the slices record. **Delete it and it can be rebuilt exactly** |
 
-**Staleness means opposite things in the two files.** A stale `coverage.md` is
-the normal state between slices — reconciliation exists because of it. A stale
-`sweep.md` is a defect: it says the sweep is aimed at something it is not.
+**So they stand in opposite relations to the truth.** A derived thing lags by
+nature — every commit ages it, and reconciliation exists to bring it back. An
+authored thing only changes when its author changes their mind, and it should
+get *truer* as the sweep teaches something.
 
-**So a file expected to rot must not live inside one expected to hold**, or
-nobody can tell which half has gone off. That is the whole reason for the
-split, and the practical annoyances follow from it — a `git diff` of the
-sweep's thinking buried under status changes, a rebuild of the index putting
-the reasoning in its blast radius.
+**Staleness therefore means opposite things.** A stale `coverage.md` is the
+ordinary state between slices. **A stale `sweep.md` is a defect** — it says the
+sweep is aimed at something it is not.
+
+**A derived file must not live inside an authored one.** Nobody can tell which
+half has gone off, a rebuild puts the reasoning in its blast radius, and a `git
+diff` of the sweep's thinking is buried under status changes.
+
+**The test, where something is ambiguous:** *could this be rebuilt from the
+repository and the slices?* If yes it belongs in `coverage.md`. If losing it
+would lose something nothing else records, it belongs in `sweep.md`.
 
 **The scope rule stays in `sweep.md`; the enumeration goes in `coverage.md`.**
 *Everything tracked except the generated adapters and the vendored bundles*
