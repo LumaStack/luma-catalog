@@ -296,10 +296,15 @@ once, and the cost is only acceptable once — a second slice that produces as
 many changes to the bundle as findings about the code is a sweep that has
 stopped sweeping.
 
-## 10. Commit the slice
+## 10. Land the slice, not just commit it
 
 One commit for the slice note and the index. That is the sweep's record and it
 lands whether or not anything was fixed.
+
+**A commit on an unmerged branch is not a landed record.** It satisfies every
+sense of *written down* — the note exists, the index is right, the journal is
+current, git has all of it — and it is still **one `checkout` from invisible.**
+Land it however this project lands changes, and then prove it landed.
 
 **The fixes are on their own schedule** — batched by kind rather than by where
 they were found, and landed however this project lands changes. See
@@ -378,15 +383,55 @@ already been written to disk.** The slice note, the index, the journal, the
 routed findings, the commit. That is not luck — it is what steps 6 to 10 are
 for.
 
-**So it is a check rather than a judgement:** *is anything left that exists
-only in this session?*
+**So it is a check rather than a judgement:** *is anything left that would
+disappear if this went away?* Not the session alone — **the session, the
+working tree, the branch, a worktree, anywhere work can be stranded.**
 
-- **No.** Clearing costs nothing — **recommend it.** What the context mostly
-  holds is files still sitting on disk, and re-reading the two that matter next
-  is cheaper than carrying all of them through every remaining turn.
-- **Yes.** **That is a defect, not a reason to keep the context.** Write it down
-  and then clear. An observation surviving only in a session is one restart from
-  gone, and [[how-a-sweep-is-stored]] gives the journal for exactly this.
+### Prove it, do not remember it
+
+**Run the checks and show what they return.** Three or four commands, all
+instant, and the answer is the output rather than a recollection.
+
+**Fetch first, and compare against the remote ref.** A local integration branch
+goes stale the moment somebody merges, and a stale ref reports landed work as
+unlanded — **a false positive that trains the reader to ignore the check.**
+
+| where work strands | run | wanted |
+| --- | --- | --- |
+| — | `git fetch -q` | *first, always* |
+| the working tree | `git status --short` | empty |
+| this branch | `git log --oneline origin/<integration>..HEAD` | empty, or a merged pull request |
+| another branch | `git branch --no-merged origin/<integration>` | nothing belonging to this sweep |
+| another worktree | `git worktree list` | nothing else holding sweep work |
+
+**The one that cannot be run is the session**, and it is the one that gets
+trusted. You cannot grep for an observation you failed to write. **So the three
+that are checkable get checked** — they are cheap, they are certain, and
+skipping them is how a slice's record ends up committed, correct, and on a
+branch nobody merged.
+
+**Anything found is a defect, not a reason to keep the context.** Write it
+down, land it, then clear.
+
+### A proof with nothing gated on it is a suggestion
+
+**The check has to block something**, or it becomes a line the agent reports
+having done. Two levels, and the second is not free.
+
+**Gate in prose, by default.** *Do not do X until the output above is shown.*
+It costs a sentence, applies everywhere, and is exactly as strong as the
+agent's willingness to follow it — which is the thing in question. **Put the
+gate where the violation happens**, not beside the rule it enforces: the check
+for an unlanded slice belongs at the moment the next branch is cut.
+
+**Gate in a hook where the failure earns it.** A hook is real enforcement and
+real machinery — installed, kept working, and understood by whoever hits it.
+**Spend it where a failure is both silent and expensive**: silent because
+nothing else reports it, expensive because it is discovered late.
+
+**Losing a slice's record is both.** Nothing reported it, and it surfaced two
+slices later with forty-three rows wrong. **Most sweep failures are neither**,
+and a hook for them costs more than they do.
 
 **Recommend; do not decide.** The same shape as fix-now-or-route — you can see
 what the context costs and you cannot see whether they are mid-thought about

@@ -170,8 +170,14 @@ actually want?**
   **Clearing is cheap, and it is the usual answer.**
 - **The same cluster, continued** — most of it. **Clearing buys a re-read of
   files about to be discussed. Say so and carry on.**
-- **Something exists only in this session** — **a defect, not a cost.** Name it,
-  write it to the journal, then clear. Never a reason to hold context.
+- **Something would disappear if this went away** — the session, the working
+  tree, an unmerged branch, another worktree. **A defect, not a cost.** Write it
+  down, land it, then clear. Never a reason to hold context.
+
+**Prove the checkable ones rather than remembering them** — `git status
+--short`, `git log <integration>..HEAD`, `git branch --no-merged`, `git worktree
+list`. All instant. **The session is the only one you cannot run**, and it is
+the one that gets trusted.
 
 **Say which of the three it is and why, in a sentence or two** — and give the
 options above regardless, because *carry on* is still a choice between them.

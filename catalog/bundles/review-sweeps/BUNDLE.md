@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.27.0
+version: 0.28.0
 published: 2026-08-29
 lifecycle: draft
 survival: experimental
@@ -132,6 +132,39 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
+`0.28.0` — **prove nothing is stranded; do not remember it.**
+
+The clear check asked *is anything left that exists only in this session?* and
+rested on a claim that **by the time a slice closes, everything worth keeping
+is on disk — the note, the index, the journal, the commit.**
+
+**A commit on an unmerged branch satisfies all of that and is still
+invisible.** A sweep lost forty-three skipped rows exactly that way: the slice
+was committed, no pull request was ever opened, a detour began with a branch
+switch, and the next slice branched from an integration branch that had never
+seen it. **The check passed honestly and the record was gone.**
+
+**So the question widens** — the session, the working tree, the branch, a
+worktree, anywhere work can be stranded — **and three of the four are commands
+rather than recollections:**
+
+| where work strands | run |
+| --- | --- |
+| the working tree | `git status --short` |
+| this branch | `git log --oneline <integration>..HEAD` |
+| another branch | `git branch --no-merged <integration>` |
+| another worktree | `git worktree list` |
+
+**All instant.** That matters: a proof nobody can afford is a proof nobody
+runs.
+
+**The session is the one that cannot be checked, and it is the one that gets
+trusted.** You cannot grep for an observation you failed to write.
+
+**And step 10 is now *land the slice*, not *commit* it.** A record on a branch
+nobody merged is the same failure as one in a session nobody saved — one
+`checkout` instead of one restart.
+
 `0.27.0` — **`What's next` and `Should you /clear` are two sections.**
 
 They were one, and the clear decision sat at the tail of a paragraph — **the
@@ -151,9 +184,9 @@ says yes is one a reader stops reading.*
 **The weighing rule is `what-a-slice-produces`' and is cited rather than
 restated** — both choices taxed, recommend the smaller. **What is specific here
 is which taxes:** clearing costs a re-read of whatever the next slice needs and
-this session already holds; carrying on costs the irrelevant context, paid again
-on every remaining turn. It turns on how much of what is loaded the next slice
-actually wants — almost none after a detour, most of it mid-cluster.
+this session already holds; carrying on costs the irrelevant context, paid
+again on every remaining turn. It turns on how much of what is loaded the next
+slice actually wants — almost none after a detour, most of it mid-cluster.
 
 *Something existing only in the session is a defect rather than a cost.* Write
 it down and then clear; it is never a reason to hold context.
