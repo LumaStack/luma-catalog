@@ -110,9 +110,14 @@ guess, and guesses are what the reader deletes later. Name the case.
 harness, and a missing tool — those have their own homes and a guardrail aimed
 at the wrong cause is charged to every session forever without ever firing.
 
-**And it has to fix the model rather than improve any model.** The question to
-ask is: *would a different model need this too?* If yes, it is a practice and
-not a correction, and it belongs in a model-neutral bundle.
+**And it has to fix a defect rather than add a capability.** The test is not
+whether another model shares it — earlier versions of this same model often have
+the same fault, and it is still a correction. The test is: **would this help a
+model that does not have the problem?** If yes, it is a practice, and it belongs
+in a model-neutral bundle.
+
+**Where several models do share a correction**, that is a question about where
+it lives rather than whether it belongs — see [[start-a-model-bundle]].
 
 **Getting that wrong fails twice.** A practice filed here is charged to every
 session of one model, and withheld from every other model that needed it just

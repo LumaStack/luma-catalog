@@ -18,11 +18,14 @@ wrong cause loads forever and never fires:
 **Where it is the harness and the harness is one of several**, it is still an
 enhancement with a scoping line. Where it is the prompt, it is not one at all.
 
-**Then the test that catches the commonest mistake: would a different model
-need this too?** If it would, you are holding a practice rather than a
-correction, and it belongs in a model-neutral bundle. *Offer to script a check
-you keep re-running* is a good habit for every agent alive; it fixes nothing
-about this model, so it does not go here.
+**Then the test that catches the commonest mistake: would this help a model that
+does not have the problem?** If it would, you are holding a practice rather than
+a correction, and it belongs in a model-neutral bundle. *Offer to script a check
+you keep re-running* helps a flawless model exactly as much as a flawed one,
+which is what marks it as a capability rather than a fix.
+
+**Not** *does another model share it* — earlier versions of the same model
+frequently do, and a shared fault is still a fault.
 
 ## 2. Find the second instance
 
