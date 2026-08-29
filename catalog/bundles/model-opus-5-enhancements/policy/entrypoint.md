@@ -24,4 +24,8 @@ work — after a correction is too late, because the correction is the cost.
 
 They sit beside this file, in this bundle's `policy/` directory.
 
+**Each ends with a contrastive example** — it going wrong, quoted, beside it
+going right. The wrong one is the version you would produce while believing you
+complied, which is why it is worth reading closely.
+
 **If one of them makes the work worse, say so rather than working around it.**
