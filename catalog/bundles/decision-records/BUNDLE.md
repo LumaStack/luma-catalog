@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.9.3
+version: 0.9.4
 published: 2026-08-28
 consumers: [project, organization]
 entrypoint: workflows/record-decision
@@ -128,6 +128,14 @@ different reason: they are read when something needs to know what a field means,
 not held in context against the possibility.
 
 ## Version
+
+`0.9.4` — **the template starts a new Document at `draft`, not `provisional`.**
+
+**The example value in a template becomes the estate's default**, and this one
+was teaching every new Document to be born promoted. **The lifecycle ladder
+measures what a reader is owed when a Document changes**, and use by its own
+authors does not promote it — `provisional` begins when somebody who did not
+write it can rely on it, and promoting is the author's explicit act.
 
 `0.9.3` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
 

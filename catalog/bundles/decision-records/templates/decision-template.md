@@ -14,7 +14,7 @@ Guidance is in `../policy/decision-guidelines.md`; the field contract is in
 type: decision
 title: <short decision title, active voice>
 decided: YYYY-MM-DD
-lifecycle_status: provisional
+lifecycle_status: draft
 reopen_trigger: <what would make this worth revisiting>
 ---
 ```
