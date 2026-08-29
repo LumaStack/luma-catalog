@@ -132,6 +132,30 @@ out is a contrastive example, raise the ceiling instead: an example outweighs mo
 instruction, and a number that forces out the highest-leverage part is
 optimising itself.
 
+## 5b. Have the model read it back
+
+**Ask the model the guardrail is for to explain it in its own words** — what the
+behaviour is, and what it would do differently. It is the only check that tests
+comprehension rather than shape, and it costs one exchange.
+
+**It has to be that model, and both ways of getting it wrong are real.** A
+different model that explains it correctly gives a **false pass** — you conclude
+the guardrail is clear and the model it governs still misreads it, and nothing
+downstream will report that. One that explains it badly gives a false failure,
+and you rewrite something that was already fine.
+
+**The false pass is the one to fear**, because it is silent. The false failure
+costs a rewrite and announces itself.
+
+**A wrong read-back is a finding about the guardrail, not about the model.**
+Rewrite it. The model that misexplains it in a clean session is the same one
+that will misapply it in a real one.
+
+**This is authoring-time only.** Having a model restate constraints during
+ordinary work is per-turn padding and is rejected in
+[[what-makes-a-guardrail-stick]] — the objection does not apply to a check run
+once, by a person, while writing.
+
 ## 6. Land it, and say what came out
 
 Version per `lumastack/luma-catalog/versioning`: a new policy is a minor bump, a

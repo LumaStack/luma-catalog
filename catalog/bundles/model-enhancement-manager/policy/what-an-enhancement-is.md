@@ -21,6 +21,12 @@ reader something they can obtain on demand anyway, and charges the agent for it
 on every session forever. **So optimise wholly for the agent, and let
 explanation be the thing that is asked for.**
 
+**The explaining agent has to be the model the guardrail is for.** A different
+model tells you how *it* reads the text, and the text was tuned to one — so a
+correct explanation from the wrong model is a false pass, and it is silent.
+Nothing downstream reports that the model actually governed by the rule reads it
+differently.
+
 **What still has to hold is auditability, which is not the same as plainness.**
 A person must be able to tell whether a guardrail is *right* — with an agent
 beside them, reading it together. Two of these carried the contrastive label
