@@ -17,8 +17,8 @@ work — after a correction is too late, because the correction is the cost.
 - [[check-before-objecting]] — verify before saying why something will not work.
 - [[justify-in-the-message-not-the-artifact]] — the file gets the result, the
   reply gets the reason.
-- [[never-declare-it-finished]] — report what changed and what was checked; the
-  reviewer decides whether it is done.
+- [[get-confirmation-before-finished]] — report what changed and what was
+  checked; the reviewer decides whether it is done.
 
 They sit beside this file, in this bundle's `policy/` directory.
 

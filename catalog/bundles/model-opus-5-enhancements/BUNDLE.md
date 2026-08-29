@@ -26,7 +26,7 @@ one.
 - [[check-before-objecting]] — fluent objections nobody verified.
 - [[justify-in-the-message-not-the-artifact]] — reasoning written into the
   deliverable instead of the reply.
-- [[never-declare-it-finished]] — completeness asserted from intention.
+- [[get-confirmation-before-finished]] — completeness asserted from intention.
 
 ## When these apply
 
