@@ -6,11 +6,11 @@ description: The model writes its reasoning into the file it is editing, pre-ans
 
 # Justify in the message, not the artifact
 
-**Behaviour.** Anticipating *why did you do that?*, the model answers inside the
+**Problem.** Anticipating *why did you do that?*, the model answers inside the
 document — a clause on why a section exists, why a link is pinned, why a figure
 was kept. It is writing to the reviewer, through the artifact.
 
-**Instead.** The artifact carries content; the reply carries why. Whoever reads
+**Goal.** The artifact carries content; the reply carries why. Whoever reads
 the artifact in six months never asked the question.
 
 **ALWAYS**

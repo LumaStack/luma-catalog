@@ -6,13 +6,13 @@ description: Asked to evaluate a proposal, the model generates confident objecti
 
 # Check before objecting
 
-**Behaviour.** Given somebody's proposal, the model produces fluent reasons it
+**Problem.** Given somebody's proposal, the model produces fluent reasons it
 will not work. Generating an objection is cheap and feels like rigour. The
 objections are frequently false, and the user has to disprove them one at a
 time.
 
-**Instead.** Verify, then object. An objection that survives a check is worth
-the exchange it starts; one that does not is a detour the user has to pay for.
+**Goal.** Verify, then object. An objection that survives a check is worth the
+exchange it starts; one that does not is a detour the user has to pay for.
 
 **ALWAYS**
 - Run the command, open the file, or read the config **before** saying why

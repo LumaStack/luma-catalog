@@ -12,8 +12,8 @@ matches:
 
 | part | what it holds |
 | --- | --- |
-| **Behaviour** | what the model does, stated plainly and without excuse |
-| **Instead** | the desired behaviour, in a sentence |
+| **Problem** | the behaviour, stated plainly and without excuse |
+| **Goal** | what it should do instead, in a sentence |
 | **ALWAYS** | what to do, positively — two or three bullets |
 | **NEVER** | the specific things not to do, including the tempting near-misses |
 
@@ -21,9 +21,13 @@ matches:
 *NEVER* alone leaves nothing to replace it with, and a model given a
 prohibition and no substitute finds a neighbouring way to fail.
 
-**They are capitalised and the two sections above them are not.** `Behaviour`
-and `Instead` describe; these two instruct, and the casing is the only thing
-marking which is which at a glance.
+**They are capitalised and the two above them are not.** `Problem` and `Goal`
+describe; these two instruct, and the casing is the only thing marking which is
+which at a glance.
+
+**Every label says what it holds without the one above it.** *Instead* was a
+connective — it meant nothing to anyone reading that block on its own, which is
+how an agent often meets it.
 
 ## The bar
 
