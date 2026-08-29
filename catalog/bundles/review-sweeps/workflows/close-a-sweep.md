@@ -6,6 +6,11 @@ description: Finish or abandon a sweep honestly — check coverage, confirm noth
 
 # Close a sweep
 
+**Check the title before anything else.** If the sweep covered materially less
+than it set out to — or something different — **the title says what was
+actually read**, and the slug stays exactly as it is. See
+[[how-a-sweep-is-stored]].
+
 **Both endings use this**, and the difference is one honest sentence in the
 summary. A sweep stopped at 40% is an ordinary outcome; a sweep stopped at 40%
 and archived as though it were finished is a lie the index will tell for years.

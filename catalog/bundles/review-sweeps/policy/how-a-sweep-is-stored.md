@@ -375,6 +375,31 @@ somebody else's work, and its findings are worth something.*
 `everything`, `docs-and-prose`. No date, and no commit: a sweep spans many of
 both, and pinning either in the name would be a claim it cannot keep.
 
+**The slug never changes; the title does.** A sweep's scope moves — exclusions
+arrive, whole areas get deferred — and **the title is what says what was
+actually read.** `the-whole-of-foreman` that skipped every source file is a
+directory whose name is a false claim, and it is the first thing anybody sees.
+
+**The slug is an identifier and identifiers do not move.** Slices cite the
+path, the journal cites it, every commit and pull request that touched the
+sweep cites it. **Renaming it to gain accuracy in one place breaks it
+everywhere else** — the same failure as using a position, or a heading number,
+as a citation target.
+
+**Correct the title when the scope changes, not only at the close.** A title
+that has been false since slice five was false for every slice after it, and
+fixing it at the end fixes it for nobody who read it on the way.
+
+**And when the gap is large enough to notice, the close says so in a
+sentence.** *Chartered as the whole repository; covered the prose, with all
+code deferred to a separate sweep.* **A summary that reads as though everything
+was covered is the one thing a spent sweep must not leave behind.**
+
+*Where the divergence is so wide that the charter no longer describes the work
+— a different goal, a different subject — that is not a title problem. **The
+sweep should have been closed and another opened**, and the close should say
+that plainly rather than renaming its way out.*
+
 **Slices are numbered and slugged** — `001-entrypoint-and-args.md`. The number
 is the identity and the order they happened in; the slug is for finding one
 again. Numbering from `001` rather than by date, because *what did we do first*

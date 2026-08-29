@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.28.0
+version: 0.29.0
 published: 2026-08-29
 lifecycle: draft
 survival: experimental
@@ -132,18 +132,43 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
+`0.29.0` — **the title says what was read; the slug never moves.**
+
+A sweep's scope changes — exclusions arrive, whole areas get deferred — and
+**nothing said what to do about a name that has stopped being true.**
+`the-whole-of-foreman` that skipped every source file is a directory whose name
+is a false claim, and it is the first thing anybody sees.
+
+**The slug is an identifier.** Slices cite the path, the journal cites it,
+every commit and pull request cites it. **Renaming it for accuracy in one place
+breaks it everywhere else** — the same failure as citing a heading by its
+number.
+
+**Correct the title when the scope changes, not only at the close.** A title
+false since slice five was false for every slice after it, and fixing it at the
+end fixes it for nobody who read it on the way.
+
+**And the close says the gap in a sentence** when it is large enough to notice.
+*Chartered as the whole repository; covered the prose, with all code deferred.*
+**A summary reading as though everything was covered is the one thing a spent
+sweep must not leave behind.**
+
+*Where the divergence is wide enough that the charter no longer describes the
+work, that is not a title problem — the sweep should have been closed and
+another opened.*
+
 `0.28.0` — **prove nothing is stranded; do not remember it — and `git-workflow`
 owns how.**
 
 The clear check asked *is anything left that exists only in this session?* and
-rested on a claim that **by the time a slice closes, everything worth keeping is
-on disk — the note, the index, the journal, the commit.**
+rested on a claim that **by the time a slice closes, everything worth keeping
+is on disk — the note, the index, the journal, the commit.**
 
-**A commit on an unmerged branch satisfies all of that and is still invisible.**
-A sweep lost forty-three skipped rows exactly that way: the slice was committed,
-no pull request was ever opened, a detour began with a branch switch, and the
-next slice branched from an integration branch that had never seen it. **The
-check passed honestly and the record was gone.**
+**A commit on an unmerged branch satisfies all of that and is still
+invisible.** A sweep lost forty-three skipped rows exactly that way: the slice
+was committed, no pull request was ever opened, a detour began with a branch
+switch, and the next slice branched from an integration branch that had never
+seen it. **The check passed honestly and the record was gone.**
 
 **So the question widens** — the session, the working tree, the branch, a
 worktree, anywhere work can be stranded — **and most of it is checkable rather
@@ -151,13 +176,13 @@ than recalled.**
 
 **How to check it is not this bundle's business.** `git-workflow`'s
 `proving-work-landed` is the source of truth: the commands, the fetch, the
-remote ref, showing the output, and the two levels of gate. **Every bundle whose
-work can be stranded on a branch has the same problem**, and each inventing its
-own commands produces a set of near-identical checks that drift.
+remote ref, showing the output, and the two levels of gate. **Every bundle
+whose work can be stranded on a branch has the same problem**, and each
+inventing its own commands produces a set of near-identical checks that drift.
 
 *This bundle had already written the rule and walked past it —
-`what-a-slice-produces` ends "How changes get integrated is not this bundle's to
-say."*
+`what-a-slice-produces` ends "How changes get integrated is not this bundle's
+to say."*
 
 **What stays here is the obligation and where it falls**: at a slice's close,
 and again before the next branch is cut. Plus which sweep failures are worth a
