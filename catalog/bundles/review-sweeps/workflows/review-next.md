@@ -389,49 +389,38 @@ working tree, the branch, a worktree, anywhere work can be stranded.**
 
 ### Prove it, do not remember it
 
-**Run the checks and show what they return.** Three or four commands, all
-instant, and the answer is the output rather than a recollection.
+**The record is landed, not merely committed, and you show that it is.** A
+commit on an unmerged branch satisfies every sense of *written down* and is
+still one `checkout` from invisible — which is how a sweep lost forty-three
+skipped rows.
 
-**Fetch first, and compare against the remote ref.** A local integration branch
-goes stale the moment somebody merges, and a stale ref reports landed work as
-unlanded — **a false positive that trains the reader to ignore the check.**
+**How to check that is `git-workflow`'s, not this bundle's.** Its
+`proving-work-landed` policy has the commands, why they run against the remote
+ref after a fetch, and why showing the output matters — and it is the source of
+truth for every bundle with the same problem, not just this one.
 
-| where work strands | run | wanted |
-| --- | --- | --- |
-| — | `git fetch -q` | *first, always* |
-| the working tree | `git status --short` | empty |
-| this branch | `git log --oneline origin/<integration>..HEAD` | empty, or a merged pull request |
-| another branch | `git branch --no-merged origin/<integration>` | nothing belonging to this sweep |
-| another worktree | `git worktree list` | nothing else holding sweep work |
+**What is this bundle's is the obligation and where it falls**: at the close of
+a slice, and again before the next branch is cut.
 
-**The one that cannot be run is the session**, and it is the one that gets
-trusted. You cannot grep for an observation you failed to write. **So the three
-that are checkable get checked** — they are cheap, they are certain, and
-skipping them is how a slice's record ends up committed, correct, and on a
-branch nobody merged.
-
-**Anything found is a defect, not a reason to keep the context.** Write it
-down, land it, then clear.
+**The one thing no command reaches is the session.** *Is anything worth keeping
+only in this conversation?* cannot be checked — you cannot grep for an
+observation you failed to write. **It stays a judgement, and it is the one that
+gets trusted**, which is the wrong way round. Making everything around it
+checkable is what leaves it standing alone and visible instead of hidden in a
+row of equally confident claims.
 
 ### A proof with nothing gated on it is a suggestion
 
 **The check has to block something**, or it becomes a line the agent reports
 having done. Two levels, and the second is not free.
 
-**Gate in prose, by default.** *Do not do X until the output above is shown.*
-It costs a sentence, applies everywhere, and is exactly as strong as the
-agent's willingness to follow it — which is the thing in question. **Put the
-gate where the violation happens**, not beside the rule it enforces: the check
-for an unlanded slice belongs at the moment the next branch is cut.
+**The two levels are `git-workflow`'s to describe** — prose by default, a hook
+where the failure is both silent and expensive. **What this bundle says is
+which sweep failures qualify.**
 
-**Gate in a hook where the failure earns it.** A hook is real enforcement and
-real machinery — installed, kept working, and understood by whoever hits it.
-**Spend it where a failure is both silent and expensive**: silent because
-nothing else reports it, expensive because it is discovered late.
-
-**Losing a slice's record is both.** Nothing reported it, and it surfaced two
-slices later with forty-three rows wrong. **Most sweep failures are neither**,
-and a hook for them costs more than they do.
+**Losing a slice's record does.** Nothing reported it, and it surfaced two
+slices later with forty-three rows wrong. **Most do not** — and a hook for them
+costs more than they do.
 
 **Recommend; do not decide.** The same shape as fix-now-or-route — you can see
 what the context costs and you cannot see whether they are mid-thought about

@@ -132,38 +132,46 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
-`0.28.0` — **prove nothing is stranded; do not remember it.**
+`0.28.0` — **prove nothing is stranded; do not remember it — and `git-workflow`
+owns how.**
 
 The clear check asked *is anything left that exists only in this session?* and
-rested on a claim that **by the time a slice closes, everything worth keeping
-is on disk — the note, the index, the journal, the commit.**
+rested on a claim that **by the time a slice closes, everything worth keeping is
+on disk — the note, the index, the journal, the commit.**
 
-**A commit on an unmerged branch satisfies all of that and is still
-invisible.** A sweep lost forty-three skipped rows exactly that way: the slice
-was committed, no pull request was ever opened, a detour began with a branch
-switch, and the next slice branched from an integration branch that had never
-seen it. **The check passed honestly and the record was gone.**
+**A commit on an unmerged branch satisfies all of that and is still invisible.**
+A sweep lost forty-three skipped rows exactly that way: the slice was committed,
+no pull request was ever opened, a detour began with a branch switch, and the
+next slice branched from an integration branch that had never seen it. **The
+check passed honestly and the record was gone.**
 
 **So the question widens** — the session, the working tree, the branch, a
-worktree, anywhere work can be stranded — **and three of the four are commands
-rather than recollections:**
+worktree, anywhere work can be stranded — **and most of it is checkable rather
+than recalled.**
 
-| where work strands | run |
-| --- | --- |
-| the working tree | `git status --short` |
-| this branch | `git log --oneline <integration>..HEAD` |
-| another branch | `git branch --no-merged <integration>` |
-| another worktree | `git worktree list` |
+**How to check it is not this bundle's business.** `git-workflow`'s
+`proving-work-landed` is the source of truth: the commands, the fetch, the
+remote ref, showing the output, and the two levels of gate. **Every bundle whose
+work can be stranded on a branch has the same problem**, and each inventing its
+own commands produces a set of near-identical checks that drift.
 
-**All instant.** That matters: a proof nobody can afford is a proof nobody
-runs.
+*This bundle had already written the rule and walked past it —
+`what-a-slice-produces` ends "How changes get integrated is not this bundle's to
+say."*
 
-**The session is the one that cannot be checked, and it is the one that gets
-trusted.** You cannot grep for an observation you failed to write.
+**What stays here is the obligation and where it falls**: at a slice's close,
+and again before the next branch is cut. Plus which sweep failures are worth a
+hook — losing a slice's record is; a misrouted finding or a stale count is not,
+because both are visible on the next read.
 
 **And step 10 is now *land the slice*, not *commit* it.** A record on a branch
 nobody merged is the same failure as one in a session nobody saved — one
 `checkout` instead of one restart.
+
+**The one thing no command reaches is the session.** You cannot grep for an
+observation you failed to write, so it stays a judgement — and it is the one
+that gets trusted. Making everything around it checkable leaves it standing
+alone and visible instead of hidden in a row of equally confident claims.
 
 `0.27.0` — **`What's next` and `Should you /clear` are two sections.**
 

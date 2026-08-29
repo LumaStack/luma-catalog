@@ -174,10 +174,12 @@ actually want?**
   tree, an unmerged branch, another worktree. **A defect, not a cost.** Write it
   down, land it, then clear. Never a reason to hold context.
 
-**Prove the checkable ones rather than remembering them** — `git status
---short`, `git log <integration>..HEAD`, `git branch --no-merged`, `git worktree
-list`. All instant. **The session is the only one you cannot run**, and it is
-the one that gets trusted.
+**Prove the checkable ones rather than remembering them.** `git-workflow`'s
+`proving-work-landed` has the commands, and why they run against the remote ref
+after a fetch.
+
+**The session is the only one no command reaches**, and it is the one that gets
+trusted.
 
 **Say which of the three it is and why, in a sentence or two** — and give the
 options above regardless, because *carry on* is still a choice between them.
