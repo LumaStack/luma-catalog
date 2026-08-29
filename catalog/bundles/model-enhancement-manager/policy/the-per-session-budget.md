@@ -27,8 +27,9 @@ keep to it. Without a number, a bundle grows one reasonable-looking addition at
 a time.
 
 **Sharpen before adding.** Most new observations are a sharper case of a policy
-already there. Adding a sixth document when a fifth could absorb it doubles the
-cost for a distinction the model will not act on differently.
+already there. Adding a document when an existing one could absorb it buys a
+distinction the model will not act on differently, and charges every session
+for it.
 
 **Remove what stops earning.** A guardrail for a behaviour that has not recurred
 is being paid for by every session. Removal is ordinary, not a failure — and

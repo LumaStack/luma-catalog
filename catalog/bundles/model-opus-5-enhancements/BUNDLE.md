@@ -25,7 +25,6 @@ one.
 - [[check-before-objecting]] — fluent objections nobody verified.
 - [[justify-in-the-message-not-the-artifact]] — reasoning written into the
   deliverable instead of the reply.
-- [[a-correction-is-a-class]] — the same fix applied only where it was pointed.
 - [[never-declare-it-finished]] — completeness asserted from intention.
 
 ## When these apply
@@ -57,6 +56,12 @@ sixth.
 
 ## Version
 
-`0.1.0` — five policies from one long session with one user. The behaviours are
-real; whether they are the *most* costly five is unknown, and a second user's
+`0.1.0` — four policies from one long session with one user. The behaviours are
+real; whether they are the *most* costly four is unknown, and a second user's
 evidence may reorder or replace them entirely.
+
+**One was dropped before publication.** *A correction is a class* asked the
+model to sweep the artifact after any correction and report what else it found.
+It was the only policy here that added a step to every exchange rather than
+redirecting one, and inferring a rule from a single correction is how a model
+ends up editing files nobody mentioned.
