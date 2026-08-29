@@ -19,7 +19,9 @@ created: YYYY-MM-DD
 lifecycle_status: provisional
 goal: <what you want to be true afterwards, stated so it can be checked>
 scope: <one line — and say what is excluded in the body>
-strictness: strict | adaptive
+goal_discipline: strict | adaptive | exploratory       # default adaptive
+scope_discipline: strict | adaptive | exploratory      # default adaptive
+strategy_discipline: strict | adaptive | exploratory   # default adaptive
 ordering: narrative | risk-weighted | dependency | directory | led
 pairing: human-agent | agent-agent
 contributors:
@@ -64,11 +66,16 @@ is routinely not what shares a directory.>
 here rather than improvising one in coverage.md — the index applies this
 strategy and does not invent it, which is what keeps it derivable.>
 
-## Strictness
+## Discipline
 
-<strict — the goal, scope and strategy are fixed; anything that would change
-them is recorded and left for a later sweep. adaptive — expect them to move, and
-budget for it. Most sweeps should be strict.>
+<A ladder of what you know. strict — you know what you are doing, so do not
+touch it. adaptive — you know the shape, so refine and tune it. exploratory — you
+do not know the shape yet, so go and find what it should be.
+
+Absent, every axis is adaptive. The common mature configuration is strict goals,
+strict scope, adaptive strategy: do not wander, but do improve how you read. A
+first sweep of a new practice is exploratory on all three, and costs what
+discovery costs.>
 
 ## Order
 

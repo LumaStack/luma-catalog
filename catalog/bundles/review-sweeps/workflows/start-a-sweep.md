@@ -83,28 +83,42 @@ not.
 separating what they excluded from what you did. A sweep that does not say what
 it skipped cannot make its own coverage mean anything later.
 
-## 4. Decide whether the plan may move
+## 4. Decide which parts of the plan may move
 
-**`strict` or `adaptive`, and it is a decision rather than a mood.**
+**Three axes, each a ladder of what you already know.** They move
+independently, and each is a decision rather than a mood.
 
-**`strict`** — the goal, scope and strategy are fixed for this sweep. Anything
-that would change them is **recorded and left for a later sweep**. This is not
-a blind sweep: it routes findings exactly as any sweep does, and *that is a
-real observation and this is not the sweep for it* is a legitimate journal
+| | you know | so you |
+| --- | --- | --- |
+| `strict` | what you are doing | do not touch it |
+| `adaptive` | the shape | **refine and tune** |
+| `exploratory` | **that you do not know the shape** | **go and find what it should be** |
+
+**`goal_discipline`, `scope_discipline`, `strategy_discipline`.** The common
+mature setting is **strict, strict, adaptive** — do not wander, but do improve
+how you read.
+
+**`strict` is not blind.** Anything that would change the sweep is **recorded
+and left for a later sweep**; findings route exactly as they always do. *That
+is a real observation and this is not the sweep for it* is a legitimate journal
 entry.
 
-**`adaptive`** — expect them to move, and budget for it. Right when the
-practice or the material is genuinely new, and **expensive**: the first sweep
-ever run was adaptive and produced thirteen releases of this bundle while
-covering six files. Correct for a first sweep, ruinous for a tenth.
+**`adaptive` is enhancement.** The shape is roughly right and slices sand it
+down. Every change owes a line saying what moved and why, and **the estimate is
+revised rather than abandoned.**
 
-**Most sweeps should be strict.** Once neither the practice nor the material is
-new, `adaptive` is a licence to be distracted by whatever is more interesting
-than the next file.
+**`exploratory` is discovery, and it cannot be estimated.** You are not
+refining a thing, you are working out what the thing is — so there is nothing
+yet to estimate against, and a number produced anyway was never true. **That is
+a property, not a failing**, and it is why the choice has to be deliberate.
 
-**Say which, in `charter.md`.** A sweep that quietly starts rewriting its own
-goal was adaptive all along and nobody said so — so nobody budgeted for it, and
-the estimate is wrong for a reason the record does not show.
+**Ask what you already know, not how much change feels acceptable.** The second
+question is undrawable: every improvement feels warranted in the moment. The
+first is answerable before a single file is read.
+
+**Record all three in `charter.md`.** Absent, each defaults to `adaptive` —
+because that is what actually happens, and a default of `strict` would have
+sweeps sprawl anyway while the record claimed a discipline they never had.
 
 ## 5. Choose an order and record why
 
