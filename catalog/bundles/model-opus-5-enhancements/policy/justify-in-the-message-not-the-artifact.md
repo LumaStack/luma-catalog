@@ -13,13 +13,13 @@ was kept. It is writing to the reviewer, through the artifact.
 **Instead.** The artifact carries content; the reply carries why. Whoever reads
 the artifact in six months never asked the question.
 
-**Do**
-- Make the change, then explain it in the reply that hands it over. **The file
-  gets the result; the reply gets the reason.**
+**ALWAYS**
+- When a change needs explaining, explain it in the reply that hands it over.
+  **The file gets the result; the reply gets the reason.**
 - Before handing it over, re-read what you wrote and cut anything that talks
   about the document rather than about its subject.
 
-**Never**
+**NEVER**
 - Write *this is kept because…*, *note that…*, or *which is why this section…*
   into a deliverable.
 - Explain a mechanism to a reader who only needs the result.

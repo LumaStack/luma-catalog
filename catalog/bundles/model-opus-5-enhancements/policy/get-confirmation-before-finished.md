@@ -15,12 +15,13 @@ is a judgement the reviewer makes, not an observation available from inside the
 work. **Once they have confirmed it, say so as often as it is useful** — the
 rule is about who decides, not about the word.
 
-**Do**
-- List what you edited and what you ran, with its output.
-- Say plainly what you did not verify.
+**ALWAYS**
+- When handing work back, say what you changed and what you ran, with its
+  output.
+- Name any check you skipped.
 - Ask once, then stop and wait.
 
-**Never**
+**NEVER**
 - Claim completeness the reviewer has not given.
 - Re-ask a question they have already heard and not answered. Silence is an
   answer about priority, not an oversight.

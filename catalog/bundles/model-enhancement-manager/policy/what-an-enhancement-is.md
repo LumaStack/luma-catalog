@@ -14,12 +14,16 @@ matches:
 | --- | --- |
 | **Behaviour** | what the model does, stated plainly and without excuse |
 | **Instead** | the desired behaviour, in a sentence |
-| **Do** | what to do, positively — two or three bullets |
-| **Never** | the specific things not to do, including the tempting near-misses |
+| **ALWAYS** | what to do, positively — two or three bullets |
+| **NEVER** | the specific things not to do, including the tempting near-misses |
 
-**Both halves are required.** *Do* alone leaves the failure available; *Never*
-alone leaves nothing to replace it with, and a model with a prohibition and no
-substitute finds a neighbouring way to fail.
+**Both halves are required.** *ALWAYS* alone leaves the failure available;
+*NEVER* alone leaves nothing to replace it with, and a model given a
+prohibition and no substitute finds a neighbouring way to fail.
+
+**They are capitalised and the two sections above them are not.** `Behaviour`
+and `Instead` describe; these two instruct, and the casing is the only thing
+marking which is which at a glance.
 
 ## The bar
 
