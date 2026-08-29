@@ -47,6 +47,10 @@ repetition. Never cut a heading, a standalone label, or the example showing the
 near-miss — those are what make the rule survive being read in a hurry, in
 fragments, by something that will not go back for context.
 
+**Departing from any of this is allowed and has to be written down**, with the
+reason, in the document — see [[what-an-enhancement-is]]. Skipping a requirement
+silently is indistinguishable from not having attempted it.
+
 ## The three that get written wrongly
 
 **Both lists are required, and ALWAYS carries more.** A prohibition makes the
