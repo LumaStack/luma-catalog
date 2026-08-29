@@ -17,8 +17,13 @@ building them, keeping them honest, and keeping them small.
 **The hard part is not writing them.** It is the two things that make them worth
 having: an evidence bar strict enough that the bundle stays true, and a size
 budget strict enough that it stays affordable. Every enhancement loads in every
-session, so a bundle that accumulates is one that eventually costs more than it
-saves.
+session of its model, so a bundle that accumulates is one that eventually costs
+more than it saves.
+
+**Working comes first, small comes second, and they never compete.** A guardrail
+is optimised for size only inside what already works — never against it. Nothing
+that aids comprehension is spent for words, because a compressed rule the model
+misreads has cost its words for nothing. See [[the-per-session-budget]].
 
 ## What is here
 
@@ -30,6 +35,8 @@ saves.
 - [[start-a-model-bundle]] — standing one up for a model that has none.
 - [[loading-by-model-is-unsolved]] — the open problem, and what has been ruled
   out.
+- [[enhancement]] and [[entrypoint]] — the two templates. Copy the blocks, never
+  the file.
 
 ## When these apply
 

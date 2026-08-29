@@ -37,7 +37,11 @@ case to *Never*.
 
 ## 4. Write the four parts
 
-[[what-an-enhancement-is]] has the shape. Two things it is easy to get wrong:
+**Copy the blocks from [[enhancement]]** — the template carries the frontmatter,
+the four parts and the three that get written wrongly. [[what-an-enhancement-is]]
+is the reasoning behind it.
+
+Two things it is easy to get wrong:
 
 **State the behaviour without softening it.** *The model sometimes may not
 always verify* describes nothing. The document is read by the thing doing it,
