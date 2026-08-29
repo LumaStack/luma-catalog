@@ -39,9 +39,11 @@ outweighs its instruction whether or not it is any good. **The pressure to
 produce one turns good rules into bad ones**, which is a worse outcome than the
 missing example it was meant to prevent.
 
-**So a guardrail without a near-miss is not a defect and owes no explanation.**
-Some behaviours have no near-compliance case. Not having looked is the defect,
-and it is not one anything can check for.
+**Leave it out when it does not fit, or would not make the policy better.**
+That is a judgement, not an escape hatch — and a guardrail without one is not a
+defect and owes no explanation. Some behaviours have no near-compliance case.
+
+**Not having looked is the defect**, and it is not one anything can check for.
 
 ## Every requirement here is a default you depart from in writing
 
@@ -50,14 +52,19 @@ exists because it makes that more likely — none is a formality, and none is
 there for tidiness.
 
 **So none of them is optional, and none is absolute.** Where one genuinely does
-not fit, say so in the document and say why. `**No near-miss.**` with its one
-line is the pattern for all of them. **A stated departure is a decision somebody
-can disagree with; a silent one cannot be told apart from not having tried.**
+not fit, say so in the document and say why, in a line. **A stated departure is
+a decision somebody can disagree with; a silent one cannot be told apart from
+not having tried.**
+
+**The near-miss is the exception to this section**, and the reason is worth
+keeping: requiring an example to exist produces fabricated ones, so it is
+attempted every time and included only where it helps. Where a requirement can
+be satisfied badly, mandating it buys the bad version.
 
 **And a requirement you cannot meet is usually telling you about the rule, not
 about the requirement.** An ALWAYS you cannot scope to be literally true, a
-guardrail you cannot state a pass or fail for, a behaviour with no near-miss —
-each is a signal the rule is vague or unnecessary. **Rework the guardrail before
+guardrail you cannot state a pass or fail for, a behaviour whose near-miss you
+cannot name — each is a signal the rule is vague or unnecessary. **Rework the guardrail before
 writing the exception**, because the exception is the cheaper move and it is
 almost never the right one.
 
