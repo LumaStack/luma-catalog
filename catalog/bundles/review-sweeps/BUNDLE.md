@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.9.1
+version: 0.10.0
 published: 2026-08-28
 lifecycle_status: draft
 consumers: [project]
@@ -128,6 +128,47 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
+`0.10.0` — **what the first slice taught, once it had run.**
+
+**`cross-check` is a method rather than a habit.** In the first sweep ever
+conducted, **every mechanical finding came from executing the thing a document
+described** — `--help`, the rules on disk, the code behind a claim about it —
+and none from reading attentively. Careful reading found only the claims
+nothing could verify. **A document is most confident exactly where nobody has
+checked it.** So: prefer a check you can run over a claim you can only read,
+and say when there was none, because *I could not verify this* is a finding
+about the file's checkability.
+
+**`commits` decides which question to ask.** A file with one commit cannot have
+drifted, so *did this rot* is unanswerable and *was this ever true* is all that
+is left. **Sweeps aimed at churn quietly assume every file has a history**, and
+new files are exactly where that fails — three of the first slice's four files
+would have been out of scope under its original goal.
+
+**Which is why correcting the goal is a legitimate outcome of a slice.** A goal
+is written before anything has been read; the early slices are the first
+evidence it was aimed correctly. Change it in the sweep, say what the slice
+found, and **say how many of that slice's files would have been out of scope
+under the old goal** — that is the measure of how wrong it was.
+
+**A sweep does not review its own record.** A scope of *everything under
+`.luma/`* grows the sweep's own index and slice notes inside itself, and
+**approving your own coverage ledger proves nothing about coverage.** It
+appears mid-sweep rather than at the start, so reconciliation adds those files
+as ordinary pending rows without noticing what they are.
+
+**Progress counts are derived, never typed.** A wrong number in a progress
+table is precisely the rot the writing conventions warn about, and it is the
+one table a reader trusts without checking.
+
+**And the practice gets fixed in batches, never mid-slice.** The first slice
+spent its first three files on presentation rather than on documents. **That is
+what a `draft` practice costs once**, and only once — a second slice producing
+as many changes to this bundle as findings about the code is a sweep that has
+stopped sweeping.
+
+Minor: new content, and one workflow step added.
+
 `0.9.1` — **examples name a fictional person, not a real one.**
 
 `templates/sweep.md` and [[how-a-sweep-is-stored]] carried a real workstation
@@ -135,8 +176,8 @@ account, taken from a filesystem path. The catalog already had a convention for
 this — `human:fsmith`, used across five bundles — and it was missed.
 
 **Two faults, and they are separate.** Naming a real person in a published
-example is a **disclosure**, and in some organizations a workstation username is
-secret. And the value came from the **OS user** rather than a git or forge
+example is a **disclosure**, and in some organizations a workstation username
+is secret. And the value came from the **OS user** rather than a git or forge
 identity, which is wrong provenance anywhere: the logged-in account is not
 necessarily who acted.
 

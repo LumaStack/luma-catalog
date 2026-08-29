@@ -180,6 +180,21 @@ this bundle's. A sweep needs little of it: the index and the notes are
 committed, so a half-finished slice costs a paragraph to resume rather than a
 handover.*
 
+## A sweep does not review its own record
+
+**Exclude `sweeps/` from any scope that would otherwise contain it.** A sweep
+whose scope is *everything under `.luma/`* will grow its own index and its own
+slice notes inside that scope, and reviewing them is circular — **approving
+your own coverage ledger proves nothing about coverage.**
+
+**It appears mid-sweep rather than at the start**, which is why it needs
+stating: the directory does not exist when the scope is settled, and
+reconciliation adds its files as ordinary pending rows without noticing what
+they are.
+
+*Another sweep may review this one's records. That is an ordinary sweep of
+somebody else's work, and its findings are worth something.*
+
 ## Naming
 
 **The sweep directory is a slug for what is being read** — `the-cli-surface`,

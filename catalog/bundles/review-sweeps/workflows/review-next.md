@@ -127,6 +127,13 @@ Nothing worth keeping stays in the slice note.
 [The slice template](../templates/slice.md). It is a working note, not a report
 — what was covered, what was concluded, what left the sweep and where it went.
 
+**Correcting the goal is a legitimate outcome of a slice, not a failure of
+one.** A goal is written before anything has been read, so the first slices are
+the first evidence it was aimed correctly. Where it was not, change it in
+`sweep.md` with what the slice found and why — and say how many of this slice's
+files would have been out of scope under the old one, because that is the
+measure of how wrong it was.
+
 **Say whether the slice served the goal.** One clause. It is how drift becomes
 visible early: three slices running that turn up nothing related to the goal
 mean either the goal was wrong or the sweep has wandered, and both are worth
@@ -141,7 +148,20 @@ itself. **`approved`** where a person signed off, and **only a person may give
 it**. Record what they say without argument — your own view lives in
 `reviewed`.
 
-## 8. Commit the slice
+## 8. Batch what the practice taught; do not stop for it
+
+**A slice that keeps pausing to fix the practice is not running.** Where the
+sweep exposes something wrong with sweeping — an order that fails, a
+presentation that does not work, a rule that fires wrongly — **change the
+behaviour immediately and batch the written fix for the end of the slice.**
+
+**In the first sweep ever conducted, the first three files were spent on the
+practice rather than on the files.** That is what a `draft` practice costs
+once, and the cost is only acceptable once — a second slice that produces as
+many changes to the bundle as findings about the code is a sweep that has
+stopped sweeping.
+
+## 9. Commit the slice
 
 One commit for the slice note and the index. That is the sweep's record and it
 lands whether or not anything was fixed.

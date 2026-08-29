@@ -88,6 +88,23 @@ separately at close: they are different claims.>
 <Strike a deleted file through rather than removing the row, so the index still
 explains itself.>
 
+## Progress
+
+<Counts, **derived from the index rather than typed**. A wrong number in a
+progress table is the rot the writing conventions warn about, and this is the
+one table somebody will trust without checking.>
+
+| | |
+| --- | --- |
+| approved | |
+| reviewed | |
+| skipped | |
+| pending | |
+| total rows | |
+
+<After two slices, replace the estimate above with what was actually measured —
+and say if the rate is not one to plan against.>
+
 ## Closing summary
 
 <Written at close, not before. Coverage as counts; what it produced and where
