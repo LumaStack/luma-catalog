@@ -20,6 +20,11 @@ budget strict enough that it stays affordable. Every enhancement loads in every
 session of its model, so a bundle that accumulates is one that eventually costs
 more than it saves.
 
+**The reader is an agent, thousands of times over.** A human reads a guardrail
+once or never, so where plain wording and the term a model knows best diverge,
+the agent's vocabulary wins — bounded by keeping it reviewable, since a rule
+nobody can audit is a rule nobody can find wrong.
+
 **Working comes first, small comes second, and they never compete.** A guardrail
 is optimised for size only inside what already works — never against it. Nothing
 that aids comprehension is spent for words, because a compressed rule the model

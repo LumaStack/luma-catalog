@@ -8,6 +8,18 @@ matches:
 
 # What an enhancement is
 
+**Write for the agent, not the person reviewing it.** An agent reads a
+guardrail thousands of times; a human reads it once, or never. Where the two
+conflict, the agent wins — take the term a model has seen ten thousand times in
+training over the plainer word a person would prefer on first reading.
+*Contrastive example* over *near-miss* is that trade, made deliberately.
+
+**It is a tiebreak, not a direction.** A guardrail a person cannot review is one
+nobody can tell is wrong — and being wrong is far more expensive than being
+unfamiliar. Two of these were labelled contrastive and were not, and it took a
+human reading them side by side to notice. **Optimise the vocabulary for the
+agent; keep the structure legible enough that somebody can still audit it.**
+
 **One behaviour, one document, five parts.**
 
 | part | what it holds |
