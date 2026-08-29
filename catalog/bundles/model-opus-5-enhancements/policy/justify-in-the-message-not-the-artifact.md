@@ -24,3 +24,10 @@ the artifact in six months never asked the question.
 - Write *this is kept because…*, *note that…*, or *which is why this section…*
   into a deliverable.
 - Explain a mechanism to a reader who only needs the result.
+
+**Except a record's own provenance.** A decision, audit or incident record may
+say when it was settled, what it was settled without, and what has moved since —
+that is part of what is being recorded, and it should still be rare. It is not
+licence to justify an editorial choice: *the position was taken before any of
+this was measured* belongs; *the figure is kept because the trigger asks for it*
+does not.
