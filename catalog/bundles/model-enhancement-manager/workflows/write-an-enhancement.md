@@ -50,14 +50,48 @@ and a hedge gives it room.
 **Make *Never* specific enough to catch the near-miss.** The failure returns
 wearing a synonym, so name the synonyms.
 
-## 5. Size it
+## 5. Check it
+
+**Four things, one paste, under a second.** Each is here because it has already
+been got wrong.
 
 ```sh
-wc -w catalog/bundles/<model-bundle>/policy/*.md
+B=catalog/bundles/<model-bundle>
+
+# 1. every guardrail carries all five parts
+for f in "$B"/policy/*.md; do
+  [ "$(basename "$f")" = entrypoint.md ] && continue
+  for part in 'Problem\.' 'Goal\.' 'ALWAYS' 'NEVER' 'The near-miss\.'; do
+    grep -q "\*\*$part\*\*" "$f" || echo "$f: missing $part"
+  done
+done
+
+# 2. exactly one document declares matches — the entrypoint
+grep -l '^matches:' "$B"/policy/*.md
+
+# 3. the ceiling is declared
+grep -i 'Ceiling:' "$B"/BUNDLE.md || echo 'no ceiling declared'
+
+# 4. and met
+wc -w "$B"/policy/*.md | tail -1
 ```
 
-**Against the ceiling in that bundle's `BUNDLE.md`.** Over it, something comes
-out — and what comes out is a decision to record, not an oversight.
+**Check 1** because the near-miss became required after three guardrails were
+already written, and nothing reported that they lacked it.
+
+**Check 2** because a guardrail that quietly declares its own `matches` breaks
+[[the-entrypoint-compels-the-read]] without any symptom — it simply starts
+costing more than it should.
+
+**Check 3** because a restructure removed the ceiling from `BUNDLE.md` entirely
+and it went unnoticed until somebody looked for it by hand. **A budget nobody
+states is a budget nobody exceeds.**
+
+**Check 4 last**, because over the ceiling something comes out — and what comes
+out is a decision to record, not an oversight. Where the thing that would come
+out is a near-miss, raise the ceiling instead: an example outweighs more
+instruction, and a number that forces out the highest-leverage part is
+optimising itself.
 
 ## 6. Land it, and say what came out
 
