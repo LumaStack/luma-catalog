@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-29
+lifecycle: draft
 consumers: [project, organization]
 entrypoint: policy/entrypoint
 description: Behaviours Opus 5 exhibits that cost its user time, each with a guardrail. One entrypoint fires on the model and compels the rest to be read.
@@ -57,6 +58,19 @@ out would have been optimising the number at the expense of the thing the
 number exists to protect.
 
 ## Version
+
+`0.1.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.1.0` — three guardrails and an entrypoint, from one long session with one
 user. The behaviours are real; whether they are the *most* costly three is

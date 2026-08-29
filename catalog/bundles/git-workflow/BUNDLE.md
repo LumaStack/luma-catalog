@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.6.0
-published: 2026-08-28
+version: 0.6.1
+published: 2026-08-29
+lifecycle: draft
 consumers: [project]
 entrypoint: policy/merge-commits
 description: How changes get integrated — merge commits rather than squash or rebase, the repository settings that make it true, and how to prove a change actually landed.
@@ -53,6 +54,19 @@ organization's headquarters is a repository like any other rather than a level
 this applies at.
 
 ## Version
+
+`0.6.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.6.0` — **`proving-work-landed`: a commit is not a landed change, and the
 difference has to be checked rather than recalled.**

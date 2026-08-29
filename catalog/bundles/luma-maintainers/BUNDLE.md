@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.11.2
-published: 2026-08-28
+version: 0.11.3
+published: 2026-08-29
+lifecycle: draft
 consumers: [project, organization]
 entrypoint: policy/the-estate
 description: Working on the luma tools themselves — the repositories and the boundary each defends, publishing to the universal catalog, and changing a type without making every tool upgrade at once.
@@ -74,6 +75,19 @@ manifest contradict the body directly above.
 the top: adopt this only in a repository that is part of the estate.
 
 ## Version
+
+`0.11.3` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.11.2` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
 

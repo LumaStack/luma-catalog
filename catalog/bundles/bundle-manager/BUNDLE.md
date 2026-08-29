@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.12.0
-published: 2026-08-28
+version: 0.13.0
+published: 2026-08-29
+lifecycle: draft
 consumers: [project, organization]
 entrypoint: policy/organizing-a-bundle
 description: Creating, updating, auditing, repairing, migrating and retiring bundles — the layout they use and which catalog they belong in.
@@ -83,6 +84,39 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.13.0` — **a bundle is asked what it is, on both ladders, and this one
+answers.** The manifest template carried five fields and neither of these, so
+every bundle scaffolded from it was born declaring `lifecycle: unknown` by
+omission — *nobody has said*, which a reader cannot tell apart from nobody
+having thought about it. Twenty-three bundles in this catalog were in that state,
+every one of them by accident rather than by decision.
+
+**`lifecycle: draft` is now in the block you copy**, so the honest value for a
+new bundle is the one already there and anything higher has to be typed. It is
+the true answer on the day a bundle is written, and [[create-bundle]] says why:
+its maintainers are developing it for their own use, and the shape can reverse
+without notice.
+
+**`survival` is deliberately not in the block.** It defaults to `intended`, so
+writing that would add a line saying what silence already says — the field earns
+its place only at `experimental` or `promised`. **The question is asked every
+time and the field is written sometimes**, which is the distinction the two
+workflows now carry.
+
+**[[update-bundle]] gains a step for both.** A version bump is the one moment
+somebody is already looking at the manifest, so it is the only reliable moment
+to ask — otherwise a bundle that was `draft` three months and two rewrites ago
+still says `draft`, because nothing on either ladder moves on its own.
+
+**Neither workflow promotes anything.** What moves a bundle up is audience
+rather than use: publishing it and adopting it make the question live, and
+somebody still has to answer it. *No, still a draft* is an answer, and this
+catalog is now full of it.
+
+Minor: new guidance, a new line in a template, and a step. An existing bundle
+stays valid, and adding the field to one is a patch — a fact written down rather
+than a change to what it obliges.
 
 `0.12.0` — **`lifecycle_status` is now `lifecycle`.**
 
