@@ -6,6 +6,15 @@ description: Finish or abandon a sweep honestly — check coverage, confirm noth
 
 # Close a sweep
 
+**First: is the name still true?** If the sweep covered materially less than it
+set out to, or something different, **rename it — slug and title — then grep the
+old slug and repair what points at it.**
+
+**Only if it is far enough off to mislead somebody deciding whether to read it.**
+Small drift is left alone; renaming for a minor inaccuracy costs more than the
+inaccuracy does. **Provenance keeps the old name.** See
+[[how-a-sweep-is-stored]].
+
 **Both endings use this**, and the difference is one honest sentence in the
 summary. A sweep stopped at 40% is an ordinary outcome; a sweep stopped at 40%
 and archived as though it were finished is a lie the index will tell for years.

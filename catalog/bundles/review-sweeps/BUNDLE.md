@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.28.0
+version: 0.29.0
 published: 2026-08-29
 lifecycle: draft
 survival: experimental
@@ -132,18 +132,54 @@ adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
 
+`0.29.0` — **at the close, rename the sweep if it is far enough off.**
+
+A sweep's scope moves — exclusions arrive, whole areas get deferred — and
+**nothing said what to do about a name that had stopped being true.**
+`the-whole-of-foreman` that skipped every source file is a directory whose name
+is false, and **the directory name is the first thing anybody sees**, before the
+charter or the index could correct it.
+
+**Slug and title both.** The slug is not sacred; it is a handle, and a handle
+that misdescribes what it opens is worse than an ugly one.
+
+**Only when it is far enough off** — the test is whether the name would mislead
+somebody deciding whether to read it, not whether it is imprecise. **Most sweeps
+drift a little and should be left alone.**
+
+**At the close, not during.** Mid-sweep you do not yet know what it became, and
+renaming while slices are still being written is churn against a moving target.
+
+**Then grep the old slug and repair what points at it** — which is why **a slug
+must be greppable**: two or three distinctive words, never one common one.
+`the-docs-of-foreman` can be found; `docs` cannot. **A slug that cannot be
+grepped is a slug that cannot be renamed.**
+
+**No opaque identifier**, deliberately. One would make renaming mechanical at
+the price of meaningless characters in every path forever, to insure an artifact
+**designed to be spent**. *Decision records carry `ADR-NNNN` because they are
+kept indefinitely; a sweep is not.* **Three things would change that**: sweeps
+collected across repositories, sweeps becoming kept records, or a second rename.
+
+**Provenance keeps the old name.** *"Raised during sweep X, slice 001"* says what
+it was called then, and rewriting it makes a true sentence false.
+
+**Also fixed: the status template hardcoded a real project's sweep slug** in its
+paste-block example, so every adopter got a worked example naming a sweep that
+exists in one repository.
+
 `0.28.0` — **prove nothing is stranded; do not remember it — and `git-workflow`
 owns how.**
 
 The clear check asked *is anything left that exists only in this session?* and
-rested on a claim that **by the time a slice closes, everything worth keeping is
-on disk — the note, the index, the journal, the commit.**
+rested on a claim that **by the time a slice closes, everything worth keeping
+is on disk — the note, the index, the journal, the commit.**
 
-**A commit on an unmerged branch satisfies all of that and is still invisible.**
-A sweep lost forty-three skipped rows exactly that way: the slice was committed,
-no pull request was ever opened, a detour began with a branch switch, and the
-next slice branched from an integration branch that had never seen it. **The
-check passed honestly and the record was gone.**
+**A commit on an unmerged branch satisfies all of that and is still
+invisible.** A sweep lost forty-three skipped rows exactly that way: the slice
+was committed, no pull request was ever opened, a detour began with a branch
+switch, and the next slice branched from an integration branch that had never
+seen it. **The check passed honestly and the record was gone.**
 
 **So the question widens** — the session, the working tree, the branch, a
 worktree, anywhere work can be stranded — **and most of it is checkable rather
@@ -151,13 +187,13 @@ than recalled.**
 
 **How to check it is not this bundle's business.** `git-workflow`'s
 `proving-work-landed` is the source of truth: the commands, the fetch, the
-remote ref, showing the output, and the two levels of gate. **Every bundle whose
-work can be stranded on a branch has the same problem**, and each inventing its
-own commands produces a set of near-identical checks that drift.
+remote ref, showing the output, and the two levels of gate. **Every bundle
+whose work can be stranded on a branch has the same problem**, and each
+inventing its own commands produces a set of near-identical checks that drift.
 
 *This bundle had already written the rule and walked past it —
-`what-a-slice-produces` ends "How changes get integrated is not this bundle's to
-say."*
+`what-a-slice-produces` ends "How changes get integrated is not this bundle's
+to say."*
 
 **What stays here is the obligation and where it falls**: at a slice's close,
 and again before the next branch is cut. Plus which sweep failures are worth a
