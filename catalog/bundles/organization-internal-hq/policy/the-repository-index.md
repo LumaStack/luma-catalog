@@ -246,7 +246,7 @@ attention and say what was and was not established. An entry deleted wrongly
 takes the organization's judgements with it, and those were the part no scan can
 rebuild.
 
-Retiring one for real is `lifecycle_status: archived`, which keeps the reasoning
+Retiring one for real is `lifecycle: archived`, which keeps the reasoning
 and stops it being treated as live.
 
 ## A scan must remember decisions

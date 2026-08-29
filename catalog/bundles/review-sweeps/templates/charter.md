@@ -23,7 +23,7 @@ stale** — see [[how-a-sweep-is-stored]].
 type: sweep
 title: <what is being read, in a few words>
 created: YYYY-MM-DD
-lifecycle_status: draft
+lifecycle: draft
 goal: <what you want to be true afterwards, stated so it can be checked>
 scope: <one line — and say what is excluded in the body>
 goal_discipline: strict | adaptive | exploratory       # default adaptive

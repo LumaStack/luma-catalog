@@ -8,7 +8,7 @@ fields:
     field_presence: recommended
     field_type: text
     desc: "when somebody should open this repository. Strengthened from the root's optional — the field this type exists to carry"
-  lifecycle_status:
+  lifecycle:
     field_presence: recommended
     field_type: enum
     values: [draft, provisional, stable, archived]
@@ -72,12 +72,12 @@ never to lower one.
 decide whether to load this at all, before anything else about the repository is
 fetched. A project descriptor without one has no reason to exist.
 
-**`lifecycle_status` moves `optional` → `recommended`** because how mature a
+**`lifecycle` moves `optional` → `recommended`** because how mature a
 repository is changes how everything inside it should be treated — a position
 recorded in a two-week-old repository binds differently from the same position in
 a five-year-old one, and nothing else in the descriptor says which this is.
 
-**Absent means nobody has said.** The format gives `lifecycle_status` a default of
+**Absent means nobody has said.** The format gives `lifecycle` a default of
 `provisional`, and that default answers *what is the value*. It does not answer
 *may I act on it*: anything making a consequential choice on the strength of
 maturity should require an explicit declaration, because **a default is not a

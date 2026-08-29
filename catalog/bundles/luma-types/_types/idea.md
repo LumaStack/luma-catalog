@@ -44,7 +44,7 @@ knowledge-format built-in.
 
 `horizon`, `scope`, `archived` and `contributors` are the only things the format
 does not already supply. Dates and authorship are `created`, growth stages are
-`lifecycle_status`, who was involved is `contributors`, and who vouched for it
+`lifecycle`, who was involved is `contributors`, and who vouched for it
 is `verified`.
 
 `archived` earns its place because `modified` advances on every edit and so
@@ -137,11 +137,11 @@ this type most needs to avoid.
 **Absent means `someday`** — honest, and it costs nothing to leave off at
 capture.
 
-## Growth stages use `lifecycle_status`
+## Growth stages use `lifecycle`
 
 The gardening ladder is already the root type's:
 
-| garden | `lifecycle_status` | means |
+| garden | `lifecycle` | means |
 | --- | --- | --- |
 | **seedling** | `draft` | captured, not yet thought about |
 | **budding** | `provisional` | revisited at least once, taking shape |
