@@ -38,6 +38,11 @@ locate. *(practice, consistent across sources)*
 **So every guardrail carries a near-miss**, showing the wrong version beside the
 right one. It is the last thing to cut, not the first.
 
+**Where one cannot be written, that is evidence about the rule.** The research
+says examples are high-leverage; it does not say every rule has a good one. A
+guardrail with no near-compliance case is obvious or vague, and both are reasons
+to rework it — so the omission is stated and justified rather than silent.
+
 ## A guardrail has to admit a pass/fail
 
 **An instruction that cannot be objectively checked is not a guardrail**, it is

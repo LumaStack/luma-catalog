@@ -28,6 +28,14 @@ no substitute finds a neighbouring way to fail.
 outweighs more instruction, and the useful example is the one that *looks* like
 compliance and is not. See [[what-makes-a-guardrail-stick]].
 
+**It is required, and leaving it out needs a reason written in the document** —
+`**No near-miss.**` followed by why, never a silent omission.
+
+**Being unable to write one is a finding about the rule, not about the
+example.** A behaviour with no near-compliance case is either obvious enough
+that it needs no guardrail, or too vague for the model to know when it is
+violating. Both say rework the rule rather than ship it bare.
+
 **They are capitalised and the two above them are not.** `Problem` and `Goal`
 describe; these two instruct, and the casing is the only thing marking which is
 which at a glance.

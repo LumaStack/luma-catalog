@@ -61,9 +61,11 @@ B=catalog/bundles/<model-bundle>
 # 1. every guardrail carries all five parts
 for f in "$B"/policy/*.md; do
   [ "$(basename "$f")" = entrypoint.md ] && continue
-  for part in 'Problem\.' 'Goal\.' 'ALWAYS' 'NEVER' 'The near-miss\.'; do
+  for part in 'Problem\.' 'Goal\.' 'ALWAYS' 'NEVER'; do
     grep -q "\*\*$part\*\*" "$f" || echo "$f: missing $part"
   done
+  grep -qE '\*\*(The near-miss|No near-miss)\.\*\*' "$f" \
+    || echo "$f: no near-miss, and no stated reason for its absence"
 done
 
 # 2. exactly one document declares matches — the entrypoint
@@ -77,7 +79,9 @@ wc -w "$B"/policy/*.md | tail -1
 ```
 
 **Check 1** because the near-miss became required after three guardrails were
-already written, and nothing reported that they lacked it.
+already written, and nothing reported that they lacked it. It accepts
+`**No near-miss.**` too — the rule is that an absence is argued, not that an
+example always exists.
 
 **Check 2** because a guardrail that quietly declares its own `matches` breaks
 [[the-entrypoint-compels-the-read]] without any symptom — it simply starts

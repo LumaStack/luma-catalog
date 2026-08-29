@@ -57,6 +57,12 @@ gives it a target. A NEVER longer than its ALWAYS is inverted.
 trimming — an example outweighs more instruction. See
 [[what-makes-a-guardrail-stick]].
 
+**If you cannot write one, stop and look at the rule.** A behaviour with no
+near-compliance case is obvious enough to need no guardrail, or too vague to be
+followed. Where it is genuinely absent, write `**No near-miss.**` and one line
+saying why — a silent omission reads as an oversight and gets "fixed" later by
+somebody inventing filler.
+
 **Test ALWAYS literally.** If a bullet is not true *every* time, it is not
 scoped yet — and an unscoped ALWAYS produces padding appended to every turn,
 which costs more than the behaviour it was aimed at.
