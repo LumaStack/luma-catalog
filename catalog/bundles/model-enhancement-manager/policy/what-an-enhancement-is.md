@@ -24,34 +24,24 @@ ALWAYS is inverted and will underperform. Both are still required: NEVER alone
 leaves nothing to replace the failure with, and a model given a prohibition and
 no substitute finds a neighbouring way to fail.
 
-**The near-miss is the highest-leverage part and the last to cut.** An example
-outweighs more instruction, and the useful example is the one that *looks* like
-compliance and is not. See [[what-makes-a-guardrail-stick]].
+**The near-miss is the highest-leverage part when it is real.** An example
+outweighs the instruction it sits under, and the useful example is the one that
+*looks* like compliance and is not. See [[what-makes-a-guardrail-stick]].
 
-**It is required, and leaving it out needs a reason written in the document** —
-`**No near-miss.**` followed by why, never a silent omission.
+**Attempt one every time. Include it only when it is real.** The attempt is
+where the value is — trying to name a near-compliance case is what exposes a
+rule that is vague, or one so obvious it needs no guardrail at all. That
+diagnosis is the point; the example is a by-product.
 
-**A weak near-miss is worse than none, and this is not a formality.** An example
-outweighs the instruction it sits under — that is the whole reason to have one,
-and the leverage runs both ways. One that is vague, invented, or not actually a
-case of near-compliance teaches a wrong edge, and the model will follow it over
-the rule above it.
+**Requiring one to exist produces the opposite.** A fabricated near-miss teaches
+a wrong edge, and it is followed over the rule above it, because an example
+outweighs its instruction whether or not it is any good. **The pressure to
+produce one turns good rules into bad ones**, which is a worse outcome than the
+missing example it was meant to prevent.
 
-**So: write a real one, or rework the rule until one exists, or state its
-absence. Never fabricate one to satisfy the requirement.**
-
-**Being unable to write one is a finding about the rule, not about the
-example.** A behaviour with no near-compliance case is either obvious enough
-that it needs no guardrail, or too vague for the model to know when it is
-violating. Both say rework the rule rather than ship it bare.
-
-**They are capitalised and the two above them are not.** `Problem` and `Goal`
-describe; these two instruct, and the casing is the only thing marking which is
-which at a glance.
-
-**Every label says what it holds without the one above it.** *Instead* was a
-connective — it meant nothing to anyone reading that block on its own, which is
-how an agent often meets it.
+**So a guardrail without a near-miss is not a defect and owes no explanation.**
+Some behaviours have no near-compliance case. Not having looked is the defect,
+and it is not one anything can check for.
 
 ## Every requirement here is a default you depart from in writing
 

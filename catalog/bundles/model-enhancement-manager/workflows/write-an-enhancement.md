@@ -64,9 +64,12 @@ for f in "$B"/policy/*.md; do
   for part in 'Problem\.' 'Goal\.' 'ALWAYS' 'NEVER'; do
     grep -q "\*\*$part\*\*" "$f" || echo "$f: missing $part"
   done
-  grep -qE '\*\*(The near-miss|No near-miss)\.\*\*' "$f" \
-    || echo "$f: no near-miss, and no stated reason for its absence"
 done
+
+# 1b. how many carry a near-miss — reported, never required
+printf 'near-miss present in %s of %s guardrails\n' \
+  "$(grep -lE '\*\*The near-miss\.\*\*' "$B"/policy/*.md | wc -l | tr -d ' ')" \
+  "$(ls "$B"/policy/*.md | grep -cv entrypoint)"
 
 # 2. exactly one document declares matches — the entrypoint
 grep -l '^matches:' "$B"/policy/*.md
@@ -86,10 +89,14 @@ for f in "$B"/policy/*.md; do
 done
 ```
 
-**Check 1** because the near-miss became required after three guardrails were
-already written, and nothing reported that they lacked it. It accepts
-`**No near-miss.**` too — the rule is that an absence is argued, not that an
-example always exists.
+**Check 1** because the four parts became the shape after guardrails were
+already written, and nothing reported which ones lacked them.
+
+**Check 1b reports and does not fail**, deliberately. A near-miss is attempted
+every time and included only where a real one exists — enforcing its presence
+produces fabricated examples, which teach a wrong edge and are worse than the
+gap. The count is worth seeing; a failure here would be the mandate surviving
+in the tooling after being removed from the policy.
 
 **Check 2** because a guardrail that quietly declares its own `matches` breaks
 [[the-entrypoint-compels-the-read]] without any symptom — it simply starts
