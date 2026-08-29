@@ -8,7 +8,7 @@ matches:
 
 # What an enhancement is
 
-**One behaviour, one document, four parts.**
+**One behaviour, one document, five parts.**
 
 | part | what it holds |
 | --- | --- |
@@ -17,9 +17,16 @@ matches:
 | **ALWAYS** | what to do, positively — two or three bullets |
 | **NEVER** | the specific things not to do, including the tempting near-misses |
 
-**Both halves are required.** *ALWAYS* alone leaves the failure available;
-*NEVER* alone leaves nothing to replace it with, and a model given a
-prohibition and no substitute finds a neighbouring way to fail.
+**ALWAYS carries the rule; NEVER holds the edges.** A prohibition makes the
+model represent the banned behaviour and then invert it, where a positive
+instruction gives it a target — so a guardrail whose NEVER is longer than its
+ALWAYS is inverted and will underperform. Both are still required: NEVER alone
+leaves nothing to replace the failure with, and a model given a prohibition and
+no substitute finds a neighbouring way to fail.
+
+**The near-miss is the highest-leverage part and the last to cut.** An example
+outweighs more instruction, and the useful example is the one that *looks* like
+compliance and is not. See [[what-makes-a-guardrail-stick]].
 
 **They are capitalised and the two above them are not.** `Problem` and `Goal`
 describe; these two instruct, and the casing is the only thing marking which is

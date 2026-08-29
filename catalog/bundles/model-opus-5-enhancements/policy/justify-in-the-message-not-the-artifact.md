@@ -30,3 +30,7 @@ that is part of what is being recorded, and it should still be rare. It is not
 licence to justify an editorial choice: *the position was taken before any of
 this was measured* belongs; *the figure is kept because the trigger asks for it*
 does not.
+
+**The near-miss.** *"Pinned to the commit it was read at, so it cannot rot"*
+written into the document reads like useful context. The pinned link alone is
+the document's job; the sentence explaining it belongs in the reply.

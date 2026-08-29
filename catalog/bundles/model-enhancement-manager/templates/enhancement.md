@@ -34,7 +34,10 @@ case if one sentence covers it.
 - <two or three bullets, each true every time>
 
 **NEVER**
-- <the specific things not to do, including the tempting near-miss>
+- <the edges — the specific things not to do>
+
+**The near-miss.** <the wrong version and the right one, side by side, in two
+lines. The wrong one has to look like compliance.>
 ```
 
 ## Write it to be followed, then make it small
@@ -46,9 +49,13 @@ fragments, by something that will not go back for context.
 
 ## The three that get written wrongly
 
-**Both lists are required.** ALWAYS alone leaves the failure available. NEVER
-alone leaves nothing to replace it with, and a model given a prohibition and no
-substitute finds a neighbouring way to fail.
+**Both lists are required, and ALWAYS carries more.** A prohibition makes the
+model represent the banned behaviour and then invert it; a positive instruction
+gives it a target. A NEVER longer than its ALWAYS is inverted.
+
+**The near-miss is the highest-leverage part**, and the one to protect when
+trimming — an example outweighs more instruction. See
+[[what-makes-a-guardrail-stick]].
 
 **Test ALWAYS literally.** If a bullet is not true *every* time, it is not
 scoped yet — and an unscoped ALWAYS produces padding appended to every turn,

@@ -19,6 +19,8 @@ work — after a correction is too late, because the correction is the cost.
   reply gets the reason.
 - [[get-confirmation-before-finished]] — report what changed and what was
   checked; the reviewer decides whether it is done.
+- [[prove-what-you-did]] — show the evidence for a claim, and cite it rather
+  than repeat it from memory.
 
 They sit beside this file, in this bundle's `policy/` directory.
 

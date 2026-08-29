@@ -33,6 +33,8 @@ misreads has cost its words for nothing. See [[the-per-session-budget]].
 - [[the-per-session-budget]] — what adding one costs, and what to remove.
 - [[write-an-enhancement]] — the workflow, from noticing to publishing.
 - [[start-a-model-bundle]] — standing one up for a model that has none.
+- [[what-makes-a-guardrail-stick]] — what the published work says, what it
+  changed here, and what was rejected on evidence.
 - [[loading-by-model-is-unsolved]] — the open problem, and what has been ruled
   out.
 - [[enhancement]] and [[entrypoint]] — the two templates. Copy the blocks, never

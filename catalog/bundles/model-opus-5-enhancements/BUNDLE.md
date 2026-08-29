@@ -27,6 +27,7 @@ one.
 - [[justify-in-the-message-not-the-artifact]] — reasoning written into the
   deliverable instead of the reply.
 - [[get-confirmation-before-finished]] — completeness asserted from intention.
+- [[prove-what-you-did]] — past actions reported from memory of intending them.
 
 ## When these apply
 
@@ -52,6 +53,15 @@ than fired, and an agent arrives via the ring. `matches: always` would work now
 by charging every session of every adopter whatever model is running, which is a
 larger bill for a claim false in most of those sessions. A hook is the intended
 route; see `lumastack/luma-catalog/model-enhancement-manager`.
+
+**Ceiling: 1,300 words**, measured with `wc -w catalog/bundles/model-opus-5-enhancements/policy/*.md`.
+Sharpening an existing guardrail is preferred to adding another, and one that
+stops earning its place is removed rather than kept for completeness.
+
+**Raised from 1,100 when the near-miss became required.** An example outweighs
+more instruction, so it is the last thing to cut — and a ceiling that forced it
+out would have been optimising the number at the expense of the thing the
+number exists to protect.
 
 ## Version
 
