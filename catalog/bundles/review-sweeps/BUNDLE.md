@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.24.0
+version: 0.24.1
 published: 2026-08-29
 lifecycle_status: draft
 survival: experimental
@@ -131,6 +131,14 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.24.1` — **the template starts a new Document at `draft`, not `provisional`.**
+
+**The example value in a template becomes the estate's default**, and this one
+was teaching every new Document to be born promoted. **The lifecycle ladder
+measures what a reader is owed when a Document changes**, and use by its own
+authors does not promote it — `provisional` begins when somebody who did not
+write it can rely on it, and promoting is the author's explicit act.
 
 `0.24.0` — **the slice close ends with priced options and something to paste.**
 
