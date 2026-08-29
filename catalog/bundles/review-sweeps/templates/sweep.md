@@ -19,7 +19,7 @@ created: YYYY-MM-DD
 lifecycle_status: provisional
 goal: <what you want to be true afterwards, stated so it can be checked>
 scope: <one line — and say what is excluded in the body>
-strictness: strict | evolving
+strictness: strict | adaptive
 ordering: narrative | risk-weighted | dependency | directory | led
 pairing: human-agent | agent-agent
 contributors:
@@ -67,7 +67,7 @@ strategy and does not invent it, which is what keeps it derivable.>
 ## Strictness
 
 <strict — the goal, scope and strategy are fixed; anything that would change
-them is recorded and left for a later sweep. evolving — expect them to move, and
+them is recorded and left for a later sweep. adaptive — expect them to move, and
 budget for it. Most sweeps should be strict.>
 
 ## Order
