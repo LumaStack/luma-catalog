@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.15.4
+version: 0.16.0
 published: 2026-08-28
 consumers: [project]
 entrypoint: policy/readme
@@ -97,6 +97,20 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.16.0` — **`lifecycle_status` is now `lifecycle`.**
+
+**Same values, same meaning, shorter name**, renamed in the knowledge format
+and carried here. The old name was chosen against `status` — so it never
+collided with a tool's own `todo | in-progress | done` — and **`lifecycle`
+avoids that collision equally well**, because the word at risk was `status` and
+this name does not contain it.
+
+**Breaking for an adopter**, shipped as minor under the pre-1.0 allowance:
+**every Document declaring the old key has to be renamed.** It fails visibly
+rather than quietly — `lifecycle` is unrecognised where `lifecycle_status` was
+expected, and an unrenamed Document reads as having no lifecycle declared at
+all.
 
 `0.15.4` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
 

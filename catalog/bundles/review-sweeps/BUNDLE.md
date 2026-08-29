@@ -1,8 +1,8 @@
 ---
 type: bundle
-version: 0.24.1
+version: 0.25.0
 published: 2026-08-29
-lifecycle_status: draft
+lifecycle: draft
 survival: experimental
 consumers: [project]
 entrypoint: policy/how-a-sweep-is-stored
@@ -131,6 +131,20 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.25.0` — **`lifecycle_status` is now `lifecycle`.**
+
+**Same values, same meaning, shorter name**, renamed in the knowledge format
+and carried here. The old name was chosen against `status` — so it never
+collided with a tool's own `todo | in-progress | done` — and **`lifecycle`
+avoids that collision equally well**, because the word at risk was `status` and
+this name does not contain it.
+
+**Breaking for an adopter**, shipped as minor under the pre-1.0 allowance:
+**every Document declaring the old key has to be renamed.** It fails visibly
+rather than quietly — `lifecycle` is unrecognised where `lifecycle_status` was
+expected, and an unrenamed Document reads as having no lifecycle declared at
+all.
 
 `0.24.1` — **the template starts a new Document at `draft`, not `provisional`.**
 
