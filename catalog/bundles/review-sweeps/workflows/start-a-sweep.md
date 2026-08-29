@@ -153,10 +153,10 @@ rather than a defect to hide.
 was split: two prose slices tell you nothing about dense logic, and averaging
 them produces a number true of neither.
 
-**Discard slices that measured something else.** A first slice of a `draft`
-practice measures building the practice — its files-per-slice is a fact about
-the bundle, not about the material. Say which slices were excluded and why;
-silently dropping them is how a rate becomes flattering.
+**Every slice counts, including the odd ones.** A first slice of a `draft`
+practice is atypical and there is no need for a rule about it: an outlier
+widens the range, which is exactly the signal a reader wants. **Excluding it
+would make the range narrower and more confident than the evidence supports.**
 
 **And do not defend the original estimate against any of this.** The
 measurement is on this material, by these people, at the depth they actually

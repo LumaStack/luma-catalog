@@ -56,6 +56,6 @@ without checking.>
 | pending | |
 | total rows | |
 
-<And the rate, re-taken here at every slice: a range across the slices that
-count, with how many they were.>
+<And the rate, re-taken here at every slice: a range across every slice so far,
+with how many there have been.>
 ```

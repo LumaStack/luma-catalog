@@ -64,9 +64,8 @@ count — prose and dense logic differ by more than an order of magnitude. Split
 it where the scope is several kinds of thing.>
 
 <Replaced by measurement, re-taken at every slice. A range with the number of
-slices behind it — never a point estimate — and say which slices were excluded
-and why. A first slice of a draft practice measured the practice, not the
-material.>
+slices behind it, never a point estimate. Every slice counts — an odd one widens
+the range, which is the signal.>
 
 **Expected drift:** <how much of the scope changed in a window the length of the
 estimate, and which parts — churn concentrates, so name the hot areas rather
