@@ -46,7 +46,7 @@ case to *Never*.
 
 ## 4. Write the four parts
 
-**Copy the blocks from [[enhancement]]** — the template carries the frontmatter,
+**Copy the blocks from [the enhancement template](../templates/enhancement.md)** — the template carries the frontmatter,
 the four parts and the three that get written wrongly. [[what-an-enhancement-is]]
 is the reasoning behind it.
 

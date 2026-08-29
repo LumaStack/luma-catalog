@@ -8,14 +8,13 @@ matches:
 
 # The entrypoint compels the read
 
-**One document fires. It is the entrypoint, and it carries the model trigger:**
+**One document is the way in, and it is the entrypoint.** Nothing in a model
+bundle declares `matches` — not the entrypoint either, because the condition
+that would govern it, *this model is running*, is not in the trigger vocabulary.
+See [[loading-by-model-is-unsolved]].
 
-```yaml
-matches:
-  - model: <name+version>
-```
-
-**Nothing else in the bundle declares `matches` at all.** The guardrails are
+**So the entrypoint is reached through the bundle's ring**, and it is the one
+document that has to be, because everything else is reached through it. The guardrails are
 on-demand and are reached only through the entrypoint, which names every one of
 them and states — imperatively, in its first line — that they must be read and
 followed.

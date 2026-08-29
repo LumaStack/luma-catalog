@@ -31,28 +31,21 @@ one.
 
 ## When these apply
 
-**Whenever this model is what is running.** [[entrypoint]] declares it and
-nothing else here declares anything:
+**Whenever this model is what is running — which nothing can currently express.**
+`matches` takes a closed vocabulary and `model` is not in it, so no document
+here declares a trigger at all. The condition that actually governs this bundle
+is unsayable, and `matches: always` is the wrong substitute: it would charge
+every session of every adopter whatever model is running.
 
-```yaml
-matches:
-  - model: opus-5
-```
-
-**The guardrails are reached through the entrypoint, not by matching.** They are
-on-demand, so nothing is charged for them until the entrypoint sends a reader to
-them — and the entrypoint's first line makes that mandatory rather than
-optional. Existence is cheap and content is expensive.
+**So [[entrypoint]] is reached through this bundle's ring**, and the guardrails
+are reached through the entrypoint, whose first line makes reading them
+mandatory rather than optional. Existence is cheap and content is expensive.
 
 **A guardrail cannot be topic-matched.** One delivered after the mistake is a
-description of the mistake, so the condition is the model and nothing narrower.
-
-**Nothing delivers on `model:` yet.** The trigger parses, reaches the ring and
-`routing.toml`, and fires nowhere — so today the entrypoint is advertised rather
-than fired, and an agent arrives via the ring. `matches: always` would work now
-by charging every session of every adopter whatever model is running, which is a
-larger bill for a claim false in most of those sessions. A hook is the intended
-route; see `lumastack/luma-catalog/model-enhancement-manager`.
+description of the mistake, so the condition is the model and nothing narrower —
+which is why the missing vocabulary matters rather than being tidied around.
+`lumastack/luma-catalog/model-enhancement-manager` carries the problem and what
+closing it would take.
 
 **Ceiling: 1,300 words**, measured with `wc -w catalog/bundles/model-opus-5-enhancements/policy/*.md`.
 Sharpening an existing guardrail is preferred to adding another, and one that

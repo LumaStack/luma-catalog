@@ -6,21 +6,24 @@ description: A document can declare the model it is for and nothing fires on it,
 
 # Loading by model is unsolved
 
-**Declaring the condition works. Delivering on it does not.**
+**A model bundle cannot state its own condition, let alone have it delivered.**
 
-`matches: model: opus-5` parses, survives into a bundle's ring and into
-`routing.toml`, and reads correctly to anybody who opens either. **Nothing acts
-on it.** A document conditioned on a model is advertised and never fired, so it
-is reached by an agent following the ring rather than by arriving on its own.
+`matches` takes a closed vocabulary — `command`, `event`, `path`, `tool`,
+`topic`, or the bare words `always` and `nothing`. **`model` is not in it**, and
+`inspect` reports anything else as a HIGH finding: *"anything else parses,
+publishes, and never fires, which is indistinguishable from a rule whose moment
+has not come."*
 
-**That is the honest state and it is better than the alternative.** `matches:
-always` would deliver today by charging every session of every adopter whatever
-model is running — presence bought with a claim that is false for most adopters.
-A trigger that states the truth and waits is recoverable; a permanent seat in
-everybody's context is not.
+**So the entrypoint declares nothing.** It is on-demand, named in its bundle's
+ring, and reached by an agent following the ring. The condition that actually
+governs it — *this model is running* — is unsayable.
 
-**So the gap is a transport, not a vocabulary.** Whatever closes it has to learn
-which model is running and fire the documents conditioned on it.
+**`matches: always` remains available and remains wrong.** It would deliver
+today by charging every session of every adopter whatever model is running,
+which is a claim false for most of them.
+
+**So the gap is a vocabulary before it is a transport.** Nothing can carry a
+condition the format cannot express.
 
 ## What has been looked at
 
@@ -34,10 +37,10 @@ planning did not consider**, and it may change the answer.
 Where one can, that is strictly better than anything the format could do, and
 the bundle should carry the config rather than reimplement the selection.
 
-**Making `model:` a first-class trigger.** It already parses as a trigger and
-carries through to `routing.toml`, so this is not a vocabulary change — it is
-teaching one consumer to read a value it already receives. That is a smaller
-change than it first appears, and it is the one worth costing first.
+**Adding `model` to the trigger vocabulary.** This has to come first: nothing
+else can be built on a condition that cannot be written down. It is a change to
+a type more than one tool reads, so `lumastack/luma-catalog/luma-types` and
+`change-a-shared-type` govern it, and it is not a local decision.
 
 ## What it costs to leave open
 

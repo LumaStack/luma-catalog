@@ -35,7 +35,8 @@ Scaffold with the `create-bundle` workflow in
 `lumastack/luma-catalog/bundle-manager`, then declare the word ceiling in
 `BUNDLE.md` before the first policy goes in.
 
-**Write the entrypoint first, from [[entrypoint]].** It is the only document
+**Write the entrypoint first, from [the entrypoint
+template](../templates/entrypoint.md).** It is the only document
 that will declare `matches`, and starting from it is what stops the guardrails
 each claiming a trigger of their own.
 

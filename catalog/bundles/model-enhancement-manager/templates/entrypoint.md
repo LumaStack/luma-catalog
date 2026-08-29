@@ -3,8 +3,10 @@
 Copy the blocks below into `<model-bundle>/policy/entrypoint.md`. **Copy the
 blocks, not this file.**
 
-**This is the only document in a model bundle that declares `matches`**, and
-every bundle has exactly one — see [[the-entrypoint-compels-the-read]].
+**No `matches`, here or anywhere else in a model bundle.** `model` is not in
+the trigger vocabulary, so the condition cannot be declared — see
+[[loading-by-model-is-unsolved]]. The entrypoint is reached through the bundle's
+ring, and everything else through the entrypoint.
 
 ## Frontmatter
 
@@ -13,8 +15,6 @@ every bundle has exactly one — see [[the-entrypoint-compels-the-read]].
 type: policy
 title: <Model> guardrails — read these now
 description: The guardrails for this model. Each must be read and followed before the work, not after a correction.
-matches:
-  - model: <name+version>
 ---
 ```
 

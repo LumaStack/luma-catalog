@@ -42,8 +42,8 @@ misreads has cost its words for nothing. See [[the-per-session-budget]].
   changed here, and what was rejected on evidence.
 - [[loading-by-model-is-unsolved]] — the open problem, and what has been ruled
   out.
-- [[enhancement]] and [[entrypoint]] — the two templates. Copy the blocks, never
-  the file.
+- [the enhancement template](templates/enhancement.md) and [the entrypoint
+  template](templates/entrypoint.md) — copy the blocks, never the file.
 
 ## When these apply
 

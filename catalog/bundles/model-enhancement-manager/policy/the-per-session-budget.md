@@ -30,7 +30,7 @@ session where the behaviour never appears.
 
 **Do not reach for `matches: always` to get that.** It buys presence today by
 charging every adopter on every model, which is a larger bill for a smaller
-claim. Declare `model:` on the entrypoint and accept that delivery is pending —
+claim. Declare nothing and accept that the condition is currently unsayable —
 see [[the-entrypoint-compels-the-read]] and [[loading-by-model-is-unsolved]].
 
 **Count the whole bundle, not the document that fires.** The entrypoint defers
