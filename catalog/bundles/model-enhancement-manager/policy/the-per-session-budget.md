@@ -15,8 +15,13 @@ session where the behaviour never appears.
 
 **Do not reach for `matches: always` to get that.** It buys presence today by
 charging every adopter on every model, which is a larger bill for a smaller
-claim. Declare `model:` and accept that delivery is pending — see
-[[loading-by-model-is-unsolved]].
+claim. Declare `model:` on the entrypoint and accept that delivery is pending —
+see [[the-entrypoint-compels-the-read]] and [[loading-by-model-is-unsolved]].
+
+**Count the whole bundle, not the document that fires.** The entrypoint defers
+the guardrails rather than removing them, and an agent that obeys it reads all
+of them. A budget measured on the entrypoint alone would report a number nobody
+pays.
 
 **So the cost is unavoidable and the size is not.**
 

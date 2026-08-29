@@ -1,10 +1,18 @@
 ---
 type: workflow
-title: Start a model bundle
+title: Start a model enhancement bundle
 description: Stand up an enhancements bundle for a model that has none. Use when adopting a new model, or when an existing bundle's guardrails stop matching what you see.
 ---
 
-# Start a model bundle
+# Start a model enhancement bundle
+
+**Every model should need fewer of these than the last, and the target is
+none.** A bundle is a list of things a model gets wrong, so a shorter list is a
+better model. Enhance only what you must.
+
+**A bundle that grows from one generation to the next is evidence**, and of one
+of two things: the model regressed, or the bundle is accumulating guesses. Say
+which in `BUNDLE.md`. Neither is a reason to keep writing.
 
 ## 1. Name it
 

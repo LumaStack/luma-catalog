@@ -2,8 +2,6 @@
 type: policy
 title: Check before objecting
 description: Asked to evaluate a proposal, the model generates confident objections without verifying any of them. Run the check first, or do it their way.
-matches:
-  - model: opus-5
 ---
 
 # Check before objecting

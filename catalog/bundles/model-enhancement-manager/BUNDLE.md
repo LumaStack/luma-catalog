@@ -23,6 +23,8 @@ saves.
 ## What is here
 
 - [[what-an-enhancement-is]] — the shape and the bar. Start here.
+- [[the-entrypoint-compels-the-read]] — the one document that fires, and why
+  it is an instruction.
 - [[the-per-session-budget]] — what adding one costs, and what to remove.
 - [[write-an-enhancement]] — the workflow, from noticing to publishing.
 - [[start-a-model-bundle]] — standing one up for a model that has none.

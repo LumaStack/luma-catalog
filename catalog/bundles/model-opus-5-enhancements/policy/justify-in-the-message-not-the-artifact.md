@@ -2,8 +2,6 @@
 type: policy
 title: Justify in the message, not the artifact
 description: The model writes its reasoning into the file it is editing, pre-answering the reviewer inside the deliverable. That text has no reader later.
-matches:
-  - model: opus-5
 ---
 
 # Justify in the message, not the artifact

@@ -3,8 +3,8 @@ type: bundle
 version: 0.1.0
 published: 2026-08-29
 consumers: [project, organization]
-entrypoint: policy/what-these-are-for
-description: Behaviours Opus 5 exhibits that cost its user time, each with a guardrail. Every policy loads in every session, so every policy is short.
+entrypoint: policy/entrypoint
+description: Behaviours Opus 5 exhibits that cost its user time, each with a guardrail. One entrypoint fires on the model and compels the rest to be read.
 ---
 
 # Model: Opus 5 enhancements
@@ -21,7 +21,8 @@ one.
 
 ## What is here
 
-- [[what-these-are-for]] — how to read the rest. Start here.
+- [[entrypoint]] — **the only document that fires.** It names the guardrails and
+  requires them to be read. Everything else is reached through it.
 - [[check-before-objecting]] — fluent objections nobody verified.
 - [[justify-in-the-message-not-the-artifact]] — reasoning written into the
   deliverable instead of the reply.
@@ -29,39 +30,38 @@ one.
 
 ## When these apply
 
-**Whenever this model is what is running**, which is what every document here
-declares:
+**Whenever this model is what is running.** [[entrypoint]] declares it and
+nothing else here declares anything:
 
 ```yaml
 matches:
   - model: opus-5
 ```
 
-**A guardrail that arrives after the mistake is a description of the mistake**,
-so these cannot be topic-matched — by the time a topic fires, the behaviour has
-happened. The condition is the model, and nothing narrower is honest.
+**The guardrails are reached through the entrypoint, not by matching.** They are
+on-demand, so nothing is charged for them until the entrypoint sends a reader to
+them — and the entrypoint's first line makes that mandatory rather than
+optional. Existence is cheap and content is expensive.
+
+**A guardrail cannot be topic-matched.** One delivered after the mistake is a
+description of the mistake, so the condition is the model and nothing narrower.
 
 **Nothing delivers on `model:` yet.** The trigger parses, reaches the ring and
-`routing.toml`, and fires nowhere — so today these are advertised rather than
-loaded, and an agent reaches them by being pointed at the ring. That is a real
-reduction in what this bundle does, and it is the correct trade: `matches:
-always` would work today by charging every session of every adopter, including
-those running a different model entirely. See
-`lumastack/luma-catalog/model-enhancement-manager`, which carries the problem.
-
-**They are written to a budget regardless.** When delivery lands they load in
-every session of this model, forever. The whole bundle is intended to stay under
-a thousand words, and sharpening an existing policy is preferred to adding a
-sixth.
+`routing.toml`, and fires nowhere — so today the entrypoint is advertised rather
+than fired, and an agent arrives via the ring. `matches: always` would work now
+by charging every session of every adopter whatever model is running, which is a
+larger bill for a claim false in most of those sessions. A hook is the intended
+route; see `lumastack/luma-catalog/model-enhancement-manager`.
 
 ## Version
 
-`0.1.0` — four policies from one long session with one user. The behaviours are
-real; whether they are the *most* costly four is unknown, and a second user's
-evidence may reorder or replace them entirely.
+`0.1.0` — three guardrails and an entrypoint, from one long session with one
+user. The behaviours are real; whether they are the *most* costly three is
+unknown, and a second user's evidence may reorder or replace them entirely.
 
-**One was dropped before publication.** *A correction is a class* asked the
-model to sweep the artifact after any correction and report what else it found.
-It was the only policy here that added a step to every exchange rather than
-redirecting one, and inferring a rule from a single correction is how a model
-ends up editing files nobody mentioned.
+**Two were dropped before publication.** *A correction is a class* asked the
+model to sweep the artifact after any correction and report what else it found —
+the only policy here that added a step to every exchange rather than redirecting
+one, and inferring a rule from a single correction is how a model ends up
+editing files nobody mentioned. *What these are for* explained the other
+documents, which is what the entrypoint replaced with an instruction.

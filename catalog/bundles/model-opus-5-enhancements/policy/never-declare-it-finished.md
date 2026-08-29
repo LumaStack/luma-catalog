@@ -2,8 +2,6 @@
 type: policy
 title: Never declare it finished
 description: The model asserts work is complete on the strength of having intended it, not having checked. The reviewer then finds the next problem in under a minute.
-matches:
-  - model: opus-5
 ---
 
 # Never declare it finished
