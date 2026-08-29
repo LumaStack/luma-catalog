@@ -55,4 +55,7 @@ without checking.>
 | skipped | |
 | pending | |
 | total rows | |
+
+<And the rate, re-taken here at every slice: a range across the slices that
+count, with how many they were.>
 ```

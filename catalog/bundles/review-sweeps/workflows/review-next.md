@@ -139,6 +139,11 @@ visible early: three slices running that turn up nothing related to the goal
 mean either the goal was wrong or the sweep has wandered, and both are worth
 raising rather than absorbing.
 
+**Re-take the rate while you are here.** A range across the slices that count,
+with how many they were — see [[start-a-sweep]]. It costs a count of rows and
+it is the only thing that tells the reader whether the sweep is going to
+finish.
+
 Mark every file in the cluster, including the ones where nothing was found —
 **read with nothing found is a result**, and an index that records only
 problems has unexplained gaps in place of evidence.

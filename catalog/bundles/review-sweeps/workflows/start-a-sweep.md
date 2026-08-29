@@ -135,14 +135,32 @@ several. *Roughly four slices for `docs/`, and fifteen for `src/`* is a useful
 sentence. *Nineteen slices* is not, because the two halves are not made of the
 same stuff and the reader will plan against the wrong one.
 
-### Then stop guessing
+### Then stop guessing, and keep re-measuring
 
-**After the second slice you have a rate.** Use it, say what it was, and revise
-the number in `sweep.md`.
+**Re-measure at every slice, not once.** It costs a count of rows, and the only
+argument for waiting is that an early number is noisy — which is a reason to
+*present* it honestly, not to withhold it.
 
-That revision is worth more than any care taken over the initial guess — it is
-measured on this material, by these people, at whatever depth they actually
-settled into. **Do not defend the original estimate against it.**
+**Report a range with the number of slices behind it, never a point estimate.**
+*Three slices, four to nine files each, roughly fifteen slices left* is honest
+at small samples. *2.1 files per slice* is false precision wearing the costume
+of data, and a reader plans against it.
+
+**A small sample shows up as a wide range**, which is the correct behaviour
+rather than a defect to hide.
+
+**Keep the rates separate by material**, for the same reason the first estimate
+was split: two prose slices tell you nothing about dense logic, and averaging
+them produces a number true of neither.
+
+**Discard slices that measured something else.** A first slice of a `draft`
+practice measures building the practice — its files-per-slice is a fact about
+the bundle, not about the material. Say which slices were excluded and why;
+silently dropping them is how a rate becomes flattering.
+
+**And do not defend the original estimate against any of this.** The
+measurement is on this material, by these people, at the depth they actually
+settled into.
 
 ### Then say how much will move underneath it
 

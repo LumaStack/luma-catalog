@@ -203,6 +203,15 @@ what a `draft` practice costs once**, and only once — a second slice producing
 as many changes to this bundle as findings about the code is a sweep that has
 stopped sweeping.
 
+**And the rate is re-measured at every slice rather than once.** It costs a
+count of rows, so the only argument for waiting was that an early number is
+noisy — which is a reason to present it honestly, not to withhold it. **A range
+with the number of slices behind it, never a point estimate**: *three slices,
+four to nine files each* is honest at small samples where *2.1 files per slice*
+is false precision a reader will plan against. **Slices that measured something
+else are discarded and said to be** — a first slice of a `draft` practice
+measures the practice, not the material.
+
 Minor: new content, and one workflow step added.
 
 `0.9.1` — **examples name a fictional person, not a real one.**
