@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.15.0
+version: 0.16.0
 published: 2026-08-28
 lifecycle_status: draft
 survival: experimental
@@ -60,7 +60,7 @@ and nothing about depth.
   rigours of the same one. Read when deciding which you want, or when the two
   look interchangeable.
 
-**Templates** — [a sweep](templates/sweep.md) · [its
+**Templates** — [a charter](templates/charter.md) · [its
 coverage](templates/coverage.md) · [its journal](templates/journal.md) · [a
 slice](templates/slice.md) · [presenting a
 file](templates/file-presentation.md)
@@ -84,7 +84,8 @@ fixing. Filing a sweep as an audit produces a commit pin that is false by the
 third file and a response written by its own auditor.
 
 **Coverage is derived, not stored.** Each slice says which files it covered;
-the index in `sweep.md` is a cache of that. When they disagree, the slices win.
+the index in `charter.md` is a cache of that. When they disagree, the slices
+win.
 
 **A row finishes two ways, and they are not the same claim.** `reviewed` means
 read and satisfactory and **any party may set it, agent included**; `approved`
@@ -130,6 +131,30 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.16.0` — **the authored file is `charter.md`, not `sweep.md`.**
+
+**A filename outlives the vocabulary around it.** It is linked, bookmarked,
+cited in commit messages and pasted into conversations, so it is the part of a
+practice most expensive to rename later — and *sweep* is a word this bundle may
+well abandon.
+
+**`charter` names what the file actually is**: a written statement of the aims
+and principles of an undertaking. It begins as intent — goal, scope, strategy,
+strictness — and ends as account, carrying the learnings and the closing
+summary. **Nothing else in the world records either half.**
+
+*`README.md` was the most legible candidate and was rejected*: this estate
+already says never make a README load-bearing, because people edit them without
+knowing rules exist. Overriding that for one directory needs a bigger
+conversation than a filename.
+
+**The type stays `sweep`.** It names the practice, and if the practice is
+renamed the type goes with it — which is fine and expected. The filename is the
+cheaper thing to make durable.
+
+**Breaking**, shipped as minor under the pre-1.0 allowance: an existing sweep
+renames one file. Nothing inside it changes.
 
 `0.15.0` — **`evolving` becomes `adaptive`.**
 
