@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.16.0
+version: 0.17.0
 published: 2026-08-28
 lifecycle_status: draft
 survival: experimental
@@ -131,6 +131,48 @@ call graph, and while a headquarters could be read the same way, nobody has —
 adding `organization` on that basis would be claiming a fit nothing has tested.
 
 ## Version
+
+`0.17.0` — **`strictness` becomes three disciplines, and adaptive is the
+default.**
+
+`strictness: adaptive` said the strictness was adaptive, which is nonsense —
+**a field names the thing being held fixed, not the value.** And one flag was
+too coarse: **goals, scope and strategy move independently.** The common mature
+configuration is **strict goals, strict scope, adaptive strategy** — do not
+wander, but do improve how you read.
+
+So: `goal_discipline`, `scope_discipline`, `strategy_discipline`, each
+`strict`, `adaptive` or `exploratory`.
+
+**The three values are a ladder of what you already know**, which is the only
+line that holds — *how much change feels warranted* is undrawable, because
+every improvement feels warranted in the moment. `strict`: you know what you
+are doing, so do not touch it. `adaptive`: you know the shape, so refine and
+tune it. **`exploratory`: you do not know the shape yet, so go and find what it
+should be.**
+
+**`exploratory` cannot be estimated**, and that is a property rather than a
+failing: a sweep still working out what it is has nothing to estimate against,
+and a number produced anyway was never true. Disregard for time is the
+consequence of not knowing, not the definition.
+
+**Three flat fields rather than one nested record**, so each can declare a
+`field_type` and be validated. A record would have to say `field_type` cannot
+express it, which is a known gap in the format and not worth inheriting where
+the shape does not require it.
+
+**Absent means `adaptive`, on every axis, because that is what actually
+happens.** A sweep that has not thought about this will adapt — and a default
+of `strict` would have sweeps sprawl anyway while the record claimed a
+discipline they never had. **An honest record of sprawl is worth more than a
+flattering one.**
+
+**Most *mature* sweeps should be strict on goals and scope**, and the default
+should flip once that is the common case. Until then it describes behaviour
+rather than aspiration, which is the only way a field stays worth reading.
+
+**Breaking**, shipped as minor under the pre-1.0 allowance: one field becomes
+three. Nothing else changes.
 
 `0.16.0` — **the authored file is `charter.md`, not `sweep.md`.**
 
