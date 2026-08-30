@@ -1,8 +1,13 @@
 ---
 type: bundle
+<<<<<<< HEAD
 version: 0.16.1
 published: 2026-08-29
 lifecycle: draft
+=======
+version: 0.17.0
+published: 2026-08-28
+>>>>>>> c9d1fad (Finish the orphaned work: bump project-documentation to 0.17.0)
 consumers: [project]
 entrypoint: policy/readme
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
@@ -99,6 +104,7 @@ from what a project publishes about its code.
 
 ## Version
 
+<<<<<<< HEAD
 `0.16.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
 absent reads as `unknown` — *nobody has said*. Something was known: this is
 developed by its maintainers for their own use, and its shape can reverse
@@ -111,6 +117,21 @@ silence did.
 
 Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
 `unknown` promised nothing that `draft` withdraws.
+=======
+`0.17.0` — **`writing-style-goals` says what the style is for.**
+
+The bundle has said *how* to write for a while and never *why*. This is the
+argument: the style exists to **improve agent compliance, spend tokens without
+changing meaning, stay maintainable, avoid git churn, and keep prose from
+rotting** — and tone is explicitly left to the author, since none of those goals
+is about voice.
+
+**It is a `document`, not a policy.** Goals are what a rule is judged against, so
+a reader reaching for them is asking *why does this rule exist* rather than
+*what must I do* — which is background, reached through the rules that act.
+
+Minor: a document is added and no rule changes.
+>>>>>>> c9d1fad (Finish the orphaned work: bump project-documentation to 0.17.0)
 
 `0.16.0` — **`lifecycle_status` is now `lifecycle`.**
 
