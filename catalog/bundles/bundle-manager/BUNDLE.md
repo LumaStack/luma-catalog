@@ -22,8 +22,8 @@ belongs in, and a procedure for each thing you do to a bundle over its life.
 
 **Policy**
 
-- [[organizing-a-bundle]] — the layout, and the three rules that decide whether
-  something is a document, an asset, or a type. Read first.
+- [[organizing-a-bundle]] — the layout, and what decides whether something is a
+  document, an asset, or a type. Read first.
 - [[where-a-bundle-belongs]] — the four routes a bundle takes, when to start in
   a project and when to start in a catalog, and the one bar that still binds.
 - [[an-index-of-what-exists]] — load the index, never the content. How a bundle
@@ -50,13 +50,14 @@ bundle, and every tool reading it would believe that — which is the first thin
 
 ## Loading
 
-Only [[organizing-a-bundle]] has no `applies_to` — every workflow here
-assumes it. The six workflows are `optional`: you load the one you are doing,
-not all six.
+**Every policy here says what surfaces it**, so a rule arrives when you are
+creating a bundle, restructuring one, or deciding where it belongs — and costs
+nothing before then. **The workflows declare nothing**, which makes them
+available on request: you load the one you are doing.
 
-That is the field working as intended. Marking every workflow mandatory would
-impose the whole bundle on any consumer that touched it, which is the cost that
-keeps `mandatory` meaning something.
+That is the field working as intended. A document asking to be present always
+would impose itself on any consumer that touched this bundle, in every session,
+forever — which is the cost that keeps `matches: always` worth justifying.
 
 **The three document directories are three disclosure tiers**, which is the
 point of filing by type at all:
@@ -114,9 +115,29 @@ rather than use: publishing it and adopting it make the question live, and
 somebody still has to answer it. *No, still a draft* is an answer, and this
 catalog is now full of it.
 
+**Three claims in this bundle had rotted, and are removed rather than
+recounted.** `organizing-a-bundle` asserted that nothing in this catalog declares
+`matches: always`. Something does, and did before the sentence was written — a
+register of retired words, which is useless unless it is present before somebody
+uses one. The claim rested on a bundle count, which is the failure
+`project-documentation`'s writing style names using *"Seventeen bundles"* as its
+example. **The rule survives; the census is gone**, and what replaces it is the
+exception that shows what earns the expensive outcome.
+
+**The `Loading` section was stale against three format changes at once.** It
+named `applies_to`, renamed to `matches` in `0.8.0`, and called the workflows
+`optional`, a `compliance` value removed in `0.7.0` — in a bundle whose whole job
+is teaching field names. It also had the fact backwards: every policy here
+declares `matches`, and it is the workflows that declare nothing.
+
+**And this manifest called them "the three rules" while the policy's own
+description called them "the two rules."** Neither now counts. Both name the
+subject, which survives somebody adding a rule.
+
 Minor: new guidance, a new line in a template, and a step. An existing bundle
 stays valid, and adding the field to one is a patch — a fact written down rather
-than a change to what it obliges.
+than a change to what it obliges. The corrections ride along, and none of them
+changes what this bundle obliges either.
 
 `0.12.0` — **`lifecycle_status` is now `lifecycle`.**
 

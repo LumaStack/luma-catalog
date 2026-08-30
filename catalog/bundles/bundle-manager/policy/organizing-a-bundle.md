@@ -1,7 +1,7 @@
 ---
 type: policy
 title: Organizing a bundle
-description: The layout every bundle uses, what each directory is for, and the two rules that decide whether something is a document, an asset, or a type.
+description: The layout every bundle uses, what each directory is for, and what decides whether something is a document, an asset, or a type.
 matches:
   - topic: creating or restructuring a bundle
 ---
@@ -145,10 +145,16 @@ request. *Rationale everybody loads* is usually a policy that grew an argument.
 rather than a typing one: the answer is something always present naming the rules
 that exist, not marking every policy `always`. See [[an-index-of-what-exists]].
 
-**Nothing in this catalog declares `matches: always`.** Nineteen bundles, and the
-expensive outcome is taken by no document at all — every rule here could say what
-surfaces it. That is the number to compare a new one against: **if a bundle needs
-it and none of these did, the reason should be written down.**
+**Almost nothing in this catalog declares it**, and the exception shows what
+earns it: a register of retired words, which is useless unless it is present
+*before* somebody uses one. Every other rule here could say what surfaces it,
+and none of them lost anything by doing so.
+
+**The bar is a written reason, not a precedent.** A document that needs the
+expensive outcome carries why beside the declaration, where whoever reads it next
+can judge it. Counting how many other bundles took it is not that reason — the
+number moves with every bundle added, and an argument resting on it goes quietly
+false while still reading fluently.
 
 Nothing enforces any of this. It is a cheap thing to check in [[audit-bundle]].
 
