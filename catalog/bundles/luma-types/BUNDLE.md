@@ -139,6 +139,14 @@ presenting a mixed set as though it were uniform.
 
 ## Version
 
+`0.13.0` — **`luma/project` drops `owns` and `must_not_own`, and stops restating what it inherits** *(breaking)*.
+
+**`owns` and `must_not_own` were claims nothing read.** They described what a repository is responsible for so that two growing toward the same capability could be spotted — a real question, and one nothing has ever asked. No tool reads either field, and the idea that would have used them records that what the signal looks like is still unknown.
+
+**`description` and `lifecycle` now declare presence and nothing else.** The format is explicit that a strengthened field is redeclared with a higher `field_presence` and nothing else changed, and that a subtype may not redefine an inherited field's `field_type` or `values`. This type was restating both — and had drifted twice over: `lifecycle` was listed with four values where the format defines five, dropping `unknown`, and the prose claimed a default of `provisional` which the format explicitly rejects in favour of `unknown`. Both are corrected by not copying them.
+
+*Migration:* remove `owns` and `must_not_own` from any `.luma/PROJECT.md` that carries them. Nothing reads either, so nothing breaks meanwhile.
+
 `0.13.0` — **`luma/catalog` is two fields** *(breaking)*. `requires` and `tags`
 are removed and `namespace` becomes `default_namespace`.
 
