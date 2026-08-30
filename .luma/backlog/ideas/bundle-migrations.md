@@ -5,7 +5,7 @@ created: { by: human:benlinton, at: 2026-08-19T00:00:00Z }
 contributors: [human:benlinton, agent:claude-opus-5]
 horizon: later
 scope: project
-lifecycle_status: draft
+lifecycle: draft
 ---
 
 # Bundle migrations — walking an adopter from version X to version Y

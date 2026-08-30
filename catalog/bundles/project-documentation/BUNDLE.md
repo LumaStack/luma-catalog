@@ -1,7 +1,7 @@
 ---
 type: bundle
-version: 0.16.1
-published: 2026-08-29
+version: 0.17.0
+published: 2026-08-30
 lifecycle: draft
 consumers: [project]
 entrypoint: policy/readme
@@ -98,6 +98,20 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.17.0` — **`writing-style-goals` says what the style is for.**
+
+The bundle has said *how* to write for a while and never *why*. This is the
+argument: the style exists to **improve agent compliance, spend tokens without
+changing meaning, stay maintainable, avoid git churn, and keep prose from
+rotting** — and tone is explicitly left to the author, since none of those goals
+is about voice.
+
+**It is a `document`, not a policy.** Goals are what a rule is judged against, so
+a reader reaching for them is asking *why does this rule exist* rather than
+*what must I do* — which is background, reached through the rules that act.
+
+Minor: a document is added and no rule changes.
 
 `0.16.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
 absent reads as `unknown` — *nobody has said*. Something was known: this is
