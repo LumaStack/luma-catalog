@@ -82,14 +82,19 @@ a five-year-old one, and nothing else in the descriptor says which this is.
 to `provisional` makes a draft thing read as more settled than it is, and the
 other way makes a stable thing read as less.
 
-**`unknown` is the answer for a descriptor nobody made with a tool**, and most
-things here are made with one. **A tool should ask rather than assume.** Writing
-`draft` because it is usually right is a guess wearing a declaration's clothes,
-and nothing downstream can tell it from an answer somebody gave.
+**`unknown` means one of two things, and neither is about the repository.**
+Either a tool did not do its job — it should have asked, or worked it out, and
+did neither — or somebody was asked and chose not to answer. It is a fact about
+the process that produced the descriptor, not about how settled the thing is.
 
-Where a tool cannot ask — a scaffold, a non-interactive run — it should leave
-the answer visibly missing rather than fill it in. Absent and *unanswered* are
-both honest; a plausible value nobody chose is not.
+**Which makes it worth reading rather than skipping.** A descriptor at `unknown`
+is either a gap to close or a refusal to respect, and those want different
+responses. Neither is a maturity.
+
+**And a tool must not guess its way past it.** Writing `draft` because most new
+things are drafts produces a value indistinguishable from one somebody chose,
+and every reader downstream treats it as a declaration. `unknown` at least
+announces itself.
 
 A default answers *what is the value*. It does not answer *may I act on it*:
 anything making a consequential choice on the strength of maturity should
