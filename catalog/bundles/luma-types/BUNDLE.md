@@ -139,37 +139,21 @@ presenting a mixed set as though it were uniform.
 
 ## Version
 
-`0.13.0` — **`luma/project` drops `owns` and `must_not_own`, and stops restating what it inherits** *(breaking)*.
+`0.13.0` — **both types shed fields nothing used** *(breaking)*.
 
-**`owns` and `must_not_own` were claims nothing read.** They described what a repository is responsible for so that two growing toward the same capability could be spotted — a real question, and one nothing has ever asked. No tool reads either field, and the idea that would have used them records that what the signal looks like is still unknown.
+**`luma/catalog` is `default_namespace` and `upstream`.** A catalog publishes; it
+does not oblige whoever takes from it, so `requires` goes — and `tags` with it,
+since it existed only to narrow a requirement to some consumers. A tag belongs
+on a Bundle, where the format already has one, and a catalog can derive its set
+from what it publishes. `namespace` becomes `default_namespace` because the
+namespace derives from where the catalog lives; declaring one overrides that.
 
-**`description` and `lifecycle` now declare presence and nothing else.** The format is explicit that a strengthened field is redeclared with a higher `field_presence` and nothing else changed, and that a subtype may not redefine an inherited field's `field_type` or `values`. This type was restating both — and had drifted twice over: `lifecycle` was listed with four values where the format defines five, dropping `unknown`, and the prose claimed a default of `provisional` which the format explicitly rejects in favour of `unknown`. Both are corrected by not copying them.
+**`luma/project` drops `owns` and `must_not_own`** — claims nothing read — and
+declares presence only for `description` and `lifecycle`, since a subtype may
+not redefine an inherited field's `field_type` or `values`.
 
-*Migration:* remove `owns` and `must_not_own` from any `.luma/PROJECT.md` that carries them. Nothing reads either, so nothing breaks meanwhile.
-
-`0.13.0` — **`luma/catalog` is two fields** *(breaking)*. `requires` and `tags`
-are removed and `namespace` becomes `default_namespace`.
-
-**A catalog is a shelf, not a body that governs who takes from it.**
-Obligations belong to an organization, whose projects have agreed to be part
-of it; a catalog serves anyone who finds it and has no standing to oblige
-them. `tags` existed only for `requires` to narrow an obligation to some
-consumers, so it goes with it — and a tag belongs on a Bundle, saying what
-the Bundle is about, where the format already has a core `tags` field. A
-catalog can derive its set from what it publishes rather than storing one.
-
-**`default_namespace` says what the field is for.** The namespace derives
-from where the catalog lives; declaring one overrides that derivation, which
-is a default rather than the namespace itself. `optional`, because deriving
-is the common case and the better one.
-
-Two sections go with the fields: *Declaring a field without a `field_type`*,
-which existed because `requires` was a nested record, and *What a per-field
-check cannot reach*, whose examples were both about `requires`. The
-`upstream` resolution table goes too — with no lists handed down, there is
-nothing to resolve.
-
-Minor with the removals stated outright, per pre-1.0.
+*Migration:* remove `owns` and `must_not_own` from any `.luma/PROJECT.md`.
+Nothing reads either, so nothing breaks meanwhile.
 
 `0.12.2` — **the `requires` example was renamed and should not have been.** The same
 vocabulary change scoped itself to Type Definitions, where `obligation` graded
