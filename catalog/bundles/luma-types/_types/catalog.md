@@ -94,7 +94,7 @@ committed file, and it can be argued with.
 ```yaml
 requires:
   - bundle: upstream/change-review
-    field_presence: required
+    obligation: mandatory
     version: ">= 2.0.0"
     by: 2026-10-01
     tags: [infrastructure]

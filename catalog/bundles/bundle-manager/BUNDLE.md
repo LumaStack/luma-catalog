@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.13.0
+version: 0.13.1
 published: 2026-08-29
 lifecycle: draft
 consumers: [project, organization]
@@ -85,6 +85,14 @@ Both levels. An organization curates a catalog and a project writes bundles it
 may later promote, and the procedure is the same at either end.
 
 ## Version
+
+`0.13.1` — **the type-definition template still taught `obligation: mandatory`.** The
+`0.x` vocabulary change moved Type Definitions to `field_presence: required`
+and this template was in scope and missed — so every type scaffolded from it
+since has started with the wrong key and the wrong value. It is the only
+leftover that was still making new ones.
+
+Patch: one line.
 
 `0.13.0` — **a bundle is asked what it is, on both ladders, and this one
 answers.** The manifest template carried five fields and neither of these, so
