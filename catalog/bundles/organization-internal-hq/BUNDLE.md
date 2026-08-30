@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.11.0
-published: 2026-08-28
+version: 0.11.1
+published: 2026-08-29
+lifecycle: draft
 consumers: [organization]
 entrypoint: policy/what-a-headquarters-holds
 description: The internal repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
@@ -283,6 +284,19 @@ bundle belongs.
 occasionally needs to know one exists.
 
 ## Version
+
+`0.11.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.11.0` — **`lifecycle_status` is now `lifecycle`.**
 

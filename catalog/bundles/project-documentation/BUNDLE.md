@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.16.0
-published: 2026-08-28
+version: 0.16.1
+published: 2026-08-29
+lifecycle: draft
 consumers: [project]
 entrypoint: policy/readme
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
@@ -97,6 +98,19 @@ README, but what an organization publishes about itself is a different question
 from what a project publishes about its code.
 
 ## Version
+
+`0.16.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.16.0` — **`lifecycle_status` is now `lifecycle`.**
 

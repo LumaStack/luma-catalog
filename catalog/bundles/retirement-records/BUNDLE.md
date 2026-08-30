@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.3.0
-published: 2026-08-28
+version: 0.3.1
+published: 2026-08-29
+lifecycle: draft
 consumers: [project, organization]
 entrypoint: policy/retiring-a-concept
 description: Retiring an idea across many projects — the decision that stays home, the strategy that travels, and the recognizers that find a concept whose vocabulary survived.
@@ -90,6 +91,19 @@ Both levels. A project retires its own ideas and sweeps against what it adopted;
 an organization hands retirements down and needs to know which projects complied.
 
 ## Version
+
+`0.3.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.3.0` — **`lifecycle_status` is now `lifecycle`.**
 

@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.12.0
-published: 2026-08-28
+version: 0.12.1
+published: 2026-08-29
+lifecycle: draft
 consumers: [project, organization]
 entrypoint: policy/capturing-ideas
 description: Ideas as individual files rather than one growing IDEAS.md — what earns a file, how capture stays fast, and how the list gets tended rather than accumulating.
@@ -114,6 +115,19 @@ Both levels. An organization has ideas about how it works; a project has ideas
 about what it builds. The same shape holds, and `scope` records which.
 
 ## Version
+
+`0.12.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.12.0` — **`lifecycle_status` is now `lifecycle`.**
 

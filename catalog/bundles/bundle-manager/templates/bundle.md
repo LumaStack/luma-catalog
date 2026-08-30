@@ -10,6 +10,7 @@ bundle, and every tool reading it would believe that.
 type: bundle
 version: 0.1.0
 published: YYYY-MM-DD
+lifecycle: draft
 consumers: [project]
 entrypoint: workflows/CHANGE-ME
 description: One line — what this holds and who it is for.
@@ -18,6 +19,17 @@ description: One line — what this holds and who it is for.
 
 - **`version`** — `0.1.0` for anything used in one place or none. `1.0.0`
   claims the shape has stopped moving.
+- **`lifecycle`** — `draft` on the day it is written, and **left in the block
+  deliberately** so a new bundle declares something rather than nothing. Delete
+  the line and the bundle declares `unknown`, which reads as *nobody has said* —
+  indistinguishable from nobody having thought about it. Overwriting it with
+  `provisional` or `stable` is a claim, and one somebody has to decide to make.
+- **`survival`** — **not in the block, deliberately.** It defaults to `intended`,
+  so writing `survival: intended` adds a line that says what silence already
+  says. Add the field only to say something else: `experimental` when the bundle
+  is out there to find out whether it earns its keep, `promised` when something
+  will go on answering this whatever shape it ends up in. Ask the question every
+  time; write the field only when the answer is not the default.
 - **`consumers`** — `project`, `organization`, or both. Both when the same
   content is wanted at either level by different adopters.
 - **`entrypoint`** — the full Document ID, e.g. `workflows/create-bundle`.

@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.1.0
+version: 0.1.1
 published: 2026-08-29
+lifecycle: draft
 consumers: [project, organization]
 entrypoint: policy/what-an-enhancement-is
 description: Building and maintaining per-model guardrail bundles — the shape an enhancement takes, the evidence bar, the per-session budget, and the unsolved problem of loading them only for the model they describe.
@@ -52,6 +53,19 @@ maintaining an enhancement, which is rare and deliberate — the opposite of wha
 it produces. Each document says what surfaces it.
 
 ## Version
+
+`0.1.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.1.0` — the practice is one bundle old. The evidence bar and the budget are
 both guesses calibrated against a single model and a single user's sessions.

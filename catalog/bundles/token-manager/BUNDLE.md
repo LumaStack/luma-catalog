@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.10.3
-published: 2026-08-28
+version: 0.10.4
+published: 2026-08-29
+lifecycle: draft
 consumers: [project, organization]
 entrypoint: workflows/token-tutorial
 description: Where an agent session's tokens actually go — a paced tutorial on the mechanism and the fixes that follow from it, and an audit that measures a real setup instead of guessing at it.
@@ -103,6 +104,19 @@ kind of thing an organization has an opinion about once rather than every person
 rediscovering at their own expense.
 
 ## Version
+
+`0.10.4` — **the manifest declares `lifecycle: draft`.** The field was absent, and
+absent reads as `unknown` — *nobody has said*. Something was known: this is
+developed by its maintainers for their own use, and its shape can reverse
+without notice.
+
+**Publication did not promote it.** Being reachable by somebody who did not
+write it makes the question live rather than answering it, and the answer here
+is *still a draft* — which is a legitimate thing to publish, and says more than
+silence did.
+
+Patch: a fact written down. Nothing an adopter is obliged to do has changed, and
+`unknown` promised nothing that `draft` withdraws.
 
 `0.10.3` — **references to the knowledge format name sections instead of numbering them.** The format removed section numbers, so every `§n` here pointed at a position that no longer exists — and a stale number resolves to the wrong section rather than to nothing, which is why none of them were reported. Decorative citations are dropped; the rest name what they meant.
 
