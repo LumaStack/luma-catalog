@@ -77,24 +77,23 @@ repository is changes how everything inside it should be treated — a position
 recorded in a two-week-old repository binds differently from the same position in
 a five-year-old one, and nothing else in the descriptor says which this is.
 
-**Absent means nobody has said**, and the format agrees: `lifecycle` defaults to
-`unknown`, chosen because both real defaults would be wrong guesses — defaulting
-to `provisional` makes a draft thing read as more settled than it is, and the
-other way makes a stable thing read as less.
+**`unknown` means the descriptor is incomplete.** Not that the repository is at
+an early stage — that the question has not been answered. Either a tool did not
+ask and could not work it out, or somebody was asked and declined. Both are
+incompleteness, and **neither is a maturity.**
 
-**`unknown` means one of two things, and neither is about the repository.**
-Either a tool did not do its job — it should have asked, or worked it out, and
-did neither — or somebody was asked and chose not to answer. It is a fact about
-the process that produced the descriptor, not about how settled the thing is.
+**So it is used only where it has to be.** Reading it as a stage loses the one
+thing it tells you, which is that something is missing here.
 
-**Which makes it worth reading rather than skipping.** A descriptor at `unknown`
-is either a gap to close or a refusal to respect, and those want different
-responses. Neither is a maturity.
+**The format's default was `provisional` once.** It changed after defaulting
+that way caused a real problem: a repository nobody had assessed was
+indistinguishable from one somebody had assessed and called provisional, and
+everything downstream treated the two alike. `unknown` was chosen so the gap
+stays visible instead.
 
-**And a tool must not guess its way past it.** Writing `draft` because most new
-things are drafts produces a value indistinguishable from one somebody chose,
-and every reader downstream treats it as a declaration. `unknown` at least
-announces itself.
+**Which is why a tool must not guess past it either.** Writing `draft` because
+most new things are drafts recreates exactly the problem that killed the old
+default — a value nothing can tell from one somebody chose.
 
 A default answers *what is the value*. It does not answer *may I act on it*:
 anything making a consequential choice on the strength of maturity should
