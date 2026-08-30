@@ -1,15 +1,6 @@
 ---
 type: luma/catalog
 description: Universal bundles — the starting set any organization can adopt.
-tags:
-  - service
-  - library
-  - infrastructure
-  - design
-  - docs
-requires:
-  - bundle: lumastack/luma-catalog/git-secrets
-    obligation: recommended
 ---
 
 # The universal catalog
@@ -31,17 +22,18 @@ because a fork lives somewhere else.
 
 ## What is claimed, and what is not
 
-**Nothing is mandatory.** A mandate fails a project's checks, and this catalog
-has no adopters — mandating anything now would be asserting authority over
-projects that have never agreed to it. The first mandate should follow evidence
-that something genuinely must not be skipped, not a belief that it should not
-be.
+**Nothing is required, and that is the point.** A catalog is a shelf things are
+published on, not a body that governs the people who take from it. Obligations
+belong to an organization, which its projects have agreed to be part of — this
+catalog serves organizations with no connection to Luma, and has no standing to
+oblige any of them.
 
-**One recommendation.** `git-secrets` is the only bundle here whose absence
-causes harm rather than inconvenience: a published credential cannot be
-unpublished, and a leaked identity is permanent in every clone. Everything else
-is quality of life, and reporting five gaps at a project that just adopted its
-first bundle is how a report gets ignored.
+**The argument for one exception did not survive being written down.**
+`git-secrets` was recommended here on the grounds that a published credential
+cannot be unpublished, which is true and is still not this catalog's call to
+make. An organization that agrees with it can require it of its own projects,
+where the obligation has somebody behind it. Recommending it from a shelf is
+asserting the same authority in a quieter voice.
 
 **Nothing says what a new consumer begins with.** `starters` did, and it is
 withdrawn — see `luma-leader`'s archived idea. It was written before anything
@@ -59,12 +51,9 @@ before anything is loaded, so it is the only warning that survives an agent
 skimming a listing — and publishing a headquarters is the most damaging thing
 available at this level.
 
-Nothing here is `optional`. Every bundle in this catalog is available by being
-in it, so an `optional` entry would restate the directory listing. `optional`
-earns its place only where a catalog is pointing at a curated subset of
-something larger.
-
-The tag vocabulary is still provisional and nothing keys on it yet. The right
+**No tag vocabulary either.** It existed for `requires` to narrow an obligation
+to some consumers and not others, and with nothing required there is nothing to
+narrow. It was already provisional and already keyed on by nothing; the right
 vocabulary is the one that falls out of real projects declaring what they are,
 not the one guessed at first.
 
