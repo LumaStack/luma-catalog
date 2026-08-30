@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.12.2
+version: 0.13.0
 published: 2026-08-29
 lifecycle: draft
 consumers: [project, organization]
@@ -138,6 +138,30 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.13.0` — **`luma/catalog` is two fields** *(breaking)*. `requires` and `tags`
+are removed and `namespace` becomes `default_namespace`.
+
+**A catalog is a shelf, not a body that governs who takes from it.**
+Obligations belong to an organization, whose projects have agreed to be part
+of it; a catalog serves anyone who finds it and has no standing to oblige
+them. `tags` existed only for `requires` to narrow an obligation to some
+consumers, so it goes with it — and a tag belongs on a Bundle, saying what
+the Bundle is about, where the format already has a core `tags` field. A
+catalog can derive its set from what it publishes rather than storing one.
+
+**`default_namespace` says what the field is for.** The namespace derives
+from where the catalog lives; declaring one overrides that derivation, which
+is a default rather than the namespace itself. `optional`, because deriving
+is the common case and the better one.
+
+Two sections go with the fields: *Declaring a field without a `field_type`*,
+which existed because `requires` was a nested record, and *What a per-field
+check cannot reach*, whose examples were both about `requires`. The
+`upstream` resolution table goes too — with no lists handed down, there is
+nothing to resolve.
+
+Minor with the removals stated outright, per pre-1.0.
 
 `0.12.2` — **the `requires` example was renamed and should not have been.** The same
 vocabulary change scoped itself to Type Definitions, where `obligation` graded
