@@ -82,6 +82,13 @@ a five-year-old one, and nothing else in the descriptor says which this is.
 to `provisional` makes a draft thing read as more settled than it is, and the
 other way makes a stable thing read as less.
 
+**But `unknown` is the answer for a descriptor nobody made with a tool.** A tool
+standing a repository up knows perfectly well what it is holding: something new,
+which is `draft`. **A tool that leaves this absent is declining to say what it
+knows**, and the reader then cannot tell a repository at the very beginning from
+one whose maturity nobody ever recorded. Anything scaffolding a descriptor
+should write `lifecycle: draft` into it.
+
 A default answers *what is the value*. It does not answer *may I act on it*:
 anything making a consequential choice on the strength of maturity should
 require an explicit declaration, because **a default is not a declaration.** The
