@@ -61,12 +61,8 @@ inherited `field_presence` and never to lower one.
 **Presence, and nothing else.** The format is explicit that a strengthened field
 is redeclared *"with a higher `field_presence` and nothing else changed"*, and
 that a subtype may not redefine an inherited field's `field_type` or `values`.
-So neither is restated here.
-
-*This type used to restate both, and both had drifted.* It listed `lifecycle`
-as four values where the format defines five, silently dropping `unknown` — a
-copy of a definition disagreeing with the definition, which is the whole reason
-the rule exists.
+So neither is restated here — a copy of a definition is a thing that can
+disagree with the definition, and eventually does.
 
 **`description` moves `optional` → `recommended`** because a consumer reads it to
 decide whether to load this at all, before anything else about the repository is
@@ -82,18 +78,10 @@ an early stage — that the question has not been answered. Either a tool did no
 ask and could not work it out, or somebody was asked and declined. Both are
 incompleteness, and **neither is a maturity.**
 
-**So it is used only where it has to be.** Reading it as a stage loses the one
-thing it tells you, which is that something is missing here.
-
-**The format's default was `provisional` once.** It changed after defaulting
-that way caused a real problem: a repository nobody had assessed was
-indistinguishable from one somebody had assessed and called provisional, and
-everything downstream treated the two alike. `unknown` was chosen so the gap
-stays visible instead.
-
-**Which is why a tool must not guess past it either.** Writing `draft` because
-most new things are drafts recreates exactly the problem that killed the old
-default — a value nothing can tell from one somebody chose.
+**So it is used only where it has to be**, and a tool must not guess past it.
+Writing `draft` because most new things are drafts produces a value nothing can
+tell from one somebody chose, which is the whole reason this field has no
+plausible default.
 
 A default answers *what is the value*. It does not answer *may I act on it*:
 anything making a consequential choice on the strength of maturity should

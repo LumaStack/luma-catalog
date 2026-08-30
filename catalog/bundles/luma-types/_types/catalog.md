@@ -76,9 +76,7 @@ catalog upstream of another publishes Bundles; it does not hand down lists that
 have to be merged, overridden or subtracted. What a consumer gets from a chain
 is a wider set of Bundles to choose from, and choosing remains entirely its own.
 
-*That was not always true. Earlier drafts had a catalog hand down obligations
-and a tag vocabulary, which needed merge rules per list — and the rules were the
-tell. A shelf that requires resolution semantics has stopped being a shelf.*
+**A shelf that needs resolution semantics has stopped being a shelf.**
 
 ## No version
 
