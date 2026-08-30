@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.12.2
+version: 0.13.0
 published: 2026-08-29
 lifecycle: draft
 consumers: [project, organization]
@@ -138,6 +138,22 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.13.0` — **both types shed fields nothing used** *(breaking)*.
+
+**`luma/catalog` is `default_namespace` and `upstream`.** A catalog publishes; it
+does not oblige whoever takes from it, so `requires` goes — and `tags` with it,
+since it existed only to narrow a requirement to some consumers. A tag belongs
+on a Bundle, where the format already has one, and a catalog can derive its set
+from what it publishes. `namespace` becomes `default_namespace` because the
+namespace derives from where the catalog lives; declaring one overrides that.
+
+**`luma/project` drops `owns` and `must_not_own`** — claims nothing read — and
+declares presence only for `description` and `lifecycle`, since a subtype may
+not redefine an inherited field's `field_type` or `values`.
+
+*Migration:* remove `owns` and `must_not_own` from any `.luma/PROJECT.md`.
+Nothing reads either, so nothing breaks meanwhile.
 
 `0.12.2` — **the `requires` example was renamed and should not have been.** The same
 vocabulary change scoped itself to Type Definitions, where `obligation` graded
