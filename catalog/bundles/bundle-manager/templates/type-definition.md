@@ -14,7 +14,7 @@ type: type_definition
 defines: CHANGE-ME
 fields:
   a_field:
-    obligation: mandatory
+    field_presence: required
     field_type: text
     desc: "what it holds, in a few words"
 ---
