@@ -1,6 +1,6 @@
 ---
 type: bundle
-version: 0.12.1
+version: 0.12.2
 published: 2026-08-29
 lifecycle: draft
 consumers: [project, organization]
@@ -138,6 +138,20 @@ A collector should read the version each project declares and say so, rather tha
 presenting a mixed set as though it were uniform.
 
 ## Version
+
+`0.12.2` — **the `requires` example was renamed and should not have been.** The same
+vocabulary change scoped itself to Type Definitions, where `obligation` graded
+how strongly a *field* should be present. A catalog's `requires.obligation`
+grades whether a *Bundle* must be adopted — a different question, and out of
+scope — but a key-level replace does not know that.
+
+The file has contradicted itself since: the example said `field_presence:
+required` while the table under it listed `mandatory / recommended / optional /
+deprecated` and the prose called the field `obligation`. The table, the prose,
+the frontmatter description and the live `CATALOG.md` were all right; the
+example was the one wrong line.
+
+Patch: one line.
 
 `0.12.1` — **the manifest declares `lifecycle: draft`.** The field was absent, and
 absent reads as `unknown` — *nobody has said*. Something was known: this is
