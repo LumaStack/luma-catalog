@@ -92,7 +92,7 @@ cluster will never touch.
 **→ Type `/clear`, then paste this:**   <the same command, named again>
 
 ```
-Resume the review sweep in .luma/backlog/sweeps/the-whole-of-foreman/.
+Resume the review sweep in .luma/backlog/sweeps/<slug>/.
 Read charter.md and coverage.md, then invoke review-next.
 Ordering is led — ask me which cluster is next.
 ```
