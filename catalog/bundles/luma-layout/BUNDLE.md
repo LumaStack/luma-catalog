@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.13.3
-published: 2026-08-29
+title: lumastack/luma-catalog/luma-layout
+version: 0.14.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/luma-directory-layout
 description: The .luma directory every luma tool writes into — the four tiers, what belongs in each, and the committed-only invariant that makes it trustworthy.
 ---
 

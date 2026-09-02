@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.8.1
-published: 2026-08-29
+title: lumastack/luma-catalog/luma-config
+version: 0.9.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/where-configuration-lives
 description: Where luma configuration lives, what is committed and what belongs to the machine, and the order in which layers win.
 ---
 

@@ -15,8 +15,8 @@ most people cannot see, and where it is written is not a judgement call.
 
 **[[create-internal-hq]] is a prerequisite.** Not a recommendation — until a
 headquarters has been established and recorded, [[index-repositories]] fails and
-writes nothing. **There is no fallback and there must never be one**: a workflow
-that picks a likely candidate when it cannot find the declared one is a workflow
+writes nothing. **There is no fallback and there must never be one**: a procedure
+that picks a likely candidate when it cannot find the declared one is a procedure
 that will eventually pick wrong, quietly.
 
 Four checks, all of which must pass, **and any that cannot be performed is a

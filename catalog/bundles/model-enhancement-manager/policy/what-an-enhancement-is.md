@@ -2,8 +2,7 @@
 type: policy
 title: What an enhancement is
 description: One observed model behaviour and its guardrail, in four parts. The bar it has to clear, and why the harness is a condition inside one rather than a bundle of its own.
-matches:
-  - topic: writing or reviewing a model enhancement
+matches: eager
 ---
 
 # What an enhancement is

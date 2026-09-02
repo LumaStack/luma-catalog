@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.11.1
-published: 2026-08-29
+title: lumastack/luma-catalog/organization-internal-hq
+version: 0.12.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [organization]
-entrypoint: policy/what-a-headquarters-holds
 description: The internal repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
 ---
 
@@ -21,7 +21,7 @@ a headquarters, and so does each project.
 ## `internal` is in the name on purpose
 
 A bundle name is **the one thing read before anything is loaded** — the only
-warning that survives an agent skimming a listing and picking a workflow. So the
+warning that survives an agent skimming a listing and picking a procedure. So the
 audience is in the name.
 
 **`organization-` leads because a catalog is a flat directory**, and the subject
@@ -38,7 +38,7 @@ is what the content is; private is how it is currently stored.** The name should
 carry the durable half.
 
 The warning that was doing the real work is kept where it cannot be skimmed
-past — here, and at the top of every workflow that writes.
+past — here, and at the top of every procedure that writes.
 
 **Publishing a headquarters is the worst outcome available at this level.** Not
 an embarrassment — a handover of trade secrets and institutional knowledge to
@@ -58,7 +58,7 @@ thinking about something else. The bar is deliberately higher than anything else
 in this bundle:
 
 - **A person asks for it explicitly** — never an agent proposing it, and never a
-  step reached by following this workflow.
+  step reached by following this procedure.
 - **The contents are reviewed first**, in full, by somebody who would recognise
   what should not leave. Publishing unreviewed is publishing blind.
 - **They confirm again afterwards**, separately, knowing what the review found.
@@ -76,7 +76,7 @@ default anybody drifts into.
 - [[the-repository-index]] — where the index lives, why one file each, and the
   rule that keeps it from rotting.
 
-**Workflows**
+**Procedures**
 
 - [[create-internal-hq]] — derive the name, find out whether it exists, create
   it with agreement.
@@ -140,7 +140,7 @@ record of a decision.
 
 **[[create-internal-hq]] is a prerequisite for [[index-repositories]].** Until a
 headquarters has been established and recorded, indexing fails and writes
-nothing. **No fallback, ever** — a workflow that picks a likely candidate when it
+nothing. **No fallback, ever** — a procedure that picks a likely candidate when it
 cannot find the declared one will eventually pick wrong, quietly.
 
 Four checks, all required, **and any that cannot be performed is a failure rather
@@ -182,7 +182,7 @@ the gap is reported rather than reconciled.
 
 **Tightening the declaration is cheap and reversible; loosening it may not be
 recoverable at all.** Widening disclosure only ever refuses more — it can break
-a workflow, and everything it breaks is an interruption somebody notices in
+a procedure, and everything it breaks is an interruption somebody notices in
 minutes. Narrowing it permits content that was previously refused, which is the
 one edit to this field that can cause a leak, and a leak is forked and cached
 before anybody looks.
@@ -353,7 +353,7 @@ in has been renamed, and `applies_to` is still read while the rename finishes.
 `0.9.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 
@@ -409,7 +409,7 @@ field cannot.
 
 `0.4.0` — mismatch handling is new content; existing use is unaffected.
 
-Actually public while declaring narrower now **stops the workflow**, because
+Actually public while declaring narrower now **stops the procedure**, because
 content believed internal is readable right now and no correction retrieves it.
 Declaring `public` while actually private is reported and is not a fault — it is
 the safe direction, and this stack has a live example of it.
@@ -426,7 +426,7 @@ that replaced it checks four things, none of which is *privacy alone*.
 `0.2.0` — reading `.luma/PROJECT.md` was new content, and existing use was
 unaffected.
 
-**The naming rules have been run once and the workflows not at all.**
+**The naming rules have been run once and the procedures not at all.**
 The suffix list is drawn from common legal forms rather than from anything
 encountered, and it will be missing entries — treat it as a starting set, not a
 specification.

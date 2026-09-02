@@ -29,14 +29,15 @@ env:
   # management, and Renovate or Dependabot should do it by opening a pull request
   # nobody has to notice. See `.luma/backlog/ideas/dependency-updates-need-a-real-tool.md`.
   #
-  # Until then this is a manual chore. Both pins were verified current on
-  # 2026-08-26. Bumping them is part of the namespace change rather than
+  # Until then this is a manual chore. The curator pin was verified current on 2026-08-26;
+  # the foreman pin moved on 2026-09-02 with the spec v0.0.19 migration,
+  # which is exactly the deliberate-bump case this comment describes. Bumping them is part of the namespace change rather than
   # routine maintenance, and in opposite directions: the curator pinned before
   # it requires a declared `namespace:`, which this catalog no longer has, and
   # the foreman pinned before it cannot derive one — so against this tree the
   # old pair would fail the manifest and mis-address every bundle.
   CURATOR_SHA: 407f9bc75ac6f448e6c6aa5105d3b2722ec461eb  # luma-catalog-curator
-  FOREMAN_SHA: d364442a1e1e55ce41e7473edde94e1382efca3d  # luma-foreman
+  FOREMAN_SHA: db70cbf391827aafa50b2212a5e5c380c13871f7  # luma-foreman — knows eager and generates INDEX.md
 
 jobs:
   check:

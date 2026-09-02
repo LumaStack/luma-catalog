@@ -34,7 +34,7 @@ between catalogs *is* promotion, so the path changing is correct.
 
 Sorting bundles by level fails: a bundle can apply to both, and a directory can
 only say one. Sorting them by kind fails twice over — an incident-response
-bundle is a workflow *and* ships a Type Definition *and* carries templates, and
+bundle is a procedure *and* ships a Type Definition *and* carries templates, and
 reclassifying one later would move something whose content never changed.
 Nothing reads the kind anyway; a bundle declares where its own contents go, so
 category is browsing metadata rather than routing.

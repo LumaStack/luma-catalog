@@ -1,9 +1,9 @@
 # luma-catalog
 
-> **Policies, workflows and knowledge that give your agents superpowers.**<br>
+> **Policies, procedures and knowledge that give your agents superpowers.**<br>
 > Drop in best practices, move faster together, and get things right the first time.
 
-A catalog of shared bundles containing policies, workflows, and knowledge
+A catalog of shared bundles containing policies, procedures, and knowledge
 that any organization can adopt — versioned and vendored, so you're in control.
 Use our catalog, or run your own alongside it.
 
@@ -28,7 +28,7 @@ bundle is internally sound, and whether the catalog holding it is
 self-consistent, are separate checks that run before anything is published —
 see below.
 
-A policy, a workflow, and a set of type definitions are all bundles. They
+A policy, a procedure, and a set of type definitions are all bundles. They
 differ in what they contain, not in how they travel.
 
 ## Layout

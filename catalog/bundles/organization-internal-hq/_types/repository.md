@@ -157,7 +157,7 @@ this is a default a security owner may overrule.
 | `created` | when the entry was added, and by whom |
 
 **`description` carries unusual weight**, for the same reason it does on a
-workflow: it is what a consumer reads to decide whether this is relevant at all,
+procedure: it is what a consumer reads to decide whether this is relevant at all,
 before anything else is loaded. A repository whose description says *"internal
 tooling"* will never be selected correctly.
 

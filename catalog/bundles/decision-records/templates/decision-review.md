@@ -84,7 +84,7 @@ the choices.
 **Do not write anything before they answer.** The recommendation and the record
 are two turns. This template ends at a question for a reason.
 
-**Do not offer deleting it.** There is no such option in this workflow — a spent
+**Do not offer deleting it.** There is no such option in this procedure — a spent
 decision goes to `archived/`. See [[prune-archived-decisions]], which is a
 different job on a different day.
 

@@ -1,11 +1,11 @@
 ---
 type: bundle
-version: 0.29.0
-published: 2026-08-29
+title: lumastack/luma-catalog/review-sweeps
+version: 0.30.0
+published: 2026-09-02
 lifecycle: draft
 survival: experimental
 consumers: [project]
-entrypoint: policy/how-a-sweep-is-stored
 description: The review sweep — reading a whole codebase with an agent beside you, ordered and resumable, with the reader's own read as the thing being protected.
 ---
 
@@ -45,7 +45,7 @@ and nothing about depth.
 - [[what-a-slice-produces]] — a slice records and does not rewrite, why a
   proposed fix is a suggestion rather than law, and when a fix may land at all.
 
-**Workflows**
+**Procedures**
 
 - [[start-a-sweep]] — the goal, then scope, order, index, and an honest
   estimate of the size.
@@ -349,7 +349,7 @@ which files are finished and roughly what is left; **ninety filenames under
 
 **The shape lives in `templates/slice-close.md`**, beside the presentation
 template it is modelled on — a message shape rather than a document, and the
-workflow points at it instead of carrying a second copy.
+procedure points at it instead of carrying a second copy.
 
 **Derived and never stored.** It is rebuilt from `coverage.md` each time and
 discarded. Writing it into a file would be a third copy of what the index
@@ -498,7 +498,7 @@ prose wants `--word-diff`, or a line diff shows every paragraph that moved and
 buries the words that changed.
 
 **Also: step 8 still described `reviewed` and `approved` as statuses**, which
-0.18.0 replaced with three columns four releases ago. The workflow was telling
+0.18.0 replaced with three columns four releases ago. The procedure was telling
 a reader to write a shape the type no longer has.
 
 **Found by running it.** A sweep dropped a document on the instruction *"drop
@@ -757,7 +757,7 @@ the sweep rather than improvising one in the index — improvising is how an
 index quietly stops being a cache and becomes a record of judgements nothing
 else holds.
 
-Minor: new content in the layout policy, both workflows and the sweep template.
+Minor: new content in the layout policy, both procedures and the sweep template.
 
 `0.11.2` — **retention is stated, and why it is safe.** An audit is kept
 indefinitely because the exchange *is* what it produced — discard it and
@@ -866,7 +866,7 @@ is false precision a reader will plan against. **Slices that measured something
 else are discarded and said to be** — a first slice of a `draft` practice
 measures the practice, not the material.
 
-Minor: new content, and one workflow step added.
+Minor: new content, and one procedure step added.
 
 `0.9.1` — **examples name a fictional person, not a real one.**
 
@@ -953,7 +953,7 @@ because they have the file itself. **So it is declared, never drifted into** —
 a sweep that slid into it one file at a time lost the property without anybody
 choosing to.
 
-Minor: new content, and one workflow step restated.
+Minor: new content, and one procedure step restated.
 
 `0.7.0` — **a row finishes two ways, and challenge is not veto.**
 
@@ -1293,7 +1293,7 @@ for them:
   value is being readable at a glance and that a sweep has one writer. If sweeps
   turn out to run with several readers at once, that reasoning fails and the
   shape has to change.
-- **Whether `close-a-sweep` earns being a workflow** rather than a paragraph.
+- **Whether `close-a-sweep` earns being a procedure** rather than a paragraph.
 
 **No retention period for archived sweeps**, deliberately. Nobody has run
 enough of them to know what one should be, and a number invented now would be

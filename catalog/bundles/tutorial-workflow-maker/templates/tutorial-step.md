@@ -1,6 +1,6 @@
 # Tutorial step template
 
-Copy the block below into `workflows/<tutorial>/steps/NN-<slug>.md`. **Copy the
+Copy the block below into `procedure/<tutorial>/steps/NN-<slug>.md`. **Copy the
 block, not this file** — frontmatter here would make this a real step of this
 bundle.
 
@@ -60,10 +60,10 @@ somebody their session, and it has no default precisely so it cannot be guessed.
 
 **No presenter notes and no instructions to the agent.** A step is read out very
 nearly verbatim, so anything meant for the agent gets read out too. It belongs in
-the driving workflow.
+the driving procedure.
 
 **No closing block.** *Practise this here, say next when you're ready* is
-rendered by the workflow from `pause`, so its wording stays identical across
+rendered by the procedure from `pause`, so its wording stays identical across
 every step.
 
 **No mention of the pacing.** Not how many steps there are, not that a pause is

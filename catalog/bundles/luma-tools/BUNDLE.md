@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.10.3
-published: 2026-08-29
+title: lumastack/luma-catalog/luma-tools
+version: 0.11.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: workflows/adopt-knowledge
 description: Using the luma tools — which one does what, getting them onto a machine, standing a project up, and the get-then-apply loop that puts knowledge in front of an agent.
 ---
 
@@ -25,7 +25,7 @@ repository that builds a tool adopts both, everywhere else adopts only this.
 - [[what-each-tool-does]] — the three activities, which tool answers which, and
   the engines-versus-content rule. Read first.
 
-**Workflows**
+**Procedures**
 
 - [[adopt-knowledge]] — the loop that matters: get, apply, verify.
 - [[install-the-tools]] — getting an engine onto a machine and wired up.
@@ -38,7 +38,7 @@ Two documents are `mandatory` and that is one more than usual. [[adopt-knowledge
 earns it because **the failure it prevents is silent**: a project that takes a
 bundle and never applies it looks correct from every angle and reaches no agent
 at all. An
-adopter who never reads that workflow finds out months later, or not at all.
+adopter who never reads that procedure finds out months later, or not at all.
 
 [[install-the-tools]] is `optional` deliberately, though it is the first thing
 chronologically. It is run once per machine, and machine setup is not something

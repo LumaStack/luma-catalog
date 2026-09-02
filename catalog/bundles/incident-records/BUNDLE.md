@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.2.3
-published: 2026-08-29
+title: lumastack/luma-catalog/incident-records
+version: 0.3.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/recording-an-incident
 description: Incidents as records — one place for everything that went wrong, and a different shape for each kind, because an outage and a data breach do not answer the same questions.
 ---
 
@@ -19,7 +19,7 @@ nothing in common past *what happened, when, and who was hurt*.
 
 - [[recording-an-incident]] — the policy. What counts as an incident, how
   severity is graded, and what each kind owes.
-- [[record-an-incident]] — the workflow. Open it while it is happening.
+- [[record-an-incident]] — the procedure. Open it while it is happening.
 - **Templates**, one per kind, each complete and copied whole —
   [outage](templates/incident-outage.md) ·
   [security](templates/incident-security.md) ·

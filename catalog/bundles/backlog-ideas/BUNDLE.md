@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.12.1
-published: 2026-08-29
+title: lumastack/luma-catalog/backlog-ideas
+version: 0.13.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/capturing-ideas
 description: Ideas as individual files rather than one growing IDEAS.md — what earns a file, how capture stays fast, and how the list gets tended rather than accumulating.
 ---
 
@@ -28,7 +28,7 @@ session that prunes.
 - [[where-an-idea-lives]] — project, department or organization, and the default.
 - [[tending-ideas]] — growth stages, when to prune, archive versus delete.
 
-**Workflows**
+**Procedures**
 
 - [[capture-idea]] — write, ask for more, check duplicates, *then* ask how much
   detail is wanted.
@@ -192,7 +192,7 @@ Minor. Nothing a reader is obliged to do has changed.
 `0.9.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 

@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.17.0
-published: 2026-08-30
+title: lumastack/luma-catalog/project-documentation
+version: 0.18.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project]
-entrypoint: policy/readme
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
 ---
 
@@ -37,7 +37,7 @@ we have*, it is **what condition have we hit**.
   `document` and binds nothing.
 - [[the-project-descriptor]] — the one file written for something *outside* the
   repository to read.
-- [[add-document]] — the workflow: is it needed, is it ours, which kind, where.
+- [[add-document]] — the procedure: is it needed, is it ours, which kind, where.
 - [[describe-project]] — write or refresh the descriptor.
 - **Type** — [[project]]
 - [the README template](templates/readme.md) ·
@@ -204,7 +204,7 @@ Minor. Nothing a reader is obliged to do has changed.
 `0.12.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 

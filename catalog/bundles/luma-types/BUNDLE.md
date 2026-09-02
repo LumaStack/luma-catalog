@@ -1,7 +1,8 @@
 ---
 type: bundle
-version: 0.13.0
-published: 2026-08-29
+title: lumastack/luma-catalog/luma-types
+version: 0.14.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.

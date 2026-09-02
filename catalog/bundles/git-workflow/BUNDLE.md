@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.6.1
-published: 2026-08-29
+title: lumastack/luma-catalog/git-workflow
+version: 0.7.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project]
-entrypoint: policy/merge-commits
 description: How changes get integrated — merge commits rather than squash or rebase, the repository settings that make it true, and how to prove a change actually landed.
 ---
 
@@ -19,7 +19,7 @@ anything between — only what happens at the moment a branch is integrated.
 **It is not tied to a forge either.** The rule is a property of git: squash and
 rebase produce commits that are ancestors of nothing, so merged-detection fails
 on GitLab, Forgejo, Gitea and Bitbucket exactly as it does on GitHub. Only the
-*enforcement* is host-specific, and the workflow says which host its commands
+*enforcement* is host-specific, and the procedure says which host its commands
 are for.
 
 ## What is here
@@ -128,7 +128,7 @@ in has been renamed, and `applies_to` is still read while the rename finishes.
 `0.4.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 
@@ -152,5 +152,5 @@ breaking change: anything naming the old path by hand stops resolving.
 
 `0.1.0`. The reasoning comes from a repository that hit the stale-branch failure
 twice in one week and changed strategy because of it — but this bundle has been
-adopted nowhere, and the configuration workflow has been run against no forge
+adopted nowhere, and the configuration procedure has been run against no forge
 but GitHub.

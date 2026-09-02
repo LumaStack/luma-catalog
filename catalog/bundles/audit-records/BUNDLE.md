@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.8.3
-published: 2026-08-29
+title: lumastack/luma-catalog/audit-records
+version: 0.9.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/audit-layout
 description: Audits as records — findings written by one party, answered by another, closed by the first. The whole exchange lives in git.
 ---
 
@@ -35,7 +35,7 @@ the conversation.
   loop. Read first.
 - [[writing-findings]] — what makes a finding actionable rather than an opinion.
 
-**Workflows**
+**Procedures**
 
 - [[conduct-audit]] — pin the commit, scope it, write the findings.
 - [[respond-to-audit]] — take a position on every one, and point at evidence.
@@ -161,7 +161,7 @@ deterministic-command exception now rests on it too — a checker is exempt beca
 it carries nothing between runs.
 
 Minor: no document changes shape, and every existing audit stays valid. What
-changed is which arrangements the workflows ask for and what they ask to be
+changed is which arrangements the procedures ask for and what they ask to be
 written down.
 
 `0.6.0` — **an audit starts by asking what it is for.** `conduct-audit` opens
@@ -169,7 +169,7 @@ with three questions: is this targeted or open-ended, what problems is it aimed
 at, and what is the scope. **The shape is asked first, deliberately** — otherwise
 anybody with a complaint ready gets a targeted audit without having chosen one.
 
-**Both shapes are biased and the workflow says so.** Targeting is biased toward
+**Both shapes are biased and the procedure says so.** Targeting is biased toward
 what is already suspected, and a problem is usually a symptom, so an audit aimed
 at one never looks at its cause. Open-ended is biased toward what is easy to
 notice — and an auditor who has just worked on the subject cannot run one, since
@@ -201,7 +201,7 @@ in has been renamed, and `applies_to` is still read while the rename finishes.
 `0.4.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 

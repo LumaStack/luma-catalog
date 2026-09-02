@@ -8,11 +8,11 @@ bundle, and every tool reading it would believe that.
 ```yaml
 ---
 type: bundle
+title: CHANGE-ME
 version: 0.1.0
 published: YYYY-MM-DD
 lifecycle: draft
 consumers: [project]
-entrypoint: workflows/CHANGE-ME
 description: One line — what this holds and who it is for.
 ---
 ```
@@ -32,8 +32,11 @@ description: One line — what this holds and who it is for.
   time; write the field only when the answer is not the default.
 - **`consumers`** — `project`, `organization`, or both. Both when the same
   content is wanted at either level by different adopters.
-- **`entrypoint`** — the full Document ID, e.g. `workflows/create-bundle`.
 - **`description`** — what a consumer reads when deciding whether to adopt.
+
+There is no start-here field in the manifest. A document that should be read
+before the rest declares `matches: eager` itself, and carries the claim with it
+wherever it moves.
 
 ## Body
 
@@ -44,7 +47,7 @@ Why this exists, in a paragraph. What goes wrong without it.
 
 ## What is here
 
-- [[the-entry-point]] — the workflow. Start here.
+- [[the-main-procedure]] — the procedure. Start here.
 - [[a-policy]] — what this obliges.
 
 ## When these apply
@@ -52,7 +55,7 @@ Why this exists, in a paragraph. What goes wrong without it.
 Which documents bind, and when each one comes up. **Nothing here says when a
 document loads** — that is computed from what it obliges and when it applies.
 
-Keep an eye on any policy declaring `matches: always`: it loads into every
+Keep an eye on any policy declaring `matches: eager`: it loads into every
 session of every adopter, forever. That is the one expensive outcome, and it now
 has to be asked for — a policy that says nothing is available on request, so
 nobody buys the cost by forgetting a field.
