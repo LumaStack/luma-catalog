@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.11.3
-published: 2026-08-29
+title: lumastack/luma-catalog/luma-maintainers
+version: 0.12.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/the-estate
 description: Working on the luma tools themselves — the repositories and the boundary each defends, publishing to the universal catalog, and changing a type without making every tool upgrade at once.
 ---
 
@@ -40,7 +40,7 @@ repository.
 - [[the-estate]] — six repositories, the boundary each defends, and where a new
   thing goes. Read first.
 
-**Workflows**
+**Procedures**
 
 - [[publish-to-the-catalog]] — promoting a bundle, and getting the version
   honest.
@@ -49,7 +49,7 @@ repository.
 
 ## Loading
 
-Only [[the-estate]] is `mandatory`. Both workflows are `optional` — you load the
+Only [[the-estate]] is `mandatory`. Both procedures are `optional` — you load the
 one you are doing.
 
 **The boundaries are the mandatory part because crossing one is silent.**

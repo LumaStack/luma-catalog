@@ -1,6 +1,6 @@
 # Tutorial quiz template
 
-Copy the block below into `workflows/<tutorial>/steps/quiz.md`. **Copy the block,
+Copy the block below into `procedure/<tutorial>/steps/quiz.md`. **Copy the block,
 not this file.**
 
 Four or five questions is usually right. Enough to cover what the tutorial was

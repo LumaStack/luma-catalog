@@ -2,9 +2,7 @@
 type: policy
 title: How a sweep is stored
 description: Where a review sweep lives, why it is backlog rather than a record, and the two units — the file that must be covered and the cluster actually reviewed in one go.
-matches:
-  - topic: running or resuming a review sweep
-  - path: ".luma/backlog/sweeps/**"
+matches: eager
 ---
 
 # How a sweep is stored

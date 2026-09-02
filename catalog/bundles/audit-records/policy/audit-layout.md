@@ -2,8 +2,7 @@
 type: policy
 title: How audits are stored
 description: Where an audit lives, how it is named, and the three-party loop — auditor, respondent, auditor again — that makes the record settle rather than accumulate.
-matches:
-  - topic: conducting an audit, or recording one
+matches: eager
 sources:
   - id: iia-glossary
     resource: https://www.moxo.com/blog/internal-audit-glossary

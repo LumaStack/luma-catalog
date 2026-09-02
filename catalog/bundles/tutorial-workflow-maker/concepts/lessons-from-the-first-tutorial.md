@@ -14,15 +14,15 @@ That is the honest summary of this bundle's evidence base: **one tutorial, one
 run.** Treat the rules as well-motivated rather than proven, and expect the next
 run to add to them.
 
-## Reading the workflow was not enough
+## Reading the procedure was not enough
 
-Every mistake below survived careful authoring. The workflow said the right thing
+Every mistake below survived careful authoring. The procedure said the right thing
 in prose, and the agent did something else — not from disobedience, but because
 **prose describing an outcome leaves the wording to be invented, and invented
 wording is where the seams show.**
 
 **It headed each step *Screen 1 —*.** The word *screen* had been deliberately
-removed from every reader-facing sentence, and the workflow said plainly to call
+removed from every reader-facing sentence, and the procedure said plainly to call
 them steps. The agent still coined a label, because nothing had told it what the
 heading looked like. The fix was to write the heading out.
 

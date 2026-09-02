@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.6.4
-published: 2026-08-29
+title: lumastack/luma-catalog/git-worktrees
+version: 0.7.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project]
-entrypoint: policy/worktree-isolation
 description: Isolated worktrees for concurrent agents in one repository — where they live, what has to be provisioned, and how to tear them down without leaving wreckage.
 ---
 
@@ -78,7 +78,7 @@ so it is unconditional rather than something to switch on.
 
 **Submodules.** They are not inherited, multi-worktree support is still
 incomplete, and a project using them should expect rough edges. Said plainly
-rather than papered over — a workflow claiming to handle them would be lying.
+rather than papered over — a procedure claiming to handle them would be lying.
 
 ## Consumers
 
@@ -157,7 +157,7 @@ in has been renamed, and `applies_to` is still read while the rename finishes.
 `0.5.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 

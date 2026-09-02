@@ -2,6 +2,7 @@
 type: policy
 title: Opus 5 guardrails — read these now
 description: The guardrails for this model. Each one must be read and followed before the work, not after a correction.
+matches: eager
 ---
 
 # Opus 5 guardrails — read these now

@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.5.3
-published: 2026-08-29
+title: lumastack/luma-catalog/git-secrets
+version: 0.6.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/never-commit-private-identity
 description: Keeping credentials and private identity out of a repository — names, personal addresses, home paths, machine names, tokens and key files. Prevention first, then audit.
 ---
 
@@ -33,7 +33,7 @@ hold.
 - [[never-commit-credentials]] — what counts as a credential, and why rotation comes
   before cleanup.
 
-**Workflows**
+**Procedures**
 
 - [[configure-identity]] — set a repository's commit identity so it cannot leak.
   Before the first commit.
@@ -114,7 +114,7 @@ in has been renamed, and `applies_to` is still read while the rename finishes.
 `0.4.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 
@@ -137,5 +137,5 @@ into machinery. Minor rather than patch, and pre-1.0 that is the tier for a
 breaking change: anything naming the old path by hand stops resolving.
 
 `0.1.0`. The identity rules come from a real leak found in a real repository and
-the checks are implemented and tested — but these workflows have been run
+the checks are implemented and tested — but these procedures have been run
 against one machine's configuration and no other.

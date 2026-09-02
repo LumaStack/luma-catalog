@@ -8,7 +8,7 @@ description: What an internal organization repository is for, why it is recommen
 
 **Read this when deciding whether to have one**, or arguing with how this bundle
 says to run it. Somebody creating or checking a headquarters needs
-[[what-a-headquarters-holds]] and a workflow, and nothing here.
+[[what-a-headquarters-holds]] and a procedure, and nothing here.
 
 ## The problem it solves
 

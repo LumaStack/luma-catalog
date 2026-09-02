@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.3.1
-published: 2026-08-29
+title: lumastack/luma-catalog/retirement-records
+version: 0.4.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/retiring-a-concept
 description: Retiring an idea across many projects — the decision that stays home, the strategy that travels, and the recognizers that find a concept whose vocabulary survived.
 ---
 
@@ -52,7 +52,7 @@ ambiguous once the estate spans organizations.
 
 **Detection runs after the fact and cannot be the whole defence.** A config file
 is read by a checker and shown to nobody; the author has never seen it. That is
-why [[what-we-retired]] declares `matches: always` and is the only document here
+why [[what-we-retired]] declares `matches: eager` and is the only document here
 loaded before work starts — **it is the half that meets an author before they
 write, rather than after.**
 
@@ -66,7 +66,7 @@ notices, which disables the check everywhere.
 
 **A bundle is machinery. Records live where the project keeps records** —
 `.luma/records/` by default, or wherever it has configured them. This bundle
-holds a type, two policies, three workflows and a template, and not one
+holds a type, two policies, three procedures and a template, and not one
 retirement.
 
 **The reason is stronger than symmetry with `audit-records` and

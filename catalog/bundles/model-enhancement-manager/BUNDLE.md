@@ -1,10 +1,10 @@
 ---
 type: bundle
-version: 0.1.1
-published: 2026-08-29
+title: lumastack/luma-catalog/model-enhancement-manager
+version: 0.2.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/what-an-enhancement-is
 description: Building and maintaining per-model guardrail bundles — the shape an enhancement takes, the evidence bar, the per-session budget, and the unsolved problem of loading them only for the model they describe.
 ---
 
@@ -37,7 +37,7 @@ misreads has cost its words for nothing. See [[the-per-session-budget]].
 - [[the-entrypoint-compels-the-read]] — the one document that fires, and why
   it is an instruction.
 - [[the-per-session-budget]] — what adding one costs, and what to remove.
-- [[write-an-enhancement]] — the workflow, from noticing to publishing.
+- [[write-an-enhancement]] — the procedure, from noticing to publishing.
 - [[start-a-model-bundle]] — standing one up for a model that has none.
 - [[what-makes-a-guardrail-stick]] — what the published work says, what it
   changed here, and what was rejected on evidence.

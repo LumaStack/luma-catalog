@@ -2,8 +2,7 @@
 type: policy
 title: What makes a tutorial land
 description: The rules a paced tutorial follows — how a step is shaped, how the agent presents it, what it must never do to the session it is running in, and what a quiz owes the reader. Read before writing or reviewing one.
-matches:
-  - topic: writing or reviewing a paced tutorial
+matches: eager
 ---
 
 # What makes a tutorial land
@@ -24,7 +23,7 @@ while following one.
 ## A step is one idea, and it fits on a screen
 
 **Prose plus takeaways on a laptop screen without scrolling** — around three
-hundred words, with room for the closing block the workflow adds.
+hundred words, with room for the closing block the procedure adds.
 
 A step is the unit of a stop. **Something too long to take in at once cannot be
 paused after**: the reader is still working through the first half when the offer
@@ -60,7 +59,7 @@ cannot know which** — the step that says *clear between jobs* does not say
 would be guessed is the one that costs somebody their session, which is why there
 is no default.
 
-## The driving workflow names its own hazards outright
+## The driving procedure names its own hazards outright
 
 **List what must never be run in the session, with what each would do**, rather
 than leaving the agent to work it out mid-run. And when the reader asks for one,

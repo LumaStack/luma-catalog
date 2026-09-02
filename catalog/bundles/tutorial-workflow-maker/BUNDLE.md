@@ -1,11 +1,11 @@
 ---
 type: bundle
-version: 0.10.4
-published: 2026-08-29
+title: lumastack/luma-catalog/tutorial-workflow-maker
+version: 0.11.0
+published: 2026-09-02
 lifecycle: draft
 consumers: [project, organization]
-entrypoint: policy/what-makes-a-tutorial-land
-description: Making paced tutorials — the standard a walkthrough is held to, a workflow that turns source material into one, and templates for the steps, the quiz and the workflow that performs them.
+description: Making paced tutorials — the standard a walkthrough is held to, a procedure that turns source material into one, and templates for the steps, the quiz and the procedure that performs them.
 ---
 
 # Tutorial workflow maker
@@ -26,13 +26,13 @@ one, and the parts that should not be rewritten each time.
 - [[what-makes-a-tutorial-land]] — the rules, each naming what goes wrong without
   it. Read first.
 
-**Workflow**
+**Procedure**
 
 - [[create-tutorial]] — source material in, a working tutorial out.
 
 **Templates** — [a step](templates/tutorial-step.md) ·
 [a quiz](templates/tutorial-quiz.md) ·
-[the driving workflow](templates/driving-workflow.md)
+[the driving procedure](templates/driving-procedure.md)
 
 **Types** — [[tutorial_step]] · [[tutorial_quiz]], vendored from
 `lumastack/luma-catalog/luma-types`. Copy them into whatever bundle you are building a tutorial
@@ -43,7 +43,7 @@ in; the contract has to travel with the documents.
 - [[lessons-from-the-first-tutorial]] — where the rules came from, and what is
   still untested. Read it when arguing with a rule, not while following one.
 
-## Most of the driving workflow is already written
+## Most of the driving procedure is already written
 
 **The parts of a tutorial that vary are the subject, the harness, the hazards and
 the running order.** Everything else — how a step is headed, what the agent says
@@ -91,7 +91,7 @@ improvement to one is overwritten, unannounced, on the next adopt. And only
 learnings that would have helped a *different* tutorial come back — anything
 naming the subject just taught belongs in the tutorial that taught it.
 
-**Nothing to promote is the expected answer most times.** A workflow whose last
+**Nothing to promote is the expected answer most times.** A procedure whose last
 step must produce something produces noise, and a policy that grows on every use
 becomes one nobody reads.
 
@@ -167,7 +167,7 @@ in has been renamed, and `applies_to` is still read while the rename finishes.
 `0.9.0` — **vocabulary.** `moment` becomes `event` — a moment is a point in
 time and `applies_to` takes nouns. `compliance` is dropped wherever it was
 saying nothing: a policy binds unless it says otherwise, so only a strong
-default declares `recommended`, and a workflow's steps bind by being steps.
+default declares `recommended`, and a procedure's steps bind by being steps.
 Type Definitions use `field_presence: required` for what was
 `obligation: mandatory`, matching the format.
 
@@ -211,11 +211,11 @@ illustrating it rather than leaving the reader to induce it, and do no arithmeti
 in front of them that you could have done for them.
 
 **Nothing was promoted to [[what-makes-a-tutorial-land]].** These are still one
-tutorial's findings, so they went to the workflow, the template and
+tutorial's findings, so they went to the procedure, the template and
 [[lessons-from-the-first-tutorial]] — which is what this bundle's own rule about
 first observations asks for.
 
-`0.5.0` — the driving-workflow template says what the **last** step's closing
+`0.5.0` — the driving-procedure template says what the **last** step's closing
 block does.
 
 **Every block takes the step number and adds one**, which is correct for every
@@ -226,7 +226,7 @@ final step points at the quiz rather than at a step number that does not exist.
 review does not catch: the instruction was correct in general and wrong exactly
 once, at the boundary.
 
-`0.4.0` — the closing blocks in the driving-workflow template now open with
+`0.4.0` — the closing blocks in the driving-procedure template now open with
 **Ask questions** rather than *Questions*.
 
 **Because a closing line should tell the reader what to do.** *Questions, or say
@@ -280,7 +280,7 @@ what produced each, and for the list of what nobody has tested yet.
 
 **Nothing here has built a second tutorial**, which is the only thing that will
 show whether the templates generalise or whether they encode one subject's
-accidents. The most likely correction is the driving workflow template being too
+accidents. The most likely correction is the driving procedure template being too
 opinionated for a tutorial with no hazards at all — one that teaches something
 outside the session it runs in, where the entire *sending somebody away* apparatus
 is dead weight.

@@ -7,7 +7,7 @@ fields:
     field_presence: required
     field_type: enum
     values: [checkpoint, handoff, close]
-    desc: "which workflow wrote it, and therefore who it was written for"
+    desc: "which procedure wrote it, and therefore who it was written for"
   pinned:
     field_presence: recommended
     desc: "the state of the world this note assumed — branch, commit, open pull requests. No field_type: it is a record, which the format's field declarations cannot yet express"
