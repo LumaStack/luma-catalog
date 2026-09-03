@@ -1,7 +1,7 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/model-opus-5-enhancements
-version: 0.3.0
+version: 0.3.1
 published: 2026-09-02
 stage: draft
 consumers: [project, organization]

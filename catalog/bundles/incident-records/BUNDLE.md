@@ -1,7 +1,7 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/incident-records
-version: 0.4.0
+version: 0.4.1
 published: 2026-09-02
 stage: draft
 consumers: [project, organization]
