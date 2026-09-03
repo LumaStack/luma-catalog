@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/git-secrets
-version: 0.6.0
+version: 0.7.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Keeping credentials and private identity out of a repository — names, personal addresses, home paths, machine names, tokens and key files. Prevention first, then audit.
 ---

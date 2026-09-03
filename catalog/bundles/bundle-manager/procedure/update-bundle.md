@@ -40,7 +40,7 @@ including to leave them alone — neither moves on its own, and a bundle that wa
 `draft` three months and two rewrites ago will still say `draft` unless somebody
 says otherwise.
 
-**`lifecycle` — what is owed when the shape changes.**
+**`stage` — what is owed when the shape changes.**
 
 | moving to | what it now claims | what it commits you to |
 | --- | --- | --- |

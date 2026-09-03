@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/decision-records
-version: 0.11.0
+version: 0.12.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Decisions recorded with their reasoning, deferred alternatives, and re-open triggers. Spent decisions are archived rather than deleted.
 ---

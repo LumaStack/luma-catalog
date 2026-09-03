@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/organization-internal-hq
-version: 0.12.0
+version: 0.13.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [organization]
 description: The internal repository where an organization records what outlives a single project — naming it, creating it, indexing the repositories it reasons about, and rechecking that it is still private.
 ---

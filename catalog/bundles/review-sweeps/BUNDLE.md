@@ -1,10 +1,10 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/review-sweeps
-version: 0.30.0
+version: 0.31.0
 published: 2026-09-02
-lifecycle: draft
-survival: experimental
+stage: draft
+survival: probationary
 consumers: [project]
 description: The review sweep — reading a whole codebase with an agent beside you, ordered and resumable, with the reader's own read as the thing being protected.
 ---

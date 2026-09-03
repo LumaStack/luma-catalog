@@ -85,7 +85,7 @@ a year later:
 git mv .luma/backlog/sweeps/<slug> .luma/backlog/sweeps/archived/<slug>
 ```
 
-Set `lifecycle: archived` and the `archived` date in `charter.md`.
+Set `stage: archived` and the `archived` date in `charter.md`.
 
 **The slices go with it.** They are working notes whose value decays, and their
 content has already been routed out — what remains is the trail, and git keeps

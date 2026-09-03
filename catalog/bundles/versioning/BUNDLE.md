@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/versioning
-version: 0.6.0
+version: 0.7.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: What a version number promises, when to bump which part, and the rules that get decided wrongly — for anything versioned, not only releases.
 ---

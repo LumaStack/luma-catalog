@@ -48,7 +48,7 @@ gone, it has been read three times and moved nowhere, it was never an idea, or
 somebody would now say no.
 
 ```yaml
-lifecycle: archived
+stage: archived
 archived: YYYY-MM-DD
 ```
 

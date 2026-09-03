@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/backlog-ideas
-version: 0.13.0
+version: 0.14.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Ideas as individual files rather than one growing IDEAS.md — what earns a file, how capture stays fast, and how the list gets tended rather than accumulating.
 ---
@@ -58,7 +58,7 @@ courteous.
 read an idea afterwards and vouched for it. An agent overseeing another agent's
 work is real and worth recording, and is still not a human having seen it.
 
-**Almost everything reuses a core field.** Growth stages are `lifecycle`
+**Almost everything reuses a core field.** Growth stages are `stage`
 — seedling `draft`, budding `provisional`, evergreen `stable`, pruned
 `archived`. Dates and authorship are `created`. Human review is `verified`. The
 type declares only `horizon`, `scope`, `archived` and `contributors`, because

@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/luma-types
-version: 0.14.0
+version: 0.15.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: The type definitions more than one luma tool has to agree on — namespaced, vendored, and deliberately not built into the knowledge format.
 ---
@@ -150,7 +150,7 @@ from what it publishes. `namespace` becomes `default_namespace` because the
 namespace derives from where the catalog lives; declaring one overrides that.
 
 **`luma/project` drops `owns` and `must_not_own`** — claims nothing read — and
-declares presence only for `description` and `lifecycle`, since a subtype may
+declares presence only for `description` and `stage`, since a subtype may
 not redefine an inherited field's `field_type` or `values`.
 
 *Migration:* remove `owns` and `must_not_own` from any `.luma/PROJECT.md`.

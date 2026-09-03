@@ -41,9 +41,9 @@ supply and no scan can produce.
 absent — it names something without letting anybody check it, which is how a
 stale index survives.
 
-## `attention` is direction, and `lifecycle` is position
+## `attention` is direction, and `stage` is position
 
-**They are two axes and neither substitutes for the other.** `lifecycle`
+**They are two axes and neither substitutes for the other.** `stage`
 — core, from the format — says how far along a thing is: `draft`, `provisional`,
 `stable`. `attention` says how much the organization is putting in: `investing`,
 `steady`, `winding-down`.
@@ -99,11 +99,11 @@ question. A repository nobody has decided about is invisible without it.
 
 **Terms that look like values and are not.** *Life support* is `stable` plus
 `winding-down`, and adding it as a value would re-fuse the axes. *Retired* is
-`lifecycle: archived`, which already exists. *Deprecated* is neither — it
+`stage: archived`, which already exists. *Deprecated* is neither — it
 is a public declaration to consumers, independent of both, and would be its own
 field with a date if it is ever needed.
 
-**A gap in the format, recorded rather than worked around.** `lifecycle`
+**A gap in the format, recorded rather than worked around.** `stage`
 is not purely position: `draft`, `provisional` and `stable` are points on a path,
 but `archived` is a direction that already completed. So the format carries the
 same conflation in miniature, and *stable, and being wound down* has no
@@ -153,7 +153,7 @@ this is a default a security owner may overrule.
 | `sources` | where each derived value came from |
 | `modified` | when it was last refreshed, and by which process |
 | `stale_after` | when it should be rechecked |
-| `lifecycle` | `archived` when the repository is retired |
+| `stage` | `archived` when the repository is retired |
 | `created` | when the entry was added, and by whom |
 
 **`description` carries unusual weight**, for the same reason it does on a

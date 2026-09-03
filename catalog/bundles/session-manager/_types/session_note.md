@@ -74,7 +74,7 @@ so this type cannot strengthen it. **Treat it as required.** Age is the primary
 input to how much a note should be trusted, and a note with no date forces a
 reader to either trust it completely or discard it — both of which are wrong.
 
-## It has no `lifecycle`
+## It has no `stage`
 
 A note is live until it is consumed, and then it does not exist. There is no
 `archived` state, because an archived note is a note somebody kept — which

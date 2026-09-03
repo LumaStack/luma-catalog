@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/model-opus-5-enhancements
-version: 0.2.0
+version: 0.3.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Behaviours Opus 5 exhibits that cost its user time, each with a guardrail. One entrypoint fires on the model and compels the rest to be read.
 ---

@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/model-enhancement-manager
-version: 0.2.0
+version: 0.3.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Building and maintaining per-model guardrail bundles — the shape an enhancement takes, the evidence bar, the per-session budget, and the unsolved problem of loading them only for the model they describe.
 ---

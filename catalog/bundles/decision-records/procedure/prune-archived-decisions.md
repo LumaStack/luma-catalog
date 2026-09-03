@@ -68,7 +68,7 @@ and retired last month was live for six years; the retention period is measuring
 how long it has been *spent*.
 
 ```yaml
-lifecycle: archived
+stage: archived
 archived: 2022-03-14        # the clock this procedure reads
 ```
 

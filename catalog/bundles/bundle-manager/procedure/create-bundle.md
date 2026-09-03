@@ -34,14 +34,14 @@ directories that will have contents; an empty `policy/` is noise.
 type: bundle
 title: <org>/<catalog>/<name>
 version: 0.1.0
-lifecycle: draft
+stage: draft
 consumers: [project]
 description: <one line — what this holds and who it is for>
 ```
 
 - **`version`** starts at `0.1.0`, not `1.0.0`. The conventions in a new bundle
   are extracted from one place's practice at best.
-- **`lifecycle`** is `draft`, and **the line is not optional in practice.**
+- **`stage`** is `draft`, and **the line is not optional in practice.**
   Omitting it declares `unknown` — *nobody has said* — which a reader cannot
   distinguish from nobody having thought about it. `draft` is the true answer on
   the day a bundle is written: its maintainers are developing it for their own
@@ -59,26 +59,26 @@ description: <one line — what this holds and who it is for>
 
 ### Then ask how long it is meant to last
 
-**`lifecycle` and `survival` answer different questions, and one bundle needs
-both asked.** Lifecycle says what happens when the shape changes; survival says
+**`stage` and `survival` answer different questions, and one bundle needs
+both asked.** Stage says what happens when the shape changes; survival says
 what happens when the thing ends. A new bundle is `draft` on the first axis
 almost always, and can honestly be anywhere on the second.
 
 | the answer | what it means for a new bundle |
 | --- | --- |
-| **`experimental`** | written to find out whether it earns its keep. Many do not, and nobody should fall in love with it. |
+| **`probationary`** | written to find out whether it earns its keep. Many do not, and nobody should fall in love with it. |
 | **`intended`** | meant to be kept, nothing promised. **The default, and the ordinary answer.** |
 | **`promised`** | something will go on answering this, whatever shape it takes. A commitment to the problem, not to this content. |
 
 **Write the field only when the answer is not `intended`.** The default is what
 absence already says, so `survival: intended` is a line that adds nothing —
-whereas `experimental` and `promised` each tell an adopter something they cannot
+whereas `probationary` and `promised` each tell an adopter something they cannot
 infer. **Ask every time; write it sometimes.**
 
-`draft` + `experimental` and `draft` + `promised` are both ordinary and mean
+`draft` + `probationary` and `draft` + `promised` are both ordinary and mean
 opposite things: *finding out whether this is worth having* and *committed to
 the problem with no idea yet what the answer looks like*. Neither is expressible
-on the lifecycle ladder alone, which is why the second question is asked at all.
+on the stage ladder alone, which is why the second question is asked at all.
 
 ## 5. Write the entry point first
 

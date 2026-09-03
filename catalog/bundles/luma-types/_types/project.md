@@ -9,7 +9,7 @@ fields:
   # restating them is how a copy drifts from the definition it copied.
   description:
     field_presence: recommended
-  lifecycle:
+  stage:
     field_presence: recommended
   disclosure_level:
     field_presence: recommended
@@ -68,7 +68,7 @@ disagree with the definition, and eventually does.
 decide whether to load this at all, before anything else about the repository is
 fetched. A project descriptor without one has no reason to exist.
 
-**`lifecycle` moves `optional` → `recommended`** because how mature a
+**`stage` moves `optional` → `recommended`** because how mature a
 repository is changes how everything inside it should be treated — a position
 recorded in a two-week-old repository binds differently from the same position in
 a five-year-old one, and nothing else in the descriptor says which this is.

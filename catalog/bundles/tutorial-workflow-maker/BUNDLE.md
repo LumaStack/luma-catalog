@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/tutorial-workflow-maker
-version: 0.11.0
+version: 0.12.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Making paced tutorials — the standard a walkthrough is held to, a procedure that turns source material into one, and templates for the steps, the quiz and the procedure that performs them.
 ---

@@ -11,7 +11,7 @@ type: bundle
 title: CHANGE-ME
 version: 0.1.0
 published: YYYY-MM-DD
-lifecycle: draft
+stage: draft
 consumers: [project]
 description: One line — what this holds and who it is for.
 ---
@@ -19,7 +19,7 @@ description: One line — what this holds and who it is for.
 
 - **`version`** — `0.1.0` for anything used in one place or none. `1.0.0`
   claims the shape has stopped moving.
-- **`lifecycle`** — `draft` on the day it is written, and **left in the block
+- **`stage`** — `draft` on the day it is written, and **left in the block
   deliberately** so a new bundle declares something rather than nothing. Delete
   the line and the bundle declares `unknown`, which reads as *nobody has said* —
   indistinguishable from nobody having thought about it. Overwriting it with

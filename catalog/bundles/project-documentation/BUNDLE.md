@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/project-documentation
-version: 0.18.0
+version: 0.19.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project]
 description: The prose a repository publishes — where it lives, what a README is for, and which documents are worth having at all.
 ---
