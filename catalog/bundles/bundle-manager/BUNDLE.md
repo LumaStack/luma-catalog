@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/bundle-manager
-version: 0.14.0
+version: 0.15.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Creating, updating, auditing, repairing, migrating and retiring bundles — the layout they use and which catalog they belong in.
 ---
@@ -109,7 +109,7 @@ without notice.
 
 **`survival` is deliberately not in the block.** It defaults to `intended`, so
 writing that would add a line saying what silence already says — the field earns
-its place only at `experimental` or `promised`. **The question is asked every
+its place only at `probationary` or `promised`. **The question is asked every
 time and the field is written sometimes**, which is the distinction the two
 procedures now carry.
 

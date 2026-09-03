@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/github-release
-version: 0.7.0
+version: 0.8.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project]
 description: Cutting and publishing GitHub releases — choosing the version, the changelog, release titles and contents, and the gh procedure.
 ---

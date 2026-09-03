@@ -344,11 +344,11 @@ refusal** — what is unavailable is the third option, which is filing the new
 position under the old entry's date and number as though it had always said that.
 
 **The *decision* changed — two records.** The old position becomes its own
-record, `lifecycle: archived`, with `superseded_by` pointing at the
+record, `stage: archived`, with `superseded_by` pointing at the
 replacement. The new position gets the higher number.
 
 ```yaml
-lifecycle: archived
+stage: archived
 superseded_by: "[[ADR-0012-luma-hq-renamed-to-luma-leader]]"
 ```
 
@@ -414,7 +414,7 @@ modified: { by: agent:opus-5,      at: 2026-08-22T14:20:00Z }   # this migration
 Where the original author is unrecoverable, `unknown:unknown` is honest and far
 better than the name most likely to be right.
 
-**`lifecycle` is decided, not defaulted — and it is the one field the
+**`stage` is decided, not defaulted — and it is the one field the
 migration invents.** The file did not carry it. That sits in tension with
 *migration preserves and does not improve*, and the resolution is that it is
 **asked rather than assumed**, in every mode.
@@ -435,7 +435,7 @@ The file being migrated has the whole history in front of you; a year from now t
 best available answer is whichever commit happened to touch it.
 
 ```yaml
-lifecycle: archived
+stage: archived
 archived: 2026-08-21
 archived_reason: superseded
 superseded_by: "[[ADR-0012-luma-hq-renamed-to-luma-leader]]"

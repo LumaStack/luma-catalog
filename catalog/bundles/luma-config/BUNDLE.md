@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/luma-config
-version: 0.9.0
+version: 0.10.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Where luma configuration lives, what is committed and what belongs to the machine, and the order in which layers win.
 ---

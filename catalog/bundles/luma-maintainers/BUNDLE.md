@@ -1,9 +1,9 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/luma-maintainers
-version: 0.12.0
+version: 0.13.0
 published: 2026-09-02
-lifecycle: draft
+stage: draft
 consumers: [project, organization]
 description: Working on the luma tools themselves — the repositories and the boundary each defends, publishing to the universal catalog, and changing a type without making every tool upgrade at once.
 ---

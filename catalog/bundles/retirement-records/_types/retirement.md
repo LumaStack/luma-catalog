@@ -69,7 +69,7 @@ and distributed**, and it **must stay revisable for as long as it binds** — yo
 find a fourth disguise, you exempt a document that legitimately argues about the
 word, you narrow after false positives.
 
-**How much a document may be edited follows its `lifecycle`**, and that is
+**How much a document may be edited follows its `stage`**, and that is
 what separates these two rather than any blanket rule:
 
 | | `draft` | `provisional` | `stable` |
@@ -116,7 +116,7 @@ mechanism. `retired_at` needs one because the estate's date fields — `decided`
 `audited`, `archived` — cannot order two renames that landed in the same
 afternoon. **`enforced` is deliberately a plain date**: nobody complies at 14:32.
 
-## `lifecycle` carries release
+## `stage` carries release
 
 From the root type. `archived` means **released** — the entry no longer binds,
 because nothing in the product still needs a name for what the word named. The
