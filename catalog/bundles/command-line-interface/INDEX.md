@@ -20,9 +20,10 @@ verb, a flag, or a message.
 follows, explained a piece at a time, and the output conventions that go with
 it. Follow it and a new command looks like the rest.
 
-**[[ascii-styleguide]]** — the marks a command line shows state with, and the
-rules that keep them readable without colour, without a font that has them, and
-in a pipe. Six glyphs, fixed order, one meaning each.
+**[[ascii-styleguide]]** — the marks a command line shows state with. **Two
+sets, basic and glyph**, carrying the same six meanings in the same order; a
+project picks one. Plus the rules that keep either readable without colour,
+without a font that has them, and in a pipe.
 
 The first two answer different questions. The first is *what should a command line
 do*, which is somebody else's document and is pointed at rather than copied.

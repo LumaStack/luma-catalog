@@ -26,9 +26,10 @@ verb, a flag, or a message.
 follows, explained a piece at a time, and the output conventions that go with
 it. Follow it and a new command looks like the rest.
 
-**[[ascii-styleguide]]** — the marks a command line shows state with, and the
-rules that keep them readable without colour, without a font that has them, and
-in a pipe. Six glyphs, fixed order, one meaning each.
+**[[ascii-styleguide]]** — the marks a command line shows state with. **Two
+sets, basic and glyph**, carrying the same six meanings in the same order; a
+project picks one. Plus the rules that keep either readable without colour,
+without a font that has them, and in a pipe.
 
 The first two answer different questions. The first is *what should a command line
 do*, which is somebody else's document and is pointed at rather than copied.
@@ -59,8 +60,14 @@ like and said nothing about how a command shows *state*, so every listing
 invented its own — a word per row here, a checkbox there, and no two tools
 agreeing on what a cancelled thing looks like against a failed one.
 
-Six marks, and the argument is mostly about which distinctions are worth a
-glyph. Unfinished work shares the circle and finished work changes shape, so
+**Two sets carrying six meanings.** *Basic* is bracketed ASCII — nothing to
+render, correct in any terminal and in a plain-text file decades from now, at
+three columns per row instead of one. *Glyph* is Unicode — narrower and quieter,
+and tofu where the font is missing. A project picks one and does not mix them,
+because `[x]` means *done* and `✘` means *failed*, so a reader who learned one
+set and met the other would read a success as a failure.
+
+The argument is mostly about which distinctions are worth a mark. Unfinished work shares the circle and finished work changes shape, so
 done separates from not-done before anything is read. Superseded and cancelled
 get their own marks rather than borrowing the failure one, because neither is a
 failure and marking them as one reports a loss where there was a decision.

@@ -7,9 +7,59 @@ matches: eager
 
 # ASCII style guide
 
-**A state is shown as a mark, not a word.** One glyph in a fixed first column
+**A state is shown as a mark, not a word.** One mark in a fixed first column
 scans in a single pass; a word per row has to be read, and a column of read
 words is a paragraph nobody asked for.
+
+**Two sets, and a project picks one.** They carry the same six meanings in the
+same order, so a reader who knows one can read the other. Pick per project, not
+per command — mixing them inside one tool is the only way to get this wrong.
+
+## Basic
+
+Bracketed ASCII. Nothing to install, nothing to render, correct in any
+terminal, any font, any pipe, and in a plain-text file forty years from now.
+
+```
+┌─────┬──────────────────────────────────┐
+│ [ ] │ not started, empty               │
+│ [~] │ under way, in progress, working  │
+│ [x] │ delivered, success, proven       │
+│ [>] │ superseded, replaced             │
+│ [-] │ cancelled, missing, not found    │
+│ [!] │ failed, error, disproven         │
+└─────┴──────────────────────────────────┘
+```
+
+**`[ ]`** — an empty box. The universal unchecked affordance, and the one every
+reader already knows from a paper list and from markdown.
+
+**`[~]`** — a tilde, which means *approximately* everywhere else it appears.
+Something is in the box but it is not settled.
+
+**`[x]`** — the box marked. Markdown task lists made this *done* for a very
+large number of people, and that convention wins over any other reading.
+
+**`[>]`** — pointing on. The work went somewhere; look there.
+
+**`[-]`** — struck through. Deliberately nothing, and neutral about it — a dash
+is the mark for *not applicable*, not for *went wrong*.
+
+**`[!]`** — the only mark that raises its voice, and the only state that
+deserves to.
+
+**The cost of this set is its width.** Three columns per row against one, which
+matters in a narrow terminal and matters more in a tree where the marks indent.
+
+**And `[x]` is a trap across sets.** Here it means *done*; in the glyph set the
+crossed mark `✘` means *failed*. A reader who learned one and meets the other
+will read a success as a failure. **This is the reason to pick one and not
+mix.**
+
+## Glyph
+
+Unicode marks. Narrower, quieter, and they hold their meaning at a glance
+without being parsed.
 
 ```
 ┌─────┬──────────────────────────────────┐
@@ -22,61 +72,70 @@ words is a paragraph nobody asked for.
 └─────┴──────────────────────────────────┘
 ```
 
-## Why these six
+**`○`** — an empty circle. Nothing has happened to it.
 
-**Unfinished work shares the circle; finished work changes shape.**
+**`◐`** — the same circle, half filled. **The fill is the progress**, which is
+why these two share a shape: they are one thing at two points.
 
-`○` and `◐` differ only by fill, which is right — they are the same thing at
-two points, and the fill is the progress. A filled circle for *done* would join
-that family and be mistaken for an empty one down a column, so the finished
-states leave the circle entirely. **Done and not-done separate before anything
-is read**, and the fill only has to distinguish the two unfinished states from
-each other.
+**`✔`** — a different mark entirely, on purpose. A filled circle would join the
+unfinished family and be mistaken for an empty one down a column; **done has to
+separate from not-done before anything is read.**
 
-**`✔` and `✘` are a matched pair** — *it came out* and *it did not come out*.
-They are the same weight and the same size, because an ending that went badly
-should read as an ending, not as an interruption.
+**`↪`** — a hooked arrow: *picked up over there*. It is also the prompt — name
+what superseded it on the same line, because a supersession with no successor
+named is the one shape of it that is genuinely lost.
 
-**`↪` and `⊘` are the endings that are neither.** Superseded work did not fail;
-it moved, and something else covers it now. Cancelled work did not fail either;
-somebody chose. Marking either `✘` reports a loss where there was a decision.
+**`⊘`** — a circle with a line through it. Switched off, or never there.
+**Cancelled and missing read the same to somebody looking**: nothing will come
+of it here, and neither is anybody's failure.
 
-**`⊘` also carries absence** — missing, not found. A thing that is not there and
-a thing switched off are the same to a reader: **nothing will come of looking
-here**, and neither is anybody's failure.
+**`✘`** — the counterpart to `✔`, same weight and size. *It came out* and *it
+did not come out*, so an ending that went badly reads as an ending rather than
+an interruption.
 
-**`↪` invites what should always accompany it.** The hook says *picked up over
-there*, so name what superseded it on the same line. A supersession with no
-successor named is the one shape of it that is genuinely lost.
+**The cost of this set is that it is not ASCII**, despite the name of this file.
+A terminal without the glyphs shows tofu. Each is chosen from an old, widely
+covered block over a prettier alternative for that reason — `◐` U+25D0 rather
+than a quarter-filled variant, `↪` U+21AA rather than a curving arrow from a
+later block.
+
+## Why these six, either way
+
+**`✔` and `✘`, or `[x]` and `[!]`, are the two verdicts.** *It came out* and
+*it did not*.
+
+**`↪` and `⊘`, or `[>]` and `[-]`, are the endings that are neither.**
+Superseded work did not fail; it moved, and something else covers it now.
+Cancelled work did not fail either; somebody chose. **Marking either as a
+failure reports a loss where there was a decision.**
 
 ## The rules that keep it readable
 
-**Use the heavy marks — `✔` U+2714 and `✘` U+2718, not `✓` U+2713 and `✗`
-U+2717.** The light pair is visibly thinner than the circles beside it, so a
-finished row reads as fainter than an unfinished one. That is backwards:
-finished work is what a scan skips past, and it should be the easiest thing to
-skip.
+**Pick one set per project and do not mix them.** They share meanings and order
+so a reader can move between projects; they do not survive being interleaved
+inside one, because `[x]` means *done* and `✘` means *failed*.
 
-**One fixed order, endings last: `○ ◐ ✔ ↪ ⊘ ✘`.** Best outcome first among the
-endings and the bad one last of all — it is worth arriving at deliberately
+**In the glyph set, use the heavy marks — `✔` U+2714 and `✘` U+2718, not `✓`
+U+2713 and `✗` U+2717.** The light pair is visibly thinner than the circles
+beside it, so a finished row reads as fainter than an unfinished one. That is
+backwards: finished work is what a scan skips past, and it should be the easiest
+thing to skip.
+
+**One fixed order, endings last** — `○ ◐ ✔ ↪ ⊘ ✘`, or
+`[ ] [~] [x] [>] [-] [!]`. Best outcome first among the endings and the bad one
+last of all — it is worth arriving at deliberately
 rather than meeting halfway down a list. **A view whose order changes between
 readings cannot be scanned**, which is the whole reason to fix it.
 
 **Within a state, keep the order the data arrived in.** Do not re-sort. Any
 ordering the records carry is one somebody chose, and re-sorting discards it.
 
-**The mark is the meaning; colour is a shortcut.** Where colour is available —
-`○` dim, `◐` yellow, `✔` green, `↪` blue, `⊘` dim, `✘` red — it is deliberately
-redundant with the glyph. Output stays correct in a pipe, in a log, and for
-anybody who cannot distinguish the hues. **Colour makes a scan faster; it never
+**The mark is the meaning; colour is a shortcut.** Where colour is available,
+in either set — not started dim, under way yellow, delivered green, superseded
+blue, cancelled dim, failed red — it is deliberately redundant with the mark.
+Output stays correct in a pipe, in a log, and for anybody who cannot distinguish
+the hues. **Colour makes a scan faster; it never
 makes one possible.**
-
-**These are not ASCII, and that is the trade.** They are Unicode, and a terminal
-without them shows tofu. Every one is from an old, widely covered block, chosen
-over prettier alternatives for that reason — `◐` U+25D0 rather than a quarter-
-filled variant, `↪` U+21AA rather than a curving arrow from a later block. Where
-even that is too much to assume, fall back to `[ ]`, `[~]`, `[x]`, `[>]`, `[-]`,
-`[!]`, and not to words.
 
 ## Do not invent a state the record does not claim
 
