@@ -46,5 +46,5 @@ machine that has never fetched it has a URL and nothing else.
 
 - `policy/command-line-interface-guidelines` (policy) — Read command line interface guidelines before designing or changing CLIs.
   - matches: eager
-- `policy/command-line-style-guide` (policy) — The template every command's help follows, explained a piece at a time, plus the output conventions that go with it. Follow it and a new command looks like the rest.
+- `policy/command-line-style-guide` (policy) — The two templates a command's help follows — the bare tool and a command of its own — explained a piece at a time, plus the output conventions that go with them.
   - matches: eager
