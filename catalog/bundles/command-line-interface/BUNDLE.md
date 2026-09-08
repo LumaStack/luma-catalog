@@ -1,7 +1,7 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/command-line-interface
-version: 0.3.0
+version: 0.4.0
 stage: draft
 consumers: [project, organization]
 description: How this project designs its command line — the guidelines it follows, and the style guide its own commands are written to.
@@ -25,6 +25,10 @@ verb, a flag, or a message.
 **[[command-line-style-guide]]** — the template every command's help
 follows, explained a piece at a time, and the output conventions that go with
 it. Follow it and a new command looks like the rest.
+
+**[[exit-codes]]** — one set of codes per tool, drawn from by every
+subcommand. A subcommand differs in *which* codes it can return, never in what
+one means.
 
 **[[ascii-styleguide]]** — the marks a command line shows state with. **Two
 sets, basic and glyph**, carrying the same six meanings in the same order; a
@@ -54,6 +58,22 @@ What the cache cannot give back is reproducibility. A fresh clone on a
 machine that has never fetched it has a URL and nothing else.
 
 ## Version
+
+`0.4.0` — adds [[exit-codes]]. The style guide said every command states its
+own codes, which is right and was read as licence for each **subcommand** to
+mean what it liked by a number. It is one vocabulary per tool: a subcommand
+draws a subset, and a new outcome adds an entry rather than redefining one.
+
+**The defect worth naming is not a wrong number — it is two outcomes sharing
+one.** A reference matching no record and a reference matching several,
+reported as the same *not found*, tells a caller to create something that
+already exists twice over. That stays invisible until the day the two need
+different handling, by which time the code is published.
+
+It also says the mapping lives in **one place**, whatever the language, because
+every implementation drifts the same way: the subcommand written last wraps its
+failure with whichever code the author had in mind, and nothing tells anybody
+which copy is wrong.
 
 `0.3.0` — adds [[ascii-styleguide]]. The style guide settled what help looks
 like and said nothing about how a command shows *state*, so every listing
