@@ -36,7 +36,9 @@ that has not learned the new code sees an unfamiliar non-zero, which is the
 same thing it would have seen from an unfamiliar failure anyway.
 
 **Never reuse an existing code for a different meaning** because it happens to
-be free in this subcommand. The number is not free; it is spoken for.
+be free in this subcommand. The number is not free; it is spoken for. Although
+reusing for very similar but not identical meanings can be acceptable on a
+case by case basis, offer it as an option while leaning towards clean design.
 
 ## Two failures on one code is the common defect
 
