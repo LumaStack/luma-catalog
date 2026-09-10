@@ -12,7 +12,7 @@ matches: eager
 **Cache them, and read the copies.**
 
 ```
-~/.cache/luma/go-guidelines/
+~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/
   effective-go.html
   code-review-comments.md
   test-comments.md
@@ -26,19 +26,19 @@ matches: eager
 plain source behind a styled site, and the source greps well:
 
 ```
-curl -sSL -o ~/.cache/luma/go-guidelines/effective-go.html \
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/effective-go.html \
   https://raw.githubusercontent.com/golang/website/master/_content/doc/effective_go.html
-curl -sSL -o ~/.cache/luma/go-guidelines/code-review-comments.md \
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/code-review-comments.md \
   https://raw.githubusercontent.com/golang/wiki/master/CodeReviewComments.md
-curl -sSL -o ~/.cache/luma/go-guidelines/test-comments.md \
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/test-comments.md \
   https://raw.githubusercontent.com/golang/wiki/master/TestComments.md
-curl -sSL -o ~/.cache/luma/go-guidelines/google-style-guide.md \
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/google-style-guide.md \
   https://raw.githubusercontent.com/google/styleguide/gh-pages/go/guide.md
-curl -sSL -o ~/.cache/luma/go-guidelines/google-style-decisions.md \
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/google-style-decisions.md \
   https://raw.githubusercontent.com/google/styleguide/gh-pages/go/decisions.md
-curl -sSL -o ~/.cache/luma/go-guidelines/google-best-practices.md \
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/google-best-practices.md \
   https://raw.githubusercontent.com/google/styleguide/gh-pages/go/best-practices.md
-curl -sSL -o ~/.cache/luma/go-guidelines/uber-style.md \
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/go-guidelines/uber-style.md \
   https://raw.githubusercontent.com/uber-go/guide/master/style.md
 ```
 
