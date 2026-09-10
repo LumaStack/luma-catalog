@@ -202,23 +202,53 @@ An agent has no memory of what it did earlier, and a pointed-at document is
 useless if reading it is expensive. **A bundle that points at something should
 say exactly how to cache it**, in the policy that points.
 
-**Where.** One directory per bundle, beneath the cache of the tool that put the
-bundle there:
+**Where.** One directory per bundle, named by the bundle's **full published ID**:
 
 ```
-~/.cache/luma/luma-foreman/bundles/<bundle-name>/<source>.<ext>
+~/.cache/luma/bundles/<org>/<catalog>/<bundle-name>/<source>.<ext>
 ```
+
+```
+~/.cache/luma/bundles/lumastack/luma-catalog/command-line-interface/clig.dev.md
+```
+
+**The full ID, because a bare name is not unique.** Bundle names are unique
+within a catalog and nowhere else — two catalogs may each publish a
+`command-line-interface`, pointing at different documents and caching them
+differently. The ID that already distinguishes them is the one `foreman get`
+takes, so use all of it.
+
+**Keyed on the bundle rather than on a tool, and the reason is ownership.**
+Nothing in the toolchain writes this cache — an agent does, running the fetch the
+policy told it to run. The tool that copied the bundle in never reads it, never
+invalidates it, and would be a strange thing to name in a path it does not touch.
+The catalog appears here as **part of the bundle's name**, not as the owner of
+anything.
+
+**One copy, shared by every tool.** What is cached is a public document fetched
+raw, and nothing transforms it — so there is no version of this where two tools
+should hold different copies. Splitting it per tool would buy N fetches, N dates
+to check and N directories to refresh, in exchange for nothing.
+
+**A bundle with no catalog uses whatever ID it has**, which for an unpublished
+one is local to its project. **Two projects holding same-named local bundles
+will collide in one person's cache** — named here rather than solved, because
+the failure is a stale document in a directory nobody published, and a rule to
+prevent it would cost more than it saves. Publishing the bundle fixes it, since
+publishing is what gives it a unique name.
 
 **The base path is not this bundle's to invent.** The `luma-config` bundle
-settles where machine-local paths go — XDG, so `~/.cache/<org>/<application>/`
-for anything regenerable, with the application name never truncated. This adds
-one segment inside that, and **the `bundles/` segment is what keeps a bundle
-name out of the application namespace**: without it, a bundle named after a tool
-would claim that tool's cache directory.
+settles where machine-local paths go: XDG, so `~/.cache/<org>/<application>/`
+holds anything regenerable, with the application name never truncated. **This
+bends that by one segment** — `bundles/` is not an application, it is a sibling
+namespace for things bundles own rather than programs do. Said plainly here
+because the alternative was naming a program that owns none of it, and because
+the fixed segment is what keeps a bundle named after a tool from claiming that
+tool's cache directory.
 
-A project not using `luma-foreman` substitutes whatever put the bundle there.
-The shape is what matters — one directory per bundle, somewhere regenerable,
-never inside the repository.
+A project organizing its caches differently substitutes its own base. The shape
+is what matters — one directory per bundle, somewhere regenerable, never inside
+the repository.
 
 **Fetch the source, not the rendered page.** Most documents have a plain
 markdown or HTML source behind a styled site; it greps well and costs a
@@ -227,7 +257,7 @@ fraction of the markup.
 **Fetch to the file, never through the context window.**
 
 ```sh
-curl -sSL -o ~/.cache/luma/luma-foreman/bundles/<bundle-name>/<source>.md <url>
+curl -sSL -o ~/.cache/luma/bundles/<org>/<catalog>/<bundle-name>/<source>.md <url>
 ```
 
 `curl -o <path>` puts the bytes on disk at no token cost. Fetching a document

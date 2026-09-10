@@ -12,7 +12,7 @@ matches: eager
 **Cache it, and read the copy.**
 
 ```
-~/.cache/luma/luma-foreman/bundles/command-line-interface/clig.dev.md
+~/.cache/luma/bundles/lumastack/luma-catalog/command-line-interface/clig.dev.md
 ```
 
 **Fetch the markdown source, not the rendered page.** `clig.dev` serves HTML
@@ -20,8 +20,8 @@ matches: eager
 document's own source is one file:
 
 ```sh
-mkdir -p ~/.cache/luma/luma-foreman/bundles/command-line-interface
-curl -sSL -o ~/.cache/luma/luma-foreman/bundles/command-line-interface/clig.dev.md \
+mkdir -p ~/.cache/luma/bundles/lumastack/luma-catalog/command-line-interface
+curl -sSL -o ~/.cache/luma/bundles/lumastack/luma-catalog/command-line-interface/clig.dev.md \
   https://raw.githubusercontent.com/cli-guidelines/cli-guidelines/main/content/_index.md
 ```
 

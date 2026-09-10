@@ -113,21 +113,35 @@ question.
 
 **It also writes down how to cache what you point at**, which had been solved
 twice in this catalog and stated nowhere: one directory per bundle under
-`~/.cache/luma/luma-foreman/bundles/`, fetch the source rather than the rendered
-page, `curl -o` to the file rather than into the context window, a date stamped
-on the first line so staleness is visible, refresh when that date is not today,
-never block on the network, and never commit it — **a copy on one machine is
-nobody's business, a copy in a published repository is distribution**, which is
-the carrying route taken by accident with none of its paperwork.
+`~/.cache/luma/bundles/`, fetch the source rather than the rendered page,
+`curl -o` to the file rather than into the context window, a date stamped on the
+first line so staleness is visible, refresh when that date is not today, never
+block on the network, and never commit it — **a copy on one machine is nobody's
+business, a copy in a published repository is distribution**, which is the
+carrying route taken by accident with none of its paperwork.
 
-**The base path belongs to `luma-config`, and the `bundles/` segment is what
-respects that.** XDG puts regenerable things under
-`~/.cache/<org>/<application>/`, so `~/.cache/luma/` is an *application*
-namespace. A first draft of this policy keyed the directory on the bundle name
-alone — which would have let a bundle named after a tool claim that tool's cache
-directory, and would have made `command-line-interface` non-conforming for
-following the rule that already existed. The extra segment keeps the two
-namespaces from ever meeting.
+**Keyed on the bundle's full published ID**, `<org>/<catalog>/<name>` — the same
+identifier `foreman get` takes. Keying on the *tool* was tried first and names
+something that owns none of it: an agent writes this cache by running the fetch
+a policy told it to run, and the tool that installed the bundle never reads,
+writes or invalidates a byte. Keying on the **bare bundle name** was tried next
+and collides, because a name is unique only within a catalog — two catalogs may
+each publish a `command-line-interface`, pointing at different documents. The
+catalog belongs in the path as **part of the bundle's name**, not as the owner
+of anything.
+
+**One copy, shared by every tool**, because nothing transforms what is cached —
+per-tool copies would buy N fetches and N staleness dates in exchange for
+nothing. **An unpublished bundle can still collide** between two projects on one
+machine, and the policy names that rather than solving it: publishing is what
+gives a bundle a unique name.
+
+**This bends `luma-config` by one segment, and says so.** XDG puts regenerable
+things under `~/.cache/<org>/<application>/`; `bundles/` is not an application
+but a sibling namespace for what bundles own rather than programs. The fixed
+segment is also what stops a bundle named after a tool from claiming that tool's
+cache — the failure that a first draft keyed on the bare bundle name would have
+allowed.
 
 **Two corrections ride along, both the same stale value.** [[update-bundle]] and
 the manifest template still taught `survival: experimental`, which the knowledge
