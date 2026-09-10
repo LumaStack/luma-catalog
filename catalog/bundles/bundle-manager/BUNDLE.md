@@ -112,13 +112,22 @@ CC BY 4.0* is not, and an agent that says only the second has not asked the
 question.
 
 **It also writes down how to cache what you point at**, which had been solved
-twice in this catalog and never stated: one directory per bundle under
-`~/.cache/luma/`, fetch the source rather than the rendered page, `curl -o` to
-the file rather than into the context window, a date stamped on the first line
-so staleness is visible, refresh when that date is not today, never block on the
-network, and never commit it — **a copy on one machine is nobody's business, a
-copy in a published repository is distribution**, which is the carrying route
-taken by accident with none of its paperwork.
+twice in this catalog and stated nowhere: one directory per bundle under
+`~/.cache/luma/luma-foreman/bundles/`, fetch the source rather than the rendered
+page, `curl -o` to the file rather than into the context window, a date stamped
+on the first line so staleness is visible, refresh when that date is not today,
+never block on the network, and never commit it — **a copy on one machine is
+nobody's business, a copy in a published repository is distribution**, which is
+the carrying route taken by accident with none of its paperwork.
+
+**The base path belongs to `luma-config`, and the `bundles/` segment is what
+respects that.** XDG puts regenerable things under
+`~/.cache/<org>/<application>/`, so `~/.cache/luma/` is an *application*
+namespace. A first draft of this policy keyed the directory on the bundle name
+alone — which would have let a bundle named after a tool claim that tool's cache
+directory, and would have made `command-line-interface` non-conforming for
+following the rule that already existed. The extra segment keeps the two
+namespaces from ever meeting.
 
 **Two corrections ride along, both the same stale value.** [[update-bundle]] and
 the manifest template still taught `survival: experimental`, which the knowledge

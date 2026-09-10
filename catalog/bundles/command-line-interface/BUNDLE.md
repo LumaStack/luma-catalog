@@ -1,11 +1,11 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/command-line-interface
-version: 0.4.0
+version: 0.4.1
 stage: draft
 consumers: [project, organization]
 description: How this project designs its command line — the guidelines it follows, and the style guide its own commands are written to.
-published: 2026-09-03
+published: 2026-09-10
 ---
 
 # lumastack/luma-catalog/command-line-interface
@@ -58,6 +58,23 @@ What the cache cannot give back is reproducibility. A fresh clone on a
 machine that has never fetched it has a URL and nothing else.
 
 ## Version
+
+`0.4.1` — **the cached copy moves to `bundles/command-line-interface/`**,
+matching the convention `bundle-manager` now states: one directory per bundle
+under `~/.cache/luma/luma-foreman/bundles/`. The old path filed this bundle's
+copy of somebody else's guide in a `guides/` directory of its own, which was
+unambiguous while one bundle cached anything and stopped being so the moment a
+second one did.
+
+**And the fetch example gains the `-o` it was already telling you to use.** The
+fenced command carried no output flag while the paragraph directly beneath it
+said *fetch to the file, never through the context window* — so an agent copying
+the command did precisely what the next sentence forbids, spending the whole
+document to save a file it then still had to write. The command now creates the
+directory and writes to the path.
+
+Patch: a path and an example. No rule changed, and a reader who understood the
+old version behaves identically under this one.
 
 `0.4.0` — adds [[exit-codes]]. The style guide said every command states its
 own codes, which is right and was read as licence for each **subcommand** to

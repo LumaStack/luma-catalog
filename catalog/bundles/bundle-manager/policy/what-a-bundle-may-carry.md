@@ -202,11 +202,23 @@ An agent has no memory of what it did earlier, and a pointed-at document is
 useless if reading it is expensive. **A bundle that points at something should
 say exactly how to cache it**, in the policy that points.
 
-**Where.** One directory per bundle, keyed on the bundle's own name:
+**Where.** One directory per bundle, beneath the cache of the tool that put the
+bundle there:
 
 ```
-~/.cache/luma/<bundle-name>/<source>.<ext>
+~/.cache/luma/luma-foreman/bundles/<bundle-name>/<source>.<ext>
 ```
+
+**The base path is not this bundle's to invent.** The `luma-config` bundle
+settles where machine-local paths go — XDG, so `~/.cache/<org>/<application>/`
+for anything regenerable, with the application name never truncated. This adds
+one segment inside that, and **the `bundles/` segment is what keeps a bundle
+name out of the application namespace**: without it, a bundle named after a tool
+would claim that tool's cache directory.
+
+A project not using `luma-foreman` substitutes whatever put the bundle there.
+The shape is what matters — one directory per bundle, somewhere regenerable,
+never inside the repository.
 
 **Fetch the source, not the rendered page.** Most documents have a plain
 markdown or HTML source behind a styled site; it greps well and costs a
@@ -215,7 +227,7 @@ fraction of the markup.
 **Fetch to the file, never through the context window.**
 
 ```sh
-curl -sSL -o ~/.cache/luma/<bundle-name>/<source>.md <url>
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/<bundle-name>/<source>.md <url>
 ```
 
 `curl -o <path>` puts the bytes on disk at no token cost. Fetching a document
