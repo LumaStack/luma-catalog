@@ -10,6 +10,10 @@ fields:
     field_presence: optional
     field_type: text
     desc: "the commit the breach is embodied in — a bare SHA, short or full. **A violation has two commits and this is not the other one**: the commit that *carries* this record is later, and naming it here would say nothing. Absent where no commit contains the breach"
+  violating_actor:
+    field_presence: required
+    field_type: actor
+    desc: "who or what breached. Almost always an `agent:`, and naming the model matters because the aggregate is read per model. **Not `noticed_by`** — a record names two actors and only one of them violated anything"
   occurred_at:
     field_presence: required
     field_type: timestamp
@@ -22,10 +26,6 @@ fields:
     field_presence: required
     field_type: actor
     desc: "who or what caught it. A `human:` here rather than an `agent:` is the finding — it means nothing self-reported and nothing mechanical fired"
-  actor:
-    field_presence: required
-    field_type: actor
-    desc: "who or what breached. Almost always an `agent:`, and naming the model matters because the aggregate is read per model"
   delivery:
     field_presence: required
     field_type: enum

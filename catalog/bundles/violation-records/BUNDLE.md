@@ -1,7 +1,7 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/violation-records
-version: 0.3.1
+version: 0.4.0
 published: 2026-09-10
 stage: draft
 survival: probationary
@@ -76,11 +76,34 @@ one naming scheme.
 
 ## Version
 
-`0.3.1` — **field order.** `violating_commit` moves ahead of the timestamps, so
-`occurred_at` and `noticed_at` sit together — they are the pair a reader
-compares, and the gap between them is the lag worth seeing. Nothing else
-changed; existing records are unaffected, since order is a reading convenience
-and not a contract.
+`0.4.0` — **`actor` becomes `violating_actor`, and the frontmatter is grouped.**
+Breaking, shipped as a minor below `1.0.0`.
+
+**A violation record names two actors.** `noticed_by` is one, and calling the
+other simply `actor` asks a reader to know which — the same under-specification
+that made `commit` into `violating_commit` one version earlier, and worse here,
+because `actor` is also the *type* of both fields. A field named after its type
+says nothing about its role.
+
+**Frontmatter now reads top to bottom as a sentence:** what this is, what did it,
+when, who caught it and when, what it means, what wrote it.
+
+```yaml
+violation_id:      # what this is
+violating_commit:  # what did it
+violating_actor:
+occurred_at:       # when
+noticed_at:        # who caught it, and when
+noticed_by:
+delivery:          # what it means
+expectation:
+policy:
+created_using:     # what wrote it
+```
+
+**The two timestamps sit together deliberately.** The gap between them is the
+lag, and how long a breach went unseen is one of the few things a single record
+can say on its own — `violating_commit` was splitting the pair.
 
 `0.3.0` — **`occurred_in` becomes `violating_commit`.** Breaking, shipped as a
 minor below `1.0.0`: the field is renamed and its value loses the `commit:`

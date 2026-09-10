@@ -55,7 +55,7 @@ directory you just made. Six fields and two short sections.
 this violation is asking for. *Wikilinks never point outside their own bundle*,
 not *the agent linked wrongly*.
 
-**`actor` names the model**, not just `agent:`. The register is read per model,
+**`violating_actor` names the model**, not just `agent:`. The register is read per model,
 and a version that behaves differently is a thing worth seeing.
 
 **`policy` carries the version that was in force**, not just the document —
