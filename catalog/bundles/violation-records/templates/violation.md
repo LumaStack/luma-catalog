@@ -15,7 +15,7 @@ Copy the blocks to `.luma/records/violations/<violation_id>/violation.md`.
 type: violation
 violation_id: 2026-01-01-short-name
 occurred_at: 2026-01-01T00:00:00Z
-occurred_in: commit:0000000         # or pr:<n>, run:<id>; omit if nothing names it
+violating_commit: 0000000           # bare SHA; omit if no commit contains the breach
 noticed_at: 2026-01-01T00:00:00Z
 noticed_by: agent:your-model        # or human:<id> — say honestly which
 actor: agent:your-model             # name the model; the register is read per model
@@ -33,8 +33,10 @@ real answer; an empty string is a field somebody forgot.
 `local/backlog procedure/backlog-move 0.36.0`. Without it the citation points at
 whatever the rule says today rather than what it said when it was breached.
 
-**`occurred_in` is not the commit carrying this record.** It names where the
-breach happened; the record is written down later, somewhere else.
+**`violating_commit` is not the commit carrying this record.** A violation has
+two commits — the one the breach is in, and the one this file lands in. This is
+the first. Commit the record separately from the breach where both are yours to
+arrange, or the field points at itself and says nothing.
 
 **`created_using` is the version you actually hold** — run
 `luma-foreman bundle show violation-records`. The catalog cannot know what you

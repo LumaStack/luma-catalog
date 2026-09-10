@@ -63,11 +63,18 @@ and a version that behaves differently is a thing worth seeing.
 a moving target, and stops being checkable the first time somebody rewords the
 rule. Take it from the bundle's own `BUNDLE.md`.
 
-**`occurred_in` names what the breach happened in**, prefixed by kind:
-`commit:70eb7cd`, `pr:98`, `run:34506833714`. **It is not the commit that
-carries this record** — that one is later, and is the commit where the breach
-was *written down* rather than where it happened. Leave it out where nothing can
-name the place.
+**`violating_commit` is the commit the breach is embodied in** — a bare SHA.
+**A violation has two commits**, and this is not the other one: the commit that
+carries this record is later, and naming it here would say nothing.
+
+The act itself is usually invisible — nobody can see a check that was not run —
+so the commit is where it becomes reviewable, which is what makes it worth
+citing. Leave it out where no commit contains the breach.
+
+**Where the breach is visible in work you are about to commit, commit that
+first, separately.** Step 5 says to commit a violation with the work that
+produced it; where the work *is* the breach, following that would make this
+field point at its own record.
 
 **`noticed_by` is honest about who caught it.** If you are the actor recording
 your own, say so — a register where nothing external ever appears is itself the

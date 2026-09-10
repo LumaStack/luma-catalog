@@ -1,7 +1,7 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/violation-records
-version: 0.2.0
+version: 0.3.0
 published: 2026-09-10
 stage: draft
 survival: probationary
@@ -75,6 +75,30 @@ is the only reading that pays — and it works because they land in one place un
 one naming scheme.
 
 ## Version
+
+`0.3.0` — **`occurred_in` becomes `violating_commit`.** Breaking, shipped as a
+minor below `1.0.0`: the field is renamed and its value loses the `commit:`
+prefix, so an adopter holding records written against `0.2.0` has to backfill or
+grandfather them.
+
+**The field was general and the meaning turned out not to be.** `occurred_in`
+was chosen so a pull request or a run could go in it, and what was actually
+wanted throughout was *the commit that caused it*. A general name over narrow
+semantics is a vague name — and locative reading is what made the first filer put
+a work item in it, which is a different fact entirely. Being one kind of thing,
+the field now types itself and the value is a bare SHA.
+
+**What the field is really for:** the act is invisible. Nobody can see a check
+that was not run. The commit is where the breach becomes reviewable, and that is
+what makes it worth citing rather than describing.
+
+**Deferred, not rejected: a field for what was under way** — the work item, the
+run, the session. Counting violations per work item is a real cut and one a
+commit cannot give, but the bundle declined severity, resolution and impact on
+the grounds that a field people have filled for a year is far harder to remove
+than to add, and the same restraint applies here. **Re-open when somebody wants
+violations counted by the work they happened during**, or when a breach with no
+commit leaves a filer with nowhere to put the context.
 
 `0.2.0` — **the first use changed three things.** Minor rather than major: an
 adopter who does nothing is unaffected, since existing records keep their names

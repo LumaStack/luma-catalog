@@ -10,10 +10,10 @@ fields:
     field_presence: required
     field_type: timestamp
     desc: "when the breach happened. Usually knowable to the turn, because the work that contains it is still open"
-  occurred_in:
+  violating_commit:
     field_presence: optional
     field_type: text
-    desc: "the artifact the breach happened in, prefixed by kind — `commit:70eb7cd`, `pr:98`, `run:34506833714`. **Not the commit that carries this record**, which is later and almost always different. Absent where the breach happened somewhere nothing can name"
+    desc: "the commit the breach is embodied in — a bare SHA, short or full. **A violation has two commits and this is not the other one**: the commit that *carries* this record is later, and naming it here would say nothing. Absent where no commit contains the breach"
   noticed_at:
     field_presence: recommended
     field_type: timestamp
