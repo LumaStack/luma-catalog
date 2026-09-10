@@ -13,20 +13,28 @@ Copy the blocks to `.luma/records/violations/<violation_id>/violation.md`.
 ```yaml
 ---
 type: violation
-violation_id: 2026-01-01-000000-short-name-a1b2c3
+violation_id: 2026-01-01-short-name
 occurred_at: 2026-01-01T00:00:00Z
+occurred_in: commit:0000000         # or pr:<n>, run:<id>; omit if nothing names it
 noticed_at: 2026-01-01T00:00:00Z
 noticed_by: agent:your-model        # or human:<id> — say honestly which
 actor: agent:your-model             # name the model; the register is read per model
 delivery: delivered                 # delivered | undelivered | unwritten
 expectation: <the rule, in one line, even if nobody had written it>
-policy: <document id, or omit entirely when delivery is unwritten>
+policy: <bundle, document id and the version in force — omit when unwritten>
 created_using: <namespace>/violation-records <version>
 ---
 ```
 
 **`policy` is omitted, not blank, when there was no rule.** An absent field is a
 real answer; an empty string is a field somebody forgot.
+
+**`policy` carries the version that was in force** —
+`local/backlog procedure/backlog-move 0.36.0`. Without it the citation points at
+whatever the rule says today rather than what it said when it was breached.
+
+**`occurred_in` is not the commit carrying this record.** It names where the
+breach happened; the record is written down later, somewhere else.
 
 **`created_using` is the version you actually hold** — run
 `luma-foreman bundle show violation-records`. The catalog cannot know what you
