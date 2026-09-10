@@ -1,7 +1,7 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/violation-records
-version: 0.3.0
+version: 0.3.1
 published: 2026-09-10
 stage: draft
 survival: probationary
@@ -75,6 +75,12 @@ is the only reading that pays — and it works because they land in one place un
 one naming scheme.
 
 ## Version
+
+`0.3.1` — **field order.** `violating_commit` moves ahead of the timestamps, so
+`occurred_at` and `noticed_at` sit together — they are the pair a reader
+compares, and the gap between them is the lag worth seeing. Nothing else
+changed; existing records are unaffected, since order is a reading convenience
+and not a contract.
 
 `0.3.0` — **`occurred_in` becomes `violating_commit`.** Breaking, shipped as a
 minor below `1.0.0`: the field is renamed and its value loses the `commit:`

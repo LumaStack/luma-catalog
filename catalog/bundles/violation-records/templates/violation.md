@@ -14,8 +14,8 @@ Copy the blocks to `.luma/records/violations/<violation_id>/violation.md`.
 ---
 type: violation
 violation_id: 2026-01-01-short-name
-occurred_at: 2026-01-01T00:00:00Z
 violating_commit: 0000000           # bare SHA; omit if no commit contains the breach
+occurred_at: 2026-01-01T00:00:00Z
 noticed_at: 2026-01-01T00:00:00Z
 noticed_by: agent:your-model        # or human:<id> — say honestly which
 actor: agent:your-model             # name the model; the register is read per model

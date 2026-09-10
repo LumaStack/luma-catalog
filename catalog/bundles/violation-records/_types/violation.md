@@ -6,14 +6,14 @@ fields:
     field_presence: required
     field_type: text
     desc: "the record's directory name — `2026-09-08-wikilink-across-bundles`. Derived from the date and what was breached, so two filings of one breach collide rather than being counted twice"
-  occurred_at:
-    field_presence: required
-    field_type: timestamp
-    desc: "when the breach happened. Usually knowable to the turn, because the work that contains it is still open"
   violating_commit:
     field_presence: optional
     field_type: text
     desc: "the commit the breach is embodied in — a bare SHA, short or full. **A violation has two commits and this is not the other one**: the commit that *carries* this record is later, and naming it here would say nothing. Absent where no commit contains the breach"
+  occurred_at:
+    field_presence: required
+    field_type: timestamp
+    desc: "when the breach happened. Usually knowable to the turn, because the work that contains it is still open"
   noticed_at:
     field_presence: recommended
     field_type: timestamp
