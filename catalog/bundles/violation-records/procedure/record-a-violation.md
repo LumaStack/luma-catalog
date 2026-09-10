@@ -14,17 +14,18 @@ register, which is the only way this fails.
 
 ```sh
 mkdir -p .luma/records/violations
-mkdir .luma/records/violations/$(date -u +%Y-%m-%d)-<short-name>
+mkdir .luma/records/violations/$(date -u +%Y-%m-%d-%H%M%S)-<short-name>
 ```
 
 `<short-name>` is two to five words, kebab-case, naming **what was breached**
 rather than what happened — `wikilink-across-bundles`, not `agent-made-mistake`.
 
 **The second `mkdir` has no `-p`, deliberately.** If that directory exists,
-somebody has already filed this breach today and the create must fail rather
-than succeed silently — the policy explains why a collision here is the feature
-and not a defect. Add nothing to the name to get past it; go and read the record
-that is already there.
+somebody has already filed this breach this second and the create must fail
+rather than succeed silently — the policy explains why a collision here is the
+feature and not a defect. It is rare at this resolution and free to keep. Add
+nothing to the name to get past it; go and read the record that is already
+there.
 
 ## 2. Answer the one question that matters
 

@@ -5,7 +5,7 @@ fields:
   violation_id:
     field_presence: required
     field_type: text
-    desc: "the record's directory name — `2026-09-08-wikilink-across-bundles`. Derived from the date and what was breached, so two filings of one breach collide rather than being counted twice"
+    desc: "the record's directory name — `2026-09-08-031200-wikilink-across-bundles`. Derived from when it was filed and what was breached; nothing is appended to break ties, so two filings of one breach collide rather than being counted twice"
   violating_commit:
     field_presence: optional
     field_type: text

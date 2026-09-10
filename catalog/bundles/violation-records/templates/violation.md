@@ -13,7 +13,7 @@ Copy the blocks to `.luma/records/violations/<violation_id>/violation.md`.
 ```yaml
 ---
 type: violation
-violation_id: 2026-01-01-short-name
+violation_id: 2026-01-01-000000-short-name
 violating_commit: 0000000           # bare SHA; omit if no commit contains the breach
 violating_actor: agent:your-model   # who breached; name the model
 occurred_at: 2026-01-01T00:00:00Z
