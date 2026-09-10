@@ -205,11 +205,11 @@ say exactly how to cache it**, in the policy that points.
 **Where.** One directory per bundle, named by the bundle's **full published ID**:
 
 ```
-~/.cache/luma/bundles/<org>/<catalog>/<bundle-name>/<source>.<ext>
+~/.cache/luma/luma-foreman/bundles/<org>/<catalog>/<bundle-name>/<source>.<ext>
 ```
 
 ```
-~/.cache/luma/bundles/lumastack/luma-catalog/command-line-interface/clig.dev.md
+~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/command-line-interface/clig.dev.md
 ```
 
 **The full ID, because a bare name is not unique.** Bundle names are unique
@@ -218,17 +218,25 @@ within a catalog and nowhere else — two catalogs may each publish a
 differently. The ID that already distinguishes them is the one `foreman get`
 takes, so use all of it.
 
-**Keyed on the bundle rather than on a tool, and the reason is ownership.**
-Nothing in the toolchain writes this cache — an agent does, running the fetch the
-policy told it to run. The tool that copied the bundle in never reads it, never
-invalidates it, and would be a strange thing to name in a path it does not touch.
-The catalog appears here as **part of the bundle's name**, not as the owner of
-anything.
+**The application segment is `luma-foreman`, in full and never shortened.** The
+`luma-config` bundle settles this: XDG puts regenerable things under
+`~/.cache/<org>/<application>/`, and **the slot after the organization holds an
+application name** — so everything under `~/.cache/luma/` maps to a repository.
+`bundles/` goes *inside* it, beside the `catalogs/` and `projects/` directories
+already there.
+
+**Do not put `bundles` in the application slot.** `~/.cache/luma/luma-foreman/bundles/…`
+reads well and is wrong, and this is settled rather than arguable: foreman
+cached at `~/.cache/luma/catalogs` until August 2026, a review found it, and it
+moved for exactly this reason. **A plural noun there breaks the mapping for
+everything under the organization**, and nothing reports it — a path nobody has
+written to before is created on demand, and nothing notices the old one is
+empty.
 
 **One copy, shared by every tool.** What is cached is a public document fetched
 raw, and nothing transforms it — so there is no version of this where two tools
-should hold different copies. Splitting it per tool would buy N fetches, N dates
-to check and N directories to refresh, in exchange for nothing.
+should hold different copies. The application segment names where the cache
+lives, not who may read it.
 
 **A bundle with no catalog uses whatever ID it has**, which for an unpublished
 one is local to its project. **Two projects holding same-named local bundles
@@ -257,7 +265,7 @@ fraction of the markup.
 **Fetch to the file, never through the context window.**
 
 ```sh
-curl -sSL -o ~/.cache/luma/bundles/<org>/<catalog>/<bundle-name>/<source>.md <url>
+curl -sSL -o ~/.cache/luma/luma-foreman/bundles/<org>/<catalog>/<bundle-name>/<source>.md <url>
 ```
 
 `curl -o <path>` puts the bytes on disk at no token cost. Fetching a document

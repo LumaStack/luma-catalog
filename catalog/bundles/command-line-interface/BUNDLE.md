@@ -60,14 +60,12 @@ machine that has never fetched it has a URL and nothing else.
 ## Version
 
 `0.4.1` — **the cached copy moves to
-`~/.cache/luma/bundles/lumastack/luma-catalog/command-line-interface/`**,
-matching the convention `bundle-manager` now states: one directory per bundle,
-named by its full published ID. The old path filed this copy of somebody else's
-guide under `luma-foreman/guides/` — named for the tool that installed the
-bundle, which is not the thing that fetches the document, reads it or
-invalidates it. **An agent writes this cache, following the instruction above**,
-and the bundle is what identifies the content — with the catalog in the path
-because a bare bundle name is unique only within one.
+`~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/command-line-interface/`**,
+matching the convention `bundle-manager` now states: one directory per bundle
+inside the application's cache, named by the bundle's full published ID. The old
+`guides/` directory was unambiguous while one bundle cached anything and stopped
+being so the moment a second did — and **the full ID rather than the bare name**,
+because a bundle name is unique only within its catalog.
 
 **And the fetch example gains the `-o` it was already telling you to use.** The
 fenced command carried no output flag while the paragraph directly beneath it

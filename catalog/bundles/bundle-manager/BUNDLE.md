@@ -113,35 +113,34 @@ question.
 
 **It also writes down how to cache what you point at**, which had been solved
 twice in this catalog and stated nowhere: one directory per bundle under
-`~/.cache/luma/bundles/`, fetch the source rather than the rendered page,
+`~/.cache/luma/luma-foreman/bundles/`, fetch the source rather than the rendered page,
 `curl -o` to the file rather than into the context window, a date stamped on the
 first line so staleness is visible, refresh when that date is not today, never
 block on the network, and never commit it — **a copy on one machine is nobody's
 business, a copy in a published repository is distribution**, which is the
 carrying route taken by accident with none of its paperwork.
 
-**Keyed on the bundle's full published ID**, `<org>/<catalog>/<name>` — the same
-identifier `foreman get` takes. Keying on the *tool* was tried first and names
-something that owns none of it: an agent writes this cache by running the fetch
-a policy told it to run, and the tool that installed the bundle never reads,
-writes or invalidates a byte. Keying on the **bare bundle name** was tried next
-and collides, because a name is unique only within a catalog — two catalogs may
-each publish a `command-line-interface`, pointing at different documents. The
-catalog belongs in the path as **part of the bundle's name**, not as the owner
-of anything.
+**The directory is the bundle's full published ID**, `<org>/<catalog>/<name>` —
+the same identifier `foreman get` takes. A bare bundle name is unique only
+within a catalog, so two catalogs may each publish a `command-line-interface`
+pointing at different documents; both would have shared one directory.
+
+**The application segment stays `luma-foreman`, and that is settled rather than
+argued.** `~/.cache/luma/bundles/…` reads better and repeats a defect this
+estate already found: foreman cached at `~/.cache/luma/catalogs` until August
+2026, a review caught it, and it moved because **a plural noun in the
+application slot breaks the mapping for everything under the organization**.
+Nothing reports that failure — a path nobody has written to before is created on
+demand, and nothing notices the old one is empty. `bundles/` goes inside the
+application directory, beside the `catalogs/` and `projects/` that are already
+there.
 
 **One copy, shared by every tool**, because nothing transforms what is cached —
 per-tool copies would buy N fetches and N staleness dates in exchange for
-nothing. **An unpublished bundle can still collide** between two projects on one
+nothing. The application segment names where the cache lives, not who may read
+it. **An unpublished bundle can still collide** between two projects on one
 machine, and the policy names that rather than solving it: publishing is what
 gives a bundle a unique name.
-
-**This bends `luma-config` by one segment, and says so.** XDG puts regenerable
-things under `~/.cache/<org>/<application>/`; `bundles/` is not an application
-but a sibling namespace for what bundles own rather than programs. The fixed
-segment is also what stops a bundle named after a tool from claiming that tool's
-cache — the failure that a first draft keyed on the bare bundle name would have
-allowed.
 
 **Two corrections ride along, both the same stale value.** [[update-bundle]] and
 the manifest template still taught `survival: experimental`, which the knowledge
