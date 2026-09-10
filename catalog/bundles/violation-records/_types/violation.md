@@ -5,11 +5,15 @@ fields:
   violation_id:
     field_presence: required
     field_type: text
-    desc: "the record's directory name — `2026-09-08-031200-wikilink-across-bundles-a3f9c1`. Never reused, and what every later reference cites"
+    desc: "the record's directory name — `2026-09-08-wikilink-across-bundles`. Derived from the date and what was breached, so two filings of one breach collide rather than being counted twice"
   occurred_at:
     field_presence: required
     field_type: timestamp
     desc: "when the breach happened. Usually knowable to the turn, because the work that contains it is still open"
+  occurred_in:
+    field_presence: optional
+    field_type: text
+    desc: "the artifact the breach happened in, prefixed by kind — `commit:70eb7cd`, `pr:98`, `run:34506833714`. **Not the commit that carries this record**, which is later and almost always different. Absent where the breach happened somewhere nothing can name"
   noticed_at:
     field_presence: recommended
     field_type: timestamp
@@ -34,7 +38,7 @@ fields:
   policy:
     field_presence: optional
     field_type: text
-    desc: "the rule that was breached, where one exists — a document ID, or a bundle and document. **Absent is a legitimate and common answer**"
+    desc: "the rule that was breached, where one exists — bundle, document ID, and **the version that was in force when it was breached**: `local/backlog procedure/backlog-move 0.36.0`. Without the version the citation points at a moving target and stops being checkable the first time the rule is reworded. **Absent is a legitimate and common answer**"
   created_using:
     field_presence: required
     field_type: text

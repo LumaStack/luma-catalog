@@ -1,7 +1,7 @@
 ---
 type: bundle
 title: lumastack/luma-catalog/violation-records
-version: 0.1.0
+version: 0.2.0
 published: 2026-09-10
 stage: draft
 survival: probationary
@@ -58,10 +58,15 @@ afternoon, graded as incidents, would empty the word out.
 `VIO-0007` requires knowing `VIO-0006` exists, so two actors filing at the same
 moment collide and something has to allocate. **This register is meant to be
 written often, in parallel, and sometimes by agents** — so records are named
-`<date>-<time>-<short-name>-<sha6>`, which needs no coordinator.
+`<date>-<short-name>`, which needs no coordinator.
 
-Timestamp first so a listing sorts itself; name second because scanning goes
-date-then-subject; the tie-breaking `sha6` last, where it can be ignored.
+Date first so a listing sorts itself; name second because scanning goes
+date-then-subject; **and nothing after it, so that two filings of one breach
+collide rather than being counted twice.** The register's product is a count,
+which makes a silent duplicate its worst failure — and a disambiguating suffix
+turns the catch into exactly that. The policy has the full argument, including
+why this is the opposite of the rule for allocated identifiers and why both are
+right.
 
 ## Consumers
 
@@ -70,6 +75,28 @@ is the only reading that pays — and it works because they land in one place un
 one naming scheme.
 
 ## Version
+
+`0.2.0` — **the first use changed three things.** Minor rather than major: an
+adopter who does nothing is unaffected, since existing records keep their names
+and `violation_id` is text nothing parses.
+
+- **Identifiers lose the time and the suffix** — `<date>-<short-name>`. The
+  suffix existed to prevent collisions; collisions turned out to be the feature,
+  because the register's product is a count and a silent duplicate is the worst
+  thing that can happen to one. The procedure's `mkdir` lost its `-p` in the
+  same change, since `-p` succeeded on an existing directory and defeated the
+  catch at the only moment it was cheap.
+- **`occurred_in` is new** — the artifact the breach happened in, prefixed by
+  kind. The first filer recorded a commit in prose because there was no field
+  for it, and the commit that *carries* a violation is later than and different
+  from the one it happened in.
+- **`policy` carries the version in force.** A citation to a rule that has since
+  been reworded is unfalsifiable, and a register read a year later is exactly
+  where that bites.
+
+**The first two came from `sha6` being read as a git SHA by the first person to
+use the bundle** — which is a naming defect the register found on itself, on day
+one, and the cheapest signal available.
 
 `0.1.0` — first published, `probationary` on purpose.
 
