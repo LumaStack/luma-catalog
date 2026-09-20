@@ -1,5 +1,6 @@
 ---
 type: luma/idea
+type_version: "0.1.0"
 title: Violations — when agents do not behave the way we want them to
 created: { by: human:benlinton, at: 2026-09-08T03:12:00Z }
 contributors: [human:benlinton, agent:claude-opus-5]
