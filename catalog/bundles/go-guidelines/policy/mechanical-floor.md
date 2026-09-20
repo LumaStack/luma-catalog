@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: The mechanical floor
 description: The Go rules a linter enforces, wired into the check script so they never reach an agent's context — and which guideline each one is standing in for.
 matches:

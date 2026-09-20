@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Exit codes are one set per tool
 description: A code means the same thing in every subcommand; a subcommand uses a subset of the tool's codes rather than a dialect of its own.
 matches: topic:choosing or changing an exit code, or adding a subcommand that can fail in a new way

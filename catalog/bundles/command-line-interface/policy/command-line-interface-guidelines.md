@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Command line interface guidelines
 description: Read command line interface guidelines before designing or changing CLIs.
 matches: eager

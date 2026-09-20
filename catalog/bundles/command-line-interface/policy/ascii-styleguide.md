@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: ASCII style guide
 description: The marks a command line uses to show state — six glyphs, what each one means, and the rules that keep them readable when colour, fonts or width are not available.
 matches: eager

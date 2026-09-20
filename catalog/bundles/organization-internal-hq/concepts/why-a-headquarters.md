@@ -1,5 +1,6 @@
 ---
 type: document
+type_version: "0.0.1"
 title: Why a headquarters
 description: What an internal organization repository is for, why it is recommended rather than required, and what would show it was the wrong idea. Read when deciding whether to have one.
 ---

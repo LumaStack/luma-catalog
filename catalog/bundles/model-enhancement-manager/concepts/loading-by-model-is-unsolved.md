@@ -1,5 +1,6 @@
 ---
 type: document
+type_version: "0.0.1"
 title: Loading by model is unsolved
 description: A document can declare the model it is for and nothing fires on it, so a model's guardrails are advertised rather than delivered. The three routes to closing that, and what each costs.
 ---

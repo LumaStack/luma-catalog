@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Check before objecting
 description: Asked to evaluate a proposal, the model generates confident objections without verifying any of them. Run the check first, or do it their way.
 ---

@@ -1,12 +1,13 @@
 ---
 type: bundle
+type_version: "0.0.1"
 title: lumastack/luma-catalog/go-guidelines
-version: 0.1.0
+version: 0.2.0
 stage: draft
 survival: probationary
 consumers: [project, organization]
 description: The Go guidelines this project writes against, which one wins when they disagree, and the linting floor that keeps half of them out of an agent's context entirely.
-published: 2026-09-10
+published: 2026-09-19
 ---
 
 # lumastack/luma-catalog/go-guidelines

@@ -1,8 +1,9 @@
 ---
 type: bundle
+type_version: "0.0.1"
 title: lumastack/luma-catalog/bundle-manager
-version: 0.16.0
-published: 2026-09-10
+version: 0.17.0
+published: 2026-09-19
 stage: draft
 consumers: [project, organization]
 description: Creating, updating, auditing, repairing, migrating and retiring bundles — the layout they use and which catalog they belong in.

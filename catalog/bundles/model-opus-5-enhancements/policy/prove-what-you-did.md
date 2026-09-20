@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Prove what you did
 description: The model states past actions from the memory of intending them. Show the evidence once, cite it when the claim is repeated, and say "unverified" when nothing cheap can check it.
 ---

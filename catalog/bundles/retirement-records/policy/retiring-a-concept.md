@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Retiring a concept
 description: What may be retired, how far it reaches, and why a word is the cheapest recognizer rather than the important one. Read before retiring anything.
 matches: eager

@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Record an incident
 description: Open an incident record while it is happening, pick the kind that decides what it must capture, and close it honestly. Use when something has gone wrong — an outage, a breach, a leaked credential, an agent that violated a policy.
 ---

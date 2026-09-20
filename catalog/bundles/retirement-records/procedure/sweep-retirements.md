@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Sweep retirements
 description: Check this repository against every retirement it has adopted — including the ones no search can find — and file what turns up. Use after adopting retirements, after they move, or before publishing anything.
 ---

@@ -1,8 +1,9 @@
 ---
 type: bundle
+type_version: "0.0.1"
 title: lumastack/luma-catalog/incident-records
-version: 0.4.1
-published: 2026-09-02
+version: 0.5.0
+published: 2026-09-19
 stage: draft
 consumers: [project, organization]
 description: Incidents as records — one place for everything that went wrong, and a different shape for each kind, because an outage and a data breach do not answer the same questions.

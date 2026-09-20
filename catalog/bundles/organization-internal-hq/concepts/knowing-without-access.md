@@ -1,5 +1,6 @@
 ---
 type: document
+type_version: "0.0.1"
 title: Knowing without access
 description: Why the index records repositories it cannot read, why that is not a security weakness, and why the stance is a default rather than a rule. Read when somebody challenges it.
 ---

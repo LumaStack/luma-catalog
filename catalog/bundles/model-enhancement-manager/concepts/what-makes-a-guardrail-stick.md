@@ -1,5 +1,6 @@
 ---
 type: document
+type_version: "0.0.1"
 title: What makes a guardrail stick
 description: What the published work says about instructions models actually follow — positive framing, examples over prose, objective tests — what this bundle changed because of it, and what it deliberately did not.
 ---

@@ -1,8 +1,9 @@
 ---
 type: bundle
+type_version: "0.0.1"
 title: lumastack/luma-catalog/retirement-records
-version: 0.5.1
-published: 2026-09-02
+version: 0.6.0
+published: 2026-09-19
 stage: draft
 consumers: [project, organization]
 description: Retiring an idea across many projects — the decision that stays home, the strategy that travels, and the recognizers that find a concept whose vocabulary survived.
