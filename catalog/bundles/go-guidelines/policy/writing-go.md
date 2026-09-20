@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Writing Go
 description: The Go guidelines this project writes against, which one wins when they disagree, and how to read them without spending a context window.
 matches: eager

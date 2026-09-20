@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Release titles and contents
 description: What a release is called and what it must contain. Release notes are the only thing most people will ever read about a version.
 matches:

@@ -37,7 +37,7 @@ env:
   # the foreman pinned before it cannot derive one — so against this tree the
   # old pair would fail the manifest and mis-address every bundle.
   CURATOR_SHA: 407f9bc75ac6f448e6c6aa5105d3b2722ec461eb  # luma-catalog-curator
-  FOREMAN_SHA: db70cbf391827aafa50b2212a5e5c380c13871f7  # luma-foreman — knows eager and generates INDEX.md
+  FOREMAN_SHA: 61ea7d847de12a55010b8ba104dad2dd9e25aa02  # luma-foreman — knows the type_definitions folder shape (LKF v0.0.21)
 
 jobs:
   check:

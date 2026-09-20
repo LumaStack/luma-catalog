@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: Get confirmation before declaring it finished
 description: The model asserts completeness from having intended it. Finished is the reviewer's call — report, ask once, and once they confirm, say it freely.
 ---

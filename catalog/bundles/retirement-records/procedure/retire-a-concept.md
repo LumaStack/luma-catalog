@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Retire a concept
 description: Settle how far a retired idea reaches, record the decision where it was made, and publish the strategy that finds it everywhere else. Use when an idea, field, concept or word stops being how we do things.
 ---

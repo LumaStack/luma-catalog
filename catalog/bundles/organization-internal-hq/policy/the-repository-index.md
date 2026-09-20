@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: The repository index
 description: Where a headquarters records the repositories it reasons about, why it is one file each, and the rule that keeps it from rotting — store only what cannot be derived.
 matches:

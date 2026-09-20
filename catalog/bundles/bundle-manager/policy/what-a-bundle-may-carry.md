@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: What a bundle may carry
 description: Somebody else's writing in a bundle — what adoption does to their licence, the five routes, and the one that is the default. Present the choice; never make it silently.
 matches:

@@ -43,7 +43,7 @@ README.md          everything else here maintains the catalog
 LICENSE
 ```
 
-**There is no `_types/` beside `CATALOG.md`.** The contract for
+**There is no `type_definitions/` beside `CATALOG.md`.** The contract for
 `type: luma/catalog` is published in the `luma/luma-types` bundle and referenced
 from here rather than copied — *reference within a repository, vendor across
 them*. A second copy in this repository would have nothing keeping it in step,
@@ -52,7 +52,7 @@ removed.
 
 `CATALOG.md` holds only what is true of *this* catalog. Everything general —
 what each field means, how two catalogs resolve, what `mandatory` does — lives
-in [`catalog/bundles/luma-types/_types/catalog.md`](catalog/bundles/luma-types/_types/catalog.md), so it is written
+in [`catalog/bundles/luma-types/type_definitions/catalog/DEFINITION.md`](catalog/bundles/luma-types/type_definitions/catalog/DEFINITION.md), so it is written
 once rather than copied into every catalog that ever exists.
 
 **Everything under `catalog/` is the catalog; everything outside it maintains
@@ -112,7 +112,7 @@ require a fork, that is a defect worth reporting rather than a workflow.
 
 `upstream` points at where else to look; it does not inherit content. A project
 configured with one catalog reads the whole chain — see
-[`catalog/bundles/luma-types/_types/catalog.md`](catalog/bundles/luma-types/_types/catalog.md) for how each list
+[`catalog/bundles/luma-types/type_definitions/catalog/DEFINITION.md`](catalog/bundles/luma-types/type_definitions/catalog/DEFINITION.md) for how each list
 resolves when two catalogs speak at once.
 
 ## Contributing

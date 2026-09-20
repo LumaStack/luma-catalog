@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Write an enhancement
 description: Turn a behaviour you just watched cost somebody time into a guardrail that fits the budget. Use when a model has just done something worth preventing.
 ---

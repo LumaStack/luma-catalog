@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Create an internal headquarters
 description: Derive a name for an organization's internal headquarters repository, decide which hosting account it belongs in, find out whether it already exists, and create it if not. Use when an organization has nowhere to record decisions that outlive a single project.
 ---

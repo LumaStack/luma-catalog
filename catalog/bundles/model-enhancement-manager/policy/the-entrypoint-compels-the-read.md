@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: The entrypoint compels the read
 description: Every model enhancement bundle has exactly one document that fires, it names every guardrail, and it requires them rather than offering them.
 matches:

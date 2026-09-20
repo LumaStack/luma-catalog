@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Start a model enhancement bundle
 description: Stand up an enhancements bundle for a model that has none. Use when adopting a new model, or when an existing bundle's guardrails stop matching what you see.
 ---

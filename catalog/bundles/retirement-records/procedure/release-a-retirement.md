@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Release a retirement
 description: Decide that a retired idea no longer needs watching, and archive its strategy. Use when a retirement's count has been zero for a while and somebody wants to remove it.
 ---

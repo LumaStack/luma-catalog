@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Update a bundle
 description: Change a bundle's contents and version it correctly. Use when editing, extending, or fixing an existing bundle.
 ---

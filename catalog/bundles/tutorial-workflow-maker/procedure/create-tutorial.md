@@ -1,5 +1,6 @@
 ---
 type: procedure
+type_version: "0.0.1"
 title: Create a tutorial
 description: Turn source material into a paced tutorial — split it into steps, classify what the reader can safely act on, write the steps and quiz, and wire up the procedure that performs it. Use when something needs teaching rather than documenting.
 ---
@@ -123,8 +124,9 @@ reason anybody chose.
 
 ## 8. Vendor the types
 
-Copy `_types/tutorial_step.md` and `_types/tutorial_quiz.md` from this bundle into
-the target bundle, keeping `vendored_from` and updating `at`.
+Copy the `type_definitions/tutorial_step/` and `type_definitions/tutorial_quiz/`
+folders from this bundle into the target bundle — the whole folder, so the
+changelog travels with the contract — keeping `vendored_from` and updating `at`.
 
 **Bundles are self-contained and have no dependencies**, so the contract has to
 travel with the documents rather than being referred to across a boundary.

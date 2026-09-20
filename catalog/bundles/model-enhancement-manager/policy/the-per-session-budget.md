@@ -1,5 +1,6 @@
 ---
 type: policy
+type_version: "0.0.1"
 title: The per-session budget
 description: Working comes first and small comes second, and they never compete. What the budget may cut, what it may never cut, and what has to come out before something goes in.
 matches:

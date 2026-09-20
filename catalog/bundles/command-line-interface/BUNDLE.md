@@ -1,11 +1,12 @@
 ---
 type: bundle
+type_version: "0.0.1"
 title: lumastack/luma-catalog/command-line-interface
-version: 0.4.1
+version: 0.5.0
 stage: draft
 consumers: [project, organization]
 description: How this project designs its command line — the guidelines it follows, and the style guide its own commands are written to.
-published: 2026-09-10
+published: 2026-09-19
 ---
 
 # lumastack/luma-catalog/command-line-interface
