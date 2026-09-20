@@ -1,5 +1,6 @@
 ---
 type: luma/idea
+type_version: "0.1.0"
 title: Pinned tool updates need Renovate or Dependabot, not a hand-rolled job
 created: { by: human:benlinton, at: 2026-08-24T23:40:00Z }
 contributors: [human:benlinton, agent:claude-opus-5]
