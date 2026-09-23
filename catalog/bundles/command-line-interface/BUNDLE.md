@@ -2,11 +2,11 @@
 type: bundle
 type_version: "0.0.1"
 title: lumastack/luma-catalog/command-line-interface
-version: 0.5.0
+version: 0.6.0
 stage: draft
 consumers: [project, organization]
 description: How this project designs its command line — the guidelines it follows, and the style guide its own commands are written to.
-published: 2026-09-19
+published: 2026-09-23
 ---
 
 # lumastack/luma-catalog/command-line-interface
@@ -24,8 +24,13 @@ read the guide it points at. Open it before adding or changing a command, a
 verb, a flag, or a message.
 
 **[[command-line-style-guide]]** — the template every command's help
-follows, explained a piece at a time, and the output conventions that go with
-it. Follow it and a new command looks like the rest.
+follows, explained a piece at a time. Follow it and a new command looks like
+the rest.
+
+**[[output-patterns]]** — what a command prints when it *runs*. A decision
+tree for which kind of message this is, the three slots every message fills,
+and a catalog of the patterns commands reach for — each with real output and
+the one rule people get wrong.
 
 **[[exit-codes]]** — one set of codes per tool, drawn from by every
 subcommand. A subcommand differs in *which* codes it can return, never in what
@@ -59,6 +64,36 @@ What the cache cannot give back is reproducibility. A fresh clone on a
 machine that has never fetched it has a URL and nothing else.
 
 ## Version
+
+`0.6.0` — adds [[output-patterns]]. The style guide settled what `--help`
+looks like and answered runtime output in eleven loose bullets at the end, so
+every message was written from scratch and no two agreed. A tool audited
+against this had four dialects: a prefixed one-liner, a prefixed one-liner
+running on into an indented block, a bare multi-line paragraph, and a block
+with no prefix — and no reader ever saw enough of them at once to notice.
+
+**A catalog rather than a template**, because a refusal and an empty result are
+different shapes and forcing one block on both produces messages that say the
+right thing and help nobody. Seventeen patterns, each with the output a real
+command produced, the situation it answers, and the single rule people get
+wrong.
+
+**Three rules in it are worth naming here.** A command is introduced by a colon
+and takes the indented line beneath, so **never backticks** — they are shell
+syntax, and a reader copying the line gets command substitution rather than the
+command; double quotes cannot delimit it either, because commands contain them.
+An empty result must **say which empty it is**, since *nothing exists* and *your
+filter excluded everything* call for opposite next moves. And a parsing failure
+**never reaches the application layer**, so a tool careful everywhere else
+answers a typo in its argument parser's voice unless something translates at
+the boundary.
+
+**Section 5 is about not having to remember any of it.** Finding nonconforming
+messages by hand does not work — they get fixed as somebody trips over them and
+the rest keep whatever style they were born in. It says what to automate, and
+carries the two ways the battery written alongside this document was quietly
+useless: cases nobody exercises are cases nobody checks, and a check nobody has
+seen fail is not known to fail at all.
 
 `0.4.1` — **the cached copy moves to
 `~/.cache/luma/luma-foreman/bundles/lumastack/luma-catalog/command-line-interface/`**,
