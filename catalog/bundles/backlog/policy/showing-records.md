@@ -50,14 +50,14 @@ looked is not a bad result, it is no result.
 
 **In ephemeral output, a key carries its title at least once per turn.** A
 reply, a report, a board — anything shown to somebody now and gone afterwards.
-`WORK-0088` on its own asks the reader to have memorised every key in the
+`WORK-0001` on its own asks the reader to have memorised every key in the
 corpus. It need not be at the first mention, only somewhere in the same turn,
 because forcing it first would fight whatever else is deciding the shape of that
 line.
 
 **Where the key is part of a form being shown — a template, an example, a
 command — the form decides.** A listing is already `mark · key · title`, so it
-satisfies this by construction. `rank WORK-0031 --first` deliberately does not,
+satisfies this by construction. `rank WORK-0002 --first` deliberately does not,
 and a title there corrupts the shape being demonstrated. **This rule never edits
 a form; it fills the gap forms do not cover, which is sentences.**
 
@@ -72,8 +72,8 @@ safely precisely because it does not outlive the question it was answering.
 **Mark, key, title — and the key only when the record has one.**
 
 ```
-○ WORK-0022 · Migrate a corpus when the vocabulary changes
-✔ WORK-0018 · Extract the application layer
+○ WORK-0003 · Migrate a corpus when the vocabulary changes
+✔ WORK-0004 · Extract the application layer
 ```
 
 Outcomes and tasks carry no key, so they are mark and title alone:

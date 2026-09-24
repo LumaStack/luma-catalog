@@ -83,7 +83,7 @@ judgment and calls the command for everything else.
 
 ## Version
 
-`0.48.1` — **citations follow the rename; illustrations do not.**
+`0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
 
 luma-backlog migrated its own corpus from the `WORK` prefix to `BACK`, and this
 bundle is vendored, so nothing in it moved. Nine of its mentions were
@@ -101,6 +101,25 @@ and rewriting them would put one repository's prefix in front of every adopter.
 **Nothing in the text tells the two apart**, which is why this was a reading
 rather than a sweep. A citation names a record; an illustration names the shape
 of a key.
+
+
+**And the illustrations are renumbered, low and sequential.** They used
+twenty-five different numbers picked at whatever moment each example was
+written, so telling an illustration from a citation meant reading the sentence
+around it. Every example now numbers from `WORK-0001` upward in the order a
+reader meets it, distinct within a passage where a passage shows several
+records at once.
+
+**The point is recognition, not reservation.** A project will reach these
+numbers for real --- they are the first work items anybody creates --- so this
+buys no protection and is not meant to. It means somebody scanning a diff, or
+an agent deciding whether a key is a reference, can see at a glance that
+`WORK-0001` through `WORK-0008` in a procedure are the example set rather than
+something to look up.
+
+**The changelog below is left alone.** Its examples belong to entries already
+published, and rewriting them would edit history to tidy a convention adopted
+afterwards.
 
 **Nothing to do.** No rule, permission or requirement changed — only which
 records some explanatory prose points at.
