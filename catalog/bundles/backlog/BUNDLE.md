@@ -2,7 +2,7 @@
 type: bundle
 type_version: "0.0.1"
 title: lumastack/luma-catalog/backlog
-version: 0.48.1
+version: 0.49.0
 stage: draft
 consumers: [project]
 description: The record types a luma-backlog corpus conforms to, and the procedures for the things somebody does to a backlog — what an agent needs in order to work one well.
@@ -82,6 +82,29 @@ judgment and calls the command for everything else.
   thing and says why.
 
 ## Version
+
+`0.49.0` — **closing shows what it journalled, and asks before filing anything
+else.**
+
+The procedure already said to write the journal entry before closing. It said
+nothing about what happens next, and the gap had a shape: an agent journalled a
+session's failures, then filed three violation records on its own judgement.
+
+**Two registers outlive a work item and neither is the agent's to write into
+unasked.** A violation register is read in aggregate to decide what keeps
+happening, so an agent filing its own entries has already made the judgement
+that reading them was supposed to inform. A decision record is worse — it is in
+force the moment it is written, and one written unasked binds everybody to a
+position nobody took.
+
+**Recommendations rather than questions.** *Is there anything to file?* hands
+the work back to the reader. Name each candidate, say what it would record, say
+which you would file and why, and say plainly when the answer is none.
+
+**The journal stays the exception.** It binds nothing and is the work item's own
+memory, so it is written without asking and shown afterwards — the showing being
+the new part, because it was written in somebody's name and they had not seen
+it.
 
 `0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
 
