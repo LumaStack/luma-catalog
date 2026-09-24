@@ -2,8 +2,8 @@
 type: luma/idea
 type_version: "0.1.0"
 title: An incident is a folder, because evidence does not fit in frontmatter
-created: { by: human:benlinton, at: 2026-09-08T03:10:00Z }
-contributors: [human:benlinton, agent:claude-opus-5]
+created: { by: human:luma-founder, at: 2026-09-08T03:10:00Z }
+contributors: [human:luma-founder, agent:claude-opus-5]
 horizon: next
 scope: project
 stage: draft
