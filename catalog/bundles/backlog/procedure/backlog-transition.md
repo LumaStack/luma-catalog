@@ -642,25 +642,9 @@ workers apart.
 luma-backlog work-item close <ref> <completed|rejected|canceled|superseded>
 ```
 
-**Running this after the close is fine, and it is worse. Say which you are
-doing.** Nothing here needs the record open, and somebody asking for it late is
-asking for the right thing --- the answer is never to observe that the moment
-has passed. But three things degrade, and a reader should be told rather than
-left to notice:
-
-- **The journal's order stops telling the truth.** Entries are newest first, so
-  a learning written after the close sits above the close, and a reader meets
-  the post-mortem before the ending it is about.
-- **Correcting a misfiled learning stops being cheap.** Showing the journal
-  before closing exists so *that belongs on the other record* costs a sentence.
-  Afterwards, anything that already cites it has to move too.
-- **A violation filed late inflates the lag the register measures.** The gap
-  between `occurred_at` and `noticed_at` is read as how long a breach went
-  unseen. Filing a week later records a slowness that was in the filing rather
-  than in the noticing, so **say in the record that it was filed late**.
-
-**None of that is a reason to skip it.** A step that only runs at one instant is
-one that gets skipped once and then never.
+**Run this while closing.** Running it after the work item is closed is
+acceptable and less ideal --- so when that is what is happening, say so, and say
+what could not be done after the fact where anything could not.
 
 **Write the journal entry first.** What was learned, what was tried that did not
 work, what a future reader would need, what will help an eventual retrospective, and

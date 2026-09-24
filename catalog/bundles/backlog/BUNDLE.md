@@ -106,57 +106,9 @@ memory, so it is written without asking and shown afterwards — the showing bei
 the new part, because it was written in somebody's name and they had not seen
 it.
 
-**It runs after closing as well as during, and says which it is doing.** Nothing
-in it needs the record open, and somebody asking for it late is asking for the
-right thing — the answer is never to observe that the moment has passed. But
-three things degrade and the reader is told rather than left to notice: the
-journal's newest-first order puts the post-mortem above the ending it describes,
-correcting a misfiled learning stops costing one sentence, and a violation filed
-late inflates the `occurred_at`-to-`noticed_at` lag the register is read for — so
-a late filing says so.
-
-`0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
-
-luma-backlog migrated its own corpus from the `WORK` prefix to `BACK`, and this
-bundle is vendored, so nothing in it moved. Nine of its mentions were
-**citations** — places pointing at a real work item a reader might look up, like
-*tracked upstream as WORK-0063* and *an agent ran WORK-0074 up three statuses*.
-Those now name the records as they are called.
-
-**Fifty-four others are illustrations and are deliberately unchanged.**
-`○ WORK-0022 · Migrate a corpus when the vocabulary changes` in a sample
-listing, `rank WORK-0031 --first` showing a command's shape, `WORK-0112` in a
-worked example of a duplicate report — none of them points at anything. `WORK`
-is the default prefix, so an example written with it is right in any project,
-and rewriting them would put one repository's prefix in front of every adopter.
-
-**Nothing in the text tells the two apart**, which is why this was a reading
-rather than a sweep. A citation names a record; an illustration names the shape
-of a key.
-
-
-**And the illustrations are renumbered onto repeated digits.** They used
-twenty-five numbers picked at whatever moment each example was written, so
-telling an illustration from a citation meant reading the sentence around it.
-Each file now draws from `0001 0011 0111 1111`, then `0002 0022 0222 2222`, and
-so on --- one family per set of records a passage needs to keep distinct.
-
-**Two properties earn the shape.** A repeated digit is **unmistakably
-artificial**: nobody stumbles across `WORK-2222` and wonders whether to look it
-up. And the widths vary --- one, two, three and four digits --- so an example
-shows that a key is not always four characters wide, which the old numbers never
-did.
-
-**Recognition, not reservation, and a recommendation rather than a rule.** A
-project reaches `WORK-0001` on its first day, so this protects nothing and is not
-meant to --- it only makes an example recognisable as one. Written into
-[[showing-records]] as advice for whoever writes the next example; nothing
-enforces it, and an example that reads better with a different number is not
-doing anything wrong.
-
-**The changelog below is left alone.** Its examples belong to entries already
-published, and rewriting them would edit history to tidy a convention adopted
-afterwards.
+**Run it while closing; after is acceptable and less ideal.** When it happens
+after, the run says so, and says what could not be done after the fact where
+anything could not.
 
 **Nothing to do.** No rule, permission or requirement changed — only which
 records some explanatory prose points at.
