@@ -115,10 +115,6 @@ correcting a misfiled learning stops costing one sentence, and a violation filed
 late inflates the `occurred_at`-to-`noticed_at` lag the register is read for — so
 a late filing says so.
 
-**And `Always true` now points at it**, because a section read at the close is
-read too late to do the parts that belong before it. Work that starts looking
-finished is the moment to read it.
-
 `0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
 
 luma-backlog migrated its own corpus from the `WORK` prefix to `BACK`, and this

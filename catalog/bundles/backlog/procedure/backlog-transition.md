@@ -83,12 +83,6 @@ Entering `in_progress` means the record is no longer a draft, so the move sets
 `stage`, the way it already sets `rank`. Refusing a move to make somebody set a
 field by hand adds a step and prevents nothing.
 
-**Closing has steps that belong before the close, and reading them at the close
-is already late.** The journal entry, showing it, and naming what else should be
-recorded --- see [[#closing]]. They all still work afterwards and are worth doing
-late, but each is cheaper before. **Read that section when work starts looking
-finished, not when it is.**
-
 **A move re-enqueues the record at the back of its destination.** A rank is a
 position in a queue and leaving the queue does not carry it with you. **So rank
 before moving, not after** — advancing several records in rank order lands them
