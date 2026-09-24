@@ -19,10 +19,10 @@ item**, so it cannot route on its own. **What follows it decides:**
 | they said | it means | because the object is |
 | --- | --- | --- |
 | *move it to in progress* · *move it back* · *move it along* · *move it to done* | **this procedure** | a work status on the ladder |
-| *move it to the top* · *move it above WORK-0031* · *move it up the list* · *make it next* | **the `rank` command** | a position among peers at one work status |
+| *move it to the top* · *move it above WORK-0001* · *move it up the list* · *make it next* | **the `rank` command** | a position among peers at one work status |
 
 **Where nothing names either, ask — one question, and a cheap one.** *"Move
-WORK-0095"* and *"move it up"* are genuinely ambiguous: up the ladder and up the
+WORK-0011"* and *"move it up"* are genuinely ambiguous: up the ladder and up the
 list are both ordinary things to want, and guessing wrong writes the wrong field
 on a record somebody is watching.
 
@@ -113,7 +113,7 @@ editing this document may add a fourth; an agent reading it may not invent one
 in the moment**, and a procedure that claimed the list was final would be an
 argument against its own maintainer.
 
-**Measured here, twice in one session on 2026-09-09.** An agent took WORK-0074
+**Measured here, twice in one session on 2026-09-09.** An agent took BACK-0074
 from `preparing` to `in_progress` in three consecutive commands, and the
 maintainer sent it back to `todo` because no work had been done on it. **This
 procedure already said not to**, which is the evidence that saying it is not
@@ -344,7 +344,7 @@ force**: they get told, not asked.
 > titled *"A work item is owned, and ownership is not modelled yet"* — so the
 > concept is in force and **the field does not exist**. Say who owns it anyway;
 > the gap is worth being visible. Assignees are a later question
-> (tracked upstream as WORK-0063).
+> (tracked upstream as BACK-0063).
 
 ### Overriding is legitimate
 
@@ -387,7 +387,7 @@ without it.
 > prose-only rules runs far below what a guarantee requires* — and the
 > measurement above is exactly that. **The durable form is the move command
 > carrying the gate's answer**, tracked as
-> WORK-0081 upstream. Until then this
+> WORK-0111 upstream. Until then this
 > is what there is, and it is known to be insufficient.
 
 ## What a transition actually does
@@ -413,7 +413,7 @@ That is the sentence the table has been missing.
 **Going backwards is the exception**, and does little today --- including to the
 rank: a record sent back re-enqueues at the **back** of its destination like
 anything else. **Landing it at the front is proposed and not built**
-(tracked upstream as WORK-0095), on the grounds that
+(tracked upstream as BACK-0095), on the grounds that
 burying something should be an act somebody performs rather than what a default
 does quietly.
 
@@ -683,7 +683,7 @@ being cancelled means.
 **Whether they succeeded is a warning and not a bar.** Attempting a task several
 times is ordinary and some attempts fail; a person needs to see that and decide
 whether it points at a problem. *Unbuilt — a task cannot record how it ended
-(tracked upstream as WORK-0064).*
+(tracked upstream as BACK-0064).*
 **Never auto-close the stragglers**: that invents a disposition nobody chose,
 which is exactly what `--force` refuses to do to outcomes.
 
@@ -793,7 +793,7 @@ the thing that dispatched the work rather than the thing that did it.
 
 **Nothing in the actor format says which one an agent is.** `agent:<model>/<project>`
 names a model, not a role, so an orchestrating agent and a working one are
-indistinguishable on the record (WORK-0066). Until that changes, standing is
+indistinguishable on the record (BACK-0066). Until that changes, standing is
 **asserted rather than proven** — and a false assertion here is a false
 attribution, which `CLAUDE.md` already calls worse than no attribution at all.
 
@@ -818,16 +818,16 @@ field is a decision nobody can prove was made.
 | reaching `todo` | **we commit to starting this soon** | **authorization** | *the crossing is the act* | ✘ nowhere to record it |
 | reaching `in_progress` | at least one outcome exists | check | **refused** — `--force` | ✔ |
 | reaching `in_progress` | **there is capacity to start now** | **authorization** | *the crossing is the act* | ✘ nowhere to record it |
-| reaching `in_progress` | `stage` is at least `provisional` | *field write the move owes* | — | ✘ WORK-0075 |
+| reaching `in_progress` | `stage` is at least `provisional` | *field write the move owes* | — | ✘ WORK-1111 |
 | reaching `in_progress` | an owner | *settled by ADR-0008* | — | ✘ no field, no `take` |
-| reaching `in_progress` | one per worker (ADR-0010) | check | — | ✘ WORK-0066 |
+| reaching `in_progress` | one per worker (ADR-0010) | check | — | ✘ WORK-0002 |
 | leaving `closed` | a reason is given | check | **warned** | ✔ |
-| leaving `closed` | `stage` resets, never to `stable` | *field write the move owes* | — | ✘ WORK-0075 |
+| leaving `closed` | `stage` resets, never to `stable` | *field write the move owes* | — | ✘ WORK-1111 |
 | `closed` as `completed` | every live outcome proven | check | **refused** — `--force` | ✔ |
 | `closed` as `completed` | every task has reached a terminal work status | check | **refused** — `--force` | ✔ |
 | `closed`, other dispositions | every task resolved | check | **warned** | ✔ |
-| `closed` as `completed` | every task that ran, succeeded | check | **warned** | ✘ WORK-0064 |
-| `closed` | `stage` becomes `stable` | *field write the move owes* | — | ✘ WORK-0075 |
+| `closed` as `completed` | every task that ran, succeeded | check | **warned** | ✘ WORK-0022 |
+| `closed` | `stage` becomes `stable` | *field write the move owes* | — | ✘ WORK-1111 |
 | `closed` | **forcing it, whatever the disposition** | **authorization** | *the owner's, never assumed* | ✘ no owner field |
 
 **Some checks you can satisfy yourself, and some you cannot — which is not a

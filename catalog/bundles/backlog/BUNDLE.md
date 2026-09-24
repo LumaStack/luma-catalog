@@ -2,11 +2,11 @@
 type: bundle
 type_version: "0.0.1"
 title: lumastack/luma-catalog/backlog
-version: 0.48.0
+version: 0.48.1
 stage: draft
 consumers: [project]
 description: The record types a luma-backlog corpus conforms to, and the procedures for the things somebody does to a backlog — what an agent needs in order to work one well.
-published: 2026-09-23
+published: 2026-09-24
 ---
 
 # lumastack/luma-catalog/backlog
@@ -83,6 +83,52 @@ judgment and calls the command for everything else.
 
 ## Version
 
+`0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
+
+luma-backlog migrated its own corpus from the `WORK` prefix to `BACK`, and this
+bundle is vendored, so nothing in it moved. Nine of its mentions were
+**citations** — places pointing at a real work item a reader might look up, like
+*tracked upstream as WORK-0063* and *an agent ran WORK-0074 up three statuses*.
+Those now name the records as they are called.
+
+**Fifty-four others are illustrations and are deliberately unchanged.**
+`○ WORK-0022 · Migrate a corpus when the vocabulary changes` in a sample
+listing, `rank WORK-0031 --first` showing a command's shape, `WORK-0112` in a
+worked example of a duplicate report — none of them points at anything. `WORK`
+is the default prefix, so an example written with it is right in any project,
+and rewriting them would put one repository's prefix in front of every adopter.
+
+**Nothing in the text tells the two apart**, which is why this was a reading
+rather than a sweep. A citation names a record; an illustration names the shape
+of a key.
+
+
+**And the illustrations are renumbered onto repeated digits.** They used
+twenty-five numbers picked at whatever moment each example was written, so
+telling an illustration from a citation meant reading the sentence around it.
+Each file now draws from `0001 0011 0111 1111`, then `0002 0022 0222 2222`, and
+so on --- one family per set of records a passage needs to keep distinct.
+
+**Two properties earn the shape.** A repeated digit is **unmistakably
+artificial**: nobody stumbles across `WORK-2222` and wonders whether to look it
+up. And the widths vary --- one, two, three and four digits --- so an example
+shows that a key is not always four characters wide, which the old numbers never
+did.
+
+**Recognition, not reservation, and a recommendation rather than a rule.** A
+project reaches `WORK-0001` on its first day, so this protects nothing and is not
+meant to --- it only makes an example recognisable as one. Written into
+[[showing-records]] as advice for whoever writes the next example; nothing
+enforces it, and an example that reads better with a different number is not
+doing anything wrong.
+
+**The changelog below is left alone.** Its examples belong to entries already
+published, and rewriting them would edit history to tidy a convention adopted
+afterwards.
+
+**Nothing to do.** No rule, permission or requirement changed — only which
+records some explanatory prose points at.
+
 `0.48.0` — **`work-item` gains `former_keys`** (type `0.0.2`).
 
 **Nothing to do.** Adding a field is not breaking — a consumer that has not
@@ -118,10 +164,10 @@ they have no Document ID to point at. `[[listing]]`, `[[record-view]]` and
 `[[rundown]]` are markdown links now, which is what every other bundle in the
 catalog already did.
 
-**Four links pointed into this project's own backlog**, `WORK-0063`, `0064`,
+**Four links pointed into this project's own backlog**, `BACK-0063`, `0064`,
 `0081` and `0095`. Those resolve for nobody who did not write them. The
 information is still worth carrying, so each is prose naming the key —
-*tracked upstream as WORK-0063* — rather than a link that promises a document
+*tracked upstream as BACK-0063* — rather than a link that promises a document
 an adopter cannot reach.
 
 `0.46.0` — **`task` and `exploration` earn their contracts.** Both types were
@@ -314,7 +360,7 @@ needed, coach once, accept the answer, and journal the skip — because whether
 the process was wrong, the person was right, or it cost something later is not
 knowable at the moment of the skip.
 
-Written from a measured failure rather than a worry: an agent ran WORK-0074 up
+Written from a measured failure rather than a worry: an agent ran BACK-0074 up
 three work statuses in three commands and the maintainer sent it back.
 
 `0.27.0` — **a finished work item is where a session clears.**
@@ -425,7 +471,7 @@ idempotent by name (§9.5), with hand-editing the one way to break it.
 
 **Neither of those would have prevented the error**, which is the honest note to
 end on: the agent never opened the type definition. Only a check would have, and
-that is `WORK-0002`, moved out of the pile on the strength of this instance.
+that is `BACK-0002`, moved out of the pile on the strength of this instance.
 
 `0.21.1` — **the force approval belongs to the owner, and the record says who
 answered.**
