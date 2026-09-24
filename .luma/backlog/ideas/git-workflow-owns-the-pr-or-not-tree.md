@@ -101,6 +101,34 @@ step wholesale to `git-workflow` rather than re-deciding any of it. One handoff
 at a clean seam is not a split tree; the same decision answered half in each
 place is.
 
+## The branch protection makes unreachable
+
+**Tested on this repository the same day, and it failed.** The no-pull-request
+branch was blocked by the forge, not by anybody's judgement:
+
+```
+GH006: Protected branch update failed for refs/heads/main.
+- Required status check "check" is expected.
+```
+
+**Pull requests were never required here — the status check was the only thing
+in the way**, and with `enforce_admins: true` the administrator could not push
+past it either. So a repository can be configured such that the correct branch
+of this tree cannot be taken, and the misconfiguration is invisible until
+somebody needs it.
+
+**Which makes `enforce_admins: false` part of what the tree assumes**, alongside
+the merge settings `configure-merge-settings` already sets. A repository that
+enforces protections against its own administrators has no escape hatch, and the
+escape hatch is exactly what a breach needs. Disabling it leaves
+`allow_force_pushes: false` and `allow_deletions: false` doing the work they were
+actually there for.
+
+**Check it at setup, not at incident time.** Discovering this mid-scrub costs a
+settings change on a public repository under pressure, decided by whoever is
+awake. That belongs in the procedure that configures a repository, not in the
+one that cleans up after it.
+
 ## Notes
 
 **Prose will not hold the absolute branch**, and the policy should say so. The
