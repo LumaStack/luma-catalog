@@ -106,6 +106,11 @@ memory, so it is written without asking and shown afterwards — the showing bei
 the new part, because it was written in somebody's name and they had not seen
 it.
 
+**And it runs after closing just as well as during.** Nothing in it needs the
+record open. Somebody asking for it late is asking for the right thing, and the
+answer is to do it rather than to note that the moment has passed — a step that
+only runs at one instant is one that gets skipped once and then never.
+
 `0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
 
 luma-backlog migrated its own corpus from the `WORK` prefix to `BACK`, and this

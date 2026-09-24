@@ -681,6 +681,14 @@ took.
 binds nothing, and a learning lost costs more than a paragraph nobody needed ---
 so it is written without asking, and shown afterwards.
 
+**Run this while closing, and run it afterwards if it was missed.** Nothing here
+depends on the record still being open: a journal can be shown, a candidate can
+be named, and a decision or a violation can be filed against a work item that
+closed weeks ago. **Somebody asking for it after the fact is asking for the
+right thing** --- the answer is to do it, never to observe that the moment has
+passed. A step that only runs at one instant is a step that gets skipped once
+and then never.
+
 **Only `completed` is checked against the outcomes.** The others close freely,
 deliberately: gating cancellation on completion would make it impossible to stop
 work *because* it was unfinished, which is the usual reason.
