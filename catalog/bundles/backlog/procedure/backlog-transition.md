@@ -83,6 +83,12 @@ Entering `in_progress` means the record is no longer a draft, so the move sets
 `stage`, the way it already sets `rank`. Refusing a move to make somebody set a
 field by hand adds a step and prevents nothing.
 
+**Closing has steps that belong before the close, and reading them at the close
+is already late.** The journal entry, showing it, and naming what else should be
+recorded --- see [[#closing]]. They all still work afterwards and are worth doing
+late, but each is cheaper before. **Read that section when work starts looking
+finished, not when it is.**
+
 **A move re-enqueues the record at the back of its destination.** A rank is a
 position in a queue and leaving the queue does not carry it with you. **So rank
 before moving, not after** — advancing several records in rank order lands them
@@ -641,6 +647,26 @@ workers apart.
 ```
 luma-backlog work-item close <ref> <completed|rejected|canceled|superseded>
 ```
+
+**Running this after the close is fine, and it is worse. Say which you are
+doing.** Nothing here needs the record open, and somebody asking for it late is
+asking for the right thing --- the answer is never to observe that the moment
+has passed. But three things degrade, and a reader should be told rather than
+left to notice:
+
+- **The journal's order stops telling the truth.** Entries are newest first, so
+  a learning written after the close sits above the close, and a reader meets
+  the post-mortem before the ending it is about.
+- **Correcting a misfiled learning stops being cheap.** Showing the journal
+  before closing exists so *that belongs on the other record* costs a sentence.
+  Afterwards, anything that already cites it has to move too.
+- **A violation filed late inflates the lag the register measures.** The gap
+  between `occurred_at` and `noticed_at` is read as how long a breach went
+  unseen. Filing a week later records a slowness that was in the filing rather
+  than in the noticing, so **say in the record that it was filed late**.
+
+**None of that is a reason to skip it.** A step that only runs at one instant is
+one that gets skipped once and then never.
 
 **Write the journal entry first.** What was learned, what was tried that did not
 work, what a future reader would need, what will help an eventual retrospective, and

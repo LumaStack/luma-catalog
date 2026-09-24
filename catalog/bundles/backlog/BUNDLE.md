@@ -106,10 +106,18 @@ memory, so it is written without asking and shown afterwards — the showing bei
 the new part, because it was written in somebody's name and they had not seen
 it.
 
-**And it runs after closing just as well as during.** Nothing in it needs the
-record open. Somebody asking for it late is asking for the right thing, and the
-answer is to do it rather than to note that the moment has passed — a step that
-only runs at one instant is one that gets skipped once and then never.
+**It runs after closing as well as during, and says which it is doing.** Nothing
+in it needs the record open, and somebody asking for it late is asking for the
+right thing — the answer is never to observe that the moment has passed. But
+three things degrade and the reader is told rather than left to notice: the
+journal's newest-first order puts the post-mortem above the ending it describes,
+correcting a misfiled learning stops costing one sentence, and a violation filed
+late inflates the `occurred_at`-to-`noticed_at` lag the register is read for — so
+a late filing says so.
+
+**And `Always true` now points at it**, because a section read at the close is
+read too late to do the parts that belong before it. Work that starts looking
+finished is the moment to read it.
 
 `0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
 
