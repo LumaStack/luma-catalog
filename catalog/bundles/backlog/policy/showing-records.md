@@ -67,6 +67,28 @@ moment of writing and is wrong the first time somebody renames the record. **The
 key does not change; the title does** — and ephemeral output can carry a title
 safely precisely because it does not outlive the question it was answering.
 
+## Numbers to use in an example
+
+**A recommendation, not a rule.** Where an example needs a key, these read as
+examples at a glance:
+
+```
+WORK-0001  WORK-0011  WORK-0111  WORK-1111
+WORK-0002  WORK-0022  WORK-0222  WORK-2222
+```
+
+**A repeated digit is unmistakably artificial** --- nobody meets `WORK-2222` and
+wonders whether to look it up --- and the widths vary, so an example does not
+quietly teach that a key is always four characters.
+
+**Take one family per set of records a passage must keep apart**, and reuse them
+freely across passages that have nothing to do with each other.
+
+**Nothing enforces this and nothing should.** These are ordinary numbers a real
+corpus reaches on its first day, so they protect nothing; they only make an
+example recognisable as one. An example that needs a ninth number, or reads
+better with a different one, is not doing anything wrong.
+
 ## A list of records
 
 **Mark, key, title — and the key only when the record has one.**

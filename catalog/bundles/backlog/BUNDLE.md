@@ -115,9 +115,12 @@ up. And the widths vary --- one, two, three and four digits --- so an example
 shows that a key is not always four characters wide, which the old numbers never
 did.
 
-**Recognition, not reservation.** A project reaches `WORK-0001` on its first
-day, so this buys no protection and is not meant to. It means somebody scanning
-a diff, or an agent deciding whether a key is a reference, can tell at a glance.
+**Recognition, not reservation, and a recommendation rather than a rule.** A
+project reaches `WORK-0001` on its first day, so this protects nothing and is not
+meant to --- it only makes an example recognisable as one. Written into
+[[showing-records]] as advice for whoever writes the next example; nothing
+enforces it, and an example that reads better with a different number is not
+doing anything wrong.
 
 **The changelog below is left alone.** Its examples belong to entries already
 published, and rewriting them would edit history to tidy a convention adopted
