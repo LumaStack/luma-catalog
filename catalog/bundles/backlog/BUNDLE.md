@@ -83,7 +83,7 @@ judgment and calls the command for everything else.
 
 ## Version
 
-`0.48.0` — **`work-item` gains `former_keys`** (type `0.1.0`).
+`0.48.0` — **`work-item` gains `former_keys`** (type `0.0.2`).
 
 **Nothing to do.** Adding a field is not breaking — a consumer that has not
 learned it reads a record exactly as before, and a record that has never been
