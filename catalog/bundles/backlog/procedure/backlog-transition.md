@@ -113,7 +113,7 @@ editing this document may add a fourth; an agent reading it may not invent one
 in the moment**, and a procedure that claimed the list was final would be an
 argument against its own maintainer.
 
-**Measured here, twice in one session on 2026-09-09.** An agent took WORK-0074
+**Measured here, twice in one session on 2026-09-09.** An agent took BACK-0074
 from `preparing` to `in_progress` in three consecutive commands, and the
 maintainer sent it back to `todo` because no work had been done on it. **This
 procedure already said not to**, which is the evidence that saying it is not
@@ -344,7 +344,7 @@ force**: they get told, not asked.
 > titled *"A work item is owned, and ownership is not modelled yet"* — so the
 > concept is in force and **the field does not exist**. Say who owns it anyway;
 > the gap is worth being visible. Assignees are a later question
-> (tracked upstream as WORK-0063).
+> (tracked upstream as BACK-0063).
 
 ### Overriding is legitimate
 
@@ -413,7 +413,7 @@ That is the sentence the table has been missing.
 **Going backwards is the exception**, and does little today --- including to the
 rank: a record sent back re-enqueues at the **back** of its destination like
 anything else. **Landing it at the front is proposed and not built**
-(tracked upstream as WORK-0095), on the grounds that
+(tracked upstream as BACK-0095), on the grounds that
 burying something should be an act somebody performs rather than what a default
 does quietly.
 
@@ -683,7 +683,7 @@ being cancelled means.
 **Whether they succeeded is a warning and not a bar.** Attempting a task several
 times is ordinary and some attempts fail; a person needs to see that and decide
 whether it points at a problem. *Unbuilt — a task cannot record how it ended
-(tracked upstream as WORK-0064).*
+(tracked upstream as BACK-0064).*
 **Never auto-close the stragglers**: that invents a disposition nobody chose,
 which is exactly what `--force` refuses to do to outcomes.
 
@@ -793,7 +793,7 @@ the thing that dispatched the work rather than the thing that did it.
 
 **Nothing in the actor format says which one an agent is.** `agent:<model>/<project>`
 names a model, not a role, so an orchestrating agent and a working one are
-indistinguishable on the record (WORK-0066). Until that changes, standing is
+indistinguishable on the record (BACK-0066). Until that changes, standing is
 **asserted rather than proven** — and a false assertion here is a false
 attribution, which `CLAUDE.md` already calls worse than no attribution at all.
 
