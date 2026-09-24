@@ -2,7 +2,7 @@
 type: bundle
 type_version: "0.0.1"
 title: lumastack/luma-catalog/backlog
-version: 0.48.1
+version: 0.49.0
 stage: draft
 consumers: [project]
 description: The record types a luma-backlog corpus conforms to, and the procedures for the things somebody does to a backlog — what an agent needs in order to work one well.
@@ -83,48 +83,32 @@ judgment and calls the command for everything else.
 
 ## Version
 
-`0.48.1` — **citations follow the rename; illustrations are renumbered to be predictable.**
+`0.49.0` — **closing shows what it journalled, and asks before filing anything
+else.**
 
-luma-backlog migrated its own corpus from the `WORK` prefix to `BACK`, and this
-bundle is vendored, so nothing in it moved. Nine of its mentions were
-**citations** — places pointing at a real work item a reader might look up, like
-*tracked upstream as WORK-0063* and *an agent ran WORK-0074 up three statuses*.
-Those now name the records as they are called.
+The procedure already said to write the journal entry before closing. It said
+nothing about what happens next, and the gap had a shape: an agent journalled a
+session's failures, then filed three violation records on its own judgement.
 
-**Fifty-four others are illustrations and are deliberately unchanged.**
-`○ WORK-0022 · Migrate a corpus when the vocabulary changes` in a sample
-listing, `rank WORK-0031 --first` showing a command's shape, `WORK-0112` in a
-worked example of a duplicate report — none of them points at anything. `WORK`
-is the default prefix, so an example written with it is right in any project,
-and rewriting them would put one repository's prefix in front of every adopter.
+**Two registers outlive a work item and neither is the agent's to write into
+unasked.** A violation register is read in aggregate to decide what keeps
+happening, so an agent filing its own entries has already made the judgement
+that reading them was supposed to inform. A decision record is worse — it is in
+force the moment it is written, and one written unasked binds everybody to a
+position nobody took.
 
-**Nothing in the text tells the two apart**, which is why this was a reading
-rather than a sweep. A citation names a record; an illustration names the shape
-of a key.
+**Recommendations rather than questions.** *Is there anything to file?* hands
+the work back to the reader. Name each candidate, say what it would record, say
+which you would file and why, and say plainly when the answer is none.
 
+**The journal stays the exception.** It binds nothing and is the work item's own
+memory, so it is written without asking and shown afterwards — the showing being
+the new part, because it was written in somebody's name and they had not seen
+it.
 
-**And the illustrations are renumbered onto repeated digits.** They used
-twenty-five numbers picked at whatever moment each example was written, so
-telling an illustration from a citation meant reading the sentence around it.
-Each file now draws from `0001 0011 0111 1111`, then `0002 0022 0222 2222`, and
-so on --- one family per set of records a passage needs to keep distinct.
-
-**Two properties earn the shape.** A repeated digit is **unmistakably
-artificial**: nobody stumbles across `WORK-2222` and wonders whether to look it
-up. And the widths vary --- one, two, three and four digits --- so an example
-shows that a key is not always four characters wide, which the old numbers never
-did.
-
-**Recognition, not reservation, and a recommendation rather than a rule.** A
-project reaches `WORK-0001` on its first day, so this protects nothing and is not
-meant to --- it only makes an example recognisable as one. Written into
-[[showing-records]] as advice for whoever writes the next example; nothing
-enforces it, and an example that reads better with a different number is not
-doing anything wrong.
-
-**The changelog below is left alone.** Its examples belong to entries already
-published, and rewriting them would edit history to tidy a convention adopted
-afterwards.
+**Run it while closing; after is acceptable and less ideal.** When it happens
+after, the run says so, and says what could not be done after the fact where
+anything could not.
 
 **Nothing to do.** No rule, permission or requirement changed — only which
 records some explanatory prose points at.

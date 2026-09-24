@@ -642,11 +642,56 @@ workers apart.
 luma-backlog work-item close <ref> <completed|rejected|canceled|superseded>
 ```
 
+**Run this while closing.** Running it after the work item is closed is
+acceptable and less ideal --- so when that is what is happening, say so, and say
+what could not be done after the fact where anything could not.
+
 **Write the journal entry first.** What was learned, what was tried that did not
 work, what a future reader would need, what will help an eventual retrospective, and
 what may be considered valuable and should not become lost after this session —
 [[backlog-journal]]. After closing, nobody comes back to write it, and the work
 item's memory is the only thing that survives the session.
+
+### Then show it, and ask before filing anything else
+
+**Show what was journalled --- the entry, not a summary of it.** It was written
+in somebody's name and they have had no chance to see it. The moment before
+closing is the last one where a learning filed on the wrong record costs a
+sentence to move rather than an excavation.
+
+**Then name what else might be worth recording, and stop there.** Two registers
+outlive this work item, and neither is the agent's to write into unasked:
+
+- **a decision** --- a position the work settled, which somebody will otherwise
+  re-argue from nothing
+- **a violation** --- something an agent did that was not wanted, whether or not
+  a rule existed to break
+
+**Come with recommendations rather than questions.** *"Is there anything to
+file?"* hands the work back to the reader. Name each candidate, say in a line
+what it would record, say which you would file and why --- and say so plainly
+when the answer is none, because *nothing here is worth a record* is an answer
+and an empty list is not.
+
+**Then wait. Neither is filed without sign-off.**
+
+**A violation register is read in aggregate to decide what keeps happening**, so
+an agent filing its own entries has already made the judgement that reading them
+was supposed to inform. **A decision record is worse**: it is in force the moment
+it is written, and one written unasked binds everybody to a position nobody
+took.
+
+**The journal is the deliberate exception.** It is the work item's own memory, it
+binds nothing, and a learning lost costs more than a paragraph nobody needed ---
+so it is written without asking, and shown afterwards.
+
+**Run this while closing, and run it afterwards if it was missed.** Nothing here
+depends on the record still being open: a journal can be shown, a candidate can
+be named, and a decision or a violation can be filed against a work item that
+closed weeks ago. **Somebody asking for it after the fact is asking for the
+right thing** --- the answer is to do it, never to observe that the moment has
+passed. A step that only runs at one instant is a step that gets skipped once
+and then never.
 
 **Only `completed` is checked against the outcomes.** The others close freely,
 deliberately: gating cancellation on completion would make it impossible to stop
