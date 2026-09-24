@@ -2,7 +2,7 @@
 type: bundle
 type_version: "0.0.1"
 title: lumastack/luma-catalog/luma-maintainers
-version: 0.15.0
+version: 0.16.0
 published: 2026-09-23
 stage: draft
 consumers: [project, organization]
@@ -76,6 +76,18 @@ manifest contradict the body directly above.
 the top: adopt this only in a repository that is part of the estate.
 
 ## Version
+
+`0.16.0` — **`change-a-shared-type` stops implying `0.1.0`.**
+
+It said *ship it, bump the type's minor, done* for an added field, with no
+carve-out for a type at `0.0.x` — where the literal minor is `0.1.0` and taking
+it claims the shape has settled. An agent followed it correctly and walked a
+type out of `0.0.x` for one optional field.
+
+Now it says to bump the patch while at `0.0.x` and points at the
+`lumastack/luma-catalog/versioning` bundle, which carries the rule as of its
+`0.9.0`. Named in prose rather than linked, since wikilinks do not cross
+bundles.
 
 `0.15.0` — **a first publication carries the version the bundle already had.**
 
