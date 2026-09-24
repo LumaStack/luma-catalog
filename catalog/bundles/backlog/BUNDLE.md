@@ -103,19 +103,21 @@ rather than a sweep. A citation names a record; an illustration names the shape
 of a key.
 
 
-**And the illustrations are renumbered, low and sequential.** They used
-twenty-five different numbers picked at whatever moment each example was
-written, so telling an illustration from a citation meant reading the sentence
-around it. Every example now numbers from `WORK-0001` upward in the order a
-reader meets it, distinct within a passage where a passage shows several
-records at once.
+**And the illustrations are renumbered onto repeated digits.** They used
+twenty-five numbers picked at whatever moment each example was written, so
+telling an illustration from a citation meant reading the sentence around it.
+Each file now draws from `0001 0011 0111 1111`, then `0002 0022 0222 2222`, and
+so on --- one family per set of records a passage needs to keep distinct.
 
-**The point is recognition, not reservation.** A project will reach these
-numbers for real --- they are the first work items anybody creates --- so this
-buys no protection and is not meant to. It means somebody scanning a diff, or
-an agent deciding whether a key is a reference, can see at a glance that
-`WORK-0001` through `WORK-0008` in a procedure are the example set rather than
-something to look up.
+**Two properties earn the shape.** A repeated digit is **unmistakably
+artificial**: nobody stumbles across `WORK-2222` and wonders whether to look it
+up. And the widths vary --- one, two, three and four digits --- so an example
+shows that a key is not always four characters wide, which the old numbers never
+did.
+
+**Recognition, not reservation.** A project reaches `WORK-0001` on its first
+day, so this buys no protection and is not meant to. It means somebody scanning
+a diff, or an agent deciding whether a key is a reference, can tell at a glance.
 
 **The changelog below is left alone.** Its examples belong to entries already
 published, and rewriting them would edit history to tidy a convention adopted

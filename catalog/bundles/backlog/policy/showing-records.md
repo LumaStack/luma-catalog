@@ -57,7 +57,7 @@ line.
 
 **Where the key is part of a form being shown — a template, an example, a
 command — the form decides.** A listing is already `mark · key · title`, so it
-satisfies this by construction. `rank WORK-0002 --first` deliberately does not,
+satisfies this by construction. `rank WORK-0011 --first` deliberately does not,
 and a title there corrupts the shape being demonstrated. **This rule never edits
 a form; it fills the gap forms do not cover, which is sentences.**
 
@@ -72,8 +72,8 @@ safely precisely because it does not outlive the question it was answering.
 **Mark, key, title — and the key only when the record has one.**
 
 ```
-○ WORK-0003 · Migrate a corpus when the vocabulary changes
-✔ WORK-0004 · Extract the application layer
+○ WORK-0111 · Migrate a corpus when the vocabulary changes
+✔ WORK-1111 · Extract the application layer
 ```
 
 Outcomes and tasks carry no key, so they are mark and title alone:

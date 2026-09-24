@@ -22,7 +22,7 @@ item**, so it cannot route on its own. **What follows it decides:**
 | *move it to the top* · *move it above WORK-0001* · *move it up the list* · *make it next* | **the `rank` command** | a position among peers at one work status |
 
 **Where nothing names either, ask — one question, and a cheap one.** *"Move
-WORK-0002"* and *"move it up"* are genuinely ambiguous: up the ladder and up the
+WORK-0011"* and *"move it up"* are genuinely ambiguous: up the ladder and up the
 list are both ordinary things to want, and guessing wrong writes the wrong field
 on a record somebody is watching.
 
@@ -387,7 +387,7 @@ without it.
 > prose-only rules runs far below what a guarantee requires* — and the
 > measurement above is exactly that. **The durable form is the move command
 > carrying the gate's answer**, tracked as
-> WORK-0003 upstream. Until then this
+> WORK-0111 upstream. Until then this
 > is what there is, and it is known to be insufficient.
 
 ## What a transition actually does
@@ -818,16 +818,16 @@ field is a decision nobody can prove was made.
 | reaching `todo` | **we commit to starting this soon** | **authorization** | *the crossing is the act* | ✘ nowhere to record it |
 | reaching `in_progress` | at least one outcome exists | check | **refused** — `--force` | ✔ |
 | reaching `in_progress` | **there is capacity to start now** | **authorization** | *the crossing is the act* | ✘ nowhere to record it |
-| reaching `in_progress` | `stage` is at least `provisional` | *field write the move owes* | — | ✘ WORK-0004 |
+| reaching `in_progress` | `stage` is at least `provisional` | *field write the move owes* | — | ✘ WORK-1111 |
 | reaching `in_progress` | an owner | *settled by ADR-0008* | — | ✘ no field, no `take` |
-| reaching `in_progress` | one per worker (ADR-0010) | check | — | ✘ WORK-0005 |
+| reaching `in_progress` | one per worker (ADR-0010) | check | — | ✘ WORK-0002 |
 | leaving `closed` | a reason is given | check | **warned** | ✔ |
-| leaving `closed` | `stage` resets, never to `stable` | *field write the move owes* | — | ✘ WORK-0004 |
+| leaving `closed` | `stage` resets, never to `stable` | *field write the move owes* | — | ✘ WORK-1111 |
 | `closed` as `completed` | every live outcome proven | check | **refused** — `--force` | ✔ |
 | `closed` as `completed` | every task has reached a terminal work status | check | **refused** — `--force` | ✔ |
 | `closed`, other dispositions | every task resolved | check | **warned** | ✔ |
-| `closed` as `completed` | every task that ran, succeeded | check | **warned** | ✘ WORK-0006 |
-| `closed` | `stage` becomes `stable` | *field write the move owes* | — | ✘ WORK-0004 |
+| `closed` as `completed` | every task that ran, succeeded | check | **warned** | ✘ WORK-0022 |
+| `closed` | `stage` becomes `stable` | *field write the move owes* | — | ✘ WORK-1111 |
 | `closed` | **forcing it, whatever the disposition** | **authorization** | *the owner's, never assumed* | ✘ no owner field |
 
 **Some checks you can satisfy yourself, and some you cannot — which is not a

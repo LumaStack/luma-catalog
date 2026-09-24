@@ -35,7 +35,7 @@ one old reference resolve to two, which is the failure a rename redirect has
 when somebody takes the vacated name.
 
 **The single exception is a record reclaiming its own.** Migrating back from
-`BACK` to `WORK` must be allowed to return `WORK-0002` to the record that held
+`BACK` to `WORK` must be allowed to return `WORK-0011` to the record that held
 it — same record, so the promise above still holds. Without the exception,
 migrating back would be refused for every record that ever moved.
 
