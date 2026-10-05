@@ -71,9 +71,9 @@ permanent.
 **There is no template, and that is deliberate.**
 
 **Name a heading after what it settles**, not after a category.
-*Proxmox versus bare metal — decided: bare metal, no hypervisor* scans in a way
-that *Observations* never will. A reader looking for one thing then finds it
-without reading the entry.
+*Virtual machine host versus bare metal — decided: bare metal, no hypervisor*
+scans in a way that *Observations* never will. A reader looking for one thing
+then finds it without reading the entry.
 
 **What an entry carries, in whatever shape the work calls for:** where things
 stand — concretely, with real names and values, because vague state is not
