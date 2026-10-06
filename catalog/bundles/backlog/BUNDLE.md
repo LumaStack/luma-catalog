@@ -2,7 +2,7 @@
 type: bundle
 type_version: "0.0.1"
 title: lumastack/luma-catalog/backlog
-version: 0.49.0
+version: 0.49.1
 stage: draft
 consumers: [project]
 description: The record types a luma-backlog corpus conforms to, and the procedures for the things somebody does to a backlog — what an agent needs in order to work one well.
@@ -82,6 +82,20 @@ judgment and calls the command for everything else.
   thing and says why.
 
 ## Version
+
+`0.49.1` — **the journal's example heading no longer names a product.**
+
+The illustration of a heading named after what it settles was drawn from a real
+journal in a private repository, and named the hypervisor product that journal
+ran on. That was enough to point at which repository — a fingerprint doing no
+work the example needed. It now reads *Virtual machine host versus bare metal*,
+which illustrates the same thing and identifies nothing.
+
+**Quoting the old wording here would undo the change**, since this manifest is
+vendored into every adopter, so it is described rather than repeated.
+
+**Nothing to do.** Prose in an example, and no rule, permission or requirement
+moved.
 
 `0.49.0` — **closing shows what it journalled, and asks before filing anything
 else.**
