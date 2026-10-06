@@ -36,8 +36,16 @@ env:
   # it requires a declared `namespace:`, which this catalog no longer has, and
   # the foreman pinned before it cannot derive one — so against this tree the
   # old pair would fail the manifest and mis-address every bundle.
+  #
+  # The foreman pin moved again on 2026-10-06, for the same kind of reason
+  # rather than for maintenance: the pinned foreman read every work item's
+  # `index.md` as a reserved name in the wrong case, so the first branch to
+  # commit a backlog corpus here failed on 15 findings nobody could act on. The
+  # new pin asks what a file claims to be rather than where it sits, so an
+  # `index.md` declaring `type: work-item` is a record and not a miscased
+  # container index.
   CURATOR_SHA: 407f9bc75ac6f448e6c6aa5105d3b2722ec461eb  # luma-catalog-curator
-  FOREMAN_SHA: 61ea7d847de12a55010b8ba104dad2dd9e25aa02  # luma-foreman — knows the type_definitions folder shape (LKF v0.0.21)
+  FOREMAN_SHA: 7a51b1e016ec62f911b27861608dc2ff1587efcd  # luma-foreman — reads a typed index.md as a record; knows the type_definitions folder shape (LKF v0.0.21)
 
 jobs:
   check:
